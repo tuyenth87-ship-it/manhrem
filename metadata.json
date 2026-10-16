@@ -1,0 +1,6 @@
+{
+  "name": "Tuyến Hoa - Mành Rèm, Chăn Ga Gối Đệm Chợ Cháy",
+  "description": "Cửa hàng Mành Rèm, Chăn Ga Gối Đệm Tuyến Hoa tại Chợ Cháy, Ứng Hòa, Hà Nội. Hotline 0344727528. Đại lý đệm Vikosan, Sông Hồng, Everon, Kymdan, rèm cửa, mành trúc mây đan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
