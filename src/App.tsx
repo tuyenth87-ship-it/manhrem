@@ -13,17 +13,20 @@ import { CartDrawer } from './components/CartDrawer';
 import { CheckoutModal } from './components/CheckoutModal';
 import { StoreLocationAndTrust } from './components/StoreLocationAndTrust';
 import { FloatingContact } from './components/FloatingContact';
+import { MobileBottomNav } from './components/MobileBottomNav';
+import { MobileMenuDrawer } from './components/MobileMenuDrawer';
+import { TuyenHoaChatbox } from './components/TuyenHoaChatbox';
 import { Footer } from './components/Footer';
-import { Search, Sparkles, CheckCircle2, Ruler, LayoutGrid, Scale, MapPin, Eye } from 'lucide-react';
+import { Search, Sparkles, CheckCircle2, Ruler, LayoutGrid, Scale, MapPin, Eye, PhoneCall, Bot, Zap } from 'lucide-react';
 
 type MainNavTab = 'catalog' | 'curtain-calculator' | 'room-visualizer' | 'mattress-comparison' | 'store-consult';
 
 const CATEGORIES: { id: ProductCategory; label: string; count: number }[] = [
   { id: 'all', label: 'Tất Cả Sản Phẩm', count: PRODUCTS.length },
-  { id: 'dem', label: 'Đệm Cao Cấp', count: PRODUCTS.filter((p) => p.category === 'dem').length },
-  { id: 'rem-cua', label: 'Mành Rèm Cửa', count: PRODUCTS.filter((p) => p.category === 'rem-cua').length },
+  { id: 'dem', label: 'Đệm Bông Ép & Cao Su', count: PRODUCTS.filter((p) => p.category === 'dem').length },
+  { id: 'rem-cua', label: 'Mành Rèm Cửa & Tổ Ong', count: PRODUCTS.filter((p) => p.category === 'rem-cua').length },
   { id: 'manh-chieu', label: 'Chiếu Trúc & Mành Tre', count: PRODUCTS.filter((p) => p.category === 'manh-chieu').length },
-  { id: 'chan-ga-goi', label: 'Chăn Ga Gối', count: PRODUCTS.filter((p) => p.category === 'chan-ga-goi').length },
+  { id: 'chan-ga-goi', label: 'Chăn Ga Gối Lụa', count: PRODUCTS.filter((p) => p.category === 'chan-ga-goi').length },
 ];
 
 export default function App() {
@@ -32,6 +35,9 @@ export default function App() {
   const [selectedBrand, setSelectedBrand] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc' | 'rating'>('featured');
+
+  // Mobile Menu Drawer State
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Cart State (persisted in localStorage)
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
@@ -53,6 +59,7 @@ export default function App() {
 
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
   const [selectedProductModal, setSelectedProductModal] = useState<Product | null>(null);
 
   // Quick toast notification
@@ -178,8 +185,12 @@ export default function App() {
     }
   };
 
+  const handleOpenCall = () => {
+    window.location.href = `tel:${STORE_INFO.hotline}`;
+  };
+
   return (
-    <div className="min-h-screen bg-[#FBFBFA] flex flex-col font-sans selection:bg-amber-200 selection:text-amber-950">
+    <div className="min-h-screen bg-[#FBFBFA] flex flex-col font-sans selection:bg-amber-200 selection:text-amber-950 pb-20 md:pb-0">
       {/* Toast Notification */}
       <AnimatePresence>
         {toastMessage && (
@@ -187,24 +198,71 @@ export default function App() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed top-20 right-6 z-50 bg-stone-900 text-white px-5 py-3 rounded-2xl shadow-2xl border border-stone-800 flex items-center gap-2.5 text-xs font-semibold"
+            className="fixed top-16 md:top-20 right-4 md:right-6 z-50 bg-stone-900 text-white px-4 py-2.5 rounded-2xl shadow-2xl border border-stone-800 flex items-center gap-2 text-xs font-semibold max-w-[90vw]"
           >
             <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-            <span>{toastMessage}</span>
+            <span className="truncate">{toastMessage}</span>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Top Local Trust Announcement Bar */}
+      <div className="bg-gradient-to-r from-amber-950 via-stone-900 to-amber-950 text-white text-[11px] sm:text-xs py-1.5 px-3 border-b border-amber-900/40">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-1.5 truncate">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+            <span className="font-semibold text-amber-200">Chợ Cháy, Ứng Hòa:</span>
+            <span className="text-stone-300 truncate">Miễn phí mang mẫu vải rèm &amp; đệm đo tại nhà</span>
+          </div>
+          <div className="flex items-center gap-3 shrink-0 pl-2">
+            <button
+              type="button"
+              onClick={() => setIsChatOpen(true)}
+              className="text-amber-300 hover:text-white font-bold flex items-center gap-1 transition-colors text-[11px]"
+            >
+              <Bot className="w-3.5 h-3.5" />
+              <span>Hỏi Chatbot</span>
+            </button>
+            <span className="hidden sm:inline text-stone-500">|</span>
+            <a
+              href={`tel:${STORE_INFO.hotline}`}
+              className="hidden sm:flex items-center gap-1 text-emerald-400 hover:text-white font-bold font-mono transition-colors"
+            >
+              <PhoneCall className="w-3 h-3" />
+              <span>{STORE_INFO.hotlineDisplay}</span>
+            </a>
+          </div>
+        </div>
+      </div>
 
       {/* Top Bar Navigation */}
       <Navbar
         cartCount={totalCartCount}
         onOpenCart={() => setIsCartOpen(true)}
+        onOpenMobileMenu={() => setIsMobileMenuOpen(true)}
+        onOpenChat={() => setIsChatOpen(true)}
         onSelectCategory={(cat) => {
           setActiveMainTab('catalog');
           setActiveCategory(cat as ProductCategory);
           setSelectedBrand('all');
           scrollToContent();
         }}
+        activeCategory={activeCategory}
+      />
+
+      {/* Mobile Menu Drawer */}
+      <MobileMenuDrawer
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
+        onSelectCategory={(cat) => {
+          setActiveCategory(cat);
+          setSelectedBrand('all');
+        }}
+        onSelectTab={(tab) => {
+          setActiveMainTab(tab as MainNavTab);
+          scrollToContent();
+        }}
+        onOpenChat={() => setIsChatOpen(true)}
         activeCategory={activeCategory}
       />
 
@@ -225,73 +283,73 @@ export default function App() {
       />
 
       {/* Main Workspace with Clear Tab Architecture */}
-      <main id="main-workspace" className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14 space-y-10">
+      <main id="main-workspace" className="flex-1 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 md:py-12 space-y-6 md:space-y-10">
         {/* Primary Functional Tabs */}
-        <div className="bg-white p-2 md:p-2.5 rounded-2xl border border-stone-200/90 shadow-sm overflow-x-auto scrollbar-none">
-          <div className="flex items-center gap-1.5 min-w-max">
+        <div className="bg-white p-1.5 md:p-2.5 rounded-2xl border border-stone-200/90 shadow-xs overflow-x-auto scrollbar-none">
+          <div className="flex items-center gap-1 min-w-max">
             <button
               type="button"
               onClick={() => setActiveMainTab('catalog')}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
                 activeMainTab === 'catalog'
-                  ? 'bg-stone-900 text-white shadow-sm'
+                  ? 'bg-stone-900 text-white shadow-xs'
                   : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
               }`}
             >
               <LayoutGrid className="w-4 h-4" />
-              <span>1. Danh Mục Sản Phẩm ({PRODUCTS.length})</span>
+              <span>Sản Phẩm ({PRODUCTS.length})</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveMainTab('curtain-calculator')}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
                 activeMainTab === 'curtain-calculator'
-                  ? 'bg-stone-900 text-white shadow-sm'
+                  ? 'bg-stone-900 text-white shadow-xs'
                   : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
               }`}
             >
               <Ruler className="w-4 h-4 text-amber-500" />
-              <span>2. Bảng Tính Giá May Đo Rèm</span>
+              <span>Dự Toán May Rèm</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveMainTab('room-visualizer')}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
                 activeMainTab === 'room-visualizer'
-                  ? 'bg-stone-900 text-white shadow-sm'
+                  ? 'bg-stone-900 text-white shadow-xs'
                   : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
               }`}
             >
               <Eye className="w-4 h-4 text-sky-500" />
-              <span>3. Thử Mẫu Rèm Ảo (Visualizer)</span>
+              <span>Thử Rèm Ảo</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveMainTab('mattress-comparison')}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
                 activeMainTab === 'mattress-comparison'
-                  ? 'bg-stone-900 text-white shadow-sm'
+                  ? 'bg-stone-900 text-white shadow-xs'
                   : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
               }`}
             >
               <Scale className="w-4 h-4 text-emerald-500" />
-              <span>4. So Sánh 4 Hãng Đệm Lớn</span>
+              <span>So Sánh 4 Đệm</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveMainTab('store-consult')}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
                 activeMainTab === 'store-consult'
-                  ? 'bg-stone-900 text-white shadow-sm'
+                  ? 'bg-stone-900 text-white shadow-xs'
                   : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
               }`}
             >
               <MapPin className="w-4 h-4 text-rose-500" />
-              <span>5. Cửa Hàng Chợ Cháy &amp; Đo Tận Nhà</span>
+              <span>Chợ Cháy &amp; Đo Tại Nhà</span>
             </button>
           </div>
         </div>
@@ -301,13 +359,13 @@ export default function App() {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="space-y-6"
+            transition={{ duration: 0.25 }}
+            className="space-y-4 md:space-y-6"
           >
             {/* Catalog Sub-Filter Toolbar */}
-            <div className="bg-white p-4 rounded-2xl border border-stone-200 shadow-xs space-y-4">
-              {/* Category Sub-Tabs */}
-              <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
+            <div className="bg-white p-3.5 sm:p-4 rounded-2xl border border-stone-200 shadow-xs space-y-3">
+              {/* Category Sub-Tabs with Smooth Touch Carousel */}
+              <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none snap-x touch-pan-x">
                 {CATEGORIES.map((cat) => (
                   <button
                     key={cat.id}
@@ -316,9 +374,9 @@ export default function App() {
                       setActiveCategory(cat.id);
                       setSelectedBrand('all');
                     }}
-                    className={`px-3.5 py-2 text-xs font-semibold rounded-xl transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 ${
+                    className={`px-3 py-1.5 sm:px-3.5 sm:py-2 text-[11px] sm:text-xs font-semibold rounded-xl transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 min-h-[36px] ${
                       activeCategory === cat.id
-                        ? 'bg-amber-900 text-white shadow-sm'
+                        ? 'bg-amber-900 text-white shadow-xs'
                         : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
                     }`}
                   >
@@ -335,21 +393,21 @@ export default function App() {
               </div>
 
               {/* Search, Brand & Sort row */}
-              <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center pt-3 border-t border-stone-100">
+              <div className="grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-3 items-center pt-2 border-t border-stone-100">
                 <div className="sm:col-span-6 relative">
-                  <Search className="w-4 h-4 text-stone-400 absolute left-3 top-2.5" />
+                  <Search className="w-4 h-4 text-stone-400 absolute left-3 top-3" />
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Tìm theo tên sản phẩm (Vikosan, Sông Hồng, Rèm cầu vồng, Chiếu trúc...)"
-                    className="w-full pl-9 pr-3 py-2 text-xs bg-stone-50 rounded-xl border border-stone-200 focus:outline-hidden focus:border-amber-800"
+                    placeholder="Tìm Vikosan, Sông Hồng, Rèm cầu vồng, Chiếu trúc..."
+                    className="w-full pl-9 pr-3 py-2 text-xs bg-stone-50 rounded-xl border border-stone-200 focus:outline-hidden focus:border-amber-800 min-h-[40px]"
                   />
                   {searchQuery && (
                     <button
                       type="button"
                       onClick={() => setSearchQuery('')}
-                      className="absolute right-3 top-2 text-xs text-stone-400 hover:text-stone-700 font-bold"
+                      className="absolute right-3 top-2.5 text-xs text-stone-400 hover:text-stone-700 font-bold"
                     >
                       ×
                     </button>
@@ -360,7 +418,7 @@ export default function App() {
                   <select
                     value={selectedBrand}
                     onChange={(e) => setSelectedBrand(e.target.value)}
-                    className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-700 font-medium focus:outline-hidden focus:border-amber-800 cursor-pointer"
+                    className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-700 font-medium focus:outline-hidden focus:border-amber-800 cursor-pointer min-h-[40px]"
                   >
                     <option value="all">Tất cả thương hiệu</option>
                     <option value="vikosan">Đệm Vikosan (Hàn Quốc)</option>
@@ -377,21 +435,62 @@ export default function App() {
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value as any)}
-                    className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-700 font-medium focus:outline-hidden focus:border-amber-800 cursor-pointer"
+                    className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-700 font-medium focus:outline-hidden focus:border-amber-800 cursor-pointer min-h-[40px]"
                   >
                     <option value="featured">Sắp xếp: Mặc định đề xuất</option>
-                    <option value="price-asc">Giá: Từ thấp đến cao</option>
-                    <option value="price-desc">Giá: Từ cao xuống thấp</option>
+                    <option value="price-asc">Giá: Thấp đến cao</option>
+                    <option value="price-desc">Giá: Cao xuống thấp</option>
                     <option value="rating">Đánh giá cao nhất</option>
                   </select>
                 </div>
               </div>
+
+              {/* 1-Tap Quick Brand & Category Chips (Mobile-First Experience) */}
+              <div className="pt-2 border-t border-stone-100 flex items-center gap-1.5 overflow-x-auto scrollbar-none snap-x touch-pan-x">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 shrink-0">
+                  Lọc nhanh:
+                </span>
+                {[
+                  { label: 'Tất cả', brandVal: 'all', catVal: 'all' },
+                  { label: 'Đệm Vikosan', brandVal: 'vikosan', catVal: 'dem' },
+                  { label: 'Đệm Sông Hồng', brandVal: 'song-hong', catVal: 'dem' },
+                  { label: 'Đệm Everon', brandVal: 'everon', catVal: 'dem' },
+                  { label: 'Cao su Kymdan', brandVal: 'kymdan', catVal: 'dem' },
+                  { label: 'Rèm Cầu Vồng', brandVal: 'all', catVal: 'rem-cua' },
+                  { label: 'Rèm Vải 2 Lớp', brandVal: 'all', catVal: 'rem-cua' },
+                  { label: 'Chiếu Trúc Hạt', brandVal: 'all', catVal: 'manh-chieu' },
+                  { label: 'Chăn Ga Lụa', brandVal: 'all', catVal: 'chan-ga-goi' },
+                ].map((chip, idx) => {
+                  const isActive =
+                    (chip.brandVal !== 'all' && selectedBrand === chip.brandVal) ||
+                    (chip.brandVal === 'all' && chip.catVal !== 'all' && activeCategory === chip.catVal) ||
+                    (chip.brandVal === 'all' && chip.catVal === 'all' && selectedBrand === 'all' && activeCategory === 'all');
+
+                  return (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => {
+                        setSelectedBrand(chip.brandVal);
+                        setActiveCategory(chip.catVal as ProductCategory);
+                      }}
+                      className={`px-2.5 py-1 text-[11px] font-semibold rounded-lg shrink-0 transition-all ${
+                        isActive
+                          ? 'bg-amber-950 text-white shadow-xs'
+                          : 'bg-stone-100 hover:bg-stone-200 text-stone-700'
+                      }`}
+                    >
+                      {chip.label}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
 
-            {/* Product Cards Grid with real photography */}
+            {/* Product Cards Grid: 2-Columns on Mobile, 3 on Desktop */}
             {filteredProducts.length === 0 ? (
-              <div className="bg-white rounded-3xl border border-stone-200 p-12 text-center space-y-3">
-                <p className="text-stone-600 text-sm">
+              <div className="bg-white rounded-3xl border border-stone-200 p-8 sm:p-12 text-center space-y-3">
+                <p className="text-stone-600 text-xs sm:text-sm">
                   Không tìm thấy sản phẩm nào khớp với từ khóa tìm kiếm.
                 </p>
                 <button
@@ -401,13 +500,13 @@ export default function App() {
                     setSelectedBrand('all');
                     setSearchQuery('');
                   }}
-                  className="px-4 py-2 bg-stone-900 text-white rounded-xl text-xs font-semibold hover:bg-stone-800 transition-colors"
+                  className="px-4 py-2.5 bg-stone-900 text-white rounded-xl text-xs font-semibold hover:bg-stone-800 transition-colors min-h-[44px]"
                 >
                   Đặt lại bộ lọc
                 </button>
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8">
                 {filteredProducts.map((product) => (
                   <ProductCard
                     key={product.id}
@@ -427,7 +526,7 @@ export default function App() {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.25 }}
           >
             <CurtainEstimator
               onAddToCart={handleAddToCart}
@@ -441,7 +540,7 @@ export default function App() {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.25 }}
           >
             <RoomVisualizer />
           </motion.div>
@@ -452,7 +551,7 @@ export default function App() {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.25 }}
           >
             <MattressComparison
               onSelectBrand={(brand) => {
@@ -470,15 +569,40 @@ export default function App() {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.25 }}
           >
             <StoreLocationAndTrust />
           </motion.div>
         )}
       </main>
 
-      {/* Floating Call & Zalo Contact buttons */}
-      <FloatingContact />
+      {/* Floating Call & Zalo Contact buttons (Desktop only) */}
+      <div className="hidden md:block">
+        <FloatingContact />
+      </div>
+
+      {/* Mobile Fixed Bottom Navigation Bar */}
+      <MobileBottomNav
+        activeTab={activeMainTab}
+        onSelectTab={(tab) => {
+          setActiveMainTab(tab);
+          scrollToContent();
+        }}
+        cartCount={totalCartCount}
+        onOpenCart={() => setIsCartOpen(true)}
+        onOpenCall={handleOpenCall}
+        onOpenChat={() => setIsChatOpen(true)}
+      />
+
+      {/* Tuyen Hoa AI Chatbox Consultant */}
+      <TuyenHoaChatbox
+        isOpen={isChatOpen}
+        onClose={() => setIsChatOpen(false)}
+        onOpen={() => setIsChatOpen(true)}
+        onAddToCart={handleAddToCart}
+        onSelectProduct={(p) => setSelectedProductModal(p)}
+        onRequestMeasurement={handleRequestMeasurement}
+      />
 
       {/* Cart Drawer */}
       <CartDrawer

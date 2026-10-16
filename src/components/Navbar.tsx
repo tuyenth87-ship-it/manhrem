@@ -1,10 +1,12 @@
 import React from 'react';
-import { ShoppingBag, PhoneCall } from 'lucide-react';
+import { ShoppingBag, PhoneCall, Menu } from 'lucide-react';
 import { STORE_INFO } from '../data/products';
 
 interface NavbarProps {
   cartCount: number;
   onOpenCart: () => void;
+  onOpenMobileMenu: () => void;
+  onOpenChat?: () => void;
   onSelectCategory: (category: string) => void;
   activeCategory: string;
 }
@@ -12,22 +14,44 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({
   cartCount,
   onOpenCart,
+  onOpenMobileMenu,
+  onOpenChat,
   onSelectCategory,
   activeCategory,
 }) => {
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-8 h-16">
-          {/* Zone 1: Brand title, one line */}
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-4 md:gap-8 h-14 sm:h-16">
+          {/* Mobile Left: Hamburger Menu Button */}
+          <div className="flex items-center gap-2 md:hidden">
+            <button
+              type="button"
+              onClick={onOpenMobileMenu}
+              className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl text-stone-700 hover:bg-stone-100 transition-colors"
+              aria-label="Mở menu danh mục"
+            >
+              <Menu className="w-5 h-5" />
+            </button>
+
+            {/* Brand title on mobile */}
+            <a
+              href="/"
+              className="text-lg font-display font-bold tracking-tight text-stone-900 whitespace-nowrap"
+            >
+              Tuyến Hoa
+            </a>
+          </div>
+
+          {/* Desktop Zone 1: Brand title, one line */}
           <a
             href="/"
-            className="text-xl md:text-2xl font-display font-bold tracking-tight text-stone-900 whitespace-nowrap shrink-0 hover:text-amber-900 transition-colors"
+            className="hidden md:inline-block text-xl md:text-2xl font-display font-bold tracking-tight text-stone-900 whitespace-nowrap shrink-0 hover:text-amber-900 transition-colors"
           >
             Tuyến Hoa
           </a>
 
-          {/* Zone 2: 4-5 nav links, 1-2 word labels, single-line */}
+          {/* Desktop Zone 2: 4-5 nav links, 1-2 word labels, single-line */}
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-stone-600">
             <button
               type="button"
@@ -63,7 +87,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 activeCategory === 'manh-chieu' ? 'text-stone-950 font-bold border-b-2 border-stone-900' : ''
               }`}
             >
-              Chiếu Trúc & Mây
+              Chiếu Trúc &amp; Mây
             </button>
             <button
               type="button"
@@ -82,26 +106,40 @@ export const Navbar: React.FC<NavbarProps> = ({
             </a>
           </nav>
 
-          {/* Zone 3: 1 primary action (Cart & Hotline) */}
-          <div className="flex items-center gap-3 shrink-0">
+          {/* Zone 3: Actions (Chat, Call & Cart) */}
+          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+            {onOpenChat && (
+              <button
+                type="button"
+                onClick={onOpenChat}
+                className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl border border-amber-300 bg-amber-50/80 text-amber-950 hover:bg-amber-100 text-xs font-semibold whitespace-nowrap shrink-0 transition-colors min-h-[38px]"
+                title="Tư vấn trực tuyến"
+              >
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                <span className="hidden sm:inline">Tư Vấn 24/7</span>
+                <span className="sm:hidden">Chat</span>
+              </button>
+            )}
+
             <a
               href={`tel:${STORE_INFO.hotline}`}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-stone-300 text-stone-700 hover:text-stone-950 hover:bg-stone-50 text-xs font-semibold whitespace-nowrap shrink-0 transition-colors"
+              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl border border-stone-300 text-stone-800 hover:text-stone-950 hover:bg-stone-50 text-xs font-semibold whitespace-nowrap shrink-0 transition-colors min-h-[38px]"
             >
               <PhoneCall className="w-3.5 h-3.5 text-amber-800" />
-              <span>{STORE_INFO.hotlineDisplay}</span>
+              <span className="hidden sm:inline">{STORE_INFO.hotlineDisplay}</span>
+              <span className="sm:hidden font-mono">Gọi</span>
             </a>
 
             <button
               type="button"
               onClick={onOpenCart}
-              className="relative flex items-center gap-2 px-3.5 py-2 text-xs font-semibold text-white bg-stone-900 rounded-lg hover:bg-stone-800 transition-colors whitespace-nowrap shrink-0"
+              className="relative flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 text-xs font-semibold text-white bg-stone-900 rounded-xl hover:bg-stone-800 transition-colors whitespace-nowrap shrink-0 min-h-[38px]"
               aria-label="Xem giỏ hàng"
             >
               <ShoppingBag className="w-4 h-4" />
               <span className="hidden sm:inline">Giỏ Hàng</span>
               {cartCount > 0 && (
-                <span className="w-5 h-5 rounded-full bg-amber-500 text-stone-950 text-[11px] font-bold font-mono flex items-center justify-center -mr-1">
+                <span className="min-w-4.5 h-4.5 px-1 rounded-full bg-amber-500 text-stone-950 text-[10px] font-bold font-mono flex items-center justify-center -mr-1">
                   {cartCount}
                 </span>
               )}

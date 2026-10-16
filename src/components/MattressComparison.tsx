@@ -77,20 +77,18 @@ interface MattressComparisonProps {
 
 export const MattressComparison: React.FC<MattressComparisonProps> = ({ onSelectBrand }) => {
   return (
-    <div className="bg-white rounded-3xl border border-stone-200/90 shadow-sm p-6 md:p-10 space-y-8">
+    <div className="bg-white rounded-3xl border border-stone-200/90 shadow-sm p-4 sm:p-6 md:p-10 space-y-6 md:space-y-8">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 border-b border-stone-200 gap-4">
+      <div className="flex flex-col md:flex-row md:items-end justify-between pb-4 sm:pb-6 border-b border-stone-200 gap-3 sm:gap-4">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-900">
+          <div className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-amber-900">
             <Award className="w-4 h-4 text-amber-700" />
             <span>Cẩm Nang Tư Vấn Đệm Chuyên Sâu</span>
-            <span className="text-stone-300">·</span>
-            <span className="text-stone-500 font-normal">Cửa Hàng Tuyến Hoa Chợ Cháy</span>
           </div>
-          <h2 className="text-2xl md:text-3xl font-display font-bold text-stone-900 mt-1">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-stone-900 mt-1">
             So Sánh 4 Thương Hiệu Đệm Lớn: Vikosan · Sông Hồng · Everon · Kymdan
           </h2>
-          <p className="text-sm text-stone-600 mt-1 max-w-3xl">
+          <p className="text-xs sm:text-sm text-stone-600 mt-1 max-w-3xl">
             Bảng tra cứu đặc tính kỹ thuật, độ êm/cứng, thời hạn bảo hành và tầm giá thực tế để giúp quý khách lựa chọn chiếc đệm phù hợp nhất với thể trạng và ngân sách gia đình.
           </p>
         </div>
@@ -98,7 +96,7 @@ export const MattressComparison: React.FC<MattressComparisonProps> = ({ onSelect
         <div className="shrink-0">
           <a
             href={`tel:${STORE_INFO.hotline}`}
-            className="inline-flex items-center gap-2 px-4 py-2.5 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 rounded-xl text-xs font-semibold transition-colors"
+            className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 rounded-xl text-xs font-semibold transition-colors"
           >
             <Phone className="w-4 h-4 text-amber-800" />
             <span>Tư vấn đệm theo số đo: {STORE_INFO.hotlineDisplay}</span>
@@ -106,8 +104,8 @@ export const MattressComparison: React.FC<MattressComparisonProps> = ({ onSelect
         </div>
       </div>
 
-      {/* Comparison Cards Grid (Desktop & Tablet) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Comparison Cards Grid (Desktop & Tablet & Mobile) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {MATTRESS_COMPARISONS.map((m, idx) => (
           <div
             key={idx}

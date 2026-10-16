@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calculator, CheckCircle2, PhoneCall, Ruler, Sparkles, Plus } from 'lucide-react';
+import { Calculator, CheckCircle2, PhoneCall, Ruler, Sparkles, Plus, Minus } from 'lucide-react';
 import { STORE_INFO } from '../data/products';
 import { CartItem } from '../types/store';
 
@@ -15,7 +15,7 @@ interface CurtainTypeOption {
   categoryTitle: string;
   pricingTiers: {
     name: string;
-    pricePerUnit: number; // in VND
+    pricePerUnit: number;
     description: string;
   }[];
   included: string[];
@@ -24,13 +24,13 @@ interface CurtainTypeOption {
 const CURTAIN_OPTIONS: CurtainTypeOption[] = [
   {
     id: 'rem-vai-2-lop',
-    name: 'Rèm Vải 2 Lớp Cản Sáng (Gấm + Voan)',
+    name: 'Rèm Vải 2 Lớp (Gấm + Voan)',
     unit: 'mét ngang',
     categoryTitle: 'Rèm Vải Gia Đình',
     pricingTiers: [
-      { name: 'Vải gấm cản sáng 85% + Voan xước trắng', pricePerUnit: 680000, description: 'Phù hợp phòng ngủ, căn hộ chung cư' },
-      { name: 'Vải gấm Nhật cản sáng 100% + Voan trắng', pricePerUnit: 890000, description: 'Dòng chuộng nhất, cách nhiệt điều hòa' },
-      { name: 'Gấm nhung họa tiết chìm tân cổ điển 2 lớp', pricePerUnit: 1080000, description: 'Biệt thự, nhà phố sang trọng' },
+      { name: 'Gấm thô cản sáng 85% + Voan trắng', pricePerUnit: 680000, description: 'Phù hợp phòng ngủ, căn hộ chung cư' },
+      { name: 'Gấm Nhật cản sáng 100% + Voan xước', pricePerUnit: 890000, description: 'Dòng chuộng nhất, cách nhiệt điều hòa' },
+      { name: 'Gấm nhung họa tiết hoàng gia 2 lớp', pricePerUnit: 1080000, description: 'Biệt thự, nhà phố sang trọng' },
     ],
     included: ['Độ chun 2.5m vải/1m cửa', 'Thanh hợp kim nhôm định hình êm', 'Núm vén rèm và dây buộc đồng bộ', 'Miễn phí công lắp tại Ứng Hòa'],
   },
@@ -72,7 +72,7 @@ const CURTAIN_OPTIONS: CurtainTypeOption[] = [
   },
   {
     id: 'manh-tre-ban-cong',
-    name: 'Mành Tre Trúc Che Nắng Ban Công Sơn PU',
+    name: 'Mành Tre Trúc Che Nắng Ban Công',
     unit: 'm2',
     categoryTitle: 'Mành Tre Trúc Ngoài Trời',
     pricingTiers: [
@@ -90,18 +90,15 @@ export const CurtainEstimator: React.FC<CurtainEstimatorProps> = ({
 }) => {
   const [selectedTypeIndex, setSelectedTypeIndex] = useState(0);
   const [selectedTierIndex, setSelectedTierIndex] = useState(1);
-  const [width, setWidth] = useState<number>(2.5); // meters
-  const [height, setHeight] = useState<number>(2.6); // meters
+  const [width, setWidth] = useState<number>(2.5);
+  const [height, setHeight] = useState<number>(2.6);
   const [quantity, setQuantity] = useState<number>(1);
-  const [windowNote, setWindowNote] = useState<string>('Cửa sổ phòng ngủ chính');
+  const [windowNote, setWindowNote] = useState<string>('Cửa sổ phòng ngủ');
   const [isAddedSuccess, setIsAddedSuccess] = useState(false);
 
   const currentType = CURTAIN_OPTIONS[selectedTypeIndex];
   const currentTier = currentType.pricingTiers[selectedTierIndex] || currentType.pricingTiers[0];
 
-  // Calculation
-  // For 'mét ngang': calculation is width * unitPrice * quantity (height typically <= 2.8m)
-  // For 'm2': calculation is width * height * unitPrice * quantity
   const measurementAmount =
     currentType.unit === 'mét ngang'
       ? Math.max(0.8, width) * quantity
@@ -127,48 +124,46 @@ export const CurtainEstimator: React.FC<CurtainEstimatorProps> = ({
   };
 
   const handleRequestSurvey = () => {
-    const summary = `${currentType.name} (${currentTier.name}) - Dự kiến kích thước: Rộng ${width}m x Cao ${height}m (${quantity} bộ). Ghi chú: ${windowNote}`;
+    const summary = `${currentType.name} (${currentTier.name}) - Kích thước: ${width}m x ${height}m (${quantity} bộ). Vị trí: ${windowNote}`;
     onRequestMeasurement(currentType.name, summary);
   };
 
   return (
-    <div id="du-toan-rem" className="bg-white rounded-2xl border border-stone-200/90 shadow-sm p-6 md:p-8">
+    <div id="du-toan-rem" className="bg-white rounded-3xl border border-stone-200/90 shadow-sm p-4 sm:p-6 md:p-8 space-y-6">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-stone-200 gap-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between pb-4 sm:pb-6 border-b border-stone-200 gap-3">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-800">
+          <div className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-amber-800">
             <Calculator className="w-4 h-4 text-amber-700" />
             <span>Công Cụ Dự Toán Rèm Tuyến Hoa</span>
-            <span className="text-stone-300">·</span>
-            <span className="text-stone-500 normal-case font-normal">Chợ Cháy, Ứng Hòa, Hà Nội</span>
           </div>
-          <h2 className="text-2xl md:text-3xl font-display font-bold text-stone-900 mt-1">
-            Bảng Tính Giá & Dự Toán Chi Phí Rèm Cửa Chuẩn Xác
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-stone-900 mt-1">
+            Bảng Tính Giá May Đo Rèm Theo Kích Thước Cửa
           </h2>
-          <p className="text-sm text-stone-600 mt-1">
-            Nhập kích thước cửa thực tế để nhận ngay báo giá công khai. Tuyến Hoa hỗ trợ mang catalogue mẫu vải trực tiếp đến nhà khảo sát miễn phí.
+          <p className="text-xs sm:text-sm text-stone-600 mt-1">
+            Nhập kích thước cửa thực tế để nhận ngay báo giá công khai. Thợ Tuyến Hoa mang mẫu tận nhà đo đạc miễn phí tại Ứng Hòa.
           </p>
         </div>
 
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex items-center gap-2 shrink-0">
           <a
             href={`tel:${STORE_INFO.hotline}`}
-            className="inline-flex items-center gap-2 px-4 py-2.5 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 rounded-lg text-sm font-semibold transition-colors"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-3.5 py-2.5 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 rounded-xl text-xs font-semibold transition-colors min-h-[44px]"
           >
-            <PhoneCall className="w-4 h-4 text-amber-700" />
-            <span>Gọi thợ đo: {STORE_INFO.hotlineDisplay}</span>
+            <PhoneCall className="w-4 h-4 text-amber-800" />
+            <span>Gọi Thợ Đo: {STORE_INFO.hotlineDisplay}</span>
           </a>
         </div>
       </div>
 
       {/* Main Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
         {/* Left Inputs (7 cols) */}
-        <div className="lg:col-span-7 space-y-6">
+        <div className="lg:col-span-7 space-y-5">
           {/* Step 1: Chọn loại rèm */}
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2.5">
-              1. Chọn Loại Mành Rèm Bạn Cần Lắp:
+            <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
+              1. Chọn Loại Mành Rèm Cần Lắp:
             </label>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
               {CURTAIN_OPTIONS.map((opt, idx) => (
@@ -179,72 +174,80 @@ export const CurtainEstimator: React.FC<CurtainEstimatorProps> = ({
                     setSelectedTypeIndex(idx);
                     setSelectedTierIndex(0);
                   }}
-                  className={`p-3 text-left rounded-xl border text-xs font-medium transition-all ${
+                  className={`p-3 text-left rounded-2xl border text-xs transition-all min-h-[56px] flex flex-col justify-between ${
                     selectedTypeIndex === idx
-                      ? 'border-amber-700 bg-amber-50/60 text-amber-950 font-bold shadow-xs'
+                      ? 'border-amber-800 bg-amber-50/80 text-amber-950 font-bold shadow-xs'
                       : 'border-stone-200 hover:border-stone-300 text-stone-700 bg-stone-50/50'
                   }`}
                 >
-                  <div className="font-semibold">{opt.name}</div>
-                  <div className="text-[11px] text-stone-500 mt-0.5">
-                    Tính theo: <span className="font-mono text-stone-800">{opt.unit}</span>
+                  <div className="font-semibold leading-tight">{opt.name}</div>
+                  <div className="text-[10px] text-stone-500 mt-1">
+                    Đơn vị: <strong className="font-mono text-stone-900">{opt.unit}</strong>
                   </div>
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Step 2: Chọn phân khúc chất liệu / xuất xứ */}
+          {/* Step 2: Chọn phân khúc vải */}
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2.5">
-              2. Chọn Phân Khúc Vải & Độ Cản Sáng:
+            <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
+              2. Chọn Phân Khúc Vải &amp; Độ Cản Sáng:
             </label>
             <div className="space-y-2">
               {currentType.pricingTiers.map((tier, idx) => (
                 <div
                   key={idx}
                   onClick={() => setSelectedTierIndex(idx)}
-                  className={`p-3.5 rounded-xl border cursor-pointer flex items-center justify-between transition-all ${
+                  className={`p-3 sm:p-3.5 rounded-2xl border cursor-pointer flex items-center justify-between transition-all min-h-[52px] ${
                     selectedTierIndex === idx
-                      ? 'border-amber-700 bg-amber-50/40 shadow-xs'
+                      ? 'border-amber-800 bg-amber-50/60 shadow-xs'
                       : 'border-stone-200 hover:border-stone-300 bg-white'
                   }`}
                 >
-                  <div className="space-y-0.5">
-                    <div className="text-sm font-semibold text-stone-900 flex items-center gap-2">
-                      <span className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center ${
+                  <div className="space-y-0.5 pr-2">
+                    <div className="text-xs sm:text-sm font-semibold text-stone-900 flex items-center gap-2">
+                      <span className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center shrink-0 ${
                         selectedTierIndex === idx ? 'border-amber-800 bg-amber-800' : 'border-stone-300'
                       }`}>
                         {selectedTierIndex === idx && <span className="w-1.5 h-1.5 bg-white rounded-full" />}
                       </span>
                       <span>{tier.name}</span>
                     </div>
-                    <div className="text-xs text-stone-500 pl-5.5">{tier.description}</div>
+                    <div className="text-[11px] text-stone-500 pl-5.5">{tier.description}</div>
                   </div>
                   <div className="text-right shrink-0">
-                    <div className="text-sm font-bold text-amber-900 font-mono tabular-nums">
+                    <div className="text-xs sm:text-sm font-bold text-amber-900 font-mono tabular-nums">
                       {tier.pricePerUnit.toLocaleString('vi-VN')} đ
                     </div>
-                    <div className="text-[11px] text-stone-500">/{currentType.unit}</div>
+                    <div className="text-[10px] text-stone-500">/{currentType.unit}</div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Step 3: Nhập kích thước */}
+          {/* Step 3: Nhập kích thước với nút bấm cảm ứng +/- tiện dụng */}
           <div>
-            <div className="flex items-center justify-between mb-2.5">
+            <div className="flex items-center justify-between mb-2">
               <label className="text-xs font-bold uppercase tracking-wider text-stone-700">
-                3. Nhập Kích Thước Cửa Cần Làm (Mét):
+                3. Kích Thước Cửa Cần Làm (Mét):
               </label>
-              <span className="text-xs text-stone-500">Đơn vị: Mét (ví dụ: 2m4 = 2.4)</span>
+              <span className="text-[11px] text-stone-500">Chạm +/- để chỉnh nhanh</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <div className="bg-stone-50 p-3 rounded-xl border border-stone-200">
-                <span className="text-xs text-stone-500 block mb-1">Chiều Rộng cửa (m)</span>
-                <div className="flex items-center gap-2">
+              {/* Width input */}
+              <div className="bg-stone-50 p-3 rounded-2xl border border-stone-200">
+                <span className="text-[11px] text-stone-500 block mb-1">Chiều Rộng cửa (m)</span>
+                <div className="flex items-center gap-1.5">
+                  <button
+                    type="button"
+                    onClick={() => setWidth((w) => Math.max(0.5, parseFloat((w - 0.1).toFixed(1))))}
+                    className="w-8 h-8 rounded-lg bg-stone-200 text-stone-700 font-bold flex items-center justify-center active:bg-stone-300"
+                  >
+                    <Minus className="w-3.5 h-3.5" />
+                  </button>
                   <input
                     type="number"
                     step="0.1"
@@ -252,17 +255,30 @@ export const CurtainEstimator: React.FC<CurtainEstimatorProps> = ({
                     max="20"
                     value={width}
                     onChange={(e) => setWidth(parseFloat(e.target.value) || 0)}
-                    className="w-full bg-white px-3 py-1.5 rounded-lg border border-stone-300 text-sm font-bold font-mono focus:outline-hidden focus:border-amber-700"
+                    className="flex-1 bg-white px-2 py-1.5 rounded-lg border border-stone-300 text-center text-sm font-bold font-mono focus:outline-hidden focus:border-amber-700"
                   />
+                  <button
+                    type="button"
+                    onClick={() => setWidth((w) => parseFloat((w + 0.1).toFixed(1)))}
+                    className="w-8 h-8 rounded-lg bg-stone-200 text-stone-700 font-bold flex items-center justify-center active:bg-stone-300"
+                  >
+                    <Plus className="w-3.5 h-3.5" />
+                  </button>
                   <span className="text-xs text-stone-600 font-mono">m</span>
                 </div>
               </div>
 
-              <div className="bg-stone-50 p-3 rounded-xl border border-stone-200">
-                <span className="text-xs text-stone-500 block mb-1">
-                  Chiều Cao cửa (m) {currentType.unit === 'mét ngang' && <span className="text-[10px] text-amber-700">(≤ 2.8m khổ vải)</span>}
-                </span>
-                <div className="flex items-center gap-2">
+              {/* Height input */}
+              <div className="bg-stone-50 p-3 rounded-2xl border border-stone-200">
+                <span className="text-[11px] text-stone-500 block mb-1">Chiều Cao cửa (m)</span>
+                <div className="flex items-center gap-1.5">
+                  <button
+                    type="button"
+                    onClick={() => setHeight((h) => Math.max(0.5, parseFloat((h - 0.1).toFixed(1))))}
+                    className="w-8 h-8 rounded-lg bg-stone-200 text-stone-700 font-bold flex items-center justify-center active:bg-stone-300"
+                  >
+                    <Minus className="w-3.5 h-3.5" />
+                  </button>
                   <input
                     type="number"
                     step="0.1"
@@ -270,23 +286,45 @@ export const CurtainEstimator: React.FC<CurtainEstimatorProps> = ({
                     max="10"
                     value={height}
                     onChange={(e) => setHeight(parseFloat(e.target.value) || 0)}
-                    className="w-full bg-white px-3 py-1.5 rounded-lg border border-stone-300 text-sm font-bold font-mono focus:outline-hidden focus:border-amber-700"
+                    className="flex-1 bg-white px-2 py-1.5 rounded-lg border border-stone-300 text-center text-sm font-bold font-mono focus:outline-hidden focus:border-amber-700"
                   />
+                  <button
+                    type="button"
+                    onClick={() => setHeight((h) => parseFloat((h + 0.1).toFixed(1)))}
+                    className="w-8 h-8 rounded-lg bg-stone-200 text-stone-700 font-bold flex items-center justify-center active:bg-stone-300"
+                  >
+                    <Plus className="w-3.5 h-3.5" />
+                  </button>
                   <span className="text-xs text-stone-600 font-mono">m</span>
                 </div>
               </div>
 
-              <div className="bg-stone-50 p-3 rounded-xl border border-stone-200">
-                <span className="text-xs text-stone-500 block mb-1">Số lượng bộ cửa</span>
-                <div className="flex items-center gap-2">
+              {/* Quantity */}
+              <div className="bg-stone-50 p-3 rounded-2xl border border-stone-200">
+                <span className="text-[11px] text-stone-500 block mb-1">Số lượng bộ cửa</span>
+                <div className="flex items-center gap-1.5">
+                  <button
+                    type="button"
+                    onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                    className="w-8 h-8 rounded-lg bg-stone-200 text-stone-700 font-bold flex items-center justify-center active:bg-stone-300"
+                  >
+                    <Minus className="w-3.5 h-3.5" />
+                  </button>
                   <input
                     type="number"
                     min="1"
                     max="50"
                     value={quantity}
                     onChange={(e) => setQuantity(parseInt(e.target.value) || 1)}
-                    className="w-full bg-white px-3 py-1.5 rounded-lg border border-stone-300 text-sm font-bold font-mono focus:outline-hidden focus:border-amber-700"
+                    className="flex-1 bg-white px-2 py-1.5 rounded-lg border border-stone-300 text-center text-sm font-bold font-mono focus:outline-hidden focus:border-amber-700"
                   />
+                  <button
+                    type="button"
+                    onClick={() => setQuantity((q) => q + 1)}
+                    className="w-8 h-8 rounded-lg bg-stone-200 text-stone-700 font-bold flex items-center justify-center active:bg-stone-300"
+                  >
+                    <Plus className="w-3.5 h-3.5" />
+                  </button>
                   <span className="text-xs text-stone-600 font-mono">bộ</span>
                 </div>
               </div>
@@ -296,96 +334,92 @@ export const CurtainEstimator: React.FC<CurtainEstimatorProps> = ({
           {/* Vị trí lắp đặt */}
           <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">
-              Vị trí / Tên cửa (để thợ tiện phân biệt):
+              Ghi chú vị trí (VD: Cửa sổ tầng 2, Cửa ban công...):
             </label>
             <input
               type="text"
               value={windowNote}
               onChange={(e) => setWindowNote(e.target.value)}
-              placeholder="VD: Cửa sổ tầng 2 hướng Tây, Cửa chính phòng khách..."
-              className="w-full px-3.5 py-2 text-sm bg-white rounded-lg border border-stone-300 focus:outline-hidden focus:border-amber-700"
+              className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-white rounded-xl border border-stone-300 focus:outline-hidden focus:border-amber-700 min-h-[44px]"
             />
           </div>
         </div>
 
-        {/* Right Cost Summary Card (5 cols) */}
-        <div className="lg:col-span-5 bg-gradient-to-b from-stone-50 to-stone-100/70 p-6 rounded-2xl border border-stone-200 flex flex-col justify-between">
-          <div>
+        {/* Right Summary Card (5 cols) */}
+        <div className="lg:col-span-5 bg-gradient-to-b from-stone-50 to-stone-100/70 p-5 sm:p-6 rounded-3xl border border-stone-200 flex flex-col justify-between space-y-4">
+          <div className="space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-stone-200">
               <span className="text-xs font-bold uppercase tracking-wider text-stone-600">
                 Kết Quả Dự Toán
               </span>
               <span className="text-xs text-emerald-800 font-semibold flex items-center gap-1">
-                <Sparkles className="w-3.5 h-3.5" /> Giá hoàn thiện
+                <Sparkles className="w-3.5 h-3.5" /> Giá trọn gói
               </span>
             </div>
 
-            <div className="py-4 space-y-3">
+            <div>
+              <div className="text-xs text-stone-500">Mẫu rèm:</div>
+              <div className="text-base font-bold text-stone-900">{currentType.name}</div>
+              <div className="text-xs text-amber-900 font-medium">{currentTier.name}</div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-2 text-xs py-2 bg-white/90 p-2.5 rounded-xl border border-stone-200">
               <div>
-                <div className="text-xs text-stone-500">Mẫu rèm đã chọn</div>
-                <div className="text-base font-bold text-stone-900">{currentType.name}</div>
-                <div className="text-xs text-amber-900 font-medium">{currentTier.name}</div>
+                <span className="text-stone-500 block">Kích thước:</span>
+                <span className="font-mono font-bold text-stone-800">
+                  {width}m (rộng) x {height}m (cao)
+                </span>
               </div>
+              <div>
+                <span className="text-stone-500 block">Quy cách:</span>
+                <span className="font-mono font-bold text-stone-800">
+                  {currentType.unit === 'mét ngang'
+                    ? `${width}m ngang x ${quantity} bộ`
+                    : `${(width * height).toFixed(2)} m² x ${quantity} bộ`}
+                </span>
+              </div>
+            </div>
 
-              <div className="grid grid-cols-2 gap-2 text-xs py-2 bg-white/80 p-2.5 rounded-lg border border-stone-200">
-                <div>
-                  <span className="text-stone-500 block">Kích thước:</span>
-                  <span className="font-mono font-bold text-stone-800">
-                    {width}m (rộng) x {height}m (cao)
-                  </span>
-                </div>
-                <div>
-                  <span className="text-stone-500 block">Quy cách tính:</span>
-                  <span className="font-mono font-bold text-stone-800">
-                    {currentType.unit === 'mét ngang'
-                      ? `${width} mét ngang x ${quantity} bộ`
-                      : `${(width * height).toFixed(2)} m² x ${quantity} bộ`}
-                  </span>
-                </div>
+            {/* Total Price */}
+            <div>
+              <span className="text-xs text-stone-500 block">Tổng chi phí dự toán:</span>
+              <div className="text-2xl sm:text-3xl font-display font-bold text-amber-950 font-mono tabular-nums">
+                {totalCalculatedPrice.toLocaleString('vi-VN')} <span className="text-base font-sans font-normal text-stone-600">đ</span>
               </div>
+              <div className="text-[11px] text-stone-500 mt-1">
+                (Đã gồm: vải rèm, thanh ray hợp kim, phụ kiện và công may lắp tại Ứng Hòa)
+              </div>
+            </div>
 
-              {/* Price total */}
-              <div className="pt-2">
-                <span className="text-xs text-stone-500 block">Tổng chi phí dự toán ước tính:</span>
-                <div className="text-3xl font-display font-bold text-amber-950 font-mono tabular-nums">
-                  {totalCalculatedPrice.toLocaleString('vi-VN')} <span className="text-lg font-sans font-normal text-stone-600">đ</span>
+            {/* Included Services */}
+            <div className="pt-2 border-t border-stone-200/80 space-y-1 text-xs text-stone-600">
+              {currentType.included.map((inc, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
+                  <span>{inc}</span>
                 </div>
-                <div className="text-[11px] text-stone-500 mt-1">
-                  (Đã bao gồm: Vải rèm, phụ kiện thanh ray, công may & vận chuyển tại Ứng Hòa)
-                </div>
-              </div>
-
-              {/* Included perks */}
-              <div className="pt-3 border-t border-stone-200/80 space-y-1.5">
-                <div className="text-xs font-semibold text-stone-700">Dịch vụ bao gồm trọn gói:</div>
-                {currentType.included.map((inc, i) => (
-                  <div key={i} className="flex items-center gap-2 text-xs text-stone-600">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
-                    <span>{inc}</span>
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
 
           {/* Action buttons */}
-          <div className="space-y-2 pt-4">
+          <div className="space-y-2 pt-2">
             <button
               type="button"
               onClick={handleAddCustomToCart}
-              className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-stone-900 hover:bg-stone-800 text-white rounded-xl text-sm font-semibold transition-all shadow-sm"
+              className="w-full min-h-[48px] flex items-center justify-center gap-2 py-3 px-4 bg-stone-900 hover:bg-stone-800 active:bg-stone-950 text-white rounded-2xl text-xs sm:text-sm font-semibold transition-all shadow-sm"
             >
               <Plus className="w-4 h-4" />
-              <span>{isAddedSuccess ? 'Đã thêm dự toán vào giỏ!' : 'Thêm Bộ Rèm Này Vào Giỏ Hàng'}</span>
+              <span>{isAddedSuccess ? 'Đã thêm vào giỏ hàng!' : 'Thêm Bộ Rèm Này Vào Giỏ'}</span>
             </button>
 
             <button
               type="button"
               onClick={handleRequestSurvey}
-              className="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-amber-600 hover:bg-amber-700 text-white rounded-xl text-sm font-semibold transition-colors"
+              className="w-full min-h-[48px] flex items-center justify-center gap-2 py-2.5 px-4 bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-white rounded-2xl text-xs sm:text-sm font-semibold transition-colors"
             >
               <Ruler className="w-4 h-4" />
-              <span>Hẹn Thợ Mang Mẫu Đo Miễn Phí Tại Nhà</span>
+              <span>Hẹn Thợ Mang Mẫu Đo Tận Nhà</span>
             </button>
           </div>
         </div>

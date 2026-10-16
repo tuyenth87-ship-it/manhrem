@@ -4,40 +4,40 @@ import { MapPin, Phone, Clock, ShieldCheck, Ruler, Truck, MessageCircle } from '
 
 export const StoreLocationAndTrust: React.FC = () => {
   return (
-    <section className="py-12 md:py-16 bg-[#F8F7F2] border-t border-stone-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <section className="py-8 md:py-16 bg-[#F8F7F2] border-t border-stone-200">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 space-y-8 md:space-y-12">
         {/* Section Title */}
-        <div className="text-center max-w-2xl mx-auto space-y-2">
+        <div className="text-center max-w-2xl mx-auto space-y-1.5">
           <div className="text-xs font-semibold uppercase tracking-wider text-amber-900">
             Địa Chỉ &amp; Uy Tín Cửa Hàng
           </div>
-          <h2 className="text-2xl md:text-3xl font-display font-bold text-stone-900">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-stone-900">
             Cửa Hàng Mành Rèm, Chăn Ga Gối Đệm Tuyến Hoa
           </h2>
-          <p className="text-sm text-stone-600">
+          <p className="text-xs sm:text-sm text-stone-600">
             Điểm đến quen thuộc của các gia đình tại Chợ Cháy và huyện Ứng Hòa trong suốt nhiều năm qua khi hoàn thiện nhà mới, chuẩn bị cưới hỏi hoặc mùa đông rét buốt.
           </p>
         </div>
 
         {/* 4 Trust Pillars */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {STORE_INFO.commitments.map((c, i) => (
             <div
               key={i}
-              className="bg-white p-6 rounded-2xl border border-stone-200/80 shadow-xs space-y-2"
+              className="bg-white p-4 sm:p-6 rounded-2xl border border-stone-200/80 shadow-xs space-y-2"
             >
-              <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-900 flex items-center justify-center font-bold text-sm">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-amber-50 text-amber-900 flex items-center justify-center font-bold text-xs sm:text-sm">
                 0{i + 1}
               </div>
-              <h3 className="text-base font-bold text-stone-900 pt-1">{c.title}</h3>
+              <h3 className="text-sm sm:text-base font-bold text-stone-900 pt-0.5">{c.title}</h3>
               <p className="text-xs text-stone-600 leading-relaxed">{c.desc}</p>
             </div>
           ))}
         </div>
 
         {/* Store Detail Box & Visit Information */}
-        <div className="bg-white rounded-2xl border border-stone-200 shadow-sm p-6 md:p-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="bg-white rounded-3xl border border-stone-200 shadow-sm p-4 sm:p-6 md:p-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center">
             {/* Left Info (7 cols) */}
             <div className="lg:col-span-7 space-y-5">
               <div>
