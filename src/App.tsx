@@ -190,7 +190,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FBFBFA] flex flex-col font-sans selection:bg-amber-200 selection:text-amber-950 pb-20 md:pb-0">
+    <div className="w-full max-w-full overflow-x-hidden min-h-screen bg-[#FBFBFA] flex flex-col font-sans selection:bg-amber-200 selection:text-amber-950 pb-24 md:pb-0">
       {/* Toast Notification */}
       <AnimatePresence>
         {toastMessage && (
@@ -283,9 +283,9 @@ export default function App() {
       />
 
       {/* Main Workspace with Clear Tab Architecture */}
-      <main id="main-workspace" className="flex-1 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 md:py-12 space-y-6 md:space-y-10">
+      <main id="main-workspace" className="w-full min-w-0 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 md:py-12 space-y-4 sm:space-y-6 md:space-y-10">
         {/* Primary Functional Tabs */}
-        <div className="bg-white p-1.5 md:p-2.5 rounded-2xl border border-stone-200/90 shadow-xs overflow-x-auto scrollbar-none">
+        <div className="w-full min-w-0 bg-white p-1.5 md:p-2.5 rounded-2xl border border-stone-200/90 shadow-xs overflow-x-auto scrollbar-none touch-pan-x">
           <div className="flex items-center gap-1 min-w-max">
             <button
               type="button"
@@ -363,45 +363,47 @@ export default function App() {
             className="space-y-4 md:space-y-6"
           >
             {/* Catalog Sub-Filter Toolbar */}
-            <div className="bg-white p-3.5 sm:p-4 rounded-2xl border border-stone-200 shadow-xs space-y-3">
+            <div className="w-full min-w-0 bg-white p-3 sm:p-4 rounded-2xl border border-stone-200 shadow-xs space-y-3 overflow-hidden">
               {/* Category Sub-Tabs with Smooth Touch Carousel */}
-              <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none snap-x touch-pan-x">
-                {CATEGORIES.map((cat) => (
-                  <button
-                    key={cat.id}
-                    type="button"
-                    onClick={() => {
-                      setActiveCategory(cat.id);
-                      setSelectedBrand('all');
-                    }}
-                    className={`px-3 py-1.5 sm:px-3.5 sm:py-2 text-[11px] sm:text-xs font-semibold rounded-xl transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 min-h-[36px] ${
-                      activeCategory === cat.id
-                        ? 'bg-amber-900 text-white shadow-xs'
-                        : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
-                    }`}
-                  >
-                    <span>{cat.label}</span>
-                    <span
-                      className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
-                        activeCategory === cat.id ? 'bg-amber-800 text-white' : 'bg-stone-100 text-stone-600'
+              <div className="w-full min-w-0 overflow-x-auto pb-1 scrollbar-none snap-x touch-pan-x">
+                <div className="flex items-center gap-1.5 min-w-max">
+                  {CATEGORIES.map((cat) => (
+                    <button
+                      key={cat.id}
+                      type="button"
+                      onClick={() => {
+                        setActiveCategory(cat.id);
+                        setSelectedBrand('all');
+                      }}
+                      className={`px-3 py-1.5 sm:px-3.5 sm:py-2 text-[11px] sm:text-xs font-semibold rounded-xl transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 min-h-[36px] ${
+                        activeCategory === cat.id
+                          ? 'bg-amber-900 text-white shadow-xs'
+                          : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
                       }`}
                     >
-                      {cat.count}
-                    </span>
-                  </button>
-                ))}
+                      <span>{cat.label}</span>
+                      <span
+                        className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
+                          activeCategory === cat.id ? 'bg-amber-800 text-white' : 'bg-stone-100 text-stone-600'
+                        }`}
+                      >
+                        {cat.count}
+                      </span>
+                    </button>
+                  ))}
+                </div>
               </div>
 
-              {/* Search, Brand & Sort row */}
-              <div className="grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-3 items-center pt-2 border-t border-stone-100">
-                <div className="sm:col-span-6 relative">
+              {/* Search, Brand & Sort controls */}
+              <div className="space-y-2 pt-2 border-t border-stone-100">
+                <div className="relative">
                   <Search className="w-4 h-4 text-stone-400 absolute left-3 top-3" />
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Tìm Vikosan, Sông Hồng, Rèm cầu vồng, Chiếu trúc..."
-                    className="w-full pl-9 pr-3 py-2 text-xs bg-stone-50 rounded-xl border border-stone-200 focus:outline-hidden focus:border-amber-800 min-h-[40px]"
+                    className="w-full pl-9 pr-8 py-2 text-xs bg-stone-50 rounded-xl border border-stone-200 focus:outline-hidden focus:border-amber-800 min-h-[40px]"
                   />
                   {searchQuery && (
                     <button
@@ -414,11 +416,11 @@ export default function App() {
                   )}
                 </div>
 
-                <div className="sm:col-span-3">
+                <div className="grid grid-cols-2 gap-2">
                   <select
                     value={selectedBrand}
                     onChange={(e) => setSelectedBrand(e.target.value)}
-                    className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-700 font-medium focus:outline-hidden focus:border-amber-800 cursor-pointer min-h-[40px]"
+                    className="w-full text-[11px] sm:text-xs bg-stone-50 border border-stone-200 rounded-xl px-2.5 py-2 text-stone-700 font-medium focus:outline-hidden focus:border-amber-800 cursor-pointer min-h-[38px] truncate"
                   >
                     <option value="all">Tất cả thương hiệu</option>
                     <option value="vikosan">Đệm Vikosan (Hàn Quốc)</option>
@@ -429,15 +431,13 @@ export default function App() {
                     <option value="shikada">Chiếu Mây Shikada / Muji</option>
                     <option value="tuyến hoa">Tuyến Hoa Decor</option>
                   </select>
-                </div>
 
-                <div className="sm:col-span-3">
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value as any)}
-                    className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-700 font-medium focus:outline-hidden focus:border-amber-800 cursor-pointer min-h-[40px]"
+                    className="w-full text-[11px] sm:text-xs bg-stone-50 border border-stone-200 rounded-xl px-2.5 py-2 text-stone-700 font-medium focus:outline-hidden focus:border-amber-800 cursor-pointer min-h-[38px] truncate"
                   >
-                    <option value="featured">Sắp xếp: Mặc định đề xuất</option>
+                    <option value="featured">Sắp xếp mặc định</option>
                     <option value="price-asc">Giá: Thấp đến cao</option>
                     <option value="price-desc">Giá: Cao xuống thấp</option>
                     <option value="rating">Đánh giá cao nhất</option>
@@ -446,44 +446,46 @@ export default function App() {
               </div>
 
               {/* 1-Tap Quick Brand & Category Chips (Mobile-First Experience) */}
-              <div className="pt-2 border-t border-stone-100 flex items-center gap-1.5 overflow-x-auto scrollbar-none snap-x touch-pan-x">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 shrink-0">
-                  Lọc nhanh:
-                </span>
-                {[
-                  { label: 'Tất cả', brandVal: 'all', catVal: 'all' },
-                  { label: 'Đệm Vikosan', brandVal: 'vikosan', catVal: 'dem' },
-                  { label: 'Đệm Sông Hồng', brandVal: 'song-hong', catVal: 'dem' },
-                  { label: 'Đệm Everon', brandVal: 'everon', catVal: 'dem' },
-                  { label: 'Cao su Kymdan', brandVal: 'kymdan', catVal: 'dem' },
-                  { label: 'Rèm Cầu Vồng', brandVal: 'all', catVal: 'rem-cua' },
-                  { label: 'Rèm Vải 2 Lớp', brandVal: 'all', catVal: 'rem-cua' },
-                  { label: 'Chiếu Trúc Hạt', brandVal: 'all', catVal: 'manh-chieu' },
-                  { label: 'Chăn Ga Lụa', brandVal: 'all', catVal: 'chan-ga-goi' },
-                ].map((chip, idx) => {
-                  const isActive =
-                    (chip.brandVal !== 'all' && selectedBrand === chip.brandVal) ||
-                    (chip.brandVal === 'all' && chip.catVal !== 'all' && activeCategory === chip.catVal) ||
-                    (chip.brandVal === 'all' && chip.catVal === 'all' && selectedBrand === 'all' && activeCategory === 'all');
+              <div className="w-full min-w-0 pt-2 border-t border-stone-100 overflow-x-auto scrollbar-none snap-x touch-pan-x">
+                <div className="flex items-center gap-1.5 min-w-max py-0.5">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 shrink-0">
+                    Lọc nhanh:
+                  </span>
+                  {[
+                    { label: 'Tất cả', brandVal: 'all', catVal: 'all' },
+                    { label: 'Đệm Vikosan', brandVal: 'vikosan', catVal: 'dem' },
+                    { label: 'Đệm Sông Hồng', brandVal: 'song-hong', catVal: 'dem' },
+                    { label: 'Đệm Everon', brandVal: 'everon', catVal: 'dem' },
+                    { label: 'Cao su Kymdan', brandVal: 'kymdan', catVal: 'dem' },
+                    { label: 'Rèm Cầu Vồng', brandVal: 'all', catVal: 'rem-cua' },
+                    { label: 'Rèm Vải 2 Lớp', brandVal: 'all', catVal: 'rem-cua' },
+                    { label: 'Chiếu Trúc Hạt', brandVal: 'all', catVal: 'manh-chieu' },
+                    { label: 'Chăn Ga Lụa', brandVal: 'all', catVal: 'chan-ga-goi' },
+                  ].map((chip, idx) => {
+                    const isActive =
+                      (chip.brandVal !== 'all' && selectedBrand === chip.brandVal) ||
+                      (chip.brandVal === 'all' && chip.catVal !== 'all' && activeCategory === chip.catVal) ||
+                      (chip.brandVal === 'all' && chip.catVal === 'all' && selectedBrand === 'all' && activeCategory === 'all');
 
-                  return (
-                    <button
-                      key={idx}
-                      type="button"
-                      onClick={() => {
-                        setSelectedBrand(chip.brandVal);
-                        setActiveCategory(chip.catVal as ProductCategory);
-                      }}
-                      className={`px-2.5 py-1 text-[11px] font-semibold rounded-lg shrink-0 transition-all ${
-                        isActive
-                          ? 'bg-amber-950 text-white shadow-xs'
-                          : 'bg-stone-100 hover:bg-stone-200 text-stone-700'
-                      }`}
-                    >
-                      {chip.label}
-                    </button>
-                  );
-                })}
+                    return (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => {
+                          setSelectedBrand(chip.brandVal);
+                          setActiveCategory(chip.catVal as ProductCategory);
+                        }}
+                        className={`px-2.5 py-1 text-[11px] font-semibold rounded-lg shrink-0 transition-all ${
+                          isActive
+                            ? 'bg-amber-950 text-white shadow-xs'
+                            : 'bg-stone-100 hover:bg-stone-200 text-stone-700'
+                        }`}
+                      >
+                        {chip.label}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
 

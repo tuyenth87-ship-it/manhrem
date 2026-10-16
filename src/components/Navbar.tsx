@@ -112,34 +112,33 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 type="button"
                 onClick={onOpenChat}
-                className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl border border-amber-300 bg-amber-50/80 text-amber-950 hover:bg-amber-100 text-xs font-semibold whitespace-nowrap shrink-0 transition-colors min-h-[38px]"
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-amber-300 bg-amber-50/80 text-amber-950 hover:bg-amber-100 text-xs font-semibold whitespace-nowrap shrink-0 transition-colors min-h-[38px]"
                 title="Tư vấn trực tuyến"
               >
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-                <span className="hidden sm:inline">Tư Vấn 24/7</span>
-                <span className="sm:hidden">Chat</span>
+                <span>Tư Vấn 24/7</span>
               </button>
             )}
 
             <a
               href={`tel:${STORE_INFO.hotline}`}
-              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl border border-stone-300 text-stone-800 hover:text-stone-950 hover:bg-stone-50 text-xs font-semibold whitespace-nowrap shrink-0 transition-colors min-h-[38px]"
+              className="inline-flex items-center justify-center p-2 sm:px-3 sm:py-1.5 rounded-xl border border-stone-200 text-stone-800 hover:text-stone-950 hover:bg-stone-50 text-xs font-semibold whitespace-nowrap shrink-0 transition-colors min-h-[38px]"
+              title="Gọi Hotline Tuyến Hoa"
             >
-              <PhoneCall className="w-3.5 h-3.5 text-amber-800" />
-              <span className="hidden sm:inline">{STORE_INFO.hotlineDisplay}</span>
-              <span className="sm:hidden font-mono">Gọi</span>
+              <PhoneCall className="w-4 h-4 text-emerald-700 sm:text-amber-800" />
+              <span className="hidden sm:inline ml-1.5">{STORE_INFO.hotlineDisplay}</span>
             </a>
 
             <button
               type="button"
               onClick={onOpenCart}
-              className="relative flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 text-xs font-semibold text-white bg-stone-900 rounded-xl hover:bg-stone-800 transition-colors whitespace-nowrap shrink-0 min-h-[38px]"
+              className="relative flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-2 text-xs font-semibold text-white bg-stone-900 rounded-xl hover:bg-stone-800 transition-colors whitespace-nowrap shrink-0 min-h-[38px]"
               aria-label="Xem giỏ hàng"
             >
               <ShoppingBag className="w-4 h-4" />
               <span className="hidden sm:inline">Giỏ Hàng</span>
               {cartCount > 0 && (
-                <span className="min-w-4.5 h-4.5 px-1 rounded-full bg-amber-500 text-stone-950 text-[10px] font-bold font-mono flex items-center justify-center -mr-1">
+                <span className="min-w-4 h-4 px-1 rounded-full bg-amber-500 text-stone-950 text-[10px] font-bold font-mono flex items-center justify-center -mr-0.5">
                   {cartCount}
                 </span>
               )}

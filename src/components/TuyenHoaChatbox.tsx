@@ -221,9 +221,9 @@ export const TuyenHoaChatbox: React.FC<TuyenHoaChatboxProps> = ({
 
   return (
     <>
-      {/* Floating Trigger Button (when chatbox is closed) */}
+      {/* Floating Trigger Button (Desktop only: on mobile, users access Chat via bottom bar and top announcement) */}
       {!isOpen && (
-        <aside aria-label="Nút mở khung chat tư vấn Tuyến Hoa">
+        <aside aria-label="Nút mở khung chat tư vấn Tuyến Hoa" className="hidden md:block">
           <motion.button
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -231,7 +231,7 @@ export const TuyenHoaChatbox: React.FC<TuyenHoaChatboxProps> = ({
             whileTap={{ scale: 0.95 }}
             onClick={onOpen}
             type="button"
-            className="fixed bottom-20 md:bottom-6 right-3 md:right-6 z-40 bg-stone-900 text-white p-3 md:px-4 md:py-3 rounded-full shadow-2xl border-2 border-amber-400/80 flex items-center gap-2 group hover:bg-stone-800 transition-all cursor-pointer"
+            className="fixed bottom-6 right-6 z-40 bg-stone-900 text-white px-4 py-3 rounded-full shadow-2xl border-2 border-amber-400/80 flex items-center gap-2 group hover:bg-stone-800 transition-all cursor-pointer"
             title="Chat tư vấn cùng Tuyến Hoa"
           >
             <div className="relative">
@@ -240,14 +240,13 @@ export const TuyenHoaChatbox: React.FC<TuyenHoaChatboxProps> = ({
                 <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping" />
               )}
             </div>
-            <div className="hidden sm:flex flex-col text-left">
+            <div className="flex flex-col text-left">
               <span className="text-xs font-bold leading-tight flex items-center gap-1 text-amber-200">
                 Chat Tư Vấn Tuyến Hoa
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               </span>
               <span className="text-[10px] text-stone-300">Báo giá đệm & rèm 24/7</span>
             </div>
-            <span className="sm:hidden text-xs font-bold text-amber-200">Tư Vấn</span>
           </motion.button>
         </aside>
       )}

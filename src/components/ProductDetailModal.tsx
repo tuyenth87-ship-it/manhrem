@@ -87,6 +87,9 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 <img
                   src={currentDisplayImage}
                   alt={product.name}
+                  onError={(e) => {
+                    e.currentTarget.src = product.image;
+                  }}
                   className="w-full h-full object-cover object-center transition-all duration-300"
                 />
                 <div className="absolute bottom-2.5 left-2.5 bg-stone-900/80 backdrop-blur-md text-amber-300 text-[10px] font-semibold px-2 py-0.5 rounded">
@@ -108,7 +111,14 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                           : 'border-stone-200 opacity-70 hover:opacity-100'
                       }`}
                     >
-                      <img src={imgUrl} alt={`Góc chụp ${idx + 1}`} className="w-full h-full object-cover" />
+                      <img
+                        src={imgUrl}
+                        alt={`Góc chụp ${idx + 1}`}
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none';
+                        }}
+                        className="w-full h-full object-cover"
+                      />
                     </button>
                   ))}
                 </div>
