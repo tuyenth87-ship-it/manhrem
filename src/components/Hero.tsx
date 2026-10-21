@@ -94,57 +94,64 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="lg:col-span-5">
             <div className="relative bg-white rounded-3xl border border-stone-200/90 shadow-xl p-3 sm:p-4 overflow-hidden">
               <div className="space-y-3">
-                {/* Main Luxury Bedroom Photo */}
-                <div className="relative h-48 sm:h-64 rounded-2xl overflow-hidden bg-stone-100">
+                {/* Main Luxury Living Room Photo (Authentic Project by Tuyen Hoa) */}
+                <div className="relative h-52 sm:h-72 rounded-2xl overflow-hidden bg-stone-100 group">
                   <img
-                    src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1000&auto=format&fit=crop"
-                    alt="Không gian rèm vải và đệm cao cấp Tuyến Hoa"
-                    className="w-full h-full object-cover object-center"
+                    src="/assets/aistudio/1792619301814_1293093313519991016_1293093313519991016_7660cb9abb659911e5fe3cd71a7f60bb_2e6c2394.jpg"
+                    alt="Công trình rèm vải 2 lớp phòng khách biệt thự do Tuyến Hoa thi công tại Ứng Hòa"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                   
+                  {/* Verified Real Badge */}
+                  <div className="absolute top-3 left-3 bg-emerald-700/90 text-white text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-lg backdrop-blur-xs flex items-center gap-1 shadow-xs">
+                    <ShieldCheck className="w-3.5 h-3.5" />
+                    <span>Ảnh Thật Thi Công Tại Ứng Hòa</span>
+                  </div>
+
                   <div className="absolute bottom-3 left-3 right-3 text-white">
                     <span className="text-[10px] text-amber-300 font-bold uppercase tracking-wider block">
-                      Bộ Sưu Tập 2026
+                      Công Trình Biệt Thự Nhà Phố Bàn Giao
                     </span>
-                    <h3 className="text-sm sm:text-base font-bold font-display leading-tight">
-                      Rèm Vải 2 Lớp Cản Sáng &amp; Đệm Chính Hãng
+                    <h3 className="text-sm sm:text-base font-bold font-display leading-tight text-white drop-shadow-xs">
+                      Rèm Vải 2 Lớp Cản Sáng 100% &amp; Rèm Cầu Vồng
                     </h3>
-                    <p className="text-[11px] text-stone-200 mt-0.5 hidden sm:block">
-                      Đo may thủ công tỉ mỉ theo chuẩn kích thước từng ô cửa.
+                    <p className="text-[11px] text-stone-200 mt-0.5 flex items-center gap-1">
+                      <MapPin className="w-3 h-3 text-amber-400 shrink-0" />
+                      <span>Đo đạc &amp; xe tải Tuyến Hoa lắp đặt tận nhà tại Ứng Hòa</span>
                     </p>
                   </div>
                 </div>
 
-                {/* Two small product cards */}
+                {/* Two authentic thumbnail cards */}
                 <div className="grid grid-cols-2 gap-2 sm:gap-3">
-                  {/* Mattress card */}
+                  {/* Real Zebra Blind window */}
                   <div className="relative h-24 sm:h-28 rounded-xl overflow-hidden bg-stone-100 border border-stone-200 p-2 flex flex-col justify-end group">
                     <img
-                      src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=600&auto=format&fit=crop"
-                      alt="Đệm Vikosan Everon Sông Hồng"
+                      src="/assets/aistudio/1792619301615_1293093313519991016_1293093313519991016_001b83f41e2f124f06dffb5c9042fba8_3768728a.jpg"
+                      alt="Rèm cầu vồng Hàn Quốc lắp thực tế tại phòng ngủ"
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
                     <div className="relative text-white z-10">
-                      <span className="text-[9px] text-amber-300 font-bold block">Vikosan · Sông Hồng</span>
-                      <div className="text-[11px] sm:text-xs font-bold leading-tight truncate">Đệm Bông Ép &amp; Cao Su</div>
-                      <div className="text-[10px] sm:text-[11px] font-mono font-bold text-amber-200">Từ 1.350.000 đ</div>
+                      <span className="text-[9px] text-amber-300 font-bold block">Ảnh Thật Cửa Sổ</span>
+                      <div className="text-[11px] sm:text-xs font-bold leading-tight truncate">Rèm Cầu Vồng Modero</div>
+                      <div className="text-[10px] sm:text-[11px] font-mono font-bold text-amber-200">Từ 480.000 đ/m²</div>
                     </div>
                   </div>
 
-                  {/* Curtain card */}
+                  {/* Real Store & Multigenerational team celebration */}
                   <div className="relative h-24 sm:h-28 rounded-xl overflow-hidden bg-stone-100 border border-stone-200 p-2 flex flex-col justify-end group">
                     <img
-                      src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=600&auto=format&fit=crop"
-                      alt="Rèm Cầu Vồng Hàn Quốc"
+                      src="/assets/aistudio/__i_ti_c_b_ng_bay_gi_a_l_ng_qu__-_Copy_5de32935.png"
+                      alt="Đại gia đình Cửa hàng Tuyến Hoa tại Chợ Cháy Ứng Hòa"
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
                     <div className="relative text-white z-10">
-                      <span className="text-[9px] text-sky-300 font-bold block">Hàn Quốc Modero</span>
-                      <div className="text-[11px] sm:text-xs font-bold leading-tight truncate">Rèm Cầu Vồng &amp; Tổ Ong</div>
-                      <div className="text-[10px] sm:text-[11px] font-mono font-bold text-sky-200">Từ 480.000 đ/m²</div>
+                      <span className="text-[9px] text-rose-300 font-bold block">Uy Tín 20+ Năm</span>
+                      <div className="text-[11px] sm:text-xs font-bold leading-tight truncate">Gia Đình Tuyến Hoa</div>
+                      <div className="text-[10px] sm:text-[11px] font-mono font-bold text-stone-200">Chợ Cháy · Ứng Hòa</div>
                     </div>
                   </div>
                 </div>
@@ -154,7 +161,7 @@ export const Hero: React.FC<HeroProps> = ({
                   <div className="flex items-center gap-1.5">
                     <Award className="w-4 h-4 text-amber-800 shrink-0" />
                     <span className="font-semibold text-stone-900 text-[11px] sm:text-xs">
-                      Chợ Cháy · Lắp đặt tận nhà toàn Ứng Hòa
+                      Chợ Cháy · Thợ mang mẫu đo tại nhà toàn Ứng Hòa
                     </span>
                   </div>
                   <a

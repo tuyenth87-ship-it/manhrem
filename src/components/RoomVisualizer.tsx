@@ -12,22 +12,29 @@ interface RoomScene {
 
 const ROOM_SCENES: RoomScene[] = [
   {
-    id: 'living-room',
-    name: 'Phòng Khách',
-    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop',
+    id: 'living-room-unghoa',
+    name: 'Phòng Khách Nhà Phố Ứng Hòa (Ảnh Thật)',
+    image: '/assets/aistudio/1792619301814_1293093313519991016_1293093313519991016_7660cb9abb659911e5fe3cd71a7f60bb_2e6c2394.jpg',
     recommendedCurtain: 'rem-vai-2-lop',
-    description: 'Cửa kính lớn đón nắng hướng Đông/Nam, mềm mại & cản nhiệt.',
+    description: 'Ảnh thật công trình Tuyến Hoa bàn giao tại Chợ Cháy Ứng Hòa: Cửa chính lớn lắp rèm vải 2 lớp & rèm cầu vồng cầu thang.',
   },
   {
-    id: 'bedroom',
-    name: 'Phòng Ngủ',
-    image: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=1200&auto=format&fit=crop',
+    id: 'bedroom-window-unghoa',
+    name: 'Cửa Sổ Phòng Ngủ Ứng Hòa (Ảnh Thật)',
+    image: '/assets/aistudio/1792619301615_1293093313519991016_1293093313519991016_001b83f41e2f124f06dffb5c9042fba8_3768728a.jpg',
     recommendedCurtain: 'rem-cau-vong',
-    description: 'Yên tĩnh, cản sáng Blackout 100% cho giấc ngủ sâu.',
+    description: 'Ảnh thật cửa sổ khung inox lắp rèm cầu vồng Hàn Quốc gọn gàng lọt lòng, điều chỉnh sáng linh hoạt.',
+  },
+  {
+    id: 'hallway-view-unghoa',
+    name: 'Toàn Cảnh Nhà 2 Tầng Ứng Hòa (Ảnh Thật)',
+    image: '/assets/aistudio/1792619301743_1293093313519991016_1293093313519991016_c3b884b0135e24592fd618ad629e07fd_9004b446.jpg',
+    recommendedCurtain: 'rem-vai-2-lop',
+    description: 'Góc nhìn từ tầng 2 nhà phố tại Vân Đình: Đồng bộ hệ rèm vải ban công và rèm cầu vồng cầu thang.',
   },
   {
     id: 'balcony-patio',
-    name: 'Ban Công & Vách',
+    name: 'Ban Công & Vách Ngăn',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop',
     recommendedCurtain: 'rem-to-ong',
     description: 'Nhiều gió và muỗi, giữ nhiệt điều hòa ngăn côn trùng 100%.',

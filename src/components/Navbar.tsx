@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShoppingBag, PhoneCall, Menu } from 'lucide-react';
+import { ShoppingBag, PhoneCall, Menu, Camera, Smartphone } from 'lucide-react';
 import { STORE_INFO } from '../data/products';
 
 interface NavbarProps {
@@ -7,7 +7,9 @@ interface NavbarProps {
   onOpenCart: () => void;
   onOpenMobileMenu: () => void;
   onOpenChat?: () => void;
+  onOpenInstallModal?: () => void;
   onSelectCategory: (category: string) => void;
+  onSelectTab?: (tab: string) => void;
   activeCategory: string;
 }
 
@@ -16,7 +18,9 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenCart,
   onOpenMobileMenu,
   onOpenChat,
+  onOpenInstallModal,
   onSelectCategory,
+  onSelectTab,
   activeCategory,
 }) => {
   return (
@@ -98,16 +102,32 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               Chăn Ga Gối
             </button>
-            <a
-              href="#du-toan-rem"
-              className="hover:text-stone-900 transition-colors whitespace-nowrap shrink-0 text-amber-900 font-semibold"
-            >
-              Tính Giá Rèm
-            </a>
+            {onSelectTab && (
+              <button
+                type="button"
+                onClick={() => onSelectTab('real-projects')}
+                className="hover:text-emerald-700 transition-colors whitespace-nowrap shrink-0 text-emerald-800 font-bold flex items-center gap-1 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200"
+              >
+                <Camera className="w-3.5 h-3.5" />
+                <span>Ảnh Thật Công Trình</span>
+              </button>
+            )}
           </nav>
 
           {/* Zone 3: Actions (Chat, Call & Cart) */}
           <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+            {onOpenInstallModal && (
+              <button
+                type="button"
+                onClick={onOpenInstallModal}
+                className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-stone-200 bg-stone-50 hover:bg-stone-100 text-stone-800 text-xs font-semibold whitespace-nowrap shrink-0 transition-colors min-h-[38px]"
+                title="Cài đặt App lên điện thoại"
+              >
+                <Smartphone className="w-3.5 h-3.5 text-amber-700" />
+                <span>Cài App</span>
+              </button>
+            )}
+
             {onOpenChat && (
               <button
                 type="button"

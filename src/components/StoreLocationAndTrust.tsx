@@ -36,8 +36,49 @@ export const StoreLocationAndTrust: React.FC = () => {
         </div>
 
         {/* Store Detail Box & Visit Information */}
-        <div className="bg-white rounded-3xl border border-stone-200 shadow-sm p-4 sm:p-6 md:p-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center">
+        <div className="bg-white rounded-3xl border border-stone-200 shadow-sm p-4 sm:p-6 md:p-8 space-y-6">
+          {/* Authentic Store & Family Story Banner */}
+          <div className="relative rounded-2xl overflow-hidden border border-stone-200 bg-stone-900 group">
+            <div className="grid grid-cols-1 md:grid-cols-12 items-center">
+              <div className="md:col-span-7 relative h-64 sm:h-80 overflow-hidden">
+                <img
+                  src="/assets/aistudio/__i_ti_c_b_ng_bay_gi_a_l_ng_qu__-_Copy_5de32935.png"
+                  alt="Đại gia đình Tuyến Hoa gắn bó hơn 20 năm tại Chợ Cháy Ứng Hòa"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/80 via-black/30 to-transparent" />
+                <div className="absolute bottom-3 left-3 bg-amber-950/90 text-amber-200 text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-lg backdrop-blur-xs flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Kỷ niệm gắn bó cùng bà con quê hương Chợ Cháy</span>
+                </div>
+              </div>
+
+              <div className="md:col-span-5 p-5 sm:p-6 text-white space-y-3">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-amber-400">
+                  Câu Chuyện &amp; Chữ Tín
+                </div>
+                <h3 className="text-lg sm:text-xl font-display font-bold leading-tight">
+                  Tuyến Hoa · Hơn 20 Năm Gắn Bó Như Người Một Nhà
+                </h3>
+                <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                  Xuất thân từ mảnh đất Chợ Cháy - Ứng Hòa hiếu học và trọng tình nghĩa, gia đình Tuyến Hoa luôn tâm niệm kinh doanh phải xuất phát từ cái TÂM. Mỗi tấm đệm trao đi, mỗi bộ rèm cửa lắp lên đều phải bền đẹp, chuẩn kích thước và bảo hành chu đáo.
+                </p>
+                <div className="pt-2 flex flex-wrap gap-2 text-xs">
+                  <span className="px-2.5 py-1 rounded-lg bg-white/10 text-stone-200 border border-white/10">
+                    ✓ Uy tín 20+ năm
+                  </span>
+                  <span className="px-2.5 py-1 rounded-lg bg-white/10 text-stone-200 border border-white/10">
+                    ✓ Đền 10 lần nếu hàng giả
+                  </span>
+                  <span className="px-2.5 py-1 rounded-lg bg-white/10 text-stone-200 border border-white/10">
+                    ✓ Bảo hành tại nhà
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center pt-2">
             {/* Left Info (7 cols) */}
             <div className="lg:col-span-7 space-y-5">
               <div>
@@ -106,7 +147,7 @@ export const StoreLocationAndTrust: React.FC = () => {
             </div>
 
             {/* Right Card: Quick Request Measuring Service (5 cols) */}
-            <div className="lg:col-span-5 bg-stone-50 p-6 rounded-xl border border-stone-200 space-y-4">
+            <div className="lg:col-span-5 bg-stone-50 p-6 rounded-2xl border border-stone-200 space-y-4">
               <div className="flex items-center gap-2">
                 <Ruler className="w-5 h-5 text-amber-800" />
                 <h4 className="text-sm font-bold text-stone-900">

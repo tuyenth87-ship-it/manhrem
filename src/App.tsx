@@ -16,10 +16,12 @@ import { FloatingContact } from './components/FloatingContact';
 import { MobileBottomNav } from './components/MobileBottomNav';
 import { MobileMenuDrawer } from './components/MobileMenuDrawer';
 import { TuyenHoaChatbox } from './components/TuyenHoaChatbox';
+import { RealProjectsGallery } from './components/RealProjectsGallery';
+import { PWAInstallModal } from './components/PWAInstallModal';
 import { Footer } from './components/Footer';
-import { Search, Sparkles, CheckCircle2, Ruler, LayoutGrid, Scale, MapPin, Eye, PhoneCall, Bot, Zap } from 'lucide-react';
+import { Search, Sparkles, CheckCircle2, Ruler, LayoutGrid, Scale, MapPin, Eye, PhoneCall, Bot, Zap, Camera, Smartphone } from 'lucide-react';
 
-type MainNavTab = 'catalog' | 'curtain-calculator' | 'room-visualizer' | 'mattress-comparison' | 'store-consult';
+type MainNavTab = 'catalog' | 'real-projects' | 'curtain-calculator' | 'room-visualizer' | 'mattress-comparison' | 'store-consult';
 
 const CATEGORIES: { id: ProductCategory; label: string; count: number }[] = [
   { id: 'all', label: 'Tất Cả Sản Phẩm', count: PRODUCTS.length },
@@ -60,6 +62,7 @@ export default function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [isInstallModalOpen, setIsInstallModalOpen] = useState(false);
   const [selectedProductModal, setSelectedProductModal] = useState<Product | null>(null);
 
   // Quick toast notification
@@ -217,8 +220,18 @@ export default function App() {
           <div className="flex items-center gap-3 shrink-0 pl-2">
             <button
               type="button"
-              onClick={() => setIsChatOpen(true)}
+              onClick={() => setIsInstallModalOpen(true)}
               className="text-amber-300 hover:text-white font-bold flex items-center gap-1 transition-colors text-[11px]"
+              title="Cài App Tuyến Hoa lên điện thoại"
+            >
+              <Smartphone className="w-3.5 h-3.5" />
+              <span>Cài App</span>
+            </button>
+            <span className="text-stone-500">|</span>
+            <button
+              type="button"
+              onClick={() => setIsChatOpen(true)}
+              className="text-stone-200 hover:text-white font-medium flex items-center gap-1 transition-colors text-[11px]"
             >
               <Bot className="w-3.5 h-3.5" />
               <span>Hỏi Chatbot</span>
@@ -241,10 +254,15 @@ export default function App() {
         onOpenCart={() => setIsCartOpen(true)}
         onOpenMobileMenu={() => setIsMobileMenuOpen(true)}
         onOpenChat={() => setIsChatOpen(true)}
+        onOpenInstallModal={() => setIsInstallModalOpen(true)}
         onSelectCategory={(cat) => {
           setActiveMainTab('catalog');
           setActiveCategory(cat as ProductCategory);
           setSelectedBrand('all');
+          scrollToContent();
+        }}
+        onSelectTab={(tab) => {
+          setActiveMainTab(tab as MainNavTab);
           scrollToContent();
         }}
         activeCategory={activeCategory}
@@ -254,6 +272,7 @@ export default function App() {
       <MobileMenuDrawer
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
+        onOpenInstallModal={() => setIsInstallModalOpen(true)}
         onSelectCategory={(cat) => {
           setActiveCategory(cat);
           setSelectedBrand('all');
@@ -298,6 +317,22 @@ export default function App() {
             >
               <LayoutGrid className="w-4 h-4" />
               <span>Sản Phẩm ({PRODUCTS.length})</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveMainTab('real-projects')}
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
+                activeMainTab === 'real-projects'
+                  ? 'bg-stone-900 text-white shadow-xs'
+                  : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
+              }`}
+            >
+              <Camera className="w-4 h-4 text-emerald-500" />
+              <span className="flex items-center gap-1.5">
+                <span>Ảnh Thật Công Trình (5)</span>
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+              </span>
             </button>
 
             <button
@@ -362,6 +397,41 @@ export default function App() {
             transition={{ duration: 0.25 }}
             className="space-y-4 md:space-y-6"
           >
+            {/* Real Projects Teaser Banner */}
+            <div
+              onClick={() => {
+                setActiveMainTab('real-projects');
+                scrollToContent();
+              }}
+              className="group cursor-pointer bg-gradient-to-r from-stone-900 via-amber-950 to-stone-900 rounded-2xl p-3 sm:p-4 text-white border border-amber-400/40 flex items-center justify-between gap-3 shadow-md hover:border-amber-300 transition-all"
+            >
+              <div className="flex items-center gap-3 truncate">
+                <div className="relative w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-amber-300/50 shadow-xs">
+                  <img
+                    src="/assets/aistudio/1792619301814_1293093313519991016_1293093313519991016_7660cb9abb659911e5fe3cd71a7f60bb_2e6c2394.jpg"
+                    alt="Ảnh thật công trình Tuyến Hoa"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <span className="absolute inset-0 bg-black/20" />
+                </div>
+                <div className="truncate">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.2 rounded-full bg-emerald-500 text-white font-mono">
+                      100% Ảnh Thật
+                    </span>
+                    <span className="text-xs font-bold text-amber-300 truncate">
+                      Công Trình Rèm Cửa &amp; Rèm Cầu Vồng Tuyến Hoa Thi Công Tại Ứng Hòa
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-stone-300 mt-0.5 truncate">
+                    Xem phòng khách biệt thự, cửa sổ phòng ngủ, nếp sóng may &amp; ảnh đại gia đình Tuyến Hoa →
+                  </p>
+                </div>
+              </div>
+              <span className="hidden md:flex items-center gap-1 text-xs font-bold text-amber-300 group-hover:text-white shrink-0 group-hover:translate-x-1 transition-all">
+                Xem 5 ảnh công trình →
+              </span>
+            </div>
             {/* Catalog Sub-Filter Toolbar */}
             <div className="w-full min-w-0 bg-white p-3 sm:p-4 rounded-2xl border border-stone-200 shadow-xs space-y-3 overflow-hidden">
               {/* Category Sub-Tabs with Smooth Touch Carousel */}
@@ -523,7 +593,21 @@ export default function App() {
           </motion.div>
         )}
 
-        {/* Tab 2: Curtain Estimator */}
+        {/* Tab 2: Real Projects & Authentic Work Showcase */}
+        {activeMainTab === 'real-projects' && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            <RealProjectsGallery
+              onRequestMeasurement={handleRequestMeasurement}
+              onOpenChat={() => setIsChatOpen(true)}
+            />
+          </motion.div>
+        )}
+
+        {/* Tab 3: Curtain Estimator */}
         {activeMainTab === 'curtain-calculator' && (
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -633,6 +717,12 @@ export default function App() {
         onClose={() => setIsCheckoutOpen(false)}
         items={cartItems}
         onOrderSuccess={handleOrderSuccess}
+      />
+
+      {/* PWA Mobile Installation Modal */}
+      <PWAInstallModal
+        isOpen={isInstallModalOpen}
+        onClose={() => setIsInstallModalOpen(false)}
       />
 
       {/* Footer */}

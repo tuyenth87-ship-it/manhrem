@@ -88,7 +88,7 @@ export const TuyenHoaChatbox: React.FC<TuyenHoaChatboxProps> = ({
 
     // 1. Dem Vikosan
     if (q.includes('vikosan')) {
-      const p = PRODUCTS.find((x) => x.id === 'dem-vikosan-luxury');
+      const p = PRODUCTS.find((x) => x.id === 'dem-bong-ep-vikosan-nano');
       return {
         text: `Dạ đệm Vikosan bông ép Hàn Quốc bên Tuyến Hoa là hàng công ty chính hãng 100%, bảo hành 5 năm lỗi đổi mới:\n\n• Cấu tạo: Lõi bông xơ tinh khiết ép nhiệt công nghệ nano, phẳng cứng chuẩn y khoa không đau lưng, vỏ gấm dệt xốp thoáng khí.\n• Thiết kế gấp 3 mảnh rất tiện vệ sinh và cất giữ.\n• Giá công khai theo kích thước:\n  - 1m2 x 1m9 (dày 5F/7F/9F): từ 1.350.000đ đến 1.850.000đ\n  - 1m6 x 2m (dày 9F/14F): từ 2.250.000đ đến 2.750.000đ\n  - 1m8 x 2m (dày 9F/14F): từ 2.550.000đ đến 3.250.000đ\n\nBên em giao tận giường miễn phí trong Ứng Hòa, kiểm tra đúng hàng mới nhận ạ!`,
         products: p ? [p] : undefined,
@@ -98,7 +98,7 @@ export const TuyenHoaChatbox: React.FC<TuyenHoaChatboxProps> = ({
 
     // 2. Dem Song Hong
     if (q.includes('sông hồng') || q.includes('song hong')) {
-      const p = PRODUCTS.find((x) => x.id === 'dem-song-hong-tinh-khiet');
+      const p = PRODUCTS.find((x) => x.id === 'dem-song-hong-bong-tinh-khiet-the-he-3');
       return {
         text: `Dạ đệm Sông Hồng thế hệ 2 & 3 là dòng bán chạy hàng đầu tại Tuyến Hoa:\n\n• 100% bông tinh khiết kháng khuẩn, hoàn toàn không keo dính độc hại.\n• Đệm có độ êm ái vừa vặn, không bị lún trũng như mút xốp thông thường, rất tốt cho người lớn tuổi và trẻ nhỏ.\n• Giá đệm Sông Hồng tại cửa hàng:\n  - 1m2 x 1m9 (dày 7F - 9F): 1.850.000đ - 2.250.000đ\n  - 1m6 x 2m (dày 9F - 15F): 2.750.000đ - 3.850.000đ\n  - 1m8 x 2m (dày 9F - 15F): 3.150.000đ - 4.850.000đ\n\nĐầy đủ tem chống hàng giả và bảo hành 5 năm của May Sông Hồng ạ.`,
         products: p ? [p] : undefined,
@@ -107,8 +107,8 @@ export const TuyenHoaChatbox: React.FC<TuyenHoaChatboxProps> = ({
 
     // 3. Everon & Kymdan
     if (q.includes('everon') || q.includes('kymdan') || q.includes('cao su')) {
-      const everon = PRODUCTS.find((x) => x.id === 'dem-everon-padding');
-      const kymdan = PRODUCTS.find((x) => x.id === 'dem-kymdan-deluxe');
+      const everon = PRODUCTS.find((x) => x.id === 'dem-bong-ep-everon-ceramic-than-hoat-tinh');
+      const kymdan = PRODUCTS.find((x) => x.id === 'dem-cao-su-thien-nhien-kymdan-deluxe');
       return {
         text: `Dạ Tuyến Hoa có đủ cả Đệm Everon Hàn Quốc và Đệm cao su tự nhiên Kymdan:\n\n1. Đệm Everon vỏ gấm xốp than hoạt tính: Giá từ 2.450.000đ đến 7.200.000đ, độ bền cao, không xẹp lún.\n2. Đệm cao su Kymdan Deluxe 100% thiên nhiên: Dày 5cm - 10cm - 15cm, giá từ 14.500.000đ đến 38.500.000đ, bảo hành chính hãng 15 năm (độ bền thực tế 25 năm), nâng đỡ 7 vùng cơ thể hoàn hảo.\n\nAnh/chị cần giường kích thước nào (1m6 hay 1m8) em báo giá cụ thể và tặng kèm quà ga gối ạ!`,
         products: [everon, kymdan].filter(Boolean) as Product[],
@@ -117,9 +117,9 @@ export const TuyenHoaChatbox: React.FC<TuyenHoaChatboxProps> = ({
 
     // 4. Rem cau vong
     if (q.includes('cầu vồng') || q.includes('cau vong') || q.includes('korean')) {
-      const p = PRODUCTS.find((x) => x.id === 'rem-cau-vong-modero');
+      const p = PRODUCTS.find((x) => x.id === 'rem-cau-vong-han-quoc-modero');
       return {
-        text: `Dạ rèm cầu vồng Modero/Fineplus Hàn Quốc hiện đại cực kỳ sang trọng cho phòng khách và phòng ngủ:\n\n• Gồm 2 lớp vải so le: 1 dải vải cản sáng và 1 dải voan lưới đan xen, kéo điều chỉnh ánh sáng linh hoạt 0% - 100%.\n• Hộp máng và thanh đáy bằng nhôm sơn tĩnh điện cao cấp, dây kéo trơn tru nhẹ nhàng.\n• Giá tính theo m² (hoàn thiện phụ kiện & công lắp): từ 420.000đ - 850.000đ/m² tùy mã vải và độ cản nhiệt.\n• Anh/chị chỉ cần để lại số điện thoại hoặc gọi 0344727528, bên em mang mẫu vải thật đến tận nhà đo chuẩn từng mi-li-mét ạ!`,
+        text: `Dạ rèm cầu vồng Modero/Fineplus Hàn Quốc hiện đại cực kỳ sang trọng cho phòng khách và phòng ngủ (đã có ảnh thợ Tuyến Hoa thi công thực tế tại Ứng Hòa):\n\n• Gồm 2 lớp vải so le: 1 dải vải cản sáng và 1 dải voan lưới đan xen, kéo điều chỉnh ánh sáng linh hoạt 0% - 100%.\n• Hộp máng và thanh đáy bằng nhôm sơn tĩnh điện cao cấp, dây kéo trơn tru nhẹ nhàng.\n• Giá tính theo m² (hoàn thiện phụ kiện & công lắp): từ 480.000đ - 780.000đ/m² tùy mã vải và độ cản nhiệt.\n• Anh/chị chỉ cần để lại số điện thoại hoặc gọi 0344727528, bên em mang mẫu vải thật đến tận nhà đo chuẩn từng mi-li-mét ạ!`,
         products: p ? [p] : undefined,
         actionType: 'measurement',
         actionData: 'Rèm Cầu Vồng Hàn Quốc',
@@ -128,9 +128,9 @@ export const TuyenHoaChatbox: React.FC<TuyenHoaChatboxProps> = ({
 
     // 5. Rem to ong & luoi chong muoi
     if (q.includes('tổ ong') || q.includes('to ong') || q.includes('muỗi') || q.includes('chong muoi')) {
-      const p = PRODUCTS.find((x) => x.id === 'rem-to-ong-luoi-muoi');
+      const p = PRODUCTS.find((x) => x.id === 'rem-to-ong-ket-hop-luoi-chong-muoi');
       return {
-        text: `Dạ rèm tổ ong kết hợp lưới chống muỗi hệ 2 trong 1 là mẫu rèm thông minh bán chạy nhất mùa này:\n\n• Cánh thứ 1: Rèm tổ ong tráng bạc cách nhiệt, ngăn thất thoát điều hòa 98%, cản sáng cản ồn.\n• Cánh thứ 2: Lưới inox hoặc PE cao cấp ngăn tuyệt đối muỗi, ruồi, kiến ba khoang mà vẫn thoáng gió trời.\n• Xếp gọn trơn tru không ray hoặc ray siêu thấp không lo vấp ngã.\n• Giá hoàn thiện: 880.000đ - 1.250.000đ/m² tùy hệ nhôm Xingfa.\n\nTuyến Hoa hỗ trợ thợ kỹ thuật qua đo đạc và lên phương án miễn phí tại nhà ở Ứng Hòa!`,
+        text: `Dạ rèm tổ ong kết hợp lưới chống muỗi hệ 2 trong 1 là mẫu rèm thông minh bán chạy nhất mùa này:\n\n• Cánh thứ 1: Rèm tổ ong tráng bạc cách nhiệt, ngăn thất thoát điều hòa 98%, cản sáng cản ồn.\n• Cánh thứ 2: Lưới inox hoặc PE cao cấp ngăn tuyệt đối muỗi, ruồi, kiến ba khoang mà vẫn thoáng gió trời.\n• Xếp gọn trơn tru không ray hoặc ray siêu thấp không lo vấp ngã.\n• Giá hoàn thiện: 1.150.000đ - 1.450.000đ/m² tùy hệ nhôm Xingfa.\n\nTuyến Hoa hỗ trợ thợ kỹ thuật qua đo đạc và lên phương án miễn phí tại nhà ở Ứng Hòa!`,
         products: p ? [p] : undefined,
         actionType: 'measurement',
         actionData: 'Rèm Tổ Ong Chống Muỗi',
@@ -139,10 +139,10 @@ export const TuyenHoaChatbox: React.FC<TuyenHoaChatboxProps> = ({
 
     // 6. Rem vai 2 lop / rem sao go / sao nhom
     if (q.includes('rèm') || q.includes('rem') || q.includes('vải') || q.includes('sáo gỗ') || q.includes('sáo nhôm')) {
-      const remVai = PRODUCTS.find((x) => x.id === 'rem-vai-gam-2-lop');
-      const remGo = PRODUCTS.find((x) => x.id === 'rem-sao-go-basswood');
+      const remVai = PRODUCTS.find((x) => x.id === 'rem-vai-can-sang-2-lop-cao-cap');
+      const remGo = PRODUCTS.find((x) => x.id === 'rem-sao-go-basswood-tu-nhien');
       return {
-        text: `Dạ Tuyến Hoa cung cấp đầy đủ các mẫu mành rèm cao cấp:\n\n• Rèm vải 2 lớp (1 lớp vải cản sáng 100% + 1 lớp voan thêu tinh tế): 550.000đ - 950.000đ/mét ngang hoàn thiện (đã gồm độ nhún 2.5 và thanh phụ kiện).\n• Rèm sáo gỗ tự nhiên Basswood: 620.000đ/m², xoay lật 180 độ sang trọng phong cách tân cổ điển.\n• Rèm sáo nhôm tĩnh điện chống ẩm: 280.000đ/m² cho phòng bếp, phòng tắm.\n\nBên em có thợ mang mẫu vải catalogue tới tận nhà tại huyện Ứng Hòa để gia đình mình chọn màu hợp sơn tường và phong thủy ạ!`,
+        text: `Dạ Tuyến Hoa cung cấp đầy đủ các mẫu mành rèm cao cấp (quý khách có thể xem ảnh thật công trình phòng khách biệt thự vừa bàn giao tại Ứng Hòa trên web):\n\n• Rèm vải 2 lớp (1 lớp vải gấm Nhật cản sáng 100% + 1 lớp voan xước trắng): 680.000đ - 1.080.000đ/mét ngang hoàn thiện (đã gồm độ nhún 2.5 và thanh ray tĩnh âm).\n• Rèm sáo gỗ tự nhiên Basswood: 590.000đ - 790.000đ/m², xoay lật 180 độ sang trọng phong cách tân cổ điển.\n• Rèm sáo nhôm tĩnh điện chống ẩm: 260.000đ - 310.000đ/m² cho phòng bếp, phòng tắm.\n\nBên em có thợ mang mẫu vải catalogue tới tận nhà tại huyện Ứng Hòa để gia đình mình chọn màu hợp sơn tường và phong thủy ạ!`,
         products: [remVai, remGo].filter(Boolean) as Product[],
         actionType: 'measurement',
         actionData: 'Rèm Cửa Tư Vấn',
@@ -151,10 +151,10 @@ export const TuyenHoaChatbox: React.FC<TuyenHoaChatboxProps> = ({
 
     // 7. Chieu truc & manh tre
     if (q.includes('chiếu') || q.includes('chieu') || q.includes('mành tre') || q.includes('manh tre') || q.includes('trúc')) {
-      const chieuTruc = PRODUCTS.find((x) => x.id === 'chieu-truc-hat-den');
-      const manhTre = PRODUCTS.find((x) => x.id === 'manh-tre-nang-ngoai-troi');
+      const chieuTruc = PRODUCTS.find((x) => x.id === 'chieu-truc-hat-huong-truc-cao-son');
+      const manhTre = PRODUCTS.find((x) => x.id === 'manh-tre-truc-che-nang-ban-cong-san-vuon');
       return {
-        text: `Dạ cửa hàng có đầy đủ chiếu nằm mát và mành che nắng bền đẹp:\n\n• Chiếu trúc hạt đen Hương Trúc/Cao Sơn: Hạt gỗ trúc già bóng láng, nằm mát rượi, dây cước đôi bện chắc không bai giãn. Giá 680.000đ - 950.000đ (1m2 đến 2m2).\n• Chiếu mây Shikada / Muji Nhật Bản: Dùng cho phòng điều hòa cực êm lưng, gấp gọn gàng, giá 450.000đ - 750.000đ.\n• Mành tre nan hun khói chống nắng ban công, nhà thờ: 195.000đ/m² gồm đầy đủ ròng rọc dây kéo.\n\nHàng dày dặn tuyển chọn kỹ lưỡng, bảo hành độ bền nhiều năm ạ!`,
+        text: `Dạ cửa hàng có đầy đủ chiếu nằm mát và mành che nắng bền đẹp:\n\n• Chiếu trúc hạt đen Hương Trúc/Cao Sơn: Hạt gỗ trúc già bóng láng, nằm mát rượi, dây cước đôi bện chắc không bai giãn. Giá 620.000đ - 1.180.000đ (1m2 đến 2m2).\n• Chiếu mây Shikada / Muji Nhật Bản: Dùng cho phòng điều hòa cực êm lưng, gấp gọn gàng, giá 420.000đ - 720.000đ.\n• Mành tre nan hun khói chống nắng ban công, nhà thờ: 175.000đ - 235.000đ/m² gồm đầy đủ ròng rọc dây kéo.\n\nHàng dày dặn tuyển chọn kỹ lưỡng, bảo hành độ bền nhiều năm ạ!`,
         products: [chieuTruc, manhTre].filter(Boolean) as Product[],
       };
     }

@@ -1,5 +1,4 @@
-import React from 'react';
-import { X, Phone, MessageCircle, MapPin, Clock, ChevronRight, ShieldCheck, Ruler, Scale } from 'lucide-react';
+import { X, Phone, MessageCircle, MapPin, Clock, ChevronRight, ShieldCheck, Ruler, Scale, Camera, Smartphone } from 'lucide-react';
 import { STORE_INFO, PRODUCTS } from '../data/products';
 import { ProductCategory } from '../types/store';
 
@@ -9,6 +8,7 @@ interface MobileMenuDrawerProps {
   onSelectCategory: (category: ProductCategory) => void;
   onSelectTab: (tab: string) => void;
   onOpenChat?: () => void;
+  onOpenInstallModal?: () => void;
   activeCategory: string;
 }
 
@@ -18,6 +18,7 @@ export const MobileMenuDrawer: React.FC<MobileMenuDrawerProps> = ({
   onSelectCategory,
   onSelectTab,
   onOpenChat,
+  onOpenInstallModal,
   activeCategory,
 }) => {
   if (!isOpen) return null;
@@ -48,7 +49,57 @@ export const MobileMenuDrawer: React.FC<MobileMenuDrawerProps> = ({
         </div>
 
         {/* Categories Navigation */}
-        <div className="p-5 space-y-6 flex-1">
+        <div className="p-5 space-y-4 flex-1">
+          {/* Mobile PWA Install Banner */}
+          {onOpenInstallModal && (
+            <button
+              type="button"
+              onClick={() => {
+                onClose();
+                onOpenInstallModal();
+              }}
+              className="w-full p-3 bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold rounded-xl text-left flex items-center justify-between shadow-xs transition-colors border border-amber-600/30"
+            >
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-stone-900 text-amber-400 flex items-center justify-center shrink-0 shadow-xs">
+                  <Smartphone className="w-4.5 h-4.5" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-stone-950 flex items-center gap-1.5">
+                    <span>Cài App Tuyến Hoa</span>
+                    <span className="text-[10px] px-1.5 py-0.2 bg-stone-900 text-amber-300 rounded font-semibold">Miễn phí</span>
+                  </div>
+                  <div className="text-[10px] text-stone-800">Thêm vào màn hình chính điện thoại</div>
+                </div>
+              </div>
+              <ChevronRight className="w-4 h-4 text-stone-900" />
+            </button>
+          )}
+
+          {/* Real Projects Highlight Button */}
+          <button
+            type="button"
+            onClick={() => {
+              onSelectTab('real-projects');
+              onClose();
+            }}
+            className="w-full p-3 bg-gradient-to-r from-stone-900 to-amber-950 text-white rounded-xl text-left flex items-center justify-between border border-amber-400/40 shadow-xs"
+          >
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                <Camera className="w-4.5 h-4.5" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-white flex items-center gap-1.5">
+                  <span>Ảnh Thật Công Trình</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                </div>
+                <div className="text-[10px] text-stone-300">5 ảnh thợ thi công tại Ứng Hòa</div>
+              </div>
+            </div>
+            <ChevronRight className="w-4 h-4 text-amber-300" />
+          </button>
+
           {/* Quick Actions */}
           <div className="grid grid-cols-2 gap-2">
             <button

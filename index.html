@@ -2,7 +2,15 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#1C1917" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Tuyến Hoa" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
     <title>Tuyến Hoa - Mành Rèm, Chăn Ga Gối Đệm Chợ Cháy Ứng Hòa Hà Nội</title>
     <meta name="description" content="Cửa hàng Mành Rèm, Chăn Ga Gối Đệm Tuyến Hoa tại Chợ Cháy, Ứng Hòa, Hà Nội. Hotline: 0344727528. Phân phối đệm Vikosan, Sông Hồng, Everon, Kymdan, rèm cầu vồng, rèm tổ ong chống muỗi, mành chiếu trúc giá công khai." />
     <meta property="og:title" content="Tuyến Hoa - Mành Rèm, Chăn Ga Gối Đệm Chợ Cháy Ứng Hòa" />
@@ -16,6 +24,13 @@
   <body class="bg-[#FBFBFA] text-[#1C1D1F] antialiased selection:bg-amber-100 selection:text-amber-900">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
   </body>
 </html>
 
