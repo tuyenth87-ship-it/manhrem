@@ -137,6 +137,30 @@ export const MobileMenuDrawer: React.FC<MobileMenuDrawerProps> = ({
             <ChevronRight className="w-4 h-4 text-amber-300" />
           </button>
 
+          {/* Bead Curtains Highlight Button */}
+          <button
+            type="button"
+            onClick={() => {
+              onSelectTab('bead-curtains');
+              onClose();
+            }}
+            className="w-full p-3 bg-gradient-to-r from-stone-900 via-amber-950 to-stone-900 text-white rounded-xl text-left flex items-center justify-between border border-amber-400/50 shadow-xs"
+          >
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-lg bg-amber-500/30 text-amber-300 flex items-center justify-center shrink-0">
+                <Sparkles className="w-4.5 h-4.5" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-white flex items-center gap-1.5">
+                  <span>Mành Hạt Nhựa &amp; Gỗ Kết Tranh</span>
+                  <span className="text-[10px] px-1.5 py-0.2 bg-amber-400 text-stone-950 rounded font-bold">Từ 600k</span>
+                </div>
+                <div className="text-[10px] text-amber-200">Hạt giọt lệ, tròn, tranh Công &amp; Sen Hạc</div>
+              </div>
+            </div>
+            <ChevronRight className="w-4 h-4 text-amber-300" />
+          </button>
+
           {/* Quick Actions */}
           <div className="grid grid-cols-2 gap-2">
             <button

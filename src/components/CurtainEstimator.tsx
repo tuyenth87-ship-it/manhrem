@@ -71,6 +71,18 @@ const CURTAIN_OPTIONS: CurtainTypeOption[] = [
     included: ['Động cơ rèm thông minh chính hãng', 'Ray điện nhôm định hình dập rãnh chống ồn', 'Remote điều khiển từ xa đa kênh', 'Lắp đặt và cài đặt app tận nhà miễn phí'],
   },
   {
+    id: 'rem-manh-hat',
+    name: 'Mành Hạt Nhựa & Hạt Gỗ Kết Tranh Phong Thủy',
+    unit: 'm2',
+    categoryTitle: 'Mành Hạt Phong Thủy',
+    pricingTiers: [
+      { name: 'Mành hạt nhựa thường nhiều hình dáng (Bộ 1m×2m: 600k)', pricePerUnit: 300000, description: 'Hạt giọt lệ pha lê, hạt tròn, quả trám kim cương, hoa cúc' },
+      { name: 'Mành hạt nhựa kết tranh nghệ thuật (Bộ 1.2m×2m: 1.3 triệu)', pricePerUnit: 540000, description: 'Tranh Đôi Chim Công, Tùng Hạc, Thuận Buồm, Hoa Sen' },
+      { name: 'Mành hạt gỗ phong thủy phòng thờ (Giá từ 1.2 triệu)', pricePerUnit: 600000, description: 'Gỗ Bồ Đề, Gỗ Hương kết chữ Phúc - Lộc - Thọ, Đỉnh Hạc' },
+    ],
+    included: ['Hạt chuốt bóng tinh xảo, chống bạc màu', 'Dây cước bọc thép hoặc dây dù bện đôi siêu dai', 'Thanh suốt treo và móc định vị sẵn', 'Mang mẫu và thước Lỗ Ban đo tận nhà tại Ứng Hòa'],
+  },
+  {
     id: 'rem-sao-go',
     name: 'Rèm Sáo Gỗ Basswood Tự Nhiên',
     unit: 'm2',

@@ -16,7 +16,7 @@ export interface MaterialDetail {
 
 export interface CurtainArticle {
   id: string;
-  curtainType: 'fabric' | 'rainbow' | 'honeycomb' | 'insect-screen' | 'motorized';
+  curtainType: 'fabric' | 'rainbow' | 'honeycomb' | 'insect-screen' | 'motorized' | 'bead';
   categoryLabel: string;
   badge: string;
   badgeColor: string;
@@ -474,5 +474,99 @@ export const CURTAIN_ARTICLES: CurtainArticle[] = [
     priceFrom: 2400000,
     priceUnit: 'bộ',
     estimatorTypeId: 'rem-tu-dong',
+  },
+  {
+    id: 'bai-viet-manh-hat-nhua-hat-go-ket-tranh',
+    curtainType: 'bead',
+    categoryLabel: 'Mành Hạt Nhựa & Hạt Gỗ Kết Tranh',
+    badge: 'Chuẩn Thước Lỗ Ban · Từ 600k',
+    badgeColor: 'bg-amber-600 text-white',
+    title: 'Mành Hạt Nhựa Các Hình Dạng & Mành Hạt Gỗ Kết Tranh Phong Thủy: Báo Giá & Kích Cỡ Chuẩn Lỗ Ban',
+    subtitle: 'Tổng hợp các kiểu hạt giọt lệ pha lê, hạt tròn, quả trám kim cương và tranh Đôi Chim Công, Tùng Hạc, Hoa Sen, Phúc Lộc Thọ. Báo giá: 1m×2m giá 600k, 1.2m×2m giá 1.3 triệu, hạt gỗ từ 1.2 triệu.',
+    primaryImage: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1000&auto=format&fit=crop',
+    primaryImageCaption: 'Mẫu mành hạt nhựa giọt lệ pha lê và hạt kết tranh phong thủy xâu tay tỉ mỉ, rủ sóng đều tăm tắp, khúc xạ ánh sáng lấp lánh cho cửa thông phòng và phòng thờ.',
+    galleryImages: [
+      {
+        src: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1000&auto=format&fit=crop',
+        caption: 'Mành hạt nhựa kết tranh Đôi Chim Công Phú Quý khổ 1.2m x 2.0m giá 1.3 triệu.',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000&auto=format&fit=crop',
+        caption: 'Mành hạt gỗ Bồ Đề tự nhiên kết chữ Phúc - Lộc - Thọ phòng thờ giá từ 1.2 triệu.',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=1000&auto=format&fit=crop',
+        caption: 'Mành hạt gỗ Hương thơm tự nhiên xua đuổi tà khí, chuẩn cung đỏ Lỗ Ban.',
+      },
+    ],
+    materialHeadline: 'Chất Liệu Hạt Nhựa Acrylic Nguyên Sinh & Gỗ Tự Nhiên Tuyển Chọn',
+    materialDetails: [
+      {
+        part: 'Hạt Nhựa Nhiều Hình Dạng',
+        material: 'Nhựa Acrylic trong suốt / đục cao cấp tạo hình hạt giọt lệ, hạt tròn, quả trám kim cương, hoa cúc',
+        origin: 'Hàng tuyển chọn loại 1',
+        feature: 'Không ố vàng, bóng bẩy như pha lê, cọ rửa nước xà phòng thoải mái không sợ phai màu',
+      },
+      {
+        part: 'Hạt Gỗ Phong Thủy',
+        material: '100% Gỗ Bồ Đề tự nhiên nhẹ lành hoặc Gỗ Hương thơm mộc quý hiếm tiện tròn 12mm',
+        origin: 'Làng nghề truyền thống Việt Nam',
+        feature: 'Tẩm sấy chống mối mọt cong vênh, sơn bóng bảo vệ, tỏa hương thơm dịu nhẹ xua tà khí',
+      },
+      {
+        part: 'Dây Xâu Chuỗi',
+        material: 'Cước lụa bọc thép hoặc dây dù bện đôi chịu lực cao',
+        origin: 'Chuyên dụng rèm phong thủy',
+        feature: 'Chịu tải trọng lớn, tuyệt đối không bị đứt dão, trẻ em chạy qua lại thoải mái',
+      },
+      {
+        part: 'Thanh Suốt Treo & Phụ Kiện',
+        material: 'Thanh nhôm đúc tĩnh điện hoặc thanh gỗ tự nhiên có móc định vị sẵn',
+        origin: 'Đồng bộ cao cấp',
+        feature: 'Bắt lên khung bao cửa hoặc trần nhà nhanh chóng trong 10 phút',
+      },
+    ],
+    sizeGuides: [
+      {
+        doorType: 'Rèm Hạt Nhựa Thường (Cửa buồng / Cửa phòng ngủ nhỏ)',
+        recommendedSize: 'Rộng 1.0m × Cao 2.0m (Kích thước cửa tiêu chuẩn)',
+        installStyle: 'Lọt lòng khuôn bao',
+        unitCalc: '1 bộ hoàn thiện đầy đủ thanh treo và phụ kiện',
+        approxPriceRange: '600.000 đ / trọn bộ (Đúng giá niêm yết)',
+        note: 'Tùy chọn kiểu hạt: Hạt giọt lệ pha lê, hạt tròn, quả trám kim cương hoặc hoa cúc.',
+      },
+      {
+        doorType: 'Rèm Hạt Nhựa Kết Tranh Nghệ Thuật (Cửa thông phòng rộng)',
+        recommendedSize: 'Rộng 1.2m × Cao 2.0m (Cung đỏ Lỗ Ban đẹp nhất)',
+        installStyle: 'Phủ bì cửa (đẹp nhất)',
+        unitCalc: '1 bộ kết tranh Đôi Chim Công, Tùng Hạc, Hoa Sen, Thuận Buồm',
+        approxPriceRange: '1.300.000 đ / trọn bộ (Đúng giá 1.3 triệu)',
+        note: 'Hơn 50 - 60 sợi xâu tạo nên bức tranh phong thủy rực rỡ và sống động.',
+      },
+      {
+        doorType: 'Mành Hạt Gỗ Phong Thủy Gian Thờ (Chữ Phúc Lộc Thọ / Đỉnh Hạc)',
+        recommendedSize: 'Rộng 1.0m - 1.2m × Cao 2.0m',
+        installStyle: 'Phủ bì cửa (đẹp nhất)',
+        unitCalc: 'Gỗ Bồ Đề từ 1.200.000đ - 1.450.000đ / Gỗ Hương từ 1.550.000đ - 1.850.000đ',
+        approxPriceRange: 'Từ 1.200.000 đ / bộ (Gỗ Bồ Đề) đến 1.850.000 đ (Gỗ Hương)',
+        note: 'Hóa giải cửa đối cửa, che chắn bàn thờ trang nghiêm, tụ vượng khí tài lộc.',
+      },
+    ],
+    measurementTip: 'Mành hạt phong thủy nên treo phủ bì rộng hơn mép cửa từ 5cm - 10cm để che kín mép cửa và giữ trường khí tụ tài. Chiều cao rèm cách mặt đất khoảng 5cm - 10cm. Thợ Tuyến hỗ trợ mang thước Lỗ Ban đo đạc chuẩn cung Đỏ tận nhà tại Ứng Hòa!',
+    promoHighlights: [
+      'Đúng giá niêm yết: Rèm hạt nhựa thường 1mx2m chỉ 600.000đ',
+      'Đúng giá rèm kết tranh 1.2mx2m chuẩn 1.300.000đ',
+      'Đúng giá rèm hạt gỗ phòng thờ kết tranh chỉ từ 1.200.000đ',
+      'Miễn phí 100% công lắp đặt và mang mẫu tận nhà toàn huyện Ứng Hòa',
+    ],
+    adCopy: {
+      heading: 'BỘ SƯU TẬP MÀNH HẠT NHỰA & HẠT GỖ KẾT TRANH PHONG THỦY TUYẾN HOA!',
+      body: 'Bạn muốn tìm giải pháp vừa ngăn phòng kín đáo, vừa lung linh sang trọng lại mang lại may mắn tài lộc theo phong thủy chuẩn Thước Lỗ Ban?\n\n✨ Rèm Hạt Nhựa Đa Dạng Hình Dạng: Hạt giọt lệ pha lê, hạt tròn cườm, hạt quả trám kim cương, hạt hoa cúc. Giá trọn bộ 1.0m × 2.0m CHỈ 600.000đ!\n✨ Rèm Hạt Nhựa Kết Tranh Nghệ Thuật: Đôi Chim Công Phú Quý, Tùng Hạc Đào Tiên, Thuận Buồm Xuôi Gió. Bộ 1.2m × 2.0m CHỈ 1.300.000đ!\n✨ Rèm Hạt Gỗ Phong Thủy Phòng Thờ: Gỗ Bồ Đề, Gỗ Hương tự nhiên kết chữ Phúc Lộc Thọ, tranh Sen Hạc. Giá CHỈ TỪ 1.200.000đ!',
+      offer: '🎁 ĐẶC BIỆT: Thợ Tuyến trực tiếp mang thước Lỗ Ban và mẫu hạt nhựa, hạt gỗ đến tận nhà đo đạc miễn phí tại Ứng Hòa!',
+      cta: '👉 Gọi ngay Hotline: 0344 727 528 để chọn mẫu tranh ưng ý nhất!',
+    },
+    priceFrom: 600000,
+    priceUnit: 'bộ',
+    estimatorTypeId: 'rem-manh-hat',
   },
 ];

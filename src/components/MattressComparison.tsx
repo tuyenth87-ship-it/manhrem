@@ -54,7 +54,7 @@ const MATTRESS_COMPARISONS: MattressBrandComparison[] = [
     durability: '12 - 15 năm',
     priceRange: '3.390.000 đ – 4.950.000 đ',
     bestFor: 'Phòng tân hôn cưới hỏi, gia đình thích hàng thương hiệu Hàn Quốc cao cấp, bền đẹp',
-    image: 'https://images.unsplash.com/photo-1540518614846-7ede433c4ef9?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800&auto=format&fit=crop',
   },
   {
     brand: 'Kymdan',

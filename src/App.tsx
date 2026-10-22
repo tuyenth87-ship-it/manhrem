@@ -19,12 +19,13 @@ import { TuyenHoaChatbox } from './components/TuyenHoaChatbox';
 import { RealProjectsGallery } from './components/RealProjectsGallery';
 import { REAL_PROJECTS } from './data/realProjects';
 import { CurtainGuideArticles } from './components/CurtainGuideArticles';
+import { BeadCurtainGallery } from './components/BeadCurtainGallery';
 import { PWAInstallModal } from './components/PWAInstallModal';
 import { LogoModal } from './components/LogoModal';
 import { Footer } from './components/Footer';
-import { Search, Sparkles, CheckCircle2, Ruler, LayoutGrid, Scale, MapPin, Eye, PhoneCall, Bot, Zap, Camera, Smartphone, BookOpen } from 'lucide-react';
+import { Search, Sparkles, CheckCircle2, Ruler, LayoutGrid, Scale, MapPin, Eye, PhoneCall, Bot, Zap, Camera, Smartphone, BookOpen, Compass } from 'lucide-react';
 
-type MainNavTab = 'catalog' | 'curtain-articles' | 'real-projects' | 'curtain-calculator' | 'room-visualizer' | 'mattress-comparison' | 'store-consult';
+type MainNavTab = 'catalog' | 'curtain-articles' | 'bead-curtains' | 'real-projects' | 'curtain-calculator' | 'room-visualizer' | 'mattress-comparison' | 'store-consult';
 
 const CATEGORIES: { id: ProductCategory; label: string; count: number }[] = [
   { id: 'all', label: 'Tất Cả Sản Phẩm', count: PRODUCTS.length },
@@ -358,6 +359,22 @@ export default function App() {
 
             <button
               type="button"
+              onClick={() => setActiveMainTab('bead-curtains')}
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
+                activeMainTab === 'bead-curtains'
+                  ? 'bg-amber-800 text-white shadow-xs'
+                  : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
+              }`}
+            >
+              <Compass className="w-4 h-4 text-amber-500" />
+              <span className="flex items-center gap-1.5">
+                <span>Mành Hạt Nhựa &amp; Gỗ Kết Tranh</span>
+                <span className="text-[10px] px-1.5 py-0.2 bg-amber-400 text-stone-950 font-bold rounded">HOT</span>
+              </span>
+            </button>
+
+            <button
+              type="button"
               onClick={() => setActiveMainTab('real-projects')}
               className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
                 activeMainTab === 'real-projects'
@@ -657,6 +674,22 @@ export default function App() {
                 setActiveMainTab('curtain-calculator');
                 scrollToContent();
               }}
+              onRequestMeasurement={handleRequestMeasurement}
+              onOpenChat={() => setIsChatOpen(true)}
+              onShowToast={showToast}
+            />
+          </motion.div>
+        )}
+
+        {/* Tab: Bead Curtain Gallery (Mành Hạt Nhựa & Hạt Gỗ Kết Tranh) */}
+        {activeMainTab === 'bead-curtains' && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            <BeadCurtainGallery
+              onAddToCart={handleAddToCart}
               onRequestMeasurement={handleRequestMeasurement}
               onOpenChat={() => setIsChatOpen(true)}
               onShowToast={showToast}
