@@ -59,6 +59,18 @@ const CURTAIN_OPTIONS: CurtainTypeOption[] = [
     included: ['Khung nhôm Xingfa sơn tĩnh điện bền đẹp', 'Vải tổ ong tráng bạc cách nhiệt 100%', 'Lưới sợi thủy tinh chống côn trùng', 'Miễn phí đo đạc & lắp đặt tại Ứng Hòa'],
   },
   {
+    id: 'rem-tu-dong',
+    name: 'Rèm Tự Động Thông Minh (Motor Remote & App)',
+    unit: 'mét ngang',
+    categoryTitle: 'Rèm Thông Minh 4.0',
+    pricingTiers: [
+      { name: 'Động cơ Tuya Wifi/Zigbee + Ray điện nhôm', pricePerUnit: 1450000, description: 'Điều khiển bằng smartphone, remote cầm tay hoặc giọng nói' },
+      { name: 'Động cơ Dooya Châu Âu siêu êm <30dB', pricePerUnit: 1850000, description: 'Chịu tải 60kg, kéo nhẹ tự chạy, bảo hành 5 năm' },
+      { name: 'Động cơ Pin Lithium không cần đi dây điện', pricePerUnit: 2200000, description: 'Tiện lợi cho nhà đã hoàn thiện chưa chừa ổ cắm điện' },
+    ],
+    included: ['Động cơ rèm thông minh chính hãng', 'Ray điện nhôm định hình dập rãnh chống ồn', 'Remote điều khiển từ xa đa kênh', 'Lắp đặt và cài đặt app tận nhà miễn phí'],
+  },
+  {
     id: 'rem-sao-go',
     name: 'Rèm Sáo Gỗ Basswood Tự Nhiên',
     unit: 'm2',
@@ -84,15 +96,26 @@ const CURTAIN_OPTIONS: CurtainTypeOption[] = [
   },
 ];
 
-export const CurtainEstimator: React.FC<CurtainEstimatorProps> = ({
+export const CurtainEstimator: React.FC<CurtainEstimatorProps & { initialCurtainTypeId?: string }> = ({
   onAddToCart,
   onRequestMeasurement,
+  initialCurtainTypeId,
 }) => {
   const [selectedTypeIndex, setSelectedTypeIndex] = useState(0);
   const [selectedTierIndex, setSelectedTierIndex] = useState(1);
   const [width, setWidth] = useState<number>(2.5);
   const [height, setHeight] = useState<number>(2.6);
   const [quantity, setQuantity] = useState<number>(1);
+
+  React.useEffect(() => {
+    if (initialCurtainTypeId) {
+      const idx = CURTAIN_OPTIONS.findIndex((c) => c.id === initialCurtainTypeId);
+      if (idx !== -1) {
+        setSelectedTypeIndex(idx);
+        setSelectedTierIndex(0);
+      }
+    }
+  }, [initialCurtainTypeId]);
   const [windowNote, setWindowNote] = useState<string>('Cửa sổ phòng ngủ');
   const [isAddedSuccess, setIsAddedSuccess] = useState(false);
 

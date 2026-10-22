@@ -1,4 +1,4 @@
-import { X, Phone, MessageCircle, MapPin, Clock, ChevronRight, ShieldCheck, Ruler, Scale, Camera, Smartphone } from 'lucide-react';
+import { X, Phone, MessageCircle, MapPin, Clock, ChevronRight, ShieldCheck, Ruler, Scale, Camera, Smartphone, Sparkles } from 'lucide-react';
 import { STORE_INFO, PRODUCTS } from '../data/products';
 import { REAL_PROJECTS } from '../data/realProjects';
 import { ProductCategory } from '../types/store';
@@ -108,6 +108,30 @@ export const MobileMenuDrawer: React.FC<MobileMenuDrawerProps> = ({
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 </div>
                 <div className="text-[10px] text-stone-300">{REAL_PROJECTS.length} ảnh thợ thi công &amp; đo rèm tại Ứng Hòa</div>
+              </div>
+            </div>
+            <ChevronRight className="w-4 h-4 text-amber-300" />
+          </button>
+
+          {/* Curtain Guide & Articles Highlight Button */}
+          <button
+            type="button"
+            onClick={() => {
+              onSelectTab('curtain-articles');
+              onClose();
+            }}
+            className="w-full p-3 bg-gradient-to-r from-amber-900 via-stone-900 to-amber-950 text-white rounded-xl text-left flex items-center justify-between border border-amber-400/50 shadow-xs"
+          >
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-lg bg-amber-500/30 text-amber-300 flex items-center justify-center shrink-0">
+                <Sparkles className="w-4.5 h-4.5" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-white flex items-center gap-1.5">
+                  <span>Cẩm Nang & Bài Viết Rèm</span>
+                  <span className="text-[10px] px-1.5 py-0.2 bg-amber-400 text-stone-950 rounded font-bold">Mới</span>
+                </div>
+                <div className="text-[10px] text-amber-200">Tư vấn chất liệu, bảng kích cỡ & giá</div>
               </div>
             </div>
             <ChevronRight className="w-4 h-4 text-amber-300" />

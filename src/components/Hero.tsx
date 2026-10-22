@@ -1,17 +1,19 @@
 import React from 'react';
 import { STORE_INFO } from '../data/products';
-import { ArrowRight, ShieldCheck, Ruler, Truck, Award, Sparkles, MapPin, Phone } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Ruler, Truck, Award, Sparkles, MapPin, Phone, BookOpen } from 'lucide-react';
 
 interface HeroProps {
   onExploreProducts: () => void;
   onOpenEstimator: () => void;
   onOpenVisualizer: () => void;
+  onOpenArticles?: () => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({
   onExploreProducts,
   onOpenEstimator,
   onOpenVisualizer,
+  onOpenArticles,
 }) => {
   return (
     <div className="relative border-b border-stone-200 overflow-hidden bg-gradient-to-b from-[#F5F4EE] via-[#FBFBFA] to-white">
@@ -70,6 +72,17 @@ export const Hero: React.FC<HeroProps> = ({
                   <Ruler className="w-4 h-4 text-stone-700" />
                   <span>Tính Giá Rèm</span>
                 </button>
+
+                {onOpenArticles && (
+                  <button
+                    type="button"
+                    onClick={onOpenArticles}
+                    className="col-span-2 sm:col-span-1 min-h-[46px] px-3.5 sm:px-4 py-3 bg-amber-100/80 hover:bg-amber-100 text-amber-950 border border-amber-300 rounded-xl text-xs sm:text-sm font-bold transition-colors flex items-center justify-center gap-1.5 whitespace-nowrap"
+                  >
+                    <BookOpen className="w-4 h-4 text-amber-800" />
+                    <span>Cẩm Nang Rèm</span>
+                  </button>
+                )}
               </div>
             </div>
 

@@ -18,12 +18,13 @@ import { MobileMenuDrawer } from './components/MobileMenuDrawer';
 import { TuyenHoaChatbox } from './components/TuyenHoaChatbox';
 import { RealProjectsGallery } from './components/RealProjectsGallery';
 import { REAL_PROJECTS } from './data/realProjects';
+import { CurtainGuideArticles } from './components/CurtainGuideArticles';
 import { PWAInstallModal } from './components/PWAInstallModal';
 import { LogoModal } from './components/LogoModal';
 import { Footer } from './components/Footer';
-import { Search, Sparkles, CheckCircle2, Ruler, LayoutGrid, Scale, MapPin, Eye, PhoneCall, Bot, Zap, Camera, Smartphone } from 'lucide-react';
+import { Search, Sparkles, CheckCircle2, Ruler, LayoutGrid, Scale, MapPin, Eye, PhoneCall, Bot, Zap, Camera, Smartphone, BookOpen } from 'lucide-react';
 
-type MainNavTab = 'catalog' | 'real-projects' | 'curtain-calculator' | 'room-visualizer' | 'mattress-comparison' | 'store-consult';
+type MainNavTab = 'catalog' | 'curtain-articles' | 'real-projects' | 'curtain-calculator' | 'room-visualizer' | 'mattress-comparison' | 'store-consult';
 
 const CATEGORIES: { id: ProductCategory; label: string; count: number }[] = [
   { id: 'all', label: 'Tất Cả Sản Phẩm', count: PRODUCTS.length },
@@ -39,6 +40,7 @@ export default function App() {
   const [selectedBrand, setSelectedBrand] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc' | 'rating'>('featured');
+  const [estimatorInitialType, setEstimatorInitialType] = useState<string | undefined>(undefined);
 
   // Mobile Menu Drawer State
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -314,6 +316,10 @@ export default function App() {
           setActiveMainTab('room-visualizer');
           scrollToContent();
         }}
+        onOpenArticles={() => {
+          setActiveMainTab('curtain-articles');
+          scrollToContent();
+        }}
       />
 
       {/* Main Workspace with Clear Tab Architecture */}
@@ -332,6 +338,22 @@ export default function App() {
             >
               <LayoutGrid className="w-4 h-4" />
               <span>Sản Phẩm ({PRODUCTS.length})</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveMainTab('curtain-articles')}
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
+                activeMainTab === 'curtain-articles'
+                  ? 'bg-amber-800 text-white shadow-xs'
+                  : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
+              }`}
+            >
+              <BookOpen className="w-4 h-4 text-amber-500" />
+              <span className="flex items-center gap-1.5">
+                <span>Cẩm Nang & Bài Viết Rèm</span>
+                <span className="text-[10px] px-1.5 py-0.2 bg-amber-400 text-stone-950 font-bold rounded">Mới</span>
+              </span>
             </button>
 
             <button
@@ -605,6 +627,40 @@ export default function App() {
                 ))}
               </div>
             )}
+
+            {/* Embedded Curtain Guide & Articles Section directly on Catalog page */}
+            <div className="mt-8 pt-8 border-t border-stone-200">
+              <CurtainGuideArticles
+                onSelectEstimator={(estimatorId) => {
+                  setEstimatorInitialType(estimatorId);
+                  setActiveMainTab('curtain-calculator');
+                  scrollToContent();
+                }}
+                onRequestMeasurement={handleRequestMeasurement}
+                onOpenChat={() => setIsChatOpen(true)}
+                onShowToast={showToast}
+              />
+            </div>
+          </motion.div>
+        )}
+
+        {/* Tab: Dedicated Curtain Guide & Advertising Articles */}
+        {activeMainTab === 'curtain-articles' && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            <CurtainGuideArticles
+              onSelectEstimator={(estimatorId) => {
+                setEstimatorInitialType(estimatorId);
+                setActiveMainTab('curtain-calculator');
+                scrollToContent();
+              }}
+              onRequestMeasurement={handleRequestMeasurement}
+              onOpenChat={() => setIsChatOpen(true)}
+              onShowToast={showToast}
+            />
           </motion.div>
         )}
 
@@ -632,6 +688,7 @@ export default function App() {
             <CurtainEstimator
               onAddToCart={handleAddToCart}
               onRequestMeasurement={handleRequestMeasurement}
+              initialCurtainTypeId={estimatorInitialType}
             />
           </motion.div>
         )}

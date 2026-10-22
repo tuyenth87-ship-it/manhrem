@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShoppingBag, PhoneCall, Menu, Camera, Smartphone } from 'lucide-react';
+import { ShoppingBag, PhoneCall, Menu, Camera, Smartphone, Sparkles } from 'lucide-react';
 import { STORE_INFO } from '../data/products';
 import { BrandLogo } from './BrandLogo';
 
@@ -110,14 +110,24 @@ export const Navbar: React.FC<NavbarProps> = ({
               Chăn Ga Gối
             </button>
             {onSelectTab && (
-              <button
-                type="button"
-                onClick={() => onSelectTab('real-projects')}
-                className="hover:text-emerald-700 transition-colors whitespace-nowrap shrink-0 text-emerald-800 font-bold flex items-center gap-1 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200"
-              >
-                <Camera className="w-3.5 h-3.5" />
-                <span>Ảnh Thật Công Trình</span>
-              </button>
+              <>
+                <button
+                  type="button"
+                  onClick={() => onSelectTab('curtain-articles')}
+                  className="hover:text-amber-800 transition-colors whitespace-nowrap shrink-0 text-amber-900 font-bold flex items-center gap-1 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200"
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+                  <span>Cẩm Nang & Bài Viết Rèm</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => onSelectTab('real-projects')}
+                  className="hover:text-emerald-700 transition-colors whitespace-nowrap shrink-0 text-emerald-800 font-bold flex items-center gap-1 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200"
+                >
+                  <Camera className="w-3.5 h-3.5" />
+                  <span>Ảnh Thật Công Trình</span>
+                </button>
+              </>
             )}
           </nav>
 

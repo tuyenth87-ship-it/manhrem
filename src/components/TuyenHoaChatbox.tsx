@@ -127,6 +127,13 @@ export const TuyenHoaChatbox: React.FC<TuyenHoaChatboxProps> = ({
     }
 
     // 5. Rem to ong & luoi chong muoi
+    if (q.includes('bài viết') || q.includes('cẩm nang') || q.includes('quảng cáo') || q.includes('kích cỡ') || q.includes('chất liệu')) {
+      return {
+        text: `Dạ Tuyến Hoa vừa cập nhật chuyên mục "CẨM NANG & BÀI VIẾT QUẢNG CÁO RÈM CỬA ỨNG HÒA" với đầy đủ chi tiết cho từng loại rèm:\n\n1. Rèm vải 2 lớp gấm Nhật cản sáng 100% (cách đo mét ngang hoàn thiện, tỷ lệ nhún 2.5m vải/1m cửa).\n2. Rèm cầu vồng Hàn Quốc Modero (lắp lọt lòng cửa sổ inox gọn gàng, cách tính theo m²).\n3. Vách ngăn & Rèm tổ ong cản nhiệt điều hòa (tiết kiệm 40% điện, xếp gọn sát tường).\n4. Cửa lưới chống muỗi xếp ly sợi thủy tinh (ngăn 100% muỗi và kiến ba khoang).\n5. Rèm tự động thông minh 4.0 điều khiển remote & smartphone.\n\nQuý khách có thể xem bảng kích cỡ chuẩn, công thức tính giá và sao chép bài viết mẫu ngay trên mục Cẩm Nang của website ạ!`,
+        actionType: 'view_catalog',
+      };
+    }
+
     if (q.includes('tổ ong') || q.includes('to ong') || q.includes('muỗi') || q.includes('chong muoi')) {
       const p = PRODUCTS.find((x) => x.id === 'rem-to-ong-ket-hop-luoi-chong-muoi');
       return {

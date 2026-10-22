@@ -1,5 +1,5 @@
 import React from 'react';
-import { LayoutGrid, Eye, ShoppingBag, PhoneCall, Bot } from 'lucide-react';
+import { LayoutGrid, BookOpen, ShoppingBag, PhoneCall, Bot } from 'lucide-react';
 import { STORE_INFO } from '../data/products';
 
 interface MobileBottomNavProps {
@@ -42,21 +42,21 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
           <span className="text-[10px] tracking-tight mt-1 truncate">Sản phẩm</span>
         </button>
 
-        {/* Tab 2: Room Visualizer */}
+        {/* Tab 2: Curtain Guides & Articles */}
         <button
           type="button"
-          onClick={() => onSelectTab('room-visualizer')}
+          onClick={() => onSelectTab('curtain-articles')}
           className={`flex flex-col items-center justify-center py-1 min-h-[48px] transition-all active:scale-95 ${
-            activeTab === 'room-visualizer' ? 'text-amber-950 font-bold' : 'text-stone-500 hover:text-stone-900'
+            activeTab === 'curtain-articles' ? 'text-amber-950 font-bold' : 'text-stone-500 hover:text-stone-900'
           }`}
         >
           <div className="relative">
-            <Eye className="w-5 h-5" />
-            {activeTab === 'room-visualizer' && (
+            <BookOpen className="w-5 h-5" />
+            {activeTab === 'curtain-articles' && (
               <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-amber-900" />
             )}
           </div>
-          <span className="text-[10px] tracking-tight mt-1 truncate">Thử rèm</span>
+          <span className="text-[10px] tracking-tight mt-1 truncate">Cẩm nang</span>
         </button>
 
         {/* Tab 3: Chatbot AI Advisor Tuyến Hoa */}
