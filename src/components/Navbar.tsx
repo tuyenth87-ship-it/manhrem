@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShoppingBag, PhoneCall, Menu, Camera, Smartphone } from 'lucide-react';
 import { STORE_INFO } from '../data/products';
+import { BrandLogo } from './BrandLogo';
 
 interface NavbarProps {
   cartCount: number;
@@ -8,6 +9,7 @@ interface NavbarProps {
   onOpenMobileMenu: () => void;
   onOpenChat?: () => void;
   onOpenInstallModal?: () => void;
+  onOpenLogoModal?: () => void;
   onSelectCategory: (category: string) => void;
   onSelectTab?: (tab: string) => void;
   activeCategory: string;
@@ -19,6 +21,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenMobileMenu,
   onOpenChat,
   onOpenInstallModal,
+  onOpenLogoModal,
   onSelectCategory,
   onSelectTab,
   activeCategory,
@@ -26,34 +29,38 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-4 md:gap-8 h-14 sm:h-16">
-          {/* Mobile Left: Hamburger Menu Button */}
+        <div className="flex items-center justify-between gap-3 md:gap-8 h-14 sm:h-16">
+          {/* Mobile Left: Hamburger Menu Button & Mobile Brand Logo */}
           <div className="flex items-center gap-2 md:hidden">
             <button
               type="button"
               onClick={onOpenMobileMenu}
-              className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl text-stone-700 hover:bg-stone-100 transition-colors"
+              className="min-w-[40px] min-h-[40px] flex items-center justify-center rounded-xl text-stone-700 hover:bg-stone-100 transition-colors"
               aria-label="Mở menu danh mục"
             >
               <Menu className="w-5 h-5" />
             </button>
 
-            {/* Brand title on mobile */}
-            <a
-              href="/"
-              className="text-lg font-display font-bold tracking-tight text-stone-900 whitespace-nowrap"
+            {/* Brand Logo on mobile with photo avatar & Rèm Chăn Đệm */}
+            <button
+              type="button"
+              onClick={onOpenLogoModal ? onOpenLogoModal : undefined}
+              className="hover:opacity-90 transition-opacity text-left cursor-pointer"
+              title="Bấm để xem logo thương hiệu Tuyến Hoa"
             >
-              Tuyến Hoa
-            </a>
+              <BrandLogo variant="nav-mobile" />
+            </button>
           </div>
 
-          {/* Desktop Zone 1: Brand title, one line */}
-          <a
-            href="/"
-            className="hidden md:inline-block text-xl md:text-2xl font-display font-bold tracking-tight text-stone-900 whitespace-nowrap shrink-0 hover:text-amber-900 transition-colors"
+          {/* Desktop Zone 1: Brand Logo with avatar & Rèm Chăn Đệm */}
+          <button
+            type="button"
+            onClick={onOpenLogoModal ? onOpenLogoModal : undefined}
+            className="hidden md:inline-block shrink-0 hover:opacity-95 transition-opacity text-left cursor-pointer"
+            title="Bấm để xem & tải logo thương hiệu Tuyến Hoa"
           >
-            Tuyến Hoa
-          </a>
+            <BrandLogo variant="nav" />
+          </button>
 
           {/* Desktop Zone 2: 4-5 nav links, 1-2 word labels, single-line */}
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-stone-600">

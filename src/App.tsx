@@ -17,7 +17,9 @@ import { MobileBottomNav } from './components/MobileBottomNav';
 import { MobileMenuDrawer } from './components/MobileMenuDrawer';
 import { TuyenHoaChatbox } from './components/TuyenHoaChatbox';
 import { RealProjectsGallery } from './components/RealProjectsGallery';
+import { REAL_PROJECTS } from './data/realProjects';
 import { PWAInstallModal } from './components/PWAInstallModal';
+import { LogoModal } from './components/LogoModal';
 import { Footer } from './components/Footer';
 import { Search, Sparkles, CheckCircle2, Ruler, LayoutGrid, Scale, MapPin, Eye, PhoneCall, Bot, Zap, Camera, Smartphone } from 'lucide-react';
 
@@ -63,6 +65,7 @@ export default function App() {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isInstallModalOpen, setIsInstallModalOpen] = useState(false);
+  const [isLogoModalOpen, setIsLogoModalOpen] = useState(false);
   const [selectedProductModal, setSelectedProductModal] = useState<Product | null>(null);
 
   // Quick toast notification
@@ -217,7 +220,17 @@ export default function App() {
             <span className="font-semibold text-amber-200">Chợ Cháy, Ứng Hòa:</span>
             <span className="text-stone-300 truncate">Miễn phí mang mẫu vải rèm &amp; đệm đo tại nhà</span>
           </div>
-          <div className="flex items-center gap-3 shrink-0 pl-2">
+          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0 pl-2">
+            <button
+              type="button"
+              onClick={() => setIsLogoModalOpen(true)}
+              className="text-amber-200 hover:text-white font-semibold flex items-center gap-1 transition-colors text-[11px]"
+              title="Xem chi tiết & Tải logo Tuyến Hoa"
+            >
+              <Sparkles className="w-3 h-3 text-amber-400" />
+              <span>Logo</span>
+            </button>
+            <span className="text-stone-500">|</span>
             <button
               type="button"
               onClick={() => setIsInstallModalOpen(true)}
@@ -255,6 +268,7 @@ export default function App() {
         onOpenMobileMenu={() => setIsMobileMenuOpen(true)}
         onOpenChat={() => setIsChatOpen(true)}
         onOpenInstallModal={() => setIsInstallModalOpen(true)}
+        onOpenLogoModal={() => setIsLogoModalOpen(true)}
         onSelectCategory={(cat) => {
           setActiveMainTab('catalog');
           setActiveCategory(cat as ProductCategory);
@@ -273,6 +287,7 @@ export default function App() {
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
         onOpenInstallModal={() => setIsInstallModalOpen(true)}
+        onOpenLogoModal={() => setIsLogoModalOpen(true)}
         onSelectCategory={(cat) => {
           setActiveCategory(cat);
           setSelectedBrand('all');
@@ -330,7 +345,7 @@ export default function App() {
             >
               <Camera className="w-4 h-4 text-emerald-500" />
               <span className="flex items-center gap-1.5">
-                <span>Ảnh Thật Công Trình (5)</span>
+                <span>Ảnh Thật Công Trình ({REAL_PROJECTS.length})</span>
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
               </span>
             </button>
@@ -723,6 +738,12 @@ export default function App() {
       <PWAInstallModal
         isOpen={isInstallModalOpen}
         onClose={() => setIsInstallModalOpen(false)}
+      />
+
+      {/* Tuyến Hoa Brand Logo Showcase Modal */}
+      <LogoModal
+        isOpen={isLogoModalOpen}
+        onClose={() => setIsLogoModalOpen(false)}
       />
 
       {/* Footer */}

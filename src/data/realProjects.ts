@@ -103,4 +103,22 @@ export const REAL_PROJECTS: RealProjectItem[] = [
     date: 'Kỷ niệm gia đình Tuyến Hoa',
     featured: true,
   },
+  {
+    id: 'proj-craftsman-tuyen-hoa-owner',
+    title: 'Anh Tuyến - Trực Tiếp Đo Đạc & Nghiệm Thu Rèm Cửa Tại Nhà Khách Hàng',
+    tag: 'Chủ Tiệm & Thợ May Đo Tuyến Hoa',
+    category: 'curtain',
+    location: 'Công trình nhà phố tại Chợ Cháy, Ứng Hòa',
+    image: '/assets/aistudio/20261017_162136_c08f9065.jpg',
+    aspect: 'portrait',
+    description: 'Nụ cười rạng rỡ của anh Tuyến sau khi hoàn tất lắp đặt hệ thống rèm vải 2 lớp và rèm cầu vồng thông tầng. Với tay nghề may đo tỉ mỉ và cái tâm của người con đất Chợ Cháy, anh trực tiếp tư vấn, đo đạc và kiểm tra từng đường chỉ, nếp sóng rèm trước khi bàn giao cho gia chủ.',
+    specs: [
+      'Chủ tiệm Tuyến Hoa trực tiếp khảo sát và mang mẫu vải tận nhà',
+      'Tư vấn phối màu rèm vải & rèm cầu vồng chuẩn thẩm mỹ',
+      'Kiểm tra độ êm ái ray trượt và khóa phụ kiện trước khi bàn giao',
+      'Cam kết bảo hành kỹ thuật 3 năm tận nhà tại huyện Ứng Hòa'
+    ],
+    date: 'Bàn giao thực tế',
+    featured: true,
+  },
 ];

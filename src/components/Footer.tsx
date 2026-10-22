@@ -1,6 +1,7 @@
 import React from 'react';
 import { STORE_INFO } from '../data/products';
 import { Phone, MapPin, Clock, ShieldCheck, Mail } from 'lucide-react';
+import { BrandLogo } from './BrandLogo';
 
 interface FooterProps {
   onSelectCategory: (category: string) => void;
@@ -11,12 +12,10 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCategory }) => {
     <footer className="bg-stone-900 text-stone-300 pt-12 pb-8 border-t border-stone-800 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Col 1: Store Intro */}
+          {/* Col 1: Store Intro with Brand Logo */}
           <div className="space-y-3">
-            <h3 className="text-lg font-display font-bold text-white tracking-wide">
-              Tuyến Hoa
-            </h3>
-            <p className="text-stone-400 leading-relaxed">
+            <BrandLogo variant="footer" />
+            <p className="text-stone-400 leading-relaxed pt-1">
               Cửa hàng chuyên kinh doanh mành rèm cao cấp, chăn ga gối đệm chính hãng tại khu vực Chợ Cháy, huyện Ứng Hòa, TP Hà Nội.
             </p>
             <div className="pt-1 space-y-2 text-stone-400">

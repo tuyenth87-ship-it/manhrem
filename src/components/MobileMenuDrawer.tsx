@@ -1,6 +1,7 @@
 import { X, Phone, MessageCircle, MapPin, Clock, ChevronRight, ShieldCheck, Ruler, Scale, Camera, Smartphone } from 'lucide-react';
 import { STORE_INFO, PRODUCTS } from '../data/products';
 import { ProductCategory } from '../types/store';
+import { BrandLogo } from './BrandLogo';
 
 interface MobileMenuDrawerProps {
   isOpen: boolean;
@@ -9,6 +10,7 @@ interface MobileMenuDrawerProps {
   onSelectTab: (tab: string) => void;
   onOpenChat?: () => void;
   onOpenInstallModal?: () => void;
+  onOpenLogoModal?: () => void;
   activeCategory: string;
 }
 
@@ -19,6 +21,7 @@ export const MobileMenuDrawer: React.FC<MobileMenuDrawerProps> = ({
   onSelectTab,
   onOpenChat,
   onOpenInstallModal,
+  onOpenLogoModal,
   activeCategory,
 }) => {
   if (!isOpen) return null;
@@ -34,15 +37,24 @@ export const MobileMenuDrawer: React.FC<MobileMenuDrawerProps> = ({
       {/* Drawer */}
       <div className="fixed inset-y-0 left-0 max-w-[85%] w-80 bg-white shadow-2xl flex flex-col justify-between overflow-y-auto animate-in slide-in-from-left duration-300">
         {/* Header */}
-        <div className="p-5 border-b border-stone-200 bg-stone-50 flex items-center justify-between">
-          <div>
-            <h2 className="text-xl font-display font-bold text-stone-900">Tuyến Hoa</h2>
-            <p className="text-xs text-stone-500">Chợ Cháy, Ứng Hòa, Hà Nội</p>
-          </div>
+        <div className="p-4 sm:p-5 border-b border-stone-200 bg-stone-50 flex items-center justify-between">
+          <button
+            type="button"
+            onClick={() => {
+              if (onOpenLogoModal) {
+                onClose();
+                onOpenLogoModal();
+              }
+            }}
+            className="text-left cursor-pointer hover:opacity-90 transition-opacity"
+            title="Bấm để xem logo Tuyến Hoa"
+          >
+            <BrandLogo variant="drawer" />
+          </button>
           <button
             type="button"
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-stone-200 text-stone-600 flex items-center justify-center hover:bg-stone-300 transition-colors"
+            className="w-8 h-8 rounded-full bg-stone-200 text-stone-600 flex items-center justify-center hover:bg-stone-300 transition-colors shrink-0 ml-2"
           >
             <X className="w-4 h-4" />
           </button>
@@ -94,7 +106,7 @@ export const MobileMenuDrawer: React.FC<MobileMenuDrawerProps> = ({
                   <span>Ảnh Thật Công Trình</span>
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 </div>
-                <div className="text-[10px] text-stone-300">5 ảnh thợ thi công tại Ứng Hòa</div>
+                <div className="text-[10px] text-stone-300">6 ảnh thợ thi công &amp; đo rèm tại Ứng Hòa</div>
               </div>
             </div>
             <ChevronRight className="w-4 h-4 text-amber-300" />

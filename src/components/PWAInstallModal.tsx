@@ -50,11 +50,12 @@ export const PWAInstallModal: React.FC<PWAInstallModalProps> = ({ isOpen, onClos
           {/* Header Bar */}
           <div className="bg-gradient-to-r from-stone-900 via-amber-950 to-stone-900 text-white p-4 sm:p-5 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-2xl bg-amber-400/20 border border-amber-300/40 p-1.5 flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 rounded-2xl bg-amber-400/20 border border-amber-300/40 p-0.5 flex items-center justify-center shrink-0 overflow-hidden">
                 <img
-                  src="/icon.svg"
+                  src="/assets/aistudio/20261017_162136_c08f9065.jpg"
                   alt="App Icon Tuyến Hoa"
-                  className="w-full h-full object-contain"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover object-[38%_32%] scale-115 rounded-xl"
                 />
               </div>
               <div>
