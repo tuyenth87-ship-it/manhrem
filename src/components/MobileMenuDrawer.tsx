@@ -1,5 +1,6 @@
 import { X, Phone, MessageCircle, MapPin, Clock, ChevronRight, ShieldCheck, Ruler, Scale, Camera, Smartphone } from 'lucide-react';
 import { STORE_INFO, PRODUCTS } from '../data/products';
+import { REAL_PROJECTS } from '../data/realProjects';
 import { ProductCategory } from '../types/store';
 import { BrandLogo } from './BrandLogo';
 
@@ -106,7 +107,7 @@ export const MobileMenuDrawer: React.FC<MobileMenuDrawerProps> = ({
                   <span>Ảnh Thật Công Trình</span>
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 </div>
-                <div className="text-[10px] text-stone-300">6 ảnh thợ thi công &amp; đo rèm tại Ứng Hòa</div>
+                <div className="text-[10px] text-stone-300">{REAL_PROJECTS.length} ảnh thợ thi công &amp; đo rèm tại Ứng Hòa</div>
               </div>
             </div>
             <ChevronRight className="w-4 h-4 text-amber-300" />

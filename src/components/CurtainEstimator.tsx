@@ -400,6 +400,24 @@ export const CurtainEstimator: React.FC<CurtainEstimatorProps> = ({
                 </div>
               ))}
             </div>
+
+            {/* Craftsman Guarantee Strip */}
+            <div className="flex items-center gap-2.5 p-2.5 bg-amber-50/90 rounded-xl border border-amber-200/80">
+              <div className="w-10 h-10 rounded-lg overflow-hidden border border-amber-300 shrink-0">
+                <img
+                  src="/assets/aistudio/1792658171075_1293093313519991016_1293093313519991016_0f9d66d4bfaa9005e2909eb62a753963_bebb2fef.jpg"
+                  alt="Thợ Tuyến Hoa cam kết đo đạc tận nhà"
+                  className="w-full h-full object-cover object-[50%_15%]"
+                />
+              </div>
+              <div className="text-[11px] leading-tight">
+                <div className="font-bold text-amber-950 flex items-center gap-1">
+                  <span>Cam kết thợ Tuyến Hoa</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                </div>
+                <div className="text-stone-600">Đo chuẩn từng milimet, khảo sát mang mẫu tận nhà Ứng Hòa</div>
+              </div>
+            </div>
           </div>
 
           {/* Action buttons */}

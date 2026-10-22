@@ -277,15 +277,19 @@ export const TuyenHoaChatbox: React.FC<TuyenHoaChatboxProps> = ({
               <div className="bg-gradient-to-r from-stone-900 via-amber-950 to-stone-900 text-white p-3.5 sm:p-4 flex items-center justify-between shrink-0 shadow-md">
                 <div className="flex items-center gap-3">
                   <div className="relative">
-                    <div className="w-10 h-10 rounded-full bg-amber-400/20 border border-amber-300/40 flex items-center justify-center">
-                      <Bot className="w-5 h-5 text-amber-300" />
+                    <div className="w-10 h-10 rounded-full bg-amber-400/20 border-2 border-amber-300/60 overflow-hidden shrink-0">
+                      <img
+                        src="/assets/aistudio/1792658171183_1293093313519991016_1293093313519991016_10108ab564c8fb6ade925f6a8e609889_1971346a.jpg"
+                        alt="Anh Tuyến tư vấn trực tiếp"
+                        className="w-full h-full object-cover object-[50%_25%]"
+                      />
                     </div>
                     <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-500 border-2 border-stone-900" />
                   </div>
                   <div>
                     <div className="flex items-center gap-1.5">
                       <h3 className="text-sm font-bold tracking-tight text-white font-display">
-                        Tư Vấn Viên Tuyến Hoa
+                        Anh Tuyến · Tư Vấn Trực Tiếp
                       </h3>
                       <span className="text-[9px] bg-amber-500/30 text-amber-300 px-1.5 py-0.2 rounded font-semibold">
                         Chợ Cháy

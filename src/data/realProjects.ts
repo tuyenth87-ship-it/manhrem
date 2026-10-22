@@ -2,7 +2,7 @@ export interface RealProjectItem {
   id: string;
   title: string;
   tag: string;
-  category: 'curtain' | 'zebra' | 'full-house' | 'story';
+  category: 'curtain' | 'zebra' | 'honeycomb' | 'full-house' | 'story';
   location: string;
   image: string;
   aspect: 'landscape' | 'portrait' | 'square';
@@ -119,6 +119,60 @@ export const REAL_PROJECTS: RealProjectItem[] = [
       'Cam kết bảo hành kỹ thuật 3 năm tận nhà tại huyện Ứng Hòa'
     ],
     date: 'Bàn giao thực tế',
+    featured: true,
+  },
+  {
+    id: 'proj-honeycomb-partition-grey',
+    title: 'Nghiệm Thu Hệ Vách Rèm Tổ Ong Cản Nhiệt Điều Hòa Màu Ghi Than Chì',
+    tag: 'Vách Rèm Tổ Ong Cản Nhiệt',
+    category: 'honeycomb',
+    location: 'Nhà phố hiện đại tại Chợ Cháy, Ứng Hòa',
+    image: '/assets/aistudio/1792658171075_1293093313519991016_1293093313519991016_0f9d66d4bfaa9005e2909eb62a753963_bebb2fef.jpg',
+    aspect: 'portrait',
+    description: 'Anh Tuyến trực tiếp nghiệm thu và bàn giao hệ vách rèm tổ ong màu ghi than chì cao cấp tại nhà khách hàng Ứng Hòa. Cấu trúc tổ ong ép nhiệt dập nếp định hình, lớp bạc kép bên trong cản 100% thất thoát nhiệt điều hòa, khi không dùng có thể xếp gọn gàng sát tường tiết kiệm không gian tối đa.',
+    specs: [
+      'Lớp tráng bạc kép bên trong cản nhiệt & cách âm vượt trội',
+      'Hệ xếp ly nan nhôm trượt êm ái, đóng mở nhẹ nhàng bằng một tay',
+      'Màu xám ghi than chì hiện đại, tôn vinh kiến trúc phòng ngủ & phòng khách',
+      'Bảo hành hệ khung nhôm và phụ kiện 3 năm tại Ứng Hòa'
+    ],
+    date: 'Nghiệm thu hoàn thiện',
+    featured: true,
+  },
+  {
+    id: 'proj-window-insect-screen-call',
+    title: 'Cửa Lưới Chống Muỗi Xếp Xích Cửa Sổ & Trực Tiếp Tư Vấn Khảo Sát Tận Nhà',
+    tag: 'Cửa Lưới Chống Muỗi Cao Cấp',
+    category: 'honeycomb',
+    location: 'Khu dân cư Chợ Cháy - Hòa Xá, Ứng Hòa',
+    image: '/assets/aistudio/1792658171183_1293093313519991016_1293093313519991016_10108ab564c8fb6ade925f6a8e609889_1971346a.jpg',
+    aspect: 'portrait',
+    description: 'Anh Tuyến trực tiếp tiếp nhận điện thoại từ khách hàng, tư vấn đo đạc lắp đặt cửa lưới chống muỗi xếp ly bên khung cửa sổ. Mắt lưới sợi thủy tinh siêu mịn ngăn 100% muỗi, dĩn, kiến ba khoang bay vào nhà mà vẫn thông gió đón ánh sáng tự nhiên chan hòa.',
+    specs: [
+      'Trực tiếp anh Tuyến tiếp nhận hotline 0344727528 & tư vấn kỹ thuật',
+      'Mắt lưới sợi thủy tinh phủ nhựa PP chịu lực gió, không lo rách rưới',
+      'Hệ xếp gọn lọt lòng khuôn cửa nhôm xingfa cực kỳ gọn gàng',
+      'Khảo sát mang mẫu thực tế đo đạc tận nhà miễn phí 100%'
+    ],
+    date: 'Tư vấn & thi công thực tế',
+    featured: true,
+  },
+  {
+    id: 'proj-survey-window-lakeview',
+    title: 'Khảo Sát May Đo Hệ Rèm Cho Khung Cửa Sổ View Sông Hồ Thoáng Đãng',
+    tag: 'Khảo Sát Thực Tế Công Trình',
+    category: 'full-house',
+    location: 'Biệt thự ven sông/hồ tại huyện Ứng Hòa, Hà Nội',
+    image: '/assets/aistudio/1792658171296_1293093313519991016_1293093313519991016_f85acd8d91ec951798f3b410a5744ecc_-_Copy_-_Copy_78dd3953.jpg',
+    aspect: 'portrait',
+    description: 'Anh Tuyến tại công trình nhà phố ven hồ Ứng Hòa: Kiểm tra thực tế kích thước khung bao cửa nhôm xingfa và khung nan inox bảo vệ trước khi may đo rèm vải 2 lớp và rèm cầu vồng, đảm bảo rèm kéo êm mượt và không vướng nan sắt.',
+    specs: [
+      'Đo đạc kích thước chính xác từng milimet cho cửa kính hướng nắng',
+      'Lựa chọn phương án rèm lắp lọt lòng hoặc phủ bì tối ưu tầm nhìn ra hồ',
+      'Tư vấn chất liệu vải chống bạc màu trước tia UV ven mặt nước',
+      'Bàn giao lắp đặt đồng bộ toàn bộ các tầng trong 24 giờ'
+    ],
+    date: 'Khảo sát công trình',
     featured: true,
   },
 ];

@@ -31,6 +31,7 @@ export const RealProjectsGallery: React.FC<RealProjectsGalleryProps> = ({
 
   const categories = [
     { id: 'all', label: 'Tất Cả Công Trình', count: REAL_PROJECTS.length },
+    { id: 'honeycomb', label: 'Rèm & Vách Tổ Ong', count: REAL_PROJECTS.filter((p) => p.category === 'honeycomb').length },
     { id: 'curtain', label: 'Rèm Vải 2 Lớp', count: REAL_PROJECTS.filter((p) => p.category === 'curtain').length },
     { id: 'zebra', label: 'Rèm Cầu Vồng', count: REAL_PROJECTS.filter((p) => p.category === 'zebra').length },
     { id: 'full-house', label: 'Toàn Cảnh Nhà Phố', count: REAL_PROJECTS.filter((p) => p.category === 'full-house').length },

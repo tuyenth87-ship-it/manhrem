@@ -147,23 +147,38 @@ export const StoreLocationAndTrust: React.FC = () => {
             </div>
 
             {/* Right Card: Quick Request Measuring Service (5 cols) */}
-            <div className="lg:col-span-5 bg-stone-50 p-6 rounded-2xl border border-stone-200 space-y-4">
-              <div className="flex items-center gap-2">
-                <Ruler className="w-5 h-5 text-amber-800" />
-                <h4 className="text-sm font-bold text-stone-900">
-                  Dịch Vụ Mang Mẫu &amp; Khảo Sát Tận Nhà
-                </h4>
+            <div className="lg:col-span-5 bg-gradient-to-br from-amber-50 to-stone-50 p-5 sm:p-6 rounded-3xl border border-amber-200/80 space-y-4 shadow-xs">
+              <div className="flex items-center gap-3">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-amber-400 shadow-sm shrink-0">
+                  <img
+                    src="/assets/aistudio/1792658171183_1293093313519991016_1293093313519991016_10108ab564c8fb6ade925f6a8e609889_1971346a.jpg"
+                    alt="Anh Tuyến nghe máy tư vấn 24/7"
+                    className="w-full h-full object-cover object-[50%_25%]"
+                  />
+                </div>
+                <div>
+                  <div className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100/80 px-2 py-0.5 rounded-full mb-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span>Trực tiếp chủ tiệm tư vấn</span>
+                  </div>
+                  <h4 className="text-sm sm:text-base font-bold text-stone-900 leading-snug">
+                    Mang Mẫu &amp; Khảo Sát Tận Nhà Miễn Phí
+                  </h4>
+                  <p className="text-[11px] text-stone-500">Chợ Cháy &amp; các xã huyện Ứng Hòa</p>
+                </div>
               </div>
+
               <p className="text-xs text-stone-600 leading-relaxed">
-                Bạn đang băn khoăn không biết màu vải rèm nào hợp với sơn tường, hoặc kích thước giường cần đệm bao nhiêu cm? Chỉ cần để lại cuộc gọi, thợ Tuyến Hoa sẽ mang mẫu đến tận phòng ngủ tư vấn miễn phí 100%.
+                Bạn chưa biết nên chọn rèm vải 2 lớp, rèm cầu vồng hay vách ngăn tổ ong cản nhiệt? Chỉ cần gọi điện, anh Tuyến sẽ mang trực tiếp bảng mẫu vải thực tế đến tận phòng ngủ để gia đình xem chất liệu và nhận báo giá trọn gói không phát sinh.
               </p>
-              <div className="pt-2">
+
+              <div className="pt-1 space-y-2">
                 <a
                   href={`tel:${STORE_INFO.hotline}`}
-                  className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-stone-900 hover:bg-stone-800 text-white rounded-xl text-xs font-semibold transition-all shadow-sm"
+                  className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-stone-900 hover:bg-stone-800 text-white rounded-xl text-xs font-bold transition-all shadow-md group"
                 >
-                  <Phone className="w-4 h-4 text-amber-400" />
-                  <span>Gọi {STORE_INFO.hotlineDisplay} Đặt Lịch Khảo Sát</span>
+                  <Phone className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" />
+                  <span>Gọi {STORE_INFO.hotlineDisplay} Gặp Anh Tuyến</span>
                 </a>
               </div>
             </div>
