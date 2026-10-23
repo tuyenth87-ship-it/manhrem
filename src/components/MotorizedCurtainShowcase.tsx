@@ -216,37 +216,37 @@ export const MotorizedCurtainShowcase: React.FC<MotorizedCurtainShowcaseProps> =
             <span>PHÂN TÍCH CÔNG NGHỆ THE SHADE STORE (MỸ) × MÀNH RÈM TUYẾN HOA</span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold tracking-tight text-white leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold tracking-tight text-white leading-snug">
             Rèm Tự Động Thông Minh 4.0 — Trải Nghiệm Video Thực Tế &amp; Điều Khiển Từ Xa Chuẩn Biệt Thự Mỹ
           </h2>
 
-          <p className="text-stone-300 text-xs sm:text-sm md:text-base leading-relaxed">
-            Từ kết quả nghiên cứu chuyên sâu hệ sinh thái मành rèm cao cấp hàng đầu Hoa Kỳ{' '}
-            <span className="text-amber-300 font-semibold">TheShadeStore.com</span> kết hợp cùng kho dữ liệu hình ảnh &amp;
-            video rèm tự động quốc tế, <strong className="text-white">Chăn Ga Gối Đệm &amp; Mành Rèm Tuyến Hoa</strong> mang
+          <p className="text-stone-100 text-sm sm:text-base leading-relaxed">
+            Từ kết quả nghiên cứu chuyên sâu hệ sinh thái mành rèm cao cấp hàng đầu Hoa Kỳ{' '}
+            <span className="text-amber-300 font-bold">TheShadeStore.com</span> kết hợp cùng kho dữ liệu hình ảnh &amp;
+            video rèm tự động quốc tế, <strong className="text-white font-bold">Chăn Ga Gối Đệm &amp; Mành Rèm Tuyến Hoa</strong> mang
             đến giải pháp nâng cấp động cơ thông minh cho toàn bộ dòng{' '}
-            <span className="text-emerald-300 font-semibold">
+            <span className="text-emerald-300 font-bold">
               Rèm vải cản nắng 600.000đ/m ngang, Rèm cầu vồng Hàn Quốc, Rèm Roman &amp; Rèm tổ ong giếng trời
             </span>{' '}
             tại Ứng Hòa – Hà Nội và toàn quốc.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 pt-2">
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-3">
-              <div className="text-amber-400 font-mono text-lg sm:text-xl font-bold">&lt; 26 dB</div>
-              <div className="text-[11px] text-stone-300 mt-0.5">Động cơ siêu tĩnh âm êm như tiếng lá rơi</div>
+            <div className="bg-white/10 border border-white/15 rounded-2xl p-3">
+              <div className="text-amber-400 font-mono text-lg sm:text-xl font-extrabold">&lt; 26 dB</div>
+              <div className="text-xs font-medium text-stone-200 mt-0.5">Động cơ siêu tĩnh âm êm như tiếng lá rơi</div>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-3">
-              <div className="text-emerald-400 font-mono text-lg sm:text-xl font-bold">Pin / 220V</div>
-              <div className="text-[11px] text-stone-300 mt-0.5">Có bản Pin Sạc không cần đục tường đi dây</div>
+            <div className="bg-white/10 border border-white/15 rounded-2xl p-3">
+              <div className="text-emerald-400 font-mono text-lg sm:text-xl font-extrabold">Pin / 220V</div>
+              <div className="text-xs font-medium text-stone-200 mt-0.5">Có bản Pin Sạc không cần đục tường đi dây</div>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-3">
-              <div className="text-sky-400 font-mono text-lg sm:text-xl font-bold">Touch-Run</div>
-              <div className="text-[11px] text-stone-300 mt-0.5">Kéo nhẹ 5cm tự chạy • Mất điện kéo tay nhẹ</div>
+            <div className="bg-white/10 border border-white/15 rounded-2xl p-3">
+              <div className="text-sky-400 font-mono text-lg sm:text-xl font-extrabold">Touch-Run</div>
+              <div className="text-xs font-medium text-stone-200 mt-0.5">Kéo nhẹ 5cm tự chạy • Mất điện kéo tay nhẹ</div>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-3">
-              <div className="text-rose-400 font-mono text-lg sm:text-xl font-bold">600k/m Vải</div>
-              <div className="text-[11px] text-stone-300 mt-0.5">Tích hợp ngay với vải rèm 600k/m Tuyến Hoa</div>
+            <div className="bg-white/10 border border-white/15 rounded-2xl p-3">
+              <div className="text-rose-400 font-mono text-lg sm:text-xl font-extrabold">600k/m Vải</div>
+              <div className="text-xs font-medium text-stone-200 mt-0.5">Tích hợp ngay với vải rèm 600k/m Tuyến Hoa</div>
             </div>
           </div>
         </div>

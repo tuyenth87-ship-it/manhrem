@@ -34,14 +34,14 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
         </div>
 
         {/* Text */}
-        <div className="leading-tight">
+        <div className="leading-tight min-w-0">
           <div className="flex items-center gap-1">
-            <span className="text-base font-display font-bold text-stone-900 tracking-tight">
+            <span className="text-[15px] sm:text-lg font-display font-extrabold text-stone-950 tracking-tight whitespace-nowrap">
               Tuyến Hoa
             </span>
           </div>
           {showSubtitle && (
-            <p className="text-[10px] font-semibold text-amber-800 uppercase tracking-wide">
+            <p className="text-[10px] font-bold text-amber-900 uppercase tracking-tight whitespace-nowrap">
               Rèm • Chăn • Đệm
             </p>
           )}
@@ -72,19 +72,19 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
         {/* Brand Text Details */}
         <div className="flex flex-col text-left">
           <div className="flex items-center gap-1.5">
-            <span className="text-xl md:text-2xl font-display font-bold tracking-tight text-stone-900 hover:text-amber-900 transition-colors">
+            <span className="text-xl md:text-2xl font-display font-extrabold tracking-tight text-stone-950 hover:text-amber-900 transition-colors">
               Tuyến Hoa
             </span>
-            <span className="hidden xl:inline-block text-[10px] font-bold text-amber-950 bg-amber-100/90 border border-amber-300/60 px-1.5 py-0.5 rounded-full">
+            <span className="hidden xl:inline-block text-[11px] font-bold text-amber-950 bg-amber-100 border border-amber-300 px-2 py-0.5 rounded-full">
               Chợ Cháy
             </span>
           </div>
           {showSubtitle && (
-            <div className="flex items-center gap-1.5 text-[11px] font-semibold text-amber-800 tracking-wider uppercase">
+            <div className="flex items-center gap-1.5 text-xs font-bold text-amber-900 tracking-wide uppercase">
               <span>Rèm Cửa</span>
-              <span className="text-stone-300 font-normal">•</span>
+              <span className="text-stone-400 font-normal">•</span>
               <span>Chăn Ga</span>
-              <span className="text-stone-300 font-normal">•</span>
+              <span className="text-stone-400 font-normal">•</span>
               <span>Đệm</span>
             </div>
           )}
@@ -110,13 +110,13 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
           <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white" />
         </div>
         <div>
-          <h2 className="text-lg font-display font-bold text-stone-900 leading-tight">
+          <h2 className="text-lg font-display font-extrabold text-stone-950 leading-snug">
             Tuyến Hoa
           </h2>
-          <p className="text-xs font-bold text-amber-800 tracking-wide uppercase">
+          <p className="text-xs font-bold text-amber-900 tracking-wide uppercase">
             Rèm Cửa • Chăn Ga • Đệm
           </p>
-          <p className="text-[11px] text-stone-500 mt-0.5">
+          <p className="text-xs font-medium text-stone-600 mt-0.5">
             Chợ Cháy, Ứng Hòa, Hà Nội
           </p>
         </div>
@@ -141,10 +141,10 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
           <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-stone-900" />
         </div>
         <div>
-          <h3 className="text-xl font-display font-bold text-white tracking-wide">
+          <h3 className="text-xl font-display font-extrabold text-white tracking-tight">
             Tuyến Hoa
           </h3>
-          <p className="text-xs font-bold text-amber-400 uppercase tracking-wider">
+          <p className="text-xs font-bold text-amber-400 uppercase tracking-wide">
             Rèm Cửa • Chăn Ga • Đệm
           </p>
         </div>
@@ -168,20 +168,20 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
           </div>
         </div>
         {/* Golden craftsman tag */}
-        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-stone-900 text-amber-300 text-[10px] font-bold uppercase tracking-wider px-3 py-0.5 rounded-full border border-amber-400/80 shadow-md whitespace-nowrap flex items-center gap-1">
+        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-stone-900 text-amber-300 text-[11px] font-bold uppercase tracking-wide px-3 py-0.5 rounded-full border border-amber-400/80 shadow-md whitespace-nowrap flex items-center gap-1">
           <Sparkles className="w-3 h-3 text-amber-400" />
           <span>Chợ Cháy</span>
         </div>
       </div>
 
       <div className="mt-4">
-        <h2 className="text-2xl font-display font-bold text-stone-900">
+        <h2 className="text-2xl font-display font-extrabold text-stone-950">
           Tuyến Hoa
         </h2>
-        <p className="text-sm font-bold text-amber-800 tracking-widest uppercase mt-0.5">
+        <p className="text-sm font-bold text-amber-900 tracking-wide uppercase mt-0.5">
           Rèm Cửa • Chăn Ga • Đệm
         </p>
-        <p className="text-xs text-stone-500 mt-1">
+        <p className="text-xs font-medium text-stone-600 mt-1">
           Đại lý chính hãng Vikosan, Sông Hồng, Everon &amp; Thi công rèm tại nhà
         </p>
       </div>

@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               type="button"
               onClick={onOpenLogoModal ? onOpenLogoModal : undefined}
-              className="hover:opacity-90 transition-opacity text-left cursor-pointer truncate"
+              className="hover:opacity-90 transition-opacity text-left cursor-pointer shrink-0"
               title="Bấm để xem logo thương hiệu Tuyến Hoa"
             >
               <BrandLogo variant="nav-mobile" />
@@ -67,12 +67,12 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
 
           {/* Desktop Zone 2: Primary navigation links */}
-          <nav className="hidden md:flex items-center gap-4 lg:gap-5 text-sm font-medium text-stone-600 overflow-x-auto scrollbar-none">
+          <nav className="hidden md:flex items-center gap-4 lg:gap-5 text-sm font-semibold text-stone-800 overflow-x-auto scrollbar-none">
             <button
               type="button"
               onClick={() => onSelectCategory('all')}
-              className={`hover:text-stone-900 transition-colors whitespace-nowrap shrink-0 py-1 ${
-                activeCategory === 'all' ? 'text-stone-950 font-bold border-b-2 border-stone-900' : ''
+              className={`hover:text-stone-950 transition-colors whitespace-nowrap shrink-0 py-1 ${
+                activeCategory === 'all' ? 'text-stone-950 font-extrabold border-b-2 border-stone-950' : ''
               }`}
             >
               Tất Cả
@@ -80,8 +80,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               type="button"
               onClick={() => onSelectCategory('dem')}
-              className={`hover:text-stone-900 transition-colors whitespace-nowrap shrink-0 py-1 ${
-                activeCategory === 'dem' ? 'text-stone-950 font-bold border-b-2 border-stone-900' : ''
+              className={`hover:text-stone-950 transition-colors whitespace-nowrap shrink-0 py-1 ${
+                activeCategory === 'dem' ? 'text-stone-950 font-extrabold border-b-2 border-stone-950' : ''
               }`}
             >
               Đệm Cao Cấp
@@ -89,8 +89,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               type="button"
               onClick={() => onSelectCategory('rem-cua')}
-              className={`hover:text-stone-900 transition-colors whitespace-nowrap shrink-0 py-1 ${
-                activeCategory === 'rem-cua' ? 'text-stone-950 font-bold border-b-2 border-stone-900' : ''
+              className={`hover:text-stone-950 transition-colors whitespace-nowrap shrink-0 py-1 ${
+                activeCategory === 'rem-cua' ? 'text-stone-950 font-extrabold border-b-2 border-stone-950' : ''
               }`}
             >
               Mành Rèm
@@ -100,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <button
                   type="button"
                   onClick={() => onSelectTab('fabric-600k')}
-                  className="hover:text-amber-900 transition-colors whitespace-nowrap shrink-0 text-amber-950 font-bold flex items-center gap-1 bg-amber-100/90 px-2.5 py-1 rounded-lg border border-amber-300"
+                  className="hover:text-amber-900 transition-colors whitespace-nowrap shrink-0 text-amber-950 font-bold flex items-center gap-1 bg-amber-100 px-2.5 py-1 rounded-lg border border-amber-300"
                 >
                   <Sparkles className="w-3.5 h-3.5 text-amber-700" />
                   <span>Rèm Vải 600k/m</span>
@@ -108,7 +108,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <button
                   type="button"
                   onClick={() => onSelectTab('motorized-curtains')}
-                  className="hover:text-emerald-900 transition-colors whitespace-nowrap shrink-0 text-emerald-950 font-bold flex items-center gap-1 bg-emerald-100/90 px-2.5 py-1 rounded-lg border border-emerald-400"
+                  className="hover:text-emerald-900 transition-colors whitespace-nowrap shrink-0 text-emerald-950 font-bold flex items-center gap-1 bg-emerald-100 px-2.5 py-1 rounded-lg border border-emerald-400"
                 >
                   <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
                   <span>Rèm Tự Động 4.0</span>
@@ -116,7 +116,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <button
                   type="button"
                   onClick={() => onSelectTab('bamboo-artworks')}
-                  className="hover:text-amber-800 transition-colors whitespace-nowrap shrink-0 text-amber-900 font-bold flex items-center gap-1 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200"
+                  className="hover:text-amber-800 transition-colors whitespace-nowrap shrink-0 text-amber-950 font-bold flex items-center gap-1 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-300"
                 >
                   <Camera className="w-3.5 h-3.5 text-amber-700" />
                   <span>38 Mành Tre TMHC</span>
@@ -134,7 +134,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 className={`hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-bold whitespace-nowrap shrink-0 transition-all min-h-[40px] cursor-pointer ${
                   isMobileFrameMode
                     ? 'bg-amber-500 text-stone-950 border-amber-600 shadow-xs'
-                    : 'bg-stone-100 hover:bg-stone-200 text-stone-800 border-stone-300'
+                    : 'bg-stone-100 hover:bg-stone-200 text-stone-900 border-stone-300'
                 }`}
                 title="Chuyển đổi khung giao diện Mobile / Toàn màn hình"
               >
@@ -156,7 +156,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 type="button"
                 onClick={onOpenInstallModal}
-                className="inline-flex lg:inline-flex items-center justify-center min-w-[44px] min-h-[44px] sm:min-h-[40px] px-2 sm:px-3 py-1.5 rounded-xl border border-amber-300 bg-amber-50/90 hover:bg-amber-100 text-amber-950 text-[11px] sm:text-xs font-bold whitespace-nowrap shrink-0 transition-colors"
+                className="inline-flex lg:inline-flex items-center justify-center min-w-[44px] min-h-[44px] sm:min-h-[40px] px-2 sm:px-3 py-1.5 rounded-xl border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-950 text-xs font-bold whitespace-nowrap shrink-0 transition-colors"
                 title="Cài đặt App lên màn hình chính điện thoại"
               >
                 <Smartphone className="w-4 h-4 text-amber-700 shrink-0" />
@@ -168,7 +168,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 type="button"
                 onClick={onOpenChat}
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-amber-300 bg-amber-50/80 text-amber-950 hover:bg-amber-100 text-xs font-semibold whitespace-nowrap shrink-0 transition-colors min-h-[40px]"
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-amber-300 bg-amber-50 text-amber-950 hover:bg-amber-100 text-xs font-bold whitespace-nowrap shrink-0 transition-colors min-h-[40px]"
                 title="Tư vấn trực tuyến"
               >
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
@@ -178,23 +178,23 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <a
               href={`tel:${STORE_INFO.hotline}`}
-              className="inline-flex items-center justify-center min-w-[44px] min-h-[44px] sm:min-h-[40px] px-2.5 sm:px-3 py-1.5 rounded-xl border border-emerald-300 bg-emerald-50/90 text-emerald-950 hover:bg-emerald-100 text-xs font-bold whitespace-nowrap shrink-0 transition-colors"
+              className="inline-flex items-center justify-center min-w-[44px] min-h-[44px] sm:min-h-[40px] px-2.5 sm:px-3 py-1.5 rounded-xl border border-emerald-400 bg-emerald-50 text-emerald-950 hover:bg-emerald-100 text-xs sm:text-sm font-extrabold whitespace-nowrap shrink-0 transition-colors"
               title="Gọi Hotline Tuyến Hoa 0344.727.528"
             >
               <PhoneCall className="w-4 h-4 text-emerald-700 shrink-0" />
-              <span className="hidden sm:inline ml-1.5 font-mono">{STORE_INFO.hotlineDisplay}</span>
+              <span className="hidden sm:inline ml-1.5 font-mono tabular-nums">{STORE_INFO.hotlineDisplay}</span>
             </a>
 
             <button
               type="button"
               onClick={onOpenCart}
-              className="relative flex items-center justify-center gap-1.5 min-w-[44px] min-h-[44px] sm:min-h-[40px] px-2.5 sm:px-3.5 py-2 text-xs font-semibold text-white bg-stone-900 rounded-xl hover:bg-stone-800 active:scale-95 transition-all whitespace-nowrap shrink-0"
+              className="relative flex items-center justify-center gap-1.5 min-w-[44px] min-h-[44px] sm:min-h-[40px] px-2.5 sm:px-3.5 py-2 text-xs sm:text-sm font-bold text-white bg-stone-900 rounded-xl hover:bg-stone-800 active:scale-95 transition-all whitespace-nowrap shrink-0"
               aria-label="Xem giỏ hàng"
             >
               <ShoppingBag className="w-4 h-4" />
               <span className="hidden sm:inline">Giỏ Hàng</span>
               {cartCount > 0 && (
-                <span className="min-w-4 h-4 px-1 rounded-full bg-amber-500 text-stone-950 text-[10px] font-bold font-mono flex items-center justify-center -mr-0.5">
+                <span className="min-w-4 h-4 px-1 rounded-full bg-amber-500 text-stone-950 text-[11px] font-extrabold font-mono flex items-center justify-center -mr-0.5">
                   {cartCount}
                 </span>
               )}

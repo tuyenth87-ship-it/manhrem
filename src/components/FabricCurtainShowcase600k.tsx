@@ -385,7 +385,7 @@ export const FabricCurtainShowcase600k: React.FC<FabricCurtainShowcase600kProps>
               </span>
             </div>
 
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-white leading-tight">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-extrabold text-white leading-snug">
               Chăn Ga Gối Đệm &amp; Mành Rèm Tuyến Hoa: Rèm Vải Cao Cấp{' '}
               <span className="text-amber-400 underline decoration-amber-400/60 underline-offset-4">
                 600.000đ / m Ngang
@@ -393,23 +393,23 @@ export const FabricCurtainShowcase600k: React.FC<FabricCurtainShowcase600kProps>
               (Cả Công Thi Công Lắp Đặt)
             </h2>
 
-            <p className="text-xs sm:text-sm text-stone-200 leading-relaxed">
-              Trọn gói hoàn thiện gồm <strong className="text-white">Vải gấm cản nắng 100% (độ nhún 2.5m vải) + Thanh suốt hợp kim / Ray âm trần + Đai vén rèm + Miễn phí công thợ lắp đặt tận nơi</strong>. Anh Tuyến trực tiếp đo đạc và phục vụ anh chị em mọi miền Tổ quốc!
+            <p className="text-sm sm:text-base text-stone-100 leading-relaxed">
+              Trọn gói hoàn thiện gồm <strong className="text-white font-bold">Vải gấm cản nắng 100% (độ nhún 2.5m vải) + Thanh suốt hợp kim / Ray âm trần + Đai vén rèm + Miễn phí công thợ lắp đặt tận nơi</strong>. Anh Tuyến trực tiếp đo đạc và phục vụ anh chị em mọi miền Tổ quốc!
             </p>
           </div>
 
           {/* Quick Interactive Width Price Calculator Box */}
           <div className="bg-white/10 backdrop-blur-md border border-amber-400/40 rounded-2xl p-4 shrink-0 lg:w-80 space-y-2.5">
-            <div className="flex items-center justify-between text-xs text-amber-200 font-semibold">
+            <div className="flex items-center justify-between text-xs text-amber-200 font-bold">
               <span className="flex items-center gap-1.5">
                 <Ruler className="w-4 h-4 text-amber-400" />
                 <span>Tính Nhanh Theo Cửa Nhà Bạn:</span>
               </span>
-              <span className="font-mono font-bold text-amber-300">600.000đ / m</span>
+              <span className="font-mono font-extrabold text-amber-300">600.000đ / m</span>
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="text-xs text-stone-200 shrink-0">Rộng cửa (m):</span>
+              <span className="text-xs font-medium text-stone-100 shrink-0">Rộng cửa (m):</span>
               <div className="flex items-center gap-1 flex-1">
                 <button
                   type="button"
@@ -425,7 +425,7 @@ export const FabricCurtainShowcase600k: React.FC<FabricCurtainShowcase600kProps>
                   max="20"
                   value={doorWidth}
                   onChange={(e) => setDoorWidth(Math.max(1, parseFloat(e.target.value) || 1))}
-                  className="w-full bg-stone-900 border border-amber-400/50 rounded-lg py-1.5 text-center text-sm font-mono font-bold text-amber-300 focus:outline-hidden"
+                  className="w-full bg-stone-900 border border-amber-400/50 rounded-lg py-1.5 text-center text-sm font-mono font-extrabold text-amber-300 focus:outline-hidden"
                 />
                 <button
                   type="button"
@@ -438,8 +438,8 @@ export const FabricCurtainShowcase600k: React.FC<FabricCurtainShowcase600kProps>
             </div>
 
             <div className="pt-2 border-t border-white/15 flex items-center justify-between">
-              <span className="text-xs text-stone-300">Giá trọn gói cả lắp đặt:</span>
-              <span className="text-base sm:text-lg font-mono font-extrabold text-amber-400">
+              <span className="text-xs font-medium text-stone-200">Giá trọn gói cả lắp đặt:</span>
+              <span className="text-base sm:text-lg font-mono tabular-nums font-extrabold text-amber-400">
                 {estimatedTotal.toLocaleString('vi-VN')} đ
               </span>
             </div>
@@ -461,10 +461,10 @@ export const FabricCurtainShowcase600k: React.FC<FabricCurtainShowcase600kProps>
               key={tab.id}
               type="button"
               onClick={() => setSelectedCat(tab.id as any)}
-              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
                 selectedCat === tab.id
                   ? 'bg-stone-900 text-white shadow-xs'
-                  : 'bg-white text-stone-700 hover:bg-stone-100 border border-stone-200'
+                  : 'bg-white text-stone-800 hover:bg-stone-100 border border-stone-300'
               }`}
             >
               {tab.label}
@@ -475,10 +475,10 @@ export const FabricCurtainShowcase600k: React.FC<FabricCurtainShowcase600kProps>
         <button
           type="button"
           onClick={() => setEnhancedPhoto((prev) => !prev)}
-          className={`px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 shrink-0 border transition-all self-start sm:self-auto ${
+          className={`px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 shrink-0 border transition-all self-start sm:self-auto ${
             enhancedPhoto
               ? 'bg-amber-100 border-amber-300 text-amber-950'
-              : 'bg-white border-stone-200 text-stone-600'
+              : 'bg-white border-stone-300 text-stone-800'
           }`}
         >
           <SlidersHorizontal className="w-3.5 h-3.5 text-amber-700" />
@@ -512,10 +512,10 @@ export const FabricCurtainShowcase600k: React.FC<FabricCurtainShowcase600kProps>
 
               {/* Top Badges */}
               <div className="absolute top-2 left-2 right-2 flex items-center justify-between gap-1">
-                <span className="px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg bg-amber-500 text-stone-950 text-[9px] sm:text-[11px] font-extrabold shadow-xs truncate">
+                <span className="px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg bg-amber-400 text-stone-950 text-[10px] sm:text-xs font-extrabold shadow-xs truncate">
                   {sample.badge}
                 </span>
-                <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md sm:rounded-lg bg-black/70 text-amber-300 font-mono text-[9px] sm:text-[11px] font-bold backdrop-blur-xs border border-amber-400/30 shrink-0">
+                <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md sm:rounded-lg bg-black/75 text-amber-300 font-mono text-[10px] sm:text-xs font-bold backdrop-blur-xs border border-amber-400/30 shrink-0">
                   {sample.code}
                 </span>
               </div>
@@ -529,17 +529,17 @@ export const FabricCurtainShowcase600k: React.FC<FabricCurtainShowcase600kProps>
               </div>
 
               {/* Bottom Branded Watermark Strip inside Photo */}
-              <div className="absolute bottom-1.5 sm:bottom-2.5 left-1.5 sm:left-2.5 right-1.5 sm:right-2.5 p-1.5 sm:p-2.5 rounded-lg sm:rounded-xl bg-stone-950/85 backdrop-blur-xs border border-amber-400/40 text-white flex items-center justify-between gap-1.5">
+              <div className="absolute bottom-1.5 sm:bottom-2.5 left-1.5 sm:left-2.5 right-1.5 sm:right-2.5 p-1.5 sm:p-2.5 rounded-lg sm:rounded-xl bg-stone-950/90 backdrop-blur-xs border border-amber-400/40 text-white flex items-center justify-between gap-1.5">
                 <div className="truncate">
-                  <div className="text-[8px] sm:text-[10px] font-bold uppercase tracking-wider text-amber-300 flex items-center gap-1 truncate">
-                    <ShieldCheck className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-emerald-400 shrink-0" />
+                  <div className="text-[9px] sm:text-[11px] font-bold uppercase tracking-wide text-amber-300 flex items-center gap-1 truncate">
+                    <ShieldCheck className="w-3 h-3 text-emerald-400 shrink-0" />
                     <span className="truncate">Tuyến Hoa • {STORE_INFO.hotlineDisplay}</span>
                   </div>
-                  <div className="text-[10px] sm:text-xs font-bold text-white truncate mt-0.5">{sample.categoryLabel}</div>
+                  <div className="text-[11px] sm:text-xs font-bold text-white truncate mt-0.5">{sample.categoryLabel}</div>
                 </div>
                 <div className="text-right shrink-0 bg-amber-400 text-stone-950 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg">
-                  <div className="text-[10px] sm:text-xs font-extrabold font-mono leading-none">600k</div>
-                  <div className="text-[8px] sm:text-[9px] font-bold leading-tight">/m ngang</div>
+                  <div className="text-[11px] sm:text-xs font-extrabold font-mono leading-none">600k</div>
+                  <div className="text-[9px] sm:text-[10px] font-bold leading-tight">/m ngang</div>
                 </div>
               </div>
             </div>
@@ -547,25 +547,25 @@ export const FabricCurtainShowcase600k: React.FC<FabricCurtainShowcase600kProps>
             {/* Card Body */}
             <div className="p-2.5 sm:p-4 flex-1 flex flex-col justify-between space-y-2 sm:space-y-3">
               <div className="space-y-1 sm:space-y-2">
-                <div className="flex items-center gap-1 text-[10px] sm:text-[11px] font-semibold text-amber-800">
-                  <Home className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+                <div className="flex items-center gap-1 text-[11px] sm:text-xs font-bold text-amber-900">
+                  <Home className="w-3.5 h-3.5 shrink-0" />
                   <span className="truncate">{sample.roomType}</span>
                 </div>
 
                 <h3
                   onClick={() => setLightboxItem(sample)}
-                  className="text-xs sm:text-base font-display font-bold text-stone-900 group-hover:text-amber-900 transition-colors cursor-pointer line-clamp-2 leading-snug"
+                  className="text-sm sm:text-base font-display font-extrabold text-stone-950 group-hover:text-amber-900 transition-colors cursor-pointer line-clamp-2 leading-snug"
                 >
                   {sample.title}
                 </h3>
 
-                <p className="hidden sm:block text-xs text-stone-600 line-clamp-2 leading-relaxed">
+                <p className="hidden sm:block text-xs sm:text-sm text-stone-700 line-clamp-2 leading-relaxed">
                   {sample.description}
                 </p>
 
                 <ul className="hidden sm:block space-y-1 pt-1">
                   {sample.highlights.map((h, i) => (
-                    <li key={i} className="text-[11px] text-stone-700 flex items-start gap-1.5">
+                    <li key={i} className="text-xs font-medium text-stone-800 flex items-start gap-1.5">
                       <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
                       <span>{h}</span>
                     </li>
@@ -575,14 +575,14 @@ export const FabricCurtainShowcase600k: React.FC<FabricCurtainShowcase600kProps>
 
               {/* Price Calculation & Action Buttons */}
               <div className="pt-2 sm:pt-3 border-t border-stone-100 space-y-1.5 sm:space-y-2">
-                <div className="flex items-center justify-between bg-amber-50/90 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg sm:rounded-xl border border-amber-200/80">
+                <div className="flex items-center justify-between bg-amber-50 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg sm:rounded-xl border border-amber-200">
                   <div>
-                    <span className="text-[9px] sm:text-[10px] text-stone-500 block">Trọn gói cả lắp:</span>
-                    <span className="text-[11px] sm:text-sm font-extrabold font-mono text-amber-900">600.000đ/m</span>
+                    <span className="text-[10px] sm:text-[11px] font-medium text-stone-600 block">Trọn gói cả lắp:</span>
+                    <span className="text-xs sm:text-sm font-extrabold font-mono tabular-nums text-amber-950">600.000đ/m</span>
                   </div>
                   <div className="text-right hidden sm:block">
-                    <span className="text-[10px] text-stone-500 block">Cửa {doorWidth}m:</span>
-                    <span className="text-xs font-bold font-mono text-emerald-800">
+                    <span className="text-[11px] font-medium text-stone-600 block">Cửa {doorWidth}m:</span>
+                    <span className="text-xs sm:text-sm font-extrabold font-mono tabular-nums text-emerald-800">
                       {estimatedTotal.toLocaleString('vi-VN')} đ
                     </span>
                   </div>
@@ -592,9 +592,9 @@ export const FabricCurtainShowcase600k: React.FC<FabricCurtainShowcase600kProps>
                   <button
                     type="button"
                     onClick={() => handleOrderSample(sample)}
-                    className="min-h-[38px] sm:min-h-[42px] px-2 sm:px-3 py-1.5 sm:py-2.5 bg-stone-900 hover:bg-stone-800 active:scale-95 text-white rounded-xl text-[11px] sm:text-xs font-bold flex items-center justify-center gap-1 transition-all shadow-xs whitespace-nowrap cursor-pointer"
+                    className="min-h-[38px] sm:min-h-[42px] px-2 sm:px-3 py-1.5 sm:py-2.5 bg-stone-900 hover:bg-stone-800 active:scale-95 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-1 transition-all shadow-xs whitespace-nowrap cursor-pointer"
                   >
-                    <ShoppingBag className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-400 shrink-0" />
+                    <ShoppingBag className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                     <span>Đặt Mẫu</span>
                   </button>
 
@@ -606,9 +606,9 @@ export const FabricCurtainShowcase600k: React.FC<FabricCurtainShowcase600kProps>
                         `Khách chọn mẫu ${sample.code} - Kích thước dự kiến ${doorWidth}m ngang (${estimatedTotal.toLocaleString('vi-VN')}đ trọn gói)`
                       )
                     }
-                    className="min-h-[38px] sm:min-h-[42px] px-2 sm:px-3 py-1.5 sm:py-2.5 bg-amber-100 hover:bg-amber-200 active:scale-95 text-amber-950 rounded-xl text-[11px] sm:text-xs font-bold flex items-center justify-center gap-1 transition-all whitespace-nowrap cursor-pointer"
+                    className="min-h-[38px] sm:min-h-[42px] px-2 sm:px-3 py-1.5 sm:py-2.5 bg-amber-100 hover:bg-amber-200 active:scale-95 text-amber-950 rounded-xl text-xs font-bold flex items-center justify-center gap-1 transition-all whitespace-nowrap cursor-pointer"
                   >
-                    <Ruler className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-800 shrink-0" />
+                    <Ruler className="w-3.5 h-3.5 text-amber-800 shrink-0" />
                     <span>Đo Tận Nhà</span>
                   </button>
                 </div>
@@ -616,7 +616,7 @@ export const FabricCurtainShowcase600k: React.FC<FabricCurtainShowcase600kProps>
                 <button
                   type="button"
                   onClick={() => handleCopyPost(sample)}
-                  className="w-full py-1 text-[10px] sm:text-[11px] font-semibold text-stone-500 hover:text-stone-900 flex items-center justify-center gap-1 transition-colors truncate cursor-pointer"
+                  className="w-full py-1 text-[11px] font-bold text-stone-600 hover:text-stone-950 flex items-center justify-center gap-1 transition-colors truncate cursor-pointer"
                 >
                   {copiedId === sample.id ? (
                     <>

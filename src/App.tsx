@@ -233,18 +233,18 @@ export default function App() {
       </AnimatePresence>
 
       {/* Top Local Trust Announcement Bar */}
-      <div className="bg-gradient-to-r from-amber-950 via-stone-900 to-amber-950 text-white text-[11px] sm:text-xs py-1.5 px-3 border-b border-amber-900/40">
+      <div className="bg-gradient-to-r from-amber-950 via-stone-900 to-amber-950 text-white text-xs py-1.5 px-3 border-b border-amber-900/40">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-1.5 truncate">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-            <span className="font-semibold text-amber-200">Chợ Cháy, Ứng Hòa:</span>
-            <span className="text-stone-300 truncate">Miễn phí mang mẫu vải rèm &amp; đệm đo tại nhà</span>
+            <span className="font-bold text-amber-300 shrink-0">Chợ Cháy, Ứng Hòa:</span>
+            <span className="text-stone-100 font-medium truncate">Miễn phí mang mẫu vải rèm &amp; đệm đo tại nhà</span>
           </div>
-          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0 pl-2">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0 pl-2">
             <button
               type="button"
               onClick={() => setIsLogoModalOpen(true)}
-              className="text-amber-200 hover:text-white font-semibold flex items-center gap-1 transition-colors text-[11px]"
+              className="text-amber-200 hover:text-white font-bold flex items-center gap-1 transition-colors text-xs"
               title="Xem chi tiết & Tải logo Tuyến Hoa"
             >
               <Sparkles className="w-3 h-3 text-amber-400" />
@@ -254,17 +254,17 @@ export default function App() {
             <button
               type="button"
               onClick={() => setIsInstallModalOpen(true)}
-              className="text-amber-300 hover:text-white font-bold flex items-center gap-1 transition-colors text-[11px]"
+              className="text-amber-300 hover:text-white font-bold flex items-center gap-1 transition-colors text-xs"
               title="Cài App Tuyến Hoa lên điện thoại"
             >
               <Smartphone className="w-3.5 h-3.5" />
               <span>Cài App</span>
             </button>
-            <span className="text-stone-500">|</span>
+            <span className="hidden sm:inline text-stone-500">|</span>
             <button
               type="button"
               onClick={() => setIsChatOpen(true)}
-              className="text-stone-200 hover:text-white font-medium flex items-center gap-1 transition-colors text-[11px]"
+              className="hidden sm:flex text-stone-100 hover:text-white font-semibold items-center gap-1 transition-colors text-xs"
             >
               <Bot className="w-3.5 h-3.5" />
               <span>Hỏi Chatbot</span>
@@ -272,9 +272,9 @@ export default function App() {
             <span className="hidden sm:inline text-stone-500">|</span>
             <a
               href={`tel:${STORE_INFO.hotline}`}
-              className="hidden sm:flex items-center gap-1 text-emerald-400 hover:text-white font-bold font-mono transition-colors"
+              className="hidden sm:flex items-center gap-1 text-emerald-400 hover:text-white font-extrabold font-mono tabular-nums transition-colors text-xs"
             >
-              <PhoneCall className="w-3 h-3" />
+              <PhoneCall className="w-3.5 h-3.5" />
               <span>{STORE_INFO.hotlineDisplay}</span>
             </a>
           </div>
@@ -354,10 +354,10 @@ export default function App() {
             <button
               type="button"
               onClick={() => setActiveMainTab('catalog')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
                 activeMainTab === 'catalog'
                   ? 'bg-stone-900 text-white shadow-xs'
-                  : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
               }`}
             >
               <LayoutGrid className="w-4 h-4" />
@@ -367,90 +367,90 @@ export default function App() {
             <button
               type="button"
               onClick={() => setActiveMainTab('motorized-curtains')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
                 activeMainTab === 'motorized-curtains'
                   ? 'bg-emerald-800 text-white shadow-xs'
-                  : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
               }`}
             >
               <Video className="w-4 h-4 text-emerald-500" />
               <span className="flex items-center gap-1.5">
                 <span>Rèm Tự Động Thông Minh (The Shade Store)</span>
-                <span className="text-[10px] px-1.5 py-0.2 bg-emerald-400 text-stone-950 font-bold rounded">Video 4K</span>
+                <span className="text-[11px] px-1.5 py-0.2 bg-emerald-400 text-stone-950 font-extrabold rounded">Video 4K</span>
               </span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveMainTab('fabric-600k')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
                 activeMainTab === 'fabric-600k'
                   ? 'bg-amber-800 text-white shadow-xs'
-                  : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
               }`}
             >
               <Sparkles className="w-4 h-4 text-amber-500" />
               <span className="flex items-center gap-1.5">
                 <span>Rèm Vải 600k/m Ngang (Cả Lắp Đặt)</span>
-                <span className="text-[10px] px-1.5 py-0.2 bg-amber-400 text-stone-950 font-bold rounded">13 Mẫu Mới</span>
+                <span className="text-[11px] px-1.5 py-0.2 bg-amber-400 text-stone-950 font-extrabold rounded">13 Mẫu Mới</span>
               </span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveMainTab('bamboo-artworks')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
                 activeMainTab === 'bamboo-artworks'
                   ? 'bg-amber-800 text-white shadow-xs'
-                  : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
               }`}
             >
               <Palette className="w-4 h-4 text-amber-500" />
               <span className="flex items-center gap-1.5">
                 <span>Mành Tre Vẽ Tranh Phong Thủy</span>
-                <span className="text-[10px] px-1.5 py-0.2 bg-emerald-400 text-stone-950 font-bold rounded">38 Mẫu TMHC</span>
+                <span className="text-[11px] px-1.5 py-0.2 bg-emerald-400 text-stone-950 font-extrabold rounded">38 Mẫu TMHC</span>
               </span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveMainTab('curtain-articles')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
                 activeMainTab === 'curtain-articles'
                   ? 'bg-amber-800 text-white shadow-xs'
-                  : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
               }`}
             >
               <BookOpen className="w-4 h-4 text-amber-500" />
               <span className="flex items-center gap-1.5">
                 <span>Cẩm Nang &amp; Bài Viết Rèm</span>
-                <span className="text-[10px] px-1.5 py-0.2 bg-amber-400 text-stone-950 font-bold rounded">Mới</span>
+                <span className="text-[11px] px-1.5 py-0.2 bg-amber-400 text-stone-950 font-extrabold rounded">Mới</span>
               </span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveMainTab('bead-curtains')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
                 activeMainTab === 'bead-curtains'
                   ? 'bg-amber-800 text-white shadow-xs'
-                  : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
               }`}
             >
               <Compass className="w-4 h-4 text-amber-500" />
               <span className="flex items-center gap-1.5">
                 <span>Mành Hạt Nhựa &amp; Gỗ Kết Tranh</span>
-                <span className="text-[10px] px-1.5 py-0.2 bg-amber-400 text-stone-950 font-bold rounded">HOT</span>
+                <span className="text-[11px] px-1.5 py-0.2 bg-amber-400 text-stone-950 font-extrabold rounded">HOT</span>
               </span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveMainTab('real-projects')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
                 activeMainTab === 'real-projects'
                   ? 'bg-stone-900 text-white shadow-xs'
-                  : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
               }`}
             >
               <Camera className="w-4 h-4 text-emerald-500" />
@@ -463,10 +463,10 @@ export default function App() {
             <button
               type="button"
               onClick={() => setActiveMainTab('curtain-calculator')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
                 activeMainTab === 'curtain-calculator'
                   ? 'bg-stone-900 text-white shadow-xs'
-                  : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
               }`}
             >
               <Ruler className="w-4 h-4 text-amber-500" />
@@ -476,10 +476,10 @@ export default function App() {
             <button
               type="button"
               onClick={() => setActiveMainTab('room-visualizer')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
                 activeMainTab === 'room-visualizer'
                   ? 'bg-stone-900 text-white shadow-xs'
-                  : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
               }`}
             >
               <Eye className="w-4 h-4 text-sky-500" />
@@ -489,10 +489,10 @@ export default function App() {
             <button
               type="button"
               onClick={() => setActiveMainTab('mattress-comparison')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
                 activeMainTab === 'mattress-comparison'
                   ? 'bg-stone-900 text-white shadow-xs'
-                  : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
               }`}
             >
               <Scale className="w-4 h-4 text-emerald-500" />
@@ -502,10 +502,10 @@ export default function App() {
             <button
               type="button"
               onClick={() => setActiveMainTab('store-consult')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
                 activeMainTab === 'store-consult'
                   ? 'bg-stone-900 text-white shadow-xs'
-                  : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
               }`}
             >
               <MapPin className="w-4 h-4 text-rose-500" />
@@ -541,14 +541,14 @@ export default function App() {
                 </div>
                 <div className="truncate">
                   <div className="flex items-center gap-1.5">
-                    <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.2 rounded-full bg-emerald-500 text-white font-mono">
+                    <span className="text-[11px] uppercase font-extrabold tracking-wide px-2 py-0.2 rounded-full bg-emerald-500 text-white font-mono">
                       100% Ảnh Thật Mới Nhất
                     </span>
-                    <span className="text-xs font-bold text-amber-300 truncate">
+                    <span className="text-xs sm:text-sm font-extrabold text-amber-300 truncate">
                       Rèm Vải Cao Cấp Tuyến Hoa 600.000đ/m Ngang (Cả Công Thi Công Lắp Đặt)
                     </span>
                   </div>
-                  <p className="text-[11px] text-stone-300 mt-0.5 truncate">
+                  <p className="text-xs font-medium text-stone-200 mt-0.5 truncate">
                     Xem toàn bộ {REAL_PROJECTS.length} công trình rèm vải, mành tre từ đường &amp; rèm cầu vồng thực tế →
                   </p>
                 </div>
@@ -584,16 +584,16 @@ export default function App() {
                         setActiveCategory(cat.id);
                         setSelectedBrand('all');
                       }}
-                      className={`px-3 py-1.5 sm:px-3.5 sm:py-2 text-[11px] sm:text-xs font-semibold rounded-xl transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 min-h-[36px] ${
+                      className={`px-3 py-1.5 sm:px-3.5 sm:py-2 text-xs font-bold rounded-xl transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 min-h-[38px] ${
                         activeCategory === cat.id
                           ? 'bg-amber-900 text-white shadow-xs'
-                          : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
+                          : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
                       }`}
                     >
                       <span>{cat.label}</span>
                       <span
-                        className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
-                          activeCategory === cat.id ? 'bg-amber-800 text-white' : 'bg-stone-100 text-stone-600'
+                        className={`text-[11px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
+                          activeCategory === cat.id ? 'bg-amber-800 text-white' : 'bg-stone-200 text-stone-800'
                         }`}
                       >
                         {cat.count}
@@ -606,19 +606,19 @@ export default function App() {
               {/* Search, Brand & Sort controls */}
               <div className="space-y-2 pt-2 border-t border-stone-100">
                 <div className="relative">
-                  <Search className="w-4 h-4 text-stone-400 absolute left-3 top-3" />
+                  <Search className="w-4 h-4 text-stone-500 absolute left-3 top-3" />
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Tìm Vikosan, Sông Hồng, Rèm cầu vồng, Chiếu trúc..."
-                    className="w-full pl-9 pr-8 py-2 text-xs bg-stone-50 rounded-xl border border-stone-200 focus:outline-hidden focus:border-amber-800 min-h-[40px]"
+                    className="w-full pl-9 pr-8 py-2 text-xs sm:text-sm font-medium text-stone-900 placeholder:text-stone-500 bg-stone-50 rounded-xl border border-stone-300 focus:outline-hidden focus:border-amber-800 min-h-[42px]"
                   />
                   {searchQuery && (
                     <button
                       type="button"
                       onClick={() => setSearchQuery('')}
-                      className="absolute right-3 top-2.5 text-xs text-stone-400 hover:text-stone-700 font-bold"
+                      className="absolute right-3 top-2.5 text-sm text-stone-500 hover:text-stone-900 font-bold"
                     >
                       ×
                     </button>
@@ -629,7 +629,7 @@ export default function App() {
                   <select
                     value={selectedBrand}
                     onChange={(e) => setSelectedBrand(e.target.value)}
-                    className="w-full text-[11px] sm:text-xs bg-stone-50 border border-stone-200 rounded-xl px-2.5 py-2 text-stone-700 font-medium focus:outline-hidden focus:border-amber-800 cursor-pointer min-h-[38px] truncate"
+                    className="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl px-2.5 py-2 text-stone-900 font-semibold focus:outline-hidden focus:border-amber-800 cursor-pointer min-h-[40px] truncate"
                   >
                     <option value="all">Tất cả thương hiệu</option>
                     <option value="vikosan">Đệm Vikosan (Hàn Quốc)</option>
@@ -644,7 +644,7 @@ export default function App() {
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value as any)}
-                    className="w-full text-[11px] sm:text-xs bg-stone-50 border border-stone-200 rounded-xl px-2.5 py-2 text-stone-700 font-medium focus:outline-hidden focus:border-amber-800 cursor-pointer min-h-[38px] truncate"
+                    className="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl px-2.5 py-2 text-stone-900 font-semibold focus:outline-hidden focus:border-amber-800 cursor-pointer min-h-[40px] truncate"
                   >
                     <option value="featured">Sắp xếp mặc định</option>
                     <option value="price-asc">Giá: Thấp đến cao</option>
@@ -657,7 +657,7 @@ export default function App() {
               {/* 1-Tap Quick Brand & Category Chips (Mobile-First Experience) */}
               <div className="w-full min-w-0 pt-2 border-t border-stone-100 overflow-x-auto scrollbar-none snap-x touch-pan-x">
                 <div className="flex items-center gap-1.5 min-w-max py-0.5">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 shrink-0">
+                  <span className="text-[11px] font-extrabold uppercase tracking-wide text-stone-600 shrink-0">
                     Lọc nhanh:
                   </span>
                   {[
@@ -684,10 +684,10 @@ export default function App() {
                           setSelectedBrand(chip.brandVal);
                           setActiveCategory(chip.catVal as ProductCategory);
                         }}
-                        className={`px-2.5 py-1 text-[11px] font-semibold rounded-lg shrink-0 transition-all ${
+                        className={`px-3 py-1 text-xs font-bold rounded-lg shrink-0 transition-all ${
                           isActive
                             ? 'bg-amber-950 text-white shadow-xs'
-                            : 'bg-stone-100 hover:bg-stone-200 text-stone-700'
+                            : 'bg-stone-100 hover:bg-stone-200 text-stone-800'
                         }`}
                       >
                         {chip.label}

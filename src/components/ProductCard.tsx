@@ -62,7 +62,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
         {/* 1-line Badge on Top Left */}
         {product.badge && (
-          <div className="absolute top-2.5 left-2.5 bg-stone-900/90 backdrop-blur-md text-amber-300 text-[10px] font-semibold px-2 py-0.5 rounded-md shadow-md tracking-tight">
+          <div className="absolute top-2.5 left-2.5 bg-stone-900/95 backdrop-blur-md text-amber-300 text-[11px] font-bold px-2.5 py-0.5 rounded-md shadow-md">
             {product.badge}
           </div>
         )}
@@ -83,8 +83,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         </div>
 
         {/* Warranty Tag */}
-        <div className="absolute bottom-2 left-2 text-[9px] sm:text-[10px] font-medium text-white/90 bg-black/60 backdrop-blur-xs px-1.5 sm:px-2 py-0.5 rounded flex items-center gap-1">
-          <ShieldCheck className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-emerald-400 shrink-0" />
+        <div className="absolute bottom-2 left-2 text-[10px] sm:text-[11px] font-semibold text-white bg-black/70 backdrop-blur-xs px-2 py-0.5 rounded flex items-center gap-1">
+          <ShieldCheck className="w-3 h-3 text-emerald-400 shrink-0" />
           <span className="truncate">{product.specs.warranty}</span>
         </div>
       </div>
@@ -93,23 +93,23 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       <div className="p-2.5 sm:p-4 md:p-5 flex-1 flex flex-col justify-between space-y-2 sm:space-y-3">
         <div>
           {/* Metadata: Brand & Rating */}
-          <div className="flex items-center justify-between text-[10px] sm:text-xs text-stone-500 font-medium">
-            <span className="uppercase tracking-wider font-bold text-amber-950 truncate max-w-[100px] sm:max-w-[120px]">
+          <div className="flex items-center justify-between text-[11px] sm:text-xs text-stone-600 font-semibold">
+            <span className="uppercase tracking-wide font-extrabold text-amber-950 truncate max-w-[110px] sm:max-w-[140px]">
               {product.brand}
             </span>
             <span className="flex items-center gap-0.5 text-amber-700 shrink-0">
-              <Star className="w-2.5 h-2.5 sm:w-3 sm:h-3 fill-amber-400 text-amber-400" />
-              <span className="font-mono font-bold text-stone-800 text-[10px] sm:text-xs">{product.rating}</span>
+              <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+              <span className="font-mono font-bold text-stone-900 text-[11px] sm:text-xs">{product.rating}</span>
             </span>
           </div>
 
           {/* Product Title */}
-          <h3 className="text-xs sm:text-base font-bold text-stone-900 mt-1 line-clamp-2 leading-snug group-hover:text-amber-900 transition-colors font-display">
+          <h3 className="text-sm sm:text-base font-extrabold text-stone-950 mt-1 line-clamp-2 leading-snug group-hover:text-amber-900 transition-colors font-display">
             {product.name}
           </h3>
 
           {/* Summary snippet (hidden on tiny mobile screens to keep card compact and clean) */}
-          <p className="hidden sm:block text-xs text-stone-500 mt-1 line-clamp-2 leading-relaxed">
+          <p className="hidden sm:block text-xs sm:text-sm text-stone-700 mt-1 line-clamp-2 leading-relaxed">
             {product.summary}
           </p>
         </div>
@@ -120,7 +120,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             <select
               value={selectedVariantIndex}
               onChange={(e) => setSelectedVariantIndex(Number(e.target.value))}
-              className="w-full text-[10px] sm:text-xs bg-stone-50 hover:bg-stone-100 border border-stone-200 rounded-lg px-2 py-1 text-stone-800 font-medium focus:outline-hidden focus:border-amber-800 transition-colors cursor-pointer truncate"
+              className="w-full text-[11px] sm:text-xs bg-stone-50 hover:bg-stone-100 border border-stone-300 rounded-lg px-2 py-1.5 text-stone-900 font-semibold focus:outline-hidden focus:border-amber-800 transition-colors cursor-pointer truncate"
             >
               {product.variants.map((v, i) => (
                 <option key={v.id} value={i}>
@@ -134,12 +134,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         {/* Price & Touch Buttons */}
         <div className="pt-2 sm:pt-3 border-t border-stone-100 flex flex-col gap-1.5 sm:gap-2">
           <div className="flex items-baseline justify-between gap-1">
-            <div className="text-xs sm:text-base md:text-lg font-bold text-amber-950 font-mono tabular-nums leading-none">
+            <div className="text-sm sm:text-lg md:text-xl font-extrabold text-amber-950 font-mono tabular-nums leading-none">
               {activeVariant.price.toLocaleString('vi-VN')}{' '}
-              <span className="text-[9px] sm:text-xs font-sans font-normal text-stone-500">đ</span>
+              <span className="text-[11px] sm:text-xs font-sans font-bold text-stone-600">đ</span>
             </div>
             {activeVariant.originalPrice && (
-              <div className="text-[9px] sm:text-[11px] text-stone-400 line-through font-mono tabular-nums">
+              <div className="text-[10px] sm:text-xs text-stone-500 line-through font-mono tabular-nums">
                 {activeVariant.originalPrice.toLocaleString('vi-VN')} đ
               </div>
             )}
@@ -150,20 +150,20 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             <button
               type="button"
               onClick={handleAddToCart}
-              className={`min-h-[36px] w-9 sm:w-10 rounded-xl border text-xs font-medium transition-all flex items-center justify-center shrink-0 ${
+              className={`min-h-[38px] w-9 sm:w-10 rounded-xl border text-xs font-semibold transition-all flex items-center justify-center shrink-0 ${
                 isAdded
                   ? 'bg-emerald-600 border-emerald-600 text-white'
-                  : 'bg-white border-stone-200 hover:border-stone-900 text-stone-800 hover:bg-stone-50'
+                  : 'bg-white border-stone-300 hover:border-stone-900 text-stone-900 hover:bg-stone-50'
               }`}
               title="Thêm vào giỏ hàng"
             >
-              {isAdded ? <Check className="w-3.5 h-3.5 text-white" /> : <ShoppingBag className="w-3.5 h-3.5" />}
+              {isAdded ? <Check className="w-4 h-4 text-white" /> : <ShoppingBag className="w-4 h-4" />}
             </button>
 
             <button
               type="button"
               onClick={handleQuickBuy}
-              className="flex-1 min-h-[36px] px-2 py-1.5 bg-stone-900 active:bg-stone-800 text-white rounded-xl text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-all shadow-xs text-center flex items-center justify-center"
+              className="flex-1 min-h-[38px] px-2 py-1.5 bg-stone-900 active:bg-stone-800 text-white rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all shadow-xs text-center flex items-center justify-center"
             >
               Mua ngay
             </button>

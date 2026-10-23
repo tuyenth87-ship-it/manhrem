@@ -106,44 +106,44 @@ export const Hero: React.FC<HeroProps> = ({
           {/* Left Column: Editorial Headline & Mobile Super-App Launcher (7 cols) */}
           <div className="lg:col-span-7 space-y-3.5 sm:space-y-5">
             {/* Unboxed Metadata Kicker */}
-            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-amber-900">
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold uppercase tracking-wide text-amber-950">
               <span className="flex items-center gap-1">
                 <MapPin className="w-3.5 h-3.5 text-amber-700 shrink-0" />
                 <span>Chợ Cháy, Ứng Hòa, Hà Nội</span>
               </span>
-              <span aria-hidden="true" className="text-stone-300">·</span>
+              <span aria-hidden="true" className="text-stone-400">·</span>
               <span>Xưởng May Đo Trực Tiếp</span>
-              <span aria-hidden="true" className="text-stone-300">·</span>
+              <span aria-hidden="true" className="text-stone-400">·</span>
               <a
                 href={`tel:${STORE_INFO.hotline}`}
-                className="font-mono text-emerald-800 font-extrabold underline decoration-emerald-500/50"
+                className="font-mono tabular-nums text-emerald-800 font-extrabold underline decoration-emerald-600/60"
               >
                 {STORE_INFO.hotlineDisplay}
               </a>
             </div>
 
             {/* Hero Headline */}
-            <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-stone-900 tracking-tight leading-[1.2] text-balance">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-display font-extrabold text-stone-950 tracking-tight leading-[1.28] text-balance">
               Mành Rèm Cao Cấp &amp; Chăn Ga Gối Đệm Tuyến Hoa
             </h1>
 
             {/* Sub-headline */}
-            <p className="text-xs sm:text-sm md:text-base text-stone-600 leading-relaxed max-w-2xl">
+            <p className="text-sm sm:text-base md:text-lg text-stone-800 font-medium leading-relaxed max-w-2xl">
               Ưu đãi trọn gói:{' '}
-              <strong className="text-amber-950 font-bold bg-amber-200/80 px-1.5 py-0.5 rounded">
+              <strong className="text-amber-950 font-extrabold bg-amber-200 px-1.5 py-0.5 rounded">
                 Rèm vải chống nắng cao cấp 600.000đ / mét ngang (cả công thi công lắp đặt)
               </strong>
               . Chuyên Rèm tự động thông minh 4.0, 38 mẫu Mành tre vẽ tranh phong thủy, Đệm Vikosan, Sông Hồng, Everon &amp; Kymdan.
             </p>
 
             {/* Mobile Super-App Quick Launcher Grid (8 tactile shortcuts) */}
-            <div className="bg-white rounded-2xl p-2.5 sm:p-3.5 border border-stone-200/90 shadow-xs">
+            <div className="bg-white rounded-2xl p-2.5 sm:p-3.5 border border-stone-300 shadow-xs">
               <div className="flex items-center justify-between mb-2 px-1">
-                <span className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-stone-700 flex items-center gap-1.5">
+                <span className="text-[11px] sm:text-xs font-extrabold uppercase tracking-wide text-stone-900 flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                   <span>Menu Nhanh Phiên Bản Mobile (Chạm 1 Lần)</span>
                 </span>
-                <span className="text-[10px] font-mono text-amber-800 font-bold">
+                <span className="text-[11px] sm:text-xs font-mono tabular-nums text-amber-900 font-extrabold">
                   Hotline: {STORE_INFO.hotlineDisplay}
                 </span>
               </div>
@@ -168,9 +168,9 @@ export const Hero: React.FC<HeroProps> = ({
                           onExploreProducts();
                         }
                       }}
-                      className="group relative flex flex-col items-center justify-center p-1.5 sm:p-2 rounded-xl bg-stone-50/70 hover:bg-amber-50/80 border border-stone-200/70 hover:border-amber-300 transition-all active:scale-95 min-h-[68px] cursor-pointer"
+                      className="group relative flex flex-col items-center justify-center p-1.5 sm:p-2 rounded-xl bg-stone-50 hover:bg-amber-50 border border-stone-200 hover:border-amber-400 transition-all active:scale-95 min-h-[70px] cursor-pointer"
                     >
-                      <span className="absolute -top-1 right-1 px-1 py-0.2 rounded bg-stone-900 text-amber-300 text-[8px] font-bold font-mono leading-tight">
+                      <span className="absolute -top-1 right-1 px-1 py-0.2 rounded bg-stone-900 text-amber-300 text-[9px] font-bold font-mono leading-tight">
                         {item.badge}
                       </span>
                       <div
@@ -178,10 +178,10 @@ export const Hero: React.FC<HeroProps> = ({
                       >
                         <IconComponent className="w-4 h-4" />
                       </div>
-                      <span className="text-[10px] sm:text-[11px] font-bold text-stone-900 mt-1 leading-tight whitespace-nowrap">
+                      <span className="text-[11px] sm:text-xs font-bold text-stone-950 mt-1 leading-snug whitespace-nowrap">
                         {item.label}
                       </span>
-                      <span className="text-[9px] text-stone-500 leading-tight whitespace-nowrap hidden sm:block">
+                      <span className="text-[10px] font-medium text-stone-600 leading-tight whitespace-nowrap hidden sm:block">
                         {item.sub}
                       </span>
                     </button>
@@ -212,7 +212,7 @@ export const Hero: React.FC<HeroProps> = ({
               <button
                 type="button"
                 onClick={onOpenEstimator}
-                className="col-span-2 sm:col-span-1 min-h-[44px] px-3.5 py-2.5 bg-amber-50 hover:bg-amber-100 text-amber-950 border border-amber-300 rounded-xl text-xs sm:text-sm font-semibold transition-colors flex items-center justify-center gap-1.5 whitespace-nowrap cursor-pointer"
+                className="col-span-2 sm:col-span-1 min-h-[44px] px-3.5 py-2.5 bg-amber-50 hover:bg-amber-100 text-amber-950 border border-amber-300 rounded-xl text-xs sm:text-sm font-bold transition-colors flex items-center justify-center gap-1.5 whitespace-nowrap cursor-pointer"
               >
                 <Ruler className="w-4 h-4 text-amber-800 shrink-0" />
                 <span>Dự Toán Kích Thước Cửa &amp; Báo Giá Tự Động</span>
@@ -220,25 +220,25 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
 
             {/* Trust highlights strip */}
-            <div className="pt-2 border-t border-stone-200/80 grid grid-cols-3 gap-1.5 sm:gap-4 text-[10px] sm:text-xs text-stone-600">
+            <div className="pt-2.5 border-t border-stone-200 grid grid-cols-3 gap-1 sm:gap-4 text-[11px] sm:text-xs font-bold text-stone-800">
               <div className="flex items-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
-                <span className="truncate">600k/m cả lắp đặt</span>
+                <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-700 shrink-0" />
+                <span className="whitespace-nowrap">600k/m cả lắp</span>
               </div>
               <div className="flex items-center gap-1">
-                <Ruler className="w-3.5 h-3.5 text-amber-700 shrink-0" />
-                <span className="truncate">Mang mẫu đo tận nhà</span>
+                <Ruler className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-700 shrink-0" />
+                <span className="whitespace-nowrap">Đo tận nhà</span>
               </div>
               <div className="flex items-center gap-1">
-                <Truck className="w-3.5 h-3.5 text-sky-700 shrink-0" />
-                <span className="truncate">Bảo hành 5 năm</span>
+                <Truck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-sky-700 shrink-0" />
+                <span className="whitespace-nowrap">Bảo hành 5 năm</span>
               </div>
             </div>
           </div>
 
           {/* Right Column: Visual Real Photography Showcase (5 cols) */}
           <div className="lg:col-span-5">
-            <div className="relative bg-white rounded-2xl sm:rounded-3xl border border-stone-200/90 shadow-lg p-2.5 sm:p-4 overflow-hidden">
+            <div className="relative bg-white rounded-2xl sm:rounded-3xl border border-stone-200 shadow-lg p-2.5 sm:p-4 overflow-hidden">
               <div className="space-y-2.5">
                 {/* Main Authentic Handover Photo by Mr. Tuyen Hoa */}
                 <div className="relative h-48 sm:h-64 md:h-72 rounded-xl sm:rounded-2xl overflow-hidden bg-stone-100 group">
@@ -247,19 +247,19 @@ export const Hero: React.FC<HeroProps> = ({
                     alt="Anh Tuyến trực tiếp bàn giao bộ rèm vải chống nắng trọn gói 600.000đ/m ngang cả công lắp đặt"
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 brightness-[1.03] contrast-[1.05]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
 
                   {/* Verified Real Badge */}
-                  <div className="absolute top-2.5 left-2.5 bg-amber-400 text-stone-950 text-[10px] sm:text-xs font-extrabold px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-xs">
+                  <div className="absolute top-2.5 left-2.5 bg-amber-400 text-stone-950 text-[11px] sm:text-xs font-extrabold px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-xs">
                     <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
                     <span>Trọn Gói 600.000đ / m Ngang Cả Lắp Đặt</span>
                   </div>
 
                   <div className="absolute bottom-2.5 left-2.5 right-2.5 text-white">
-                    <span className="text-[10px] text-amber-300 font-bold uppercase tracking-wider block">
+                    <span className="text-[11px] text-amber-300 font-bold uppercase tracking-wide block">
                       Chủ Cửa Hàng Tuyến Hoa Trực Tiếp Thi Công
                     </span>
-                    <h3 className="text-xs sm:text-base font-bold font-display leading-tight text-white">
+                    <h3 className="text-sm sm:text-base font-extrabold font-display leading-snug text-white">
                       Rèm Vải Cản Nắng Cao Cấp – Đồng Giá 600.000đ/m Ngang
                     </h3>
                   </div>
@@ -277,10 +277,10 @@ export const Hero: React.FC<HeroProps> = ({
                       alt="Rèm Tuyến Hoa - Đẳng cấp được khẳng định"
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
                     <div className="relative text-white z-10">
-                      <div className="text-[11px] font-bold leading-tight truncate">Rèm Phòng Thờ &amp; Sập Gụ</div>
-                      <div className="text-[10px] font-mono font-bold text-amber-300">600.000 đ/m ngang</div>
+                      <div className="text-xs font-bold leading-snug truncate">Rèm Phòng Thờ &amp; Sập Gụ</div>
+                      <div className="text-[11px] font-mono tabular-nums font-bold text-amber-300">600.000 đ/m ngang</div>
                     </div>
                   </div>
 
@@ -294,25 +294,25 @@ export const Hero: React.FC<HeroProps> = ({
                       alt="Hệ rèm vải 2 lớp kem sữa biệt thự cao cấp Tuyến Hoa"
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
                     <div className="relative text-white z-10">
-                      <div className="text-[11px] font-bold leading-tight truncate">Rèm Âm Trần Tự Động</div>
-                      <div className="text-[10px] font-mono font-bold text-emerald-300">Điều khiển App / Remote</div>
+                      <div className="text-xs font-bold leading-snug truncate">Rèm Âm Trần Tự Động</div>
+                      <div className="text-[11px] font-mono font-bold text-emerald-300">Điều khiển App / Remote</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Commitment Banner */}
-                <div className="p-2 sm:p-2.5 bg-amber-50/90 rounded-xl border border-amber-200 flex items-center justify-between text-xs">
+                <div className="p-2.5 bg-amber-50 rounded-xl border border-amber-300 flex items-center justify-between text-xs">
                   <div className="flex items-center gap-1.5 truncate">
                     <Award className="w-4 h-4 text-amber-800 shrink-0" />
-                    <span className="font-semibold text-stone-900 text-[11px] truncate">
+                    <span className="font-bold text-stone-900 text-xs truncate">
                       Chợ Cháy, Ứng Hòa · Đo tại nhà miễn phí
                     </span>
                   </div>
                   <a
                     href={`tel:${STORE_INFO.hotline}`}
-                    className="text-amber-900 font-extrabold hover:underline font-mono text-[11px] shrink-0 ml-2"
+                    className="text-amber-950 font-extrabold hover:underline font-mono tabular-nums text-xs shrink-0 ml-2"
                   >
                     {STORE_INFO.hotlineDisplay}
                   </a>
