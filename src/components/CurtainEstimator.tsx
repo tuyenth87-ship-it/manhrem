@@ -24,15 +24,15 @@ interface CurtainTypeOption {
 const CURTAIN_OPTIONS: CurtainTypeOption[] = [
   {
     id: 'rem-vai-2-lop',
-    name: 'Rèm Vải 2 Lớp (Gấm + Voan)',
+    name: 'Rèm Vải Cao Cấp Tuyến Hoa (600k/m ngang)',
     unit: 'mét ngang',
-    categoryTitle: 'Rèm Vải Gia Đình',
+    categoryTitle: 'Rèm Vải Trọn Gói Cả Lắp Đặt',
     pricingTiers: [
-      { name: 'Gấm thô cản sáng 85% + Voan trắng', pricePerUnit: 680000, description: 'Phù hợp phòng ngủ, căn hộ chung cư' },
-      { name: 'Gấm Nhật cản sáng 100% + Voan xước', pricePerUnit: 890000, description: 'Dòng chuộng nhất, cách nhiệt điều hòa' },
-      { name: 'Gấm nhung họa tiết hoàng gia 2 lớp', pricePerUnit: 1080000, description: 'Biệt thự, nhà phố sang trọng' },
+      { name: 'Rèm vải cản nắng 100% trọn gói (Cả công thi công lắp đặt)', pricePerUnit: 600000, description: 'Đã bao gồm vải gấm cản nắng, thanh suốt hợp kim, dây vén & công lắp đặt' },
+      { name: 'Rèm vải gấm phối viền cổ điển / lắp âm trần (Cả công lắp đặt)', pricePerUnit: 600000, description: 'Phòng thờ gia tiên, phòng khách truyền thống, phòng ngủ âm trần' },
+      { name: 'Combo Rèm vải cản nắng + Lớp voan lụa/thêu hoa (2 lớp trọn gói)', pricePerUnit: 850000, description: 'Biệt thự, nhà phố sang trọng gồm cả 2 lớp vải & voan thêu' },
     ],
-    included: ['Độ chun 2.5m vải/1m cửa', 'Thanh hợp kim nhôm định hình êm', 'Núm vén rèm và dây buộc đồng bộ', 'Miễn phí công lắp tại Ứng Hòa'],
+    included: ['Đồng giá 600.000đ/m ngang cả công lắp đặt', 'Độ nhún sóng chuẩn 2.5m vải/1m cửa', 'Thanh suốt hợp kim mạ vàng / ray âm trần êm', 'Núm vén rèm và đai buộc đính tem chính hãng'],
   },
   {
     id: 'rem-cau-vong',
@@ -96,15 +96,15 @@ const CURTAIN_OPTIONS: CurtainTypeOption[] = [
   },
   {
     id: 'manh-tre-ban-cong',
-    name: 'Mành Tre Trúc Che Nắng Ban Công',
+    name: 'Mành Tre Trúc Che Nắng & Vẽ Tranh Phong Thủy',
     unit: 'm2',
-    categoryTitle: 'Mành Tre Trúc Ngoài Trời',
+    categoryTitle: 'Mành Tre Trúc Nghệ Thuật',
     pricingTiers: [
-      { name: 'Nan trúc cật tự nhiên nguyên bản', pricePerUnit: 175000, description: 'Chắn nắng gió thông thoáng' },
-      { name: 'Nan trúc cật sơn phủ 2 lớp PU bóng', pricePerUnit: 210000, description: 'Chống thấm dột nước mưa, bền 4-6 năm' },
-      { name: 'Nan tre luồng vót bóng sơn cánh gián', pricePerUnit: 235000, description: 'Dày dặn, chịu gió bão ngoài trời' },
+      { name: 'Nan trúc cật tự nhiên / sơn PU che nắng ban công', pricePerUnit: 210000, description: 'Chắn nắng mưa ngoài trời, bền 5-8 năm' },
+      { name: 'Mành tăm tre vẽ tranh sơn dầu phong thủy TMHC (1m×2m)', pricePerUnit: 495000, description: '38 mẫu tranh Tùng Hạc, Hoa Sen, Chữ Phúc Lộc Thọ, Phật Bà' },
+      { name: 'Mành tre vẽ tranh đại tự từ đường / đình chùa (1.2m×2m)', pricePerUnit: 540000, description: 'Vẽ tay sơn dầu cao cấp chuẩn Thước Lỗ Ban' },
     ],
-    included: ['Nan cật già chống mối mọt', 'Bộ ròng rọc chịu tải nặng', 'Dây kéo cuộn dù dẻo dai', 'Hỗ trợ lắp đặt trọn gói tại nhà'],
+    included: ['Nan cật già hun khói chống mối mọt', 'Bộ ròng rọc chịu tải nặng + dây dù', 'Sơn dầu Acrylic bền màu không bong tróc', 'Hỗ trợ lắp đặt trọn gói tại nhà'],
   },
 ];
 
@@ -114,7 +114,7 @@ export const CurtainEstimator: React.FC<CurtainEstimatorProps & { initialCurtain
   initialCurtainTypeId,
 }) => {
   const [selectedTypeIndex, setSelectedTypeIndex] = useState(0);
-  const [selectedTierIndex, setSelectedTierIndex] = useState(1);
+  const [selectedTierIndex, setSelectedTierIndex] = useState(0);
   const [width, setWidth] = useState<number>(2.5);
   const [height, setHeight] = useState<number>(2.6);
   const [quantity, setQuantity] = useState<number>(1);

@@ -20,12 +20,15 @@ import { RealProjectsGallery } from './components/RealProjectsGallery';
 import { REAL_PROJECTS } from './data/realProjects';
 import { CurtainGuideArticles } from './components/CurtainGuideArticles';
 import { BeadCurtainGallery } from './components/BeadCurtainGallery';
+import { BambooArtworkShowcase } from './components/BambooArtworkShowcase';
+import { FabricCurtainShowcase600k } from './components/FabricCurtainShowcase600k';
+import { MotorizedCurtainShowcase } from './components/MotorizedCurtainShowcase';
 import { PWAInstallModal } from './components/PWAInstallModal';
 import { LogoModal } from './components/LogoModal';
 import { Footer } from './components/Footer';
-import { Search, Sparkles, CheckCircle2, Ruler, LayoutGrid, Scale, MapPin, Eye, PhoneCall, Bot, Zap, Camera, Smartphone, BookOpen, Compass } from 'lucide-react';
+import { Search, Sparkles, CheckCircle2, Ruler, LayoutGrid, Scale, MapPin, Eye, PhoneCall, Bot, Zap, Camera, Smartphone, BookOpen, Compass, Palette, Video } from 'lucide-react';
 
-type MainNavTab = 'catalog' | 'curtain-articles' | 'bead-curtains' | 'real-projects' | 'curtain-calculator' | 'room-visualizer' | 'mattress-comparison' | 'store-consult';
+type MainNavTab = 'catalog' | 'motorized-curtains' | 'fabric-600k' | 'bamboo-artworks' | 'curtain-articles' | 'bead-curtains' | 'real-projects' | 'curtain-calculator' | 'room-visualizer' | 'mattress-comparison' | 'store-consult';
 
 const CATEGORIES: { id: ProductCategory; label: string; count: number }[] = [
   { id: 'all', label: 'Tất Cả Sản Phẩm', count: PRODUCTS.length },
@@ -343,6 +346,54 @@ export default function App() {
 
             <button
               type="button"
+              onClick={() => setActiveMainTab('motorized-curtains')}
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
+                activeMainTab === 'motorized-curtains'
+                  ? 'bg-emerald-800 text-white shadow-xs'
+                  : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
+              }`}
+            >
+              <Video className="w-4 h-4 text-emerald-500" />
+              <span className="flex items-center gap-1.5">
+                <span>Rèm Tự Động Thông Minh (The Shade Store)</span>
+                <span className="text-[10px] px-1.5 py-0.2 bg-emerald-400 text-stone-950 font-bold rounded">Video 4K</span>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveMainTab('fabric-600k')}
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
+                activeMainTab === 'fabric-600k'
+                  ? 'bg-amber-800 text-white shadow-xs'
+                  : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
+              }`}
+            >
+              <Sparkles className="w-4 h-4 text-amber-500" />
+              <span className="flex items-center gap-1.5">
+                <span>Rèm Vải 600k/m Ngang (Cả Lắp Đặt)</span>
+                <span className="text-[10px] px-1.5 py-0.2 bg-amber-400 text-stone-950 font-bold rounded">13 Mẫu Mới</span>
+              </span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveMainTab('bamboo-artworks')}
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
+                activeMainTab === 'bamboo-artworks'
+                  ? 'bg-amber-800 text-white shadow-xs'
+                  : 'text-stone-600 hover:text-stone-950 hover:bg-stone-100'
+              }`}
+            >
+              <Palette className="w-4 h-4 text-amber-500" />
+              <span className="flex items-center gap-1.5">
+                <span>Mành Tre Vẽ Tranh Phong Thủy</span>
+                <span className="text-[10px] px-1.5 py-0.2 bg-emerald-400 text-stone-950 font-bold rounded">38 Mẫu TMHC</span>
+              </span>
+            </button>
+
+            <button
+              type="button"
               onClick={() => setActiveMainTab('curtain-articles')}
               className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap min-h-[40px] ${
                 activeMainTab === 'curtain-articles'
@@ -352,7 +403,7 @@ export default function App() {
             >
               <BookOpen className="w-4 h-4 text-amber-500" />
               <span className="flex items-center gap-1.5">
-                <span>Cẩm Nang & Bài Viết Rèm</span>
+                <span>Cẩm Nang &amp; Bài Viết Rèm</span>
                 <span className="text-[10px] px-1.5 py-0.2 bg-amber-400 text-stone-950 font-bold rounded">Mới</span>
               </span>
             </button>
@@ -462,30 +513,44 @@ export default function App() {
               <div className="flex items-center gap-3 truncate">
                 <div className="relative w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-amber-300/50 shadow-xs">
                   <img
-                    src="/assets/aistudio/1792619301814_1293093313519991016_1293093313519991016_7660cb9abb659911e5fe3cd71a7f60bb_2e6c2394.jpg"
+                    src="/assets/aistudio/IMG_5314_ae0205c4.PNG"
                     alt="Ảnh thật công trình Tuyến Hoa"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
                   />
                   <span className="absolute inset-0 bg-black/20" />
                 </div>
                 <div className="truncate">
                   <div className="flex items-center gap-1.5">
                     <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.2 rounded-full bg-emerald-500 text-white font-mono">
-                      100% Ảnh Thật
+                      100% Ảnh Thật Mới Nhất
                     </span>
                     <span className="text-xs font-bold text-amber-300 truncate">
-                      Công Trình Rèm Cửa &amp; Rèm Cầu Vồng Tuyến Hoa Thi Công Tại Ứng Hòa
+                      Rèm Vải Cao Cấp Tuyến Hoa 600.000đ/m Ngang (Cả Công Thi Công Lắp Đặt)
                     </span>
                   </div>
                   <p className="text-[11px] text-stone-300 mt-0.5 truncate">
-                    Xem phòng khách biệt thự, cửa sổ phòng ngủ, nếp sóng may &amp; ảnh đại gia đình Tuyến Hoa →
+                    Xem toàn bộ {REAL_PROJECTS.length} công trình rèm vải, mành tre từ đường &amp; rèm cầu vồng thực tế →
                   </p>
                 </div>
               </div>
               <span className="hidden md:flex items-center gap-1 text-xs font-bold text-amber-300 group-hover:text-white shrink-0 group-hover:translate-x-1 transition-all">
-                Xem 5 ảnh công trình →
+                Xem {REAL_PROJECTS.length} ảnh công trình →
               </span>
             </div>
+
+            {/* Embedded 13 New Fabric Curtains 600k/m Showcase right on Main Page */}
+            <FabricCurtainShowcase600k
+              onAddToCart={handleAddToCart}
+              onRequestMeasurement={handleRequestMeasurement}
+              onShowToast={showToast}
+            />
+
+            {/* Embedded Motorized Smart Curtain & Shade Showcase (The Shade Store × Tuyến Hoa) */}
+            <MotorizedCurtainShowcase
+              onAddToCart={handleAddToCart}
+              onRequestMeasurement={handleRequestMeasurement}
+              onShowToast={showToast}
+            />
             {/* Catalog Sub-Filter Toolbar */}
             <div className="w-full min-w-0 bg-white p-3 sm:p-4 rounded-2xl border border-stone-200 shadow-xs space-y-3 overflow-hidden">
               {/* Category Sub-Tabs with Smooth Touch Carousel */}
@@ -645,6 +710,30 @@ export default function App() {
               </div>
             )}
 
+            {/* Embedded Bamboo Artworks Showcase (38 TMHC Models) directly on Catalog page */}
+            <div className="mt-8 pt-8 border-t border-stone-200">
+              <BambooArtworkShowcase
+                onSelectForOrder={(artwork) => {
+                  handleAddToCart({
+                    productId: `bamboo-${artwork.id}`,
+                    productName: `Mành Tre Vẽ Tranh: ${artwork.title} (${artwork.code})`,
+                    variantId: artwork.code,
+                    variantName: `Kích thước chuẩn ${artwork.standardSize}`,
+                    size: artwork.standardSize,
+                    price: artwork.priceNumeric,
+                    quantity: 1,
+                    category: 'manh-chieu',
+                    customNote: `Mã tranh ${artwork.code} - Ý nghĩa: ${artwork.meaning}`,
+                  });
+                }}
+                onOpenEstimator={() => {
+                  setEstimatorInitialType('manh-tre-ban-cong');
+                  setActiveMainTab('curtain-calculator');
+                  scrollToContent();
+                }}
+              />
+            </div>
+
             {/* Embedded Curtain Guide & Articles Section directly on Catalog page */}
             <div className="mt-8 pt-8 border-t border-stone-200">
               <CurtainGuideArticles
@@ -658,6 +747,66 @@ export default function App() {
                 onShowToast={showToast}
               />
             </div>
+          </motion.div>
+        )}
+
+        {/* Tab: Dedicated Motorized Smart Curtains & Shades (The Shade Store × Tuyến Hoa) */}
+        {activeMainTab === 'motorized-curtains' && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            <MotorizedCurtainShowcase
+              onAddToCart={handleAddToCart}
+              onRequestMeasurement={handleRequestMeasurement}
+              onShowToast={showToast}
+            />
+          </motion.div>
+        )}
+
+        {/* Tab: Dedicated 13 New Fabric Curtains 600k/m Showcase */}
+        {activeMainTab === 'fabric-600k' && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            <FabricCurtainShowcase600k
+              onAddToCart={handleAddToCart}
+              onRequestMeasurement={handleRequestMeasurement}
+              onShowToast={showToast}
+            />
+          </motion.div>
+        )}
+
+        {/* Tab: Dedicated 38 TMHC Painted Bamboo Curtains */}
+        {activeMainTab === 'bamboo-artworks' && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            <BambooArtworkShowcase
+              onSelectForOrder={(artwork) => {
+                handleAddToCart({
+                  productId: `bamboo-${artwork.id}`,
+                  productName: `Mành Tre Vẽ Tranh: ${artwork.title} (${artwork.code})`,
+                  variantId: artwork.code,
+                  variantName: `Kích thước chuẩn ${artwork.standardSize}`,
+                  size: artwork.standardSize,
+                  price: artwork.priceNumeric,
+                  quantity: 1,
+                  category: 'manh-chieu',
+                  customNote: `Mã tranh ${artwork.code} - Ý nghĩa: ${artwork.meaning}`,
+                });
+              }}
+              onOpenEstimator={() => {
+                setEstimatorInitialType('manh-tre-ban-cong');
+                setActiveMainTab('curtain-calculator');
+                scrollToContent();
+              }}
+            />
           </motion.div>
         )}
 

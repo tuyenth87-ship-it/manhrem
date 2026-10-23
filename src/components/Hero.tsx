@@ -40,7 +40,7 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* Sub-headline */}
             <p className="text-xs sm:text-base md:text-lg text-stone-600 leading-relaxed max-w-2xl">
-              Phân phối chính hãng <strong className="text-stone-900 font-semibold">Đệm Vikosan, Sông Hồng, Everon, Kymdan</strong> cùng rèm vải cản sáng 100%, rèm cầu vồng Hàn Quốc, rèm tổ ong chống muỗi và chiếu trúc hạt. Khảo sát và mang mẫu tận nhà miễn phí khu vực Ứng Hòa.
+              Ưu đãi đặc biệt: <strong className="text-amber-900 font-bold bg-amber-100 px-1.5 py-0.5 rounded">Rèm vải chống nắng cao cấp trọn gói 600.000đ / mét ngang (cả công thi công lắp đặt)</strong>. Phân phối chính hãng <strong className="text-stone-900 font-semibold">Đệm Vikosan, Sông Hồng, Everon, Kymdan</strong>, rèm cầu vồng Hàn Quốc, mành tre vẽ tranh phong thủy &amp; mành hạt kết tranh.
             </p>
 
             {/* Action CTAs: Touch-friendly on mobile */}
@@ -50,7 +50,7 @@ export const Hero: React.FC<HeroProps> = ({
                 onClick={onExploreProducts}
                 className="w-full sm:w-auto min-h-[46px] px-5 sm:px-6 py-3 bg-stone-900 hover:bg-stone-800 active:bg-stone-950 text-white rounded-xl text-xs sm:text-sm font-semibold transition-all shadow-md flex items-center justify-center gap-2 group whitespace-nowrap"
               >
-                <span>Xem Sản Phẩm &amp; Giá Công Khai</span>
+                <span>Xem Rèm Vải 600k/m &amp; Bảng Giá</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
 
@@ -90,11 +90,11 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="pt-3 border-t border-stone-200/80 grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 text-xs text-stone-600">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0" />
-                <span>100% Chính hãng bảo hành tới 15 năm</span>
+                <span>Rèm vải 600.000đ/m ngang cả công lắp đặt</span>
               </div>
               <div className="flex items-center gap-2">
                 <Ruler className="w-4 h-4 text-amber-700 shrink-0" />
-                <span>Thợ mang mẫu đo tại nhà ở Ứng Hòa</span>
+                <span>Thợ mang mẫu đo tại nhà toàn Ứng Hòa</span>
               </div>
               <div className="flex items-center gap-2">
                 <Truck className="w-4 h-4 text-sky-700 shrink-0" />
@@ -107,64 +107,64 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="lg:col-span-5">
             <div className="relative bg-white rounded-3xl border border-stone-200/90 shadow-xl p-3 sm:p-4 overflow-hidden">
               <div className="space-y-3">
-                {/* Main Luxury Living Room Photo (Authentic Project by Tuyen Hoa) */}
-                <div className="relative h-52 sm:h-72 rounded-2xl overflow-hidden bg-stone-100 group">
+                {/* Main Authentic Handover Photo by Mr. Tuyen Hoa */}
+                <div className="relative h-56 sm:h-72 rounded-2xl overflow-hidden bg-stone-100 group">
                   <img
-                    src="/assets/aistudio/1792619301814_1293093313519991016_1293093313519991016_7660cb9abb659911e5fe3cd71a7f60bb_2e6c2394.jpg"
-                    alt="Công trình rèm vải 2 lớp phòng khách biệt thự do Tuyến Hoa thi công tại Ứng Hòa"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    src="/assets/aistudio/IMG_5314_ae0205c4.PNG"
+                    alt="Anh Tuyến trực tiếp bàn giao bộ rèm vải chống nắng trọn gói 600.000đ/m ngang cả công lắp đặt"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 brightness-[1.03] contrast-[1.05]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
                   
                   {/* Verified Real Badge */}
-                  <div className="absolute top-3 left-3 bg-emerald-700/90 text-white text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-lg backdrop-blur-xs flex items-center gap-1 shadow-xs">
+                  <div className="absolute top-3 left-3 bg-amber-500 text-stone-950 text-[10px] sm:text-xs font-extrabold px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-xs">
                     <ShieldCheck className="w-3.5 h-3.5" />
-                    <span>Ảnh Thật Thi Công Tại Ứng Hòa</span>
+                    <span>Trọn Gói 600.000đ / m Ngang Cả Lắp Đặt</span>
                   </div>
 
                   <div className="absolute bottom-3 left-3 right-3 text-white">
                     <span className="text-[10px] text-amber-300 font-bold uppercase tracking-wider block">
-                      Công Trình Biệt Thự Nhà Phố Bàn Giao
+                      Chủ Cửa Hàng Tuyến Hoa Trực Tiếp Thi Công
                     </span>
                     <h3 className="text-sm sm:text-base font-bold font-display leading-tight text-white drop-shadow-xs">
-                      Rèm Vải 2 Lớp Cản Sáng 100% &amp; Rèm Cầu Vồng
+                      Rèm Vải Cản Nắng Cao Cấp – Đồng Giá 600.000đ/m Ngang
                     </h3>
                     <p className="text-[11px] text-stone-200 mt-0.5 flex items-center gap-1">
                       <MapPin className="w-3 h-3 text-amber-400 shrink-0" />
-                      <span>Đo đạc &amp; xe tải Tuyến Hoa lắp đặt tận nhà tại Ứng Hòa</span>
+                      <span>Đã bao gồm vải, thanh treo, phụ kiện &amp; công lắp đặt hoàn thiện</span>
                     </p>
                   </div>
                 </div>
 
                 {/* Two authentic thumbnail cards */}
                 <div className="grid grid-cols-2 gap-2 sm:gap-3">
-                  {/* Real Zebra Blind window */}
+                  {/* Real Ancestral Room Curtain */}
                   <div className="relative h-24 sm:h-28 rounded-xl overflow-hidden bg-stone-100 border border-stone-200 p-2 flex flex-col justify-end group">
                     <img
-                      src="/assets/aistudio/1792619301615_1293093313519991016_1293093313519991016_001b83f41e2f124f06dffb5c9042fba8_3768728a.jpg"
-                      alt="Rèm cầu vồng Hàn Quốc lắp thực tế tại phòng ngủ"
+                      src="/assets/aistudio/IMG_5312_c3f3e101.PNG"
+                      alt="Rèm Tuyến Hoa - Đẳng cấp được khẳng định"
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
                     <div className="relative text-white z-10">
-                      <span className="text-[9px] text-amber-300 font-bold block">Ảnh Thật Cửa Sổ</span>
-                      <div className="text-[11px] sm:text-xs font-bold leading-tight truncate">Rèm Cầu Vồng Modero</div>
-                      <div className="text-[10px] sm:text-[11px] font-mono font-bold text-amber-200">Từ 480.000 đ/m²</div>
+                      <span className="text-[9px] text-amber-300 font-bold block">Đẳng Cấp Khẳng Định</span>
+                      <div className="text-[11px] sm:text-xs font-bold leading-tight truncate">Rèm Phòng Thờ &amp; Sập Gụ</div>
+                      <div className="text-[10px] sm:text-[11px] font-mono font-bold text-amber-200">600.000 đ/m ngang</div>
                     </div>
                   </div>
 
-                  {/* Real Store & Multigenerational team celebration */}
+                  {/* Real Villa Cream 2-Layer Curtain */}
                   <div className="relative h-24 sm:h-28 rounded-xl overflow-hidden bg-stone-100 border border-stone-200 p-2 flex flex-col justify-end group">
                     <img
-                      src="/assets/aistudio/__i_ti_c_b_ng_bay_gi_a_l_ng_qu__-_Copy_5de32935.png"
-                      alt="Đại gia đình Cửa hàng Tuyến Hoa tại Chợ Cháy Ứng Hòa"
+                      src="/assets/aistudio/IMG_5310_8f861c11.JPG"
+                      alt="Hệ rèm vải 2 lớp kem sữa biệt thự cao cấp Tuyến Hoa"
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
                     <div className="relative text-white z-10">
-                      <span className="text-[9px] text-rose-300 font-bold block">Uy Tín 20+ Năm</span>
-                      <div className="text-[11px] sm:text-xs font-bold leading-tight truncate">Gia Đình Tuyến Hoa</div>
-                      <div className="text-[10px] sm:text-[11px] font-mono font-bold text-stone-200">Chợ Cháy · Ứng Hòa</div>
+                      <span className="text-[9px] text-emerald-300 font-bold block">13 Mẫu Mới Lên Sóng</span>
+                      <div className="text-[11px] sm:text-xs font-bold leading-tight truncate">Rèm Âm Trần Biệt Thự</div>
+                      <div className="text-[10px] sm:text-[11px] font-mono font-bold text-stone-200">Cả công lắp đặt</div>
                     </div>
                   </div>
                 </div>

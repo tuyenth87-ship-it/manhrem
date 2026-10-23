@@ -104,7 +104,7 @@ ${item.specs.map((s) => `• ${s}`).join('\n')}
 
 ☎️ XƯỞNG MÀNH RÈM ĐỆM TUYẾN HOA:
 📍 Địa chỉ: Đội 3, Thôn Lưu Xá, Xã Trầm Lộng, Huyện Ứng Hòa, Hà Nội
-📞 Hotline / Zalo tư vấn miễn phí: 0976.230.041 - 0344.727.528
+📞 Hotline / Zalo tư vấn miễn phí: 0344.727.528
 🚚 Miễn phí đo đạc & lắp đặt hoàn thiện tận nhà!`;
 
     navigator.clipboard.writeText(text);
@@ -278,7 +278,7 @@ ${item.specs.map((s) => `• ${s}`).join('\n')}
                 {showWatermark && (
                   <div className="absolute bottom-2 left-2 right-2 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-xs text-[10px] text-amber-200/90 font-medium flex items-center justify-between pointer-events-none">
                     <span>Mành Rèm Tuyến Hoa • Ứng Hòa</span>
-                    <span className="text-white font-mono">0976.230.041</span>
+                    <span className="text-white font-mono">0344.727.528</span>
                   </div>
                 )}
 
@@ -387,11 +387,11 @@ ${item.specs.map((s) => `• ${s}`).join('\n')}
 
             <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
               <a
-                href={`tel:${STORE_INFO.phone}`}
+                href={`tel:${STORE_INFO.hotline}`}
                 className="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-stone-900 font-bold text-sm text-center shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2"
               >
                 <PhoneCall className="w-4 h-4" />
-                <span>Gọi 0976.230.041</span>
+                <span>Gọi 0344.727.528</span>
               </a>
               <a
                 href={STORE_INFO.zaloUrl}
@@ -454,7 +454,7 @@ ${item.specs.map((s) => `• ${s}`).join('\n')}
                 {/* Lightbox Watermark */}
                 {showWatermark && (
                   <div className="absolute bottom-4 left-4 px-3 py-1.5 rounded-lg bg-stone-950/75 backdrop-blur-xs text-xs text-amber-200 border border-stone-700">
-                    Mành Rèm Tuyến Hoa • Trầm Lộng, Ứng Hòa • Hotline: 0976.230.041
+                    Mành Rèm Tuyến Hoa • Trầm Lộng, Ứng Hòa • Hotline: 0344.727.528
                   </div>
                 )}
               </div>
@@ -524,11 +524,11 @@ ${item.specs.map((s) => `• ${s}`).join('\n')}
                 {/* Modal Actions */}
                 <div className="mt-6 pt-4 border-t border-stone-800 space-y-2.5">
                   <a
-                    href={`tel:${STORE_INFO.phone}`}
+                    href={`tel:${STORE_INFO.hotline}`}
                     className="w-full py-3 px-4 rounded-xl bg-amber-600 hover:bg-amber-500 text-stone-900 font-bold text-sm flex items-center justify-center gap-2 shadow-lg transition-transform active:scale-95"
                   >
                     <PhoneCall className="w-4 h-4" />
-                    <span>Gọi Báo Giá Ngay ({STORE_INFO.phone})</span>
+                    <span>Gọi Báo Giá Ngay ({STORE_INFO.hotlineDisplay})</span>
                   </a>
 
                   <div className="grid grid-cols-2 gap-2">

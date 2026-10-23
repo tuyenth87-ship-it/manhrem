@@ -113,6 +113,14 @@ export const Navbar: React.FC<NavbarProps> = ({
               <>
                 <button
                   type="button"
+                  onClick={() => onSelectTab('motorized-curtains')}
+                  className="hover:text-emerald-900 transition-colors whitespace-nowrap shrink-0 text-emerald-950 font-bold flex items-center gap-1 bg-emerald-100/90 px-2.5 py-1 rounded-lg border border-emerald-400"
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
+                  <span>Rèm Tự Động 4.0 (Video)</span>
+                </button>
+                <button
+                  type="button"
                   onClick={() => onSelectTab('bead-curtains')}
                   className="hover:text-amber-800 transition-colors whitespace-nowrap shrink-0 text-amber-950 font-bold flex items-center gap-1 bg-amber-100/80 px-2.5 py-1 rounded-lg border border-amber-300"
                 >
