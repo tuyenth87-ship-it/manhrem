@@ -46,8 +46,9 @@ export default function App() {
   const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc' | 'rating'>('featured');
   const [estimatorInitialType, setEstimatorInitialType] = useState<string | undefined>(undefined);
 
-  // Mobile Menu Drawer State
+  // Mobile Menu Drawer & Mobile Frame Preview State
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileFrameMode, setIsMobileFrameMode] = useState(false);
 
   // Cart State (persisted in localStorage)
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
@@ -202,7 +203,20 @@ export default function App() {
   };
 
   return (
-    <div className="w-full max-w-full overflow-x-hidden min-h-screen bg-[#FBFBFA] flex flex-col font-sans selection:bg-amber-200 selection:text-amber-950 pb-24 md:pb-0">
+    <div
+      className={`w-full max-w-full overflow-x-hidden min-h-screen flex flex-col font-sans selection:bg-amber-200 selection:text-amber-950 pb-20 md:pb-0 ${
+        isMobileFrameMode
+          ? 'bg-stone-900 md:py-6 md:px-4 items-center'
+          : 'bg-[#FBFBFA]'
+      }`}
+    >
+      <div
+        className={`w-full flex flex-col min-h-screen bg-[#FBFBFA] ${
+          isMobileFrameMode
+            ? 'max-w-[430px] rounded-3xl shadow-2xl border-4 border-stone-700 overflow-x-hidden pb-20 relative'
+            : 'max-w-full'
+        }`}
+      >
       {/* Toast Notification */}
       <AnimatePresence>
         {toastMessage && (
@@ -286,6 +300,8 @@ export default function App() {
           scrollToContent();
         }}
         activeCategory={activeCategory}
+        isMobileFrameMode={isMobileFrameMode}
+        onToggleMobileFrameMode={() => setIsMobileFrameMode((prev) => !prev)}
       />
 
       {/* Mobile Menu Drawer */}
@@ -306,7 +322,7 @@ export default function App() {
         activeCategory={activeCategory}
       />
 
-      {/* Hero Showcase with real photography */}
+      {/* Hero Showcase with real photography & Mobile Quick Launcher */}
       <Hero
         onExploreProducts={() => {
           setActiveMainTab('catalog');
@@ -322,6 +338,10 @@ export default function App() {
         }}
         onOpenArticles={() => {
           setActiveMainTab('curtain-articles');
+          scrollToContent();
+        }}
+        onSelectMainTab={(tab) => {
+          setActiveMainTab(tab as MainNavTab);
           scrollToContent();
         }}
       />
@@ -932,6 +952,7 @@ export default function App() {
         onOpenCart={() => setIsCartOpen(true)}
         onOpenCall={handleOpenCall}
         onOpenChat={() => setIsChatOpen(true)}
+        forceVisible={isMobileFrameMode}
       />
 
       {/* Tuyen Hoa AI Chatbox Consultant */}
@@ -994,6 +1015,7 @@ export default function App() {
           scrollToContent();
         }}
       />
+      </div>
     </div>
   );
 }
