@@ -17,9 +17,9 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   if (variant === 'nav-mobile') {
     return (
       <div className={`flex items-center gap-2 ${className}`}>
-        {/* Circular Avatar / Emblem with Golden Border */}
+        {/* Circular Avatar / Emblem with 24K Golden Halo Border */}
         <div className="relative shrink-0">
-          <div className="w-9 h-9 rounded-full p-[1.5px] bg-gradient-to-tr from-amber-600 via-amber-300 to-amber-700 shadow-xs">
+          <div className="w-9 h-9 rounded-full p-[2px] bg-gradient-to-tr from-amber-600 via-yellow-200 to-amber-700 shadow-[0_0_12px_rgba(245,158,11,0.45)]">
             <div className="w-full h-full rounded-full overflow-hidden bg-stone-100 border border-white">
               <img
                 src={OWNER_PHOTO}
@@ -29,7 +29,11 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
               />
             </div>
           </div>
-          {/* Mini active badge */}
+          {/* Mini diamond star & active badge */}
+          <Sparkles
+            className="w-3 h-3 absolute -top-1 -left-0.5 text-amber-500 diamond-twinkle select-none"
+            aria-hidden="true"
+          />
           <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center shadow-xs" title="Chủ tiệm sẵn sàng tư vấn" />
         </div>
 
@@ -39,9 +43,10 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
             <span className="text-[15px] sm:text-lg font-display font-extrabold text-stone-950 tracking-tight whitespace-nowrap">
               Tuyến Hoa
             </span>
+            <Sparkles className="w-3 h-3 text-amber-500 diamond-twinkle shrink-0" />
           </div>
           {showSubtitle && (
-            <p className="text-[10px] font-bold text-amber-900 uppercase tracking-tight whitespace-nowrap">
+            <p className="text-[10px] font-extrabold text-amber-900 uppercase tracking-tight whitespace-nowrap">
               Rèm • Chăn • Đệm
             </p>
           )}
@@ -53,9 +58,9 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   if (variant === 'nav') {
     return (
       <div className={`flex items-center gap-3 ${className}`}>
-        {/* Circular Avatar / Emblem with Golden Ring */}
+        {/* Circular Avatar / Emblem with 24K Golden Ring & Glow */}
         <div className="relative shrink-0 group">
-          <div className="w-10 h-10 md:w-11 md:h-11 rounded-full p-[2px] bg-gradient-to-tr from-amber-600 via-amber-200 to-amber-800 shadow-sm transition-transform duration-300 group-hover:scale-105">
+          <div className="w-10 h-10 md:w-11 md:h-11 rounded-full p-[2px] bg-gradient-to-tr from-amber-600 via-yellow-200 to-amber-800 shadow-[0_0_16px_rgba(245,158,11,0.45)] transition-transform duration-300 group-hover:scale-105">
             <div className="w-full h-full rounded-full overflow-hidden bg-stone-100 border-2 border-white">
               <img
                 src={OWNER_PHOTO}
@@ -65,6 +70,10 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
               />
             </div>
           </div>
+          <Sparkles
+            className="w-3.5 h-3.5 absolute -top-1 -left-1 text-amber-500 diamond-twinkle select-none"
+            aria-hidden="true"
+          />
           {/* Mini badge icon */}
           <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center shadow-xs" title="Chủ tiệm Tuyến Hoa" />
         </div>
@@ -75,17 +84,18 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
             <span className="text-xl md:text-2xl font-display font-extrabold tracking-tight text-stone-950 hover:text-amber-900 transition-colors">
               Tuyến Hoa
             </span>
-            <span className="hidden xl:inline-block text-[11px] font-bold text-amber-950 bg-amber-100 border border-amber-300 px-2 py-0.5 rounded-full">
-              Chợ Cháy
+            <span className="hidden xl:inline-flex items-center gap-1 text-[11px] font-extrabold text-amber-200 bg-gradient-to-r from-stone-950 via-amber-950 to-stone-900 border border-amber-400/70 px-2.5 py-0.5 rounded-full shadow-xs luxury-sheen-auto">
+              <Sparkles className="w-2.5 h-2.5 text-amber-300" />
+              <span>Chợ Cháy</span>
             </span>
           </div>
           {showSubtitle && (
-            <div className="flex items-center gap-1.5 text-xs font-bold text-amber-900 tracking-wide uppercase">
+            <div className="flex items-center gap-1.5 text-xs font-extrabold text-amber-900 tracking-wide uppercase">
               <span>Rèm Cửa</span>
-              <span className="text-stone-400 font-normal">•</span>
-              <span>Chăn Ga</span>
-              <span className="text-stone-400 font-normal">•</span>
-              <span>Đệm</span>
+              <span className="text-amber-500 font-bold">•</span>
+              <span>Chăn Đệm</span>
+              <span className="text-amber-500 font-bold">•</span>
+              <span>Bạt Xếp</span>
             </div>
           )}
         </div>

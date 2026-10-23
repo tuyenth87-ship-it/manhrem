@@ -14,6 +14,96 @@ export interface RealProjectItem {
 
 export const REAL_PROJECTS: RealProjectItem[] = [
   {
+    id: 'proj-awning-garden-villa-6787',
+    title: 'Mái Bạt Xếp Lượn Sóng Màu Nâu Cà Phê Sân Biệt Thự Nhà Vườn (Trọn Gói 350.000đ/m² Cả Công Lắp)',
+    tag: 'Mái Bạt Xếp Sân Vườn 350k/m²',
+    category: 'full-house',
+    location: 'Sân hiên nhà vườn truyền thống tại Ứng Hòa, Hà Nội',
+    image: '/assets/aistudio/IMG_6787_3dc0c93a.JPG',
+    aspect: 'portrait',
+    description: 'Thi công trọn gói hệ mái bạt xếp lượn sóng màu nâu cà phê trầm ấm che mát toàn bộ sân gạch đỏ và hiên nhà gỗ kê bàn trà. Đơn giá niêm yết 350.000đ / 1 m² đã bao gồm cả khung kèo sắt mạ kẽm, bạt Hàn Quốc 3 lớp và công thợ lắp đặt hoàn thiện.',
+    specs: [
+      'Đồng giá trọn gói 350.000đ / 1 m² cả vật tư khung bạt & công lắp đặt',
+      'Bạt Myung Sung Korea 3 lớp cản nắng 98%, chống tia UV bảo vệ bàn ghế gỗ',
+      'Kéo ra che nắng mưa trong 15 giây, thu gọn 90% khi chiều mát',
+      'Tùy chọn nâng cấp Motor bạt tự động điều khiển từ xa bằng Remote'
+    ],
+    date: 'Mới bàn giao',
+    featured: true,
+  },
+  {
+    id: 'proj-awning-rooftop-terrace-6788',
+    title: 'Hệ Mái Bạt Xếp Khổ Lớn Sân Thượng Tầng Cao Chống Nắng & Giông Bão (350.000đ/m² Cả Lắp)',
+    tag: 'Mái Bạt Xếp Sân Thượng 350k/m²',
+    category: 'full-house',
+    location: 'Sân thượng nhà cao tầng khu đô thị',
+    image: '/assets/aistudio/IMG_6788_36978811.JPG',
+    aspect: 'portrait',
+    description: 'Lắp đặt hệ khung kèo thép hộp mạ kẽm hàn gông kiên cố trên sân thượng tầng cao kết hợp mái bạt xếp lượn sóng cách nhiệt. Chống nóng trực tiếp cho trần bê tông tầng dưới, giá trọn gói 350.000đ/m² cả công lắp đặt.',
+    specs: [
+      'Trọn gói 350.000đ / 1 m² bao gồm cả công vận chuyển & hàn lắp tầng cao',
+      'Khung kèo thép hộp dày 1.4ly–1.8ly chịu gió giật trên sân thượng',
+      'Giảm 5–7 độ C cho các phòng ngủ tầng bên dưới vào mùa hè',
+      'Bảo hành khung kèo và bạt xếp chu đáo tận nhà'
+    ],
+    date: 'Mới bàn giao',
+    featured: true,
+  },
+  {
+    id: 'proj-awning-thai-roof-villa-6789',
+    title: 'Mái Bạt Xếp Biệt Thự Mái Thái Kết Hợp Khung Sắt Nghệ Thuật Uốn Hoa Văn (350.000đ/m² Cả Lắp)',
+    tag: 'Biệt Thự Mái Thái Khung Mỹ Thuật',
+    category: 'full-house',
+    location: 'Biệt thự mái Thái tại Huyện Ứng Hòa, Hà Nội',
+    image: '/assets/aistudio/IMG_6789_90126eda.JPG',
+    aspect: 'portrait',
+    description: 'Thiết kế khung dầm vòm uốn hoa văn mỹ thuật sơn tĩnh điện sang trọng nâng đỡ hệ mái bạt xếp lượn sóng trước sảnh chính biệt thự mái Thái. Bảo vệ cửa gỗ đại hội và sân gạch đỏ với đơn giá trọn gói 350.000đ/m² cả công lắp.',
+    specs: [
+      'Trọn gói 350.000đ / 1 m² cả khung sắt hoa văn, bạt Hàn Quốc & công lắp',
+      'Khung vòm uốn mỹ thuật tôn vinh kiến trúc mặt tiền biệt thự mái Thái',
+      'Che nắng hướng Tây và chống mưa hắt vào thềm tam cấp',
+      'Bi treo bạc đạn inox kéo trượt nhẹ nhàng, êm ái'
+    ],
+    date: 'Mới bàn giao',
+    featured: true,
+  },
+  {
+    id: 'proj-awning-car-parking-6790',
+    title: 'Mái Bạt Xếp Lượn Sóng Khổ Lớn Che Sân Đỗ Ô Tô & Khu Kinh Doanh (350.000đ/m² Cả Công Lắp)',
+    tag: 'Mái Bạt Che Sân Ô Tô 350k/m²',
+    category: 'full-house',
+    location: 'Sân đỗ xe ô tô gia đình & cơ quan',
+    image: '/assets/aistudio/IMG_6790_02a22c42.JPG',
+    aspect: 'portrait',
+    description: 'Thi công mái bạt xếp lượn sóng màu ghi sáng trên hệ dầm kèo đôi vượt nhịp lớn che sân đỗ xe ô tô bán tải và xe con. Không vướng cột giữa sân, bảo vệ sơn xe và nội thất da khỏi nắng gắt với giá 350.000đ/m² cả lắp đặt.',
+    specs: [
+      'Đồng giá 350.000đ / 1 m² hoàn thiện cả khung kèo vượt nhịp & công lắp',
+      'Bạt Hàn Quốc màu ghi sáng phản xạ bức xạ nhiệt mặt trời cực tốt',
+      'Lòng sân thông thoáng không cột giữa, ô tô quay đầu dễ dàng',
+      'Hỗ trợ lắp Motor tự động bấm Remote đóng mở ngay từ ghế lái'
+    ],
+    date: 'Mới bàn giao',
+    featured: true,
+  },
+  {
+    id: 'proj-awning-townhouse-front-6791',
+    title: 'Mái Bạt Xếp Di Động Mặt Tiền Nhà Phố & Cửa Hàng Hiện Đại (350.000đ/m² Cả Công Lắp Đặt)',
+    tag: 'Mái Bạt Mặt Tiền Nhà Phố',
+    category: 'full-house',
+    location: 'Nhà phố liền kề & Cửa hàng kinh doanh',
+    image: '/assets/aistudio/IMG_6791_228353ec.JPG',
+    aspect: 'portrait',
+    description: 'Hệ mái bạt xếp di động lắp gọn gàng ngay dưới gầm ban công tầng 2 cho dãy nhà phố sơn trắng hiện đại. Kéo ra che mát toàn bộ mặt tiền tầng 1 và chỗ để xe của khách, thu gọn sát tường trong 10 giây.',
+    specs: [
+      'Giá trọn gói 350.000đ / 1 m² đã bao gồm cả vật tư và công thợ lắp đặt',
+      'Thiết kế vuông vắn, gọn gàng, giữ trọn thẩm mỹ mặt tiền nhà phố',
+      'Thi công nhanh gọn trong 1 buổi, sạch sẽ, bền bỉ trên 10 năm',
+      'Anh Tuyến trực tiếp khảo sát đo đạc tận nơi miễn phí'
+    ],
+    date: 'Mới bàn giao',
+    featured: true,
+  },
+  {
     id: 'proj-tuyen-hoa-handover-5314',
     title: 'Anh Tuyến Trực Tiếp Nghiệm Thu Bàn Giao Rèm Vải Cản Nắng (Trọn Gói 600.000đ/m Ngang Cả Lắp Đặt)',
     tag: 'Phục Vụ Mọi Miền Tổ Quốc',

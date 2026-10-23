@@ -23,12 +23,14 @@ import { BeadCurtainGallery } from './components/BeadCurtainGallery';
 import { BambooArtworkShowcase } from './components/BambooArtworkShowcase';
 import { FabricCurtainShowcase600k } from './components/FabricCurtainShowcase600k';
 import { MotorizedCurtainShowcase } from './components/MotorizedCurtainShowcase';
+import { AwningCanopyShowcase350k } from './components/AwningCanopyShowcase350k';
 import { PWAInstallModal } from './components/PWAInstallModal';
 import { LogoModal } from './components/LogoModal';
 import { Footer } from './components/Footer';
+import { LuxurySparkleOverlay } from './components/LuxurySparkleOverlay';
 import { Search, Sparkles, CheckCircle2, Ruler, LayoutGrid, Scale, MapPin, Eye, PhoneCall, Bot, Zap, Camera, Smartphone, BookOpen, Compass, Palette, Video } from 'lucide-react';
 
-type MainNavTab = 'catalog' | 'motorized-curtains' | 'fabric-600k' | 'bamboo-artworks' | 'curtain-articles' | 'bead-curtains' | 'real-projects' | 'curtain-calculator' | 'room-visualizer' | 'mattress-comparison' | 'store-consult';
+type MainNavTab = 'catalog' | 'awning-350k' | 'motorized-curtains' | 'fabric-600k' | 'bamboo-artworks' | 'curtain-articles' | 'bead-curtains' | 'real-projects' | 'curtain-calculator' | 'room-visualizer' | 'mattress-comparison' | 'store-consult';
 
 const CATEGORIES: { id: ProductCategory; label: string; count: number }[] = [
   { id: 'all', label: 'Tất Cả Sản Phẩm', count: PRODUCTS.length },
@@ -46,9 +48,10 @@ export default function App() {
   const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc' | 'rating'>('featured');
   const [estimatorInitialType, setEstimatorInitialType] = useState<string | undefined>(undefined);
 
-  // Mobile Menu Drawer & Mobile Frame Preview State
+  // Mobile Menu Drawer, Mobile Frame Preview & Luxury Sparkle State
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileFrameMode, setIsMobileFrameMode] = useState(false);
+  const [isSparkleModeEnabled, setIsSparkleModeEnabled] = useState(true);
 
   // Cart State (persisted in localStorage)
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
@@ -207,13 +210,16 @@ export default function App() {
       className={`w-full max-w-full overflow-x-hidden min-h-screen flex flex-col font-sans selection:bg-amber-200 selection:text-amber-950 pb-20 md:pb-0 ${
         isMobileFrameMode
           ? 'bg-stone-900 md:py-6 md:px-4 items-center'
-          : 'bg-[#FBFBFA]'
+          : 'bg-[#FBF9F5]'
       }`}
     >
+      {/* Ambient Chandelier & 24K Gold Diamond Sparkle Overlay */}
+      <LuxurySparkleOverlay enabled={isSparkleModeEnabled} />
+
       <div
-        className={`w-full flex flex-col min-h-screen bg-[#FBFBFA] ${
+        className={`w-full flex flex-col min-h-screen bg-[#FBF9F5] ${
           isMobileFrameMode
-            ? 'max-w-[430px] rounded-3xl shadow-2xl border-4 border-stone-700 overflow-x-hidden pb-20 relative'
+            ? 'max-w-[430px] rounded-3xl shadow-2xl border-4 border-amber-500/70 overflow-x-hidden pb-20 relative'
             : 'max-w-full'
         }`}
       >
@@ -224,7 +230,7 @@ export default function App() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed top-16 md:top-20 right-4 md:right-6 z-50 bg-stone-900 text-white px-4 py-2.5 rounded-2xl shadow-2xl border border-stone-800 flex items-center gap-2 text-xs font-semibold max-w-[90vw]"
+            className="fixed top-16 md:top-20 right-4 md:right-6 z-50 bg-stone-950 text-amber-100 px-4 py-2.5 rounded-2xl shadow-2xl border border-amber-400/70 flex items-center gap-2 text-xs font-extrabold max-w-[90vw]"
           >
             <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
             <span className="truncate">{toastMessage}</span>
@@ -232,44 +238,30 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* Top Local Trust Announcement Bar */}
-      <div className="bg-gradient-to-r from-amber-950 via-stone-900 to-amber-950 text-white text-xs py-1.5 px-3 border-b border-amber-900/40">
+      {/* Top Royal Trust Announcement Bar */}
+      <div className="bg-gradient-to-r from-stone-950 via-amber-950 to-stone-950 text-white text-xs py-1.5 px-3 border-b border-amber-500/50">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-1.5 truncate">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-            <span className="font-bold text-amber-300 shrink-0">Chợ Cháy, Ứng Hòa:</span>
-            <span className="text-stone-100 font-medium truncate">Miễn phí mang mẫu vải rèm &amp; đệm đo tại nhà</span>
+          <div className="flex items-center gap-2 truncate">
+            <Sparkles className="w-3.5 h-3.5 text-amber-300 diamond-twinkle shrink-0" />
+            <span className="luxury-gold-text font-extrabold shrink-0">Showroom Tuyến Hoa:</span>
+            <span className="text-amber-50 font-semibold truncate">
+              Bạt xếp 350k/m² &amp; Rèm vải 600k/m (Cả lắp đặt)
+            </span>
           </div>
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0 pl-2">
+          <div className="flex items-center gap-3 shrink-0 pl-2">
             <button
               type="button"
-              onClick={() => setIsLogoModalOpen(true)}
-              className="text-amber-200 hover:text-white font-bold flex items-center gap-1 transition-colors text-xs"
-              title="Xem chi tiết & Tải logo Tuyến Hoa"
+              onClick={() => setIsSparkleModeEnabled((prev) => !prev)}
+              className={`px-2.5 py-0.5 rounded-full text-[11px] font-extrabold flex items-center gap-1 transition-all cursor-pointer border ${
+                isSparkleModeEnabled
+                  ? 'bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-400 text-stone-950 border-amber-200 shadow-[0_0_12px_rgba(251,191,36,0.5)]'
+                  : 'bg-stone-800 text-stone-300 border-stone-600'
+              }`}
+              title="Bật / Tắt hiệu ứng ánh kim cương long lanh"
             >
-              <Sparkles className="w-3 h-3 text-amber-400" />
-              <span>Logo</span>
+              <Sparkles className="w-3 h-3" />
+              <span>{isSparkleModeEnabled ? 'Long Lanh' : 'Tắt'}</span>
             </button>
-            <span className="text-stone-500">|</span>
-            <button
-              type="button"
-              onClick={() => setIsInstallModalOpen(true)}
-              className="text-amber-300 hover:text-white font-bold flex items-center gap-1 transition-colors text-xs"
-              title="Cài App Tuyến Hoa lên điện thoại"
-            >
-              <Smartphone className="w-3.5 h-3.5" />
-              <span>Cài App</span>
-            </button>
-            <span className="hidden sm:inline text-stone-500">|</span>
-            <button
-              type="button"
-              onClick={() => setIsChatOpen(true)}
-              className="hidden sm:flex text-stone-100 hover:text-white font-semibold items-center gap-1 transition-colors text-xs"
-            >
-              <Bot className="w-3.5 h-3.5" />
-              <span>Hỏi Chatbot</span>
-            </button>
-            <span className="hidden sm:inline text-stone-500">|</span>
             <a
               href={`tel:${STORE_INFO.hotline}`}
               className="hidden sm:flex items-center gap-1 text-emerald-400 hover:text-white font-extrabold font-mono tabular-nums transition-colors text-xs"
@@ -346,140 +338,122 @@ export default function App() {
         }}
       />
 
-      {/* Main Workspace with Clear Tab Architecture */}
-      <main id="main-workspace" className="w-full min-w-0 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 md:py-12 space-y-4 sm:space-y-6 md:space-y-10">
-        {/* Primary Functional Tabs */}
-        <div className="w-full min-w-0 bg-white p-1.5 md:p-2.5 rounded-2xl border border-stone-200/90 shadow-xs overflow-x-auto scrollbar-none touch-pan-x">
-          <div className="flex items-center gap-1 min-w-max">
+      {/* Main Workspace with Spacious, Breathable Layout */}
+      <main id="main-workspace" className="w-full min-w-0 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-10 md:py-14 space-y-6 sm:space-y-8 md:space-y-12">
+        {/* Clean, Concise Tab Bar (No badge clutter) */}
+        <div className="luxury-card w-full min-w-0 bg-gradient-to-r from-white via-[#FFFDF9] to-amber-50/30 p-2 rounded-2xl border border-amber-300/70 overflow-x-auto scrollbar-none touch-pan-x">
+          <div className="flex items-center gap-2 min-w-max">
             <button
               type="button"
               onClick={() => setActiveMainTab('catalog')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
+              className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'catalog'
-                  ? 'bg-stone-900 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
+                  ? 'luxury-sheen-auto bg-gradient-to-r from-stone-950 via-amber-950 to-stone-900 text-amber-200 border border-amber-400/70 shadow-sm'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
               }`}
             >
-              <LayoutGrid className="w-4 h-4" />
-              <span>Sản Phẩm ({PRODUCTS.length})</span>
+              <LayoutGrid className="w-4 h-4 text-amber-400" />
+              <span>Tất Cả Sản Phẩm</span>
             </button>
 
             <button
               type="button"
-              onClick={() => setActiveMainTab('motorized-curtains')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
-                activeMainTab === 'motorized-curtains'
-                  ? 'bg-emerald-800 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
+              onClick={() => setActiveMainTab('awning-350k')}
+              className={`luxury-sheen-auto flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
+                activeMainTab === 'awning-350k'
+                  ? 'bg-gradient-to-r from-emerald-800 via-teal-700 to-emerald-800 text-white border border-amber-300 shadow-sm'
+                  : 'bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-50 text-emerald-950 hover:from-emerald-100 hover:to-teal-100 border border-emerald-400/80'
               }`}
             >
-              <Video className="w-4 h-4 text-emerald-500" />
-              <span className="flex items-center gap-1.5">
-                <span>Rèm Tự Động Thông Minh (The Shade Store)</span>
-                <span className="text-[11px] px-1.5 py-0.2 bg-emerald-400 text-stone-950 font-extrabold rounded">Video 4K</span>
-              </span>
+              <Sparkles className="w-4 h-4 text-amber-500 diamond-twinkle" />
+              <span>Bạt Xếp 350k/m² &amp; Video</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveMainTab('fabric-600k')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
+              className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'fabric-600k'
-                  ? 'bg-amber-800 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
+                  ? 'luxury-sheen-auto bg-amber-900 text-white shadow-xs'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
               }`}
             >
               <Sparkles className="w-4 h-4 text-amber-500" />
-              <span className="flex items-center gap-1.5">
-                <span>Rèm Vải 600k/m Ngang (Cả Lắp Đặt)</span>
-                <span className="text-[11px] px-1.5 py-0.2 bg-amber-400 text-stone-950 font-extrabold rounded">13 Mẫu Mới</span>
-              </span>
+              <span>Rèm Vải 600k/m</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveMainTab('motorized-curtains')}
+              className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
+                activeMainTab === 'motorized-curtains'
+                  ? 'luxury-sheen-auto bg-emerald-800 text-white shadow-xs'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
+              }`}
+            >
+              <Video className="w-4 h-4 text-emerald-500" />
+              <span>Rèm Tự Động 4.0</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveMainTab('bamboo-artworks')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
+              className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'bamboo-artworks'
                   ? 'bg-amber-800 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
               }`}
             >
               <Palette className="w-4 h-4 text-amber-500" />
-              <span className="flex items-center gap-1.5">
-                <span>Mành Tre Vẽ Tranh Phong Thủy</span>
-                <span className="text-[11px] px-1.5 py-0.2 bg-emerald-400 text-stone-950 font-extrabold rounded">38 Mẫu TMHC</span>
-              </span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setActiveMainTab('curtain-articles')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
-                activeMainTab === 'curtain-articles'
-                  ? 'bg-amber-800 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
-              }`}
-            >
-              <BookOpen className="w-4 h-4 text-amber-500" />
-              <span className="flex items-center gap-1.5">
-                <span>Cẩm Nang &amp; Bài Viết Rèm</span>
-                <span className="text-[11px] px-1.5 py-0.2 bg-amber-400 text-stone-950 font-extrabold rounded">Mới</span>
-              </span>
+              <span>Mành Tre Tranh</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveMainTab('bead-curtains')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
+              className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'bead-curtains'
                   ? 'bg-amber-800 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
               }`}
             >
               <Compass className="w-4 h-4 text-amber-500" />
-              <span className="flex items-center gap-1.5">
-                <span>Mành Hạt Nhựa &amp; Gỗ Kết Tranh</span>
-                <span className="text-[11px] px-1.5 py-0.2 bg-amber-400 text-stone-950 font-extrabold rounded">HOT</span>
-              </span>
+              <span>Mành Hạt Gỗ</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveMainTab('real-projects')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
+              className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'real-projects'
                   ? 'bg-stone-900 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
               }`}
             >
               <Camera className="w-4 h-4 text-emerald-500" />
-              <span className="flex items-center gap-1.5">
-                <span>Ảnh Thật Công Trình ({REAL_PROJECTS.length})</span>
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-              </span>
+              <span>Công Trình Thực Tế</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveMainTab('curtain-calculator')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
+              className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'curtain-calculator'
                   ? 'bg-stone-900 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
               }`}
             >
               <Ruler className="w-4 h-4 text-amber-500" />
-              <span>Dự Toán May Rèm</span>
+              <span>Tính Giá Rèm</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveMainTab('room-visualizer')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
+              className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'room-visualizer'
                   ? 'bg-stone-900 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
               }`}
             >
               <Eye className="w-4 h-4 text-sky-500" />
@@ -489,219 +463,229 @@ export default function App() {
             <button
               type="button"
               onClick={() => setActiveMainTab('mattress-comparison')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
+              className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'mattress-comparison'
                   ? 'bg-stone-900 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
               }`}
             >
               <Scale className="w-4 h-4 text-emerald-500" />
-              <span>So Sánh 4 Đệm</span>
+              <span>So Sánh Đệm</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveMainTab('curtain-articles')}
+              className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
+                activeMainTab === 'curtain-articles'
+                  ? 'bg-amber-800 text-white shadow-xs'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
+              }`}
+            >
+              <BookOpen className="w-4 h-4 text-amber-500" />
+              <span>Cẩm Nang</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveMainTab('store-consult')}
-              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[40px] ${
+              className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'store-consult'
                   ? 'bg-stone-900 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
+                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
               }`}
             >
               <MapPin className="w-4 h-4 text-rose-500" />
-              <span>Chợ Cháy &amp; Đo Tại Nhà</span>
+              <span>Địa Chỉ</span>
             </button>
           </div>
         </div>
 
-        {/* Tab 1: Product Catalog View */}
+        {/* Tab 1: Spacious Product Catalog View */}
         {activeMainTab === 'catalog' && (
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.25 }}
-            className="space-y-4 md:space-y-6"
+            className="space-y-8 sm:space-y-10"
           >
-            {/* Real Projects Teaser Banner */}
-            <div
-              onClick={() => {
-                setActiveMainTab('real-projects');
-                scrollToContent();
-              }}
-              className="group cursor-pointer bg-gradient-to-r from-stone-900 via-amber-950 to-stone-900 rounded-2xl p-3 sm:p-4 text-white border border-amber-400/40 flex items-center justify-between gap-3 shadow-md hover:border-amber-300 transition-all"
-            >
-              <div className="flex items-center gap-3 truncate">
-                <div className="relative w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-amber-300/50 shadow-xs">
-                  <img
-                    src="/assets/aistudio/IMG_5314_ae0205c4.PNG"
-                    alt="Ảnh thật công trình Tuyến Hoa"
-                    className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <span className="absolute inset-0 bg-black/20" />
+            {/* 3 Airy Visual Spotlight Cards (Replaces massive stacked walls of text on homepage) */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+              {/* Spotlight 1: Bạt Mái Xếp 350k/m² & Video Tự Động */}
+              <div
+                onClick={() => {
+                  setActiveMainTab('awning-350k');
+                  scrollToContent();
+                }}
+                className="luxury-card group cursor-pointer rounded-3xl overflow-hidden bg-stone-950 border-2 border-emerald-500/70 relative h-64 sm:h-72 flex flex-col justify-between p-5"
+              >
+                <img
+                  src="/assets/aistudio/IMG_6787_3dc0c93a.JPG"
+                  alt="Bạt Mái Xếp 350.000đ/m² Cả Lắp"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.95]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/20" />
+                <div className="relative flex items-center justify-between">
+                  <span className="px-3 py-1 rounded-full bg-emerald-400 text-stone-950 text-xs font-extrabold shadow-sm">
+                    350.000đ / 1 m² Cả Lắp
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full bg-black/70 text-amber-300 text-xs font-bold border border-amber-400/50">
+                    5 Ảnh + 9 Video
+                  </span>
                 </div>
-                <div className="truncate">
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-[11px] uppercase font-extrabold tracking-wide px-2 py-0.2 rounded-full bg-emerald-500 text-white font-mono">
-                      100% Ảnh Thật Mới Nhất
-                    </span>
-                    <span className="text-xs sm:text-sm font-extrabold text-amber-300 truncate">
-                      Rèm Vải Cao Cấp Tuyến Hoa 600.000đ/m Ngang (Cả Công Thi Công Lắp Đặt)
-                    </span>
-                  </div>
-                  <p className="text-xs font-medium text-stone-200 mt-0.5 truncate">
-                    Xem toàn bộ {REAL_PROJECTS.length} công trình rèm vải, mành tre từ đường &amp; rèm cầu vồng thực tế →
+                <div className="relative space-y-1">
+                  <h3 className="text-lg sm:text-xl font-display font-extrabold text-white leading-snug">
+                    Bạt Mái Xếp &amp; Video Bạt Tự Động
+                  </h3>
+                  <p className="text-xs sm:text-sm text-amber-200 font-semibold flex items-center gap-1">
+                    <span>Xem 5 bài viết ảnh thật &amp; kho video</span>
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
                   </p>
                 </div>
               </div>
-              <span className="hidden md:flex items-center gap-1 text-xs font-bold text-amber-300 group-hover:text-white shrink-0 group-hover:translate-x-1 transition-all">
-                Xem {REAL_PROJECTS.length} ảnh công trình →
-              </span>
-            </div>
 
-            {/* Embedded 13 New Fabric Curtains 600k/m Showcase right on Main Page */}
-            <FabricCurtainShowcase600k
-              onAddToCart={handleAddToCart}
-              onRequestMeasurement={handleRequestMeasurement}
-              onShowToast={showToast}
-            />
-
-            {/* Embedded Motorized Smart Curtain & Shade Showcase (The Shade Store × Tuyến Hoa) */}
-            <MotorizedCurtainShowcase
-              onAddToCart={handleAddToCart}
-              onRequestMeasurement={handleRequestMeasurement}
-              onShowToast={showToast}
-            />
-            {/* Catalog Sub-Filter Toolbar */}
-            <div className="w-full min-w-0 bg-white p-3 sm:p-4 rounded-2xl border border-stone-200 shadow-xs space-y-3 overflow-hidden">
-              {/* Category Sub-Tabs with Smooth Touch Carousel */}
-              <div className="w-full min-w-0 overflow-x-auto pb-1 scrollbar-none snap-x touch-pan-x">
-                <div className="flex items-center gap-1.5 min-w-max">
-                  {CATEGORIES.map((cat) => (
-                    <button
-                      key={cat.id}
-                      type="button"
-                      onClick={() => {
-                        setActiveCategory(cat.id);
-                        setSelectedBrand('all');
-                      }}
-                      className={`px-3 py-1.5 sm:px-3.5 sm:py-2 text-xs font-bold rounded-xl transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 min-h-[38px] ${
-                        activeCategory === cat.id
-                          ? 'bg-amber-900 text-white shadow-xs'
-                          : 'text-stone-800 hover:text-stone-950 hover:bg-stone-100'
-                      }`}
-                    >
-                      <span>{cat.label}</span>
-                      <span
-                        className={`text-[11px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
-                          activeCategory === cat.id ? 'bg-amber-800 text-white' : 'bg-stone-200 text-stone-800'
-                        }`}
-                      >
-                        {cat.count}
-                      </span>
-                    </button>
-                  ))}
+              {/* Spotlight 2: Rèm Vải Cản Nắng 600k/m */}
+              <div
+                onClick={() => {
+                  setActiveMainTab('fabric-600k');
+                  scrollToContent();
+                }}
+                className="luxury-card group cursor-pointer rounded-3xl overflow-hidden bg-stone-950 border-2 border-amber-400/70 relative h-64 sm:h-72 flex flex-col justify-between p-5"
+              >
+                <img
+                  src="/assets/aistudio/IMG_5314_ae0205c4.PNG"
+                  alt="Rèm Vải 600.000đ/m Ngang Cả Lắp"
+                  className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 brightness-[0.95]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/20" />
+                <div className="relative flex items-center justify-between">
+                  <span className="px-3 py-1 rounded-full bg-amber-400 text-stone-950 text-xs font-extrabold shadow-sm">
+                    600.000đ / m Ngang Cả Lắp
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full bg-black/70 text-amber-300 text-xs font-bold border border-amber-400/50">
+                    13 Mẫu Thực Tế
+                  </span>
+                </div>
+                <div className="relative space-y-1">
+                  <h3 className="text-lg sm:text-xl font-display font-extrabold text-white leading-snug">
+                    Rèm Vải Cản Nắng Cao Cấp
+                  </h3>
+                  <p className="text-xs sm:text-sm text-amber-200 font-semibold flex items-center gap-1">
+                    <span>Trọn gói thanh treo &amp; công lắp đặt</span>
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </p>
                 </div>
               </div>
 
-              {/* Search, Brand & Sort controls */}
-              <div className="space-y-2 pt-2 border-t border-stone-100">
-                <div className="relative">
-                  <Search className="w-4 h-4 text-stone-500 absolute left-3 top-3" />
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Tìm Vikosan, Sông Hồng, Rèm cầu vồng, Chiếu trúc..."
-                    className="w-full pl-9 pr-8 py-2 text-xs sm:text-sm font-medium text-stone-900 placeholder:text-stone-500 bg-stone-50 rounded-xl border border-stone-300 focus:outline-hidden focus:border-amber-800 min-h-[42px]"
-                  />
-                  {searchQuery && (
-                    <button
-                      type="button"
-                      onClick={() => setSearchQuery('')}
-                      className="absolute right-3 top-2.5 text-sm text-stone-500 hover:text-stone-900 font-bold"
-                    >
-                      ×
-                    </button>
-                  )}
+              {/* Spotlight 3: Rèm Tự Động 4.0 & Công Trình Thực Tế */}
+              <div
+                onClick={() => {
+                  setActiveMainTab('motorized-curtains');
+                  scrollToContent();
+                }}
+                className="luxury-card group cursor-pointer rounded-3xl overflow-hidden bg-stone-950 border-2 border-amber-400/60 relative h-64 sm:h-72 flex flex-col justify-between p-5"
+              >
+                <img
+                  src="/assets/aistudio/IMG_5310_8f861c11.JPG"
+                  alt="Rèm Tự Động Thông Minh 4.0"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.95]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/20" />
+                <div className="relative flex items-center justify-between">
+                  <span className="px-3 py-1 rounded-full bg-amber-300 text-stone-950 text-xs font-extrabold shadow-sm">
+                    SmartHome 4.0
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full bg-black/70 text-emerald-300 text-xs font-bold border border-emerald-400/50">
+                    Video 4K
+                  </span>
+                </div>
+                <div className="relative space-y-1">
+                  <h3 className="text-lg sm:text-xl font-display font-extrabold text-white leading-snug">
+                    Rèm Tự Động &amp; Mành Phong Thủy
+                  </h3>
+                  <p className="text-xs sm:text-sm text-amber-200 font-semibold flex items-center gap-1">
+                    <span>Điều khiển từ xa chuẩn biệt thự</span>
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Clean, Single-Box Catalog Filter Bar */}
+            <div className="w-full min-w-0 bg-white p-4 sm:p-5 rounded-2xl border border-amber-200/80 shadow-xs space-y-3.5 overflow-hidden">
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+                {/* Category Pills */}
+                <div className="w-full lg:w-auto overflow-x-auto pb-1 lg:pb-0 scrollbar-none">
+                  <div className="flex items-center gap-2 min-w-max">
+                    {CATEGORIES.map((cat) => (
+                      <button
+                        key={cat.id}
+                        type="button"
+                        onClick={() => {
+                          setActiveCategory(cat.id);
+                          setSelectedBrand('all');
+                        }}
+                        className={`px-3.5 py-2 text-xs sm:text-sm font-bold rounded-xl transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 min-h-[40px] cursor-pointer ${
+                          activeCategory === cat.id
+                            ? 'bg-stone-950 text-amber-200 border border-amber-400/60 shadow-xs'
+                            : 'bg-stone-100/80 text-stone-800 hover:text-stone-950 hover:bg-amber-50'
+                        }`}
+                      >
+                        <span>{cat.label}</span>
+                        <span
+                          className={`text-[11px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
+                            activeCategory === cat.id ? 'bg-amber-400 text-stone-950' : 'bg-stone-200 text-stone-700'
+                          }`}
+                        >
+                          {cat.count}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-2">
+                {/* Search & Sort Controls */}
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 lg:w-[460px]">
+                  <div className="relative flex-1">
+                    <Search className="w-4 h-4 text-stone-400 absolute left-3 top-3" />
+                    <input
+                      type="text"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder="Tìm đệm, rèm, chiếu trúc..."
+                      className="w-full pl-9 pr-8 py-2 text-xs sm:text-sm font-medium text-stone-900 placeholder:text-stone-400 bg-stone-50 rounded-xl border border-stone-200 focus:outline-hidden focus:border-amber-700 min-h-[40px]"
+                    />
+                    {searchQuery && (
+                      <button
+                        type="button"
+                        onClick={() => setSearchQuery('')}
+                        className="absolute right-3 top-2 text-base text-stone-400 hover:text-stone-900 font-bold"
+                      >
+                        ×
+                      </button>
+                    )}
+                  </div>
+
                   <select
                     value={selectedBrand}
                     onChange={(e) => setSelectedBrand(e.target.value)}
-                    className="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl px-2.5 py-2 text-stone-900 font-semibold focus:outline-hidden focus:border-amber-800 cursor-pointer min-h-[40px] truncate"
+                    className="text-xs sm:text-sm bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 font-semibold focus:outline-hidden focus:border-amber-700 cursor-pointer min-h-[40px]"
                   >
                     <option value="all">Tất cả thương hiệu</option>
-                    <option value="vikosan">Đệm Vikosan (Hàn Quốc)</option>
-                    <option value="song-hong">Đệm Sông Hồng (Chính hãng)</option>
-                    <option value="everon">Đệm Everon (Hàn Quốc)</option>
-                    <option value="kymdan">Đệm Kymdan (Cao su 100%)</option>
-                    <option value="hương trúc">Chiếu Hương Trúc / Cao Sơn</option>
-                    <option value="shikada">Chiếu Mây Shikada / Muji</option>
+                    <option value="vikosan">Đệm Vikosan</option>
+                    <option value="song-hong">Đệm Sông Hồng</option>
+                    <option value="everon">Đệm Everon</option>
+                    <option value="kymdan">Cao su Kymdan</option>
                     <option value="tuyến hoa">Tuyến Hoa Decor</option>
                   </select>
-
-                  <select
-                    value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value as any)}
-                    className="w-full text-xs bg-stone-50 border border-stone-300 rounded-xl px-2.5 py-2 text-stone-900 font-semibold focus:outline-hidden focus:border-amber-800 cursor-pointer min-h-[40px] truncate"
-                  >
-                    <option value="featured">Sắp xếp mặc định</option>
-                    <option value="price-asc">Giá: Thấp đến cao</option>
-                    <option value="price-desc">Giá: Cao xuống thấp</option>
-                    <option value="rating">Đánh giá cao nhất</option>
-                  </select>
-                </div>
-              </div>
-
-              {/* 1-Tap Quick Brand & Category Chips (Mobile-First Experience) */}
-              <div className="w-full min-w-0 pt-2 border-t border-stone-100 overflow-x-auto scrollbar-none snap-x touch-pan-x">
-                <div className="flex items-center gap-1.5 min-w-max py-0.5">
-                  <span className="text-[11px] font-extrabold uppercase tracking-wide text-stone-600 shrink-0">
-                    Lọc nhanh:
-                  </span>
-                  {[
-                    { label: 'Tất cả', brandVal: 'all', catVal: 'all' },
-                    { label: 'Đệm Vikosan', brandVal: 'vikosan', catVal: 'dem' },
-                    { label: 'Đệm Sông Hồng', brandVal: 'song-hong', catVal: 'dem' },
-                    { label: 'Đệm Everon', brandVal: 'everon', catVal: 'dem' },
-                    { label: 'Cao su Kymdan', brandVal: 'kymdan', catVal: 'dem' },
-                    { label: 'Rèm Cầu Vồng', brandVal: 'all', catVal: 'rem-cua' },
-                    { label: 'Rèm Vải 2 Lớp', brandVal: 'all', catVal: 'rem-cua' },
-                    { label: 'Chiếu Trúc Hạt', brandVal: 'all', catVal: 'manh-chieu' },
-                    { label: 'Chăn Ga Lụa', brandVal: 'all', catVal: 'chan-ga-goi' },
-                  ].map((chip, idx) => {
-                    const isActive =
-                      (chip.brandVal !== 'all' && selectedBrand === chip.brandVal) ||
-                      (chip.brandVal === 'all' && chip.catVal !== 'all' && activeCategory === chip.catVal) ||
-                      (chip.brandVal === 'all' && chip.catVal === 'all' && selectedBrand === 'all' && activeCategory === 'all');
-
-                    return (
-                      <button
-                        key={idx}
-                        type="button"
-                        onClick={() => {
-                          setSelectedBrand(chip.brandVal);
-                          setActiveCategory(chip.catVal as ProductCategory);
-                        }}
-                        className={`px-3 py-1 text-xs font-bold rounded-lg shrink-0 transition-all ${
-                          isActive
-                            ? 'bg-amber-950 text-white shadow-xs'
-                            : 'bg-stone-100 hover:bg-stone-200 text-stone-800'
-                        }`}
-                      >
-                        {chip.label}
-                      </button>
-                    );
-                  })}
                 </div>
               </div>
             </div>
 
-            {/* Product Cards Grid: 2-Columns on Mobile, 3 on Desktop */}
+            {/* Product Cards Grid with Generous Breathing Room */}
             {filteredProducts.length === 0 ? (
-              <div className="bg-white rounded-3xl border border-stone-200 p-8 sm:p-12 text-center space-y-3">
-                <p className="text-stone-600 text-xs sm:text-sm">
+              <div className="bg-white rounded-3xl border border-stone-200 p-10 text-center space-y-3">
+                <p className="text-stone-600 text-sm">
                   Không tìm thấy sản phẩm nào khớp với từ khóa tìm kiếm.
                 </p>
                 <button
@@ -711,13 +695,13 @@ export default function App() {
                     setSelectedBrand('all');
                     setSearchQuery('');
                   }}
-                  className="px-4 py-2.5 bg-stone-900 text-white rounded-xl text-xs font-semibold hover:bg-stone-800 transition-colors min-h-[44px]"
+                  className="px-5 py-2.5 bg-stone-900 text-white rounded-xl text-xs sm:text-sm font-semibold hover:bg-stone-800 transition-colors min-h-[42px] cursor-pointer"
                 >
                   Đặt lại bộ lọc
                 </button>
               </div>
             ) : (
-              <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8">
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-7 md:gap-8">
                 {filteredProducts.map((product) => (
                   <ProductCard
                     key={product.id}
@@ -729,44 +713,21 @@ export default function App() {
                 ))}
               </div>
             )}
+          </motion.div>
+        )}
 
-            {/* Embedded Bamboo Artworks Showcase (38 TMHC Models) directly on Catalog page */}
-            <div className="mt-8 pt-8 border-t border-stone-200">
-              <BambooArtworkShowcase
-                onSelectForOrder={(artwork) => {
-                  handleAddToCart({
-                    productId: `bamboo-${artwork.id}`,
-                    productName: `Mành Tre Vẽ Tranh: ${artwork.title} (${artwork.code})`,
-                    variantId: artwork.code,
-                    variantName: `Kích thước chuẩn ${artwork.standardSize}`,
-                    size: artwork.standardSize,
-                    price: artwork.priceNumeric,
-                    quantity: 1,
-                    category: 'manh-chieu',
-                    customNote: `Mã tranh ${artwork.code} - Ý nghĩa: ${artwork.meaning}`,
-                  });
-                }}
-                onOpenEstimator={() => {
-                  setEstimatorInitialType('manh-tre-ban-cong');
-                  setActiveMainTab('curtain-calculator');
-                  scrollToContent();
-                }}
-              />
-            </div>
-
-            {/* Embedded Curtain Guide & Articles Section directly on Catalog page */}
-            <div className="mt-8 pt-8 border-t border-stone-200">
-              <CurtainGuideArticles
-                onSelectEstimator={(estimatorId) => {
-                  setEstimatorInitialType(estimatorId);
-                  setActiveMainTab('curtain-calculator');
-                  scrollToContent();
-                }}
-                onRequestMeasurement={handleRequestMeasurement}
-                onOpenChat={() => setIsChatOpen(true)}
-                onShowToast={showToast}
-              />
-            </div>
+        {/* Tab: Dedicated Awning Canopy 350k/m2 Articles & Motorized Awning Videos */}
+        {activeMainTab === 'awning-350k' && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            <AwningCanopyShowcase350k
+              onAddToCart={handleAddToCart}
+              onRequestMeasurement={handleRequestMeasurement}
+              onShowToast={showToast}
+            />
           </motion.div>
         )}
 
@@ -809,13 +770,15 @@ export default function App() {
           >
             <BambooArtworkShowcase
               onSelectForOrder={(artwork) => {
+                const numericMatch = artwork.priceEstimate.replace(/\./g, '').match(/\d+/);
+                const parsedPrice = numericMatch ? parseInt(numericMatch[0], 10) : 350000;
                 handleAddToCart({
                   productId: `bamboo-${artwork.id}`,
                   productName: `Mành Tre Vẽ Tranh: ${artwork.title} (${artwork.code})`,
                   variantId: artwork.code,
                   variantName: `Kích thước chuẩn ${artwork.standardSize}`,
                   size: artwork.standardSize,
-                  price: artwork.priceNumeric,
+                  price: parsedPrice,
                   quantity: 1,
                   category: 'manh-chieu',
                   customNote: `Mã tranh ${artwork.code} - Ý nghĩa: ${artwork.meaning}`,

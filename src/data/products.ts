@@ -37,6 +37,54 @@ export const STORE_INFO = {
 };
 
 export const PRODUCTS: Product[] = [
+  // --- BẠT MÁI XẾP LƯỢN SÓNG & BẠT TỰ ĐỘNG 350K/M2 ---
+  {
+    id: 'bat-mai-xep-luon-song-tu-dong-350k',
+    name: 'Mái Bạt Xếp Lượn Sóng & Bạt Tự Động Tuyến Hoa (Trọn Gói 350.000đ/m² Cả Công Lắp)',
+    category: 'rem-cua',
+    subCategory: 'Bạt mái xếp & Bạt tự động che nắng mưa',
+    brand: 'Tuyến Hoa Decor',
+    rating: 5.0,
+    reviewsCount: 186,
+    summary: 'Thi công trọn gói Mái bạt xếp lượn sóng Hàn Quốc 3 lớp che sân vườn, sân thượng, biệt thự mái Thái, gara ô tô & mặt tiền nhà phố. Đơn giá 350.000đ / 1 m² đã bao gồm cả khung sắt mạ kẽm, bạt Hàn Quốc và công thợ lắp đặt hoàn thiện.',
+    description: [
+      'Chăn Ga Gối Đệm & Mành Rèm Tuyến Hoa nhận thiết kế, gia công và lắp đặt trọn gói hệ thống Mái bạt xếp lượn sóng di động và Bạt tự động điều khiển từ xa trên toàn huyện Ứng Hòa - Hà Nội và các tỉnh lân cận.',
+      'Sử dụng bạt Myung Sung Korea 3 lớp dày 0.55mm - 0.62mm cản nắng 98%, chống tia UV và chống thấm nước mưa tuyệt đối. Hệ khung kèo thép hộp Hòa Phát mạ kẽm sơn tĩnh điện hoặc uốn hoa văn nghệ thuật siêu bền.',
+      'Đơn giá niêm yết minh bạch: 350.000đ / 1 m² (Đã bao gồm đầy đủ khung sắt, bạt xếp, bi treo bạc đạn, dây kéo và công thợ thi công lắp đặt tận nhà). Có tùy chọn nâng cấp Motor bạt tự động điều khiển Remote & cảm biến mưa gió.'
+    ],
+    features: [
+      'Trọn gói 350.000đ / 1 m² đã bao gồm cả vật tư khung sắt, bạt Hàn Quốc & công lắp đặt',
+      'Bạt Myung Sung Korea 3 lớp cách nhiệt, hạ nhiệt độ sân nhà từ 5–7 độ C mùa hè',
+      'Thu gọn 90% diện tích mái chỉ trong 15 giây khi cần đón gió mát tự nhiên',
+      'Hỗ trợ lắp thêm Motor điều khiển từ xa bằng Remote hoặc điện thoại thông minh'
+    ],
+    specs: {
+      material: 'Bạt Myung Sung Korea 3 lớp + Khung thép hộp mạ kẽm sơn tĩnh điện',
+      warranty: '3 Năm tận nhà cho cả hệ khung cơ khí và bạt che',
+      origin: 'Vải bạt công nghệ Hàn Quốc - Gia công lắp đặt bởi Tuyến Hoa',
+      thicknessOrSize: 'Thi công theo mọi diện tích sân (Từ 10m² đến 500m²)',
+      suitableFor: 'Sân biệt thự nhà vườn, sân thượng tầng cao, nhà mái Thái, sân đỗ ô tô, mặt tiền nhà phố & quán cà phê',
+    },
+    variants: [
+      { id: 'bat-350k-1m2', name: 'Đơn giá chuẩn 1m² (Cả khung + bạt + công lắp)', size: '1m² hoàn thiện trọn gói', price: 350000, originalPrice: 420000 },
+      { id: 'bat-350k-15m2', name: 'Mái bạt sân nhỏ 15m² (Ngang 3m x Vươn 5m)', size: '15m² (3m x 5m) cả lắp đặt', price: 5250000, originalPrice: 6300000 },
+      { id: 'bat-350k-20m2', name: 'Mái bạt sân tiêu chuẩn 20m² (Ngang 4m x Vươn 5m)', size: '20m² (4m x 5m) cả lắp đặt', price: 7000000, originalPrice: 8400000 },
+      { id: 'bat-350k-30m2-motor', name: 'Mái bạt 30m² + Motor Tự Động Remote 400kg', size: '30m² + Motor điều khiển từ xa', price: 13700000, originalPrice: 16200000 },
+    ],
+    defaultVariantIndex: 0,
+    badge: '350.000đ/m² Cả Công Lắp',
+    image: '/assets/aistudio/IMG_6787_3dc0c93a.JPG',
+    secondaryImage: '/assets/aistudio/IMG_6789_90126eda.JPG',
+    galleryImages: [
+      '/assets/aistudio/IMG_6787_3dc0c93a.JPG',
+      '/assets/aistudio/IMG_6788_36978811.JPG',
+      '/assets/aistudio/IMG_6789_90126eda.JPG',
+      '/assets/aistudio/IMG_6790_02a22c42.JPG',
+      '/assets/aistudio/IMG_6791_228353ec.JPG',
+    ],
+    iconType: 'curtain',
+    accentColor: '#047857',
+  },
   // --- ĐỆM ---
   {
     id: 'dem-bong-ep-vikosan-nano',

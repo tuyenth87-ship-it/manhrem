@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Product, ProductVariant, CartItem } from '../types/store';
 import { ProductIllustration } from './ProductIllustration';
-import { ShoppingBag, Eye, Star, Check, ShieldCheck } from 'lucide-react';
+import { ShoppingBag, Eye, Star, Check, Sparkles } from 'lucide-react';
 
 interface ProductCardProps {
   product: Product;
@@ -49,78 +49,69 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       onClick={() => onOpenDetails(product)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group cursor-pointer bg-white rounded-2xl border border-stone-200/90 hover:border-amber-900/40 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden active:scale-[0.99]"
+      className="luxury-card group cursor-pointer bg-gradient-to-b from-white via-[#FFFDF9] to-amber-50/20 rounded-2xl border border-amber-300/60 flex flex-col justify-between overflow-hidden active:scale-[0.99]"
     >
-      {/* Visual Top Container with Real Photo */}
-      <div className="relative overflow-hidden bg-stone-100">
+      {/* Top 24K Gold Hairline Accent */}
+      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-amber-400/80 to-transparent opacity-75 group-hover:opacity-100 transition-opacity" />
+
+      {/* Large Airy Photo Frame */}
+      <div className="luxury-sheen-hover relative overflow-hidden bg-stone-100">
         <ProductIllustration
           product={product}
           size="md"
           showSecondary={isHovered && !!product.secondaryImage}
-          className="h-44 sm:h-56 md:h-60"
+          className="h-48 sm:h-60 md:h-64"
         />
 
-        {/* 1-line Badge on Top Left */}
+        {/* Single Clean Badge on Top Left */}
         {product.badge && (
-          <div className="absolute top-2.5 left-2.5 bg-stone-900/95 backdrop-blur-md text-amber-300 text-[11px] font-bold px-2.5 py-0.5 rounded-md shadow-md">
-            {product.badge}
+          <div className="luxury-sheen-auto absolute top-3 left-3 bg-gradient-to-r from-stone-950 via-amber-950 to-stone-900 backdrop-blur-md text-amber-200 border border-amber-400/70 text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg shadow-md flex items-center gap-1">
+            <Sparkles className="w-3 h-3 text-amber-300 shrink-0" />
+            <span>{product.badge}</span>
           </div>
         )}
 
-        {/* Floating Quick Action overlay for desktop */}
-        <div className="absolute top-2.5 right-2.5 hidden sm:block opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+        {/* Quick View Eye Button on Hover */}
+        <div className="absolute top-3 right-3 hidden sm:block opacity-0 group-hover:opacity-100 transition-opacity duration-200">
           <button
             type="button"
             onClick={(e) => {
               e.stopPropagation();
               onOpenDetails(product);
             }}
-            className="w-8 h-8 rounded-full bg-white/95 backdrop-blur-xs text-stone-700 hover:text-stone-950 hover:bg-white shadow-md flex items-center justify-center transition-all hover:scale-105"
+            className="w-8 h-8 rounded-full bg-white/95 backdrop-blur-xs text-amber-950 hover:bg-amber-400 border border-amber-300 shadow-md flex items-center justify-center transition-all hover:scale-105"
             title="Xem chi tiết"
           >
             <Eye className="w-4 h-4" />
           </button>
         </div>
-
-        {/* Warranty Tag */}
-        <div className="absolute bottom-2 left-2 text-[10px] sm:text-[11px] font-semibold text-white bg-black/70 backdrop-blur-xs px-2 py-0.5 rounded flex items-center gap-1">
-          <ShieldCheck className="w-3 h-3 text-emerald-400 shrink-0" />
-          <span className="truncate">{product.specs.warranty}</span>
-        </div>
       </div>
 
-      {/* Card Body */}
-      <div className="p-2.5 sm:p-4 md:p-5 flex-1 flex flex-col justify-between space-y-2 sm:space-y-3">
+      {/* Spacious Card Body — Minimal Text, Focus on Title & Price */}
+      <div className="p-3.5 sm:p-5 flex-1 flex flex-col justify-between space-y-3">
         <div>
-          {/* Metadata: Brand & Rating */}
-          <div className="flex items-center justify-between text-[11px] sm:text-xs text-stone-600 font-semibold">
-            <span className="uppercase tracking-wide font-extrabold text-amber-950 truncate max-w-[110px] sm:max-w-[140px]">
+          <div className="flex items-center justify-between text-xs text-stone-600 font-semibold">
+            <span className="uppercase tracking-wider font-extrabold text-amber-900 truncate max-w-[140px]">
               {product.brand}
             </span>
-            <span className="flex items-center gap-0.5 text-amber-700 shrink-0">
-              <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
-              <span className="font-mono font-bold text-stone-900 text-[11px] sm:text-xs">{product.rating}</span>
+            <span className="flex items-center gap-1 text-amber-700 shrink-0">
+              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-500" />
+              <span className="font-mono font-bold text-stone-800 text-xs">{product.rating}</span>
             </span>
           </div>
 
-          {/* Product Title */}
-          <h3 className="text-sm sm:text-base font-extrabold text-stone-950 mt-1 line-clamp-2 leading-snug group-hover:text-amber-900 transition-colors font-display">
+          <h3 className="text-sm sm:text-base font-extrabold text-stone-950 mt-1.5 line-clamp-2 leading-snug group-hover:text-amber-900 transition-colors font-display">
             {product.name}
           </h3>
-
-          {/* Summary snippet (hidden on tiny mobile screens to keep card compact and clean) */}
-          <p className="hidden sm:block text-xs sm:text-sm text-stone-700 mt-1 line-clamp-2 leading-relaxed">
-            {product.summary}
-          </p>
         </div>
 
         {/* Size / Variant Picker */}
         {product.variants.length > 1 && (
-          <div className="pt-0.5" onClick={(e) => e.stopPropagation()}>
+          <div onClick={(e) => e.stopPropagation()}>
             <select
               value={selectedVariantIndex}
               onChange={(e) => setSelectedVariantIndex(Number(e.target.value))}
-              className="w-full text-[11px] sm:text-xs bg-stone-50 hover:bg-stone-100 border border-stone-300 rounded-lg px-2 py-1.5 text-stone-900 font-semibold focus:outline-hidden focus:border-amber-800 transition-colors cursor-pointer truncate"
+              className="w-full text-xs bg-amber-50/40 hover:bg-amber-50 border border-amber-300/70 rounded-xl px-2.5 py-2 text-stone-900 font-bold focus:outline-hidden focus:border-amber-700 transition-colors cursor-pointer truncate"
             >
               {product.variants.map((v, i) => (
                 <option key={v.id} value={i}>
@@ -131,29 +122,28 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           </div>
         )}
 
-        {/* Price & Touch Buttons */}
-        <div className="pt-2 sm:pt-3 border-t border-stone-100 flex flex-col gap-1.5 sm:gap-2">
+        {/* Price & Action Buttons */}
+        <div className="pt-2.5 border-t border-amber-200/60 flex flex-col gap-2.5">
           <div className="flex items-baseline justify-between gap-1">
-            <div className="text-sm sm:text-lg md:text-xl font-extrabold text-amber-950 font-mono tabular-nums leading-none">
+            <div className="text-base sm:text-xl font-extrabold text-amber-950 font-mono tabular-nums leading-none">
               {activeVariant.price.toLocaleString('vi-VN')}{' '}
-              <span className="text-[11px] sm:text-xs font-sans font-bold text-stone-600">đ</span>
+              <span className="text-xs font-sans font-bold text-amber-800">đ</span>
             </div>
             {activeVariant.originalPrice && (
-              <div className="text-[10px] sm:text-xs text-stone-500 line-through font-mono tabular-nums">
+              <div className="text-xs text-stone-400 line-through font-mono tabular-nums">
                 {activeVariant.originalPrice.toLocaleString('vi-VN')} đ
               </div>
             )}
           </div>
 
-          {/* Touch Buttons */}
-          <div className="flex items-center gap-1.5 w-full" onClick={(e) => e.stopPropagation()}>
+          <div className="flex items-center gap-2 w-full" onClick={(e) => e.stopPropagation()}>
             <button
               type="button"
               onClick={handleAddToCart}
-              className={`min-h-[38px] w-9 sm:w-10 rounded-xl border text-xs font-semibold transition-all flex items-center justify-center shrink-0 ${
+              className={`min-h-[40px] w-10 rounded-xl border text-xs font-bold transition-all flex items-center justify-center shrink-0 cursor-pointer ${
                 isAdded
-                  ? 'bg-emerald-600 border-emerald-600 text-white'
-                  : 'bg-white border-stone-300 hover:border-stone-900 text-stone-900 hover:bg-stone-50'
+                  ? 'bg-emerald-600 border-emerald-600 text-white shadow-xs'
+                  : 'bg-amber-50/70 border-amber-300 hover:border-amber-600 text-amber-950 hover:bg-amber-100'
               }`}
               title="Thêm vào giỏ hàng"
             >
@@ -163,9 +153,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             <button
               type="button"
               onClick={handleQuickBuy}
-              className="flex-1 min-h-[38px] px-2 py-1.5 bg-stone-900 active:bg-stone-800 text-white rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all shadow-xs text-center flex items-center justify-center"
+              className="luxury-sheen-hover flex-1 min-h-[40px] px-3 py-2 bg-gradient-to-r from-stone-950 via-amber-950 to-stone-900 hover:from-amber-950 hover:to-stone-950 text-amber-200 border border-amber-500/60 rounded-xl text-xs sm:text-sm font-extrabold whitespace-nowrap transition-all shadow-xs text-center flex items-center justify-center gap-1.5 cursor-pointer"
             >
-              Mua ngay
+              <span>Mua ngay</span>
+              <Sparkles className="w-3 h-3 text-amber-300 shrink-0" />
             </button>
           </div>
         </div>

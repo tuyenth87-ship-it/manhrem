@@ -17,7 +17,10 @@ test('CURTAIN_ARTICLES contains all 6 key curtain categories with valid data', (
     assert.ok(article.sizeGuides.length >= 2, 'Must have at least 2 size recommendations');
     assert.ok(article.priceFrom > 0, 'Price must be positive');
     assert.ok(article.adCopy.heading.length > 0, 'Ad copy heading required');
-    assert.ok(article.adCopy.cta.includes('0344 727 528'), 'Ad CTA must include Tuyến Hoa hotline');
+    assert.ok(
+      article.adCopy.cta.includes('0344 727 528') || article.adCopy.cta.includes('0344.727.528'),
+      'Ad CTA must include Tuyến Hoa hotline'
+    );
   });
 });
 

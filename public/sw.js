@@ -1,12 +1,12 @@
 // Service Worker for Tuyến Hoa Mobile App
-const CACHE_NAME = 'tuyen-hoa-v1';
+const CACHE_NAME = 'tuyen-hoa-v2';
 const PRECACHE_ASSETS = [
-  '/',
-  '/manifest.json',
-  '/icon.svg',
-  '/pwa-192x192.png',
-  '/pwa-512x512.png',
-  '/apple-touch-icon.png'
+  './',
+  './manifest.json',
+  './icon.svg',
+  './pwa-192x192.png',
+  './pwa-512x512.png',
+  './apple-touch-icon.png'
 ];
 
 self.addEventListener('install', (event) => {
@@ -34,22 +34,22 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  // Only handle GET requests and skip API requests
   if (event.request.method !== 'GET' || event.request.url.includes('/api/')) {
+    return;
+  }
+
+  // Network-first for HTML navigation so deployed GitHub/Vercel updates appear immediately
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request).catch(() => caches.match('./'))
+    );
     return;
   }
 
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-      return fetch(event.request).catch(() => {
-        // Fallback to cached index.html for navigation requests
-        if (event.request.mode === 'navigate') {
-          return caches.match('/');
-        }
-      });
+      return cachedResponse || fetch(event.request);
     })
   );
 });
+

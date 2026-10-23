@@ -1,0 +1,50 @@
+name: Deploy Website Tuyến Hoa to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  build_and_deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout mã nguồn
+        uses: actions/checkout@v4
+
+      - name: Cài đặt Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Cài đặt thư viện (npm install)
+        run: npm install --legacy-peer-deps
+
+      - name: Đóng gói giao diện (npm run build)
+        run: npm run build
+
+      - name: Cấu hình GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Tải thư mục dist lên GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: Xuất bản Website lên GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

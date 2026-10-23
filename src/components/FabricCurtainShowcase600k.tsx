@@ -544,10 +544,10 @@ export const FabricCurtainShowcase600k: React.FC<FabricCurtainShowcase600kProps>
               </div>
             </div>
 
-            {/* Card Body */}
-            <div className="p-2.5 sm:p-4 flex-1 flex flex-col justify-between space-y-2 sm:space-y-3">
-              <div className="space-y-1 sm:space-y-2">
-                <div className="flex items-center gap-1 text-[11px] sm:text-xs font-bold text-amber-900">
+            {/* Spacious Card Body — Focus on Room Type, Title & Price */}
+            <div className="p-3.5 sm:p-5 flex-1 flex flex-col justify-between space-y-3">
+              <div className="space-y-1.5">
+                <div className="flex items-center gap-1 text-xs font-bold text-amber-900">
                   <Home className="w-3.5 h-3.5 shrink-0" />
                   <span className="truncate">{sample.roomType}</span>
                 </div>
@@ -558,41 +558,22 @@ export const FabricCurtainShowcase600k: React.FC<FabricCurtainShowcase600kProps>
                 >
                   {sample.title}
                 </h3>
-
-                <p className="hidden sm:block text-xs sm:text-sm text-stone-700 line-clamp-2 leading-relaxed">
-                  {sample.description}
-                </p>
-
-                <ul className="hidden sm:block space-y-1 pt-1">
-                  {sample.highlights.map((h, i) => (
-                    <li key={i} className="text-xs font-medium text-stone-800 flex items-start gap-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                      <span>{h}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
 
               {/* Price Calculation & Action Buttons */}
-              <div className="pt-2 sm:pt-3 border-t border-stone-100 space-y-1.5 sm:space-y-2">
-                <div className="flex items-center justify-between bg-amber-50 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg sm:rounded-xl border border-amber-200">
-                  <div>
-                    <span className="text-[10px] sm:text-[11px] font-medium text-stone-600 block">Trọn gói cả lắp:</span>
-                    <span className="text-xs sm:text-sm font-extrabold font-mono tabular-nums text-amber-950">600.000đ/m</span>
-                  </div>
-                  <div className="text-right hidden sm:block">
-                    <span className="text-[11px] font-medium text-stone-600 block">Cửa {doorWidth}m:</span>
-                    <span className="text-xs sm:text-sm font-extrabold font-mono tabular-nums text-emerald-800">
-                      {estimatedTotal.toLocaleString('vi-VN')} đ
-                    </span>
-                  </div>
+              <div className="pt-2.5 border-t border-stone-100 space-y-2.5">
+                <div className="flex items-center justify-between bg-amber-50/70 px-3 py-2 rounded-xl border border-amber-200/80">
+                  <span className="text-xs font-bold text-stone-700">Trọn gói cả lắp:</span>
+                  <span className="text-xs sm:text-sm font-extrabold font-mono tabular-nums text-amber-950">
+                    600.000đ/m
+                  </span>
                 </div>
 
-                <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
+                <div className="grid grid-cols-2 gap-2">
                   <button
                     type="button"
                     onClick={() => handleOrderSample(sample)}
-                    className="min-h-[38px] sm:min-h-[42px] px-2 sm:px-3 py-1.5 sm:py-2.5 bg-stone-900 hover:bg-stone-800 active:scale-95 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-1 transition-all shadow-xs whitespace-nowrap cursor-pointer"
+                    className="min-h-[40px] px-3 py-2 bg-stone-900 hover:bg-stone-800 active:scale-95 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all shadow-xs whitespace-nowrap cursor-pointer"
                   >
                     <ShoppingBag className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                     <span>Đặt Mẫu</span>
@@ -600,36 +581,13 @@ export const FabricCurtainShowcase600k: React.FC<FabricCurtainShowcase600kProps>
 
                   <button
                     type="button"
-                    onClick={() =>
-                      onRequestMeasurement(
-                        `${sample.title} (600.000đ/m ngang cả lắp đặt)`,
-                        `Khách chọn mẫu ${sample.code} - Kích thước dự kiến ${doorWidth}m ngang (${estimatedTotal.toLocaleString('vi-VN')}đ trọn gói)`
-                      )
-                    }
-                    className="min-h-[38px] sm:min-h-[42px] px-2 sm:px-3 py-1.5 sm:py-2.5 bg-amber-100 hover:bg-amber-200 active:scale-95 text-amber-950 rounded-xl text-xs font-bold flex items-center justify-center gap-1 transition-all whitespace-nowrap cursor-pointer"
+                    onClick={() => setLightboxItem(sample)}
+                    className="min-h-[40px] px-3 py-2 bg-amber-100 hover:bg-amber-200 active:scale-95 text-amber-950 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all whitespace-nowrap cursor-pointer"
                   >
-                    <Ruler className="w-3.5 h-3.5 text-amber-800 shrink-0" />
-                    <span>Đo Tận Nhà</span>
+                    <ZoomIn className="w-3.5 h-3.5 text-amber-800 shrink-0" />
+                    <span>Chi Tiết</span>
                   </button>
                 </div>
-
-                <button
-                  type="button"
-                  onClick={() => handleCopyPost(sample)}
-                  className="w-full py-1 text-[11px] font-bold text-stone-600 hover:text-stone-950 flex items-center justify-center gap-1 transition-colors truncate cursor-pointer"
-                >
-                  {copiedId === sample.id ? (
-                    <>
-                      <Check className="w-3 h-3 text-emerald-600 shrink-0" />
-                      <span className="text-emerald-700 font-bold truncate">Đã chép {sample.code}!</span>
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-3 h-3 shrink-0" />
-                      <span className="truncate">Chép bài mẫu {sample.code}</span>
-                    </>
-                  )}
-                </button>
               </div>
             </div>
           </div>
