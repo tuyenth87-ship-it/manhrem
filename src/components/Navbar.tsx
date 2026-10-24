@@ -80,6 +80,14 @@ export const Navbar: React.FC<NavbarProps> = ({
               <>
                 <button
                   type="button"
+                  onClick={() => onSelectTab('man-khung-1tr')}
+                  className="luxury-sheen-auto whitespace-nowrap shrink-0 text-white font-extrabold flex items-center gap-1.5 bg-gradient-to-r from-sky-800 via-blue-800 to-sky-900 hover:from-sky-700 hover:to-blue-800 px-3.5 py-1.5 rounded-xl border border-amber-300 shadow-xs cursor-pointer transition-all hover:scale-[1.02]"
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-amber-300 diamond-twinkle" />
+                  <span>Màn Khung 1Tr (1,8m×2m)</span>
+                </button>
+                <button
+                  type="button"
                   onClick={() => onSelectTab('awning-350k')}
                   className="luxury-sheen-auto whitespace-nowrap shrink-0 text-stone-950 font-extrabold flex items-center gap-1.5 bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 hover:from-amber-400 hover:to-yellow-300 px-3.5 py-1.5 rounded-xl border border-amber-500 shadow-[0_2px_10px_rgba(245,158,11,0.3)] cursor-pointer transition-all hover:scale-[1.02]"
                 >

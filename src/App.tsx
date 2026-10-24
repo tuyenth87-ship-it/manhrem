@@ -24,13 +24,14 @@ import { BambooArtworkShowcase } from './components/BambooArtworkShowcase';
 import { FabricCurtainShowcase600k } from './components/FabricCurtainShowcase600k';
 import { MotorizedCurtainShowcase } from './components/MotorizedCurtainShowcase';
 import { AwningCanopyShowcase350k } from './components/AwningCanopyShowcase350k';
+import { CanopyAndArtisanalShowcase } from './components/CanopyAndArtisanalShowcase';
 import { PWAInstallModal } from './components/PWAInstallModal';
 import { LogoModal } from './components/LogoModal';
 import { Footer } from './components/Footer';
 import { LuxurySparkleOverlay } from './components/LuxurySparkleOverlay';
 import { Search, Sparkles, CheckCircle2, Ruler, LayoutGrid, Scale, MapPin, Eye, PhoneCall, Bot, Zap, Camera, Smartphone, BookOpen, Compass, Palette, Video } from 'lucide-react';
 
-type MainNavTab = 'catalog' | 'awning-350k' | 'motorized-curtains' | 'fabric-600k' | 'bamboo-artworks' | 'curtain-articles' | 'bead-curtains' | 'real-projects' | 'curtain-calculator' | 'room-visualizer' | 'mattress-comparison' | 'store-consult';
+type MainNavTab = 'catalog' | 'man-khung-1tr' | 'awning-350k' | 'motorized-curtains' | 'fabric-600k' | 'bamboo-artworks' | 'curtain-articles' | 'bead-curtains' | 'real-projects' | 'curtain-calculator' | 'room-visualizer' | 'mattress-comparison' | 'store-consult';
 
 const CATEGORIES: { id: ProductCategory; label: string; count: number }[] = [
   { id: 'all', label: 'Tất Cả Sản Phẩm', count: PRODUCTS.length },
@@ -51,7 +52,7 @@ export default function App() {
   // Mobile Menu Drawer, Mobile Frame Preview & Luxury Sparkle State
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileFrameMode, setIsMobileFrameMode] = useState(false);
-  const [isSparkleModeEnabled, setIsSparkleModeEnabled] = useState(true);
+  const [isSparkleModeEnabled, setIsSparkleModeEnabled] = useState(false);
 
   // Cart State (persisted in localStorage)
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
@@ -245,7 +246,7 @@ export default function App() {
             <Sparkles className="w-3.5 h-3.5 text-amber-300 diamond-twinkle shrink-0" />
             <span className="luxury-gold-text font-extrabold shrink-0">Showroom Tuyến Hoa:</span>
             <span className="text-amber-50 font-semibold truncate">
-              Bạt xếp 350k/m² &amp; Rèm vải 600k/m (Cả lắp đặt)
+              Màn khung 1.000.000đ/bộ (1,8m×2m) · Rèm vải 600k/m · Bạt xếp 350k/m² · Tương Ngọc Tuyến
             </span>
           </div>
           <div className="flex items-center gap-3 shrink-0 pl-2">
@@ -354,6 +355,19 @@ export default function App() {
             >
               <LayoutGrid className="w-4 h-4 text-amber-400" />
               <span>Tất Cả Sản Phẩm</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveMainTab('man-khung-1tr')}
+              className={`luxury-sheen-auto flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
+                activeMainTab === 'man-khung-1tr'
+                  ? 'bg-gradient-to-r from-sky-800 via-blue-800 to-sky-900 text-white border border-amber-300 shadow-sm'
+                  : 'bg-gradient-to-r from-sky-50 via-amber-50 to-sky-50 text-sky-950 hover:from-sky-100 hover:to-amber-100 border border-sky-400/80'
+              }`}
+            >
+              <Sparkles className="w-4 h-4 text-amber-500 diamond-twinkle" />
+              <span>Màn Khung 1Tr (1,8m×2m) &amp; Tương Ngọc Tuyến</span>
             </button>
 
             <button
@@ -509,107 +523,12 @@ export default function App() {
             transition={{ duration: 0.25 }}
             className="space-y-8 sm:space-y-10"
           >
-            {/* 3 Airy Visual Spotlight Cards (Replaces massive stacked walls of text on homepage) */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-              {/* Spotlight 1: Bạt Mái Xếp 350k/m² & Video Tự Động */}
-              <div
-                onClick={() => {
-                  setActiveMainTab('awning-350k');
-                  scrollToContent();
-                }}
-                className="luxury-card group cursor-pointer rounded-3xl overflow-hidden bg-stone-950 border-2 border-emerald-500/70 relative h-64 sm:h-72 flex flex-col justify-between p-5"
-              >
-                <img
-                  src="/assets/aistudio/IMG_6787_3dc0c93a.JPG"
-                  alt="Bạt Mái Xếp 350.000đ/m² Cả Lắp"
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.95]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/20" />
-                <div className="relative flex items-center justify-between">
-                  <span className="px-3 py-1 rounded-full bg-emerald-400 text-stone-950 text-xs font-extrabold shadow-sm">
-                    350.000đ / 1 m² Cả Lắp
-                  </span>
-                  <span className="px-2.5 py-1 rounded-full bg-black/70 text-amber-300 text-xs font-bold border border-amber-400/50">
-                    5 Ảnh + 9 Video
-                  </span>
-                </div>
-                <div className="relative space-y-1">
-                  <h3 className="text-lg sm:text-xl font-display font-extrabold text-white leading-snug">
-                    Bạt Mái Xếp &amp; Video Bạt Tự Động
-                  </h3>
-                  <p className="text-xs sm:text-sm text-amber-200 font-semibold flex items-center gap-1">
-                    <span>Xem 5 bài viết ảnh thật &amp; kho video</span>
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  </p>
-                </div>
-              </div>
-
-              {/* Spotlight 2: Rèm Vải Cản Nắng 600k/m */}
-              <div
-                onClick={() => {
-                  setActiveMainTab('fabric-600k');
-                  scrollToContent();
-                }}
-                className="luxury-card group cursor-pointer rounded-3xl overflow-hidden bg-stone-950 border-2 border-amber-400/70 relative h-64 sm:h-72 flex flex-col justify-between p-5"
-              >
-                <img
-                  src="/assets/aistudio/IMG_5314_ae0205c4.PNG"
-                  alt="Rèm Vải 600.000đ/m Ngang Cả Lắp"
-                  className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 brightness-[0.95]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/20" />
-                <div className="relative flex items-center justify-between">
-                  <span className="px-3 py-1 rounded-full bg-amber-400 text-stone-950 text-xs font-extrabold shadow-sm">
-                    600.000đ / m Ngang Cả Lắp
-                  </span>
-                  <span className="px-2.5 py-1 rounded-full bg-black/70 text-amber-300 text-xs font-bold border border-amber-400/50">
-                    13 Mẫu Thực Tế
-                  </span>
-                </div>
-                <div className="relative space-y-1">
-                  <h3 className="text-lg sm:text-xl font-display font-extrabold text-white leading-snug">
-                    Rèm Vải Cản Nắng Cao Cấp
-                  </h3>
-                  <p className="text-xs sm:text-sm text-amber-200 font-semibold flex items-center gap-1">
-                    <span>Trọn gói thanh treo &amp; công lắp đặt</span>
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  </p>
-                </div>
-              </div>
-
-              {/* Spotlight 3: Rèm Tự Động 4.0 & Công Trình Thực Tế */}
-              <div
-                onClick={() => {
-                  setActiveMainTab('motorized-curtains');
-                  scrollToContent();
-                }}
-                className="luxury-card group cursor-pointer rounded-3xl overflow-hidden bg-stone-950 border-2 border-amber-400/60 relative h-64 sm:h-72 flex flex-col justify-between p-5"
-              >
-                <img
-                  src="/assets/aistudio/IMG_5310_8f861c11.JPG"
-                  alt="Rèm Tự Động Thông Minh 4.0"
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.95]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/20" />
-                <div className="relative flex items-center justify-between">
-                  <span className="px-3 py-1 rounded-full bg-amber-300 text-stone-950 text-xs font-extrabold shadow-sm">
-                    SmartHome 4.0
-                  </span>
-                  <span className="px-2.5 py-1 rounded-full bg-black/70 text-emerald-300 text-xs font-bold border border-emerald-400/50">
-                    Video 4K
-                  </span>
-                </div>
-                <div className="relative space-y-1">
-                  <h3 className="text-lg sm:text-xl font-display font-extrabold text-white leading-snug">
-                    Rèm Tự Động &amp; Mành Phong Thủy
-                  </h3>
-                  <p className="text-xs sm:text-sm text-amber-200 font-semibold flex items-center gap-1">
-                    <span>Điều khiển từ xa chuẩn biệt thự</span>
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  </p>
-                </div>
-              </div>
-            </div>
+            {/* Direct Featured Showcase of All Newly Published & Annotated Products with Market Prices */}
+            <CanopyAndArtisanalShowcase
+              onAddToCart={handleAddToCart}
+              onRequestMeasurement={handleRequestMeasurement}
+              onShowToast={showToast}
+            />
 
             {/* Clean, Single-Box Catalog Filter Bar */}
             <div className="w-full min-w-0 bg-white p-4 sm:p-5 rounded-2xl border border-amber-200/80 shadow-xs space-y-3.5 overflow-hidden">
@@ -713,6 +632,21 @@ export default function App() {
                 ))}
               </div>
             )}
+          </motion.div>
+        )}
+
+        {/* Tab: Dedicated Màn Khung 1.000.000đ/Bộ (1,8m x 2,0m) & Tương Ngọc Tuyến */}
+        {activeMainTab === 'man-khung-1tr' && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            <CanopyAndArtisanalShowcase
+              onAddToCart={handleAddToCart}
+              onRequestMeasurement={handleRequestMeasurement}
+              onShowToast={showToast}
+            />
           </motion.div>
         )}
 

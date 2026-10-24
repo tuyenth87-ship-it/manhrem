@@ -46,6 +46,118 @@ export interface CurtainArticle {
 
 export const CURTAIN_ARTICLES: CurtainArticle[] = [
   {
+    id: 'bai-viet-man-khung-1-trieu-1m8-x-2m-va-tuong-ngoc-tuyen',
+    curtainType: 'fabric',
+    categoryLabel: 'Màn Khung 1Tr/Bộ (1,8m×2m) & Tương Ngọc Tuyến',
+    badge: 'Màn Khung 1.000.000đ/Bộ (1,8m × 2,0m)',
+    badgeColor: 'bg-sky-700 text-white',
+    title: 'Màn Khung Cao Cấp Tuyến Hoa Đồng Giá 1.000.000đ / 1 Bộ (Rộng 1,8m × Dài 2,0m) & Đặc Sản Tương Ngọc Tuyến Thủ Công',
+    subtitle: 'Trọn bộ 4 mẫu màn khung inox ròng rọc / gấp gọn thêu hoa cao cấp kích thước chuẩn Rộng 1,8m × Dài 2,0m giá đúng 1.000.000đ/bộ cả công lắp đặt, cùng Đặc sản Tương Ngọc Tuyến truyền thống đóng chai thủy tinh 500ml.',
+    primaryImage: '/assets/aistudio/IMG_4550_18a407c3.JPG',
+    primaryImageCaption: 'Mã MK-TH-01: Màn khung ròng rọc cao cấp màu xanh dương thêu hoa mai trắng & chân diềm ren vàng đồng hoàng gia – Giá đúng 1.000.000đ / 1 bộ (Rộng 1,8m × Dài 2,0m).',
+    galleryImages: [
+      {
+        src: '/assets/aistudio/IMG_4551_a163b8cb.JPG',
+        caption: 'Mã MK-TH-02: Màn khung màu tím Huế lãng mạn thêu hoa hồng kem phối ren trắng – 1.000.000đ/bộ (Rộng 1,8m × Dài 2,0m).',
+      },
+      {
+        src: '/assets/aistudio/IMG_4552_1e188f79.JPG',
+        caption: 'Mã MK-TH-03: Combo Màn khung xanh lam phối ren trắng (1.000.000đ/bộ 1,8m×2m) & Rèm vải cửa sổ màu ghi xám cản nắng (600.000đ/m).',
+      },
+      {
+        src: '/assets/aistudio/IMG_4553_3bdc7af1.JPG',
+        caption: 'Mã MK-TH-04: Combo 3 món phòng ngủ: Màn khung xanh cốm viền vàng (1.000.000đ/bộ 1,8m×2m) + Đệm bông ép gấp 3 + Rèm cửa sổ.',
+      },
+      {
+        src: '/assets/aistudio/Bao_b__t__ng_Ng_c_Tuy_n_th__c_ng_b04e6f94.png',
+        caption: 'Mã TNT-500ML: Chai Tương Ngọc Tuyến thủ công truyền thống 500ml nắp kín niêm phong an toàn thực phẩm (65.000đ/chai).',
+      },
+      {
+        src: '/assets/aistudio/B_ng_Qu_ng_C_o_T__ng_Ng_c_Tuy_n__m__p_86dbb55c.png',
+        caption: 'Mã TNT-STORY-01: Bảng quy trình 9 bước ủ chượp Tương đậu nành & cơm nếp mốc tự nhiên trong chum sành truyền thống Ngọc Tuyến.',
+      },
+      {
+        src: '/assets/aistudio/_nh_ChatGPT_14_17_01_23_thg_10__2026_0ef46668.png',
+        caption: 'Mã TNT-STORY-02: Bảng quảng cáo Tương & Nước chấm cổ truyền Ngọc Tuyến – Đậm đà bữa cơm gia đình Việt (0344.727.528).',
+      },
+      {
+        src: '/assets/aistudio/Gemini_Generated_Image_a02k7ha02k7ha02k_8ab38dbe.png',
+        caption: 'Mã TNT-GIFT-750: Bình Tương Ngọc Tuyến Gia Truyền dáng lục giác chạm chữ Thọ bọc giấy Kraft thủ công (120.000đ/bình 750ml).',
+      },
+      {
+        src: '/assets/aistudio/Gemini_Generated_Image_ft96peft96peft96_a2a207a7.png',
+        caption: 'Mã CT-BT-01: Công trình biệt thự tân cổ điển 3 tầng hồ cá Koi lắp trọn gói Rèm vải hoàng gia (600k/m) & Màn khung phòng ngủ (1Tr/bộ).',
+      },
+      {
+        src: '/assets/aistudio/20261023_112522_44728187.jpg',
+        caption: 'Mã CT-BT-02: Khảo sát đo đạc thực tế biệt thự tân cổ điển trắng đang hoàn thiện tại Chợ Ngăm, Đại Cường, Ứng Hòa.',
+      },
+      {
+        src: '/assets/aistudio/20261023_112551_27542eea.jpg',
+        caption: 'Mã CT-BT-03: Hình ảnh thực tế cửa hàng Chăn Ga Gối Đệm & tòa biệt thự tân cổ điển trắng tại khu vực Chợ Ngăm – Ứng Hòa.',
+      },
+      {
+        src: '/assets/aistudio/Gemini_Generated_Image_uzr9k0uzr9k0uzr9_704694ed.png',
+        caption: 'Mã DV-NT-01: Đội xe bán tải Ngọc Tuyến chuyên chở và giao lắp miễn phí Màn khung 1Tr, Đệm bông ép & Rèm cửa tận nhà.',
+      },
+    ],
+    materialHeadline: 'Chi Tiết Cấu Tạo Màn Khung 1.000.000đ/Bộ (1,8m × 2,0m) & Đặc Sản Tương Ngọc Tuyến',
+    materialDetails: [
+      {
+        part: 'Khung Màn Inox Chịu Lực (Rộng 1,8m × Dài 2,0m)',
+        material: 'Inox / Hợp kim cao cấp chống gỉ sét, bát bắt tường chịu lực hoặc hệ dây kéo ròng rọc êm nhẹ',
+        origin: 'Việt Nam – Lắp đặt bởi Tuyến Hoa',
+        feature: 'Không cần khoan chân giường, ban ngày vén gọn sát tường giúp phòng ngủ rộng thoáng',
+      },
+      {
+        part: 'Vải Màn Tuyn Lạnh & Diềm Thêu Hoa 2 Tầng',
+        material: 'Tuyn lạnh sợi kép mắt nhỏ kết hợp đỉnh màn thêu hoa nổi 3D và chân ren vàng đồng / ren trắng',
+        origin: 'Hàng may kỹ cao cấp Tuyến Hoa',
+        feature: 'Chống muỗi tuyệt đối 100%, thoáng mát, giặt máy không co rút, bền màu trên 5 năm',
+      },
+      {
+        part: 'Tương Ngọc Tuyến Thủ Công (Chai 500ml & Bình 750ml)',
+        material: '100% Đậu tương quê chắc mẩy, cơm nếp cái hoa vàng ủ mốc nắng tự nhiên, muối tinh khiết ủ chum sành',
+        origin: 'Cơ sở Tương Thủ Công Ngọc Tuyến (0344.727.528)',
+        feature: 'Sánh mịn, thơm dịu, đậm đà hương vị Việt, đóng chai thủy tinh cao cấp nắp kín không chất bảo quản',
+      },
+    ],
+    sizeGuides: [
+      {
+        doorType: 'Giường Đôi Tiêu Chuẩn Gia Đình & Phòng Cưới',
+        recommendedSize: 'Rộng 1,8m × Dài 2,0m (Chiều cao màn 2,15m)',
+        installStyle: 'Phủ bì cửa (đẹp nhất)',
+        unitCalc: 'Đồng giá niêm yết 1.000.000đ / 1 bộ hoàn thiện (Đã gồm khung inox + màn thêu hoa + công lắp)',
+        approxPriceRange: '1.000.000đ / 1 bộ trọn gói',
+        note: 'Đặt từ 2 bộ màn khung trở lên được giảm ngay 50.000đ/bộ (Chỉ còn 950.000đ/bộ).',
+      },
+      {
+        doorType: 'Combo Phòng Ngủ: Màn Khung (1,8m × 2m) + Rèm Cửa Sổ (Ngang 1,5m - 2m)',
+        recommendedSize: 'Màn khung 1,8m × 2,0m + Rèm cửa sổ cản nắng 100%',
+        installStyle: 'Phủ bì cửa (đẹp nhất)',
+        unitCalc: '1.000.000đ (Màn khung) + 900.000đ - 1.200.000đ (Rèm cửa sổ 600k/m)',
+        approxPriceRange: '1.900.000đ - 2.200.000đ / trọn bộ phòng ngủ',
+        note: 'Miễn phí 100% công thợ khoan lắp đồng bộ cả màn khung và rèm cửa trong 1 buổi.',
+      },
+    ],
+    measurementTip: 'Tất cả 4 mẫu Màn Khung Cao Cấp kích thước chuẩn giường đôi Rộng 1,8m × Dài 2,0m (Xanh Dương Hoa Mai, Tím Huế, Xanh Lam Ren Trắng, Xanh Cốm Hoàng Gia) đều ĐỒNG GIÁ 1.000.000Đ / 1 BỘ hoàn thiện cả khung và công lắp!',
+    promoHighlights: [
+      'Đồng giá 1.000.000đ / 1 bộ Màn khung Rộng 1,8m × Dài 2,0m (Cả khung inox & công lắp)',
+      'Giảm ngay 50.000đ/bộ khi đặt lắp từ 2 bộ màn khung trở lên cho nhà mới',
+      'Đặc sản Tương Ngọc Tuyến thủ công 100% tự nhiên: 65.000đ/chai thủy tinh 500ml',
+      'Miễn phí giao hàng và khoan lắp tận giường bằng đội xe bán tải Ngọc Tuyến',
+    ],
+    adCopy: {
+      heading: 'MÀN KHUNG CAO CẤP TUYẾN HOA – ĐỒNG GIÁ 1.000.000Đ / 1 BỘ (RỘNG 1,8M × DÀI 2,0M) & ĐẶC SẢN TƯƠNG NGỌC TUYẾN THỦ CÔNG!',
+      body: 'Cập nhật bảng giá và hình ảnh thực tế từng mã sản phẩm tại Cửa hàng Tuyến Hoa – Ngọc Tuyến:\n\n🛏️ MÀN KHUNG CAO CẤP (RỘNG 1,8M × DÀI 2,0M): Đúng 1.000.000đ / 1 bộ hoàn thiện!\n- Mã MK-TH-01: Xanh Dương thêu hoa mai trắng phối ren vàng đồng.\n- Mã MK-TH-02: Tím Huế phòng cưới thêu hoa kem phối ren trắng.\n- Mã MK-TH-03: Xanh Lam phối ren trắng sữa + Rèm cửa sổ màu ghi (600k/m).\n- Mã MK-TH-04: Xanh Cốm hoàng gia viền vàng + Đệm bông ép gấp 3.\n\n🏺 ĐẶC SẢN TƯƠNG NGỌC TUYẾN THỦ CÔNG TRUYỀN THỐNG:\n- Chai thủy tinh 500ml nắp kín niêm phong: 65.000đ/chai.\n- Bình thủy tinh lục giác chữ Thọ bọc giấy Kraft quà biếu 750ml: 120.000đ/bình.',
+      offer: '🔥 ƯU ĐÃI ĐẶC BIỆT: Miễn phí 100% công thợ lắp đặt màn khung & rèm cửa tận nhà – Giảm 50.000đ/bộ khi lắp từ 2 bộ màn khung!',
+      cta: '👉 Gọi ngay Anh Tuyến: 0344.727.528 để đặt lắp màn khung, rèm cửa và tương Ngọc Tuyến chính gốc!',
+    },
+    priceFrom: 1000000,
+    priceUnit: 'bộ',
+    estimatorTypeId: 'rem-vai-2-lop',
+  },
+  {
     id: 'bai-viet-rem-vai-2-lop-cao-cap',
     curtainType: 'fabric',
     categoryLabel: 'Rèm Vải Trọn Gói 600k/m',

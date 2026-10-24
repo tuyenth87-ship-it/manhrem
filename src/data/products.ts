@@ -37,6 +37,100 @@ export const STORE_INFO = {
 };
 
 export const PRODUCTS: Product[] = [
+  // --- MÀN KHUNG CAO CẤP 1.000.000Đ / BỘ (RỘNG 1,8M × DÀI 2,0M) ---
+  {
+    id: 'man-khung-cao-cap-tuyen-hoa-1tr-18x20',
+    name: 'Màn Khung Cao Cấp Tuyến Hoa – Đồng Giá 1.000.000đ / 1 Bộ (Rộng 1,8m × Dài 2,0m)',
+    category: 'chan-ga-goi',
+    subCategory: 'Màn khung inox & Màn cưới cao cấp',
+    brand: 'Tuyến Hoa Decor',
+    rating: 5.0,
+    reviewsCount: 215,
+    summary: 'Trọn bộ Màn Khung Cao Cấp kích thước chuẩn giường đôi Rộng 1,8m × Dài 2,0m đồng giá đúng 1.000.000đ / 1 bộ. Đầy đủ 4 mẫu thực tế: Xanh Dương Thêu Hoa Mai (MK-TH-01), Tím Huế Phòng Cưới (MK-TH-02), Xanh Lam Phối Ren Trắng (MK-TH-03) và Xanh Cốm Hoàng Gia (MK-TH-04).',
+    description: [
+      'Cửa hàng Chăn Ga Gối Đệm & Mành Rèm Tuyến Hoa phân phối và lắp đặt tận nhà dòng Màn Khung Cao Cấp chuẩn kích thước giường đôi Rộng 1,8m × Dài 2,0m (Cao 2,15m) với mức giá niêm yết công khai: 1.000.000đ / 1 bộ hoàn thiện.',
+      'Khung màn sử dụng chất liệu Inox / Hợp kim chịu lực sáng bóng, bắt tường chắc chắn không cần khoan chân giường, ban ngày vén gọn sát góc tường cực kỳ thoáng phòng.',
+      'Vải màn tuyn lạnh sợi kép mắt nhỏ chống muỗi 100%, đỉnh màn may 2 tầng thêu hoa nổi 3D kết hợp chân diềm ren vàng đồng hoặc ren trắng sữa sang trọng.'
+    ],
+    features: [
+      'Đồng giá 1.000.000đ / 1 bộ chuẩn kích thước Rộng 1,8m × Dài 2,0m (Đã gồm cả khung inox & màn tuyn thêu hoa)',
+      'Đủ 4 màu sắc thực tế: Xanh Dương Hoa Mai, Tím Huế Lãng Mạn, Xanh Lam Ren Trắng, Xanh Cốm Hoàng Gia',
+      'Vải tuyn lạnh cao cấp mắt lưới siêu nhỏ, thoáng khí, giặt máy không nhăn không co rút',
+      'Miễn phí 100% công thợ khoan lắp tận giường ngủ – Bảo hành khung inox 3 năm'
+    ],
+    specs: {
+      material: 'Khung Inox chịu lực chống gỉ + Vải tuyn lạnh cao cấp thêu hoa nổi & viền ren hoàng gia',
+      warranty: '3 Năm cho hệ khung cơ khí & ròng rọc / bát gắn tường',
+      origin: 'Việt Nam – Phân phối & Lắp đặt trực tiếp bởi Tuyến Hoa',
+      thicknessOrSize: 'Chuẩn giường đôi: Rộng 1,8m × Dài 2,0m × Cao 2,15m',
+      suitableFor: 'Phòng ngủ gia đình, phòng cưới tân hôn, biệt thự tân cổ điển & nhà mới hoàn thiện',
+    },
+    variants: [
+      { id: 'mk-th-01-xanh-duong', name: 'Mẫu MK-TH-01: Xanh Dương Thêu Hoa Mai (1,8m × 2,0m)', size: 'Rộng 1,8m × Dài 2,0m', price: 1000000, originalPrice: 1250000 },
+      { id: 'mk-th-02-tim-hue', name: 'Mẫu MK-TH-02: Tím Huế Phòng Cưới (1,8m × 2,0m)', size: 'Rộng 1,8m × Dài 2,0m', price: 1000000, originalPrice: 1250000 },
+      { id: 'mk-th-03-xanh-lam', name: 'Mẫu MK-TH-03: Xanh Lam Phối Ren Trắng (1,8m × 2,0m)', size: 'Rộng 1,8m × Dài 2,0m', price: 1000000, originalPrice: 1250000 },
+      { id: 'mk-th-04-xanh-com', name: 'Mẫu MK-TH-04: Xanh Cốm Viền Ren Vàng (1,8m × 2,0m)', size: 'Rộng 1,8m × Dài 2,0m', price: 1000000, originalPrice: 1250000 },
+    ],
+    defaultVariantIndex: 0,
+    badge: '1.000.000đ/Bộ (1,8m × 2,0m)',
+    image: '/assets/aistudio/IMG_4550_18a407c3.JPG',
+    secondaryImage: '/assets/aistudio/IMG_4551_a163b8cb.JPG',
+    galleryImages: [
+      '/assets/aistudio/IMG_4550_18a407c3.JPG',
+      '/assets/aistudio/IMG_4551_a163b8cb.JPG',
+      '/assets/aistudio/IMG_4552_1e188f79.JPG',
+      '/assets/aistudio/IMG_4553_3bdc7af1.JPG',
+    ],
+    iconType: 'bedding',
+    accentColor: '#0284C7',
+  },
+  // --- ĐẶC SẢN TƯƠNG NGỌC TUYẾN THỦ CÔNG TRUYỀN THỐNG ---
+  {
+    id: 'tuong-ngoc-tuyen-thu-cong-truyen-thong',
+    name: 'Đặc Sản Tương Ngọc Tuyến Thủ Công Truyền Thống – Chai Thủy Tinh 500ml & Bình Lục Giác Quà Biếu',
+    category: 'manh-chieu',
+    subCategory: 'Đặc sản truyền thống Ngọc Tuyến',
+    brand: 'Tuyến Hoa Decor',
+    rating: 5.0,
+    reviewsCount: 164,
+    summary: 'Tương Ngọc Tuyến – "Tương ngon từ tâm, Đậm vị quê nhà": Ủ chượp thủ công trong chum sành từ hạt đậu tương tuyển chọn, cơm nếp cái hoa vàng ủ mốc tự nhiên và muối sạch. Đóng chai thủy tinh 500ml nắp kín an toàn thực phẩm và bình lục giác chữ Thọ quà biếu.',
+    description: [
+      'Tương Ngọc Tuyến được chế biến theo đúng quy trình 9 bước cổ truyền: Đậu tương quê chắc mẩy rang thơm, cơm nếp nấu chín ủ lên mốc tự nhiên trên nong tre, ngâm ủ cùng muối tinh khiết trong chum sành lớn phơi nắng nhiều tháng.',
+      'Thành phẩm tương có màu nâu hổ phách sậm, sánh mịn, vị ngọt đạm tự nhiên, dùng chấm rau muống luộc, thịt luộc, đậu phụ rán, bê thui hoặc kho cá đồng đều thơm ngon tròn vị.',
+      'Đóng chai thủy tinh cao cấp 500ml có tem niêm phong cổ chai chắc chắn, cam kết 100% nguyên liệu tự nhiên, không chất bảo quản. Liên hệ đặt hàng: 0344.727.528.'
+    ],
+    features: [
+      '100% nguyên liệu tự nhiên: Đậu tương quê + Cơm nếp ủ mốc nắng + Ủ chượp chum sành truyền thống',
+      'Đóng chai thủy tinh cao cấp 500ml nắp kín niêm phong an toàn thực phẩm, tái sử dụng tiện lợi',
+      'Phiên bản Bình thủy tinh lục giác khắc chữ Thọ 750ml bọc giấy Kraft buộc dây gai làm quà biếu sang trọng',
+      'Giao hàng nhanh toàn quốc – Hotline đặt sỉ & lẻ: 0344.727.528'
+    ],
+    specs: {
+      material: 'Đậu tương tuyển chọn, nếp cái hoa vàng ủ mốc tự nhiên, muối biển sạch, nước tinh khiết',
+      warranty: 'Cam kết 100% tự nhiên không chất bảo quản – Đổi mới nếu nứt vỡ khi vận chuyển',
+      origin: 'Cơ sở Tương Thủ Công Ngọc Tuyến (Hotline: 0344.727.528)',
+      thicknessOrSize: 'Chai thủy tinh 500ml | Bình lục giác quà biếu 750ml',
+      suitableFor: 'Bữa cơm gia đình Việt (chấm, nêm, kho, xào) & Quà biếu quê hương ý nghĩa',
+    },
+    variants: [
+      { id: 'tnt-chai-500ml', name: '1 Chai Thủy Tinh Cao Cấp 500ml', size: 'Chai thủy tinh 500ml', price: 65000, originalPrice: 80000 },
+      { id: 'tnt-combo-2chai', name: 'Combo 2 Chai Thủy Tinh 500ml (Tiết kiệm)', size: '2 Chai × 500ml', price: 120000, originalPrice: 160000 },
+      { id: 'tnt-binh-luc-giac-750', name: 'Bình Lục Giác Chữ Thọ Bọc Giấy Kraft (Quà Biếu)', size: 'Bình lục giác 750ml', price: 120000, originalPrice: 150000 },
+      { id: 'tnt-thung-6chai', name: 'Thùng Gia Đình 6 Chai Thủy Tinh 500ml', size: '6 Chai × 500ml', price: 350000, originalPrice: 450000 },
+    ],
+    defaultVariantIndex: 0,
+    badge: 'Đặc Sản Quê Nhà 100% Tự Nhiên',
+    image: '/assets/aistudio/Bao_b__t__ng_Ng_c_Tuy_n_th__c_ng_b04e6f94.png',
+    secondaryImage: '/assets/aistudio/B_ng_Qu_ng_C_o_T__ng_Ng_c_Tuy_n__m__p_86dbb55c.png',
+    galleryImages: [
+      '/assets/aistudio/Bao_b__t__ng_Ng_c_Tuy_n_th__c_ng_b04e6f94.png',
+      '/assets/aistudio/B_ng_Qu_ng_C_o_T__ng_Ng_c_Tuy_n__m__p_86dbb55c.png',
+      '/assets/aistudio/_nh_ChatGPT_14_17_01_23_thg_10__2026_0ef46668.png',
+      '/assets/aistudio/Gemini_Generated_Image_a02k7ha02k7ha02k_8ab38dbe.png',
+    ],
+    iconType: 'bamboo',
+    accentColor: '#92400E',
+  },
   // --- BẠT MÁI XẾP LƯỢN SÓNG & BẠT TỰ ĐỘNG 350K/M2 ---
   {
     id: 'bat-mai-xep-luon-song-tu-dong-350k',

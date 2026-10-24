@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import { CURTAIN_ARTICLES } from '../src/data/curtainArticles.ts';
 import { BEAD_SHAPES, BEAD_ART_PATTERNS } from '../src/data/beadCurtains.ts';
 
-test('CURTAIN_ARTICLES contains all 6 key curtain categories with valid data', () => {
-  assert.equal(CURTAIN_ARTICLES.length, 6);
+test('CURTAIN_ARTICLES contains all 7 key product & curtain categories with valid data', () => {
+  assert.equal(CURTAIN_ARTICLES.length, 7);
 
-  const expectedTypes = ['fabric', 'rainbow', 'honeycomb', 'insect-screen', 'motorized', 'bead'];
+  const expectedTypes = ['fabric', 'fabric', 'rainbow', 'honeycomb', 'insect-screen', 'motorized', 'bead'];
   const types = CURTAIN_ARTICLES.map(a => a.curtainType);
   assert.deepEqual(types, expectedTypes);
 

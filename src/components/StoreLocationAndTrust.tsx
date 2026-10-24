@@ -1,185 +1,78 @@
 import React from 'react';
 import { STORE_INFO } from '../data/products';
-import { MapPin, Phone, Clock, ShieldCheck, Ruler, Truck, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Clock, MessageCircle, ShieldCheck } from 'lucide-react';
 
 export const StoreLocationAndTrust: React.FC = () => {
   return (
-    <section className="py-8 md:py-16 bg-[#F8F7F2] border-t border-stone-200">
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 space-y-8 md:space-y-12">
-        {/* Section Title */}
-        <div className="text-center max-w-2xl mx-auto space-y-1.5">
-          <div className="text-xs font-semibold uppercase tracking-wider text-amber-900">
-            Địa Chỉ &amp; Uy Tín Cửa Hàng
-          </div>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-stone-900">
-            Cửa Hàng Mành Rèm, Chăn Ga Gối Đệm Tuyến Hoa
-          </h2>
-          <p className="text-xs sm:text-sm text-stone-600">
-            Điểm đến quen thuộc của các gia đình tại Chợ Cháy và huyện Ứng Hòa trong suốt nhiều năm qua khi hoàn thiện nhà mới, chuẩn bị cưới hỏi hoặc mùa đông rét buốt.
-          </p>
-        </div>
-
-        {/* 4 Trust Pillars */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
-          {STORE_INFO.commitments.map((c, i) => (
-            <div
-              key={i}
-              className="bg-white p-4 sm:p-6 rounded-2xl border border-stone-200/80 shadow-xs space-y-2"
-            >
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-amber-50 text-amber-900 flex items-center justify-center font-bold text-xs sm:text-sm">
-                0{i + 1}
+    <section className="py-8 md:py-10 bg-stone-100/70 border-t border-stone-200">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-3xl border border-stone-200 shadow-xs p-5 sm:p-7 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          {/* Left Info: Short, Clear Contact Details (7 cols) */}
+          <div className="lg:col-span-7 space-y-4">
+            <div>
+              <div className="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-3 py-1 rounded-lg border border-emerald-200">
+                <ShieldCheck className="w-4 h-4" />
+                <span>Đại Lý Chính Hãng · Uy Tín Hơn 20 Năm</span>
               </div>
-              <h3 className="text-sm sm:text-base font-bold text-stone-900 pt-0.5">{c.title}</h3>
-              <p className="text-xs text-stone-600 leading-relaxed">{c.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Store Detail Box & Visit Information */}
-        <div className="bg-white rounded-3xl border border-stone-200 shadow-sm p-4 sm:p-6 md:p-8 space-y-6">
-          {/* Authentic Store & Family Story Banner */}
-          <div className="relative rounded-2xl overflow-hidden border border-stone-200 bg-stone-900 group">
-            <div className="grid grid-cols-1 md:grid-cols-12 items-center">
-              <div className="md:col-span-7 relative h-64 sm:h-80 overflow-hidden">
-                <img
-                  src="/assets/aistudio/__i_ti_c_b_ng_bay_gi_a_l_ng_qu__-_Copy_5de32935.png"
-                  alt="Đại gia đình Tuyến Hoa gắn bó hơn 20 năm tại Chợ Cháy Ứng Hòa"
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/80 via-black/30 to-transparent" />
-                <div className="absolute bottom-3 left-3 bg-amber-950/90 text-amber-200 text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-lg backdrop-blur-xs flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>Kỷ niệm gắn bó cùng bà con quê hương Chợ Cháy</span>
-                </div>
-              </div>
-
-              <div className="md:col-span-5 p-5 sm:p-6 text-white space-y-3">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-amber-400">
-                  Câu Chuyện &amp; Chữ Tín
-                </div>
-                <h3 className="text-lg sm:text-xl font-display font-bold leading-tight">
-                  Tuyến Hoa · Hơn 20 Năm Gắn Bó Như Người Một Nhà
-                </h3>
-                <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
-                  Xuất thân từ mảnh đất Chợ Cháy - Ứng Hòa hiếu học và trọng tình nghĩa, gia đình Tuyến Hoa luôn tâm niệm kinh doanh phải xuất phát từ cái TÂM. Mỗi tấm đệm trao đi, mỗi bộ rèm cửa lắp lên đều phải bền đẹp, chuẩn kích thước và bảo hành chu đáo.
-                </p>
-                <div className="pt-2 flex flex-wrap gap-2 text-xs">
-                  <span className="px-2.5 py-1 rounded-lg bg-white/10 text-stone-200 border border-white/10">
-                    ✓ Uy tín 20+ năm
-                  </span>
-                  <span className="px-2.5 py-1 rounded-lg bg-white/10 text-stone-200 border border-white/10">
-                    ✓ Đền 10 lần nếu hàng giả
-                  </span>
-                  <span className="px-2.5 py-1 rounded-lg bg-white/10 text-stone-200 border border-white/10">
-                    ✓ Bảo hành tại nhà
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center pt-2">
-            {/* Left Info (7 cols) */}
-            <div className="lg:col-span-7 space-y-5">
-              <div>
-                <span className="text-xs font-semibold text-amber-800 uppercase tracking-wider">
-                  Thông Tin Liên Hệ &amp; Đến Xem Trực Tiếp
-                </span>
-                <h3 className="text-xl md:text-2xl font-display font-bold text-stone-900 mt-1">
-                  Đại Lý Tuyến Hoa · Chợ Cháy Ứng Hòa
-                </h3>
-              </div>
-
-              <div className="space-y-3 text-sm text-stone-700">
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-amber-800 shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="text-stone-900 font-semibold block">Địa chỉ cửa hàng:</strong>
-                    <span>Khu vực Chợ Cháy, Huyện Ứng Hòa, Thành phố Hà Nội</span>
-                    <p className="text-xs text-stone-500 mt-0.5">
-                      (Nằm ngay trung tâm khu Chợ Cháy, thuận tiện đỗ xe máy và ô tô tải chở đệm/rèm)
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 text-amber-800 shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="text-stone-900 font-semibold block">Đường dây nóng / Zalo tư vấn:</strong>
-                    <div className="flex items-center gap-3 mt-1">
-                      <a
-                        href={`tel:${STORE_INFO.hotline}`}
-                        className="text-base font-bold font-mono text-amber-900 hover:underline"
-                      >
-                        {STORE_INFO.hotlineDisplay}
-                      </a>
-                      <a
-                        href={STORE_INFO.zaloUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1 px-2.5 py-1 bg-blue-50 text-blue-800 border border-blue-200 rounded text-xs font-semibold hover:bg-blue-100 transition-colors"
-                      >
-                        <MessageCircle className="w-3.5 h-3.5" />
-                        <span>Nhắn Zalo</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <Clock className="w-5 h-5 text-amber-800 shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="text-stone-900 font-semibold block">Thời gian mở cửa:</strong>
-                    <span>{STORE_INFO.openingHours}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Service Areas */}
-              <div className="pt-3 border-t border-stone-200">
-                <div className="text-xs font-semibold text-stone-700 mb-1.5">
-                  Phục vụ giao hàng &amp; lắp đặt tận nhà tại tất cả các xã thuộc Ứng Hòa:
-                </div>
-                <div className="text-xs text-stone-500 leading-relaxed">
-                  Trầm Lộng, Đồng Tân, Hòa Nam, Hòa Xá, Vạn Thái, Kim Đường, Quảng Phú Cầu, Lưu Hoàng, Phù Lưu, Tảo Dương Văn, Đội Bình, thị trấn Vân Đình và toàn khu vực lân cận.
-                </div>
-              </div>
+              <h2 className="text-xl sm:text-2xl font-display font-extrabold text-stone-950 mt-2">
+                Cửa Hàng Chăn Ga Gối Đệm &amp; Mành Rèm Tuyến Hoa
+              </h2>
             </div>
 
-            {/* Right Card: Quick Request Measuring Service (5 cols) */}
-            <div className="lg:col-span-5 bg-gradient-to-br from-amber-50 to-stone-50 p-5 sm:p-6 rounded-3xl border border-amber-200/80 space-y-4 shadow-xs">
-              <div className="flex items-center gap-3">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-amber-400 shadow-sm shrink-0">
-                  <img
-                    src="/assets/aistudio/1792658171183_1293093313519991016_1293093313519991016_10108ab564c8fb6ade925f6a8e609889_1971346a.jpg"
-                    alt="Anh Tuyến nghe máy tư vấn 24/7"
-                    className="w-full h-full object-cover object-[50%_25%]"
-                  />
-                </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-stone-800">
+              <div className="flex items-start gap-2.5 bg-stone-50 p-3.5 rounded-2xl border border-stone-200">
+                <MapPin className="w-5 h-5 text-amber-800 shrink-0 mt-0.5" />
                 <div>
-                  <div className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100/80 px-2 py-0.5 rounded-full mb-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    <span>Trực tiếp chủ tiệm tư vấn</span>
-                  </div>
-                  <h4 className="text-sm sm:text-base font-bold text-stone-900 leading-snug">
-                    Mang Mẫu &amp; Khảo Sát Tận Nhà Miễn Phí
-                  </h4>
-                  <p className="text-[11px] text-stone-500">Chợ Cháy &amp; các xã huyện Ứng Hòa</p>
+                  <strong className="text-stone-950 font-extrabold block">Địa chỉ:</strong>
+                  <span>Chợ Cháy, Huyện Ứng Hòa, Hà Nội</span>
                 </div>
               </div>
 
-              <p className="text-xs text-stone-600 leading-relaxed">
-                Bạn chưa biết nên chọn rèm vải 2 lớp, rèm cầu vồng hay vách ngăn tổ ong cản nhiệt? Chỉ cần gọi điện, anh Tuyến sẽ mang trực tiếp bảng mẫu vải thực tế đến tận phòng ngủ để gia đình xem chất liệu và nhận báo giá trọn gói không phát sinh.
-              </p>
+              <div className="flex items-start gap-2.5 bg-stone-50 p-3.5 rounded-2xl border border-stone-200">
+                <Clock className="w-5 h-5 text-amber-800 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-stone-950 font-extrabold block">Giờ mở cửa:</strong>
+                  <span>06:30 – 21:00 (Tất cả các ngày)</span>
+                </div>
+              </div>
+            </div>
 
-              <div className="pt-1 space-y-2">
-                <a
-                  href={`tel:${STORE_INFO.hotline}`}
-                  className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-stone-900 hover:bg-stone-800 text-white rounded-xl text-xs font-bold transition-all shadow-md group"
-                >
-                  <Phone className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" />
-                  <span>Gọi {STORE_INFO.hotlineDisplay} Gặp Anh Tuyến</span>
-                </a>
+            <div className="flex flex-wrap items-center gap-3 pt-1">
+              <a
+                href={`tel:${STORE_INFO.hotline}`}
+                className="px-5 py-3 bg-stone-950 hover:bg-stone-800 text-amber-300 rounded-xl text-sm font-extrabold flex items-center gap-2 transition-colors"
+              >
+                <Phone className="w-4 h-4 text-emerald-400" />
+                <span>Gọi Điện: {STORE_INFO.hotlineDisplay}</span>
+              </a>
+              <a
+                href={STORE_INFO.zaloUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="px-5 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm font-extrabold flex items-center gap-2 transition-colors"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>Nhắn Zalo Báo Giá</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Right Photo Card (5 cols) */}
+          <div className="lg:col-span-5">
+            <div className="relative h-52 sm:h-60 rounded-2xl overflow-hidden border border-stone-200 bg-stone-900">
+              <img
+                src="/assets/aistudio/__i_ti_c_b_ng_bay_gi_a_l_ng_qu__-_Copy_5de32935.png"
+                alt="Cửa hàng Tuyến Hoa Chợ Cháy Ứng Hòa"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-3 left-3 right-3 text-white">
+                <div className="text-sm sm:text-base font-extrabold">
+                  Miễn Phí Mang Mẫu &amp; Lắp Đặt Tận Nhà
+                </div>
+                <div className="text-xs text-amber-200 mt-0.5">
+                  Phục vụ toàn huyện Ứng Hòa và các khu vực lân cận
+                </div>
               </div>
             </div>
           </div>
