@@ -3,11 +3,13 @@ import assert from 'node:assert/strict';
 import {
   ANNOTATED_PRODUCT_POSTS,
   CANOPY_STANDARD_PRICE,
+  DEDUPLICATION_SUMMARY,
   MARKET_PRICE_SUMMARY_TABLE,
   calculateCanopyOrderTotal,
   filterAnnotatedProducts,
   generateFullCatalogFacebookPost,
   getCanopyProductById,
+  getDeduplicatedProductPosts,
 } from './canopyAndArtisanalData';
 
 test('Màn khung standard price is exactly 1,000,000 VND per 1.8m x 2.0m set', () => {
@@ -40,11 +42,67 @@ test('Multi-set Màn khung order applies 50,000 VND/set discount and calculates 
   assert.equal(comboOrder.finalTotal, 3650000);
 });
 
-test('All annotated products have market price tiers, visual annotations, specs, and clear Facebook post copy', () => {
-  assert.ok(ANNOTATED_PRODUCT_POSTS.length >= 14);
-  assert.ok(MARKET_PRICE_SUMMARY_TABLE.length >= 8);
+test('Deduplication removes all duplicate primary and secondary images across all 24 annotated posts', () => {
+  const dedupedPosts = getDeduplicatedProductPosts();
+  assert.equal(dedupedPosts.length, 24);
+  assert.equal(ANNOTATED_PRODUCT_POSTS.length, 24);
+  assert.equal(MARKET_PRICE_SUMMARY_TABLE.length, 12);
 
-  const canopyItems = filterAnnotatedProducts('man-khung-1tr');
+  // Verify no two posts share the exact same primary imageUrl
+  const primaryImages = dedupedPosts.map((p) => p.imageUrl);
+  const uniquePrimaryImages = new Set(primaryImages);
+  assert.equal(uniquePrimaryImages.size, dedupedPosts.length);
+
+  // Verify no post has duplicate secondaryImages
+  for (const post of dedupedPosts) {
+    if (post.secondaryImages) {
+      const uniqueSecondary = new Set(post.secondaryImages);
+      assert.equal(
+        uniqueSecondary.size,
+        post.secondaryImages.length,
+        `Post ${post.code} has duplicate secondaryImages`
+      );
+      // Verify known byte-for-byte duplicate files are excluded
+      assert.ok(
+        !post.secondaryImages.includes(
+          '/assets/aistudio/Gemini_Generated_Image_v2fukev2fukev2fu__1__6f3f19ae.png'
+        )
+      );
+      assert.ok(
+        !post.secondaryImages.includes(
+          '/assets/aistudio/Gemini_Generated_Image_v2fukev2fukev2fu__2__6f3f19ae.png'
+        )
+      );
+    }
+  }
+
+  // Verify deduplication summary accounting
+  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 50);
+  assert.equal(DEDUPLICATION_SUMMARY.totalRemovedDuplicates, 18);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 32);
+  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 4);
+});
+
+test('All annotated products have market price tiers, visual annotations, specs, and clear Facebook post copy', () => {
+  const canopyAndBeddingItems = filterAnnotatedProducts('man-khung-1tr');
+  assert.equal(canopyAndBeddingItems.length, 7);
+
+  const chieuMay = getCanopyProductById('CM-TH-01');
+  assert.ok(chieuMay);
+  assert.equal(chieuMay?.numericPrice, 450000);
+  assert.equal(chieuMay?.imageUrl, '/assets/aistudio/chieu_may_dieu_hoa_tuyen_hoa.png');
+
+  const demLoXo = getCanopyProductById('DLX-EH-01');
+  assert.ok(demLoXo);
+  assert.equal(demLoXo?.numericPrice, 2850000);
+  assert.equal(demLoXo?.imageUrl, '/assets/aistudio/dem_lo_xo_everhome_tuyen_hoa.png');
+
+  const demCaoSu = getCanopyProductById('DCS-EH-01');
+  assert.ok(demCaoSu);
+  assert.equal(demCaoSu?.numericPrice, 4850000);
+  assert.equal(demCaoSu?.imageUrl, '/assets/aistudio/dem_cao_su_everhome_tuyen_hoa.png');
+
+  const canopyItems = canopyAndBeddingItems.filter((item) => item.code.startsWith('MK-'));
   assert.equal(canopyItems.length, 4);
   for (const item of canopyItems) {
     assert.equal(item.numericPrice, 1000000);
@@ -62,21 +120,31 @@ test('All annotated products have market price tiers, visual annotations, specs,
   }
 
   const projectItems = filterAnnotatedProducts('cong-trinh-video');
-  assert.equal(projectItems.length, 6);
+  assert.equal(projectItems.length, 13);
   for (const item of projectItems) {
     assert.ok(item.marketPriceTiers.length >= 3);
   }
 
-  const foundByCode = getCanopyProductById('MK-TH-01');
-  assert.ok(foundByCode);
-  assert.equal(foundByCode?.id, 'man-khung-xanh-duong-hoa-mai-mk01');
+  const remToOngVom = getCanopyProductById('RTO-TH-01');
+  assert.ok(remToOngVom);
+  assert.equal(remToOngVom?.imageUrl, '/assets/aistudio/vach_rem_to_ong_cua_vom_tuyen_hoa.png');
+
+  const remCuonVP = getCanopyProductById('RC-TH-01');
+  assert.ok(remCuonVP);
+  assert.equal(remCuonVP?.imageUrl, '/assets/aistudio/rem_cuon_van_phong_tuyen_hoa.png');
+
+  const quyTrinh7Buoc = getCanopyProductById('QT-NT-01');
+  assert.ok(quyTrinh7Buoc);
+  assert.equal(quyTrinh7Buoc?.imageUrl, '/assets/aistudio/quy_trinh_7_buoc_ngoc_tuyen.png');
 });
 
 test('generateFullCatalogFacebookPost produces comprehensive market-priced post copy', () => {
   const fullPost = generateFullCatalogFacebookPost('all');
   assert.ok(fullPost.includes('1.000.000đ / 1 bộ'));
+  assert.ok(fullPost.includes('450.000đ/bộ'));
+  assert.ok(fullPost.includes('220.000đ / 1 m²'));
+  assert.ok(fullPost.includes('550.000đ / 1 m²'));
   assert.ok(fullPost.includes('600.000đ / mét ngang'));
-  assert.ok(fullPost.includes('520.000đ / 1 m²'));
   assert.ok(fullPost.includes('65.000đ / chai'));
   assert.ok(fullPost.includes('0344.727.528'));
 });

@@ -198,26 +198,6 @@ export const FABRIC_SAMPLES_600K: FabricSample600k[] = [
     ],
   },
   {
-    id: 'rv600-09-bedroom-2lop-angle',
-    code: 'TH-RV09',
-    title: 'Toàn Cảnh Hệ Rèm Vải 2 Lớp Lắp Âm Trần Phòng Ngủ Hiện Đại',
-    category: 'voan-2-lop',
-    categoryLabel: 'Phòng Ngủ Hiện Đại',
-    image: '/assets/aistudio/IMG_5282__1__af0ccdef.JPG',
-    badge: 'Thi Công Chuẩn Kỹ Thuật',
-    roomType: 'Phòng ngủ gia đình, biệt thự nhà vườn',
-    colorTone: 'Xám trung tính (Neutral Grey)',
-    installStyle: 'Ray âm trần thạch cao giấu phụ kiện 100%',
-    pricePerMeter: 600000,
-    description:
-      'Chiều dài rèm được thợ Tuyến Hoa đo đạc chuẩn xác cách mặt sàn gạch men đúng 1.5cm giúp rèm luôn sạch sẽ, rủ sóng thẳng tắp không bị chạm sàn hay nhăn nhúm.',
-    highlights: [
-      'Đơn giá 600.000đ/m ngang hoàn thiện cả công lắp đặt',
-      'Miễn phí mang mẫu vải đến tận nhà tư vấn theo màu sơn tường',
-      'Thi công lắp đặt nhanh gọn, sạch sẽ trong ngày',
-    ],
-  },
-  {
     id: 'rv600-10-spa-two-tone',
     code: 'TH-RV10',
     title: 'Hệ Rèm Vải Phối 2 Màu Xanh Cổ Vịt & Ghi Sáng Cho Spa Dưỡng Sinh',

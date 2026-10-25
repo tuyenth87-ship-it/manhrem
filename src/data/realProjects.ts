@@ -14,6 +14,196 @@ export interface RealProjectItem {
 
 export const REAL_PROJECTS: RealProjectItem[] = [
   {
+    id: 'proj-dem-lo-xo-everhome-tuyen-hoa',
+    title: 'Đại Lý Đệm Everhome Chính Hãng: Đệm Lò Xo Túi Độc Lập & Lò Xo Gold 3 Viền Hoàng Gia (Từ 3.650.000đ)',
+    tag: 'Đệm Lò Xo Everhome Chính Hãng',
+    category: 'story',
+    location: 'Showroom Tuyến Hoa, Chợ Cháy, Huyện Ứng Hòa, Hà Nội',
+    image: '/assets/aistudio/dem_lo_xo_everhome_tuyen_hoa.png',
+    aspect: 'landscape',
+    description:
+      'Phân phối chính hãng dòng Đệm Lò Xo Túi Độc Lập và Đệm Lò Xo Gold 3 Viền Everhome (Tập đoàn G.Home): Hệ thống lò xo thép cacbon chống gỉ nâng đỡ cột sống chuẩn y khoa, mặt chần bông kháng khuẩn Nano êm ái không rung lắc, bảo hành 10 năm.',
+    specs: [
+      'Đệm lò xo Everhome tiêu chuẩn (1,6m×2,0m dày 23cm): 3.650.000đ',
+      'Đệm lò xo túi độc lập (1,8m×2,0m dày 25cm): 4.500.000đ',
+      'Đệm lò xo Gold 3 Viền (1,8m×2,0m dày 27cm): 5.800.000đ',
+      'Miễn phí vận chuyển và khiêng đặt tận giường tại Ứng Hòa & Hà Nội'
+    ],
+    date: 'Mẫu Mới 2026',
+    featured: true,
+  },
+  {
+    id: 'proj-dem-cao-su-everhome-tuyen-hoa',
+    title: 'Nệm Cao Su 100% Thiên Nhiên Everhome Kháng Khuẩn – Đàn Hồi Đa Vùng (Từ 5.200.000đ)',
+    tag: 'Nệm Cao Su Everhome Bảo Hành 10 Năm',
+    category: 'story',
+    location: 'Showroom Tuyến Hoa, Chợ Cháy, Huyện Ứng Hòa, Hà Nội',
+    image: '/assets/aistudio/dem_cao_su_everhome_tuyen_hoa.png',
+    aspect: 'landscape',
+    description:
+      'Nệm Cao Su Everhome đúc nguyên khối từ mủ cao su tự nhiên với hơn 5.000 lỗ thoáng khí mặt trên và 500 ô vuông chịu lực mặt dưới. Nâng đỡ trọn vẹn cột sống lưng – cổ – vai gáy, không xẹp lún, bảo hành chính hãng 10 năm.',
+    specs: [
+      'Cỡ 1,6m × 2,0m (Dày 10cm): 5.200.000đ | Cỡ 1,8m × 2,0m (Dày 10cm): 5.850.000đ',
+      'Cỡ 1,8m × 2,0m (Dày 15cm): 7.900.000đ | Cao su tổng hợp dày 12cm: 2.950.000đ',
+      'Tặng kèm 02 ruột gối bông kháng khuẩn Hàn Quốc khi mua tại Tuyến Hoa',
+      'Đã lọc bỏ 2 góc chụp trùng lặp, giữ lại bản thiết kế có chú thích rõ nét'
+    ],
+    date: 'Showroom Tuyến Hoa',
+    featured: true,
+  },
+  {
+    id: 'proj-vach-rem-to-ong-cua-vom-tuyen-hoa',
+    title: 'Thi Công Vách Rèm Tổ Ong Ngăn Lạnh Điều Hòa Lắp Cửa Vòm & Phòng Khách (650.000đ/m²)',
+    tag: 'Vách Rèm Tổ Ong Cửa Vòm 650k/m²',
+    category: 'honeycomb',
+    location: 'Xưởng Nhôm Kính & Rèm Tổ Ong Tuyến Hoa – Ứng Hòa, Hà Nội',
+    image: '/assets/aistudio/vach_rem_to_ong_cua_vom_tuyen_hoa.png',
+    aspect: 'landscape',
+    description:
+      'Chuyên uốn vòm nhôm CNC và lắp đặt Vách Rèm Tổ Ong ngăn lạnh điều hòa 2 lớp tráng bạc cho cửa sổ vòm biệt thự, lối đi cầu thang và phòng khách liền bếp. Kéo xếp gọn sát tường chỉ còn 10cm.',
+    specs: [
+      'Vách rèm tổ ong hệ xếp xích ngăn phòng: 650.000đ / 1 m² cả lắp',
+      'Rèm tổ ong uốn vòm cửa sổ / kết hợp cửa lưới: 720.000đ – 750.000đ / 1 m²',
+      'Lõi tráng bạc 2 lớp giữ nhiệt điều hòa 98%, tiết kiệm 40% tiền điện',
+      'Bảo hành khung nhôm sơn tĩnh điện & phụ kiện 3 năm tận nhà'
+    ],
+    date: 'Mới bàn giao',
+    featured: true,
+  },
+  {
+    id: 'proj-rem-cuon-van-phong-tuyen-hoa',
+    title: 'Rèm Cuốn Chống Nắng Văn Phòng, Showroom & Cửa Kính Gia Đình 100% (280.000đ/m²)',
+    tag: 'Rèm Cuốn Văn Phòng 280k/m²',
+    category: 'curtain',
+    location: 'Văn phòng công ty & Nhà phố tại Ứng Hòa – Hà Nội',
+    image: '/assets/aistudio/rem_cuon_van_phong_tuyen_hoa.png',
+    aspect: 'landscape',
+    description:
+      'Lắp đặt trọn gói Rèm Cuốn Chống Nắng 100% vải Polyester phủ nhựa PVC cách nhiệt chống tia UV và chống chói màn hình máy tính. Trục cuốn nhôm hợp kim sơn tĩnh điện kèm dây kéo bi trợ lực bền bỉ trên 7 năm.',
+    specs: [
+      'Rèm cuốn trơn cản nắng 100% (Ghi / Kem / Xanh): 280.000đ / 1 m² cả lắp',
+      'Rèm cuốn lưới xuyên sáng 80% cho quán Cafe & Showroom: 320.000đ / 1 m²',
+      'Rèm cuốn in tranh 3D phong thủy / in logo: 380.000đ / 1 m²',
+      'Thi công lắp đặt nhanh gọn, sạch sẽ trong 30 phút'
+    ],
+    date: 'Mới bàn giao',
+    featured: true,
+  },
+  {
+    id: 'proj-quy-trinh-7-buoc-ngoc-tuyen',
+    title: 'Quy Trình 7 Bước Chuyên Nghiệp Rèm - Mành - Bạt Che Nắng & Đại Lý Đệm Ngọc Tuyến – Tuyến Hoa',
+    tag: 'Quy Trình 7 Bước Chuyên Nghiệp',
+    category: 'story',
+    location: 'Chợ Cháy, Huyện Ứng Hòa, Hà Nội (Phục vụ toàn quốc)',
+    image: '/assets/aistudio/quy_trinh_7_buoc_ngoc_tuyen.png',
+    aspect: 'landscape',
+    description:
+      'Cam kết quy trình 7 bước làm việc minh bạch từ tư vấn báo giá, mang mẫu tận nhà đo đạc miễn phí, may đo tại xưởng đến lắp đặt gọn sạch, nghiệm thu ưng ý mới thu tiền và bảo hành 3–10 năm.',
+    specs: [
+      'Bước 1–3: Tiếp nhận 24/7, mang mẫu tận nhà đo đạc miễn phí & chốt báo giá gốc',
+      'Bước 4–5: Gia công tại xưởng Tuyến Hoa & lắp đặt tận nơi sạch sẽ trong ngày',
+      'Bước 6–7: Nghiệm thu hài lòng mới thanh toán & kích hoạt bảo hành 3–10 năm',
+      'Hotline / Zalo đặt lịch: 0344.727.528 (Anh Tuyến)'
+    ],
+    date: 'Cam Kết Uy Tín',
+    featured: true,
+  },
+  {
+    id: 'proj-chieu-may-dieu-hoa-tuyen-hoa',
+    title: 'Chiếu Mây Điều Hòa Cao Cấp Tuyến Hoa – Lót Lưới 3D & Ngải Cứu Tự Nhiên (450.000đ/Bộ)',
+    tag: 'Chiếu Mây Tuyến Hoa 450k/Bộ',
+    category: 'story',
+    location: 'Showroom Tuyến Hoa, Chợ Cháy, Huyện Ứng Hòa, Hà Nội',
+    image: '/assets/aistudio/chieu_may_dieu_hoa_tuyen_hoa.png',
+    aspect: 'landscape',
+    description:
+      'Chiếu Mây Điều Hòa Cao Cấp mang thương hiệu TUYẾN HOA Nature Home: Mặt trên đan sợi mây tự nhiên kết hợp ngải cứu mát lưng, mặt dưới lót lưới tổ ong 3D thoáng khí kèm chun 4 góc. Tặng kèm 02 vỏ gối mây và túi xách chính hãng.',
+    specs: [
+      'Cỡ 1,6m × 2,0m: 450.000đ/bộ | Cỡ 1,8m × 2,0m: 490.000đ/bộ | Cỡ 2,0m × 2,2m: 550.000đ/bộ',
+      'Trọn bộ gồm: 01 chiếu mây viền gấm + 02 vỏ gối mây đồng màu + 01 túi xách',
+      'Lớp lưới tổ ong 3D thông hơi chống hầm bí lưng khi nằm điều hòa',
+      'Hình ảnh đã đóng dấu thương hiệu TUYẾN HOA chính hãng'
+    ],
+    date: 'Mẫu Mới 2026',
+    featured: true,
+  },
+  {
+    id: 'proj-bat-tu-cuon-nang-mua-tuyen-hoa',
+    title: 'Bạt Tự Cuốn Che Nắng Mưa Ban Công, Hiên Nhà & Mái Hiên Tay Khuỷu Tuyến Hoa (220.000đ/m²)',
+    tag: 'Bạt Tự Cuốn Tuyến Hoa 220k/m²',
+    category: 'full-house',
+    location: 'Xưởng Bạt & Mành Rèm Tuyến Hoa – Ứng Hòa, Hà Nội',
+    image: '/assets/aistudio/bat_tu_cuon_nang_mua_tuyen_hoa.png',
+    aspect: 'landscape',
+    description:
+      'Thi công trọn gói Bạt Tự Cuốn Lò Xo và Mái Hiên Di Động Tay Khuỷu mang thương hiệu Tuyến Hoa: Đầy đủ mẫu bạt kẻ sọc xanh trắng (220k/m²), bạt hoa văn nâu đồng & lá trúc (240k/m²), và bạt lưới đen ghi xuyên sáng (280k/m²).',
+    specs: [
+      'Bạt tự cuốn lò xo kẻ sọc: 220.000đ/m² cả ống nhôm & công lắp',
+      'Bạt tự cuốn hoa văn nâu đồng / lá trúc: 240.000đ/m² cả lắp',
+      'Rèm bạt cuốn lưới đen xuyên sáng: 280.000đ/m² | Mái hiên quay tay: 450.000đ/m',
+      'Chắn nắng mưa 99%, kéo thả nhẹ nhàng trong 3 giây'
+    ],
+    date: 'Xưởng Tuyến Hoa',
+    featured: true,
+  },
+  {
+    id: 'proj-xuong-san-xuat-rem-tuyen-hoa',
+    title: 'Xưởng Sản Xuất Vách Rèm Tổ Ong Ngăn Lạnh & Cửa Lưới Chống Muỗi Tuyến Hoa (550.000đ/m²)',
+    tag: 'Xưởng Rèm Tổ Ong & Cửa Lưới',
+    category: 'honeycomb',
+    location: 'Xưởng Nhôm Kính & Mành Rèm Tuyến Hoa – Ứng Hòa, Hà Nội',
+    image: '/assets/aistudio/xuong_san_xuat_rem_tuyen_hoa.png',
+    aspect: 'landscape',
+    description:
+      'Dây chuyền cắt khung nhôm định hình và gia công trực tiếp Vách Rèm Tổ Ong ngăn lạnh điều hòa (650.000đ/m²) và Cửa Lưới Chống Muỗi xếp xích (550.000đ/m²) tại Xưởng Tuyến Hoa.',
+    specs: [
+      'Cửa lưới chống muỗi xếp xích khung nhôm: 550.000đ / 1 m² cả lắp',
+      'Vách rèm tổ ong tráng bạc 2 lớp ngăn lạnh điều hòa: 650.000đ / 1 m²',
+      'Gia công trực tiếp tại Xưởng Tuyến Hoa không qua trung gian',
+      'Bảo hành khung nhôm sơn tĩnh điện & phụ kiện 3 năm tận nhà'
+    ],
+    date: 'Xưởng Tuyến Hoa',
+    featured: true,
+  },
+  {
+    id: 'proj-showroom-tuyen-hoa-interior',
+    title: 'Showroom Chăn Ga Gối Đệm & Rèm Cửa Tuyến Hoa – Giấc Ngủ Ngon, Cuộc Sống Trọn Vẹn',
+    tag: 'Showroom Chính Hãng Tuyến Hoa',
+    category: 'story',
+    location: 'Showroom Tuyến Hoa, Chợ Cháy, Huyện Ứng Hòa, Hà Nội',
+    image: '/assets/aistudio/showroom_tuyen_hoa_stamped.png',
+    aspect: 'landscape',
+    description:
+      'Không gian trưng bày chính hãng của Showroom Chăn Ga Gối Đệm & Rèm Cửa Tuyến Hoa ("Giấc ngủ ngon - Cuộc sống trọn vẹn"): Khu bên trái trưng bày Chăn Ga êm ái thoáng mát, Gối thư giãn tốt cho sức khỏe, Đệm êm ấm vững chãi; khu bên phải trưng bày Rèm Vải, Rèm Cửa, Rèm Gỗ, Rèm Trúc sang trọng thẩm mỹ.',
+    specs: [
+      'Trưng bày sẵn hàng trăm mẫu Chăn Ga Gối Đệm chính hãng bảo hành 5–10 năm',
+      'Khu trải nghiệm thực tế Rèm Vải cản nắng (600k/m), Rèm Gỗ, Rèm Trúc & Màn Khung (1Tr/bộ)',
+      'Giá gốc tận xưởng tiết kiệm 15% – 30% so với thị trường',
+      'Miễn phí mang mẫu, vận chuyển và lắp đặt tận phòng ngủ'
+    ],
+    date: 'Showroom Tuyến Hoa',
+    featured: true,
+  },
+  {
+    id: 'proj-showroom-tuyen-hoa-2-tang',
+    title: 'Toàn Cảnh Tòa Nhà 2 Tầng Showroom Tuyến Hoa: Chăn - Ga - Gối - Đệm - Phông - Rèm Mặt Đường Lớn',
+    tag: 'Toàn Cảnh Showroom 2 Tầng',
+    category: 'story',
+    location: 'Mặt đường lớn khu vực Chợ Cháy, Ứng Hòa, Hà Nội',
+    image: '/assets/aistudio/Gemini_Generated_Image_v2fukev2fukev2fu_6f3f19ae.png',
+    aspect: 'landscape',
+    description:
+      'Toàn cảnh tòa nhà 2 tầng bề thế của Showroom Tuyến Hoa (Chăn - Ga - Gối - Đệm - Phông - Rèm) với 3 gian cửa kính mặt tiền rộng rãi trưng bày giường mẫu và hệ rèm cửa đủ màu sắc. Vỉa hè lát gạch rộng thoáng thuận tiện cho quý khách đỗ xe máy và ô tô ghé thăm.',
+    specs: [
+      'Quy mô tòa nhà 2 tầng mặt đường lớn với 3 gian kính trưng bày hiện đại',
+      'Đầy đủ các ngành hàng: Chăn - Ga - Gối - Đệm - Phông - Rèm - Màn Khung',
+      'Vỉa hè rộng rãi đỗ xe ô tô thoải mái ngay trước cửa Showroom',
+      'Mở cửa phục vụ từ 06:30 – 21:00 tất cả các ngày trong tuần'
+    ],
+    date: 'Showroom Tuyến Hoa',
+    featured: true,
+  },
+  {
     id: 'proj-awning-garden-villa-6787',
     title: 'Mái Bạt Xếp Lượn Sóng Màu Nâu Cà Phê Sân Biệt Thự Nhà Vườn (Trọn Gói 350.000đ/m² Cả Công Lắp)',
     tag: 'Mái Bạt Xếp Sân Vườn 350k/m²',

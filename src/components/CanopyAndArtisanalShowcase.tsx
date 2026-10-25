@@ -1,20 +1,25 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef } from 'react';
 import {
-  ANNOTATED_PRODUCT_POSTS,
   AnnotatedProductPost,
+  DEDUPLICATION_SUMMARY,
   MARKET_PRICE_SUMMARY_TABLE,
   NewProductCategory,
   calculateCanopyOrderTotal,
   filterAnnotatedProducts,
   generateFullCatalogFacebookPost,
+  getDeduplicatedProductPosts,
 } from '../data/canopyAndArtisanalData';
 import { CartItem } from '../types/store';
 import {
   CheckCircle2,
   Copy,
+  Download,
   FileText,
+  Filter,
+  ImagePlus,
   Search,
   ShoppingBag,
+  Sparkles,
   Truck,
   Type,
   X,
@@ -28,22 +33,40 @@ interface CanopyAndArtisanalShowcaseProps {
 
 type FontScaleMode = 'normal' | 'large' | 'xlarge';
 
+const BAKED_BRAND_CODES = new Set([
+  'CM-TH-01',
+  'DLX-EH-01',
+  'DCS-EH-01',
+  'BC-TH-01',
+  'XSX-TH-01',
+  'RTO-TH-01',
+  'RC-TH-01',
+  'QT-NT-01',
+  'SR-TH-01',
+]);
+
+const DEDUPLICATED_POSTS = getDeduplicatedProductPosts();
+
 const CATEGORY_TABS: { id: NewProductCategory; label: string; count: number }[] = [
-  { id: 'all', label: 'Tất Cả (14)', count: ANNOTATED_PRODUCT_POSTS.length },
+  {
+    id: 'all',
+    label: `Tất Cả Bộ Sưu Tập (${DEDUPLICATED_POSTS.length})`,
+    count: DEDUPLICATED_POSTS.length,
+  },
   {
     id: 'man-khung-1tr',
-    label: 'Màn Khung 1Tr/Bộ (4)',
-    count: ANNOTATED_PRODUCT_POSTS.filter((p) => p.category === 'man-khung-1tr').length,
+    label: `Chăn Ga, Chiếu Mây, Đệm & Màn Khung (${DEDUPLICATED_POSTS.filter((p) => p.category === 'man-khung-1tr').length})`,
+    count: DEDUPLICATED_POSTS.filter((p) => p.category === 'man-khung-1tr').length,
   },
   {
     id: 'tuong-ngoc-tuyen',
-    label: 'Tương Ngọc Tuyến (4)',
-    count: ANNOTATED_PRODUCT_POSTS.filter((p) => p.category === 'tuong-ngoc-tuyen').length,
+    label: `Đặc Sản Tương Ngọc Tuyến (${DEDUPLICATED_POSTS.filter((p) => p.category === 'tuong-ngoc-tuyen').length})`,
+    count: DEDUPLICATED_POSTS.filter((p) => p.category === 'tuong-ngoc-tuyen').length,
   },
   {
     id: 'cong-trinh-video',
-    label: 'Rèm Cửa & Công Trình (6)',
-    count: ANNOTATED_PRODUCT_POSTS.filter((p) => p.category === 'cong-trinh-video').length,
+    label: `Showroom, Rèm Cửa, Bạt Cuốn & Xưởng (${DEDUPLICATED_POSTS.filter((p) => p.category === 'cong-trinh-video').length})`,
+    count: DEDUPLICATED_POSTS.filter((p) => p.category === 'cong-trinh-video').length,
   },
 ];
 
@@ -56,9 +79,26 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
   const [searchQuery, setSearchQuery] = useState('');
   const [fontScale, setFontScale] = useState<FontScaleMode>('large');
   const [showMasterPostBox, setShowMasterPostBox] = useState<boolean>(false);
+  const [showDedupReport, setShowDedupReport] = useState<boolean>(false);
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [activeArticleModal, setActiveArticleModal] = useState<AnnotatedProductPost | null>(null);
   const [activeGalleryImg, setActiveGalleryImg] = useState<string | null>(null);
+
+  // Custom Photo Stamper state ("Chèn Chữ Tuyến Hoa Lên Ảnh")
+  const [showPhotoStamper, setShowPhotoStamper] = useState<boolean>(false);
+  const [customStampImgUrl, setCustomStampImgUrl] = useState<string>(
+    '/assets/aistudio/IMG_4550_18a407c3.JPG'
+  );
+  const [customBrandTitle, setCustomBrandTitle] = useState<string>(
+    'SHOWROOM CHĂN GA GỐI ĐỆM & RÈM CỬA TUYẾN HOA'
+  );
+  const [customProductLine, setCustomProductLine] = useState<string>(
+    'Màn Khung Inox Cao Cấp Rộng 1,8m × Dài 2,0m'
+  );
+  const [customPriceBadge, setCustomPriceBadge] = useState<string>(
+    'Trọn Gói: 1.000.000đ/bộ (Cả Lắp) · ĐT/Zalo: 0344.727.528'
+  );
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   // Calculator state for Màn Khung 1.000.000đ/bộ (1,8m × 2,0m) & Combo
   const [selectedCanopyCode, setSelectedCanopyCode] = useState<string>('MK-TH-01');
@@ -90,7 +130,10 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
   );
 
   const canopyModels = useMemo(
-    () => ANNOTATED_PRODUCT_POSTS.filter((p) => p.category === 'man-khung-1tr'),
+    () =>
+      DEDUPLICATED_POSTS.filter(
+        (p) => p.category === 'man-khung-1tr' && p.code.startsWith('MK-')
+      ),
     []
   );
 
@@ -130,6 +173,120 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
     }
   };
 
+  // Renders any image with "TUYẾN HOA" top & bottom banners onto a 1200x900 PNG and downloads it
+  const renderAndDownloadStampedPng = (
+    imgSrc: string,
+    topBrandText: string,
+    productTitleText: string,
+    priceAndSpecText: string,
+    fileName: string,
+    alreadyBaked: boolean = false
+  ) => {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = 1200;
+      canvas.height = 900;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      // Draw base image covering 1200x900
+      ctx.fillStyle = '#0c0a09';
+      ctx.fillRect(0, 0, 1200, 900);
+      const scale = Math.max(1200 / img.width, 900 / img.height);
+      const drawW = img.width * scale;
+      const drawH = img.height * scale;
+      const drawX = (1200 - drawW) / 2;
+      const drawY = (900 - drawH) / 2;
+      ctx.drawImage(img, drawX, drawY, drawW, drawH);
+
+      if (!alreadyBaked) {
+        // Top Brand Header Bar ("SHOWROOM & XƯỞNG TUYẾN HOA")
+        ctx.fillStyle = 'rgba(28, 25, 23, 0.94)';
+        ctx.fillRect(0, 0, 1200, 82);
+        ctx.fillStyle = '#D4AF37';
+        ctx.fillRect(0, 78, 1200, 4);
+
+        ctx.fillStyle = '#F5E6C8';
+        ctx.font = '800 28px "Be Vietnam Pro", sans-serif';
+        ctx.fillText(topBrandText, 28, 52);
+
+        ctx.fillStyle = '#D4AF37';
+        ctx.beginPath();
+        ctx.roundRect(880, 16, 292, 50, 12);
+        ctx.fill();
+        ctx.fillStyle = '#1c1917';
+        ctx.font = '900 22px "Be Vietnam Pro", sans-serif';
+        ctx.fillText('ĐT/Zalo: 0344.727.528', 902, 48);
+
+        // Bottom Product Info & Price Bar
+        const grad = ctx.createLinearGradient(0, 680, 0, 900);
+        grad.addColorStop(0, 'rgba(12, 10, 9, 0)');
+        grad.addColorStop(0.3, 'rgba(12, 10, 9, 0.92)');
+        grad.addColorStop(1, 'rgba(12, 10, 9, 0.98)');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 680, 1200, 220);
+
+        ctx.fillStyle = '#D4AF37';
+        ctx.fillRect(28, 745, 8, 125);
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '800 32px "Be Vietnam Pro", sans-serif';
+        ctx.fillText(productTitleText.slice(0, 56), 52, 788);
+
+        ctx.fillStyle = '#F5E6C8';
+        ctx.font = '700 25px "Be Vietnam Pro", sans-serif';
+        ctx.fillText(priceAndSpecText.slice(0, 68), 52, 832);
+
+        ctx.fillStyle = '#d6d3d1';
+        ctx.font = '600 20px "Be Vietnam Pro", sans-serif';
+        ctx.fillText(
+          'Showroom Tuyến Hoa – Chợ Cháy, Ứng Hòa, Hà Nội (Miễn phí giao & lắp đặt tận nhà)',
+          52,
+          868
+        );
+      }
+
+      const dataUrl = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
+      link.download = fileName;
+      link.href = dataUrl;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      if (onShowToast) {
+        onShowToast(`Đã tải ảnh có chữ Tuyến Hoa (${fileName})!`);
+      }
+    };
+    img.src = imgSrc;
+  };
+
+  const handleDownloadPostBrandedImage = (post: AnnotatedProductPost) => {
+    const isBaked = BAKED_BRAND_CODES.has(post.code);
+    renderAndDownloadStampedPng(
+      post.imageUrl,
+      'SHOWROOM & XƯỞNG TUYẾN HOA CHÍNH HÃNG',
+      `${post.shortTitle} (${post.code})`,
+      `Giá Tuyến Hoa: ${post.priceDisplay} · ${post.standardDimensions}`,
+      `Tuyen-Hoa-${post.code}.png`,
+      isBaked
+    );
+  };
+
+  const handleCustomPhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (typeof reader.result === 'string') {
+        setCustomStampImgUrl(reader.result);
+      }
+    };
+    reader.readAsDataURL(file);
+  };
+
   const handleAddPostProductToCart = (post: AnnotatedProductPost) => {
     onAddToCart({
       productId: post.id,
@@ -167,30 +324,34 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
 
   return (
     <section
-      aria-label="Bảng Giá & Bài Đăng Sản Phẩm Ngắn Gọn Dễ Đọc"
-      className="space-y-6 sm:space-y-8"
+      aria-label="Bảng Giá & Bài Đăng Sản Phẩm Chèn Chữ Tuyến Hoa"
+      className="space-y-8 sm:space-y-10"
     >
-      {/* 1. COMPACT HEADER & BẢNG GIÁ TÓM TẮT (NGẮN GỌN - CHỮ TO DỄ ĐỌC) */}
-      <div className="bg-white rounded-3xl border border-stone-300 overflow-hidden shadow-xs">
-        <div className="bg-stone-950 text-white p-4 sm:p-6 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-          <div>
-            <h2 className="text-xl sm:text-2xl font-display font-extrabold text-white">
-              Bảng Giá Các Sản Phẩm Đã Gửi Hình (So Với Giá Thị Trường)
+      {/* 1. EDITORIAL HEADER & CURATED MARKET PRICE LEDGER */}
+      <div className="bg-white rounded-3xl border border-[#E5DEC9] overflow-hidden shadow-[0_12px_36px_-12px_rgba(28,25,23,0.06)]">
+        <div className="bg-[#1C1917] text-white p-5 sm:p-7 flex flex-col lg:flex-row lg:items-center justify-between gap-5 border-b border-[#332C25]">
+          <div className="space-y-1.5">
+            <div className="text-[11px] uppercase tracking-[0.14em] font-bold text-[#D4AF37]">
+              BỘ SƯU TẬP ĐỘC BẢN · NIÊM YẾT MINH BẠCH
+            </div>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-[#FAF7F2] tracking-tight">
+              Danh Mục Sản Phẩm Chú Thích &amp; Bảng Giá Tuyến Hoa
             </h2>
-            <p className="text-sm sm:text-base text-stone-300 mt-0.5">
-              Ngắn gọn, chữ to dễ đọc – Bấm <strong className="text-amber-300">Copy Bài Đăng</strong> để đăng lên Facebook / Zalo.
+            <p className="text-sm sm:text-base text-[#D6CEC2] max-w-2xl">
+              Toàn bộ hình ảnh đã được tuyển chọn sắc nét, gắn thương hiệu{' '}
+              <strong className="text-[#F5E6C8]">Tuyến Hoa</strong> kèm bài viết báo giá chuẩn.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2 shrink-0">
+          <div className="flex flex-wrap items-center gap-2.5 shrink-0">
             {/* Font Size Toggle */}
-            <div className="flex items-center bg-stone-800 p-1 rounded-xl border border-stone-700">
-              <Type className="w-4 h-4 text-amber-300 mx-2" />
+            <div className="flex items-center bg-[#2A2521] p-1 rounded-xl border border-[#3E3730]">
+              <Type className="w-4 h-4 text-[#D4AF37] mx-2" />
               <button
                 type="button"
                 onClick={() => setFontScale('normal')}
-                className={`px-2.5 py-1.5 rounded-lg text-xs font-bold cursor-pointer ${
-                  fontScale === 'normal' ? 'bg-white text-stone-950' : 'text-stone-300'
+                className={`px-2.5 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
+                  fontScale === 'normal' ? 'bg-[#FAF7F2] text-[#1C1917]' : 'text-[#D6CEC2]'
                 }`}
               >
                 Vừa
@@ -198,8 +359,8 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
               <button
                 type="button"
                 onClick={() => setFontScale('large')}
-                className={`px-2.5 py-1.5 rounded-lg text-xs font-bold cursor-pointer ${
-                  fontScale === 'large' ? 'bg-amber-400 text-stone-950' : 'text-stone-300'
+                className={`px-2.5 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
+                  fontScale === 'large' ? 'bg-[#D4AF37] text-[#1C1917]' : 'text-[#D6CEC2]'
                 }`}
               >
                 Chữ To
@@ -207,8 +368,8 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
               <button
                 type="button"
                 onClick={() => setFontScale('xlarge')}
-                className={`px-2.5 py-1.5 rounded-lg text-xs font-bold cursor-pointer ${
-                  fontScale === 'xlarge' ? 'bg-emerald-500 text-stone-950' : 'text-stone-300'
+                className={`px-2.5 py-1.5 rounded-lg text-xs font-bold transition-colors cursor-pointer ${
+                  fontScale === 'xlarge' ? 'bg-[#F5E6C8] text-[#1C1917]' : 'text-[#D6CEC2]'
                 }`}
               >
                 Rất To
@@ -217,19 +378,29 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
 
             <button
               type="button"
+              onClick={() => setShowPhotoStamper((prev) => !prev)}
+              data-testid="toggle-photo-stamper-btn"
+              className="px-4 py-2.5 rounded-xl bg-[#2A2521] hover:bg-[#38312B] text-[#F5E6C8] border border-[#4A4036] font-bold text-xs sm:text-sm flex items-center gap-1.5 transition-colors cursor-pointer"
+            >
+              <ImagePlus className="w-4 h-4 text-[#D4AF37]" />
+              <span>{showPhotoStamper ? 'Đóng Công Cụ Chèn Chữ' : 'Chèn Chữ Lên Ảnh'}</span>
+            </button>
+
+            <button
+              type="button"
               onClick={handleCopyMasterPost}
               data-testid="copy-master-post-btn"
-              className="px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-stone-950 font-extrabold text-sm flex items-center gap-1.5 cursor-pointer"
+              className="px-4 py-2.5 rounded-xl bg-[#D4AF37] hover:bg-[#DFBE4F] text-[#1C1917] font-bold text-xs sm:text-sm flex items-center gap-1.5 transition-colors cursor-pointer"
             >
               {copiedId === 'master-post' ? (
                 <>
-                  <CheckCircle2 className="w-4 h-4 text-emerald-900" />
-                  <span>Đã Copy!</span>
+                  <CheckCircle2 className="w-4 h-4 text-[#1C1917]" />
+                  <span>Đã Sao Chép</span>
                 </>
               ) : (
                 <>
                   <Copy className="w-4 h-4" />
-                  <span>Copy Bài Tổng Hợp</span>
+                  <span>Copy Bảng Giá Tổng Hợp</span>
                 </>
               )}
             </button>
@@ -237,30 +408,201 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
             <button
               type="button"
               onClick={() => setShowMasterPostBox((prev) => !prev)}
-              className="px-3.5 py-2.5 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-200 font-bold text-xs sm:text-sm cursor-pointer border border-stone-700"
+              className="px-3.5 py-2.5 rounded-xl bg-transparent hover:bg-[#2A2521] text-[#D6CEC2] font-semibold text-xs sm:text-sm cursor-pointer border border-[#3E3730]"
             >
               {showMasterPostBox ? 'Ẩn bài viết' : 'Xem bài tổng hợp'}
             </button>
           </div>
         </div>
 
-        {/* Clean, Scannable 2-Column Price Grid (Minimal Text) */}
-        <div className="p-4 sm:p-6 grid grid-cols-1 md:grid-cols-2 gap-3 bg-stone-50/60">
+        {/* REFINED DEDUPLICATION REPORT BANNER ("Đã Lọc Bỏ Hình Ảnh Giống Nhau") */}
+        <div
+          data-testid="deduplication-report-banner"
+          className="bg-[#F4EFE6] text-stone-800 px-5 py-3 sm:px-7 border-b border-[#E5DEC9] flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+        >
+          <div className="flex items-start sm:items-center gap-2.5">
+            <Filter className="w-4 h-4 text-[#9A6F2E] shrink-0 mt-0.5 sm:mt-0" />
+            <div className="text-xs sm:text-sm text-stone-700">
+              <strong className="text-[#1C1917] font-bold">
+                Đã tuyển chọn &amp; loại bỏ {DEDUPLICATION_SUMMARY.totalRemovedDuplicates} hình ảnh trùng góc chụp
+              </strong>{' '}
+              (từ {DEDUPLICATION_SUMMARY.totalUploaded} ảnh gốc → giữ lại{' '}
+              <strong className="text-[#8C6224] font-bold">
+                {DEDUPLICATION_SUMMARY.totalUniquePublished} hình ảnh độc bản
+              </strong>{' '}
+              trong <strong className="text-[#1C1917]">{DEDUPLICATED_POSTS.length} bài viết chuyên sâu</strong>).
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={() => setShowDedupReport((prev) => !prev)}
+            data-testid="toggle-dedup-details-btn"
+            className="px-3.5 py-1.5 rounded-xl bg-white hover:bg-[#FAF7F2] text-stone-800 font-bold text-xs whitespace-nowrap cursor-pointer self-start sm:self-auto border border-[#D8C8AC] transition-colors"
+          >
+            {showDedupReport ? 'Thu gọn chi tiết' : 'Xem 18 ảnh trùng đã lọc'}
+          </button>
+        </div>
+
+        {showDedupReport && (
+          <div
+            data-testid="deduplication-details-panel"
+            className="p-5 sm:p-6 bg-[#FAF7F2] border-b border-[#E5DEC9] grid grid-cols-1 md:grid-cols-2 gap-3.5"
+          >
+            {DEDUPLICATION_SUMMARY.groups.map((grp) => (
+              <div
+                key={grp.id}
+                className="bg-white p-4 rounded-2xl border border-[#E5DEC9] flex flex-col justify-between gap-1.5"
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-bold text-[#1C1917] text-xs sm:text-sm">
+                    {grp.groupTitle}
+                  </span>
+                  <span className="px-2.5 py-0.5 rounded-lg bg-[#F4EFE6] text-[#8C6224] border border-[#E2D5BE] font-mono font-bold text-xs shrink-0">
+                    Đã lọc {grp.removedCount} ảnh trùng
+                  </span>
+                </div>
+                <p className="text-xs text-stone-600 leading-relaxed">{grp.reason}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Interactive Custom Photo Brand Stamper ("Chèn Chữ Tuyến Hoa Lên Ảnh Bất Kỳ") */}
+        {showPhotoStamper && (
+          <div
+            data-testid="custom-photo-stamper-panel"
+            className="p-5 sm:p-7 bg-[#FAF7F2] border-b border-[#E5DEC9] space-y-5"
+          >
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div>
+                <h3 className="text-base sm:text-lg font-display font-bold text-[#1C1917] flex items-center gap-2">
+                  <Sparkles className="w-5 h-5 text-[#9A6F2E]" />
+                  <span>Công Cụ Đóng Dấu Thương Hiệu &quot;Tuyến Hoa&quot; Lên Hình Ảnh</span>
+                </h3>
+                <p className="text-xs sm:text-sm text-stone-600">
+                  Tải ảnh từ thiết bị của bạn lên, tùy chỉnh dòng chú thích và tải về file ảnh .PNG độ phân giải cao.
+                </p>
+              </div>
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/*"
+                onChange={handleCustomPhotoUpload}
+                className="hidden"
+              />
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                className="px-4 py-2.5 rounded-xl bg-[#1C1917] hover:bg-[#2E2924] text-[#F5E6C8] font-bold text-xs sm:text-sm flex items-center gap-2 cursor-pointer self-start"
+              >
+                <ImagePlus className="w-4 h-4 text-[#D4AF37]" />
+                <span>Chọn Ảnh Từ Thiết Bị</span>
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+              <div className="lg:col-span-6 space-y-3.5">
+                <div>
+                  <label className="block text-xs font-bold text-stone-700 mb-1">
+                    1. Tiêu đề thương hiệu trên đầu ảnh:
+                  </label>
+                  <input
+                    type="text"
+                    value={customBrandTitle}
+                    onChange={(e) => setCustomBrandTitle(e.target.value)}
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#DCD2C0] text-sm font-semibold text-[#1C1917]"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-stone-700 mb-1">
+                    2. Tên sản phẩm chèn dưới chân ảnh:
+                  </label>
+                  <input
+                    type="text"
+                    value={customProductLine}
+                    onChange={(e) => setCustomProductLine(e.target.value)}
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#DCD2C0] text-sm font-semibold text-[#1C1917]"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-stone-700 mb-1">
+                    3. Giá niêm yết &amp; Số điện thoại:
+                  </label>
+                  <input
+                    type="text"
+                    value={customPriceBadge}
+                    onChange={(e) => setCustomPriceBadge(e.target.value)}
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-white border border-[#DCD2C0] text-sm font-semibold text-[#1C1917]"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onClick={() =>
+                    renderAndDownloadStampedPng(
+                      customStampImgUrl,
+                      customBrandTitle,
+                      customProductLine,
+                      customPriceBadge,
+                      'Anh-San-Pham-Tuyen-Hoa.png',
+                      false
+                    )
+                  }
+                  className="w-full py-3 px-4 rounded-xl bg-[#8C6224] hover:bg-[#76511B] text-white font-bold text-sm flex items-center justify-center gap-2 cursor-pointer shadow-xs transition-colors"
+                >
+                  <Download className="w-4 h-4" />
+                  <span>Tải Bức Ảnh Đã Chèn Chữ &quot;Tuyến Hoa&quot; (.PNG)</span>
+                </button>
+              </div>
+
+              {/* Live Visual Preview of Stamped Image */}
+              <div className="lg:col-span-6">
+                <div className="relative aspect-4/3 rounded-2xl overflow-hidden border border-[#D4AF37] bg-[#1C1917] shadow-md">
+                  <img
+                    src={customStampImgUrl}
+                    alt="Xem trước ảnh đóng dấu Tuyến Hoa"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-0 inset-x-0 bg-[#1C1917]/95 border-b border-[#D4AF37] px-3.5 py-2 flex items-center justify-between gap-2">
+                    <span className="text-xs sm:text-sm font-bold text-[#F5E6C8] truncate">
+                      {customBrandTitle}
+                    </span>
+                    <span className="px-2 py-0.5 rounded-md bg-[#D4AF37] text-[#1C1917] text-[11px] font-extrabold shrink-0">
+                      0344.727.528
+                    </span>
+                  </div>
+                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent p-3.5 pt-8 text-white">
+                    <div className="border-l-4 border-[#D4AF37] pl-2.5">
+                      <div className="text-sm sm:text-base font-bold text-white leading-snug">
+                        {customProductLine}
+                      </div>
+                      <div className="text-xs sm:text-sm font-semibold text-[#F5E6C8] mt-0.5">
+                        {customPriceBadge}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Clean, Refined Architectural Price Grid */}
+        <div className="p-5 sm:p-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 bg-[#FAF7F2]/70">
           {MARKET_PRICE_SUMMARY_TABLE.map((row) => (
             <div
               key={row.id}
-              className="bg-white p-3.5 sm:p-4 rounded-2xl border border-stone-200 flex items-center justify-between gap-3"
+              className="bg-white p-4 rounded-2xl border border-[#EAE3D5] hover:border-[#C5A059] transition-colors flex items-center justify-between gap-3"
             >
               <div className="min-w-0">
-                <div className={`font-extrabold text-stone-950 ${bodyTextClass}`}>
+                <div className="font-bold text-[#1C1917] text-sm sm:text-base truncate">
                   {row.productGroup}
                 </div>
-                <div className="text-xs sm:text-sm text-stone-500 mt-0.5">
+                <div className="text-xs text-stone-400 mt-0.5">
                   Thị trường: <span className="line-through font-mono">{row.marketPrice}</span>
                 </div>
               </div>
               <div className="text-right shrink-0">
-                <div className="text-base sm:text-lg font-mono font-extrabold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-xl border border-emerald-200 tabular-nums">
+                <div className="text-sm sm:text-base font-mono font-extrabold text-[#1C1917] bg-[#FAF5EA] px-3 py-1 rounded-xl border border-[#DFC99B] tabular-nums whitespace-nowrap">
                   {row.storePrice}
                 </div>
               </div>
@@ -268,12 +610,12 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
           ))}
         </div>
 
-        {/* Collapsible Master Post Box (Only visible when user clicks "Xem bài tổng hợp") */}
+        {/* Collapsible Master Post Box */}
         {showMasterPostBox && (
-          <div className="p-4 sm:p-6 border-t border-stone-200 bg-stone-100">
+          <div className="p-5 sm:p-7 border-t border-[#E5DEC9] bg-[#FAF7F2]">
             <pre
               data-testid="master-facebook-post-content"
-              className={`whitespace-pre-wrap font-sans text-stone-950 bg-white p-4 rounded-2xl border border-stone-300 ${bodyTextClass}`}
+              className={`whitespace-pre-wrap font-sans text-[#1C1917] bg-white p-5 rounded-2xl border border-[#E5DEC9] ${bodyTextClass}`}
             >
               {masterFacebookPost}
             </pre>
@@ -281,18 +623,18 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
         )}
       </div>
 
-      {/* 2. FILTER BAR (SHORT & CLEAN) */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-3.5 rounded-2xl border border-stone-200">
+      {/* 2. REFINED CATEGORY & SEARCH BAR */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3.5 bg-white p-3.5 sm:p-4 rounded-2xl border border-[#E5DEC9] shadow-2xs">
         <div className="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
           {CATEGORY_TABS.map((tab) => (
             <button
               key={tab.id}
               type="button"
               onClick={() => setSelectedCategory(tab.id)}
-              className={`px-3.5 py-2 rounded-xl text-sm font-extrabold transition-all whitespace-nowrap shrink-0 cursor-pointer ${
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap shrink-0 cursor-pointer ${
                 selectedCategory === tab.id
-                  ? 'bg-stone-950 text-amber-300'
-                  : 'bg-stone-100 text-stone-800 hover:bg-stone-200'
+                  ? 'bg-[#1C1917] text-[#F5E6C8] shadow-xs'
+                  : 'bg-[#FAF7F2] text-stone-700 hover:bg-[#F0E9DC] hover:text-stone-950'
               }`}
             >
               {tab.label}
@@ -300,15 +642,15 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
           ))}
         </div>
 
-        <div className="relative w-full sm:w-64">
-          <Search className="w-4 h-4 text-stone-400 absolute left-3 top-3" />
+        <div className="relative w-full sm:w-68">
+          <Search className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Tìm sản phẩm..."
+            placeholder="Tìm đệm lò xo, chiếu mây, rèm tổ ong..."
             aria-label="Tìm kiếm sản phẩm"
-            className="w-full pl-9 pr-8 py-2 text-sm bg-stone-50 border border-stone-300 rounded-xl text-stone-950 focus:outline-hidden focus:border-stone-950"
+            className="w-full pl-9 pr-8 py-2 text-sm bg-[#FAF7F2] border border-[#E2D9C8] rounded-xl text-[#1C1917] placeholder:text-stone-400 focus:outline-hidden focus:border-[#9A6F2E]"
           />
           {searchQuery && (
             <button
@@ -322,145 +664,189 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
         </div>
       </div>
 
-      {/* 3. CONCISE PRODUCT CARDS (LARGE IMAGE + CLEAR PRICE + 2 KEY POINTS) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-        {filteredPosts.map((post) => (
-          <article
-            key={post.id}
-            data-testid={`annotated-post-card-${post.code}`}
-            className="bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-xs hover:border-amber-500 transition-colors flex flex-col justify-between"
-          >
-            <div>
-              {/* Media Display */}
-              <div className="relative aspect-4/3 bg-stone-950 overflow-hidden">
-                {post.mediaType === 'video' && post.videoUrl ? (
-                  <video
-                    src={post.videoUrl}
-                    poster={post.imageUrl}
-                    controls
-                    preload="metadata"
-                    playsInline
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <img
-                    src={post.imageUrl}
-                    alt={post.shortTitle}
-                    referrerPolicy="no-referrer"
-                    onClick={() => {
-                      setActiveArticleModal(post);
-                      setActiveGalleryImg(post.imageUrl);
-                    }}
-                    className="w-full h-full object-cover cursor-pointer hover:scale-103 transition-transform duration-500"
-                  />
-                )}
+      {/* 3. LUXURY EDITORIAL PRODUCT CARDS */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+        {filteredPosts.map((post) => {
+          const isBakedBrandImage = BAKED_BRAND_CODES.has(post.code);
+          return (
+            <article
+              key={post.id}
+              data-testid={`annotated-post-card-${post.code}`}
+              className="luxury-card bg-white rounded-3xl border border-[#E5DEC9] overflow-hidden flex flex-col justify-between"
+            >
+              <div>
+                {/* Media Display with Subtle Editorial Watermark */}
+                <div className="relative aspect-4/3 bg-[#1C1917] overflow-hidden group">
+                  {post.mediaType === 'video' && post.videoUrl ? (
+                    <video
+                      src={post.videoUrl}
+                      poster={post.imageUrl}
+                      controls
+                      preload="metadata"
+                      playsInline
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <img
+                      src={post.imageUrl}
+                      alt={post.shortTitle}
+                      referrerPolicy="no-referrer"
+                      onClick={() => {
+                        setActiveArticleModal(post);
+                        setActiveGalleryImg(post.imageUrl);
+                      }}
+                      className="w-full h-full object-cover cursor-pointer group-hover:scale-103 transition-transform duration-700"
+                    />
+                  )}
 
-                <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between gap-2 pointer-events-none">
-                  <span className="px-2.5 py-1 rounded-lg bg-stone-950/85 text-amber-300 text-xs font-extrabold font-mono">
-                    {post.code}
-                  </span>
-                  <span className="px-2.5 py-1 rounded-lg bg-amber-400 text-stone-950 text-xs font-extrabold">
-                    {post.highlightTag}
-                  </span>
+                  {/* Refined, Unobtrusive Brand Tag for Non-Baked Photos */}
+                  {!isBakedBrandImage && post.mediaType === 'image' && (
+                    <>
+                      <div className="absolute top-3 left-3 bg-[#1C1917]/85 backdrop-blur-md border border-[#D4AF37]/40 px-3 py-1 rounded-lg pointer-events-none flex items-center gap-2">
+                        <span className="text-[11px] font-bold text-[#F5E6C8] tracking-wide uppercase">
+                          TUYẾN HOA · {post.code}
+                        </span>
+                      </div>
+
+                      <div className="absolute bottom-3 right-3 bg-[#1C1917]/90 backdrop-blur-md border border-[#D4AF37]/50 px-3 py-1 rounded-lg pointer-events-none">
+                        <span className="text-xs font-extrabold text-[#F5E6C8] font-mono">
+                          {post.priceDisplay}
+                        </span>
+                      </div>
+                    </>
+                  )}
+
+                  {/* For videos, show clean code badge */}
+                  {post.mediaType === 'video' && (
+                    <div className="absolute top-3 right-3 pointer-events-none">
+                      <span className="px-3 py-1 rounded-lg bg-[#1C1917]/90 text-[#F5E6C8] border border-[#D4AF37]/50 text-xs font-bold">
+                        {post.code} · TUYẾN HOA
+                      </span>
+                    </div>
+                  )}
                 </div>
-              </div>
 
-              {/* Minimal, High-Impact Card Content */}
-              <div className="p-4 sm:p-5 space-y-3">
-                <h3 className={`font-display font-extrabold text-stone-950 leading-snug ${cardTitleClass}`}>
-                  {post.shortTitle}
-                </h3>
-
-                {/* Clear Price Box */}
-                <div className="bg-amber-50/90 border border-amber-300 rounded-2xl p-3 flex items-baseline justify-between gap-2">
+                {/* Spacious Editorial Card Body */}
+                <div className="p-5 sm:p-6 space-y-4">
                   <div>
-                    <div className="text-xl sm:text-2xl font-extrabold text-red-700 font-mono tabular-nums">
-                      {post.priceDisplay}
+                    <div className="text-[11px] font-bold uppercase tracking-wider text-[#9A6F2E]">
+                      MÃ {post.code} · {post.highlightTag}
                     </div>
-                    <div className="text-xs text-stone-600 font-medium mt-0.5">
-                      {post.standardDimensions}
+                    <h3 className={`font-display font-bold text-[#1C1917] leading-snug mt-1 ${cardTitleClass}`}>
+                      {post.shortTitle}
+                    </h3>
+                  </div>
+
+                  {/* Refined Ivory Price Ledger Box */}
+                  <div className="bg-[#FAF7F2] border border-[#EAE3D5] rounded-2xl p-3.5 flex items-baseline justify-between gap-2">
+                    <div className="min-w-0">
+                      <div className="text-lg sm:text-xl font-extrabold text-[#1C1917] font-mono tabular-nums whitespace-nowrap">
+                        {post.priceDisplay}
+                      </div>
+                      <div className="text-xs text-stone-600 font-medium mt-0.5 line-clamp-1">
+                        {post.standardDimensions}
+                      </div>
+                    </div>
+                    <div className="text-right text-xs text-stone-400 shrink-0">
+                      <div>Thị trường</div>
+                      <div className="line-through font-mono font-semibold text-stone-500">
+                        {post.marketPriceTiers[0]?.marketPrice || '1.300.000đ'}
+                      </div>
                     </div>
                   </div>
-                  <div className="text-right text-xs text-stone-500">
-                    <div>Thị trường:</div>
-                    <div className="line-through font-mono font-bold">
-                      {post.marketPriceTiers[0]?.marketPrice || '1.300.000đ'}
-                    </div>
-                  </div>
+
+                  {/* 2 Concise Key Annotations */}
+                  <ul className="space-y-2 text-sm text-stone-700 font-normal">
+                    {post.visualAnnotations.slice(0, 2).map((note, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5">
+                        <CheckCircle2 className="w-4 h-4 text-[#9A6F2E] shrink-0 mt-0.5" />
+                        <span>{note.label}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-
-                {/* 2 Short, Complete Bullet Points (No Cut-off Text) */}
-                <ul className="space-y-1.5 text-sm text-stone-800 font-medium">
-                  {post.visualAnnotations.slice(0, 2).map((note, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <span className="text-emerald-700 font-extrabold shrink-0">✓</span>
-                      <span>{note.label}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
-            </div>
 
-            {/* 3 Clean Action Buttons */}
-            <div className="px-4 pb-4 sm:px-5 sm:pb-5 pt-2 flex items-center gap-2 border-t border-stone-100">
-              <button
-                type="button"
-                onClick={() => handleAddPostProductToCart(post)}
-                className="flex-1 py-2.5 px-3 rounded-xl bg-stone-950 hover:bg-stone-800 text-amber-300 font-extrabold text-xs sm:text-sm flex items-center justify-center gap-1.5 cursor-pointer"
+              {/* Cohesive Luxury Action Bar */}
+              <div
+                className={`px-5 pb-5 sm:px-6 sm:pb-6 pt-3 grid gap-2 border-t border-[#F0EAE0] ${
+                  post.mediaType === 'image' ? 'grid-cols-4' : 'grid-cols-3'
+                }`}
               >
-                <ShoppingBag className="w-4 h-4 shrink-0" />
-                <span>Đặt Mua</span>
-              </button>
+                <button
+                  type="button"
+                  onClick={() => handleAddPostProductToCart(post)}
+                  className="py-2.5 px-2 rounded-xl bg-[#1C1917] hover:bg-[#2E2924] text-[#F5E6C8] font-bold text-xs flex items-center justify-center gap-1 whitespace-nowrap cursor-pointer transition-colors"
+                >
+                  <ShoppingBag className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
+                  <span>Đặt Mua</span>
+                </button>
 
-              <button
-                type="button"
-                onClick={() => handleCopyPost(post)}
-                className="py-2.5 px-3 rounded-xl bg-amber-100 hover:bg-amber-200 text-stone-950 font-extrabold text-xs sm:text-sm flex items-center justify-center gap-1 cursor-pointer border border-amber-300"
-                title="Copy bài đăng Facebook / Zalo"
-              >
-                {copiedId === post.id ? (
-                  <>
-                    <CheckCircle2 className="w-4 h-4 text-emerald-800 shrink-0" />
-                    <span>Đã Copy</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-4 h-4 shrink-0" />
-                    <span>Copy Bài</span>
-                  </>
+                <button
+                  type="button"
+                  onClick={() => handleCopyPost(post)}
+                  className="py-2.5 px-2 rounded-xl bg-[#FAF7F2] hover:bg-[#F0E9DC] text-stone-800 font-bold text-xs flex items-center justify-center gap-1 whitespace-nowrap cursor-pointer border border-[#E2D9C8] transition-colors"
+                  title="Copy bài đăng Facebook / Zalo"
+                >
+                  {copiedId === post.id ? (
+                    <>
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
+                      <span>Đã Copy</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-3.5 h-3.5 text-[#9A6F2E] shrink-0" />
+                      <span>Copy Bài</span>
+                    </>
+                  )}
+                </button>
+
+                {post.mediaType === 'image' && (
+                  <button
+                    type="button"
+                    onClick={() => handleDownloadPostBrandedImage(post)}
+                    className="py-2.5 px-2 rounded-xl bg-[#FAF7F2] hover:bg-[#F0E9DC] text-stone-800 font-bold text-xs flex items-center justify-center gap-1 whitespace-nowrap cursor-pointer border border-[#E2D9C8] transition-colors"
+                    title="Tải ảnh đã chèn chữ Tuyến Hoa về máy"
+                  >
+                    <Download className="w-3.5 h-3.5 text-[#9A6F2E] shrink-0" />
+                    <span>Tải Ảnh</span>
+                  </button>
                 )}
-              </button>
 
-              <button
-                type="button"
-                onClick={() => {
-                  setActiveArticleModal(post);
-                  setActiveGalleryImg(post.imageUrl);
-                }}
-                className="py-2.5 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs sm:text-sm flex items-center justify-center gap-1 cursor-pointer"
-                title="Xem chi tiết bài viết & ghi chú"
-              >
-                <FileText className="w-4 h-4 shrink-0" />
-                <span>Chi Tiết</span>
-              </button>
-            </div>
-          </article>
-        ))}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveArticleModal(post);
+                    setActiveGalleryImg(post.imageUrl);
+                  }}
+                  className="py-2.5 px-2 rounded-xl bg-[#FAF7F2] hover:bg-[#F0E9DC] text-stone-800 font-bold text-xs flex items-center justify-center gap-1 whitespace-nowrap cursor-pointer border border-[#E2D9C8] transition-colors"
+                  title="Xem bài viết chi tiết & bảng giá"
+                >
+                  <FileText className="w-3.5 h-3.5 text-[#9A6F2E] shrink-0" />
+                  <span>Bài Viết</span>
+                </button>
+              </div>
+            </article>
+          );
+        })}
       </div>
 
-      {/* 4. COMPACT CALCULATOR: TÍNH NHANH ĐƠN MÀN KHUNG 1TR/BỘ */}
+      {/* 4. REFINED CALCULATOR: TÍNH NHANH ĐƠN MÀN KHUNG 1TR/BỘ */}
       <div
         id="bo-tinh-gia-man-khung"
-        className="bg-amber-50/70 rounded-3xl border border-amber-300 p-4 sm:p-6"
+        className="bg-white rounded-3xl border border-[#E5DEC9] p-5 sm:p-7 shadow-[0_12px_32px_-12px_rgba(28,25,23,0.05)]"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
           <div className="lg:col-span-7 space-y-4">
             <div>
-              <h3 className="text-lg sm:text-xl font-display font-extrabold text-stone-950">
-                Tính Nhanh Đơn Màn Khung 1.000.000đ/Bộ (1,8m × 2,0m) &amp; Tương Ngọc Tuyến
+              <div className="text-[11px] uppercase tracking-wider font-bold text-[#9A6F2E]">
+                CÔNG CỤ TÍNH CHI PHÍ TỰ ĐỘNG
+              </div>
+              <h3 className="text-lg sm:text-xl font-display font-bold text-[#1C1917] mt-0.5">
+                Dự Toán Đơn Màn Khung 1.000.000đ/Bộ (1,8m × 2,0m) &amp; Combo
               </h3>
               <p className="text-xs sm:text-sm text-stone-600">
-                Giảm ngay <strong className="text-emerald-800">50.000đ/bộ</strong> khi lắp từ 2 bộ màn khung trở lên.
+                Ưu đãi giảm ngay <strong className="text-[#8C6224]">50.000đ/bộ</strong> khi đặt lắp từ 2 bộ màn khung trở lên.
               </p>
             </div>
 
@@ -472,8 +858,8 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                   onClick={() => setSelectedCanopyCode(model.code)}
                   className={`p-2 rounded-xl border text-left transition-all flex items-center gap-2 cursor-pointer ${
                     selectedCanopyCode === model.code
-                      ? 'bg-stone-950 text-amber-300 border-amber-400'
-                      : 'bg-white text-stone-900 border-stone-200'
+                      ? 'bg-[#1C1917] text-[#F5E6C8] border-[#9A6F2E]'
+                      : 'bg-[#FAF7F2] text-stone-800 border-[#E2D9C8] hover:bg-[#F3ECE0]'
                   }`}
                 >
                   <img
@@ -482,14 +868,14 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                     referrerPolicy="no-referrer"
                     className="w-9 h-9 rounded-lg object-cover shrink-0"
                   />
-                  <span className="text-xs font-extrabold truncate">{model.code}</span>
+                  <span className="text-xs font-bold truncate">{model.code}</span>
                 </button>
               ))}
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              <div className="bg-white p-2.5 rounded-xl border border-stone-200">
-                <label htmlFor="canopy-sets-input" className="block text-xs font-bold text-stone-700">
+              <div className="bg-[#FAF7F2] p-3 rounded-xl border border-[#E5DEC9]">
+                <label htmlFor="canopy-sets-input" className="block text-xs font-semibold text-stone-700">
                   Màn khung (1Tr):
                 </label>
                 <input
@@ -499,12 +885,12 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                   max={20}
                   value={canopySets}
                   onChange={(e) => setCanopySets(Math.max(0, parseInt(e.target.value, 10) || 0))}
-                  className="w-full mt-1 text-center font-mono font-extrabold text-sm py-1 border border-stone-200 rounded-lg"
+                  className="w-full mt-1.5 text-center font-mono font-bold text-sm py-1 bg-white border border-[#DCD2C0] rounded-lg"
                 />
               </div>
 
-              <div className="bg-white p-2.5 rounded-xl border border-stone-200">
-                <label htmlFor="curtain-meters-input" className="block text-xs font-bold text-stone-700">
+              <div className="bg-[#FAF7F2] p-3 rounded-xl border border-[#E5DEC9]">
+                <label htmlFor="curtain-meters-input" className="block text-xs font-semibold text-stone-700">
                   Rèm cửa (600k/m):
                 </label>
                 <input
@@ -515,12 +901,12 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                   max={50}
                   value={curtainMeters}
                   onChange={(e) => setCurtainMeters(Math.max(0, parseFloat(e.target.value) || 0))}
-                  className="w-full mt-1 text-center font-mono font-extrabold text-sm py-1 border border-stone-200 rounded-lg"
+                  className="w-full mt-1.5 text-center font-mono font-bold text-sm py-1 bg-white border border-[#DCD2C0] rounded-lg"
                 />
               </div>
 
-              <div className="bg-white p-2.5 rounded-xl border border-stone-200">
-                <label htmlFor="tuong-500-input" className="block text-xs font-bold text-stone-700">
+              <div className="bg-[#FAF7F2] p-3 rounded-xl border border-[#E5DEC9]">
+                <label htmlFor="tuong-500-input" className="block text-xs font-semibold text-stone-700">
                   Tương 500ml (65k):
                 </label>
                 <input
@@ -530,12 +916,12 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                   max={50}
                   value={tuong500Count}
                   onChange={(e) => setTuong500Count(Math.max(0, parseInt(e.target.value, 10) || 0))}
-                  className="w-full mt-1 text-center font-mono font-extrabold text-sm py-1 border border-stone-200 rounded-lg"
+                  className="w-full mt-1.5 text-center font-mono font-bold text-sm py-1 bg-white border border-[#DCD2C0] rounded-lg"
                 />
               </div>
 
-              <div className="bg-white p-2.5 rounded-xl border border-stone-200">
-                <label htmlFor="tuong-gift-input" className="block text-xs font-bold text-stone-700">
+              <div className="bg-[#FAF7F2] p-3 rounded-xl border border-[#E5DEC9]">
+                <label htmlFor="tuong-gift-input" className="block text-xs font-semibold text-stone-700">
                   Bình biếu (120k):
                 </label>
                 <input
@@ -545,28 +931,28 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                   max={50}
                   value={tuongGiftCount}
                   onChange={(e) => setTuongGiftCount(Math.max(0, parseInt(e.target.value, 10) || 0))}
-                  className="w-full mt-1 text-center font-mono font-extrabold text-sm py-1 border border-stone-200 rounded-lg"
+                  className="w-full mt-1.5 text-center font-mono font-bold text-sm py-1 bg-white border border-[#DCD2C0] rounded-lg"
                 />
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-5 bg-stone-950 text-white rounded-2xl p-4 sm:p-5 flex flex-col justify-between gap-3">
+          <div className="lg:col-span-5 bg-[#1C1917] text-white rounded-2xl p-5 sm:p-6 flex flex-col justify-between gap-4 border border-[#332C25]">
             <div className="flex items-baseline justify-between">
-              <span className="text-sm font-bold text-amber-200">Tổng Cộng:</span>
+              <span className="text-sm font-semibold text-[#D6CEC2]">Tổng Dự Toán:</span>
               <span
                 data-testid="canopy-calculator-total"
-                className="text-2xl font-extrabold text-amber-300 font-mono tabular-nums"
+                className="text-2xl sm:text-3xl font-extrabold text-[#F5E6C8] font-mono tabular-nums"
               >
                 {pricingResult.finalTotal.toLocaleString('vi-VN')}đ
               </span>
             </div>
-            <p className="text-xs text-stone-300 truncate">{pricingResult.summaryLine}</p>
-            <div className="grid grid-cols-2 gap-2">
+            <p className="text-xs text-[#D6CEC2] truncate">{pricingResult.summaryLine}</p>
+            <div className="grid grid-cols-2 gap-2.5">
               <button
                 type="button"
                 onClick={handleAddComboToCart}
-                className="py-2.5 px-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-stone-950 font-extrabold text-xs sm:text-sm flex items-center justify-center gap-1.5 cursor-pointer"
+                className="py-2.5 px-3 rounded-xl bg-[#D4AF37] hover:bg-[#DFBE4F] text-[#1C1917] font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 cursor-pointer transition-colors"
               >
                 <ShoppingBag className="w-4 h-4" />
                 <span>Thêm Giỏ Hàng</span>
@@ -579,9 +965,9 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                     pricingResult.summaryLine
                   )
                 }
-                className="py-2.5 px-3 rounded-xl bg-stone-800 hover:bg-stone-700 text-amber-200 font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 cursor-pointer"
+                className="py-2.5 px-3 rounded-xl bg-[#2A2521] hover:bg-[#38312B] text-[#F5E6C8] border border-[#4A4036] font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 cursor-pointer transition-colors"
               >
-                <Truck className="w-4 h-4 text-emerald-400" />
+                <Truck className="w-4 h-4 text-[#D4AF37]" />
                 <span>Gọi Thợ Lắp</span>
               </button>
             </div>
@@ -589,7 +975,7 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
         </div>
       </div>
 
-      {/* Full Details & Post Modal (Opens only when user clicks "Chi Tiết") */}
+      {/* Full Website Article & Post Modal (Opens when user clicks "Bài Viết" or Image) */}
       {activeArticleModal && (
         <div
           role="dialog"
@@ -599,15 +985,15 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
           onClick={() => setActiveArticleModal(null)}
         >
           <div
-            className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border-2 border-amber-400 p-5 sm:p-7 space-y-5"
+            className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-[#D4AF37] p-5 sm:p-7 space-y-5"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-start justify-between gap-4 border-b border-stone-200 pb-3">
+            <div className="flex items-start justify-between gap-4 border-b border-[#EAE3D5] pb-3.5">
               <div>
-                <div className="text-xs font-mono font-extrabold text-amber-900">
-                  MÃ: {activeArticleModal.code} · {activeArticleModal.marketPriceRange}
+                <div className="text-xs font-mono font-bold text-[#9A6F2E]">
+                  MÃ: {activeArticleModal.code} · THƯƠNG HIỆU TUYẾN HOA · {activeArticleModal.marketPriceRange}
                 </div>
-                <h3 className="text-lg sm:text-xl font-display font-extrabold text-stone-950 mt-0.5">
+                <h3 className="text-lg sm:text-xl font-display font-bold text-[#1C1917] mt-1">
                   {activeArticleModal.title}
                 </h3>
               </div>
@@ -615,13 +1001,13 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                 type="button"
                 onClick={() => setActiveArticleModal(null)}
                 aria-label="Đóng"
-                className="p-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-900 cursor-pointer shrink-0"
+                className="p-2 rounded-xl bg-[#FAF7F2] hover:bg-[#EFE8DA] text-stone-900 cursor-pointer shrink-0"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="rounded-2xl overflow-hidden bg-stone-950 aspect-16/10 max-h-[380px] flex items-center justify-center">
+            <div className="rounded-2xl overflow-hidden bg-[#1C1917] aspect-16/10 max-h-[380px] flex items-center justify-center relative">
               {activeArticleModal.mediaType === 'video' && activeArticleModal.videoUrl ? (
                 <video
                   src={activeArticleModal.videoUrl}
@@ -641,21 +1027,106 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
               )}
             </div>
 
+            {/* Secondary Unique Angles Thumbnail Selector (No duplicates) */}
+            {activeArticleModal.secondaryImages && activeArticleModal.secondaryImages.length > 1 && (
+              <div className="space-y-1.5">
+                <div className="text-xs font-bold text-stone-700">
+                  Các hình ảnh góc chụp độc bản thuộc nhóm sản phẩm này ({activeArticleModal.secondaryImages.length} ảnh):
+                </div>
+                <div className="flex items-center gap-2 overflow-x-auto pb-1">
+                  {activeArticleModal.secondaryImages.map((imgUrl, idx) => (
+                    <button
+                      key={imgUrl}
+                      type="button"
+                      onClick={() => setActiveGalleryImg(imgUrl)}
+                      className={`w-16 h-12 rounded-xl overflow-hidden border-2 shrink-0 cursor-pointer transition-all ${
+                        (activeGalleryImg || activeArticleModal.imageUrl) === imgUrl
+                          ? 'border-[#9A6F2E] scale-105'
+                          : 'border-[#E5DEC9] opacity-75 hover:opacity-100'
+                      }`}
+                    >
+                      <img
+                        src={imgUrl}
+                        alt={`${activeArticleModal.shortTitle} - Góc ${idx + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Action Bar Inside Modal: Download Branded Image & Copy Post */}
+            <div className="flex flex-wrap items-center justify-between gap-2 bg-[#FAF7F2] p-3.5 rounded-2xl border border-[#EAE3D5]">
+              <span className="text-xs sm:text-sm font-bold text-stone-800">
+                Sử dụng hình ảnh &amp; bài viết Tuyến Hoa:
+              </span>
+              <div className="flex flex-wrap items-center gap-2">
+                {activeArticleModal.mediaType === 'image' && (
+                  <button
+                    type="button"
+                    onClick={() => handleDownloadPostBrandedImage(activeArticleModal)}
+                    className="px-3.5 py-2 rounded-xl bg-[#1C1917] hover:bg-[#2E2924] text-[#F5E6C8] text-xs sm:text-sm font-bold flex items-center gap-1.5 cursor-pointer"
+                  >
+                    <Download className="w-4 h-4 text-[#D4AF37]" />
+                    <span>Tải Ảnh Có Chữ Tuyến Hoa</span>
+                  </button>
+                )}
+                <button
+                  type="button"
+                  onClick={() => handleCopyPost(activeArticleModal)}
+                  className="px-3.5 py-2 rounded-xl bg-[#D4AF37] hover:bg-[#DFBE4F] text-[#1C1917] text-xs sm:text-sm font-bold flex items-center gap-1.5 cursor-pointer"
+                >
+                  <Copy className="w-4 h-4" />
+                  <span>Copy Bài Đăng Facebook/Zalo</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Visual Annotations Breakdown */}
+            <div className="bg-[#FAF7F2] rounded-2xl p-4 border border-[#EAE3D5] space-y-2">
+              <div className="text-sm font-bold text-[#1C1917]">
+                Chú Thích Chi Tiết Trên Hình Ảnh ({activeArticleModal.code}):
+              </div>
+              <ul className="space-y-1.5 text-xs sm:text-sm text-stone-700">
+                {activeArticleModal.visualAnnotations.map((note, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#9A6F2E] shrink-0 mt-0.5" />
+                    <span>
+                      <strong>{note.label}:</strong> {note.detail}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Website Article Paragraphs */}
+            <div className="space-y-2.5 bg-white p-4 rounded-2xl border border-[#EAE3D5]">
+              <div className="text-sm font-bold text-[#1C1917]">
+                Bài Viết Giới Thiệu Sản Phẩm Trên Website Tuyến Hoa:
+              </div>
+              {activeArticleModal.articleParagraphs.map((para, idx) => (
+                <p key={idx} className="text-sm sm:text-base text-stone-700 leading-relaxed">
+                  {para}
+                </p>
+              ))}
+            </div>
+
             {/* Market Price Tiers */}
-            <div className="bg-amber-50 rounded-2xl p-4 border border-amber-300 space-y-2">
+            <div className="bg-[#FAF7F2] rounded-2xl p-4 border border-[#DFC99B] space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-sm font-extrabold text-stone-900">Bảng Giá Theo Kích Thước:</span>
-                <span className="text-lg font-extrabold text-red-700 font-mono">
+                <span className="text-sm font-bold text-[#1C1917]">Bảng Giá Theo Kích Thước:</span>
+                <span className="text-lg font-extrabold text-[#8C6224] font-mono">
                   {activeArticleModal.priceDisplay}
                 </span>
               </div>
-              <div className="divide-y divide-amber-200/80 text-sm">
+              <div className="divide-y divide-[#EAE3D5] text-sm">
                 {activeArticleModal.marketPriceTiers.map((tier, idx) => (
-                  <div key={idx} className="py-1.5 flex items-center justify-between gap-2">
-                    <span className="font-bold text-stone-800">{tier.sizeOrOption}</span>
+                  <div key={idx} className="py-2 flex items-center justify-between gap-2">
+                    <span className="font-semibold text-stone-800">{tier.sizeOrOption}</span>
                     <span className="font-mono">
                       <span className="line-through text-stone-400 mr-2">{tier.marketPrice}</span>
-                      <strong className="text-emerald-800">{tier.storePrice}</strong>
+                      <strong className="text-[#1C1917]">{tier.storePrice}</strong>
                     </span>
                   </div>
                 ))}
@@ -663,21 +1134,21 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
             </div>
 
             {/* Ready-to-copy Facebook/Zalo Ad Copy */}
-            <div className="bg-stone-950 text-amber-50 rounded-2xl p-4 space-y-2">
+            <div className="bg-[#1C1917] text-[#FAF7F2] rounded-2xl p-4 space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-xs sm:text-sm font-extrabold text-amber-300">
+                <span className="text-xs sm:text-sm font-bold text-[#D4AF37]">
                   NỘI DUNG BÀI ĐĂNG FACEBOOK / ZALO:
                 </span>
                 <button
                   type="button"
                   onClick={() => handleCopyPost(activeArticleModal)}
-                  className="px-3 py-1 rounded-lg bg-amber-400 text-stone-950 text-xs font-extrabold flex items-center gap-1 cursor-pointer"
+                  className="px-3 py-1 rounded-lg bg-[#D4AF37] text-[#1C1917] text-xs font-bold flex items-center gap-1 cursor-pointer"
                 >
                   <Copy className="w-3.5 h-3.5" />
                   <span>Copy Bài Viết</span>
                 </button>
               </div>
-              <pre className="text-sm text-amber-50 whitespace-pre-wrap font-sans leading-relaxed">
+              <pre className="text-sm text-[#EAE3D5] whitespace-pre-wrap font-sans leading-relaxed">
                 {activeArticleModal.facebookPostCopy}
               </pre>
             </div>

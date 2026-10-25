@@ -239,36 +239,24 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* Top Royal Trust Announcement Bar */}
-      <div className="bg-gradient-to-r from-stone-950 via-amber-950 to-stone-950 text-white text-xs py-1.5 px-3 border-b border-amber-500/50">
+      {/* Top Editorial Trust Announcement Bar */}
+      <div className="bg-[#181512] text-[#E8DFD1] text-xs py-2 px-4 border-b border-[#2E2720]">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2 truncate">
-            <Sparkles className="w-3.5 h-3.5 text-amber-300 diamond-twinkle shrink-0" />
-            <span className="luxury-gold-text font-extrabold shrink-0">Showroom Tuyến Hoa:</span>
-            <span className="text-amber-50 font-semibold truncate">
-              Màn khung 1.000.000đ/bộ (1,8m×2m) · Rèm vải 600k/m · Bạt xếp 350k/m² · Tương Ngọc Tuyến
+            <span className="text-[#D4AF37] font-bold tracking-wider uppercase shrink-0">
+              Showroom Tuyến Hoa:
+            </span>
+            <span className="text-[#D6CEC2] font-normal truncate">
+              Đại lý Chăn Ga Gối Đệm Chính Hãng · Màn Khung 1.000.000đ/bộ (1,8m×2m) · Rèm Vải 600k/m · Bạt Xếp 350k/m²
             </span>
           </div>
-          <div className="flex items-center gap-3 shrink-0 pl-2">
-            <button
-              type="button"
-              onClick={() => setIsSparkleModeEnabled((prev) => !prev)}
-              className={`px-2.5 py-0.5 rounded-full text-[11px] font-extrabold flex items-center gap-1 transition-all cursor-pointer border ${
-                isSparkleModeEnabled
-                  ? 'bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-400 text-stone-950 border-amber-200 shadow-[0_0_12px_rgba(251,191,36,0.5)]'
-                  : 'bg-stone-800 text-stone-300 border-stone-600'
-              }`}
-              title="Bật / Tắt hiệu ứng ánh kim cương long lanh"
-            >
-              <Sparkles className="w-3 h-3" />
-              <span>{isSparkleModeEnabled ? 'Long Lanh' : 'Tắt'}</span>
-            </button>
+          <div className="flex items-center gap-4 shrink-0 pl-2">
             <a
               href={`tel:${STORE_INFO.hotline}`}
-              className="hidden sm:flex items-center gap-1 text-emerald-400 hover:text-white font-extrabold font-mono tabular-nums transition-colors text-xs"
+              className="hidden sm:flex items-center gap-1.5 text-[#F5E6C8] hover:text-white font-bold font-mono tabular-nums transition-colors text-xs"
             >
-              <PhoneCall className="w-3.5 h-3.5" />
-              <span>{STORE_INFO.hotlineDisplay}</span>
+              <PhoneCall className="w-3.5 h-3.5 text-[#D4AF37]" />
+              <span>Hotline / Zalo: {STORE_INFO.hotlineDisplay}</span>
             </a>
           </div>
         </div>
@@ -340,47 +328,34 @@ export default function App() {
       />
 
       {/* Main Workspace with Spacious, Breathable Layout */}
-      <main id="main-workspace" className="w-full min-w-0 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-10 md:py-14 space-y-6 sm:space-y-8 md:space-y-12">
-        {/* Clean, Concise Tab Bar (No badge clutter) */}
-        <div className="luxury-card w-full min-w-0 bg-gradient-to-r from-white via-[#FFFDF9] to-amber-50/30 p-2 rounded-2xl border border-amber-300/70 overflow-x-auto scrollbar-none touch-pan-x">
-          <div className="flex items-center gap-2 min-w-max">
+      <main id="main-workspace" className="w-full min-w-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-14 space-y-8 sm:space-y-10 md:space-y-12">
+        {/* Cohesive Architectural Navigation Bar */}
+        <div className="w-full min-w-0 bg-white p-2 rounded-2xl border border-[#E5DEC9] shadow-2xs overflow-x-auto scrollbar-none touch-pan-x">
+          <div className="flex items-center gap-1.5 min-w-max">
             <button
               type="button"
               onClick={() => setActiveMainTab('catalog')}
-              className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
+              className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'catalog'
-                  ? 'luxury-sheen-auto bg-gradient-to-r from-stone-950 via-amber-950 to-stone-900 text-amber-200 border border-amber-400/70 shadow-sm'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
+                  ? 'bg-[#1C1917] text-[#F5E6C8] shadow-xs'
+                  : 'text-stone-700 hover:text-stone-950 hover:bg-[#FAF7F2]'
               }`}
             >
-              <LayoutGrid className="w-4 h-4 text-amber-400" />
+              <LayoutGrid className="w-4 h-4 text-[#D4AF37]" />
               <span>Tất Cả Sản Phẩm</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveMainTab('man-khung-1tr')}
-              className={`luxury-sheen-auto flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
+              className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'man-khung-1tr'
-                  ? 'bg-gradient-to-r from-sky-800 via-blue-800 to-sky-900 text-white border border-amber-300 shadow-sm'
-                  : 'bg-gradient-to-r from-sky-50 via-amber-50 to-sky-50 text-sky-950 hover:from-sky-100 hover:to-amber-100 border border-sky-400/80'
+                  ? 'bg-[#1C1917] text-[#F5E6C8] shadow-xs'
+                  : 'text-stone-700 hover:text-stone-950 hover:bg-[#FAF7F2]'
               }`}
             >
-              <Sparkles className="w-4 h-4 text-amber-500 diamond-twinkle" />
-              <span>Màn Khung 1Tr (1,8m×2m) &amp; Tương Ngọc Tuyến</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setActiveMainTab('awning-350k')}
-              className={`luxury-sheen-auto flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
-                activeMainTab === 'awning-350k'
-                  ? 'bg-gradient-to-r from-emerald-800 via-teal-700 to-emerald-800 text-white border border-amber-300 shadow-sm'
-                  : 'bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-50 text-emerald-950 hover:from-emerald-100 hover:to-teal-100 border border-emerald-400/80'
-              }`}
-            >
-              <Sparkles className="w-4 h-4 text-amber-500 diamond-twinkle" />
-              <span>Bạt Xếp 350k/m² &amp; Video</span>
+              <Sparkles className="w-4 h-4 text-[#9A6F2E]" />
+              <span>Đệm, Chiếu Mây, Màn Khung &amp; Tương Ngọc Tuyến</span>
             </button>
 
             <button
@@ -388,12 +363,25 @@ export default function App() {
               onClick={() => setActiveMainTab('fabric-600k')}
               className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'fabric-600k'
-                  ? 'luxury-sheen-auto bg-amber-900 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
+                  ? 'bg-[#1C1917] text-[#F5E6C8] shadow-xs'
+                  : 'text-stone-700 hover:text-stone-950 hover:bg-[#FAF7F2]'
               }`}
             >
-              <Sparkles className="w-4 h-4 text-amber-500" />
+              <Sparkles className="w-4 h-4 text-[#9A6F2E]" />
               <span>Rèm Vải 600k/m</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setActiveMainTab('awning-350k')}
+              className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
+                activeMainTab === 'awning-350k'
+                  ? 'bg-[#1C1917] text-[#F5E6C8] shadow-xs'
+                  : 'text-stone-700 hover:text-stone-950 hover:bg-[#FAF7F2]'
+              }`}
+            >
+              <Sparkles className="w-4 h-4 text-[#9A6F2E]" />
+              <span>Bạt Xếp 350k/m² &amp; Video</span>
             </button>
 
             <button
@@ -401,11 +389,11 @@ export default function App() {
               onClick={() => setActiveMainTab('motorized-curtains')}
               className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'motorized-curtains'
-                  ? 'luxury-sheen-auto bg-emerald-800 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
+                  ? 'bg-[#1C1917] text-[#F5E6C8] shadow-xs'
+                  : 'text-stone-700 hover:text-stone-950 hover:bg-[#FAF7F2]'
               }`}
             >
-              <Video className="w-4 h-4 text-emerald-500" />
+              <Video className="w-4 h-4 text-[#9A6F2E]" />
               <span>Rèm Tự Động 4.0</span>
             </button>
 
@@ -414,11 +402,11 @@ export default function App() {
               onClick={() => setActiveMainTab('bamboo-artworks')}
               className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'bamboo-artworks'
-                  ? 'bg-amber-800 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
+                  ? 'bg-[#1C1917] text-[#F5E6C8] shadow-xs'
+                  : 'text-stone-700 hover:text-stone-950 hover:bg-[#FAF7F2]'
               }`}
             >
-              <Palette className="w-4 h-4 text-amber-500" />
+              <Palette className="w-4 h-4 text-[#9A6F2E]" />
               <span>Mành Tre Tranh</span>
             </button>
 
@@ -427,11 +415,11 @@ export default function App() {
               onClick={() => setActiveMainTab('bead-curtains')}
               className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'bead-curtains'
-                  ? 'bg-amber-800 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
+                  ? 'bg-[#1C1917] text-[#F5E6C8] shadow-xs'
+                  : 'text-stone-700 hover:text-stone-950 hover:bg-[#FAF7F2]'
               }`}
             >
-              <Compass className="w-4 h-4 text-amber-500" />
+              <Compass className="w-4 h-4 text-[#9A6F2E]" />
               <span>Mành Hạt Gỗ</span>
             </button>
 
@@ -440,11 +428,11 @@ export default function App() {
               onClick={() => setActiveMainTab('real-projects')}
               className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'real-projects'
-                  ? 'bg-stone-900 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
+                  ? 'bg-[#1C1917] text-[#F5E6C8] shadow-xs'
+                  : 'text-stone-700 hover:text-stone-950 hover:bg-[#FAF7F2]'
               }`}
             >
-              <Camera className="w-4 h-4 text-emerald-500" />
+              <Camera className="w-4 h-4 text-[#9A6F2E]" />
               <span>Công Trình Thực Tế</span>
             </button>
 
@@ -453,11 +441,11 @@ export default function App() {
               onClick={() => setActiveMainTab('curtain-calculator')}
               className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'curtain-calculator'
-                  ? 'bg-stone-900 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
+                  ? 'bg-[#1C1917] text-[#F5E6C8] shadow-xs'
+                  : 'text-stone-700 hover:text-stone-950 hover:bg-[#FAF7F2]'
               }`}
             >
-              <Ruler className="w-4 h-4 text-amber-500" />
+              <Ruler className="w-4 h-4 text-[#9A6F2E]" />
               <span>Tính Giá Rèm</span>
             </button>
 
@@ -466,11 +454,11 @@ export default function App() {
               onClick={() => setActiveMainTab('room-visualizer')}
               className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'room-visualizer'
-                  ? 'bg-stone-900 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
+                  ? 'bg-[#1C1917] text-[#F5E6C8] shadow-xs'
+                  : 'text-stone-700 hover:text-stone-950 hover:bg-[#FAF7F2]'
               }`}
             >
-              <Eye className="w-4 h-4 text-sky-500" />
+              <Eye className="w-4 h-4 text-[#9A6F2E]" />
               <span>Thử Rèm Ảo</span>
             </button>
 
@@ -479,11 +467,11 @@ export default function App() {
               onClick={() => setActiveMainTab('mattress-comparison')}
               className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'mattress-comparison'
-                  ? 'bg-stone-900 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
+                  ? 'bg-[#1C1917] text-[#F5E6C8] shadow-xs'
+                  : 'text-stone-700 hover:text-stone-950 hover:bg-[#FAF7F2]'
               }`}
             >
-              <Scale className="w-4 h-4 text-emerald-500" />
+              <Scale className="w-4 h-4 text-[#9A6F2E]" />
               <span>So Sánh Đệm</span>
             </button>
 
@@ -492,11 +480,11 @@ export default function App() {
               onClick={() => setActiveMainTab('curtain-articles')}
               className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'curtain-articles'
-                  ? 'bg-amber-800 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
+                  ? 'bg-[#1C1917] text-[#F5E6C8] shadow-xs'
+                  : 'text-stone-700 hover:text-stone-950 hover:bg-[#FAF7F2]'
               }`}
             >
-              <BookOpen className="w-4 h-4 text-amber-500" />
+              <BookOpen className="w-4 h-4 text-[#9A6F2E]" />
               <span>Cẩm Nang</span>
             </button>
 
@@ -505,11 +493,11 @@ export default function App() {
               onClick={() => setActiveMainTab('store-consult')}
               className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap min-h-[42px] cursor-pointer ${
                 activeMainTab === 'store-consult'
-                  ? 'bg-stone-900 text-white shadow-xs'
-                  : 'text-stone-800 hover:text-stone-950 hover:bg-amber-50/70'
+                  ? 'bg-[#1C1917] text-[#F5E6C8] shadow-xs'
+                  : 'text-stone-700 hover:text-stone-950 hover:bg-[#FAF7F2]'
               }`}
             >
-              <MapPin className="w-4 h-4 text-rose-500" />
+              <MapPin className="w-4 h-4 text-[#9A6F2E]" />
               <span>Địa Chỉ</span>
             </button>
           </div>
@@ -902,6 +890,9 @@ export default function App() {
         isOpen={isLogoModalOpen}
         onClose={() => setIsLogoModalOpen(false)}
       />
+
+      {/* Showroom Photos & Store Location Section (Always visible above Footer) */}
+      {activeMainTab !== 'store-consult' && <StoreLocationAndTrust />}
 
       {/* Footer */}
       <Footer

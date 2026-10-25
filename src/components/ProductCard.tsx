@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Product, ProductVariant, CartItem } from '../types/store';
 import { ProductIllustration } from './ProductIllustration';
-import { ShoppingBag, Eye, Star, Check, Sparkles } from 'lucide-react';
+import { ShoppingBag, Eye, Star, Check } from 'lucide-react';
 
 interface ProductCardProps {
   product: Product;
@@ -49,13 +49,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       onClick={() => onOpenDetails(product)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="luxury-card group cursor-pointer bg-gradient-to-b from-white via-[#FFFDF9] to-amber-50/20 rounded-2xl border border-amber-300/60 flex flex-col justify-between overflow-hidden active:scale-[0.99]"
+      className="luxury-card group cursor-pointer bg-white rounded-3xl border border-[#E6DFD3] flex flex-col justify-between overflow-hidden active:scale-[0.99]"
     >
-      {/* Top 24K Gold Hairline Accent */}
-      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-amber-400/80 to-transparent opacity-75 group-hover:opacity-100 transition-opacity" />
-
       {/* Large Airy Photo Frame */}
-      <div className="luxury-sheen-hover relative overflow-hidden bg-stone-100">
+      <div className="luxury-sheen-hover relative overflow-hidden bg-[#F4EFE6]">
         <ProductIllustration
           product={product}
           size="md"
@@ -63,10 +60,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           className="h-48 sm:h-60 md:h-64"
         />
 
-        {/* Single Clean Badge on Top Left */}
+        {/* Single Understated Badge on Top Left */}
         {product.badge && (
-          <div className="luxury-sheen-auto absolute top-3 left-3 bg-gradient-to-r from-stone-950 via-amber-950 to-stone-900 backdrop-blur-md text-amber-200 border border-amber-400/70 text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg shadow-md flex items-center gap-1">
-            <Sparkles className="w-3 h-3 text-amber-300 shrink-0" />
+          <div className="absolute top-3 left-3 bg-[#1C1917]/90 backdrop-blur-md text-[#F5E6C8] border border-[#D4AF37]/40 text-[11px] font-bold px-3 py-1 rounded-lg shadow-xs">
             <span>{product.badge}</span>
           </div>
         )}
@@ -79,7 +75,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               e.stopPropagation();
               onOpenDetails(product);
             }}
-            className="w-8 h-8 rounded-full bg-white/95 backdrop-blur-xs text-amber-950 hover:bg-amber-400 border border-amber-300 shadow-md flex items-center justify-center transition-all hover:scale-105"
+            className="w-8 h-8 rounded-full bg-white/95 backdrop-blur-xs text-stone-900 hover:bg-[#1C1917] hover:text-[#F5E6C8] border border-[#E2D9C8] shadow-sm flex items-center justify-center transition-all"
             title="Xem chi tiết"
           >
             <Eye className="w-4 h-4" />
@@ -88,19 +84,19 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       </div>
 
       {/* Spacious Card Body — Minimal Text, Focus on Title & Price */}
-      <div className="p-3.5 sm:p-5 flex-1 flex flex-col justify-between space-y-3">
+      <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-3.5">
         <div>
-          <div className="flex items-center justify-between text-xs text-stone-600 font-semibold">
-            <span className="uppercase tracking-wider font-extrabold text-amber-900 truncate max-w-[140px]">
+          <div className="flex items-center justify-between text-xs text-stone-500 font-semibold">
+            <span className="uppercase tracking-wider font-bold text-[#9A6F2E] truncate max-w-[150px]">
               {product.brand}
             </span>
-            <span className="flex items-center gap-1 text-amber-700 shrink-0">
-              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-500" />
-              <span className="font-mono font-bold text-stone-800 text-xs">{product.rating}</span>
+            <span className="flex items-center gap-1 text-[#9A6F2E] shrink-0">
+              <Star className="w-3.5 h-3.5 fill-[#D4AF37] text-[#D4AF37]" />
+              <span className="font-mono font-bold text-stone-700 text-xs">{product.rating}</span>
             </span>
           </div>
 
-          <h3 className="text-sm sm:text-base font-extrabold text-stone-950 mt-1.5 line-clamp-2 leading-snug group-hover:text-amber-900 transition-colors font-display">
+          <h3 className="text-sm sm:text-base font-bold text-[#1C1917] mt-1.5 line-clamp-2 leading-snug group-hover:text-[#8C6224] transition-colors font-display">
             {product.name}
           </h3>
         </div>
@@ -111,7 +107,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             <select
               value={selectedVariantIndex}
               onChange={(e) => setSelectedVariantIndex(Number(e.target.value))}
-              className="w-full text-xs bg-amber-50/40 hover:bg-amber-50 border border-amber-300/70 rounded-xl px-2.5 py-2 text-stone-900 font-bold focus:outline-hidden focus:border-amber-700 transition-colors cursor-pointer truncate"
+              className="w-full text-xs bg-[#FAF7F2] hover:bg-[#F3ECE0] border border-[#E2D9C8] rounded-xl px-3 py-2 text-stone-800 font-semibold focus:outline-hidden focus:border-[#9A6F2E] transition-colors cursor-pointer truncate"
             >
               {product.variants.map((v, i) => (
                 <option key={v.id} value={i}>
@@ -123,11 +119,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         )}
 
         {/* Price & Action Buttons */}
-        <div className="pt-2.5 border-t border-amber-200/60 flex flex-col gap-2.5">
+        <div className="pt-3 border-t border-[#EFE9DE] flex flex-col gap-2.5">
           <div className="flex items-baseline justify-between gap-1">
-            <div className="text-base sm:text-xl font-extrabold text-amber-950 font-mono tabular-nums leading-none">
+            <div className="text-base sm:text-xl font-extrabold text-[#1C1917] font-mono tabular-nums leading-none">
               {activeVariant.price.toLocaleString('vi-VN')}{' '}
-              <span className="text-xs font-sans font-bold text-amber-800">đ</span>
+              <span className="text-xs font-sans font-bold text-[#8C6224]">đ</span>
             </div>
             {activeVariant.originalPrice && (
               <div className="text-xs text-stone-400 line-through font-mono tabular-nums">
@@ -142,8 +138,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               onClick={handleAddToCart}
               className={`min-h-[40px] w-10 rounded-xl border text-xs font-bold transition-all flex items-center justify-center shrink-0 cursor-pointer ${
                 isAdded
-                  ? 'bg-emerald-600 border-emerald-600 text-white shadow-xs'
-                  : 'bg-amber-50/70 border-amber-300 hover:border-amber-600 text-amber-950 hover:bg-amber-100'
+                  ? 'bg-emerald-700 border-emerald-700 text-white'
+                  : 'bg-[#FAF7F2] border-[#E2D9C8] hover:border-[#9A6F2E] text-stone-800 hover:bg-[#F3ECE0]'
               }`}
               title="Thêm vào giỏ hàng"
             >
@@ -153,10 +149,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             <button
               type="button"
               onClick={handleQuickBuy}
-              className="luxury-sheen-hover flex-1 min-h-[40px] px-3 py-2 bg-gradient-to-r from-stone-950 via-amber-950 to-stone-900 hover:from-amber-950 hover:to-stone-950 text-amber-200 border border-amber-500/60 rounded-xl text-xs sm:text-sm font-extrabold whitespace-nowrap transition-all shadow-xs text-center flex items-center justify-center gap-1.5 cursor-pointer"
+              className="flex-1 min-h-[40px] px-3 py-2 bg-[#1C1917] hover:bg-[#2E2924] text-[#F5E6C8] rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all text-center flex items-center justify-center gap-1.5 cursor-pointer"
             >
-              <span>Mua ngay</span>
-              <Sparkles className="w-3 h-3 text-amber-300 shrink-0" />
+              <span>Đặt Mua Ngay</span>
             </button>
           </div>
         </div>
