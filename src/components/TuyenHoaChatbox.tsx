@@ -232,28 +232,25 @@ export const TuyenHoaChatbox: React.FC<TuyenHoaChatboxProps> = ({
       {!isOpen && (
         <aside aria-label="Nút mở khung chat tư vấn Tuyến Hoa" className="hidden md:block">
           <motion.button
-            initial={{ scale: 0.8, opacity: 0 }}
+            initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
             onClick={onOpen}
             type="button"
-            className="fixed bottom-6 right-6 z-40 bg-stone-900 text-white px-4 py-3 rounded-full shadow-2xl border-2 border-amber-400/80 flex items-center gap-2 group hover:bg-stone-800 transition-all cursor-pointer"
+            className="fixed bottom-5 right-5 z-40 bg-[#1C1917] text-[#F5E6C8] px-3.5 py-2.5 rounded-full shadow-lg border border-[#D4AF37]/60 flex items-center gap-2 hover:bg-[#2E2924] transition-all cursor-pointer"
             title="Chat tư vấn cùng Tuyến Hoa"
           >
             <div className="relative">
-              <Bot className="w-5 h-5 text-amber-300" />
+              <Bot className="w-4 h-4 text-[#D4AF37]" />
               {hasUnread && (
-                <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping" />
+                <span className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-400 rounded-full animate-ping" />
               )}
             </div>
-            <div className="flex flex-col text-left">
-              <span className="text-xs font-bold leading-tight flex items-center gap-1 text-amber-200">
-                Chat Tư Vấn Tuyến Hoa
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              </span>
-              <span className="text-[10px] text-stone-300">Báo giá đệm & rèm 24/7</span>
-            </div>
+            <span className="text-xs font-bold flex items-center gap-1.5 text-[#F5E6C8]">
+              Tư Vấn 24/7
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            </span>
           </motion.button>
         </aside>
       )}
