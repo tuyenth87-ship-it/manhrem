@@ -431,11 +431,11 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
             <Filter className="w-4 h-4 text-[#8A5A14] shrink-0" />
             <span>
               <strong className="text-[#1C1917] font-extrabold">
-                Đã lọc bỏ {DEDUPLICATION_SUMMARY.totalRemovedDuplicates} ảnh trùng
+                Đã cắt & lọc bỏ {DEDUPLICATION_SUMMARY.totalRemovedDuplicates} video · ảnh trùng lặp
               </strong>{' '}
               · Giữ lại{' '}
               <strong className="text-[#8A5A14] font-extrabold">
-                {DEDUPLICATION_SUMMARY.totalUniquePublished} ảnh độc bản
+                {DEDUPLICATION_SUMMARY.totalUniquePublished} tư liệu chuẩn
               </strong>{' '}
               trong <strong className="text-[#1C1917]">{DEDUPLICATED_POSTS.length} bài đăng</strong>.
             </span>
@@ -446,7 +446,9 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
             data-testid="toggle-dedup-details-btn"
             className="px-3.5 py-1.5 rounded-xl bg-white hover:bg-[#FAF2E1] text-[#1C1917] font-bold text-xs sm:text-sm whitespace-nowrap cursor-pointer self-start sm:self-auto border border-[#D5C29F] transition-colors"
           >
-            {showDedupReport ? 'Thu gọn' : 'Chi tiết 18 ảnh đã lọc'}
+            {showDedupReport
+              ? 'Thu gọn'
+              : `Chi tiết ${DEDUPLICATION_SUMMARY.totalRemovedDuplicates} video & ảnh đã lọc`}
           </button>
         </div>
 
@@ -464,17 +466,24 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
               {DEDUPLICATION_SUMMARY.groups.map((grp) => (
                 <div
                   key={grp.id}
-                  className="bg-white p-4 rounded-2xl border border-[#E2D4B8] flex flex-col justify-between gap-1.5"
+                  className="bg-white p-4 rounded-2xl border border-[#E2D4B8] flex flex-col justify-between gap-2"
                 >
                   <div className="flex items-center justify-between gap-2">
                     <span className="font-extrabold text-[#1C1917] text-sm sm:text-base">
                       {grp.groupTitle}
                     </span>
                     <span className="px-2.5 py-1 rounded-lg bg-[#FAF2E1] text-[#8A5A14] border border-[#D9BF8C] font-mono font-extrabold text-xs sm:text-sm shrink-0">
-                      -{grp.removedCount} ảnh trùng
+                      {grp.removedCount > 0 ? `Đã cắt ${grp.removedCount} bản trùng` : 'Đã gộp góc chụp'}
                     </span>
                   </div>
-                  <p className="text-xs sm:text-sm text-stone-700">{grp.reason}</p>
+                  <p className="text-xs sm:text-sm text-stone-700 font-medium">{grp.reason}</p>
+                  {grp.removedExamples && grp.removedExamples.length > 0 && (
+                    <ul className="text-xs text-stone-600 space-y-1 pl-4 list-disc">
+                      {grp.removedExamples.map((ex, i) => (
+                        <li key={i}>{ex}</li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               ))}
             </motion.div>

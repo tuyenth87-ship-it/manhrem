@@ -42,10 +42,10 @@ test('Multi-set Màn khung order applies 50,000 VND/set discount and calculates 
   assert.equal(comboOrder.finalTotal, 3650000);
 });
 
-test('Deduplication removes all duplicate primary and secondary images across all 30 annotated posts', () => {
+test('Deduplication removes all duplicate primary and secondary images across all 34 annotated posts', () => {
   const dedupedPosts = getDeduplicatedProductPosts();
-  assert.equal(dedupedPosts.length, 30);
-  assert.equal(ANNOTATED_PRODUCT_POSTS.length, 30);
+  assert.equal(dedupedPosts.length, 34);
+  assert.equal(ANNOTATED_PRODUCT_POSTS.length, 34);
   assert.equal(MARKET_PRICE_SUMMARY_TABLE.length, 14);
 
   // Verify no two posts share the exact same primary imageUrl
@@ -82,17 +82,38 @@ test('Deduplication removes all duplicate primary and secondary images across al
   }
 
   // Verify deduplication summary accounting
-  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 66);
-  assert.equal(DEDUPLICATION_SUMMARY.totalRemovedDuplicates, 18);
-  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 48);
-  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 5);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 75);
+  assert.equal(DEDUPLICATION_SUMMARY.totalRemovedDuplicates, 25);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 50);
+  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 6);
 });
 
 test('All annotated products have market price tiers, visual annotations, specs, and clear Facebook post copy', () => {
   const canopyAndBeddingItems = filterAnnotatedProducts('man-khung-1tr');
-  assert.equal(canopyAndBeddingItems.length, 12);
+  assert.equal(canopyAndBeddingItems.length, 13);
 
-  // Verify the 6 newly added mattress posts (16 new photos)
+  // Verify the 4 newly added video & showroom posts (with duplicates & CapCut screen removed)
+  const remTuDong = getCanopyProductById('RTD-TH-01');
+  assert.ok(remTuDong);
+  assert.equal(remTuDong?.mediaType, 'video');
+  assert.equal(remTuDong?.imageUrl, '/assets/aistudio/IMG_5314_ae0205c4.PNG');
+
+  const videoToHop3Tang = getCanopyProductById('VID-TH-01');
+  assert.ok(videoToHop3Tang);
+  assert.equal(videoToHop3Tang?.mediaType, 'video');
+  assert.equal(videoToHop3Tang?.videoUrl, '/assets/aistudio/lv_0_20260706112032_1ddbd08c.mp4');
+
+  const videoRemXanhCoVit = getCanopyProductById('VID-TH-02');
+  assert.ok(videoRemXanhCoVit);
+  assert.equal(videoRemXanhCoVit?.mediaType, 'video');
+  assert.equal(videoRemXanhCoVit?.videoUrl, '/assets/aistudio/2026-07-05-161259219_b4419ba0.mp4');
+
+  const videoVongXep = getCanopyProductById('VX-NT-01');
+  assert.ok(videoVongXep);
+  assert.equal(videoVongXep?.mediaType, 'video');
+  assert.equal(videoVongXep?.numericPrice, 550000);
+
+  // Verify the 6 mattress posts (16 photos)
   const demLongVu = getCanopyProductById('DLV-TH-01');
   assert.ok(demLongVu);
   assert.equal(demLongVu?.numericPrice, 1850000);
@@ -156,7 +177,7 @@ test('All annotated products have market price tiers, visual annotations, specs,
   }
 
   const projectItems = filterAnnotatedProducts('cong-trinh-video');
-  assert.equal(projectItems.length, 14);
+  assert.equal(projectItems.length, 17);
   for (const item of projectItems) {
     assert.ok(item.marketPriceTiers.length >= 3);
   }

@@ -64,10 +64,23 @@ export interface DeduplicatedImageGroup {
 }
 
 export const DEDUPLICATION_SUMMARY = {
-  totalUploaded: 66,
-  totalRemovedDuplicates: 18,
-  totalUniquePublished: 48,
+  totalUploaded: 75,
+  totalRemovedDuplicates: 25,
+  totalUniquePublished: 50,
   groups: [
+    {
+      id: 'dup-video-showroom-3tang-2026',
+      groupTitle: 'Lô 04 Video & 05 Ảnh Mới (Showroom 3 Tầng, Rèm Tự Động & Ảnh Ngoài Lề)',
+      keptImage: 'IMG_5314_ae0205c4.PNG',
+      removedCount: 7,
+      removedExamples: [
+        '03 Video cắt lẻ (0:09s) trùng lặp 100% với Video tổng hợp (Cảnh Flycam Tầng 1, Cảnh Livestream Sofa Tầng 2 & Cảnh Công nghệ Tầng 3)',
+        'Cắt bỏ đoạn ghép 4 ảnh tĩnh đầu video (0:00–0:12), các cảnh ghép giải trí ngoài lề (0:35–0:51) và 2 giây màn hình đen logo CapCut cuối video',
+        'Loại bỏ 01 ảnh chế mạng xã hội không liên quan (865634088_..._n.png) & 01 ảnh selfie cận mặt thô (20261026_115655.jpg)',
+        'Gộp 02 ảnh mặt tiền Showroom trùng lặp với bài đăng SR-TH-01 đã có sẵn trên hệ thống',
+      ],
+      reason: 'Chắt lọc giữ lại nội dung đắt giá nhất: Tổ hợp Showroom 3 Tầng Năng Lượng Mặt Trời, Hệ Rèm Vải & Rèm Cầu Vồng Tự Động điều khiển Remote và Video Anh Tuyến trực tiếp thi công.',
+    },
     {
       id: 'dup-lo-dem-moi-16-anh',
       groupTitle: 'Lô 16 Ảnh Thực Tế Đệm Kim Cương Mặt Trần, TH VICUNA & Đệm Gấp 2 Chần Múi Dày 18–20cm',
@@ -310,6 +323,336 @@ export function calculateCanopyOrderTotal(input: CanopyPricingInput): CanopyPric
 }
 
 export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
+  // ===========================================================================
+  // 00. BỘ BÀI ĐĂNG MỚI NHẤT: TỔ HỢP SHOWROOM 3 TẦNG, RÈM TỰ ĐỘNG THÔNG MINH & VIDEO THI CÔNG (ĐÃ CẮT BỎ VIDEO/ẢNH TRÙNG LẶP)
+  // ===========================================================================
+  {
+    id: 'rem-tu-dong-ngoi-nha-thong-minh-tuyen-hoa-rtd01',
+    code: 'RTD-TH-01',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Showroom & Video',
+    title: 'Ngôi Nhà Thông Minh Tuyến Hoa: Hệ Rèm Vải 2 Lớp Tự Động & Rèm Cầu Vồng Tự Động Điều Khiển Remote Từ Xa (Đẳng Cấp Được Khẳng Định)',
+    shortTitle: 'Rèm Vải & Rèm Cầu Vồng Tự Động Thông Minh',
+    priceDisplay: '600.000đ / m ngang',
+    marketPriceRange: 'Giá thị trường: Rèm vải 750k–1.150k/m | Động cơ tự động 3,8Tr–4,5Tr/bộ',
+    marketPriceNote: 'Đã cắt bỏ các đoạn ghép ngoài lề và màn hình đen CapCut: Giữ trọn phân cảnh Anh Tuyến giới thiệu Hệ Rèm Vải 2 Lớp Tự Động & Rèm Cầu Vồng Tự Động điều khiển chỉ với 1 nút bấm kèm bộ đôi hình ảnh "Rèm Tuyến Hoa – Phục Vụ Anh Chị Em Mọi Miền Tổ Quốc".',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Rèm Vải Gấm Ghi Xám Cản Nắng 100% (May sóng Oze / Định hình)',
+        marketPrice: '750.000đ / m ngang',
+        storePrice: '600.000đ / m ngang',
+        note: 'Bao gồm thanh treo hợp kim & công thợ lắp đặt',
+      },
+      {
+        sizeOrOption: '2. Hệ Rèm Vải 2 Lớp Phòng Khách Hiện Đại (Vải chính + Voan trắng)',
+        marketPrice: '1.150.000đ / m ngang',
+        storePrice: '850.000đ / m ngang',
+        note: 'Sóng rèm suôn thẳng kịch sàn, sang trọng chuẩn biệt thự',
+      },
+      {
+        sizeOrOption: '3. Trọn Bộ Động Cơ Rèm Tự Động Thông Minh (Điều khiển Remote / App)',
+        marketPrice: '3.800.000đ / bộ motor',
+        storePrice: '2.850.000đ / bộ motor',
+        note: 'Chỉ 1 nút bấm đóng mở rèm vải & rèm cầu vồng từ xa',
+      },
+    ],
+    numericPrice: 600000,
+    unitLabel: '1 mét ngang rèm hoàn thiện (Hỗ trợ nâng cấp Motor tự động)',
+    standardDimensions: 'Thiết kế may đo theo cửa phòng khách, phòng thờ, biệt thự & nhà thông minh',
+    mediaType: 'video',
+    imageUrl: '/assets/aistudio/IMG_5314_ae0205c4.PNG',
+    videoUrl: '/assets/videos/motorized_drapery_dual.mp4',
+    secondaryImages: [
+      '/assets/aistudio/IMG_5312_c3f3e101.PNG',
+    ],
+    highlightTag: 'Rèm Tự Động Thông Minh · Đã Lọc Video Trùng',
+    summary:
+      'Bài đăng chắt lọc từ bộ ảnh & video mới của Anh Tuyến ("Rèm Tuyến Hoa – Phục Vụ Anh Chị Em Mọi Miền Tổ Quốc" & "Đẳng Cấp Được Khẳng Định"): Chỉ với một nút bấm trên điều khiển từ xa (Remote), hệ rèm vải 2 lớp tự động kéo mở nhẹ nhàng và rèm cầu vồng tự động cuốn lên êm ái.',
+    visualAnnotations: [
+      {
+        label: 'Anh Tuyến trực tiếp giới thiệu: "Phục Vụ Anh Chị Em Mọi Miền Tổ Quốc"',
+        detail:
+          'Hình ảnh thực tế Anh Tuyến đứng trước bộ rèm vải gấm màu ghi xám sang trọng và bộ rèm phòng thờ chuẩn mực ("Đẳng cấp được khẳng định").',
+      },
+      {
+        label: 'Chỉ 1 nút bấm Remote: Rèm vải 2 lớp & Rèm cầu vồng tự động vận hành',
+        detail:
+          'Động cơ rèm thông minh chạy siêu êm, tích hợp điều khiển từ xa giúp người già và trẻ nhỏ đóng/mở rèm cửa cao kịch trần cực kỳ tiện nghi.',
+      },
+      {
+        label: 'Đã cắt bỏ hoàn toàn cảnh ghép ngoài lề & logo CapCut cuối video',
+        detail:
+          'Biên tập tinh gọn, lịch sự, tập trung 100% vào không gian phòng khách hiện đại và chất lượng rèm cửa Tuyến Hoa.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'RTD-TH-01 (Rèm Vải Gấm & Hệ Rèm Tự Động Thông Minh Tuyến Hoa)' },
+      { label: 'Thông điệp chủ tiệm', value: 'Rèm Tuyến Hoa – Đẳng Cấp Được Khẳng Định – Phục Vụ Mọi Miền Tổ Quốc' },
+      { label: 'Giá rèm vải 1 lớp / 2 lớp', value: '600.000đ/m ngang (1 lớp) | 850.000đ/m ngang (2 lớp âm trần)' },
+      { label: 'Giá rèm cầu vồng / Motor', value: 'Rèm cầu vồng: 520.000đ/m² | Motor tự động: 2.850.000đ/bộ' },
+      { label: 'Hotline / Zalo tư vấn', value: '0344.727.528 (Anh Tuyến – Khảo sát & lắp đặt tận nơi)' },
+    ],
+    articleParagraphs: [
+      'Chào mừng Quý khách đến với giải pháp Ngôi Nhà Thông Minh (Smart Home) do Xưởng Mành Rèm Tuyến Hoa trực tiếp thiết kế và thi công! Chỉ với một nút bấm trên điều khiển từ xa (Remote) hoặc điện thoại, hệ thống Rèm Vải 2 Lớp âm trần tự động kéo ra – đóng lại êm ru, đồng thời hệ Rèm Cầu Vồng cửa sổ cũng tự động cuốn lên đón ánh sáng tự nhiên.',
+      'Bên cạnh dòng rèm tự động hiện đại, Tuyến Hoa luôn tự hào với các mẫu Rèm Vải Gấm màu ghi xám chống nắng 100% lắp cho phòng khách và không gian phòng thờ gia tiên ("Rèm Tuyến Hoa – Đẳng cấp được khẳng định"), cam kết đơn giá gốc tại xưởng chỉ 600.000đ/m ngang trọn gói cả thanh treo và công lắp đặt.'
+    ],
+    facebookPostCopy:
+      '🏡✨ CHÀO MỪNG BẠN ĐẾN VỚI NGÔI NHÀ THÔNG MINH – RÈM TỰ ĐỘNG & RÈM VẢI CAO CẤP TUYẾN HOA! ✨🏡\n' +
+      '("RÈM TUYẾN HOA – ĐẲNG CẤP ĐƯỢC KHẲNG ĐỊNH – PHỤC VỤ ANH CHỊ EM MỌI MIỀN TỔ QUỐC")\n' +
+      '--------------------------------------------\n' +
+      '🎮 Chỉ với MỘT NÚT BẤM trên điều khiển từ xa:\n' +
+      '✅ Hệ Rèm Vải 2 Lớp Âm Trần tự động kéo ra và đóng lại nhẹ nhàng, sang trọng.\n' +
+      '✅ Hệ Rèm Cầu Vồng Hàn Quốc tự động cuốn lên – hạ xuống điều chỉnh ánh sáng cực kỳ tiện nghi!\n' +
+      '✅ Các mẫu Rèm Vải Gấm Ghi Xám phòng khách & phòng thờ suôn sóng tròn đều, cản nắng 100%.\n' +
+      '💰 BẢNG GIÁ GỐC TẠI XƯỞNG TUYẾN HOA:\n' +
+      '   • Rèm vải gấm cản nắng 1 lớp: 600.000đ / mét ngang (Cả thanh treo & công lắp)\n' +
+      '   • Rèm vải 2 lớp (Vải gấm + Voan lụa): 850.000đ / mét ngang\n' +
+      '   • Rèm cầu vồng Hàn Quốc: 520.000đ / m²\n' +
+      '   • Động cơ Rèm Tự Động điều khiển Remote: 2.850.000đ / bộ (Bảo hành 3 năm)\n' +
+      '🚛 Miễn phí mang mẫu khảo sát & lắp đặt tận nhà!\n' +
+      '📞 Gọi/Zalo ngay Anh Tuyến: 0344.727.528',
+  },
+  {
+    id: 'video-to-hop-showroom-3-tang-va-thi-cong-thuc-te-vid01',
+    code: 'VID-TH-01',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Showroom & Video',
+    title: 'Video Toàn Cảnh Tổ Hợp Showroom 3 Tầng Năng Lượng Mặt Trời & Anh Tuyến Trực Tiếp Lắp Đặt Rèm Cửa – Đệm Tận Nhà (Đã Cắt Lọc Cảnh Trùng)',
+    shortTitle: 'Video Tổ Hợp Showroom 3 Tầng & Lắp Đặt Thực Tế',
+    priceDisplay: 'Rèm 600k/m · Đệm 1,35Tr',
+    marketPriceRange: 'Đại lý cấp 1 & Xưởng sản xuất trực tiếp – Rẻ hơn thị trường 15% – 30%',
+    marketPriceNote: 'Đã gộp 3 video cắt lẻ trùng lặp (Tầng 1, Tầng 2, Tầng 3) và cắt bỏ 2 giây màn hình đen CapCut ở cuối video để tạo thành 01 bài đăng tổng hợp chuyên nghiệp nhất.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: 'TẦNG 1: Rèm Vải (600k/m) · Rèm Cầu Vồng (520k/m²) · Rèm Cuốn (280k/m²) · Mành Trúc · Bạt Cuốn (220k/m²)',
+        marketPrice: '300k – 850k / đơn vị',
+        storePrice: '220k – 600k / đơn vị',
+        note: 'Mặt tiền 3 ô rộng thoáng – Trưng bày hàng trăm mẫu thực tế',
+      },
+      {
+        sizeOrOption: 'TẦNG 2: Chăn Ga Gối Đệm (Từ 1,35Tr) · Màn Khung 1,8m×2m (1Tr/bộ) · Sofa – Giường – Tủ & Livestream',
+        marketPrice: '1,65Tr – 5,95Tr',
+        storePrice: '1,0Tr – 4,45Tr',
+        note: 'Không gian nội thất hiện đại & phòng Livestream báo giá trực tiếp',
+      },
+      {
+        sizeOrOption: 'TẦNG 3: Công Nghệ Quản Lý Đơn Hàng & Đặc Sản Vùng Miền (Tương Ngọc Tuyến 65k/chai – 120k/bình)',
+        marketPrice: '80k – 180k',
+        storePrice: '65k – 120k',
+        note: 'Mái bằng năng lượng mặt trời tiết kiệm điện, bảo vệ môi trường',
+      },
+    ],
+    numericPrice: 600000,
+    unitLabel: 'Tổ hợp 3 tầng: Mành Rèm – Chăn Ga Gối Đệm – Nội Thất – Đặc Sản Ngọc Tuyến',
+    standardDimensions: 'Mặt tiền 3 ô rộng thoáng · Tầng 1 Rèm Cửa · Tầng 2 Đệm & Nội Thất · Tầng 3 Công Nghệ & Đặc Sản',
+    mediaType: 'video',
+    imageUrl: '/assets/aistudio/poster_tuyen_hoa_install.jpg',
+    videoUrl: '/assets/aistudio/lv_0_20260706112032_1ddbd08c.mp4',
+    highlightTag: 'Tổ Hợp 3 Tầng · Đã Gộp 3 Video Trùng',
+    summary:
+      'Bài đăng tổng hợp quy mô Tổ Hợp Showroom 3 Tầng Tuyến Hoa (Mái năng lượng mặt trời xanh sạch) và thước phim thực tế Anh Tuyến cùng đội ngũ kỹ thuật trực tiếp cầm máy khoan lắp rèm cửa, bàn giao đệm tận giường cho khách hàng.',
+    visualAnnotations: [
+      {
+        label: 'Tầng 1: Trung tâm Rèm Cửa – Mành Rèm – Bạt Tự Cuốn – Hạt Gỗ',
+        detail:
+          'Trưng bày đầy đủ Rèm vải cản nắng, Rèm cầu vồng Hàn Quốc, Rèm cuốn văn phòng, Mành trúc thường, Mành trúc vẽ tranh, Bạt cuốn và Rèm hạt gỗ phong thủy.',
+      },
+      {
+        label: 'Tầng 2: Không gian Chăn Ga Gối Đệm, Sofa, Giường Tủ & Livestream Bán Hàng',
+        detail:
+          'Trưng bày các bộ Sofa hiện đại, Giường ngủ, Tủ quần áo, Bàn ghế ăn, Đệm chính hãng và khu vực Livestream tư vấn bán hàng trực tuyến.',
+      },
+      {
+        label: 'Tầng 3 & Mái Năng Lượng Mặt Trời: Công Nghệ & Đặc Sản Vùng Miền',
+        detail:
+          'Ứng dụng công nghệ hiện đại trong quản lý vận hành kết hợp trưng bày sản phẩm thủ công mỹ nghệ và đặc sản Tương Ngọc Tuyến gia truyền.',
+      },
+    ],
+    specs: [
+      { label: 'Mã bài đăng', value: 'VID-TH-01 (Tổ Hợp Showroom 3 Tầng & Video Thi Công Thực Tế Tuyến Hoa)' },
+      { label: 'Xử lý chống trùng lặp', value: 'Đã gộp 3 video 9 giây trùng lặp & cắt bỏ màn hình đen CapCut cuối video' },
+      { label: 'Phân khu Tầng 1', value: 'Rèm vải (600k/m), Rèm cầu vồng (520k/m²), Rèm cuốn (280k/m²), Mành trúc, Bạt cuốn' },
+      { label: 'Phân khu Tầng 2', value: 'Chăn Ga Gối Đệm, Màn khung (1Tr/bộ), Sofa, Giường tủ & Góc Livestream' },
+      { label: 'Phân khu Tầng 3', value: 'Trung tâm Công nghệ & Đặc sản vùng miền Tương Ngọc Tuyến (65k – 120k)' },
+    ],
+    articleParagraphs: [
+      'Nhằm mang đến trải nghiệm mua sắm "Tất cả cho ngôi nhà bạn thêm đẹp" tại một điểm đến duy nhất, Tổ hợp Showroom Chăn Ga Gối Đệm & Mành Rèm Tuyến Hoa được quy hoạch bài bản trên 3 tầng hiện đại sử dụng hệ thống điện mặt trời áp mái thân thiện với môi trường.',
+      'Tại Tầng 1 với mặt tiền 3 ô kính rộng thoáng, quý khách dễ dàng lựa chọn mọi dòng Rèm vải, Rèm cầu vồng, Rèm cuốn trơn, Mành trúc vẽ tranh, Bạt cuốn và Rèm hạt gỗ. Bước lên Tầng 2 là thế giới Chăn ga gối đệm, Sofa, Giường tủ và khu vực Livestream báo giá trực tiếp. Tầng 3 là trung tâm công nghệ điều phối đơn hàng kết hợp trưng bày đặc sản vùng miền Tương Ngọc Tuyến thủ công.'
+    ],
+    facebookPostCopy:
+      '🏢🌟 KHÁM PHÁ TỔ HỢP SHOWROOM 3 TẦNG TUYẾN HOA – TẤT CẢ CHO NGÔI NHÀ BẠN THÊM ĐẸP! 🌟🏢\n' +
+      '--------------------------------------------\n' +
+      '☀️ Tòa nhà 3 tầng hiện đại với Mái Năng Lượng Mặt Trời xanh sạch & Mặt tiền 3 ô rộng thoáng đỗ ô tô thoải mái:\n' +
+      '🔹 TẦNG 1 – THẾ GIỚI RÈM CỬA & MÀNH RÈM:\n' +
+      '   • Rèm vải cản nắng 100%: 600.000đ/m ngang cả lắp | Rèm cầu vồng: 520.000đ/m²\n' +
+      '   • Rèm cuốn văn phòng: 280.000đ/m² | Bạt tự cuốn: 220.000đ/m² | Mành trúc & Rèm hạt gỗ phong thủy.\n' +
+      '🔹 TẦNG 2 – CHĂN GA GỐI ĐỆM, NỘI THẤT & LIVESTREAM BÁN HÀNG:\n' +
+      '   • Đệm Kim Cương, Everhome, TH VICUNA, Đệm Gấp 2 Chần Múi: Từ 1.350.000đ – 2.850.000đ/tấm.\n' +
+      '   • Màn khung Inox 1,8m×2,0m: 1.000.000đ/bộ bao lắp | Sofa hiện đại, Giường ngủ, Tủ quần áo, Bàn ghế ăn.\n' +
+      '🔹 TẦNG 3 – CÔNG NGHỆ & ĐẶC SẢN VÙNG MIỀN:\n' +
+      '   • Trung tâm điều phối đơn hàng & Đặc sản Tương Ngọc Tuyến ủ chum sành (65k/chai 500ml – 120k/bình quà biếu).\n' +
+      '--------------------------------------------\n' +
+      '🚛 Giao hàng nhanh – Lắp đặt tận nơi – Giá gốc tận xưởng không lo về giá!\n' +
+      '📞 Hotline / Zalo: 0344.727.528 (Showroom Tuyến Hoa – Chợ Cháy / Chợ Ngăm, Ứng Hòa, Hà Nội)',
+  },
+  {
+    id: 'video-can-canh-rem-gam-xanh-co-vit-yem-no-dinh-da-vid02',
+    code: 'VID-TH-02',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Showroom & Video',
+    title: 'Video Thực Tế Cận Cảnh Bộ Rèm Vải Gấm Xanh Cổ Vịt Thêu Hoa Vàng Phối Yếm Nơ Đính Đá Pha Lê Tuyến Hoa',
+    shortTitle: 'Video Rèm Gấm Xanh Cổ Vịt Yếm Nơ Đính Đá',
+    priceDisplay: '600.000đ / m ngang',
+    marketPriceRange: 'Giá thị trường rèm thêu có yếm võng đính đá: 800.000đ – 950.000đ / m ngang',
+    marketPriceNote: 'Video quay thực tế 100% tại nhà khách hàng: Bộ rèm vải gấm xanh cổ vịt thêu hoa cúc vàng nổi 3D kèm yếm võng đính nơ và tua rua hạt đá pha lê, đồng giá trọn gói 600.000đ/m ngang cả lắp.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: 'Rèm Vải Gấm Thêu Hoa Xanh Cổ Vịt (May hoàn thiện theo mét ngang cửa)',
+        marketPrice: '800.000đ / m ngang',
+        storePrice: '600.000đ / m ngang',
+        note: 'Bao gồm thanh treo, trụ đỡ, dây vén & công lắp',
+      },
+      {
+        sizeOrOption: 'Combo Rèm Cửa Buồng + Yếm Võng Đính Nơ Tua Rua Đá Pha Lê',
+        marketPrice: '950.000đ / m ngang',
+        storePrice: '650.000đ / m ngang',
+        note: 'May thủ công tỉ mỉ cho phòng cưới & cửa buồng truyền thống',
+      },
+      {
+        sizeOrOption: 'Rèm Hạt Gỗ / Hạt Nhựa Pha Lê Treo Cửa Phòng Thờ & Cửa Thông Phòng',
+        marketPrice: '550.000đ / m²',
+        storePrice: '420.000đ / m²',
+        note: 'Đan chữ Phúc – Lộc – Thọ hợp phong thủy',
+      },
+    ],
+    numericPrice: 600000,
+    unitLabel: '1 mét ngang hoàn thiện cả thanh treo & công lắp',
+    standardDimensions: 'May đo theo kích thước cửa buồng, cửa phòng cưới, cửa cầu thang & phòng khách',
+    mediaType: 'video',
+    imageUrl: '/assets/aistudio/poster_curtain_floral.jpg',
+    videoUrl: '/assets/aistudio/2026-07-05-161259219_b4419ba0.mp4',
+    highlightTag: 'Video Quay Thật 100% · Yếm Nơ Pha Lê',
+    summary:
+      'Video quay cận cảnh từng đường kim mũi chỉ của bộ Rèm Vải Gấm Xanh Cổ Vịt thêu hoa vàng nổi 3D kết hợp phần yếm rèm lượn sóng đính nơ và rèm hạt pha lê lấp lánh do chính tay Anh Tuyến lắp đặt tại nhà khách hàng.',
+    visualAnnotations: [
+      {
+        label: 'Chất vải gấm xanh cổ vịt (Teal Blue) thêu hoa vàng 3D sắc nét',
+        detail:
+          'Vải gấm lụa dày dặn cản sáng tuyệt đối, họa tiết hoa vàng thêu nổi tạo chiều sâu sang trọng và ấm cúng.',
+      },
+      {
+        label: 'Yếm võng đính nơ & tua rua hạt đá pha lê thủ công',
+        detail:
+          'Che kín hoàn toàn thanh suốt treo rèm phía trên, tạo điểm nhấn mềm mại duyên dáng cho cửa buồng và phòng tân hôn.',
+      },
+      {
+        label: 'Trọn gói 600.000đ/m ngang cả thanh treo & công thợ lắp tận nơi',
+        detail:
+          'Không phát sinh phụ phí, bảo hành 3 năm tận nhà cho toàn bộ phụ kiện và đường may.',
+      },
+    ],
+    specs: [
+      { label: 'Mã video', value: 'VID-TH-02 (Video Cận Cảnh Rèm Gấm Xanh Cổ Vịt Yếm Nơ Đính Đá)' },
+      { label: 'Chất liệu', value: 'Vải gấm lụa thêu hoa nổi 3D + Yếm nơ viền ren hạt đá pha lê' },
+      { label: 'Giá thị trường', value: '800.000đ – 950.000đ / mét ngang' },
+      { label: 'Giá tại Tuyến Hoa', value: '600.000đ / mét ngang hoàn thiện (Có yếm nơ đính đá: 650.000đ/m)' },
+      { label: 'Bảo hành', value: 'Bảo hành 3 năm tận nhà – Miễn phí mang mẫu tư vấn' },
+    ],
+    articleParagraphs: [
+      'Trong đoạn video thực tế mã VID-TH-02, quý khách có thể quan sát cận cảnh chất lượng may đo thủ công của Xưởng Mành Rèm Tuyến Hoa qua bộ rèm vải gấm màu xanh cổ vịt thêu hoa vàng rực rỡ lắp đặt cho cửa buồng và không gian phòng khách gia đình.',
+      'Từng múi sóng rèm được định hình tròn đều chuẩn tỷ lệ 2,5m vải trên 1m ngang cửa, kết hợp lớp yếm võng đính nơ và hạt đá pha lê lấp lánh giúp che khuyết điểm khung cửa và tôn lên vẻ trang trọng, đầm ấm cho ngôi nhà.'
+    ],
+    facebookPostCopy:
+      '🌸🎬 [VIDEO QUAY THẬT 100%] CẬN CẢNH BỘ RÈM GẤM XANH CỔ VỊT THÊU HOA VÀNG & YẾM NƠ ĐÍNH ĐÁ TUYẾN HOA! 🎬🌸\n' +
+      '--------------------------------------------\n' +
+      '✨ Mời các bác xem cận cảnh từng đường kim mũi chỉ và độ rủ sóng của bộ rèm cửa buồng / phòng cưới vừa được Anh Tuyến lắp đặt hoàn thiện:\n' +
+      '✅ Nền vải gấm lụa xanh cổ vịt dày dặn, thêu hoa cúc vàng nổi 3D cực sang.\n' +
+      '✅ Phần yếm rèm lượn sóng đính nơ kèm tua rua hạt đá pha lê lấp lánh.\n' +
+      '💰 GIÁ TRỌN GÓI TẠI XƯỞNG TUYẾN HOA:\n' +
+      '   • Rèm vải gấm cản nắng / thêu hoa: Chỉ 600.000đ / mét ngang (Đã bao gồm thanh treo & công lắp đặt).\n' +
+      '   • Thêm yếm võng đính nơ hạt đá thủ công: Chỉ 650.000đ / mét ngang (Giá thị trường 850k–950k/m).\n' +
+      '📞 Gọi/Zalo Anh Tuyến mang mẫu tận nhà miễn phí: 0344.727.528!',
+  },
+  {
+    id: 'video-vong-xep-ngoc-tuyen-cao-cap-vx01',
+    code: 'VX-NT-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Chăn Ga Gối Đệm & Màn Khung',
+    title: 'Video Giới Thiệu Võng Xếp Ngọc Tuyến Cao Cấp Khung Chịu Lực 200kg – Vòng Bi Đưa Êm, Lưới Mát Lưng',
+    shortTitle: 'Video Võng Xếp Ngọc Tuyến Chịu Lực 200kg',
+    priceDisplay: '550.000đ / bộ',
+    marketPriceRange: 'Giá thị trường: 750.000đ – 950.000đ / bộ cả khung & lưới',
+    marketPriceNote: 'Trọn bộ Võng Xếp Ngọc Tuyến gồm khung ống thép/inox cỡ lớn chịu tải 200kg + Lưới võng Polyester 2 lớp thoáng khí + Túi đựng chuyên dụng.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: 'Bộ Võng Xếp Ngọc Tuyến Khung Thép Sơn Tĩnh Điện + Lưới 2 Lớp',
+        marketPrice: '750.000đ / bộ',
+        storePrice: '550.000đ / bộ',
+        note: 'Khung ống phi 32 dày dặn, vòng bi bạc đạn đưa êm ru',
+      },
+      {
+        sizeOrOption: 'Bộ Võng Xếp Ngọc Tuyến Khung Inox 100% Không Gỉ Cỡ Đại + Lưới Cao Cấp',
+        marketPrice: '950.000đ / bộ',
+        storePrice: '720.000đ / bộ',
+        note: 'Chịu lực 200kg – Bảo hành khung võng 3 năm',
+      },
+      {
+        sizeOrOption: 'Lưới Võng Cán Gỗ / Cán Thép Mua Lẻ Thay Thế (Khổ rộng gia đình)',
+        marketPrice: '250.000đ / chiếc',
+        storePrice: '180.000đ / chiếc',
+        note: 'Lưới dày 2 lớp thoáng mát, không giãn xệ',
+      },
+    ],
+    numericPrice: 550000,
+    unitLabel: 'Trọn bộ Khung võng xếp + Lưới võng 2 lớp Ngọc Tuyến',
+    standardDimensions: 'Khung ống chịu lực 200kg · Gấp gọn trong 30 giây · Có túi xách đi kèm',
+    mediaType: 'video',
+    imageUrl: '/assets/aistudio/poster_vong_xep_ngoc_tuyen.jpg',
+    videoUrl: '/assets/aistudio/gemini_generated_video_493AC8E9_855479a1.mp4',
+    highlightTag: 'Video Võng Xếp Ngọc Tuyến · Đưa Êm Mát Lưng',
+    summary:
+      'Video giới thiệu dòng Võng Xếp Ngọc Tuyến chính hãng ("Võng Xếp Ngọc Tuyến – Hân Hạnh Phục Vụ Quý Khách"): Khung võng ống to vững chãi, đầu võng lắp vòng bi bạc đạn Nhật đưa êm không kêu cót két, lưới võng xanh mát rộng rãi.',
+    visualAnnotations: [
+      {
+        label: 'Khung võng xếp ống to chịu tải trọng tới 200kg',
+        detail:
+          'Chân đế bọc cao su chống trượt sàn gạch, các thanh giằng khóa chốt an toàn tuyệt đối cho cả người lớn và trẻ nhỏ.',
+      },
+      {
+        label: 'Đầu võng chạy vòng bi bạc đạn đôi siêu êm',
+        detail:
+          'Đưa võng nhẹ nhàng, êm ru, không phát ra tiếng kêu cót két gây mất giấc ngủ trưa.',
+      },
+      {
+        label: 'Lưới võng Polyester 2 lớp cán rộng thoáng khí',
+        detail:
+          'Mặt lưới đan lỗ thoáng hơi mát lưng mùa hè, tháo giặt nhanh khô, gấp gọn cả khung trong 30 giây.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'VX-NT-01 (Võng Xếp Ngọc Tuyến Chính Hãng)' },
+      { label: 'Tải trọng chịu lực', value: '200kg (Nằm 2 người lớn + trẻ nhỏ thoải mái)' },
+      { label: 'Giá thị trường', value: '750.000đ – 950.000đ / bộ' },
+      { label: 'Giá tại Tuyến Hoa', value: '550.000đ / bộ (Khung sơn tĩnh điện) | 720.000đ / bộ (Khung Inox)' },
+      { label: 'Bảo hành & Giao hàng', value: 'Bảo hành khung 3 năm – Giao tận nhà miễn phí' },
+    ],
+    articleParagraphs: [
+      'Bên cạnh Chăn Ga Gối Đệm, Màn Khung và Mành Rèm, cơ sở Ngọc Tuyến – Tuyến Hoa còn phân phối dòng Võng Xếp Ngọc Tuyến (Mã VX-NT-01) được bà con tin dùng nhờ khung võng ống to đầm chắc và lưới võng 2 lớp cực kỳ thoáng mát.',
+      'Trọn bộ sản phẩm gồm cả khung võng xếp và lưới võng cán rộng chỉ từ 550.000đ/bộ (rẻ hơn thị trường 200.000đ/bộ), miễn phí vận chuyển tận nhà khi đặt kèm Đệm, Chiếu mây hoặc Màn khung.'
+    ],
+    facebookPostCopy:
+      '🌿 [VIDEO THỰC TẾ] VÕNG XẾP NGỌC TUYẾN CAO CẤP – ĐƯA ÊM RU, MÁT LƯNG, BỀN BỈ 10 NĂM! 🌿\n' +
+      '--------------------------------------------\n' +
+      '✅ Khung võng ống to chịu lực tới 200kg, chân bọc cao su chống xước nền gạch.\n' +
+      '✅ Đầu võng chạy vòng bi bạc đạn siêu êm, không kêu cót két.\n' +
+      '✅ Lưới võng 2 lớp cán rộng thoáng khí, nằm êm lưng không bị hằn đau.\n' +
+      '💰 GIÁ TẠI KHO NGỌC TUYẾN – TUYẾN HOA:\n' +
+      '   • Bộ Khung Thép Sơn Tĩnh Điện + Lưới 2 Lớp: Chỉ 550.000đ / bộ (Giá TT: 750.000đ)\n' +
+      '   • Bộ Khung Inox 100% Cỡ Đại + Lưới Cao Cấp: Chỉ 720.000đ / bộ (Giá TT: 950.000đ)\n' +
+      '🚛 Giao hàng nhanh tận nhà – Kiểm tra ưng ý mới thanh toán!\n' +
+      '📞 Gọi/Zalo đặt ngay: 0344.727.528 (Ngọc Tuyến – Tuyến Hoa)',
+  },
+
   // ===========================================================================
   // 0A. BỘ SƯU TẬP 16 ẢNH ĐỆM MỚI CẬP NHẬT (CHẦN MÚI LÔNG VŨ, KIM CƯƠNG, TH VICUNA, CARO, GẤM ĐỎ & XƯỞNG PHÔI ĐỆM)
   // ===========================================================================
