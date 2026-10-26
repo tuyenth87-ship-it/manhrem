@@ -42,18 +42,19 @@ test('Multi-set Màn khung order applies 50,000 VND/set discount and calculates 
   assert.equal(comboOrder.finalTotal, 3650000);
 });
 
-test('Deduplication removes all duplicate primary and secondary images across all 24 annotated posts', () => {
+test('Deduplication removes all duplicate primary and secondary images across all 30 annotated posts', () => {
   const dedupedPosts = getDeduplicatedProductPosts();
-  assert.equal(dedupedPosts.length, 24);
-  assert.equal(ANNOTATED_PRODUCT_POSTS.length, 24);
-  assert.equal(MARKET_PRICE_SUMMARY_TABLE.length, 12);
+  assert.equal(dedupedPosts.length, 30);
+  assert.equal(ANNOTATED_PRODUCT_POSTS.length, 30);
+  assert.equal(MARKET_PRICE_SUMMARY_TABLE.length, 14);
 
   // Verify no two posts share the exact same primary imageUrl
   const primaryImages = dedupedPosts.map((p) => p.imageUrl);
   const uniquePrimaryImages = new Set(primaryImages);
   assert.equal(uniquePrimaryImages.size, dedupedPosts.length);
 
-  // Verify no post has duplicate secondaryImages
+  // Verify no post has duplicate secondaryImages and no secondary image overlaps across posts
+  const allSeenImages = new Set<string>(primaryImages);
   for (const post of dedupedPosts) {
     if (post.secondaryImages) {
       const uniqueSecondary = new Set(post.secondaryImages);
@@ -62,6 +63,10 @@ test('Deduplication removes all duplicate primary and secondary images across al
         post.secondaryImages.length,
         `Post ${post.code} has duplicate secondaryImages`
       );
+      for (const secImg of post.secondaryImages) {
+        assert.ok(!allSeenImages.has(secImg), `Duplicate image across posts: ${secImg}`);
+        allSeenImages.add(secImg);
+      }
       // Verify known byte-for-byte duplicate files are excluded
       assert.ok(
         !post.secondaryImages.includes(
@@ -77,15 +82,46 @@ test('Deduplication removes all duplicate primary and secondary images across al
   }
 
   // Verify deduplication summary accounting
-  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 50);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 66);
   assert.equal(DEDUPLICATION_SUMMARY.totalRemovedDuplicates, 18);
-  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 32);
-  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 4);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 48);
+  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 5);
 });
 
 test('All annotated products have market price tiers, visual annotations, specs, and clear Facebook post copy', () => {
   const canopyAndBeddingItems = filterAnnotatedProducts('man-khung-1tr');
-  assert.equal(canopyAndBeddingItems.length, 7);
+  assert.equal(canopyAndBeddingItems.length, 12);
+
+  // Verify the 6 newly added mattress posts (16 new photos)
+  const demLongVu = getCanopyProductById('DLV-TH-01');
+  assert.ok(demLongVu);
+  assert.equal(demLongVu?.numericPrice, 1850000);
+  assert.equal(demLongVu?.secondaryImages?.length, 3);
+
+  const demKimCuong = getCanopyProductById('DKC-TH-01');
+  assert.ok(demKimCuong);
+  assert.equal(demKimCuong?.numericPrice, 1850000);
+  assert.equal(demKimCuong?.secondaryImages?.length, 2);
+
+  const demVicuna = getCanopyProductById('DVC-TH-01');
+  assert.ok(demVicuna);
+  assert.equal(demVicuna?.numericPrice, 2150000);
+  assert.equal(demVicuna?.secondaryImages?.length, 2);
+
+  const demCaro = getCanopyProductById('DCR-TH-01');
+  assert.ok(demCaro);
+  assert.equal(demCaro?.numericPrice, 1750000);
+  assert.equal(demCaro?.secondaryImages?.length, 1);
+
+  const demGamDo = getCanopyProductById('DGD-TH-01');
+  assert.ok(demGamDo);
+  assert.equal(demGamDo?.numericPrice, 1450000);
+  assert.equal(demGamDo?.secondaryImages?.length, 1);
+
+  const khoPhoiDem = getCanopyProductById('KXD-TH-01');
+  assert.ok(khoPhoiDem);
+  assert.equal(khoPhoiDem?.numericPrice, 1350000);
+  assert.equal(khoPhoiDem?.secondaryImages?.length, 1);
 
   const chieuMay = getCanopyProductById('CM-TH-01');
   assert.ok(chieuMay);
@@ -120,7 +156,7 @@ test('All annotated products have market price tiers, visual annotations, specs,
   }
 
   const projectItems = filterAnnotatedProducts('cong-trinh-video');
-  assert.equal(projectItems.length, 13);
+  assert.equal(projectItems.length, 14);
   for (const item of projectItems) {
     assert.ok(item.marketPriceTiers.length >= 3);
   }

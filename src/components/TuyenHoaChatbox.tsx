@@ -238,18 +238,18 @@ export const TuyenHoaChatbox: React.FC<TuyenHoaChatboxProps> = ({
             whileTap={{ scale: 0.97 }}
             onClick={onOpen}
             type="button"
-            className="fixed bottom-5 right-5 z-40 bg-[#1C1917] text-[#F5E6C8] px-3.5 py-2.5 rounded-full shadow-lg border border-[#D4AF37]/60 flex items-center gap-2 hover:bg-[#2E2924] transition-all cursor-pointer"
+            className="fixed bottom-5 right-5 z-40 bg-gradient-to-r from-[#F4E3C1] to-[#EBD19E] text-[#1C1917] px-4 py-2.5 rounded-full shadow-lg border-2 border-[#C59B4D] flex items-center gap-2 hover:from-[#EDD8AE] hover:to-[#E2C285] transition-all cursor-pointer"
             title="Chat tư vấn cùng Tuyến Hoa"
           >
             <div className="relative">
-              <Bot className="w-4 h-4 text-[#D4AF37]" />
+              <Bot className="w-4 h-4 text-[#7A4E0E]" />
               {hasUnread && (
-                <span className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-400 rounded-full animate-ping" />
+                <span className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-500 rounded-full animate-ping" />
               )}
             </div>
-            <span className="text-xs font-bold flex items-center gap-1.5 text-[#F5E6C8]">
+            <span className="text-xs sm:text-sm font-extrabold flex items-center gap-1.5 text-[#1C1917]">
               Tư Vấn 24/7
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
             </span>
           </motion.button>
         </aside>
@@ -265,7 +265,7 @@ export const TuyenHoaChatbox: React.FC<TuyenHoaChatboxProps> = ({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={onClose}
-              className="absolute inset-0 bg-black/40 backdrop-blur-xs pointer-events-auto sm:hidden"
+              className="absolute inset-0 bg-black/30 backdrop-blur-xs pointer-events-auto sm:hidden"
             />
 
             {/* Chat Box Panel */}
@@ -275,13 +275,13 @@ export const TuyenHoaChatbox: React.FC<TuyenHoaChatboxProps> = ({
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 40, scale: 0.96 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="relative w-full sm:max-w-md h-[90vh] sm:h-[620px] bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl border border-stone-200 flex flex-col overflow-hidden pointer-events-auto"
+              className="relative w-full sm:max-w-md h-[90vh] sm:h-[620px] bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl border-2 border-[#D4B06A] flex flex-col overflow-hidden pointer-events-auto"
             >
               {/* Header */}
-              <div className="bg-gradient-to-r from-stone-900 via-amber-950 to-stone-900 text-white p-3.5 sm:p-4 flex items-center justify-between shrink-0 shadow-md">
+              <div className="bg-gradient-to-r from-[#FAF2E1] via-[#FDFBF7] to-[#F3E1BE] text-[#1C1917] p-3.5 sm:p-4 flex items-center justify-between shrink-0 border-b border-[#E2D4B8]">
                 <div className="flex items-center gap-3">
                   <div className="relative">
-                    <div className="w-10 h-10 rounded-full bg-amber-400/20 border-2 border-amber-300/60 overflow-hidden shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-white border-2 border-[#C59B4D] overflow-hidden shrink-0">
                       <img
                         src="/assets/aistudio/1792658171183_1293093313519991016_1293093313519991016_10108ab564c8fb6ade925f6a8e609889_1971346a.jpg"
                         alt="Anh Tuyến tư vấn trực tiếp"

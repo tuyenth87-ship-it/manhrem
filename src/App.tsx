@@ -260,51 +260,51 @@ export default function App() {
     <div
       className={`w-full max-w-full overflow-x-hidden min-h-screen flex flex-col font-sans selection:bg-amber-200 selection:text-amber-950 pb-20 md:pb-0 ${
         isMobileFrameMode
-          ? 'bg-stone-900 md:py-6 md:px-4 items-center'
-          : 'bg-[#FAF7F2]'
+          ? 'bg-stone-200 md:py-6 md:px-4 items-center'
+          : 'bg-[#FCFBF8]'
       }`}
     >
       <LuxurySparkleOverlay enabled={isSparkleModeEnabled} />
 
       <div
-        className={`w-full flex flex-col min-h-screen bg-[#FAF7F2] ${
+        className={`w-full flex flex-col min-h-screen bg-[#FCFBF8] ${
           isMobileFrameMode
             ? 'max-w-[430px] rounded-3xl shadow-2xl border-4 border-amber-500/70 overflow-x-hidden pb-20 relative'
             : 'max-w-full'
         }`}
       >
-        {/* Toast Notification */}
+        {/* Bright Toast Notification */}
         <AnimatePresence>
           {toastMessage && (
             <motion.div
               initial={{ opacity: 0, y: -20, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
-              className="fixed top-16 md:top-20 right-4 md:right-6 z-50 bg-[#1C1917] text-[#F5E6C8] px-4 py-2.5 rounded-2xl shadow-2xl border border-[#D4AF37]/70 flex items-center gap-2 text-xs font-bold max-w-[90vw]"
+              className="fixed top-16 md:top-20 right-4 md:right-6 z-50 bg-white text-[#1C1917] px-4 py-3 rounded-2xl shadow-xl border-2 border-[#C59B4D] flex items-center gap-2 text-sm font-extrabold max-w-[90vw]"
             >
-              <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
               <span className="truncate">{toastMessage}</span>
             </motion.div>
           )}
         </AnimatePresence>
 
-        {/* Concise Editorial Announcement Bar */}
-        <div className="bg-[#181512] text-[#E8DFD1] text-xs py-2 px-4 border-b border-[#2E2720]">
+        {/* Bright Warm Champagne Announcement Bar */}
+        <div className="bg-gradient-to-r from-[#FAF2E1] via-[#FDFBF7] to-[#FAF2E1] text-[#1C1917] text-xs sm:text-sm py-2.5 px-4 border-b border-[#E2D4B8]">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             <div className="flex items-center gap-2 truncate">
-              <span className="text-[#D4AF37] font-bold tracking-wider uppercase shrink-0">
-                Tuyến Hoa:
+              <span className="text-[#8A5A14] font-extrabold tracking-wide uppercase shrink-0">
+                Showroom Tuyến Hoa:
               </span>
-              <span className="text-[#D6CEC2] font-normal truncate">
+              <span className="text-stone-800 font-semibold truncate">
                 Màn Khung 1.000.000đ/bộ · Rèm Vải 600k/m · Đệm Everhome 2,85Tr · Bạt Xếp 350k/m²
               </span>
             </div>
             <div className="flex items-center gap-4 shrink-0 pl-2">
               <a
                 href={`tel:${STORE_INFO.hotline}`}
-                className="hidden sm:flex items-center gap-1.5 text-[#F5E6C8] hover:text-white font-bold font-mono tabular-nums transition-colors text-xs"
+                className="hidden sm:flex items-center gap-1.5 text-[#7A4E0E] hover:text-[#1C1917] font-extrabold font-mono tabular-nums transition-colors text-xs sm:text-sm"
               >
-                <PhoneCall className="w-3.5 h-3.5 text-[#D4AF37]" />
+                <PhoneCall className="w-3.5 h-3.5 text-[#8A5A14]" />
                 <span>{STORE_INFO.hotlineDisplay}</span>
               </a>
             </div>
@@ -352,7 +352,7 @@ export default function App() {
           activeCategory={activeCategory}
         />
 
-        {/* Hero Showcase with Smooth Scene Transitions */}
+        {/* Hero Showcase with Bright Light Boxes & Smooth Scene Transitions */}
         <Hero
           onExploreProducts={() => {
             setActiveMainTab('catalog');
@@ -379,11 +379,11 @@ export default function App() {
         {/* Main Workspace with Animated Scene Transitions */}
         <main
           id="main-workspace"
-          className="w-full min-w-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7 sm:py-9 md:py-12 space-y-7 sm:space-y-9"
+          className="w-full min-w-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 space-y-8 sm:space-y-10"
         >
-          {/* Concise Luxury Navigation Bar with Layout Pill Transition */}
-          <div className="w-full min-w-0 bg-white p-2 rounded-2xl border border-[#E5DEC9] shadow-2xs overflow-x-auto scrollbar-none touch-pan-x">
-            <div className="flex items-center gap-1 min-w-max">
+          {/* Bright Light-Mode Navigation Bar with Champagne Gold Pill Transition */}
+          <div className="w-full min-w-0 bg-white p-2.5 rounded-2xl border-2 border-[#E2D4B8] shadow-2xs overflow-x-auto scrollbar-none touch-pan-x">
+            <div className="flex items-center gap-1.5 min-w-max">
               {MAIN_NAV_ITEMS.map((item) => {
                 const Icon = item.icon;
                 const isActive = activeMainTab === item.id;
@@ -392,22 +392,22 @@ export default function App() {
                     key={item.id}
                     type="button"
                     onClick={() => setActiveMainTab(item.id)}
-                    className={`relative flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-colors whitespace-nowrap min-h-[40px] cursor-pointer ${
+                    className={`relative flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm sm:text-base font-extrabold transition-colors whitespace-nowrap min-h-[44px] cursor-pointer ${
                       isActive
-                        ? 'text-[#F5E6C8]'
-                        : 'text-stone-700 hover:text-stone-950 hover:bg-[#FAF7F2]'
+                        ? 'text-[#1C1917]'
+                        : 'text-stone-700 hover:text-[#1C1917] hover:bg-[#FAF6EE]'
                     }`}
                   >
                     {isActive && (
                       <motion.div
                         layoutId="activeMainTabIndicator"
                         transition={{ type: 'spring', stiffness: 380, damping: 32 }}
-                        className="absolute inset-0 rounded-xl bg-[#1C1917] shadow-xs"
+                        className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#F4E3C1] to-[#EBD19E] border border-[#C59B4D] shadow-2xs"
                       />
                     )}
                     <Icon
-                      className={`relative z-10 w-3.5 h-3.5 ${
-                        isActive ? 'text-[#D4AF37]' : 'text-[#9A6F2E]'
+                      className={`relative z-10 w-4 h-4 ${
+                        isActive ? 'text-[#7A4E0E]' : 'text-[#8A5A14]'
                       }`}
                     />
                     <span className="relative z-10">{item.label}</span>
@@ -431,11 +431,11 @@ export default function App() {
                   onShowToast={showToast}
                 />
 
-                {/* Clean Catalog Filter Bar */}
-                <div className="w-full min-w-0 bg-white p-4 rounded-2xl border border-[#E5DEC9] shadow-2xs space-y-3 overflow-hidden">
-                  <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+                {/* Bright Light-Mode Catalog Filter Bar */}
+                <div className="w-full min-w-0 bg-white p-4 sm:p-5 rounded-2xl border-2 border-[#E2D4B8] shadow-2xs space-y-3 overflow-hidden">
+                  <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3.5">
                     <div className="w-full lg:w-auto overflow-x-auto pb-1 lg:pb-0 scrollbar-none">
-                      <div className="flex items-center gap-1.5 min-w-max">
+                      <div className="flex items-center gap-2 min-w-max">
                         {CATEGORIES.map((cat) => (
                           <button
                             key={cat.id}
@@ -444,18 +444,18 @@ export default function App() {
                               setActiveCategory(cat.id);
                               setSelectedBrand('all');
                             }}
-                            className={`px-3.5 py-2 text-xs sm:text-sm font-bold rounded-xl transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 min-h-[38px] cursor-pointer ${
+                            className={`px-4 py-2.5 text-sm sm:text-base font-extrabold rounded-xl transition-all whitespace-nowrap shrink-0 flex items-center gap-2 min-h-[42px] cursor-pointer ${
                               activeCategory === cat.id
-                                ? 'bg-[#1C1917] text-[#F5E6C8] shadow-xs'
-                                : 'bg-[#FAF7F2] text-stone-700 hover:text-stone-950 hover:bg-[#F0E9DC]'
+                                ? 'bg-gradient-to-r from-[#F4E3C1] to-[#EBD19E] text-[#1C1917] border border-[#C59B4D] shadow-2xs'
+                                : 'bg-[#FAF6EE] text-stone-700 hover:text-[#1C1917] hover:bg-[#F3E9D6]'
                             }`}
                           >
                             <span>{cat.label}</span>
                             <span
-                              className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
+                              className={`text-xs px-2 py-0.5 rounded-full font-mono font-extrabold ${
                                 activeCategory === cat.id
-                                  ? 'bg-[#D4AF37] text-[#1C1917]'
-                                  : 'bg-[#EAE3D5] text-stone-700'
+                                  ? 'bg-white text-[#7A4E0E] border border-[#C59B4D]'
+                                  : 'bg-[#EAE0CE] text-stone-700'
                               }`}
                             >
                               {cat.count}
@@ -465,21 +465,21 @@ export default function App() {
                       </div>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 lg:w-[440px]">
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 lg:w-[460px]">
                       <div className="relative flex-1">
-                        <Search className="w-4 h-4 text-stone-400 absolute left-3 top-2.5" />
+                        <Search className="w-4 h-4 text-[#8A5A14] absolute left-3.5 top-3.5" />
                         <input
                           type="text"
                           value={searchQuery}
                           onChange={(e) => setSearchQuery(e.target.value)}
                           placeholder="Tìm đệm, rèm, chiếu trúc..."
-                          className="w-full pl-9 pr-8 py-2 text-xs sm:text-sm font-medium text-[#1C1917] placeholder:text-stone-400 bg-[#FAF7F2] rounded-xl border border-[#E2D9C8] focus:outline-hidden focus:border-[#9A6F2E] min-h-[38px]"
+                          className="w-full pl-10 pr-8 py-2.5 text-sm sm:text-base font-medium text-[#1C1917] placeholder:text-stone-500 bg-[#FCFBF8] rounded-xl border border-[#D8C5A3] focus:outline-hidden focus:border-[#8A5A14] min-h-[42px]"
                         />
                         {searchQuery && (
                           <button
                             type="button"
                             onClick={() => setSearchQuery('')}
-                            className="absolute right-3 top-2 text-base text-stone-400 hover:text-stone-900 font-bold"
+                            className="absolute right-3 top-2.5 text-base text-stone-500 hover:text-[#1C1917] font-bold"
                           >
                             ×
                           </button>
@@ -489,7 +489,7 @@ export default function App() {
                       <select
                         value={selectedBrand}
                         onChange={(e) => setSelectedBrand(e.target.value)}
-                        className="text-xs sm:text-sm bg-[#FAF7F2] border border-[#E2D9C8] rounded-xl px-3 py-2 text-[#1C1917] font-semibold focus:outline-hidden focus:border-[#9A6F2E] cursor-pointer min-h-[38px]"
+                        className="text-sm sm:text-base bg-[#FCFBF8] border border-[#D8C5A3] rounded-xl px-3.5 py-2.5 text-[#1C1917] font-bold focus:outline-hidden focus:border-[#8A5A14] cursor-pointer min-h-[42px]"
                       >
                         <option value="all">Tất cả thương hiệu</option>
                         <option value="vikosan">Đệm Vikosan</option>
@@ -504,8 +504,8 @@ export default function App() {
 
                 {/* Product Cards Grid */}
                 {filteredProducts.length === 0 ? (
-                  <div className="bg-white rounded-3xl border border-[#E5DEC9] p-10 text-center space-y-3">
-                    <p className="text-stone-600 text-sm">
+                  <div className="bg-white rounded-3xl border-2 border-[#E2D4B8] p-10 text-center space-y-3">
+                    <p className="text-stone-700 text-base font-medium">
                       Không tìm thấy sản phẩm nào khớp với từ khóa tìm kiếm.
                     </p>
                     <button
@@ -515,7 +515,7 @@ export default function App() {
                         setSelectedBrand('all');
                         setSearchQuery('');
                       }}
-                      className="px-5 py-2.5 bg-[#1C1917] text-[#F5E6C8] rounded-xl text-xs sm:text-sm font-semibold hover:bg-[#2E2924] transition-colors cursor-pointer"
+                      className="px-6 py-3 bg-[#F3DFB8] text-[#1C1917] border border-[#C59B4D] rounded-xl text-sm sm:text-base font-extrabold hover:bg-[#E8CE9B] transition-colors cursor-pointer"
                     >
                       Đặt lại bộ lọc
                     </button>
@@ -523,7 +523,7 @@ export default function App() {
                 ) : (
                   <motion.div
                     layout
-                    className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7"
                   >
                     {filteredProducts.map((product) => (
                       <ProductCard

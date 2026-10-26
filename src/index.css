@@ -14,13 +14,20 @@
     max-width: 100vw;
     width: 100%;
     font-family: var(--font-sans);
+    font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
-    background-color: #FAF7F2;
+    background-color: #FCFBF8;
     color: #1C1917;
-    line-height: 1.6;
+    line-height: 1.65;
+  }
+
+  @media (min-width: 640px) {
+    html {
+      font-size: 16.5px;
+    }
   }
 
   body {
@@ -30,8 +37,8 @@
 
   h1, h2, h3, h4, .font-display {
     font-family: var(--font-display);
-    letter-spacing: -0.015em;
-    line-height: 1.3;
+    letter-spacing: -0.012em;
+    line-height: 1.28;
     font-style: normal;
   }
 
@@ -48,37 +55,37 @@
   }
 
   p, li {
-    line-height: 1.65;
+    line-height: 1.68;
   }
 }
 
 /* Custom subtle architectural scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAF7F2;
+  background: #FCFBF8;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D6CEC2;
+  background: #D6C8B0;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #A6895B;
+  background: #B48B4B;
 }
 
 /* ============================================================================
-   WARM EDITORIAL ATELIER & REFINED LUXURY SYSTEM ("SANG TRỌNG & TINH TẾ")
-   Subtle champagne gold accents, architectural hairlines, soft gallery elevation.
+   HIGH-CRAFT LIGHT MODE LUXURY SYSTEM ("NỀN SÁNG SANG TRỌNG – CHỮ TO RÕ RÀNG")
+   Bright Alabaster & Warm Ivory surfaces, Champagne Gold accents, crisp dark ink.
    ============================================================================ */
 
 .luxury-gold-text {
-  color: #E6C786;
+  color: #8A5A14;
 }
 
 .luxury-gold-dark-text {
-  color: #8C6528;
+  color: #7A4E0E;
 }
 
 /* Subtle Hover Light Sweep for Imagery */
@@ -97,7 +104,7 @@
   background: linear-gradient(
     to right,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 250, 240, 0.32) 50%,
+    rgba(255, 252, 245, 0.36) 50%,
     rgba(255, 255, 255, 0) 100%
   );
   transform: translateX(-140%) skewX(-20deg);
@@ -114,18 +121,19 @@
   overflow: hidden;
 }
 
-/* Refined Showroom Card Elevation */
+/* Bright Showroom Card Elevation */
 .luxury-card {
+  background-color: #FFFFFF;
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
               box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
               border-color 0.35s ease;
-  box-shadow: 0 6px 24px -6px rgba(28, 25, 23, 0.05);
+  box-shadow: 0 8px 26px -8px rgba(140, 98, 36, 0.08);
 }
 
 .luxury-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(180, 131, 62, 0.55);
-  box-shadow: 0 18px 36px -12px rgba(28, 25, 23, 0.11);
+  border-color: rgba(196, 150, 72, 0.75);
+  box-shadow: 0 18px 38px -12px rgba(140, 98, 36, 0.15);
 }
 
 .diamond-twinkle {
