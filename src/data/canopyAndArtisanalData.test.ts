@@ -42,11 +42,11 @@ test('Multi-set Màn khung order applies 50,000 VND/set discount and calculates 
   assert.equal(comboOrder.finalTotal, 3650000);
 });
 
-test('Deduplication removes all duplicate primary and secondary images across all 34 annotated posts', () => {
+test('Deduplication removes all duplicate primary and secondary images across all 42 annotated posts', () => {
   const dedupedPosts = getDeduplicatedProductPosts();
-  assert.equal(dedupedPosts.length, 34);
-  assert.equal(ANNOTATED_PRODUCT_POSTS.length, 34);
-  assert.equal(MARKET_PRICE_SUMMARY_TABLE.length, 14);
+  assert.equal(dedupedPosts.length, 42);
+  assert.equal(ANNOTATED_PRODUCT_POSTS.length, 42);
+  assert.equal(MARKET_PRICE_SUMMARY_TABLE.length, 16);
 
   // Verify no two posts share the exact same primary imageUrl
   const primaryImages = dedupedPosts.map((p) => p.imageUrl);
@@ -82,17 +82,64 @@ test('Deduplication removes all duplicate primary and secondary images across al
   }
 
   // Verify deduplication summary accounting
-  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 75);
-  assert.equal(DEDUPLICATION_SUMMARY.totalRemovedDuplicates, 25);
-  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 50);
-  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 6);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 107);
+  assert.equal(DEDUPLICATION_SUMMARY.totalRemovedDuplicates, 45);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 62);
+  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 8);
 });
 
 test('All annotated products have market price tiers, visual annotations, specs, and clear Facebook post copy', () => {
   const canopyAndBeddingItems = filterAnnotatedProducts('man-khung-1tr');
-  assert.equal(canopyAndBeddingItems.length, 13);
+  assert.equal(canopyAndBeddingItems.length, 15);
 
-  // Verify the 4 newly added video & showroom posts (with duplicates & CapCut screen removed)
+  // Verify the 4 newest posts from the 2 videos & 6 photos (Mành trúc biệt thự & Màn hộp thông minh vân gỗ)
+  const manhTrucBietThu = getCanopyProductById('MT-TH-01');
+  assert.ok(manhTrucBietThu);
+  assert.equal(manhTrucBietThu?.numericPrice, 260000);
+  assert.equal(manhTrucBietThu?.imageUrl, '/assets/aistudio/IMG_9290_f6c3666b.JPG');
+  assert.equal(manhTrucBietThu?.secondaryImages?.length, 1);
+
+  const videoBietThu = getCanopyProductById('VID-BT-01');
+  assert.ok(videoBietThu);
+  assert.equal(videoBietThu?.mediaType, 'video');
+  assert.equal(videoBietThu?.videoUrl, '/assets/aistudio/2026-10-27-120102922_bd1f1539.mp4');
+
+  const manHopVanGo = getCanopyProductById('MH-TH-01');
+  assert.ok(manHopVanGo);
+  assert.equal(manHopVanGo?.numericPrice, 1350000);
+  assert.equal(manHopVanGo?.imageUrl, '/assets/aistudio/IMG_9295_0a9c81ad.JPG');
+  assert.equal(manHopVanGo?.secondaryImages?.length, 1);
+
+  const videoXuongManHop = getCanopyProductById('XMH-TH-01');
+  assert.ok(videoXuongManHop);
+  assert.equal(videoXuongManHop?.mediaType, 'video');
+  assert.equal(videoXuongManHop?.videoUrl, '/assets/aistudio/efac290438e544afea301caf4816b714_2cb14457.mp4');
+  assert.equal(videoXuongManHop?.secondaryImages?.length, 1);
+
+  // Verify the 4 posts from the 24 uploaded photos (deduplicated)
+  const remCauVongNgocTuyen = getCanopyProductById('RCV-NT-01');
+  assert.ok(remCauVongNgocTuyen);
+  assert.equal(remCauVongNgocTuyen?.numericPrice, 520000);
+  assert.equal(
+    remCauVongNgocTuyen?.imageUrl,
+    '/assets/aistudio/1792619301615_1293093313519991016_1293093313519991016_001b83f41e2f124f06dffb5c9042fba8_3768728a.jpg'
+  );
+
+  const remCauVongThongTang = getCanopyProductById('RCV-TH-02');
+  assert.ok(remCauVongThongTang);
+  assert.equal(remCauVongThongTang?.numericPrice, 520000);
+  assert.equal(remCauVongThongTang?.imageUrl, '/assets/aistudio/20261017_162136_c08f9065.jpg');
+
+  const remVaiPhongKhach = getCanopyProductById('RV-TH-03');
+  assert.ok(remVaiPhongKhach);
+  assert.equal(remVaiPhongKhach?.numericPrice, 600000);
+
+  const khaoSatViewHo = getCanopyProductById('KS-VH-01');
+  assert.ok(khaoSatViewHo);
+  assert.equal(khaoSatViewHo?.numericPrice, 550000);
+  assert.equal(khaoSatViewHo?.secondaryImages?.length, 2);
+
+  // Verify the 4 video & showroom posts (with duplicates & CapCut screen removed)
   const remTuDong = getCanopyProductById('RTD-TH-01');
   assert.ok(remTuDong);
   assert.equal(remTuDong?.mediaType, 'video');
@@ -177,7 +224,7 @@ test('All annotated products have market price tiers, visual annotations, specs,
   }
 
   const projectItems = filterAnnotatedProducts('cong-trinh-video');
-  assert.equal(projectItems.length, 17);
+  assert.equal(projectItems.length, 23);
   for (const item of projectItems) {
     assert.ok(item.marketPriceTiers.length >= 3);
   }

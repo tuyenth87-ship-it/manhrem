@@ -64,10 +64,35 @@ export interface DeduplicatedImageGroup {
 }
 
 export const DEDUPLICATION_SUMMARY = {
-  totalUploaded: 75,
-  totalRemovedDuplicates: 25,
-  totalUniquePublished: 50,
+  totalUploaded: 107,
+  totalRemovedDuplicates: 45,
+  totalUniquePublished: 62,
   groups: [
+    {
+      id: 'dup-lo-manh-truc-man-hop-thong-minh-2026',
+      groupTitle: 'Lô 02 Video & 06 Ảnh Mới Tải Lên: Mành Trúc Biệt Thự 3 Tầng, Rèm Gỗ Phòng Thờ & Xưởng Màn Hộp Thông Minh Vân Gỗ',
+      keptImage: 'IMG_9290_f6c3666b.JPG',
+      removedCount: 0,
+      removedExamples: [
+        'Quy hoạch 02 ảnh Mành Trúc Tranh Đồng Quê Biệt Thự 3 Tầng (IMG_9290 thả kín 2 tầng & IMG_9291 kéo lửng sảnh chính) vào bài đăng MT-TH-01 kèm Video toàn cảnh nội thất biệt thự (VID-BT-01)',
+        'Quy hoạch 02 ảnh cận cảnh Hộp Màn Thông Minh Vân Gỗ khắc Laser trong thùng xốp chống sốc (IMG_9295 & IMG_9296) vào bài đăng sản phẩm MH-TH-01',
+        'Quy hoạch Video Xưởng Khắc Laser CNC & Tổng Kho (efac2904...) cùng 02 ảnh dây chuyền lắp bản lề Inox (IMG_9297) và kho hộp màn vân gỗ – trắng sứ (IMG_9294) vào bài đăng XMH-TH-01',
+      ],
+      reason: 'Giữ trọn vẹn 100% 02 video và 06 hình ảnh thực tế vừa tải lên, đồng thời gộp các góc chụp cận cảnh cùng 1 sản phẩm vào bộ sưu tập ảnh chi tiết để trang web sang trọng, không bị lặp ô hiển thị.',
+    },
+    {
+      id: 'dup-lo-24-anh-rem-cau-vong-ngoc-tuyen',
+      groupTitle: 'Lô 24 Ảnh Mới Tải Lên: Rèm Cầu Vồng Ngọc Tuyến, Cầu Thang Thông Tầng & Khảo Sát View Hồ',
+      keptImage: '20261017_162136_c08f9065.jpg',
+      removedCount: 20,
+      removedExamples: [
+        'Loại bỏ 10 bản sao trùng lặp (- Copy, - Copy (2), - Copy (3)...) của ảnh Anh Tuyến nghiệm thu Rèm cầu vồng cầu thang (1792658171609_..._745ccdff... – giữ 1 bản chuẩn từ 11 file)',
+        'Loại bỏ 07 bản sao trùng lặp (- Copy, - Copy (2), - Copy (3)...) của ảnh Rèm cầu vồng Ngọc Tuyến lắp cửa sổ khung Inox (1792658171440_..._79d52b2d... – giữ 1 bản chuẩn từ 8 file)',
+        'Loại bỏ 02 bản sao trùng lặp (- Copy, - Copy (3)) của ảnh Anh Tuyến đeo mic khảo sát cửa sổ nhôm kính lớn view hồ (1792658171296_..._f85acd8d... – giữ 1 bản chuẩn từ 3 file)',
+        'Loại bỏ 01 bản sao trùng lặp (- Copy - Copy - Copy - Copy) của ảnh Rèm cầu vồng phòng học & phòng ngủ nội thất hiện đại (1792658171720_..._3b14bddb... – giữ 1 bản chuẩn từ 2 file)',
+      ],
+      reason: 'Từ 24 file ảnh tải lên bị nhân bản nhiều lần trong thư mục máy tính, hệ thống đã lọc sạch 20 bản Copy trùng lặp và biên tập thành 04 bài đăng chuẩn mực ngay đầu trang.',
+    },
     {
       id: 'dup-video-showroom-3tang-2026',
       groupTitle: 'Lô 04 Video & 05 Ảnh Mới (Showroom 3 Tầng, Rèm Tự Động & Ảnh Ngoài Lề)',
@@ -143,8 +168,24 @@ export const DEDUPLICATION_SUMMARY = {
 
 export const MARKET_PRICE_SUMMARY_TABLE: MarketPriceSummaryRow[] = [
   {
+    id: 'mp-manh-truc-rem-go-biet-thu',
+    productGroup: '1. Mành Trúc Tranh Đồng Quê & Rèm Sáo Gỗ Biệt Thự',
+    specification: 'Mành tre trúc vẽ tranh Đôi Hạc / Mục Đồng & Rèm gỗ tự nhiên',
+    marketPrice: '350k – 850k / m²',
+    storePrice: '260k – 680k / m²',
+    warrantyAndService: 'Nan trúc xử lý chống mối mọt, ròng rọc trợ lực bền 10 năm',
+  },
+  {
+    id: 'mp-man-hop-thong-minh-van-go',
+    productGroup: '2. Màn Hộp Thông Minh Vân Gỗ Thu Gọn Đầu Giường',
+    specification: 'Hộp vân gỗ khắc Laser + Khung Inox 304 & 201 (1m6 / 1m8 / 2m)',
+    marketPrice: '1,85Tr – 2,20Tr / bộ',
+    storePrice: '1,35Tr – 1,55Tr / bộ',
+    warrantyAndService: 'Xếp gọn 100% vào hộp gỗ trên tường, bảo hành 5 năm',
+  },
+  {
     id: 'mp-dem-gap2-chan-mui',
-    productGroup: '1. Đệm Gấp 2 Chần Múi Lông Vũ & Caro (Dày 18–20cm)',
+    productGroup: '3. Đệm Gấp 2 Chần Múi Lông Vũ & Caro (Dày 18–20cm)',
     specification: 'Thành vải bố cao cấp, mặt chần múi 3D (1m6 / 1m8 / 2m2)',
     marketPrice: '2,35Tr – 3,15Tr',
     storePrice: '1,75Tr – 2,15Tr',
@@ -324,7 +365,653 @@ export function calculateCanopyOrderTotal(input: CanopyPricingInput): CanopyPric
 
 export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
   // ===========================================================================
-  // 00. BỘ BÀI ĐĂNG MỚI NHẤT: TỔ HỢP SHOWROOM 3 TẦNG, RÈM TỰ ĐỘNG THÔNG MINH & VIDEO THI CÔNG (ĐÃ CẮT BỎ VIDEO/ẢNH TRÙNG LẶP)
+  // 00. BỘ 04 BÀI ĐĂNG MỚI NHẤT TỪ 02 VIDEO & 06 ẢNH VỪA TẢI LÊN:
+  //     MÀNH TRÚC BIỆT THỰ 3 TẦNG, RÈM GỖ PHÒNG THỜ & MÀN HỘP THÔNG MINH VÂN GỖ
+  // ===========================================================================
+  {
+    id: 'manh-truc-nghe-thuat-tranh-dong-que-biet-thu-3-tang-mt01',
+    code: 'MT-TH-01',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Showroom & Video',
+    title: 'Mành Trúc · Mành Tre Nghệ Thuật Che Nắng Biệt Thự 3 Tầng Vẽ Tranh Đồng Quê Việt Nam (Đôi Hạc Lúa Vàng & Mục Đồng Chăn Trâu) – Cản Nắng Mưa 95%',
+    shortTitle: 'Mành Trúc Tranh Đồng Quê Biệt Thự (260.000đ/m²)',
+    priceDisplay: '260.000đ / m²',
+    marketPriceRange: 'Giá thị trường: 350.000đ – 450.000đ / m²',
+    marketPriceNote: 'Trọn bộ 02 góc chụp thực tế tại Biệt Thự 3 Tầng (IMG_9290 khi thả kín cả 2 tầng và IMG_9291 khi kéo lửng bộ mành sảnh chính mở lối đi): Mành trúc cật tre tự nhiên phủ sơn bóng PU chống mưa nắng, vẽ tranh phong cảnh làng quê Việt Nam sống động.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Mành Trúc / Mành Tre Tự Nhiên Sơn PU Chống Nắng Mưa (Màu Vàng Óng / Nâu Cánh Gián)',
+        marketPrice: '320.000đ / m²',
+        storePrice: '220.000đ / m²',
+        note: 'Nan trúc cật già đan dây dù cường lực, kèm bộ ròng rọc kéo nhẹ tay',
+      },
+      {
+        sizeOrOption: '2. Mành Trúc Nghệ Thuật Vẽ Tranh Đồng Quê (Đôi Hạc Lúa Vàng / Mục Đồng Chăn Trâu / Tùng Hạc)',
+        marketPrice: '380.000đ / m²',
+        storePrice: '260.000đ / m²',
+        note: 'Sơn dầu nghệ thuật phủ bóng 2 lớp chống phai màu ngoài trời (Bao lắp đặt)',
+      },
+      {
+        sizeOrOption: '3. Mành Trúc Khổ Lớn Đại Sảnh & Ban Công Biệt Thự (Hệ Con Lăn Trợ Lực Cáp Thép)',
+        marketPrice: '450.000đ / m²',
+        storePrice: '310.000đ / m²',
+        note: 'Chống gió giật, bảo vệ cửa gỗ lim đại sảnh không bị cong vênh hay bạc màu',
+      },
+    ],
+    numericPrice: 260000,
+    unitLabel: '1 m² hoàn thiện cả bộ dây kéo ròng rọc & công lắp đặt',
+    standardDimensions: 'May đo theo sảnh chính & ban công (Rộng 2,0m – 4,0m × Cao 2,5m – 3,5m)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/IMG_9290_f6c3666b.JPG',
+    secondaryImages: [
+      '/assets/aistudio/IMG_9291_36ef56a4.JPG',
+    ],
+    highlightTag: 'Mành Trúc Tranh Đồng Quê · Bảo Vệ Cửa Gỗ Lim',
+    summary:
+      'Tuyệt phẩm bộ đôi Mành Trúc nghệ thuật lắp đặt tại mặt tiền Biệt Thự 3 Tầng: Tầng 1 là bức tranh "Đôi Hạc Trắng Bên Cánh Đồng Lúa Chín Vàng & Khóm Tre Xanh" che mát sảnh chính cửa gỗ lim; Tầng 2 giữa giàn hoa giấy rực rỡ là bức tranh "Mục Đồng Chăn Trâu Cày Ruộng" mang đậm hồn quê Việt Nam.',
+    visualAnnotations: [
+      {
+        label: 'Sảnh chính Tầng 1: Mành trúc vẽ tranh "Đôi Hạc Trắng & Cánh Đồng Lúa Chín Vàng"',
+        detail:
+          'Che nắng gắt trực diện và mưa hắt vào bộ cửa gỗ lim 4 cánh đại sảnh, đồng thời tạo bức tranh phong thủy Phú Quý – Trường Thọ sang trọng ngay lối bậc tam cấp đá hoa cương.',
+      },
+      {
+        label: 'Ban công Tầng 2: Mành trúc vẽ tranh "Mục Đồng Chăn Trâu Cày Ruộng & Lũy Tre Làng"',
+        detail:
+          'Kết hợp hài hòa giữa giàn hoa giấy đỏ – tím và hoa hoàng yến vàng rực, vừa cản nhiệt hướng Tây cho tầng 2 vừa giữ độ thoáng gió tự nhiên.',
+      },
+      {
+        label: 'Cơ cấu ròng rọc kéo lửng linh hoạt (Xem ảnh góc chụp số 2 – IMG_9291)',
+        detail:
+          'Gia chủ có thể thả kịch sàn khi nắng gắt hoặc kéo lửng 1/3 – 1/2 chiều cao mành để mở lối đi thông thoáng mà vẫn che mát phần hiên trên.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'MT-TH-01 (Mành Trúc Nghệ Thuật Tranh Đồng Quê Biệt Thự)' },
+      { label: 'Đơn giá tại xưởng', value: '260.000đ / m² cả lắp đặt (Mành trúc trơn sơn PU: 220.000đ/m²)' },
+      { label: 'Chất liệu nan mành', value: '100% Trúc cật già tự nhiên xử lý chống mối mọt, đan dây dù chịu lực' },
+      { label: 'Công nghệ họa tiết', value: 'Tranh sơn dầu phong cảnh phủ bóng PU 2K chống nước mưa & tia UV' },
+      { label: 'Bảo hành & Lắp đặt', value: 'Bảo hành 3 năm, miễn phí đo đạc & lắp đặt bởi Xưởng Tuyến Hoa (0344.727.528)' },
+    ],
+    articleParagraphs: [
+      'Đối với các căn biệt thự tân cổ điển, nhà phố mái Nhật hoặc nhà thờ họ có hệ cửa gỗ tự nhiên ở mặt tiền, nắng gắt mùa hè và mưa tạt rất dễ làm cửa gỗ bị bạc màu, cong vênh hoặc nứt nẻ. Bộ đôi Mành Trúc Nghệ Thuật Tranh Đồng Quê (Mã MT-TH-01) do Xưởng Tuyến Hoa thi công vừa giải quyết triệt để bài toán che nắng mưa 95%, vừa biến mặt tiền ngôi nhà thành một tác phẩm hội họa truyền thống đầy cuốn hút.',
+      'Trong bộ 02 hình ảnh thực tế vừa ghi lại tại công trình, bạn có thể quan sát rõ hai trạng thái sử dụng: Khi thả toàn bộ cả 2 bức mành trúc ở Tầng 1 (Tranh Đôi Hạc Lúa Vàng) và Tầng 2 (Tranh Mục Đồng Chăn Trâu) để cản nắng giữa trưa; và khi kéo gọn bức mành tầng 2 cùng kéo lửng bức mành sảnh chính tầng 1 để đón gió mát chiều tà.'
+    ],
+    facebookPostCopy:
+      '🎋🦢 [SIÊU PHẨM MÀNH TRÚC TRANH ĐỒNG QUÊ] ĐIỂM NHẤN PHONG THỦY & BẢO VỆ CỬA GỖ BIỆT THỰ 3 TẦNG! 🌾🐂\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 350.000đ – 450.000đ / m²\n' +
+      '🔥 GIÁ GỐC TẠI XƯỞNG TUYẾN HOA (BAO RÒNG RỌC & CÔNG LẮP ĐẶT TẬN NƠI):\n' +
+      '   👉 Mành trúc tự nhiên sơn PU chống nắng mưa: Chỉ 220.000đ / m²\n' +
+      '   👉 Mành trúc vẽ tranh nghệ thuật (Đôi Hạc Lúa Vàng, Mục Đồng Chăn Trâu, Tùng Hạc): Chỉ 260.000đ / m²\n' +
+      '--------------------------------------------\n' +
+      '✅ Nan trúc cật già tự nhiên xử lý chống mối mọt, phủ sơn bóng PU 2K không phai màu dưới nắng mưa.\n' +
+      '✅ Bảo vệ bộ cửa gỗ đại sảnh khỏi nắng gắt cong vênh, khe trúc đón gió trời mát rượi.\n' +
+      '✅ Dây kéo ròng rọc trợ lực nhẹ nhàng: Thả kín che nắng hoặc kéo lửng mở lối đi cực tiện lợi.\n' +
+      '📞 Gọi/Zalo Anh Tuyến khảo sát & lắp đặt ngay trong ngày: 0344.727.528!',
+  },
+  {
+    id: 'video-biet-thu-3-tang-manh-truc-rem-vai-2-lop-rem-go-vidbt01',
+    code: 'VID-BT-01',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Showroom & Video',
+    title: '[Video Thực Tế] Biệt Thự 3 Tầng Hoàn Thiện Trọn Gói: Mành Trúc Tranh Hạc Sảnh Chính, Rèm Vải 2 Lớp Âm Trần Phòng Khách & Rèm Sáo Gỗ Phòng Thờ',
+    shortTitle: 'Video Biệt Thự 3 Tầng: Mành Trúc, Rèm 2 Lớp & Rèm Gỗ',
+    priceDisplay: '680.000đ / m²',
+    marketPriceRange: 'Giá thị trường: Rèm gỗ 850k/m² | Rèm vải 2 lớp 1.150k/m ngang',
+    marketPriceNote: 'Video quay thực tế toàn cảnh từ ngoài vào trong căn Biệt Thự 3 Tầng hiện đại: Phối hợp hoàn hảo giữa Mành Trúc Tranh Hạc ngoài hiên, Rèm Vải 2 Lớp Âm Trần + Rèm Sáo Gỗ Tự Nhiên tại phòng khách – phòng thờ và Hệ Pin Năng Lượng Mặt Trời trên mái.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Rèm Sáo Gỗ Tự Nhiên Bản Ла 5cm (Lắp cửa sổ phòng khách & không gian phòng thờ)',
+        marketPrice: '850.000đ / m²',
+        storePrice: '680.000đ / m²',
+        note: 'Gỗ Sồi / Gỗ Tùng tự nhiên sấy khô chống cong vênh, xoay lật lá gỗ 180 độ',
+      },
+      {
+        sizeOrOption: '2. Hệ Rèm Vải 2 Lớp Âm Trần Phòng Khách Biệt Thự (Vải Gấm Nâu Kem + Voan Trắng Lụa)',
+        marketPrice: '1.150.000đ / m ngang',
+        storePrice: '850.000đ / m ngang',
+        note: 'May định hình sóng suôn thẳng từ hốc thạch cao âm trần xuống sát sàn',
+      },
+      {
+        sizeOrOption: '3. Mành Trúc Tranh Hạc Trắng Sảnh Chính Cửa Gỗ Lim (Cơ cấu cuộn kéo êm ái)',
+        marketPrice: '380.000đ / m²',
+        storePrice: '260.000đ / m²',
+        note: 'Che nắng hướng chính diện, giữ mát đại sảnh biệt thự',
+      },
+    ],
+    numericPrice: 680000,
+    unitLabel: '1 m² rèm sáo gỗ tự nhiên | 850.000đ / m ngang rèm vải 2 lớp',
+    standardDimensions: 'Thi công trọn gói đồng bộ ngoại thất & nội thất biệt thự 3 tầng',
+    mediaType: 'video',
+    imageUrl: '/assets/aistudio/poster_biet_thu_manh_truc_rem_go.jpg',
+    videoUrl: '/assets/aistudio/2026-10-27-120102922_bd1f1539.mp4',
+    highlightTag: 'Video Toàn Cảnh Biệt Thự · Rèm Gỗ & Rèm 2 Lớp',
+    summary:
+      'Video thuyết minh toàn cảnh công trình Biệt Thự 3 Tầng hiện đại: Mở đầu là bộ Mành Trúc Tranh Hạc cuộn mở tại sảnh gỗ lim, tiến vào Phòng Khách sang trọng với bộ Rèm Vải 2 Lớp Âm Trần màu nâu kem phối hợp Rèm Sáo Gỗ tự nhiên, Tầng 2 là không gian Phòng Thờ gỗ truyền thống trang nghiêm và trên mái là hệ điện mặt trời.',
+    visualAnnotations: [
+      {
+        label: 'Phút 0:00 – 0:02: Mành trúc tranh Đôi Hạc & Bụi Tre cuộn mở đón khách tại sảnh gỗ lim',
+        detail:
+          'Che nắng mặt tiền biệt thự nhưng khi cuộn lên lại mở ra tầm nhìn xuyên suốt vào không gian phòng khách hiện đại bên trong.',
+      },
+      {
+        label: 'Phút 0:02 – 0:04: Phòng khách hiện đại phối Rèm Vải 2 Lớp Âm Trần & Rèm Sáo Gỗ cửa sổ',
+        detail:
+          'Các ô cửa kính lớn dùng Rèm Vải 2 Lớp màu nâu kem đồng điệu với bộ sofa da, trong khi các ô cửa sổ cạnh vách tivi lắp Rèm Sáo Gỗ tự nhiên sang trọng.',
+      },
+      {
+        label: 'Phút 0:04 – 0:09: Không gian Phòng Thờ Tầng 2 trang nghiêm & Mái Pin Năng Lượng Mặt Trời',
+        detail:
+          'Tầng 2 bố trí gian thờ tự hoành phi câu đối kết hợp Rèm Sáo Gỗ nâu trầm chuẩn phong thủy; trên tầng thượng lắp kín hệ thống pin năng lượng mặt trời xanh sạch.',
+      },
+    ],
+    specs: [
+      { label: 'Mã video công trình', value: 'VID-BT-01 (Video Hoàn Thiện Trọn Gói Rèm & Mành Biệt Thự 3 Tầng)' },
+      { label: 'Giá rèm sáo gỗ tự nhiên', value: '680.000đ / m² cả lắp (Giá thị trường: 850.000đ/m²)' },
+      { label: 'Giá rèm vải 2 lớp âm trần', value: '850.000đ / m ngang cả lắp (Giá thị trường: 1.150.000đ/m)' },
+      { label: 'Giá mành trúc tranh hạc', value: '260.000đ / m² cả lắp (Giá thị trường: 380.000đ/m²)' },
+      { label: 'Đơn vị thiết kế & thi công', value: 'Showroom & Xưởng Rèm Tuyến Hoa (Hotline/Zalo: 0344.727.528)' },
+    ],
+    articleParagraphs: [
+      'Video thực tế ghi lại hành trình bước vào ngôi biệt thự 3 tầng hoàn chỉnh – nơi mỗi không gian chức năng đều được Xưởng Rèm Tuyến Hoa tư vấn chất liệu rèm và mành phù hợp nhất: Sảnh hiên ngoài trời dùng Mành Trúc vẽ tranh Đôi Hạc chịu mưa nắng; Phòng khách dùng Rèm Vải 2 Lớp âm trần kết hợp Rèm Sáo Gỗ bản 5cm đồng màu vách gỗ nội thất.',
+      'Đặc biệt tại khu vực Phòng Thờ tầng 2 với hệ cột gỗ, cửa võng và hoành phi câu đối truyền thống, giải pháp lắp đặt Rèm Sáo Gỗ tự nhiên màu nâu cánh gián giúp không gian thờ tự thêm phần cổ kính, trang nghiêm, thông thoáng mà vẫn chắn nắng tuyệt đối.'
+    ],
+    facebookPostCopy:
+      '🎬🏡 [VIDEO THỰC TẾ] THAM QUAN BIỆT THỰ 3 TẦNG HOÀN THIỆN TRỌN GÓI MÀNH TRÚC, RÈM VẢI 2 LỚP & RÈM GỖ PHÒNG THỜ! ✨\n' +
+      '--------------------------------------------\n' +
+      '1️⃣ Sảnh chính cửa gỗ lim: Lắp Mành Trúc vẽ tranh Đôi Hạc & Rặng Tre Vàng cản nắng mưa 95% – Giá chỉ 260.000đ / m²!\n' +
+      '2️⃣ Phòng khách sofa hiện đại: Lắp Hệ Rèm Vải 2 Lớp Âm Trần màu nâu kem sang trọng – Giá chỉ 850.000đ / m ngang!\n' +
+      '3️⃣ Cửa sổ vách Tivi & Không gian Phòng Thờ Tầng 2: Lắp Rèm Sáo Gỗ Tự Nhiên xoay lật 180 độ đồng màu đồ thờ gỗ – Giá chỉ 680.000đ / m²!\n' +
+      '--------------------------------------------\n' +
+      '🚛 Anh Tuyến trực tiếp khảo sát, phối màu theo nội thất từng phòng và bảo hành tận nhà 3–5 năm.\n' +
+      '📞 Gọi/Zalo tư vấn & báo giá trọn gói: 0344.727.528 (Showroom Tuyến Hoa)!',
+  },
+  {
+    id: 'man-hop-thong-minh-van-go-thu-gon-dau-giuong-mh01',
+    code: 'MH-TH-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Màn Hộp Thông Minh Vân Gỗ Cao Cấp Thu Gọn Đầu Giường (Khung Inox 304 & 201, Hộp Vân Gỗ Khắc Laser Chính Hãng) – Sang Trọng & Gọn Gàng Tuyệt Đối',
+    shortTitle: 'Màn Hộp Thông Minh Vân Gỗ Thu Gọn Đầu Giường',
+    priceDisplay: '1.350.000đ / bộ',
+    marketPriceRange: 'Giá thị trường: 1.850.000đ – 2.200.000đ / bộ',
+    marketPriceNote: 'Dòng Màn Hộp Thông Minh thế hệ mới nhất (đóng kiện xốp chống sốc nguyên hộp – IMG_9295 & IMG_9296): Ban ngày xếp gọn 100% khung và vải màn vào chiếc hộp vân gỗ sang trọng gắn trên đầu giường, ban đêm kéo nhẹ 3 giây là bung màn kín giường.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Màn Hộp Thông Minh Hộp Trắng Sứ Cao Cấp (Giường 1,6m × 2,0m & 1,8m × 2,0m)',
+        marketPrice: '1.750.000đ / bộ',
+        storePrice: '1.250.000đ / bộ',
+        note: 'Hộp nhựa पीवीसी/ABS trắng sứ hiện đại, khung căng Inox 304 & 201',
+      },
+      {
+        sizeOrOption: '2. Màn Hộp Thông Minh Hộp Vân Gỗ Khắc Laser Chính Hãng (Giường 1,6m × 2,0m & 1,8m × 2,0m)',
+        marketPrice: '1.950.000đ / bộ',
+        storePrice: '1.350.000đ / bộ',
+        note: 'Vỏ hộp vân gỗ hương / óc chó bo tròn sang trọng, đồng màu giường gỗ (Bao lắp)',
+      },
+      {
+        sizeOrOption: '3. Màn Hộp Thông Minh Vân Gỗ Khổ Đại (Giường 2,0m × 2,2m)',
+        marketPrice: '2.200.000đ / bộ',
+        storePrice: '1.550.000đ / bộ',
+        note: 'Khung tay đòn trợ lực Inox 304 siêu khỏe, vải màn Polyester trắng/xanh nguyên sinh',
+      },
+    ],
+    numericPrice: 1350000,
+    unitLabel: '1 bộ hoàn thiện cả hộp vân gỗ, khung Inox 304 & công lắp đặt',
+    standardDimensions: 'Hộp thu gọn 20cm × 17,5cm × 170cm (Bung màn chuẩn giường 1m6×2m & 1m8×2m)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/IMG_9295_0a9c81ad.JPG',
+    secondaryImages: [
+      '/assets/aistudio/IMG_9296_1c66df97.JPG',
+    ],
+    highlightTag: 'Màn Hộp Vân Gỗ · Thu Gọn 100% Vào Hộp',
+    summary:
+      'Giải pháp thay thế màn khung truyền thống dành cho phòng ngủ hiện đại: Toàn bộ phần vải màn tuyn Polyester và hệ khung tay đòn Inox 304 & 201 được thu gọn hoàn toàn vào bên trong chiếc Hộp Vân Gỗ bo tròn sang trọng gắn phía trên đầu giường. Trên đầu hộp được khắc Laser CNC biểu tượng gia đình & đàn ong chống hàng giả sắc nét.',
+    visualAnnotations: [
+      {
+        label: 'Vỏ hộp vân gỗ bo tròn sang trọng đồng điệu với giường tủ gỗ tự nhiên',
+        detail:
+          'Khi không sử dụng, toàn bộ màn và khung xếp gọn 100% vào hộp gỗ kích thước chỉ 20cm × 17,5cm gắn trên tường đầu giường, trả lại không gian phòng ngủ thoáng rộng tuyệt đối.',
+      },
+      {
+        label: 'Khuyên tròn Inox 304 mở nắp hộp & cơ cấu tay đòn trợ lực 3 giây',
+        detail:
+          'Chỉ cần móc nhẹ ngón tay vào khuyên tròn Inox để mở nắp hộp và kéo nhẹ về phía cuối giường, hệ khung căng Inox 304 & 201 sẽ tự động vươn ra êm ái.',
+      },
+      {
+        label: 'Logo thương hiệu khắc Laser CNC chìm trực tiếp trên đầu hộp gỗ (Xem ảnh số 2 – IMG_9296)',
+        detail:
+          'Khắc Laser chìm sắc nét biểu tượng tổ ấm và 5 chú ong chăm chỉ, đóng gói trong khay xốp trắng định hình chống va đập tuyệt đối khi vận chuyển.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'MH-TH-01 (Màn Hộp Thông Minh Vân Gỗ Thu Gọn Đầu Giường)' },
+      { label: 'Giá niêm yết tại Tuyến Hoa', value: '1.350.000đ / bộ Vân Gỗ | 1.250.000đ / bộ Trắng Sứ (Thị trường: 1,85Tr – 2,2Tr)' },
+      { label: 'Quy cách hộp thu gọn', value: '200 × 175 × 1700 mm (Phù hợp giường 1,6m×2,0m, 1,8m×2,0m & 2,0m×2,2m)' },
+      { label: 'Chất liệu khung & vải màn', value: 'Khung căng Inox 304 & 201 không gỉ + Vải màn Polyester trắng/xanh dai bền' },
+      { label: 'Bảo hành chính hãng', value: '5 Năm cho hệ khung cơ khí & hộp màn – Miễn phí giao lắp tại Tuyến Hoa' },
+    ],
+    articleParagraphs: [
+      'Nhiều gia đình yêu thích sự an toàn tuyệt đối của màn ngủ chống muỗi nhưng lại ngại các bộ khung màn cố định làm vướng tầm nhìn trong phòng ngủ hiện đại. Dòng sản phẩm Màn Hộp Thông Minh Vân Gỗ (Mã MH-TH-01) chính là bước đột phá: Ban ngày thu gọn 100% vào chiếc hộp vân gỗ nhỏ gọn như một món đồ trang trí nội thất trên đầu giường; ban đêm kéo nhẹ 3 giây là bung thành chiếc màn khung vững chãi.',
+      'Qua 02 bức ảnh chụp cận cảnh mở thùng thực tế (IMG_9295 và IMG_9296), khách hàng có thể thấy rõ độ hoàn thiện tinh xảo của bề mặt vân gỗ bóng mịn, khuyên tròn Inox 304 sáng bóng, đường khắc Laser CNC sắc sảo và lớp xốp định hình dày dặn bảo vệ sản phẩm nguyên vẹn từ nhà máy đến tận phòng ngủ.'
+    ],
+    facebookPostCopy:
+      '👑🛌 [SIÊU PHẨM MỚI] MÀN HỘP THÔNG MINH VÂN GỖ THU GỌN ĐẦU GIƯỜNG – KÉO 3 GIÂY LÀ BUNG, XẾP GỌN 100% VÀO HỘP GỖ! ✨\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 1.850.000đ – 2.200.000đ / bộ\n' +
+      '🔥 GIÁ TẠI TỔNG KHO TUYẾN HOA (BAO LẮP ĐẶT TẬN GIƯỜNG):\n' +
+      '   👉 Bản Hộp Trắng Sứ Hiện Đại (1m6 & 1m8): Chỉ 1.250.000đ / 1 bộ\n' +
+      '   👉 Bản Hộp Vân Gỗ Khắc Laser Cao Cấp (1m6 & 1m8): Chỉ 1.350.000đ / 1 bộ\n' +
+      '   👉 Bản Hộp Vân Gỗ Khổ Đại (2m0 × 2m2): Chỉ 1.550.000đ / 1 bộ\n' +
+      '   👉 (Màn khung Inox truyền thống ròng rọc 1m8×2m vẫn giữ giá ưu đãi: 1.000.000đ / bộ)\n' +
+      '--------------------------------------------\n' +
+      '✅ Ban ngày xếp gọn 100% vải màn và khung vào chiếc hộp vân gỗ (20×17,5cm) trên đầu giường cực kỳ gọn đẹp!\n' +
+      '✅ Khung căng tay đòn Inox 304 & 201 siêu bền, vải màn Polyester mắt nhỏ chống muỗi tuyệt đối.\n' +
+      '✅ Hàng chính hãng khắc Laser CNC chống hàng giả, đóng thùng xốp nguyên kiện, bảo hành 5 năm!\n' +
+      '📞 Gọi/Zalo Anh Tuyến lắp tận nhà: 0344.727.528!',
+  },
+  {
+    id: 'video-xuong-san-xuat-man-hop-thong-minh-khac-laser-xmh01',
+    code: 'XMH-TH-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: '[Video Xưởng Sản Xuất] Cận Cảnh Máy Khắc Laser CNC, Lắp Ráp Bản Lề Tay Đòn Inox 304 & Tổng Kho Màn Hộp Thông Minh Vân Gỗ – Trắng Sứ',
+    shortTitle: 'Video Xưởng Khắc Laser & Kho Màn Hộp Thông Minh',
+    priceDisplay: '1.250.000đ – 1.350.000đ',
+    marketPriceRange: 'Giá xuất xưởng trực tiếp – Tiết kiệm 500.000đ – 650.000đ/bộ',
+    marketPriceNote: 'Video 1 phút 05 giây quay trực tiếp tại Xưởng Sản Xuất kèm 02 ảnh thực tế (IMG_9297 thợ lắp bản lề Inox & IMG_9294 tổng kho hàng trăm hộp màn vân gỗ, trắng sứ): Minh chứng nguồn gốc hàng chính hãng cấp văn bằng sáng chế, xuất thẳng từ nhà máy về Showroom Tuyến Hoa.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Màn Hộp Thông Minh Vỏ Nhựa PVC/ABS Trắng Sứ (Khung Inox 304 & 201)',
+        marketPrice: '1.750.000đ / bộ',
+        storePrice: '1.250.000đ / bộ',
+        note: 'Sẵn hàng số lượng lớn tại kho, phù hợp phòng ngủ sơn tường trắng/kem',
+      },
+      {
+        sizeOrOption: '2. Màn Hộp Thông Minh Vỏ Giả Gỗ / Vân Gỗ Khắc Laser CNC (1m6×2m & 1m8×2m)',
+        marketPrice: '1.950.000đ / bộ',
+        storePrice: '1.350.000đ / bộ',
+        note: 'Khắc Laser CNC chống hàng giả, bản lề & tay đòn Inox sáng bóng',
+      },
+      {
+        sizeOrOption: '3. Chiết Khấu Sỉ / Lắp Combo Từ 02 Bộ Màn Hộp Thông Minh Cho Gia Đình Mới Xây',
+        marketPrice: '3.900.000đ / 2 bộ',
+        storePrice: 'Giảm ngay 100.000đ/đơn',
+        note: 'Miễn phí xe tải chở tận nhà và công thợ khoan lắp chuẩn mực',
+      },
+    ],
+    numericPrice: 1350000,
+    unitLabel: '1 bộ chính hãng xuất xưởng (Đầy đủ tem QR & phiếu bảo hành)',
+    standardDimensions: 'Đóng thùng nguyên kiện 200 × 175 × 1700 mm (Nặng ~7,5kg – 8,5kg/hộp)',
+    mediaType: 'video',
+    imageUrl: '/assets/aistudio/IMG_9297_395de9ac.JPG',
+    videoUrl: '/assets/aistudio/efac290438e544afea301caf4816b714_2cb14457.mp4',
+    secondaryImages: [
+      '/assets/aistudio/IMG_9294_917bb5f1.JPG',
+    ],
+    highlightTag: 'Video Xưởng Sản Xuất · Khắc Laser Chính Hãng',
+    summary:
+      'Video thực tế tại nhà máy sản xuất Màn Hộp Thông Minh: Từ công đoạn tia Laser đỏ khắc logo thương hiệu lên đầu hộp vân gỗ, kiểm tra hệ thống tay đòn thủy lực – lò xo Inox 304 bên trong hộp, đến khu vực đóng thùng carton dán tem mã QR truy xuất nguồn gốc rõ ràng.',
+    visualAnnotations: [
+      {
+        label: 'Phút 0:00 – 0:27: Máy khắc Laser CNC Aiko khắc logo chìm chống hàng giả',
+        detail:
+          'Tia laser công nghệ cao khắc trực tiếp biểu tượng ngôi nhà gia đình và thông số chính hãng lên nắp hộp vân gỗ, không bao giờ bong tróc.',
+      },
+      {
+        label: 'Phút 0:14 – 0:27 & Ảnh IMG_9297: Kiểm định cơ cấu tay đòn & bản lề Inox 304 bên trong hộp',
+        detail:
+          'Mở nắp hộp vân gỗ để kiểm tra thanh pit-tông trợ lực, bản lề Inox 304 sáng bóng và lau bóng từng đường vân gỗ trước khi xuất xưởng.',
+      },
+      {
+        label: 'Phút 0:28 – 1:05 & Ảnh IMG_9294: Tổng kho hàng trăm hộp màn vân gỗ & thùng carton dán mã QR',
+        detail:
+          'Trên mỗi thùng hàng đều in rõ thông số kỹ thuật: Quy cách 200×175×1700mm, Vỏ hộp nhựa PVC giả gỗ, Khung căng Inox 304 & 201, Vải màn Polyester trắng/xanh.',
+      },
+    ],
+    specs: [
+      { label: 'Mã tư liệu xưởng', value: 'XMH-TH-01 (Video Dây Chuyền Sản Xuất & Tổng Kho Màn Hộp Thông Minh)' },
+      { label: 'Công nghệ nhận diện', value: 'Khắc Laser CNC trực tiếp trên đầu hộp + Tem mã QR chống hàng nhái' },
+      { label: 'Vật liệu khung cơ khí', value: 'Inox 304 & 201 kết hợp pit-tông trợ lực đóng mở nhẹ tay' },
+      { label: 'Màu sắc hộp màn', value: 'Màu Vân Gỗ Tự Nhiên (1.350.000đ) & Màu Trắng Sứ Hiện Đại (1.250.000đ)' },
+      { label: 'Phân phối & Lắp đặt', value: 'Showroom Tuyến Hoa – Chợ Cháy, Ứng Hòa (Hotline/Zalo: 0344.727.528)' },
+    ],
+    articleParagraphs: [
+      'Để bà con hoàn toàn yên tâm về chất lượng và nguồn gốc xuất xứ khi chọn mua Màn Hộp Thông Minh tại Showroom Tuyến Hoa, chúng tôi công khai trọn vẹn video quay trực tiếp tại xưởng sản xuất cùng hình ảnh thợ kỹ thuật lắp ráp bản lề Inox (IMG_9297) và tổng kho hàng trăm bộ hộp màn vân gỗ – trắng sứ (IMG_9294).',
+      'Mỗi bộ Màn Hộp Thông Minh đều trải qua quy trình kiểm định nghiêm ngặt: Khắc Laser CNC chống hàng giả trên đầu hộp, căn chỉnh tay đòn Inox 304 & 201 đóng mở mượt mà, lót xốp định hình 2 đầu và dán tem QR đầy đủ thông số trước khi giao đến tận giường khách hàng.'
+    ],
+    facebookPostCopy:
+      '🏭🔬 [VIDEO TẠI XƯỞNG SẢN XUẤT] CẬN CẢNH MÁY KHẮC LASER CNC & TỔNG KHO MÀN HỘP THÔNG MINH VÂN GỖ CHÍNH HÃNG! ✨\n' +
+      '--------------------------------------------\n' +
+      '🎥 Xem trực tiếp quy trình xuất xưởng một bộ Màn Hộp Thông Minh cao cấp:\n' +
+      '1️⃣ Máy khắc Laser CNC khắc chìm biểu tượng chính hãng lên đầu hộp vân gỗ, chống hàng giả 100%.\n' +
+      '2️⃣ Hệ tay đòn trợ lực & bản lề Inox 304 & 201 sáng bóng giúp kéo bung màn hoặc thu gọn vào hộp chỉ trong 3 giây.\n' +
+      '3️⃣ Đóng thùng carton nguyên kiện có lót xốp chống sốc và tem mã QR ghi rõ quy cách (200×175×1700mm).\n' +
+      '--------------------------------------------\n' +
+      '💰 GIÁ TẠI KHO TUYẾN HOA (BAO LẮP ĐẶT TẬN NHÀ):\n' +
+      '   👉 Hộp Trắng Sứ: 1.250.000đ / bộ | Hộp Vân Gỗ Khắc Laser: 1.350.000đ / bộ\n' +
+      '📞 Gọi/Zalo đặt hàng chính hãng: 0344.727.528 (Tuyến Hoa)!',
+  },
+
+  // ===========================================================================
+  // 00A. BỘ 04 BÀI ĐĂNG MỚI TỪ LÔ 24 ẢNH VỪA TẢI LÊN (ĐÃ LỌC BỎ 20 FILE "- COPY" TRÙNG LẶP)
+  // ===========================================================================
+  {
+    id: 'rem-cau-vong-ngoc-tuyen-han-quoc-cua-so-inox-rcv01',
+    code: 'RCV-NT-01',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Showroom & Video',
+    title: 'Rèm Cầu Vồng Ngọc Tuyến Hàn Quốc (Combi Blinds) Lắp Lọt Lòng Cửa Sổ Khung Inox An Toàn – Cản Sáng 95%',
+    shortTitle: 'Rèm Cầu Vồng Ngọc Tuyến Hàn Quốc (520.000đ/m²)',
+    priceDisplay: '520.000đ / m²',
+    marketPriceRange: 'Giá thị trường: 650.000đ – 780.000đ / m²',
+    marketPriceNote: 'Đã lọc bỏ 07 bản sao "- Copy" trùng lặp từ 08 ảnh tải lên: Giữ lại hình ảnh chuẩn sắc nét bộ Rèm Cầu Vồng Ngọc Tuyến màu nâu cafe lắp lọt lòng khung cửa sổ chấn song Inox an toàn, hộp máng nhôm sơn tĩnh điện đồng màu.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Rèm Cầu Vồng Hàn Quốc Ngọc Tuyến Dòng Tiêu Chuẩn (Cản sáng 85%–90%)',
+        marketPrice: '650.000đ / m²',
+        storePrice: '520.000đ / m²',
+        note: 'Bao gồm hộp máng nhôm hợp kim & công thợ lắp đặt tận nơi',
+      },
+      {
+        sizeOrOption: '2. Rèm Cầu Vồng Hàn Quốc Modero Cao Cấp (Cản sáng 95% – Màu Nâu Cafe / Ghi Đậm)',
+        marketPrice: '720.000đ / m²',
+        storePrice: '580.000đ / m²',
+        note: 'Vải Polyester Hàn Quốc dệt 2 lớp đan xen chống bám bụi',
+      },
+      {
+        sizeOrOption: '3. Rèm Cầu Vồng Blackout Cản Sáng Tuyệt Đối 100% (Phòng ngủ hướng Tây)',
+        marketPrice: '850.000đ / m²',
+        storePrice: '650.000đ / m²',
+        note: 'Cản nhiệt điều hòa, bảo hành phụ kiện 3 năm tận nhà',
+      },
+    ],
+    numericPrice: 520000,
+    unitLabel: '1 m² hoàn thiện cả hộp máng nhôm & công lắp đặt',
+    standardDimensions: 'May đo lọt lòng khuôn cửa sổ khung nhôm kính & chấn song Inox',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/1792619301615_1293093313519991016_1293093313519991016_001b83f41e2f124f06dffb5c9042fba8_3768728a.jpg',
+    highlightTag: 'Rèm Cầu Vồng Ngọc Tuyến · Đã Lọc 7 Bản Trùng',
+    summary:
+      'Hình ảnh thực tế bộ Rèm Cầu Vồng Ngọc Tuyến màu nâu cafe ấm áp được Anh Tuyến trực tiếp lắp lọt lòng trong khuôn cửa sổ có khung chấn song Inox bảo vệ. Thiết kế 2 lớp vải – lưới đan xen giúp điều chỉnh ánh sáng linh hoạt từ 0% đến 100% chỉ bằng thao tác kéo dây nhẹ nhàng.',
+    visualAnnotations: [
+      {
+        label: 'Lắp gọn lọt lòng khuôn cửa sổ có chấn song Inox',
+        detail:
+          'Hộp máng rèm nằm gọn phía trên khung cửa nhôm kính và nan Inox bảo vệ, không chiếm diện tích mặt tường và không vướng víu khi mở cửa đón gió.',
+      },
+      {
+        label: 'Cấu tạo 2 lớp Combi Hàn Quốc (Dải vải cản nắng + Dải voan lưới)',
+        detail:
+          'Kéo so le để lấy ánh sáng dịu nhẹ ban ngày hoặc kéo khít để cản nắng 95% và đảm bảo sự riêng tư tuyệt đối vào buổi tối.',
+      },
+      {
+        label: 'Hộp kỹ thuật nhôm sơn tĩnh điện màu Champagne đồng bộ',
+        detail:
+          'Hệ đầu kéo trợ lực bi sứ chạy êm ru, dây dù cường lực bền bỉ trên 10 năm sử dụng.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'RCV-NT-01 (Rèm Cầu Vồng Ngọc Tuyến Hàn Quốc)' },
+      { label: 'Đơn giá tại xưởng', value: '520.000đ / m² cả lắp đặt (Giá thị trường: 650.000đ – 780.000đ/m²)' },
+      { label: 'Chất liệu vải', value: '100% Polyester Hàn Quốc dệt 2 lớp kháng khuẩn, không bám bụi' },
+      { label: 'Phụ kiện đi kèm', value: 'Hộp máng nhôm tĩnh điện, thanh đáy nhôm tròn, dây kéo trợ lực' },
+      { label: 'Bảo hành kỹ thuật', value: '3 Năm tận nhà bởi Xưởng Rèm Ngọc Tuyến – Tuyến Hoa (0344.727.528)' },
+    ],
+    articleParagraphs: [
+      'Trong lô 24 ảnh khách hàng vừa gửi lên, bức ảnh "Rèm cầu vồng Ngọc Tuyến" có 08 bản sao trùng lặp (- Copy). Hệ thống đã tự động lọc bỏ 07 bản trùng và giữ lại hình ảnh thực tế sắc nét nhất của bộ Rèm Cầu Vồng Hàn Quốc màu nâu cafe lắp tại cửa sổ gia đình.',
+      'Ưu điểm vượt trội của Rèm Cầu Vồng Ngọc Tuyến (Mã RCV-NT-01) là khả năng lắp lọt lòng gọn gàng ngay phía trên khung chấn song Inox cửa sổ, vừa giữ trọn nét hiện đại, thoáng sáng cho căn phòng, vừa chống nắng nóng và tia UV hiệu quả với đơn giá trọn gói chỉ 520.000đ/m².'
+    ],
+    facebookPostCopy:
+      '🌈 [RÈM CẦU VỒNG NGỌC TUYẾN] SANG TRỌNG – GỌN GÀNG – ĐIỀU CHỈNH ÁNH SÁNG THÔNG MINH!\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 650.000đ – 780.000đ / m²\n' +
+      '🔥 GIÁ TẠI XƯỞNG NGỌC TUYẾN – TUYẾN HOA: CHỈ 520.000Đ / M² (BAO ĐO ĐẠC & LẮP ĐẶT TẬN NHÀ)!\n' +
+      '--------------------------------------------\n' +
+      '✅ Thiết kế 2 lớp vải – lưới Hàn Quốc đan xen: Kéo nhẹ lấy sáng dịu mắt hoặc đóng kín cản nắng 95%–100%.\n' +
+      '✅ Lắp gọn lọt lòng khuôn cửa sổ có chấn song Inox, cực kỳ thẩm mỹ và tiết kiệm diện tích.\n' +
+      '✅ Hộp máng nhôm sơn tĩnh điện đồng màu, vải Polyester chống bám bụi, độ bền trên 10 năm.\n' +
+      '📞 Gọi/Zalo Anh Tuyến mang mẫu tư vấn tận nhà miễn phí: 0344.727.528!',
+  },
+  {
+    id: 'anh-tuyen-nghiem-thu-rem-cau-vong-thong-tang-rem-vai-rcv02',
+    code: 'RCV-TH-02',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Showroom & Video',
+    title: 'Anh Tuyến Trực Tiếp Nghiệm Thu Hệ Rèm Cầu Vồng Ghi Đậm Cửa Sổ Phòng Học, Cầu Thang Thông Tầng & Rèm Vải Cửa Ban Công',
+    shortTitle: 'Nghiệm Thu Rèm Cầu Vồng Ghi Đậm & Rèm Vải Thông Tầng',
+    priceDisplay: '520.000đ / m²',
+    marketPriceRange: 'Giá thị trường: Rèm cầu vồng 650k/m² | Rèm vải 750k/m ngang',
+    marketPriceNote: 'Đã lọc bỏ 11 bản sao "- Copy" trùng lặp (từ 11 file ảnh Anh Tuyến tại cầu thang & 2 file ảnh rèm cầu vồng ghi đậm phòng học): Quy hoạch thành bộ sưu tập nghiệm thu thực tế sắc nét, rõ ràng.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Rèm Cầu Vồng Hàn Quốc Màu Ghi Đậm / Ghi Xám (Cửa sổ phòng học & cầu thang)',
+        marketPrice: '650.000đ / m²',
+        storePrice: '520.000đ / m²',
+        note: 'Lắp gọn trong ô thoáng cầu thang & cửa sổ bàn học',
+      },
+      {
+        sizeOrOption: '2. Rèm Vải Gấm Ghi Sáng Cản Nắng Cửa Mở Ra Ban Công (1 Lớp)',
+        marketPrice: '750.000đ / m ngang',
+        storePrice: '600.000đ / m ngang',
+        note: 'Trọn gói thanh suốt trắng sứ, đầu vua & công lắp',
+      },
+      {
+        sizeOrOption: '3. Combo Đồng Bộ Cả Nhà (Rèm Vải 2 Lớp Phòng Khách + Rèm Cầu Vồng Các Tầng)',
+        marketPrice: '850.000đ / m ngang',
+        storePrice: 'Ưu đãi giảm thêm 5%',
+        note: 'Anh Tuyến trực tiếp đo đạc và bảo hành 3 năm',
+      },
+    ],
+    numericPrice: 520000,
+    unitLabel: '1 m² rèm cầu vồng | 600.000đ / m ngang rèm vải hoàn thiện',
+    standardDimensions: 'May đo chuẩn theo ô cửa sổ phòng học, ô thoáng cầu thang & cửa ban công',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/20261017_162136_c08f9065.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792619301743_1293093313519991016_1293093313519991016_c3b884b0135e24592fd618ad629e07fd_9004b446.jpg',
+    ],
+    highlightTag: 'Anh Tuyến Trực Tiếp Lắp Đặt · Đã Lọc 11 Bản Trùng',
+    summary:
+      'Hình ảnh thực tế Anh Tuyến nở nụ cười rạng rỡ sau khi hoàn tất lắp đặt hệ thống Rèm Cầu Vồng Hàn Quốc màu ghi xám đậm cho các ô cửa sổ lấy sáng cầu thang, cửa sổ phòng học (nội thất tủ hồng pastel phối ghi hiện đại) và bộ Rèm Vải 2 Lớp mở ra ban công tầng 2.',
+    visualAnnotations: [
+      {
+        label: 'Chủ tiệm Anh Tuyến trực tiếp thi công và kiểm tra từng bộ rèm',
+        detail:
+          'Không qua trung gian: Anh Tuyến trực tiếp đo đạc, khoan lắp và căn chỉnh độ phẳng của từng dải rèm cầu vồng trước khi bàn giao cho gia chủ.',
+      },
+      {
+        label: 'Rèm cầu vồng màu ghi đậm lắp lọt lòng ô thoáng cầu thang & phòng học',
+        detail:
+          'Màu ghi xám hiện đại cực kỳ ăn nhập với sơn tường trắng và hệ tủ quần áo – bàn học phối màu hồng pastel – ghi xám của các bé.',
+      },
+      {
+        label: 'Phối hợp đồng điệu giữa Rèm Cầu Vồng cửa sổ & Rèm Vải cửa ban công',
+        detail:
+          'Cửa đi ban công dùng rèm vải kéo ngang mềm mại (600.000đ/m), trong khi các ô cửa sổ dọc hành lang và bàn học dùng rèm cầu vồng cuốn gọn (520.000đ/m²).',
+      },
+    ],
+    specs: [
+      { label: 'Mã công trình', value: 'RCV-TH-02 (Hệ Rèm Cầu Vồng Ghi Đậm & Rèm Vải Ban Công Nhà Phố)' },
+      { label: 'Đơn giá rèm cầu vồng', value: '520.000đ / m² hoàn thiện (Giá thị trường: 650.000đ/m²)' },
+      { label: 'Đơn giá rèm vải ban công', value: '600.000đ / m ngang (1 lớp) | 850.000đ / m ngang (2 lớp)' },
+      { label: 'Không gian lắp đặt', value: 'Ô thoáng cầu thang, cửa sổ bàn học tủ hồng – ghi, sảnh tầng 2' },
+      { label: 'Người phụ trách', value: 'Anh Tuyến – Cửa hàng Tuyến Hoa (Hotline/Zalo: 0344.727.528)' },
+    ],
+    articleParagraphs: [
+      'Từ 11 bản ảnh trùng lặp chụp Anh Tuyến tại sảnh cầu thang tầng 2 và 02 bản ảnh chụp ô cửa sổ phòng học nội thất hồng – ghi vừa tải lên, hệ thống đã lọc sạch các bản "- Copy" để đăng tải bài viết tổng hợp rõ ràng nhất.',
+      'Giải pháp kết hợp Rèm Cầu Vồng Hàn Quốc màu ghi xám (520.000đ/m²) tại các ô cửa sổ đứng, ô thoáng cầu thang, cửa sổ bàn học cùng Rèm Vải Gấm cùng tông màu ghi sáng (600.000đ/m ngang) tại cửa ban công giúp không gian nhà phố 2–3 tầng vừa thông thoáng, hiện đại, vừa cản nắng tuyệt đối.'
+    ],
+    facebookPostCopy:
+      '👷‍♂️✨ ANH TUYẾN TRỰC TIẾP BÀN GIAO HỆ RÈM CẦU VỒNG HÀN QUỐC & RÈM VẢI NHÀ PHỐ HIỆN ĐẠI! ✨\n' +
+      '--------------------------------------------\n' +
+      '✅ Ô cửa sổ cầu thang & cửa sổ bàn học của bé (tủ hồng phối ghi): Lắp Rèm Cầu Vồng Hàn Quốc màu ghi đậm gọn gàng, lấy sáng linh hoạt, không vướng bàn học – Giá chỉ 520.000đ / m²!\n' +
+      '✅ Cửa chính mở ra ban công: Lắp Rèm Vải Gấm màu ghi sáng đồng bộ, sóng rèm suôn thẳng cản nắng 100% – Giá chỉ 600.000đ / m ngang!\n' +
+      '✅ Anh Tuyến trực tiếp mang mẫu tư vấn tận nhà, đo đạc chuẩn từng milimet và bảo hành 3 năm chu đáo.\n' +
+      '📞 Gọi/Zalo đặt lịch đo lắp ngay trong ngày: 0344.727.528 (Tuyến Hoa)!',
+  },
+  {
+    id: 'cong-trinh-rem-vai-2-lop-phong-khach-xe-tai-tuyen-hoa-rv03',
+    code: 'RV-TH-03',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Showroom & Video',
+    title: 'Hoàn Thiện Phòng Khách Nhà Phố Ứng Hòa: Rèm Vải 2 Lớp Gấm Ghi Xám + Voan Trắng & Xe Tải Tuyến Hoa Giao Lắp Tận Sân',
+    shortTitle: 'Rèm Vải 2 Lớp Phòng Khách & Xe Tải Giao Tận Nhà',
+    priceDisplay: '600.000đ / m ngang',
+    marketPriceRange: 'Giá thị trường: 750.000đ – 1.150.000đ / m ngang',
+    marketPriceNote: 'Trọn gói công trình thực tế tại Ứng Hòa: Xe tải chuyên dụng của Tuyến Hoa chở toàn bộ rèm cửa, thanh ray và phụ kiện vào tận sân nhà khách hàng và lắp đặt hoàn thiện trong ngày.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Rèm Vải Gấm Ghi Xám Cản Nắng 100% (Hệ 1 Lớp Tiêu Chuẩn)',
+        marketPrice: '750.000đ / m ngang',
+        storePrice: '600.000đ / m ngang',
+        note: 'Đã bao gồm thanh suốt hợp kim, đai vén & công lắp',
+      },
+      {
+        sizeOrOption: '2. Hệ Rèm Vải 2 Lớp Cao Cấp (Lớp Gấm Ghi Xám + Lớp Voan Trắng Lụa)',
+        marketPrice: '1.150.000đ / m ngang',
+        storePrice: '850.000đ / m ngang',
+        note: 'Độ nhún sóng tiêu chuẩn 2,5m vải / 1m ngang cửa',
+      },
+      {
+        sizeOrOption: '3. Rèm Cầu Vồng Cửa Sổ Phụ Cạnh Cầu Thang (Đồng màu ghi xám)',
+        marketPrice: '650.000đ / m²',
+        storePrice: '520.000đ / m²',
+        note: 'Phối đồng bộ tông màu với bộ rèm vải cửa chính',
+      },
+    ],
+    numericPrice: 600000,
+    unitLabel: '1 mét ngang hoàn thiện (Miễn phí xe tải giao & lắp đặt)',
+    standardDimensions: 'Cửa chính đại sảnh rộng 2,8m – 4,0m × cao 2,7m – 3,0m',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/1792619301814_1293093313519991016_1293093313519991016_7660cb9abb659911e5fe3cd71a7f60bb_2e6c2394.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792619301680_1293093313519991016_1293093313519991016_e1e1340b0c22b60107b156d2a1eeaa43_4fe9d601.jpg',
+    ],
+    highlightTag: 'Xe Tải Giao Tận Sân · Rèm Vải 600k/m',
+    summary:
+      'Toàn cảnh phòng khách nhà phố hiện đại vừa được đội ngũ Tuyến Hoa lắp đặt hoàn thiện: Bộ rèm vải 2 lớp màu ghi xám sang trọng tại cửa chính 4 cánh kết hợp rèm cầu vồng cùng tông màu bên ô cửa sổ cầu thang, phía ngoài sân là xe tải chuyên dụng Tuyến Hoa chở hàng tận nơi.',
+    visualAnnotations: [
+      {
+        label: 'Sóng rèm vải 2 lớp may độ nhún 2,5 tạo múi tròn suôn thẳng',
+        detail:
+          'Lớp vải gấm ghi xám bên ngoài cản sáng 100%, lớp voan trắng lụa bên trong giúp đón ánh sáng dịu nhẹ và tôn lên vẻ sang trọng cho phòng khách.',
+      },
+      {
+        label: 'Phối màu đồng bộ 100% giữa cửa chính và cửa sổ cầu thang',
+        detail:
+          'Ô cửa sổ bên cạnh cầu thang đá hoa cương được lắp bộ rèm cầu vồng cùng tông màu ghi xám, tạo tổng thể kiến trúc hài hòa, tinh tế.',
+      },
+      {
+        label: 'Xe tải Tuyến Hoa đỗ tận cổng – Giao lắp trọn gói 0đ phí vận chuyển',
+        detail:
+          'Toàn bộ thanh ray dài 3m–4m và vải rèm đã là hơi phẳng phiu được chở bằng xe tải riêng của cửa hàng đến lắp đặt ngay trong ngày.',
+      },
+    ],
+    specs: [
+      { label: 'Mã công trình', value: 'RV-TH-03 (Rèm Vải 2 Lớp Phòng Khách & Rèm Cầu Vồng Đồng Bộ)' },
+      { label: 'Giá rèm vải 1 lớp', value: '600.000đ / m ngang cả lắp (Giá thị trường: 750.000đ/m)' },
+      { label: 'Giá rèm vải 2 lớp', value: '850.000đ / m ngang cả lắp (Giá thị trường: 1.150.000đ/m)' },
+      { label: 'Tỉ lệ may nhún sóng', value: 'Chuẩn 2,5m vải hoàn thiện / 1m ngang cửa, là hơi định hình múi' },
+      { label: 'Vận chuyển & Lắp đặt', value: 'Miễn phí 100% bằng xe tải Tuyến Hoa tại Ứng Hòa & vùng lân cận' },
+    ],
+    articleParagraphs: [
+      'Bức ảnh thực tế chụp từ chính diện phòng khách nhìn ra sân cổng ghi lại trọn vẹn quy trình phục vụ tận tâm của Xưởng Rèm Tuyến Hoa: Chiếc xe tải trắng của cửa hàng đỗ ngay trước cổng, vận chuyển đầy đủ kiện phụ kiện và bộ rèm vải 2 lớp may đo riêng cho gia chủ.',
+      'Từng nếp sóng rèm gấm màu ghi xám kết hợp lớp voan trắng xước đều được thợ may Tuyến Hoa căn chỉnh cách mặt sàn đúng 1,5cm – 2cm, vừa giữ vệ sinh sạch sẽ khi lau nhà, vừa tạo dáng rèm buông rủ bề thế như khách sạn 5 sao.'
+    ],
+    facebookPostCopy:
+      '🚛🪟 XE TẢI TUYẾN HOA GIAO & LẮP ĐẶT HOÀN THIỆN BỘ RÈM VẢI 2 LỚP PHÒNG KHÁCH SANG TRỌNG!\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 750.000đ – 1.150.000đ / m ngang\n' +
+      '🔥 GIÁ GỐC TẠI XƯỞNG TUYẾN HOA (BAO THANH TREO & CÔNG LẮP ĐẶT):\n' +
+      '   👉 Rèm vải gấm cản nắng 100% (1 lớp): Chỉ 600.000đ / m ngang\n' +
+      '   👉 Rèm vải 2 lớp cao cấp (Gấm cản nắng + Voan trắng lụa): Chỉ 850.000đ / m ngang\n' +
+      '   👉 Rèm cầu vồng Hàn Quốc cửa sổ: Chỉ 520.000đ / m²\n' +
+      '--------------------------------------------\n' +
+      '✅ May đủ độ nhún 2,5m vải/1m cửa, sóng rèm tròn đều suôn thẳng từ trần xuống sàn.\n' +
+      '✅ Xe tải cửa hàng chở hàng và thợ khoan lắp sạch sẽ tận nhà hoàn toàn MIỄN PHÍ!\n' +
+      '📞 Gọi/Zalo Anh Tuyến: 0344.727.528',
+  },
+  {
+    id: 'khao-sat-cua-nhom-kinh-view-ho-cua-luoi-rem-to-ong-ks01',
+    code: 'KS-VH-01',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Showroom & Video',
+    title: 'Anh Tuyến Trực Tiếp Khảo Sát Hệ Cửa Nhôm Kính Lớn View Hồ & Nghiệm Thu Cửa Lưới Chống Muỗi – Vách Rèm Tổ Ong Cách Nhiệt',
+    shortTitle: 'Khảo Sát Cửa Kính View Hồ & Lắp Cửa Lưới – Rèm Tổ Ong',
+    priceDisplay: '550.000đ / m²',
+    marketPriceRange: 'Giá thị trường: 750.000đ – 950.000đ / m² (Khảo sát tận nhà 0đ)',
+    marketPriceNote: 'Đã lọc bỏ 02 bản sao "- Copy" trùng lặp từ 03 file ảnh tải lên: Giữ lại bức ảnh chuẩn Anh Tuyến đeo mic khảo sát thực tế hệ cửa nhôm kính lớn chấn song Inox view hồ kèm 02 ảnh nghiệm thu Cửa lưới chống muỗi & Vách rèm tổ ong.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Cửa Lưới Chống Muỗi Xếp Xích Sợi Thủy Tinh (Lắp lọt lòng cửa sổ & cửa đi)',
+        marketPrice: '750.000đ / m²',
+        storePrice: '550.000đ / m²',
+        note: 'Ngăn 100% muỗi, côn trùng bay từ mặt hồ vào nhà mà vẫn đón gió mát',
+      },
+      {
+        sizeOrOption: '2. Vách Rèm Tổ Ong Tráng Bạc 2 Lớp Cản Nhiệt Điều Hòa (Màu Ghi Than Chì)',
+        marketPrice: '880.000đ / m²',
+        storePrice: '650.000đ / m²',
+        note: 'Giữ lạnh điều hòa 100%, kéo xếp gọn sát tường',
+      },
+      {
+        sizeOrOption: '3. Khảo Sát Đo Đạc & Tư Vấn Giải Pháp Rèm Cửa – Cửa Lưới Tận Công Trình',
+        marketPrice: '200.000đ – 300.000đ',
+        storePrice: 'MIỄN PHÍ 100%',
+        note: 'Anh Tuyến trực tiếp kiểm tra kích thước đố cửa nhôm Xingfa & nan Inox',
+      },
+    ],
+    numericPrice: 550000,
+    unitLabel: '1 m² cửa lưới chống muỗi | 650.000đ / m² vách rèm tổ ong',
+    standardDimensions: 'Gia công theo kích thước lọt lòng đố cửa nhôm Xingfa (dày 3cm–4cm)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/1792658171296_1293093313519991016_1293093313519991016_f85acd8d91ec951798f3b410a5744ecc_-_Copy_-_Copy_78dd3953.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792658171183_1293093313519991016_1293093313519991016_10108ab564c8fb6ade925f6a8e609889_1971346a.jpg',
+      '/assets/aistudio/1792658171075_1293093313519991016_1293093313519991016_0f9d66d4bfaa9005e2909eb62a753963_bebb2fef.jpg',
+    ],
+    highlightTag: 'Khảo Sát Cửa View Hồ · Đã Lọc 2 Bản Trùng',
+    summary:
+      'Bộ 3 hình ảnh thực tế tại công trình nhà phố ven hồ: (1) Anh Tuyến trực tiếp khảo sát hệ cửa nhôm kính lớn có khung nan Inox bảo vệ nhìn ra mặt hồ; (2) Tư vấn lắp đặt hệ Cửa Lưới Chống Muỗi xếp ly lọt lòng khung cửa; và (3) Nghiệm thu hệ Vách Rèm Tổ Ong màu ghi than chì cản nhiệt điều hòa tuyệt đối.',
+    visualAnnotations: [
+      {
+        label: 'Khảo sát thực tế hệ cửa nhôm Xingfa & chấn song Inox view hồ',
+        detail:
+          'Nhà ven sông hồ có gió mát nhưng nhiều muỗi và nắng chói mặt nước; Anh Tuyến trực tiếp đo khe hở đố cửa để lắp kết hợp cửa lưới chống muỗi và rèm cản nắng.',
+      },
+      {
+        label: 'Cửa lưới chống muỗi xếp ly sợi thủy tinh đón trọn gió hồ tự nhiên',
+        detail:
+          'Mắt lưới siêu mịn ngăn 100% muỗi, dĩn, kiến ba khoang bay vào phòng mà không cản tầm nhìn ra mặt hồ xanh mát (Đơn giá: 550.000đ/m²).',
+      },
+      {
+        label: 'Nghiệm thu vách rèm tổ ong tráng bạc màu ghi than chì hiện đại',
+        detail:
+          'Khi bật điều hòa, kéo vách rèm tổ ong (650.000đ/m²) để khóa chặt 100% hơi lạnh và cản nắng hướng Tây hoàn hảo.',
+      },
+    ],
+    specs: [
+      { label: 'Mã công trình', value: 'KS-VH-01 (Khảo Sát Cửa Sổ View Hồ & Thi Công Cửa Lưới – Rèm Tổ Ong)' },
+      { label: 'Giá cửa lưới chống muỗi', value: '550.000đ / m² cả lắp (Giá thị trường: 750.000đ/m²)' },
+      { label: 'Giá vách rèm tổ ong', value: '650.000đ / m² cả lắp (Giá thị trường: 880.000đ/m²)' },
+      { label: 'Chi phí khảo sát đo đạc', value: 'Miễn phí 100% tận nhà tại Ứng Hòa và các huyện lân cận' },
+      { label: 'Hotline / Zalo trực tiếp', value: '0344.727.528 (Anh Tuyến)' },
+    ],
+    articleParagraphs: [
+      'Trong lô 24 ảnh mới tải lên, bức ảnh Anh Tuyến đứng khảo sát trước khung cửa nhôm kính lớn có chấn song Inox nhìn ra mặt hồ xuất hiện 03 lần (- Copy). Hệ thống đã lọc bỏ 02 bản trùng lặp và kết hợp cùng 02 bức ảnh nghiệm thu thực tế tại cùng công trình để tạo nên bài đăng hoàn chỉnh.',
+      'Đối với các ngôi nhà có cửa sổ lớn nhìn ra hồ nước, cánh đồng hoặc vườn cây, giải pháp lắp đặt Cửa Lưới Chống Muỗi xếp xích (550.000đ/m²) kết hợp Vách Rèm Tổ Ong cản nhiệt (650.000đ/m²) hoặc Rèm Cầu Vồng (520.000đ/m²) của Xưởng Tuyến Hoa giúp gia chủ mở cửa đón gió trời mát rượi suốt bốn mùa mà không lo muỗi hay côn trùng xâm nhập.'
+    ],
+    facebookPostCopy:
+      '🌊🪟 [KHẢO SÁT & THI CÔNG THỰC TẾ] GIẢI PHÁP CỬA LƯỚI CHỐNG MUỖI & VÁCH RÈM TỔ ONG CHO NHÀ VIEW HỒ THOÁNG MÁT!\n' +
+      '--------------------------------------------\n' +
+      '✅ Nhà ven hồ, ven sông hay gần vườn cây thường rất thoáng gió nhưng lại nhiều muỗi, dĩn và nắng gắt phản chiếu.\n' +
+      '✅ Anh Tuyến trực tiếp đến tận công trình khảo sát đố cửa nhôm kính & chấn song Inox hoàn toàn MIỄN PHÍ!\n' +
+      '💰 BÁO GIÁ GỐC TẠI XƯỞNG TUYẾN HOA (BAO LẮP ĐẶT HOÀN THIỆN):\n' +
+      '   👉 Cửa lưới chống muỗi xếp xích cao cấp: Chỉ 550.000đ / m² (Mở cửa đón gió hồ 24/24 không lo muỗi)\n' +
+      '   👉 Vách rèm tổ ong tráng bạc 2 lớp cản nhiệt điều hòa: Chỉ 650.000đ / m²\n' +
+      '   👉 Rèm cầu vồng Hàn Quốc lấy sáng thông minh: Chỉ 520.000đ / m²\n' +
+      '📞 Gọi/Zalo Anh Tuyến tư vấn & khảo sát ngay: 0344.727.528!',
+  },
+  // ===========================================================================
+  // 00B. BỘ BÀI ĐĂNG TỔ HỢP SHOWROOM 3 TẦNG, RÈM TỰ ĐỘNG THÔNG MINH & VIDEO THI CÔNG (ĐÃ CẮT BỎ VIDEO/ẢNH TRÙNG LẶP)
   // ===========================================================================
   {
     id: 'rem-tu-dong-ngoi-nha-thong-minh-tuyen-hoa-rtd01',
@@ -1775,8 +2462,6 @@ export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
     mediaType: 'image',
     imageUrl: '/assets/aistudio/vach_rem_to_ong_cua_vom_tuyen_hoa.png',
     secondaryImages: [
-      '/assets/aistudio/vach_rem_to_ong_cua_vom_tuyen_hoa.png',
-      '/assets/aistudio/1792658171075_1293093313519991016_1293093313519991016_0f9d66d4bfaa9005e2909eb62a753963_bebb2fef.jpg',
       '/assets/aistudio/xuong_san_xuat_rem_tuyen_hoa.png',
     ],
     highlightTag: 'Chuyên Cửa Vòm & Ngăn Lạnh Điều Hòa',
@@ -1857,8 +2542,6 @@ export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
     mediaType: 'image',
     imageUrl: '/assets/aistudio/rem_cuon_van_phong_tuyen_hoa.png',
     secondaryImages: [
-      '/assets/aistudio/rem_cuon_van_phong_tuyen_hoa.png',
-      '/assets/aistudio/1792619301615_1293093313519991016_1293093313519991016_001b83f41e2f124f06dffb5c9042fba8_3768728a.jpg',
       '/assets/aistudio/IMG_5053_4a4c9d67.JPG',
     ],
     highlightTag: 'Trọn Gói 280.000đ/m² Cả Lắp',
@@ -3140,30 +3823,36 @@ export function getCanopyProductById(idOrCode: string): AnnotatedProductPost | u
   );
 }
 
+export const OFFICIAL_WEBSITE_URL = 'https://tuyenhoa-weld.vercel.app/';
+
 export function generateFullCatalogFacebookPost(category: NewProductCategory = 'all'): string {
   const posts = filterAnnotatedProducts(category);
   const header =
     '🌟 TỔNG HỢP BÀI ĐĂNG & BẢNG GIÁ CÁC SẢN PHẨM TẠI SHOWROOM & XƯỞNG TUYẾN HOA 🌟\n' +
     '📍 Địa chỉ: Khu vực Chợ Cháy – Chợ Ngăm, Huyện Ứng Hòa, Hà Nội\n' +
     '📞 Hotline / Zalo đặt hàng & lắp đặt tận nhà: 0344.727.528\n' +
+    `🌐 Website chính thức (Xem đủ ${ANNOTATED_PRODUCT_POSTS.length} mẫu & bảng giá): ${OFFICIAL_WEBSITE_URL}\n` +
     '==================================================\n' +
     '📋 BẢNG GIÁ NIÊM YẾT RÕ RÀNG (RẺ HƠN GIÁ THỊ TRƯỜNG 15% – 30%):\n' +
-    '1️⃣ ĐỆM GẤP 2 CHẦN MÚI, ĐỆM KIM CƯƠNG, TH VICUNA 5 SAO, EVERHOME, MÀN KHUNG & CHIẾU MÂY:\n' +
+    '1️⃣ ĐỆM GẤP 2 CHẦN MÚI, ĐỆM KIM CƯƠNG, TH VICUNA 5 SAO, EVERHOME, MÀN HỘP VÂN GỖ, MÀN KHUNG & CHIẾU MÂY:\n' +
+    '   • Màn Hộp Thông Minh Thu Gọn Đầu Giường (Khung Inox 304 & 201, khắc Laser): Bản Hộp Trắng Sứ 1.250.000đ/bộ | Bản Hộp Vân Gỗ 1.350.000đ/bộ | Cỡ 2m×2m2 giá 1.550.000đ/bộ.\n' +
+    '   • Màn khung Inox ròng rọc giường đôi Rộng 1,8m × Dài 2,0m: 1.000.000đ / 1 bộ (Giá thị trường: 1.250.000đ – 1.450.000đ).\n' +
     '   • Đệm Gấp 2 Chần Múi Lông Vũ & Kẻ Caro Thành Vải Bố (Dày 18–20cm): Cỡ 1m6×2m từ 1.750.000đ – 1.850.000đ | Cỡ 1m8×2m từ 1.950.000đ – 2.050.000đ.\n' +
     '   • Đệm Bông Tinh Khiết Mặt Trần Kim Cương & Kim Cương Plaza (BH 5 năm): Cỡ 1m6×2m giá 1.850.000đ | Cỡ 1m8×2m giá 2.050.000đ.\n' +
     '   • Đệm Cao Cấp TH VICUNA Luxury Sleep 5 Sao (Bọc góc da): Cỡ 1m6×2m giá 2.150.000đ | Cỡ 1m8×2m giá 2.350.000đ.\n' +
     '   • Đệm Lò Xo Túi Độc Lập Everhome: Cỡ 1m6×2m giá 2.850.000đ | Cỡ 1m8×2m giá 3.250.000đ | Bản Gold 3 Viền giá 4.450.000đ.\n' +
     '   • Nệm Cao Su 100% Thiên Nhiên Everhome (Bảo hành 10 năm): Cỡ 1m6×2m×10cm giá 4.850.000đ | Cỡ 1m8×2m×10cm giá 5.450.000đ.\n' +
-    '   • Màn khung giường đôi Rộng 1,8m × Dài 2,0m: 1.000.000đ / 1 bộ (Giá thị trường: 1.250.000đ – 1.450.000đ).\n' +
     '   • Chiếu mây điều hòa lót lưới 3D & ngải cứu (tặng 2 vỏ gối + túi xách): Cỡ 1m6×2m giá 450.000đ/bộ | Cỡ 1m8×2m giá 490.000đ/bộ | Cỡ 2m×2m2 giá 550.000đ/bộ.\n\n' +
-    '2️⃣ BẠT TỰ CUỐN CHE NẮNG MƯA, MÁI HIÊN TAY KHUỶU & BẠT XẾP:\n' +
+    '2️⃣ MÀNH TRÚC TRANH ĐỒNG QUÊ BIỆT THỰ, BẠT TỰ CUỐN CHE NẮNG MƯA, MÁI HIÊN & BẠT XẾP:\n' +
+    '   • Mành trúc tự nhiên sơn PU che nắng mưa: 220.000đ / 1 m² | Mành trúc vẽ tranh đồng quê (Đôi Hạc Lúa Vàng, Mục Đồng Chăn Trâu): 260.000đ / 1 m² cả lắp.\n' +
     '   • Bạt tự cuốn lò xo kẻ sọc xanh trắng / vàng xanh: 220.000đ / 1 m² cả lắp (Thị trường: 300.000đ/m²).\n' +
     '   • Bạt tự cuốn hoa văn nâu đồng & lá trúc: 240.000đ / 1 m² cả lắp | Bạt lưới đen xuyên sáng: 280.000đ / 1 m².\n' +
     '   • Mái bạt xếp lượn sóng Hàn Quốc 3 lớp: 350.000đ / 1 m² trọn gói cả khung sắt & công hàn lắp.\n\n' +
-    '3️⃣ XƯỞNG RÈM VẢI, RÈM CUỐN VĂN PHÒNG, VÁCH TỔ ONG CỬA VÒM & CỬA LƯỚI MUỖI:\n' +
+    '3️⃣ XƯỞNG RÈM VẢI, RÈM SÁO GỖ PHÒNG THỜ, RÈM CẦU VỒNG NGỌC TUYẾN, RÈM CUỐN, VÁCH TỔ ONG & CỬA LƯỚI:\n' +
+    '   • Rèm sáo gỗ tự nhiên bản 5cm (Phòng khách & Phòng thờ biệt thự): 680.000đ / 1 m² cả lắp.\n' +
     '   • Rèm cuốn chống nắng 100% văn phòng & gia đình: 280.000đ / 1 m² cả lắp.\n' +
     '   • Rèm vải gấm cản nắng 100% (1 lớp): 600.000đ / mét ngang cả thanh treo & công lắp (Rèm 2 lớp âm trần: 850.000đ/m).\n' +
-    '   • Rèm cầu vồng Hàn Quốc: 520.000đ / 1 m² | Cửa lưới chống muỗi xếp xích: 550.000đ / 1 m² | Vách rèm tổ ong ngăn lạnh điều hòa: 650.000đ / 1 m² (Cửa vòm cong: 750.000đ/m²).\n\n' +
+    '   • Rèm cầu vồng Hàn Quốc Ngọc Tuyến: 520.000đ / 1 m² | Cửa lưới chống muỗi xếp xích: 550.000đ / 1 m² | Vách rèm tổ ong ngăn lạnh điều hòa: 650.000đ / 1 m² (Cửa vòm cong: 750.000đ/m²).\n\n' +
     '4️⃣ ĐỆM BÔNG ÉP HÀN QUỐC GẤP 3 & ĐẶC SẢN TƯƠNG NGỌC TUYẾN:\n' +
     '   • Đệm bông ép gấp 3 chính hãng (Sông Hồng, Everhome, Everon, Kim Đoan, Vikosan): Từ 1.350.000đ – 2.450.000đ/tấm.\n' +
     '   • Đặc sản Tương Ngọc Tuyến ủ chum sành: 65.000đ / chai 500ml | 120.000đ / bình lục giác quà biếu 750ml.\n' +
@@ -3183,6 +3872,7 @@ export function generateFullCatalogFacebookPost(category: NewProductCategory = '
   const footer =
     '\n\n==================================================\n' +
     '🚛 CAM KẾT: Miễn phí 100% xe bán tải Ngọc Tuyến – Tuyến Hoa giao hàng & thợ lắp đặt tận nhà – Nghiệm thu ưng ý mới thanh toán!\n' +
+    `🌐 XEM BẢNG GIÁ & ẢNH THỰC TẾ TẠI WEBSITE: ${OFFICIAL_WEBSITE_URL}\n` +
     '📞 GỌI / KẾT BẠN ZALO NGAY: 0344.727.528 (Showroom Tuyến Hoa)';
 
   return header + itemsText + footer;

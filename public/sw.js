@@ -1,5 +1,5 @@
 // Service Worker for Tuyến Hoa Mobile App
-const CACHE_NAME = 'tuyen-hoa-v2';
+const CACHE_NAME = 'tuyen-hoa-v4';
 const PRECACHE_ASSETS = [
   './',
   './manifest.json',
@@ -38,10 +38,14 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Network-first for HTML navigation so deployed GitHub/Vercel updates appear immediately
-  if (event.request.mode === 'navigate') {
+  // Network-first for HTML navigation and JS/CSS bundles so deployed GitHub/Vercel updates appear immediately
+  if (
+    event.request.mode === 'navigate' ||
+    event.request.destination === 'script' ||
+    event.request.destination === 'style'
+  ) {
     event.respondWith(
-      fetch(event.request).catch(() => caches.match('./'))
+      fetch(event.request).catch(() => caches.match(event.request).then((res) => res || caches.match('./')))
     );
     return;
   }

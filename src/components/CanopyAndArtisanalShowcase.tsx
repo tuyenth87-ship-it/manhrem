@@ -5,6 +5,7 @@ import {
   DEDUPLICATION_SUMMARY,
   MARKET_PRICE_SUMMARY_TABLE,
   NewProductCategory,
+  OFFICIAL_WEBSITE_URL,
   calculateCanopyOrderTotal,
   filterAnnotatedProducts,
   generateFullCatalogFacebookPost,
@@ -161,13 +162,27 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
       : 'text-base sm:text-lg';
 
   const handleCopyPost = (post: AnnotatedProductPost) => {
+    const fullCopyText = post.facebookPostCopy.includes(OFFICIAL_WEBSITE_URL)
+      ? post.facebookPostCopy
+      : `${post.facebookPostCopy}\n🌐 Xem bảng giá & ${DEDUPLICATED_POSTS.length} mẫu thực tế tại Website: ${OFFICIAL_WEBSITE_URL}`;
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(post.facebookPostCopy).catch(() => {});
+      navigator.clipboard.writeText(fullCopyText).catch(() => {});
     }
     setCopiedId(post.id);
     setTimeout(() => setCopiedId(null), 2500);
     if (onShowToast) {
-      onShowToast(`Đã sao chép bài đăng "${post.shortTitle}"!`);
+      onShowToast(`Đã sao chép bài đăng "${post.shortTitle}" (kèm link Website)!`);
+    }
+  };
+
+  const handleCopyWebsiteUrl = () => {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(OFFICIAL_WEBSITE_URL).catch(() => {});
+    }
+    setCopiedId('website-url');
+    setTimeout(() => setCopiedId(null), 2500);
+    if (onShowToast) {
+      onShowToast(`Đã sao chép link Website: ${OFFICIAL_WEBSITE_URL}`);
     }
   };
 
@@ -408,6 +423,26 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                 <>
                   <Copy className="w-4 h-4 text-[#7A4E0E]" />
                   <span>Copy Bảng Giá</span>
+                </>
+              )}
+            </button>
+
+            <button
+              type="button"
+              onClick={handleCopyWebsiteUrl}
+              data-testid="copy-website-url-btn"
+              className="px-3.5 py-2.5 rounded-xl bg-white hover:bg-[#FAF2E1] text-[#8A5A14] border border-[#D5C29F] font-extrabold text-xs sm:text-sm flex items-center gap-1.5 transition-colors cursor-pointer shadow-2xs"
+              title={OFFICIAL_WEBSITE_URL}
+            >
+              {copiedId === 'website-url' ? (
+                <>
+                  <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+                  <span>Đã Copy Link Web</span>
+                </>
+              ) : (
+                <>
+                  <Copy className="w-4 h-4 text-[#8A5A14]" />
+                  <span>Copy Link: tuyenhoa-weld.vercel.app</span>
                 </>
               )}
             </button>
@@ -813,6 +848,14 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                         </span>
                       </div>
                     )}
+
+                    {post.secondaryImages && post.secondaryImages.length > 0 && (
+                      <div className="absolute bottom-3 left-3 pointer-events-none">
+                        <span className="px-2.5 py-1 rounded-xl bg-white/95 text-[#8A5A14] border border-[#C69C4E] text-xs font-extrabold shadow-xs">
+                          +{post.secondaryImages.length} ảnh góc khác
+                        </span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Large, Crisp Editorial Card Body */}
@@ -1107,7 +1150,9 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
               </div>
 
               <div className="rounded-2xl overflow-hidden bg-[#FAF6EE] border border-[#E2D4B8] aspect-16/10 max-h-[380px] flex items-center justify-center relative">
-                {activeArticleModal.mediaType === 'video' && activeArticleModal.videoUrl ? (
+                {activeArticleModal.mediaType === 'video' &&
+                activeArticleModal.videoUrl &&
+                (!activeGalleryImg || activeGalleryImg === activeArticleModal.imageUrl) ? (
                   <video
                     src={activeArticleModal.videoUrl}
                     poster={activeArticleModal.imageUrl}
@@ -1133,30 +1178,37 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                 )}
               </div>
 
-              {activeArticleModal.secondaryImages && activeArticleModal.secondaryImages.length > 1 && (
+              {activeArticleModal.secondaryImages && activeArticleModal.secondaryImages.length > 0 && (
                 <div className="space-y-2">
                   <div className="text-sm font-bold text-[#1C1917]">
-                    Các góc chụp độc bản thuộc bộ sản phẩm ({activeArticleModal.secondaryImages.length} ảnh):
+                    Các góc chụp thực tế thuộc bộ sản phẩm ({activeArticleModal.secondaryImages.length + 1} tư liệu):
                   </div>
                   <div className="flex items-center gap-2 overflow-x-auto pb-1">
-                    {activeArticleModal.secondaryImages.map((imgUrl, idx) => (
-                      <button
-                        key={imgUrl}
-                        type="button"
-                        onClick={() => setActiveGalleryImg(imgUrl)}
-                        className={`w-18 h-14 rounded-xl overflow-hidden border-2 shrink-0 cursor-pointer transition-all ${
-                          (activeGalleryImg || activeArticleModal.imageUrl) === imgUrl
-                            ? 'border-[#8A5A14] scale-105'
-                            : 'border-[#E2D4B8] opacity-75 hover:opacity-100'
-                        }`}
-                      >
-                        <img
-                          src={imgUrl}
-                          alt={`${activeArticleModal.shortTitle} - Góc ${idx + 1}`}
-                          className="w-full h-full object-cover"
-                        />
-                      </button>
-                    ))}
+                    {[activeArticleModal.imageUrl, ...activeArticleModal.secondaryImages].map(
+                      (imgUrl, idx) => (
+                        <button
+                          key={imgUrl}
+                          type="button"
+                          onClick={() => setActiveGalleryImg(imgUrl)}
+                          className={`w-20 h-15 rounded-xl overflow-hidden border-2 shrink-0 cursor-pointer transition-all relative ${
+                            (activeGalleryImg || activeArticleModal.imageUrl) === imgUrl
+                              ? 'border-[#8A5A14] scale-105'
+                              : 'border-[#E2D4B8] opacity-75 hover:opacity-100'
+                          }`}
+                        >
+                          <img
+                            src={imgUrl}
+                            alt={`${activeArticleModal.shortTitle} - Góc ${idx + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                          {idx === 0 && activeArticleModal.mediaType === 'video' && (
+                            <span className="absolute bottom-0.5 inset-x-0.5 bg-white/90 text-[#1C1917] text-[10px] font-extrabold rounded px-1 text-center">
+                              VIDEO
+                            </span>
+                          )}
+                        </button>
+                      )
+                    )}
                   </div>
                 </div>
               )}
