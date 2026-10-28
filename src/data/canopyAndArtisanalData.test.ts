@@ -42,11 +42,11 @@ test('Multi-set Màn khung order applies 50,000 VND/set discount and calculates 
   assert.equal(comboOrder.finalTotal, 3650000);
 });
 
-test('Deduplication removes all duplicate primary and secondary images across all 42 annotated posts', () => {
+test('Deduplication removes all duplicate primary and secondary images across all 47 annotated posts', () => {
   const dedupedPosts = getDeduplicatedProductPosts();
-  assert.equal(dedupedPosts.length, 42);
-  assert.equal(ANNOTATED_PRODUCT_POSTS.length, 42);
-  assert.equal(MARKET_PRICE_SUMMARY_TABLE.length, 16);
+  assert.equal(dedupedPosts.length, 47);
+  assert.equal(ANNOTATED_PRODUCT_POSTS.length, 47);
+  assert.equal(MARKET_PRICE_SUMMARY_TABLE.length, 19);
 
   // Verify no two posts share the exact same primary imageUrl
   const primaryImages = dedupedPosts.map((p) => p.imageUrl);
@@ -82,15 +82,45 @@ test('Deduplication removes all duplicate primary and secondary images across al
   }
 
   // Verify deduplication summary accounting
-  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 107);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 116);
   assert.equal(DEDUPLICATION_SUMMARY.totalRemovedDuplicates, 45);
-  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 62);
-  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 8);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 71);
+  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 9);
 });
 
 test('All annotated products have market price tiers, visual annotations, specs, and clear Facebook post copy', () => {
   const canopyAndBeddingItems = filterAnnotatedProducts('man-khung-1tr');
-  assert.equal(canopyAndBeddingItems.length, 15);
+  assert.equal(canopyAndBeddingItems.length, 20);
+
+  // Verify the 5 newest internet-researched & downloaded mattress posts
+  const demSongHongBackEssential = getCanopyProductById('DSH-BE-01');
+  assert.ok(demSongHongBackEssential);
+  assert.equal(demSongHongBackEssential?.numericPrice, 6750000);
+  assert.equal(demSongHongBackEssential?.imageUrl, '/assets/aistudio/dem_song_hong_back_essential_1.png');
+  assert.equal(demSongHongBackEssential?.secondaryImages?.length, 1);
+
+  const nemCaoSuKimCuong = getCanopyProductById('DKC-HG-01');
+  assert.ok(nemCaoSuKimCuong);
+  assert.equal(nemCaoSuKimCuong?.numericPrice, 4950000);
+  assert.equal(nemCaoSuKimCuong?.imageUrl, '/assets/aistudio/nem_cao_su_kim_cuong_happy_gold_1.jpg');
+
+  const demEveronArtemis = getCanopyProductById('DEV-AT-01');
+  assert.ok(demEveronArtemis);
+  assert.equal(demEveronArtemis?.numericPrice, 3850000);
+  assert.equal(demEveronArtemis?.imageUrl, '/assets/aistudio/dem_everon_artemis_1.png');
+  assert.equal(demEveronArtemis?.secondaryImages?.length, 1);
+
+  const nemCaoSuLienALaDome = getCanopyProductById('DLA-LD-01');
+  assert.ok(nemCaoSuLienALaDome);
+  assert.equal(nemCaoSuLienALaDome?.numericPrice, 8950000);
+  assert.equal(nemCaoSuLienALaDome?.imageUrl, '/assets/aistudio/nem_cao_su_lien_a_ladome_1.jpg');
+  assert.equal(nemCaoSuLienALaDome?.secondaryImages?.length, 1);
+
+  const demHanvicoNano = getCanopyProductById('DHV-NN-01');
+  assert.ok(demHanvicoNano);
+  assert.equal(demHanvicoNano?.numericPrice, 2850000);
+  assert.equal(demHanvicoNano?.imageUrl, '/assets/aistudio/dem_hanvico_nano_khang_khuan_1.png');
+  assert.equal(demHanvicoNano?.secondaryImages?.length, 1);
 
   // Verify the 4 newest posts from the 2 videos & 6 photos (Mành trúc biệt thự & Màn hộp thông minh vân gỗ)
   const manhTrucBietThu = getCanopyProductById('MT-TH-01');

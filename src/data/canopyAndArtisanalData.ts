@@ -64,10 +64,21 @@ export interface DeduplicatedImageGroup {
 }
 
 export const DEDUPLICATION_SUMMARY = {
-  totalUploaded: 107,
+  totalUploaded: 116,
   totalRemovedDuplicates: 45,
-  totalUniquePublished: 62,
+  totalUniquePublished: 71,
   groups: [
+    {
+      id: 'dup-lo-dem-moi-internet-2026',
+      groupTitle: 'Bộ 09 Ảnh Mẫu Đệm Mới Tải Từ Internet: Sông Hồng Back Essential Gen 4, Kim Cương Happy Gold, Everon Artemis, Liên Á L\'A Dome & Hanvico Nano',
+      keptImage: 'dem_song_hong_back_essential_1.png',
+      removedCount: 0,
+      removedExamples: [
+        'Tải trực tiếp 09 ảnh sản phẩm độ phân giải cao (PNG/JPG) của 05 dòng đệm mới nhất trên thị trường Việt Nam kèm thông số kỹ thuật và bảng giá niêm yết chính hãng',
+        'Quy hoạch thành 05 bài đăng quảng cáo chuyên sâu (DSH-BE-01, DKC-HG-01, DEV-AT-01, DLA-LD-01, DHV-NN-01) với 05 ảnh đại diện chính và 04 ảnh góc chụp mặt cắt cấu tạo bên trong',
+      ],
+      reason: 'Cập nhật đầy đủ thông số kỹ thuật, giá hãng đối chiếu giá ưu đãi tại Tổng Kho Tuyến Hoa (chiết khấu 25%–40%) và bài viết quảng cáo Facebook/Zalo sẵn sàng đăng ngay.',
+    },
     {
       id: 'dup-lo-manh-truc-man-hop-thong-minh-2026',
       groupTitle: 'Lô 02 Video & 06 Ảnh Mới Tải Lên: Mành Trúc Biệt Thự 3 Tầng, Rèm Gỗ Phòng Thờ & Xưởng Màn Hộp Thông Minh Vân Gỗ',
@@ -168,8 +179,32 @@ export const DEDUPLICATION_SUMMARY = {
 
 export const MARKET_PRICE_SUMMARY_TABLE: MarketPriceSummaryRow[] = [
   {
+    id: 'mp-dem-song-hong-back-essential',
+    productGroup: '1. Đệm Sông Hồng Back Essential Thế Hệ 4 (Dày 17–32cm)',
+    specification: 'Bông tinh khiết kháng khuẩn + Memory Foam đàn hồi 98% (1m6 / 1m8)',
+    marketPrice: '11,30Tr – 14,73Tr',
+    storePrice: '6,75Tr – 8,85Tr',
+    warrantyAndService: 'Chiết khấu 40% tại kho Tuyến Hoa, bảo hành 5 năm',
+  },
+  {
+    id: 'mp-nem-cao-su-kim-cuong-lien-a',
+    productGroup: '2. Nệm Cao Su Kim Cương Happy Gold & Liên Á L\'A Dome',
+    specification: '100% Cao su thiên nhiên 5.000 lỗ thoáng & Mái vòm (1m6 / 1m8)',
+    marketPrice: '6,84Tr – 16,29Tr',
+    storePrice: '4,95Tr – 10,85Tr',
+    warrantyAndService: 'Tặng bộ gối cao su + ga gối, bảo hành 12 năm',
+  },
+  {
+    id: 'mp-dem-everon-artemis-hanvico-nano',
+    productGroup: '3. Đệm Everon Artemis · Ceramic & Hanvico Nano Bạc',
+    specification: 'Bông Advansa Đức, tia hồng ngoại Ceramic & Nano chống khuẩn',
+    marketPrice: '3,95Tr – 10,40Tr',
+    storePrice: '2,85Tr – 6,45Tr',
+    warrantyAndService: 'Chống đau lưng, diệt 99% vi khuẩn, bảo hành 5 năm',
+  },
+  {
     id: 'mp-manh-truc-rem-go-biet-thu',
-    productGroup: '1. Mành Trúc Tranh Đồng Quê & Rèm Sáo Gỗ Biệt Thự',
+    productGroup: '4. Mành Trúc Tranh Đồng Quê & Rèm Sáo Gỗ Biệt Thự',
     specification: 'Mành tre trúc vẽ tranh Đôi Hạc / Mục Đồng & Rèm gỗ tự nhiên',
     marketPrice: '350k – 850k / m²',
     storePrice: '260k – 680k / m²',
@@ -364,6 +399,420 @@ export function calculateCanopyOrderTotal(input: CanopyPricingInput): CanopyPric
 }
 
 export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
+  // ===========================================================================
+  // 00-NEW. BỘ 05 BÀI ĐĂNG QUẢNG CÁO MẪU ĐỆM MỚI TẢI TỪ INTERNET (SÔNG HỒNG GEN 4,
+  //         KIM CƯƠNG HAPPY GOLD, EVERON ARTEMIS/CERAMIC, LIÊN Á L'A DOME & HANVICO NANO)
+  // ===========================================================================
+  {
+    id: 'dem-cao-cap-song-hong-back-essential-the-he-4-dshbe01',
+    code: 'DSH-BE-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Đệm Cao Cấp Sông Hồng Back Essential Thế Hệ Thứ 4 (Gập 2 & Nguyên Tấm Dày 17cm–32cm) – Kết Hợp Bông Tinh Khiết Kháng Khuẩn & Memory Foam Đàn Hồi 98%',
+    shortTitle: 'Đệm Sông Hồng Back Essential Thế Hệ 4 (6.750.000đ)',
+    priceDisplay: '6.750.000đ / tấm',
+    marketPriceRange: 'Giá niêm yết hãng: 11.300.000đ – 14.730.000đ (Ưu đãi giảm 40%)',
+    marketPriceNote: 'Mẫu đệm thế hệ thứ 4 mới nhất của Sông Hồng (tải trực tiếp từ hệ thống phân phối chính hãng kèm ảnh nguyên tấm & gập 2): Thay thế hoàn hảo đệm lò xo và cao su tại các căn hộ, biệt thự cao cấp nhờ cấu trúc đa tầng Memory Foam kết hợp bông tinh khiết kháng khuẩn.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Kích thước 1,6m × 2,0m (Độ dày 17cm – 22cm · Gập 2 hoặc Nguyên Tấm)',
+        marketPrice: '11.300.000đ – 11.900.000đ',
+        storePrice: '6.750.000đ – 7.150.000đ',
+        note: 'Chiết khấu trực tiếp 40% tại Tổng Kho Tuyến Hoa + Tặng bộ ga gối cao cấp',
+      },
+      {
+        sizeOrOption: '2. Kích thước 1,8m × 2,0m (Độ dày 17cm – 22cm · Gập 2 hoặc Nguyên Tấm)',
+        marketPrice: '11.490.000đ – 12.470.000đ',
+        storePrice: '6.950.000đ – 7.450.000đ',
+        note: 'Nâng đỡ cột sống chuẩn y khoa, độ phục hồi sau chuyển động đạt 98%',
+      },
+      {
+        sizeOrOption: '3. Bản Biệt Thự Siêu Dày 27cm – 32cm (Kích thước 1,6m×2,0m & 1,8m×2,0m)',
+        marketPrice: '12.310.000đ – 14.730.000đ',
+        storePrice: '7.650.000đ – 8.850.000đ',
+        note: 'Dáng đệm bề thế như khách sạn 5 sao, miễn phí xe tải giao tận giường',
+      },
+    ],
+    numericPrice: 6750000,
+    unitLabel: '1 tấm chính hãng Sông Hồng (Kèm quà tặng & miễn phí giao tận nhà)',
+    standardDimensions: 'Đủ cỡ 1,6m × 2,0m & 1,8m × 2,0m (Độ dày: 17cm, 22cm, 27cm, 32cm)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/dem_song_hong_back_essential_1.png',
+    secondaryImages: [
+      '/assets/aistudio/dem_song_hong_back_essential_2.png',
+    ],
+    highlightTag: 'Mẫu Đệm Mới Nhất · Sông Hồng Thế Hệ 4',
+    summary:
+      'Siêu phẩm Đệm Sông Hồng Back Essential (Thế hệ thứ 4) đạt tiêu chuẩn chất lượng xuất khẩu Mỹ: Lõi đệm kết hợp Bông tinh khiết kháng khuẩn ép công nghệ cao cùng lớp Memory Foam siêu đàn hồi (độ phục hồi 98%), bề mặt vải gấm thun 4 chiều Viscose chần xoáy thoáng khí cực êm.',
+    visualAnnotations: [
+      {
+        label: 'Cấu tạo đa tầng đột phá: Bông Tinh Khiết Kháng Khuẩn + Memory Foam Đàn Hồi',
+        detail:
+          'Khắc phục hoàn toàn nhược điểm quá cứng của đệm bông ép truyền thống và quá trũng của đệm lò xo cũ, giúp nâng đỡ 5 vùng cột sống và chống đau mỏi lưng.',
+      },
+      {
+        label: 'Áo đệm vải Gấm Thun 4 chiều & sợi gỗ tự nhiên Viscose chần bông Microfiber',
+        detail:
+          'Mặt trên chần xoáy 3D lưu thông không khí tối ưu, kiểm soát độ ẩm mùa nồm và mang lại cảm giác êm mát ngay khi đặt lưng.',
+      },
+      {
+        label: 'Có đủ 2 phiên bản: Gập 2 tiện di chuyển cầu thang & Nguyên tấm bề thế (17cm–32cm)',
+        detail:
+          'Bấm xem ảnh số 2 để chiêm ngưỡng phiên bản Nguyên Tấm thành đệm chần múi sang trọng chuẩn Resort 5 sao.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'DSH-BE-01 (Đệm Cao Cấp Sông Hồng Back Essential Thế Hệ 4)' },
+      { label: 'Giá niêm yết hãng', value: '11.300.000đ – 14.730.000đ / tấm (Tùy độ dày 17cm – 32cm)' },
+      { label: 'Giá ưu đãi Tuyến Hoa', value: 'Chỉ từ 6.750.000đ – 8.850.000đ / tấm (Chiết khấu tới 40%)' },
+      { label: 'Chất liệu lõi & vỏ', value: 'Bông tinh khiết kháng khuẩn + Memory Foam | Vỏ Gấm Viscose chần Microfiber' },
+      { label: 'Bảo hành & Vận chuyển', value: 'Bảo hành chính hãng 5 năm – Xe tải Tuyến Hoa giao miễn phí tận giường' },
+    ],
+    articleParagraphs: [
+      'Đệm Sông Hồng Back Essential (Thế hệ thứ 4) là dòng đệm cao cấp mới nhất vừa được cập nhật vào danh mục phân phối chính hãng tại Showroom Tuyến Hoa. Sản phẩm được nghiên cứu chuyên sâu để thay thế các dòng đệm lò xo và cao su đắt đỏ, mang lại độ dày bề thế từ 17cm, 22cm, 27cm đến 32cm nhưng trọng lượng nhẹ hơn rất nhiều, dễ dàng vệ sinh và di chuyển.',
+      'Tại Tổng Kho Chăn Ga Gối Đệm Tuyến Hoa (Chợ Cháy, Ứng Hòa), khách hàng đặt mua Đệm Sông Hồng Back Essential được hưởng mức chiết khấu trực tiếp lên tới 40% so với giá niêm yết hãng (chỉ từ 6.750.000đ cho cỡ 1m6×2m và 6.950.000đ cho cỡ 1m8×2m), kèm đầy đủ tem cào chống hàng giả và bảo hành chính hãng 5 năm.'
+    ],
+    facebookPostCopy:
+      '👑🛌 [MẪU ĐỆM MỚI NHẤT] ĐỆM CAO CẤP SÔNG HỒNG BACK ESSENTIAL THẾ HỆ THỨ 4 – ÊM NHƯ KHÁCH SẠN 5 SAO, NÂNG ĐỠ CỘT SỐNG TUYỆT ĐỐI! ✨\n' +
+      '💰 GIÁ NIÊM YẾT HÃNG: 11.300.000đ – 14.730.000đ / tấm\n' +
+      '🔥 GIÁ KHUYẾN MÃI TẠI TỔNG KHO TUYẾN HOA (CHIẾT KHẤU TỚI 40%):\n' +
+      '   👉 Cỡ 1m6 × 2m (Dày 17cm – 22cm): Chỉ 6.750.000đ – 7.150.000đ\n' +
+      '   👉 Cỡ 1m8 × 2m (Dày 17cm – 22cm): Chỉ 6.950.000đ – 7.450.000đ\n' +
+      '   👉 Bản Siêu Dày Biệt Thự 27cm – 32cm: Chỉ 7.650.000đ – 8.850.000đ\n' +
+      '--------------------------------------------\n' +
+      '✅ Cấu tạo đa tầng thế hệ 4: Kết hợp Bông tinh khiết kháng khuẩn siêu nhẹ & lớp Memory Foam đàn hồi 98%.\n' +
+      '✅ Không quá cứng như bông ép cũ, không võng lưng như đệm lò xo thường – Cực tốt cho người đau lưng, thoát vị đĩa đệm!\n' +
+      '✅ Áo đệm vải Gấm Viscose chần bông Microfiber thoáng mát 4 mùa, có cả bản Gập 2 tiện lợi & Nguyên Tấm.\n' +
+      '🎁 Tặng ngay bộ ga gối cao cấp + Miễn phí xe tải Tuyến Hoa giao tận giường!\n' +
+      '📞 Gọi/Zalo Anh Tuyến đặt hàng chính hãng: 0344.727.528!',
+  },
+  {
+    id: 'nem-cao-su-thien-nhien-kim-cuong-happy-gold-dkchg01',
+    code: 'DKC-HG-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Nệm Cao Su 100% Thiên Nhiên Kim Cương Happy Gold & Diamond Luxury (Hệ 5.000 Lỗ Thoáng Khí Kép – Nâng Đỡ 5 Vùng Cơ Thể, Bảo Hành 12 Năm)',
+    shortTitle: 'Nệm Cao Su Thiên Nhiên Kim Cương Happy Gold',
+    priceDisplay: '4.950.000đ / tấm',
+    marketPriceRange: 'Giá thị trường: 6.840.000đ – 11.800.000đ / tấm',
+    marketPriceNote: 'Dòng nệm cao su thiên nhiên "Quốc Dân" bán chạy số 1 của Nệm Kim Cương: Đúc nguyên khối từ 100% mủ cao su tự nhiên không pha tạp chất, thiết kế hơn 5.000 lỗ tròn nhỏ mặt trên và 500 lỗ vuông lớn mặt dưới đối lưu không khí mát rượi.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Nệm Cao Su Kim Cương Happy Gold Dày 5cm (Cỡ 1,6m × 2,0m & 1,8m × 2,0m)',
+        marketPrice: '6.840.000đ – 7.500.000đ',
+        storePrice: '4.950.000đ – 5.550.000đ',
+        note: 'Tặng kèm 02 ruột gối cao su non cao cấp + Áo nệm gấm xốp',
+      },
+      {
+        sizeOrOption: '2. Nệm Cao Su Kim Cương Happy Gold Dày 10cm Chuẩn Vàng (Cỡ 1,6m×2m & 1,8m×2m)',
+        marketPrice: '10.530.000đ – 11.800.000đ',
+        storePrice: '7.650.000đ – 8.550.000đ',
+        note: 'Độ dày chuẩn nâng đỡ cột sống tối ưu, tặng 02 gối cao su + 01 bộ ga gối',
+      },
+      {
+        sizeOrOption: '3. Nệm Cao Su Kim Cương Happy Gold Dày 15cm / Diamond Luxury 2 Mặt Lỗ (1m6 & 1m8)',
+        marketPrice: '15.000.000đ – 18.200.000đ',
+        storePrice: '10.950.000đ – 12.800.000đ',
+        note: 'Bảo hành 12 năm chính hãng chống xẹp lún, đạt chứng chỉ LGA Đức & SGS Thụy Sĩ',
+      },
+    ],
+    numericPrice: 4950000,
+    unitLabel: '1 tấm 100% cao su thiên nhiên (Kèm quà tặng gối cao su & bảo hành 12 năm)',
+    standardDimensions: 'Cỡ 1,6m × 2,0m, 1,8m × 2,0m & 2,0m × 2,2m (Độ dày: 5cm, 10cm, 15cm)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/nem_cao_su_kim_cuong_happy_gold_1.jpg',
+    highlightTag: '100% Cao Su Thiên Nhiên · Bảo Hành 12 Năm',
+    summary:
+      'Hình ảnh thực tế cấu tạo lõi Nệm Cao Su Thiên Nhiên Kim Cương Happy Gold: Phía trong lớp áo nệm vải gấm xốp kháng khuẩn khóa kéo sang trọng là phôi cao su trắng sữa 100% tự nhiên với hơn 5.000 lỗ thoáng khí tròn đều tăm tắp, khử sạch mùi cao su hắc và nâng đỡ êm ái suốt 20 năm.',
+    visualAnnotations: [
+      {
+        label: 'Phôi nệm 100% Cao Su Thiên Nhiên nguyên khối đạt chuẩn xuất khẩu',
+        detail:
+          'Độ đàn hồi vượt trội giúp ôm sát đường cong sinh lý từ đầu, vai, lưng, hông đến chân mà không gây rung lắc khi người nằm cạnh xoay mình.',
+      },
+      {
+        label: 'Hệ thống 5.000 lỗ thông hơi tròn mặt trên & 500 lỗ vuông mặt dưới',
+        detail:
+          'Tạo luồng khí đối lưu liên tục, giúp lưng người nằm luôn khô thoáng mát mẻ vào mùa hè và ấm áp vào mùa đông.',
+      },
+      {
+        label: 'Áo nệm vải Gấm Xốp dệt hoa văn khóa kéo dễ tháo rời giặt giũ',
+        detail:
+          'Tích hợp lớp vải lót bảo vệ phôi cao su bên trong, đi kèm phiếu bảo hành chính hãng 12 năm của Tập đoàn Nệm Kim Cương.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'DKC-HG-01 (Nệm Cao Su Thiên Nhiên Kim Cương Happy Gold)' },
+      { label: 'Giá tại Tuyến Hoa (Dày 5cm)', value: '4.950.000đ (1m6×2m) | 5.550.000đ (1m8×2m) – Thị trường: 6,84Tr – 7,5Tr' },
+      { label: 'Giá tại Tuyến Hoa (Dày 10cm)', value: '7.650.000đ (1m6×2m) | 8.550.000đ (1m8×2m) – Thị trường: 10,53Tr – 11,8Tr' },
+      { label: 'Chứng nhận quốc tế', value: 'LGA (Đức) về độ bền đàn hồi, SGS (Thụy Sĩ) kháng khuẩn & OEKO-TEX' },
+      { label: 'Chế độ bảo hành', value: '12 Năm chính hãng Nệm Kim Cương – Đổi mới nếu xẹp lún' },
+    ],
+    articleParagraphs: [
+      'Nệm Cao Su Thiên Nhiên Kim Cương Happy Gold là dòng sản phẩm chủ lực được nhiều gia đình tại Ứng Hòa lựa chọn khi muốn đầu tư một tấm nệm cao su 100% tự nhiên bền bỉ từ 15–20 năm với mức giá hợp lý nhất. Toàn bộ mủ cao su được xử lý khử mùi bằng dây chuyền công nghệ Đức, mang hương thơm dịu nhẹ tự nhiên và an toàn tuyệt đối cho cả trẻ sơ sinh.',
+      'Khi đặt mua Nệm Cao Su Kim Cương Happy Gold tại Showroom Tuyến Hoa, quý khách được kiểm tra trực tiếp mặt cắt phôi cao su dập nổi logo Kim Cương chính hãng, hưởng mức giá sỉ rẻ hơn thị trường từ 2.000.000đ – 3.200.000đ/tấm cùng bộ quà tặng gối cao su non và ga gối cao cấp.'
+    ],
+    facebookPostCopy:
+      '💎🌿 [KHUYẾN MÃI LỚN] NỆM CAO SU 100% THIÊN NHIÊN KIM CƯƠNG HAPPY GOLD – BẢO HÀNH CHÍNH HÃNG 12 NĂM, ĐỘ BỀN TRÊN 20 NĂM! ✨\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 6.840.000đ – 11.800.000đ / tấm\n' +
+      '🔥 GIÁ SỈ TẠI TỔNG KHO TUYẾN HOA (TẶNG KÈM QUÀ LỚN):\n' +
+      '   👉 Độ dày 5cm: Cỡ 1m6×2m chỉ 4.950.000đ | Cỡ 1m8×2m chỉ 5.550.000đ (Tặng 2 gối cao su non)\n' +
+      '   👉 Độ dày 10cm: Cỡ 1m6×2m chỉ 7.650.000đ | Cỡ 1m8×2m chỉ 8.550.000đ (Tặng 2 gối cao su + 1 bộ ga gối)\n' +
+      '   👉 Độ dày 15cm / Bản Diamond Luxury 2 mặt lỗ: Chỉ từ 10.950.000đ\n' +
+      '--------------------------------------------\n' +
+      '✅ Đúc nguyên khối từ 100% mủ cao su thiên nhiên, nâng đỡ 5 vùng cơ thể êm ái không tiếng động.\n' +
+      '✅ Thiết kế >5.000 lỗ tròn nhỏ mặt trên & 500 lỗ vuông mặt dưới thoáng khí 4 mùa, không hầm bí lưng.\n' +
+      '✅ Đạt chứng chỉ quốc tế SGS Thụy Sĩ & LGA Đức – Bảo hành chính hãng 12 năm!\n' +
+      '🚛 Miễn phí xe tải Tuyến Hoa chở tận phòng ngủ – Kiểm tra hàng chính hãng mới thanh toán!\n' +
+      '📞 Gọi/Zalo đặt hàng ngay: 0344.727.528!',
+  },
+  {
+    id: 'dem-bong-ep-cao-cap-everon-artemis-ceramic-han-quoc-devat01',
+    code: 'DEV-AT-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Đệm Bông Ép Cao Cấp Everon Artemis & Everon Ceramic Hàn Quốc (Bông Advansa Nhập Khẩu Đức Kháng Khuẩn, Phát Tia Hồng Ngoại Xa Tốt Cho Tuần Hoàn Máu)',
+    shortTitle: 'Đệm Cao Cấp Everon Artemis & Ceramic Hàn Quốc',
+    priceDisplay: '3.850.000đ / tấm',
+    marketPriceRange: 'Giá niêm yết hãng: 5.190.000đ – 10.400.000đ / tấm',
+    marketPriceNote: 'Bộ đôi dòng đệm danh tiếng nhất của thương hiệu Everon Hàn Quốc (gồm ảnh bộ Đệm Gập 2 Everon Artemis vỏ gấm vàng hoàng gia & chi tiết mặt chần bông Advansa Đức): Phù hợp tuyệt đối cho người lớn tuổi, phụ nữ mang thai và phòng cưới sang trọng.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Đệm Bông Ép Everon Padding / Ceramic Dày 9cm (Cỡ 1,6m × 2,0m & 1,8m × 2,0m)',
+        marketPrice: '3.860.000đ – 5.590.000đ',
+        storePrice: '2.950.000đ – 4.150.000đ',
+        note: 'Sợi bông Ceramic phát tia hồng ngoại xa hỗ trợ tuần hoàn máu & giữ ấm mùa đông',
+      },
+      {
+        sizeOrOption: '2. Đệm Bông Ép Everon Ceramic Dày 14cm – 15cm (Cỡ 1,6m × 2,0m & 1,8m × 2,0m)',
+        marketPrice: '7.390.000đ – 8.290.000đ',
+        storePrice: '5.450.000đ – 6.150.000đ',
+        note: 'Độ phẳng chuẩn y khoa, không xẹp lún suốt 10 năm sử dụng',
+      },
+      {
+        sizeOrOption: '3. Đệm Cao Cấp Everon Artemis Gập 2 Vỏ Gấm Hoàng Gia (Dày 15cm – 18cm · 1m6 & 1m8)',
+        marketPrice: '7.750.000đ – 10.400.000đ',
+        storePrice: '5.850.000đ – 7.800.000đ',
+        note: 'Bông Advansa nhập khẩu Đức kháng khuẩn chống nấm mốc + Mặt chần gòn siêu êm',
+      },
+    ],
+    numericPrice: 3850000,
+    unitLabel: '1 tấm chính hãng Everon Hàn Quốc (Đầy đủ tem chống giả & bảo hành 5 năm)',
+    standardDimensions: 'Cỡ 1,6m × 2,0m, 1,8m × 2,0m & 2,0m × 2,2m (Độ dày: 9cm, 15cm, 18cm)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/dem_everon_artemis_1.png',
+    secondaryImages: [
+      '/assets/aistudio/dem_everon_artemis_2.jpg',
+    ],
+    highlightTag: 'Chính Hãng Everon Hàn Quốc · Bông Advansa Đức',
+    summary:
+      'Đỉnh cao đệm bông ép thương hiệu Everon Hàn Quốc: Phiên bản cao cấp Artemis thiết kế gập 2 tấm sang trọng với lớp áo vải Gấm hoa văn Hoàng Gia màu vàng Champagne chần bông Advansa nhập khẩu từ Đức, kết hợp dòng Everon Ceramic phát tia hồng ngoại xa giúp lưu thông khí huyết và bảo vệ cột sống.',
+    visualAnnotations: [
+      {
+        label: 'Lớp bông Advansa nhập khẩu CHLB Đức (4 lỗ thông khí siêu mịn)',
+        detail:
+          'Ngăn chặn sự xâm nhập của vi khuẩn, nấm mốc và bụi mịn, đạt chứng nhận tiêu chuẩn châu Âu, giữ bề mặt đệm luôn êm ái và thông thoáng.',
+      },
+      {
+        label: 'Công nghệ sợi Ceramic phát tia hồng ngoại xa tốt cho sức khỏe',
+        detail:
+          'Tăng cường tuần hoàn máu và giữ nhiệt ổn định khi ngủ, đặc biệt hữu ích cho ông bà lớn tuổi hay bị đau nhức xương khớp mùa lạnh.',
+      },
+      {
+        label: 'Thiết kế Gập 2 (Artemis) & Gập 3 (Ceramic) bọc vải Gấm الجاكار chính hãng',
+        detail:
+          'Đường viền may bo золотой tỉ mỉ, khóa kéo đồng dập nổi logo Everon và tem chống hàng giả điện tử chính hãng.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'DEV-AT-01 (Đệm Bông Ép Cao Cấp Everon Artemis & Everon Ceramic)' },
+      { label: 'Giá Everon Ceramic (9cm)', value: '3.850.000đ (1m6×2m) | 4.150.000đ (1m8×2m) – Giá hãng: 5,19Tr – 5,59Tr' },
+      { label: 'Giá Everon Artemis (15–18cm)', value: '5.850.000đ – 7.800.000đ (Giá hãng: 7.750.000đ – 10.400.000đ)' },
+      { label: 'Nguyên liệu cốt lõi', value: 'Bông Advansa nhập khẩu Đức + Sợi Ceramic hồng ngoại Hàn Quốc' },
+      { label: 'Bảo hành chính hãng', value: '5 Năm toàn quốc bởi Everon Việt Nam & Showroom Tuyến Hoa' },
+    ],
+    articleParagraphs: [
+      'Trong phân khúc đệm bông ép cao cấp tại Việt Nam, Everon Artemis và Everon Ceramic luôn giữ vị trí dẫn đầu nhờ độ bền vượt thời gian và tính năng chăm sóc sức khỏe khác biệt. Nếu Everon Ceramic nổi tiếng với sợi gốm phát tia hồng ngoại xa giúp kích thích tuần hoàn máu, thì Everon Artemis lại chinh phục các gia đình trẻ và phòng cưới nhờ thiết kế gập 2 tấm dày 15cm–18cm chần bông Advansa nhập khẩu từ Đức.',
+      'Showroom Tuyến Hoa cam kết cung cấp 100% sản phẩm Everon chính hãng nguyên tem mác nhà máy với mức chiết khấu sâu từ 20% – 25% so với giá niêm yết toàn quốc, hỗ trợ chở tận nhà và đặt lên khung giường hoàn toàn miễn phí.'
+    ],
+    facebookPostCopy:
+      '👑🇰🇷 [ĐỆM EVERON HÀN QUỐC CHÍNH HÃNG] BỘ ĐÔI EVERON ARTEMIS BÔNG ĐỨC & EVERON CERAMIC HỒNG NGOẠI CHĂM SÓC CỘT SỐNG! ✨\n' +
+      '💰 GIÁ NIÊM YẾT HÃNG: 5.190.000đ – 10.400.000đ / tấm\n' +
+      '🔥 GIÁ ƯU ĐÃI ĐẶC BIỆT TẠI SHOWROOM TUYẾN HOA:\n' +
+      '   👉 Đệm Everon Padding / Ceramic Dày 9cm (1m6 & 1m8): Chỉ từ 2.950.000đ – 4.150.000đ\n' +
+      '   👉 Đệm Everon Ceramic Dày 14cm–15cm (1m6 & 1m8): Chỉ từ 5.450.000đ – 6.150.000đ\n' +
+      '   👉 Đệm Hoàng Gia Everon Artemis Gập 2 Dày 15cm–18cm: Chỉ từ 5.850.000đ – 7.800.000đ\n' +
+      '--------------------------------------------\n' +
+      '✅ Sử dụng sợi bông Advansa nhập khẩu từ Đức kháng khuẩn, chống bụi mịn và nấm mốc tuyệt đối.\n' +
+      '✅ Sợi Ceramic phát tia hồng ngoại xa giúp lưu thông máu, giảm đau lưng cho người lớn tuổi.\n' +
+      '✅ Vỏ gấm Hoàng Gia chần bông sang trọng, độ phẳng chuẩn y khoa, bảo hành chính hãng 5 năm!\n' +
+      '📞 Gọi/Zalo Anh Tuyến tư vấn & giao tận nhà miễn phí: 0344.727.528!',
+  },
+  {
+    id: 'nem-cao-su-thien-nhien-lien-a-la-dome-cool-grey-dlald01',
+    code: 'DLA-LD-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Nệm Cao Su Thiên Nhiên Liên Á L\'A Dome Cool & L\'A Dome Grey (Cấu Trúc Mái Vòm Độc Quyền, Vải CoolAdapt Làm Mát & Than Hoạt Tính Khử Khuẩn – Bảo Hành 12 Năm)',
+    shortTitle: 'Nệm Cao Su Liên Á L\'A Dome Mái Vòm Thoáng Khí',
+    priceDisplay: '8.950.000đ / tấm',
+    marketPriceRange: 'Giá niêm yết hãng: 12.690.000đ – 17.500.000đ / tấm',
+    marketPriceNote: 'Tuyệt phẩm nệm cao su 100% thiên nhiên thế hệ mới của Liên Á (tải trực tiếp bộ ảnh L\'A Dome Premium/Cool & mặt cắt cấu trúc mái vòm tròn): Chịu lực gấp đôi nệm cao su truyền thống, tích hợp công nghệ làm mát CoolAdapt và than hoạt tính C.Fusion Latex.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Nệm Cao Su Thiên Nhiên Liên Á Classic (Dày 10cm · Cỡ 1,6m × 2,0m & 1,8m × 2,0m)',
+        marketPrice: '12.690.000đ – 15.690.000đ',
+        storePrice: '8.950.000đ – 10.950.000đ',
+        note: '100% cao su thiên nhiên thuần khiết, bảo hành chính hãng 10 năm',
+      },
+      {
+        sizeOrOption: '2. Nệm Cao Su Liên Á L\'A Dome Blue / Cool Cấu Trúc Mái Vòm (Dày 10cm · 1m6 & 1m8)',
+        marketPrice: '14.500.000đ – 16.290.000đ',
+        storePrice: '10.450.000đ – 11.850.000đ',
+        note: 'Áo nệm vải MicroModal / CoolAdapt tản nhiệt mát lạnh, tháo giặt cực dễ',
+      },
+      {
+        sizeOrOption: '3. Nệm Cao Su Liên Á L\'A Dome Grey Than Hoạt Tính Khử Khuẩn (Dày 10cm · 1m6 & 1m8)',
+        marketPrice: '16.500.000đ – 19.190.000đ',
+        storePrice: '11.950.000đ – 13.850.000đ',
+        note: 'Công nghệ C.Fusion Latex dẫn truyền than hoạt tính khử mùi & kháng khuẩn 99%',
+      },
+    ],
+    numericPrice: 8950000,
+    unitLabel: '1 tấm cao su Liên Á chính hãng (Bảo hành 12 năm & tặng bộ gối cao su)',
+    standardDimensions: 'Cỡ 1,6m × 2,0m & 1,8m × 2,0m (Độ dày: 10cm, 15cm)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/nem_cao_su_lien_a_ladome_1.jpg',
+    secondaryImages: [
+      '/assets/aistudio/nem_cao_su_lien_a_ladome_2.jpg',
+    ],
+    highlightTag: 'Liên Á L\'A Dome · Cấu Trúc Mái Vòm 12 Năm BH',
+    summary:
+      'Lấy cảm hứng từ kiến trúc mái vòm (Dome) vững chãi, Nệm Cao Su Liên Á L\'A Dome sở hữu các chân trụ tròn rỗng mặt dưới cùng rãnh thoát nhiệt thông minh, giúp hấp thụ chuyển động mượt mà, nâng đỡ tối ưu và thoáng khí gấp 2 lần nệm lỗ vuông thông thường.',
+    visualAnnotations: [
+      {
+        label: 'Thiết kế cấu trúc Mái Vòm (Dome) độc quyền chịu lực siêu bền',
+        detail:
+          'Các lỗ thông hơi dạng vòm tròn giúp phân tán trọng lực đồng đều theo mọi hướng, tăng tuổi thọ phôi cao su lên trên 25 năm (Bảo hành chính hãng 12 năm).',
+      },
+      {
+        label: 'Công nghệ làm mát CoolAdapt & Vải sợi tự nhiên MicroModal',
+        detail:
+          'Thúc đẩy sự bay hơi độ ẩm và mồ hôi nhanh chóng, giữ mặt nệm luôn mát mịn tự nhiên ngay cả trong những đêm hè oi bức.',
+      },
+      {
+        label: 'Tùy chọn phiên bản L\'A Dome Grey dẫn truyền Than Hoạt Tính',
+        detail:
+          'Khử sạch mùi hôi, ngăn ngừa nấm mốc và kháng khuẩn chủ động trong suốt vòng đời sử dụng sản phẩm.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'DLA-LD-01 (Nệm Cao Su Thiên Nhiên Liên Á L\'A Dome & Classic)' },
+      { label: 'Giá Liên Á Classic (10cm)', value: '8.950.000đ (1m6×2m) | 10.950.000đ (1m8×2m) – Giá hãng: 12,69Tr – 15,69Tr' },
+      { label: 'Giá Liên Á L\'A Dome (10cm)', value: '10.450.000đ – 13.850.000đ (Giá hãng: 14,50Tr – 19,19Tr)' },
+      { label: 'Cấu trúc lõi nệm', value: '100% Cao su thiên nhiên cấu trúc Mái Vòm (Dome) & Than hoạt tính' },
+      { label: 'Thời gian bảo hành', value: '12 Năm chính hãng Liên Á trên toàn quốc' },
+    ],
+    articleParagraphs: [
+      'Nệm Cao Su Liên Á L\'A Dome là dòng sản phẩm cao cấp xuất khẩu sang hơn 45 quốc gia nhờ thiết kế cấu trúc Mái Vòm (Dome) đột phá. Thay vì các lỗ vuông truyền thống, hệ thống vòm tròn dưới đáy nệm hoạt động như hàng trăm chiếc lò xo cao su tự nhiên độc lập, vừa nâng đỡ êm ái từng đốt sống lưng, vừa đẩy luồng khí nóng thoát ra ngoài tức thì.',
+      'Tại Showroom Tuyến Hoa, khách hàng đặt mua các dòng nệm Liên Á Classic, L\'A Dome Cool và L\'A Dome Grey được chiết khấu trực tiếp từ 25% – 30% so với giá niêm yết hãng, tặng kèm gối cao su Liên Á và miễn phí vận chuyển tận nhà.'
+    ],
+    facebookPostCopy:
+      '🌿🏛️ [SIÊU PHẨM NỆM LIÊN Á] NỆM CAO SU THIÊN NHIÊN LIÊN Á L\'A DOME CẤU TRÚC MÁI VÒM & COOLADAPT LÀM MÁT – BẢO HÀNH 12 NĂM! ✨\n' +
+      '💰 GIÁ NIÊM YẾT HÃNG: 12.690.000đ – 19.190.000đ / tấm\n' +
+      '🔥 GIÁ KHUYẾN MÃI TẠI TỔNG KHO TUYẾN HOA (TIẾT KIỆM TỚI 5 TRIỆU/TẤM):\n' +
+      '   👉 Nệm Cao Su Liên Á Classic 10cm (1m6 & 1m8): Chỉ 8.950.000đ – 10.950.000đ\n' +
+      '   👉 Nệm Cao Su Liên Á L\'A Dome Cool Mái Vòm 10cm: Chỉ 10.450.000đ – 11.850.000đ\n' +
+      '   👉 Nệm Cao Su Liên Á L\'A Dome Grey Than Hoạt Tính 10cm: Chỉ 11.950.000đ – 13.850.000đ\n' +
+      '--------------------------------------------\n' +
+      '✅ Cấu trúc Mái Vòm (Dome) độc quyền chịu lực gấp đôi và thoáng khí vượt trội.\n' +
+      '✅ Áo nệm vải MicroModal kết hợp công nghệ CoolAdapt mát lạnh tự nhiên, có khóa kéo tháo giặt dễ dàng.\n' +
+      '✅ Cam kết 100% chính hãng Liên Á, bảo hành 12 năm, tặng kèm bộ gối cao su cao cấp!\n' +
+      '📞 Gọi/Zalo Anh Tuyến tư vấn & giao tận giường: 0344.727.528!',
+  },
+  {
+    id: 'dem-chong-khuan-hanvico-nano-silver-eros-dhvnn01',
+    code: 'DHV-NN-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Đệm Chống Khuẩn Hanvico Nano Silver & Nano Eros Cao Cấp (Công Nghệ Bông Vô Trùng Fresh Ever Silver Diệt 99% Vi Khuẩn – Ấm Áp Như Lòng Mẹ)',
+    shortTitle: 'Đệm Chống Khuẩn Hanvico Nano Silver & Eros',
+    priceDisplay: '2.850.000đ / tấm',
+    marketPriceRange: 'Giá niêm yết hãng: 3.950.000đ – 7.500.000đ / tấm',
+    marketPriceNote: 'Dòng đệm bông ép kháng khuẩn nổi tiếng với thông điệp "Hanvico – Ấm Áp Như Lòng Mẹ" (gồm 02 mẫu mới nhất: Hanvico Nano Kháng Khuẩn Gập 3 & Hanvico Nano Eros tích hợp lớp Topper êm ái): Chống nấm mốc tuyệt đối trong thời tiết nồm ẩm miền Bắc.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Đệm Bông Ép Hanvico Gấm Chống Khuẩn / Nano Dày 9cm (Cỡ 1,6m×2m & 1,8m×2m)',
+        marketPrice: '3.950.000đ – 4.650.000đ',
+        storePrice: '2.850.000đ – 3.350.000đ',
+        note: 'Lõi bông Nano phân tử bạc diệt 99% vi trùng, thiết kế gấp 3 gọn nhẹ',
+      },
+      {
+        sizeOrOption: '2. Đệm Bông Ép Hanvico Nano Kháng Khuẩn Dày 14cm – 15cm (Cỡ 1,6m×2m & 1,8m×2m)',
+        marketPrice: '5.500.000đ – 6.400.000đ',
+        storePrice: '3.950.000đ – 4.550.000đ',
+        note: 'Vỏ gấm CPS chống cháy lan, chống thấm bụi và giữ phẳng cột sống',
+      },
+      {
+        sizeOrOption: '3. Đệm Cao Cấp Hanvico Nano Eros / U.Eros Tích Hợp Topper Êm Ái (1m6 & 1m8)',
+        marketPrice: '6.800.000đ – 8.200.000đ',
+        storePrice: '4.850.000đ – 5.850.000đ',
+        note: 'Kết hợp lõi bông Nano cứng vững và lớp Foam Topper vải Tencel mát mịn',
+      },
+    ],
+    numericPrice: 2850000,
+    unitLabel: '1 tấm chính hãng Hanvico (Bảo hành 5 năm & miễn phí vận chuyển)',
+    standardDimensions: 'Cỡ 1,6m × 2,0m, 1,8m × 2,0m & 2,0m × 2,2m (Độ dày: 9cm, 14cm, 18cm)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/dem_hanvico_nano_khang_khuan_1.png',
+    secondaryImages: [
+      '/assets/aistudio/dem_hanvico_nano_eros_2.png',
+    ],
+    highlightTag: 'Hanvico Nano Bạc · Diệt 99% Vi Khuẩn Mùa Nồm',
+    summary:
+      'Ứng dụng công nghệ trải bông đứng kết hợp sợi kháng khuẩn Nano Bạc (Fresh Ever Silver) độc quyền Hàn Quốc, Đệm Hanvico Nano tiêu diệt tới 99% vi khuẩn và nấm mốc gây mùi mùa nồm ẩm, bảo vệ hệ hô hấp cho trẻ nhỏ và người lớn tuổi.',
+    visualAnnotations: [
+      {
+        label: 'Lõi bông Nano Bạc (Fresh Ever Silver) kháng khuẩn & khử mùi 99%',
+        detail:
+          'Các hạt Nano bạc bao phủ quanh sợi bông Polyester nguyên sinh giúp ngăn chặn vi trùng, nấm mốc phát triển ngay cả trong mùa mưa phùn nồm ẩm miền Bắc.',
+      },
+      {
+        label: 'Công nghệ ép nhiệt đứng tạo độ đàn hồi vững chãi, không võng lún',
+        detail:
+          'Giúp nâng đỡ xương sống thẳng tự nhiên, cực kỳ thích hợp cho trẻ em đang tuổi phát triển chiều cao và người bị đau dây thần kinh tọa.',
+      },
+      {
+        label: 'Phiên bản nâng cấp Hanvico Nano Eros (Xem ảnh số 2) bọc vải Tencel chần bông',
+        detail:
+          'Bề mặt chần múi sang trọng với họa tiết thêu tinh tế, mang lại độ êm ái vượt trội mà vẫn giữ cốt đệm phẳng phiu.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'DHV-NN-01 (Đệm Chống Khuẩn Hanvico Nano Silver & Nano Eros)' },
+      { label: 'Giá Hanvico Nano (9cm)', value: '2.850.000đ (1m6×2m) | 3.350.000đ (1m8×2m) – Giá hãng: 3,95Tr – 4,65Tr' },
+      { label: 'Giá Hanvico Eros Cao Cấp', value: '4.850.000đ – 5.850.000đ (Giá hãng: 6.800.000đ – 8.200.000đ)' },
+      { label: 'Công nghệ độc quyền', value: 'Bông chống khuẩn Nano Bạc Fresh Ever Silver + Vỏ Gấm / Tencel CPS' },
+      { label: 'Bảo hành chính hãng', value: '5 Năm toàn quốc – Tem chống hàng giả Hanvico' },
+    ],
+    articleParagraphs: [
+      'Với khí hậu miền Bắc thường xuyên có mùa nồm ẩm kéo dài, các loại đệm thông thường rất dễ bị tích tụ hơi ẩm và phát sinh nấm mốc. Đệm chống khuẩn Hanvico Nano Silver và Hanvico Nano Eros chính là lời giải hoàn hảo nhờ lõi bông tích hợp phân tử Nano bạc kháng khuẩn 99%, kết hợp lớp vỏ gấm CPS chống thấm bụi và chống cháy lan.',
+      'Tại Showroom Tuyến Hoa (Chợ Cháy, Ứng Hòa), trọn bộ các dòng đệm Hanvico chính hãng đang được trợ giá ưu đãi chỉ từ 2.850.000đ/tấm, giao hàng miễn phí tận phòng ngủ ngay trong ngày.'
+    ],
+    facebookPostCopy:
+      '🛡️🛌 [HANVICO – ẤM ÁP NHƯ LÒNG MẸ] ĐỆM CHỐNG KHUẨN HANVICO NANO SILVER & NANO EROS – DIỆT 99% VI KHUẨN, CHỐNG NẤM MỐC MÙA NỒM! ✨\n' +
+      '💰 GIÁ NIÊM YẾT HÃNG: 3.950.000đ – 8.200.000đ / tấm\n' +
+      '🔥 GIÁ ƯU ĐÃI TẠI SHOWROOM TUYẾN HOA (CHIẾT KHẤU TỚI 30%):\n' +
+      '   👉 Đệm Hanvico Gấm / Nano Chống Khuẩn Dày 9cm (1m6 & 1m8): Chỉ 2.850.000đ – 3.350.000đ\n' +
+      '   👉 Đệm Hanvico Nano Chống Khuẩn Dày 14cm–15cm (1m6 & 1m8): Chỉ 3.950.000đ – 4.550.000đ\n' +
+      '   👉 Đệm Cao Cấp Hanvico Nano Eros Tích Hợp Topper Êm Ái: Chỉ 4.850.000đ – 5.850.000đ\n' +
+      '--------------------------------------------\n' +
+      '✅ Công nghệ bông vô trùng Nano Bạc (Fresh Ever Silver) tiêu diệt 99% vi trùng, bảo vệ đường hô hấp cho bé.\n' +
+      '✅ Ép nhiệt đứng giữ phẳng cột sống, không xẹp lún, vỏ gấm CPS chống bám bụi sang trọng.\n' +
+      '✅ Bảo hành chính hãng 5 năm – Miễn phí xe tải Tuyến Hoa chở tận nhà!\n' +
+      '📞 Gọi/Zalo đặt hàng ngay: 0344.727.528 (Tuyến Hoa)!',
+  },
+
   // ===========================================================================
   // 00. BỘ 04 BÀI ĐĂNG MỚI NHẤT TỪ 02 VIDEO & 06 ẢNH VỪA TẢI LÊN:
   //     MÀNH TRÚC BIỆT THỰ 3 TẦNG, RÈM GỖ PHÒNG THỜ & MÀN HỘP THÔNG MINH VÂN GỖ
@@ -3833,15 +4282,17 @@ export function generateFullCatalogFacebookPost(category: NewProductCategory = '
     '📞 Hotline / Zalo đặt hàng & lắp đặt tận nhà: 0344.727.528\n' +
     `🌐 Website chính thức (Xem đủ ${ANNOTATED_PRODUCT_POSTS.length} mẫu & bảng giá): ${OFFICIAL_WEBSITE_URL}\n` +
     '==================================================\n' +
-    '📋 BẢNG GIÁ NIÊM YẾT RÕ RÀNG (RẺ HƠN GIÁ THỊ TRƯỜNG 15% – 30%):\n' +
-    '1️⃣ ĐỆM GẤP 2 CHẦN MÚI, ĐỆM KIM CƯƠNG, TH VICUNA 5 SAO, EVERHOME, MÀN HỘP VÂN GỖ, MÀN KHUNG & CHIẾU MÂY:\n' +
+    '📋 BẢNG GIÁ NIÊM YẾT RÕ RÀNG (RẺ HƠN GIÁ THỊ TRƯỜNG 15% – 40%):\n' +
+    '1️⃣ CÁC MẪU ĐỆM MỚI NHẤT (SÔNG HỒNG GEN 4, KIM CƯƠNG HAPPY GOLD, EVERON ARTEMIS, LIÊN Á L\'A DOME, HANVICO NANO), MÀN HỘP & CHIẾU MÂY:\n' +
+    '   • Đệm Cao Cấp Sông Hồng Back Essential Thế Hệ 4 (Dày 17–32cm): Cỡ 1m6×2m chỉ từ 6.750.000đ | Cỡ 1m8×2m chỉ từ 6.950.000đ (Giá hãng: 11,3Tr – 14,7Tr).\n' +
+    '   • Nệm Cao Su 100% Thiên Nhiên Kim Cương Happy Gold (BH 12 năm): Dày 5cm từ 4.950.000đ | Dày 10cm từ 7.650.000đ (Tặng bộ gối cao su non + ga gối).\n' +
+    '   • Đệm Everon Hàn Quốc Chính Hãng: Dòng Ceramic hồng ngoại dày 9cm từ 3.850.000đ | Dòng Hoàng Gia Everon Artemis bông Đức dày 15–18cm từ 5.850.000đ.\n' +
+    '   • Nệm Cao Su Thiên Nhiên Liên Á Classic & L\'A Dome Mái Vòm (BH 12 năm): Cỡ 1m6 & 1m8 dày 10cm từ 8.950.000đ – 11.950.000đ.\n' +
+    '   • Đệm Chống Khuẩn Hanvico Nano Silver & Nano Eros: Cỡ 1m6 & 1m8 từ 2.850.000đ – 4.850.000đ.\n' +
     '   • Màn Hộp Thông Minh Thu Gọn Đầu Giường (Khung Inox 304 & 201, khắc Laser): Bản Hộp Trắng Sứ 1.250.000đ/bộ | Bản Hộp Vân Gỗ 1.350.000đ/bộ | Cỡ 2m×2m2 giá 1.550.000đ/bộ.\n' +
     '   • Màn khung Inox ròng rọc giường đôi Rộng 1,8m × Dài 2,0m: 1.000.000đ / 1 bộ (Giá thị trường: 1.250.000đ – 1.450.000đ).\n' +
-    '   • Đệm Gấp 2 Chần Múi Lông Vũ & Kẻ Caro Thành Vải Bố (Dày 18–20cm): Cỡ 1m6×2m từ 1.750.000đ – 1.850.000đ | Cỡ 1m8×2m từ 1.950.000đ – 2.050.000đ.\n' +
-    '   • Đệm Bông Tinh Khiết Mặt Trần Kim Cương & Kim Cương Plaza (BH 5 năm): Cỡ 1m6×2m giá 1.850.000đ | Cỡ 1m8×2m giá 2.050.000đ.\n' +
-    '   • Đệm Cao Cấp TH VICUNA Luxury Sleep 5 Sao (Bọc góc da): Cỡ 1m6×2m giá 2.150.000đ | Cỡ 1m8×2m giá 2.350.000đ.\n' +
-    '   • Đệm Lò Xo Túi Độc Lập Everhome: Cỡ 1m6×2m giá 2.850.000đ | Cỡ 1m8×2m giá 3.250.000đ | Bản Gold 3 Viền giá 4.450.000đ.\n' +
-    '   • Nệm Cao Su 100% Thiên Nhiên Everhome (Bảo hành 10 năm): Cỡ 1m6×2m×10cm giá 4.850.000đ | Cỡ 1m8×2m×10cm giá 5.450.000đ.\n' +
+    '   • Đệm Gấp 2 Chần Múi Lông Vũ, Kim Cương Mặt Trần & TH VICUNA 5 Sao (Dày 18–20cm): Từ 1.750.000đ – 2.350.000đ.\n' +
+    '   • Đệm Lò Xo Túi Độc Lập Everhome: Cỡ 1m6×2m giá 2.850.000đ | Cỡ 1m8×2m giá 3.250.000đ | Nệm Cao Su Everhome 10cm giá 4.850.000đ.\n' +
     '   • Chiếu mây điều hòa lót lưới 3D & ngải cứu (tặng 2 vỏ gối + túi xách): Cỡ 1m6×2m giá 450.000đ/bộ | Cỡ 1m8×2m giá 490.000đ/bộ | Cỡ 2m×2m2 giá 550.000đ/bộ.\n\n' +
     '2️⃣ MÀNH TRÚC TRANH ĐỒNG QUÊ BIỆT THỰ, BẠT TỰ CUỐN CHE NẮNG MƯA, MÁI HIÊN & BẠT XẾP:\n' +
     '   • Mành trúc tự nhiên sơn PU che nắng mưa: 220.000đ / 1 m² | Mành trúc vẽ tranh đồng quê (Đôi Hạc Lúa Vàng, Mục Đồng Chăn Trâu): 260.000đ / 1 m² cả lắp.\n' +
