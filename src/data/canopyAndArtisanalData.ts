@@ -64,10 +64,21 @@ export interface DeduplicatedImageGroup {
 }
 
 export const DEDUPLICATION_SUMMARY = {
-  totalUploaded: 134,
+  totalUploaded: 152,
   totalRemovedDuplicates: 45,
-  totalUniquePublished: 89,
+  totalUniquePublished: 107,
   groups: [
+    {
+      id: 'dup-lo-18-anh-alyda-theu-hoang-gia-ren-cong-chua-2026',
+      groupTitle: 'Lô 18 Ảnh Mới Tải Lên: BST Chăn Ga Gối Lụa Tencel Alyda® 7 Món Thêu Hoàng Gia (Mẫu Đơn, Versailles, Vương Miện, Báo Gấm, Đàn Bướm) & Bộ Ren Công Chúa Tím Lavender',
+      keptImage: '1792915211500_4373635352308930219_4373635352308930219_04e295b3aa5b354be1569c1d47ab183e_3f6b8135.jpg',
+      removedCount: 0,
+      removedExamples: [
+        'Phân nhóm theo đúng họa tiết thêu đối xứng: Nhóm Hoa Mẫu Đơn Phú Quý 3 màu (Đỏ, Xanh Cổ Vịt, Xanh Tím Than – CGL-AL-01), Nhóm Cổ Điển Versailles & Baroque 3 mẫu (CGL-AL-02), Nhóm Vương Miện Hoàng Gia 3 màu (CGL-AL-03), Nhóm Báo Gấm Luxury 2 màu (CGL-AL-04), Nhóm Hoa Thiên Nhiên & Đàn Bướm 5 mẫu (CGL-AL-05) & Bộ Ren Công Chúa Tím Khoai Môn (CGL-CC-01)',
+        'Bổ sung phiên bản màu Xanh Than Ghi Chì của họa tiết Cung Đình LT 28 (1792915211751...) vào bộ chọn màu của bài đăng CGL-LT-28 để khách xem đủ 2 màu Đỏ & Xanh Than trên cùng 1 thẻ',
+      ],
+      reason: 'Quy hoạch toàn bộ 18 bức ảnh vừa tải lên thành các bộ sưu tập đồng nhất họa tiết thêu, giúp khách hàng bấm chọn đổi màu trực tiếp ngay trên từng thẻ sản phẩm.',
+    },
     {
       id: 'dup-lo-chan-ga-goi-lua-tencel-alyda-skysilk-18-anh',
       groupTitle: 'Lô 18 Ảnh Mới Tải Lên: Bộ Chăn Ga Gối Cưới Lụa Tencel Alyda® LT 28 (7 Món) & Bộ Sưu Tập 17 Mã Màu Lụa Tencel Sky Silk',
@@ -191,11 +202,19 @@ export const DEDUPLICATION_SUMMARY = {
 export const MARKET_PRICE_SUMMARY_TABLE: MarketPriceSummaryRow[] = [
   {
     id: 'mp-chan-ga-goi-lua-tencel-alyda-lt28',
-    productGroup: '1. Bộ Chăn Ga Gối Cưới Lụa Tencel Alyda® LT 28 (7 Món)',
-    specification: '1 Ga phủ + 1 Vỏ chăn có ruột + 4 Vỏ gối đầu + 1 Vỏ gối ôm',
+    productGroup: '1. Bộ Chăn Ga Gối Cưới Lụa Tencel Alyda® 7 Món Thêu Hoàng Gia',
+    specification: '1 Ga phủ + 1 Vỏ chăn có ruột + 4 Vỏ gối đầu + 1 Vỏ gối ôm (Đủ 18 mẫu thêu)',
     marketPrice: '3,20Tr – 4,20Tr / bộ',
     storePrice: '2,15Tr – 2,35Tr / bộ',
     warrantyAndService: 'Lụa Tencel thêu hoàng gia, tặng túi đựng & miễn phí giao',
+  },
+  {
+    id: 'mp-chan-ga-goi-ren-cong-chua-han-quoc',
+    productGroup: '2. Bộ Chăn Ga Gối Chần Bông Phối Ren Công Chúa Hàn Quốc',
+    specification: 'Ga phủ rủ ren hoa 2 tầng + Chăn chần + Vỏ gối bèo nhún (Tím Lavender)',
+    marketPrice: '1,95Tr – 2,65Tr / bộ',
+    storePrice: '1,35Tr – 1,55Tr / bộ',
+    warrantyAndService: 'Chần quả trám êm ái, ren thêu cao cấp không xù lông',
   },
   {
     id: 'mp-chan-ga-goi-lua-tencel-sky-silk',
@@ -427,25 +446,519 @@ export function calculateCanopyOrderTotal(input: CanopyPricingInput): CanopyPric
 
 export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
   // ===========================================================================
-  // 00-TOP. BỘ 06 BÀI ĐĂNG MỚI NHẤT TỪ 18 ẢNH VỪA TẢI LÊN:
-  //         CHĂN GA GỐI CƯỚI LỤA TENCEL ALYDA® LT 28 (7 MÓN) & 17 MÃ MÀU SKY SILK
+  // 00-LATEST. BỘ 06 BÀI ĐĂNG MỚI NHẤT TỪ 18 ẢNH VỪA TẢI LÊN:
+  //            BST CHĂN GA GỐI CƯỚI LỤA TENCEL ALYDA® 7 MÓN THÊU HOÀNG GIA
+  //            (MẪU ĐƠN, VERSAILLES, VƯƠNG MIỆN, BÁO GẤM, ĐÀN BƯỚM) & REN CÔNG CHÚA
+  // ===========================================================================
+  {
+    id: 'bo-chan-ga-goi-cuoi-lua-tencel-alyda-theu-hoa-mau-don-phu-quy-cglal01',
+    code: 'CGL-AL-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Bộ Chăn Ga Gối Cưới Lụa Tencel Alyda® 7 Món – Mẫu Thêu Hoa Mẫu Đơn Phú Quý Hoàng Gia (Đủ 03 Màu: Đỏ Hỷ Sự · Xanh Cổ Vịt · Xanh Tím Than)',
+    shortTitle: 'Bộ Lụa Tencel Alyda 7 Món Thêu Hoa Mẫu Đơn (Đỏ · Xanh Cổ Vịt · Tím Than)',
+    priceDisplay: '2.150.000đ / bộ 7 món',
+    marketPriceRange: 'Giá thị trường: 3.200.000đ – 4.200.000đ / bộ 7 món',
+    marketPriceNote: 'Tuyệt phẩm thêu Hoa Mẫu Đơn Phú Quý (Biểu tượng của sự vương giả, hạnh phúc viên mãn) trên nền Lụa Tencel Alyda® 7 món: Có đủ 3 màu Đỏ Hỷ Sự Phòng Cưới, Xanh Cổ Vịt Ngọc Lục Bảo và Xanh Tím Than.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Trọn Bộ 7 Món Lụa Tencel Alyda® Thêu Hoa Mẫu Đơn (Giường 1,6m×2,0m & 1,8m×2,0m)',
+        marketPrice: '3.200.000đ – 3.650.000đ / bộ',
+        storePrice: '2.150.000đ / bộ 7 món',
+        note: 'Chọn 1 trong 3 màu: Đỏ Hỷ Sự (Ảnh 1) · Xanh Cổ Vịt (Ảnh 2) · Xanh Tím Than (Ảnh 3)',
+      },
+      {
+        sizeOrOption: '2. Trọn Bộ 7 Món Lụa Tencel Alyda® Thêu Hoa Mẫu Đơn (Giường Đại 2,0m × 2,2m)',
+        marketPrice: '3.850.000đ – 4.200.000đ / bộ',
+        storePrice: '2.350.000đ / bộ 7 món',
+        note: 'Đóng gói chuẩn 7 món: 1 Ga phủ + 1 Vỏ chăn có sẵn ruột + 4 Vỏ gối đầu + 1 Vỏ gối ôm',
+      },
+      {
+        sizeOrOption: '3. Combo Phòng Cưới Hoàng Gia: Mua 02 Bộ Alyda® 7 Món (Thay Đổi 4 Mùa)',
+        marketPrice: '6.400.000đ – 7.300.000đ / 2 bộ',
+        storePrice: '4.100.000đ / 2 bộ (Tiết kiệm 200.000đ)',
+        note: 'Tặng kèm túi xách quà cưới sang trọng & miễn phí xe tải giao tận giường',
+      },
+    ],
+    numericPrice: 2150000,
+    unitLabel: '1 bộ Full 7 món Lụa Tencel Alyda® (Có sẵn ruột chăn & đủ 3 màu)',
+    standardDimensions: 'Đủ cỡ 1,6m × 2,0m, 1,8m × 2,0m & 2,0m × 2,2m (Quy cách 7 món)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/1792915211500_4373635352308930219_4373635352308930219_04e295b3aa5b354be1569c1d47ab183e_3f6b8135.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792915211554_4373635352308930219_4373635352308930219_51ff76f8ad7f55bb77456bc2a8119010_91199a71.jpg',
+      '/assets/aistudio/1792915211670_4373635352308930219_4373635352308930219_dcf43bbff59df1a2035f4e523e822d87_1a356b82.jpg',
+    ],
+    highlightTag: 'Alyda® 7 Món · Thêu Hoa Mẫu Đơn Phú Quý (3 Màu)',
+    summary:
+      'Bộ sưu tập Lụa Tencel Alyda® 7 Món thêu Hoa Mẫu Đơn Phú Quý Hoàng Gia đối xứng 3 cụm lớn ở chân chăn và chạy dọc gối ôm: Gồm 3 phiên bản màu sắc quyền quý – Đỏ Hỷ Sự Phòng Cưới (Ảnh 1), Xanh Cổ Vịt Ngọc Lục Bảo (Ảnh 2) và Xanh Tím Than Huyền Bí (Ảnh 3).',
+    visualAnnotations: [
+      {
+        label: 'Ảnh 1 – Màu Đỏ Hỷ Sự Phòng Cưới thêu Hoa Mẫu Đơn chỉ vàng kim rực rỡ',
+        detail:
+          'Bố cục thêu đối xứng 3 đài hoa mẫu đơn nở rộ kết hợp khung viền hoa văn cung đình Châu Âu, mang lại vượng khí tài lộc cho đêm tân hôn.',
+      },
+      {
+        label: 'Ảnh 2 – Màu Xanh Cổ Vịt Ngọc Lục Bảo (Peacock Teal) sang trọng, mát lành',
+        detail:
+          'Nền lụa Tencel xanh cổ vịt bóng mượt làm tôn bật từng cánh hoa mẫu đơn thêu chỉ vàng đồng và hồng phấn tinh xảo.',
+      },
+      {
+        label: 'Ảnh 3 – Màu Xanh Tím Than (Midnight Blue) chiều sâu quý phái',
+        detail:
+          'Gam màu trầm lịch lãm cực kỳ tôn nội thất gỗ và giường bọc da cao cấp, giữ vẻ mới đẹp suốt nhiều năm sử dụng.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'CGL-AL-01 (Bộ Lụa Tencel Alyda® 7 Món Thêu Hoa Mẫu Đơn Phú Quý)' },
+      { label: 'Bảng 03 màu có sẵn', value: '1. Đỏ Hỷ Sự | 2. Xanh Cổ Vịt (Peacock Teal) | 3. Xanh Tím Than' },
+      { label: 'Giá ưu đãi Tuyến Hoa', value: '2.150.000đ / bộ 7 món (1m6 & 1m8) | 2.350.000đ (2m×2m2)' },
+      { label: 'Quy cách đủ 07 món', value: '1 Ga phủ + 1 Vỏ chăn có ruột + 2 Gối đầu có viền + 2 Gối đầu không viền + 1 Gối ôm' },
+      { label: 'Chất liệu & Bảo hành', value: 'Lụa Tencel sinh học mềm mướt, thêu vi tính mật độ cao không bung chỉ' },
+    ],
+    articleParagraphs: [
+      'Trong nghệ thuật bài trí phòng ngủ Á Đông, Hoa Mẫu Đơn được mệnh danh là "Chúa tể của các loài hoa", biểu trưng cho sự phú quý, giàu sang và tình duyên sắt son. Mẫu chăn ga gối Lụa Tencel Alyda® 7 món mã CGL-AL-01 tái hiện sống động từng cánh hoa mẫu đơn bằng kỹ thuật thêu vi tính đa sắc chỉ vàng kim – bạc – hồng kem trên nền lụa Tencel bóng mượt.',
+      'Quý khách có thể bấm trực tiếp vào 3 ô ảnh thu nhỏ trên thẻ sản phẩm để ngắm trọn vẹn cả 3 gam màu: Đỏ Hỷ Sự, Xanh Cổ Vịt và Xanh Tím Than với giá ưu đãi tại Tổng Kho Tuyến Hoa chỉ 2.150.000đ/bộ 7 món.'
+    ],
+    facebookPostCopy:
+      '🌺👑 [SIÊU PHẨM ALYDA® 7 MÓN] BỘ CHĂN GA GỐI LỤA TENCEL THÊU HOA MẪU ĐƠN PHÚ QUÝ HOÀNG GIA – ĐỦ 3 MÀU ĐỎ CƯỚI · XANH CỔ VỊT & TÍM THAN! ✨\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 3.200.000đ – 4.200.000đ / bộ 7 món\n' +
+      '🔥 GIÁ TẬN GỐC TẠI SHOWROOM TUYẾN HOA: Chỉ 2.150.000đ / trọn bộ 7 món (Cỡ 2m×2m2: 2.350.000đ)!\n' +
+      '--------------------------------------------\n' +
+      '🎨 ĐỦ 03 GAM MÀU ĐẲNG CẤP CHO PHÒNG CƯỚI & BIỆT THỰ:\n' +
+      '   🔴 Màu Đỏ Hỷ Sự: Rực rỡ, viên mãn cho phòng tân hôn\n' +
+      '   🦚 Màu Xanh Cổ Vịt (Peacock Teal): Mát mắt, sang trọng chuẩn Resort\n' +
+      '   🌌 Màu Xanh Tím Than: Lịch lãm, chiều sâu, siêu sạch\n' +
+      '🎁 Đóng gói đủ 7 món (1 Ga phủ + 1 Chăn Lụa CÓ SẴN RUỘT + 4 Vỏ gối đầu + 1 Vỏ gối ôm thêu nổi).\n' +
+      '📞 Gọi/Zalo Anh Tuyến đặt hàng giao ngay: 0344.727.528!',
+  },
+  {
+    id: 'bo-chan-ga-goi-cuoi-lua-tencel-alyda-theu-versailles-baroque-cglal02',
+    code: 'CGL-AL-02',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Bộ Chăn Ga Gối Cưới Lụa Tencel Alyda® 7 Món – Mẫu Thêu Hoa Văn Cổ Điển Versailles & Baroque Đại Cát (03 Mẫu: Đỏ Baroque · Đỏ Versailles · Ghi Tím)',
+    shortTitle: 'Bộ Lụa Tencel Alyda 7 Món Thêu Versailles & Baroque (3 Mẫu)',
+    priceDisplay: '2.150.000đ / bộ 7 món',
+    marketPriceRange: 'Giá thị trường: 3.200.000đ – 4.200.000đ / bộ 7 món',
+    marketPriceNote: 'Bộ 3 thiết kế thêu hoa văn Cung Điện Versailles & Baroque Châu Âu sang trọng bậc nhất của thương hiệu Alyda®: Gồm Đỏ Hỷ Sự Baroque Đại Cát, Đỏ Hỷ Sự Khung Versailles Chỉ Vàng và Ghi Tím Khói Versailles.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Trọn Bộ 7 Món Lụa Tencel Alyda® Versailles / Baroque (1,6m×2,0m & 1,8m×2,0m)',
+        marketPrice: '3.200.000đ – 3.650.000đ / bộ',
+        storePrice: '2.150.000đ / bộ 7 món',
+        note: 'Chọn Mẫu 1 (Đỏ Baroque), Mẫu 2 (Đỏ Versailles) hoặc Mẫu 3 (Ghi Tím Versailles)',
+      },
+      {
+        sizeOrOption: '2. Trọn Bộ 7 Món Lụa Tencel Alyda® Versailles / Baroque (Giường Đại 2,0m×2,2m)',
+        marketPrice: '3.850.000đ – 4.200.000đ / bộ',
+        storePrice: '2.350.000đ / bộ 7 món',
+        note: 'Lụa Tencel dệt vân Jacquard chìm + Thêu nổi hoa văn hoàng gia vàng kim',
+      },
+      {
+        sizeOrOption: '3. Mua Kèm Đệm Cưới Hoặc Màn Hộp Thông Minh Vân Gỗ Tại Tuyến Hoa',
+        marketPrice: '4.600.000đ – 5.800.000đ / combo',
+        storePrice: 'Giảm trực tiếp 100.000đ – 200.000đ',
+        note: 'Miễn phí xe tải giao lắp trọn gói phòng cưới tận nhà',
+      },
+    ],
+    numericPrice: 2150000,
+    unitLabel: '1 bộ Full 7 món Lụa Tencel Alyda® (Có sẵn ruột chăn & đủ 3 mẫu)',
+    standardDimensions: 'Đủ cỡ 1,6m × 2,0m, 1,8m × 2,0m & 2,0m × 2,2m (Quy cách 7 món)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/1792915211805_4373635352308930219_4373635352308930219_6ca642034a200526a07f3b3f046af50c_fd787acc.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792915211896_4373635352308930219_4373635352308930219_a5377eb5effcd428845780be6f157f97_effdffc5.jpg',
+      '/assets/aistudio/1792915211612_4373635352308930219_4373635352308930219_d492e56ecdfbfc29bbffc018169defff_bb528983.jpg',
+    ],
+    highlightTag: 'Alyda® 7 Món · Thêu Cổ Điển Versailles & Baroque',
+    summary:
+      'Lấy cảm hứng từ hoa văn kiến trúc Cung Điện Versailles (Pháp), bộ 3 mẫu Lụa Tencel Alyda® 7 món (CGL-AL-02) gây ấn tượng mạnh mẽ với đường thêu uốn lượn ánh kim vương giả trên nền vải Đỏ Hỷ Sự dệt vân chìm và Ghi Tím Khói hiện đại.',
+    visualAnnotations: [
+      {
+        label: 'Ảnh 1 – Mẫu Đỏ Hỷ Sự Baroque Đại Cát: Cụm thêu trung tâm bề thế & viền góc ga phủ',
+        detail:
+          'Mặt vải đỏ dệt vân chìm tinh tế kết hợp hoa văn Baroque thêu chỉ vàng kim – xanh ngọc ở chính giữa chăn, gối ôm và cả 2 góc chân ga phủ.',
+      },
+      {
+        label: 'Ảnh 2 – Mẫu Đỏ Hỷ Sự Khung Versailles Chỉ Vàng thanh thoát, quý phái',
+        detail:
+          'Thiết kế khung viền chữ U thêu hoa văn cổ điển Pháp chạy dọc mặt chăn và 4 góc vỏ gối đầu, tôn vẻ đẹp sang trọng vượt thời gian.',
+      },
+      {
+        label: 'Ảnh 3 – Mẫu Ghi Tím Khói Khung Versailles Chỉ Vàng lịch lãm',
+        detail:
+          'Sự kết hợp hoàn hảo giữa nền lụa Ghi Tím trầm ấm và hoa văn thêu chỉ vàng ánh kim nổi bật.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'CGL-AL-02 (Bộ Lụa Tencel Alyda® 7 Món Thêu Versailles & Baroque)' },
+      { label: 'Bảng 03 mẫu trong bài', value: '1. Đỏ Baroque Đại Cát | 2. Đỏ Khung Versailles | 3. Ghi Tím Versailles' },
+      { label: 'Giá tại Tuyến Hoa', value: '2.150.000đ / bộ 7 món (1m6 & 1m8) | 2.350.000đ (2m×2m2)' },
+      { label: 'Chi tiết 07 món', value: '1 Ga phủ + 1 Vỏ chăn có ruột + 2 Gối đầu có viền + 2 Gối đầu không viền + 1 Gối ôm' },
+      { label: 'Cam kết chất lượng', value: 'Chính hãng Alyda® – Mặt lụa Tencel mát mịn, không phai màu' },
+    ],
+    articleParagraphs: [
+      'Đối với những gia chủ yêu thích vẻ đẹp sang trọng mang hơi hướng Tân Cổ Điển Châu Âu, bộ sưu tập Lụa Tencel Alyda® thêu hoa văn Versailles & Baroque (mã CGL-AL-02) là điểm nhấn hoàn mỹ cho chiếc giường cưới hoặc phòng ngủ Master.',
+      'Toàn bộ 3 mẫu Đỏ Baroque, Đỏ Versailles và Ghi Tím Versailles đều được đóng gói chuẩn 7 món (kèm sẵn ruột chăn) với mức giá ưu đãi tại Showroom Tuyến Hoa chỉ 2.150.000đ/bộ.'
+    ],
+    facebookPostCopy:
+      '🏛️👑 [ĐẲNG CẤP HOÀNG GIA PHÁP] BỘ CHĂN GA GỐI CƯỚI LỤA TENCEL ALYDA® 7 MÓN THÊU HOA VĂN VERSAILLES & BAROQUE! ✨\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 3.200.000đ – 4.200.000đ / bộ 7 món\n' +
+      '🔥 GIÁ ƯU ĐÃI TẠI TỔNG KHO TUYẾN HOA: Chỉ 2.150.000đ / bộ 7 món (Cỡ 2m×2m2: 2.350.000đ)!\n' +
+      '--------------------------------------------\n' +
+      '🎨 03 MẪU THÊU HOÀNG GIA TRONG BÀI:\n' +
+      '   ❤️ Mẫu 1: Đỏ Hỷ Sự Thêu Hoa Văn Baroque Đại Cát (Thêu cả góc chân ga phủ)\n' +
+      '   💛 Mẫu 2: Đỏ Hỷ Sự Thêu Khung Cung Điện Versailles Chỉ Vàng\n' +
+      '   💜 Mẫu 3: Ghi Tím Khói Thêu Khung Versailles Chỉ Vàng lịch lãm\n' +
+      '🎁 Full bộ 7 món: 1 Ga phủ + 1 Chăn Lụa CÓ SẴN RUỘT + 4 Vỏ gối đầu + 1 Vỏ gối ôm.\n' +
+      '📞 Gọi/Zalo chốt mẫu ngay: 0344.727.528 (Tuyến Hoa)!',
+  },
+  {
+    id: 'bo-chan-ga-goi-lua-tencel-alyda-theu-vuong-mien-vien-song-cglal03',
+    code: 'CGL-AL-03',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Bộ Chăn Ga Gối Lụa Tencel Alyda® 7 Món – Mẫu Thêu Vương Miện Hoàng Gia (Royal Crown) & Viền Sóng Thổ Cẩm (Hồng Phấn · Xanh Đại Dương · Ghi Tím)',
+    shortTitle: 'Bộ Lụa Tencel Alyda 7 Món Thêu Vương Miện & Viền Sóng (3 Màu)',
+    priceDisplay: '2.150.000đ / bộ 7 món',
+    marketPriceRange: 'Giá thị trường: 3.200.000đ – 4.200.000đ / bộ 7 món',
+    marketPriceNote: 'Thiết kế thêu khung Vương Miện Hoàng Gia Châu Âu (Royal Crown) và Viền Sóng Thổ Cẩm Vàng Kim trên nền Lụa Tencel Alyda® 7 món: Gồm Hồng Phấn Pastel, Xanh Đại Dương Đậm và Ghi Tím Than.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Trọn Bộ 7 Món Lụa Tencel Alyda® Vương Miện / Viền Sóng (1,6m×2m & 1,8m×2m)',
+        marketPrice: '3.200.000đ – 3.650.000đ / bộ',
+        storePrice: '2.150.000đ / bộ 7 món',
+        note: 'Chọn màu: Hồng Phấn Vương Miện (Ảnh 1) · Xanh Đại Dương (Ảnh 2) · Ghi Tím (Ảnh 3)',
+      },
+      {
+        sizeOrOption: '2. Trọn Bộ 7 Món Lụa Tencel Alyda® Cỡ Đại 2,0m × 2,2m',
+        marketPrice: '3.850.000đ – 4.200.000đ / bộ',
+        storePrice: '2.350.000đ / bộ 7 món',
+        note: 'Đóng gói nguyên bộ 7 món có sẵn ruột chăn êm nhẹ',
+      },
+      {
+        sizeOrOption: '3. Mua Từ 02 Bộ Alyda® 7 Món Trở Lên',
+        marketPrice: '6.400.000đ – 7.300.000đ / 2 bộ',
+        storePrice: '4.100.000đ / 2 bộ',
+        note: 'Miễn phí vận chuyển tận giường khu vực Ứng Hòa – Hà Nội',
+      },
+    ],
+    numericPrice: 2150000,
+    unitLabel: '1 bộ Full 7 món Lụa Tencel Alyda® (Có sẵn ruột chăn & đủ 3 màu)',
+    standardDimensions: 'Đủ cỡ 1,6m × 2,0m, 1,8m × 2,0m & 2,0m × 2,2m (Quy cách 7 món)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/1792915211449_4373635352308930219_4373635352308930219_e510b69a1604206e2f95a4c9066f8007_f46e8239.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792915211725_4373635352308930219_4373635352308930219_1fa60294180917c6906684498dbe263c_d804d0dc.jpg',
+      '/assets/aistudio/1792915211527_4373635352308930219_4373635352308930219_d60f07cd91339803fe6a144c786dcbbe_6f96e9ba.jpg',
+    ],
+    highlightTag: 'Alyda® 7 Món · Thêu Vương Miện & Viền Sóng (3 Màu)',
+    summary:
+      'Vẻ đẹp thanh lịch, quý phái chuẩn Hoàng Gia Châu Âu: Bộ đôi mẫu thêu Vương Miện (Royal Crown) màu Hồng Phấn Pastel (Ảnh 1) & Xanh Đại Dương Đậm (Ảnh 2) kết hợp cùng mẫu thêu Viền Sóng Lượn & Đai Gối Ôm Thổ Cẩm Vàng Kim màu Ghi Tím Than (Ảnh 3).',
+    visualAnnotations: [
+      {
+        label: 'Ảnh 1 – Màu Hồng Phấn Pastel thêu khung Vương Miện Hoàng Gia ánh kim',
+        detail:
+          'Sắc hồng phấn ngọt ngào kết hợp đường thêu vương miện mềm mại trên cả 5 chiếc gối và mặt chăn, cực hợp phòng cưới trẻ trung.',
+      },
+      {
+        label: 'Ảnh 2 – Màu Xanh Đại Dương Đậm thêu khung Vương Miện Hoàng Gia nổi bật',
+        detail:
+          'Nền lụa xanh biển sâu làm rực sáng từng đường chỉ thêu vàng đồng, tạo cảm giác mát lạnh và sang trọng.',
+      },
+      {
+        label: 'Ảnh 3 – Màu Ghi Tím Than thêu Viền Sóng Kép & Đai Gối Ôm Thổ Cẩm',
+        detail:
+          'Điểm nhấn độc đáo ở đai thêu hoa văn thổ cẩm ánh kim ôm trọn chính giữa gối ôm và đường diềm lấp lánh dưới chân ga phủ.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'CGL-AL-03 (Bộ Lụa Tencel Alyda® 7 Món Thêu Vương Miện & Viền Sóng)' },
+      { label: 'Bảng 03 mẫu màu', value: '1. Hồng Phấn Vương Miện | 2. Xanh Đại Dương Vương Miện | 3. Ghi Tím Viền Sóng' },
+      { label: 'Giá tại Tuyến Hoa', value: '2.150.000đ / bộ 7 món (1m6 & 1m8) | 2.350.000đ (2m×2m2)' },
+      { label: 'Trọn bộ 07 món', value: '1 Ga phủ + 1 Vỏ chăn có ruột + 2 Gối đầu có viền + 2 Gối đầu không viền + 1 Gối ôm' },
+      { label: 'Ưu điểm vượt trội', value: 'Chất lụa Tencel 60s mát mịn, chống tĩnh điện, giặt máy bền màu' },
+    ],
+    articleParagraphs: [
+      'Những đường thêu Vương Miện (Royal Crown) và Viền Sóng Lượn của thương hiệu Alyda® mang đến sự cân bằng tuyệt vời giữa nét sang trọng hoàng gia và sự tinh gọn hiện đại. Bề mặt chăn không bị quá dày đặc chi tiết mà chừa khoảng lụa trơn bóng mượt để tôn lên chất liệu Tencel thượng hạng.',
+      'Bấm chọn từng ảnh nhỏ trên thẻ sản phẩm để xem cận cảnh 3 phiên bản Hồng Phấn, Xanh Đại Dương và Ghi Tím Than tại Showroom Tuyến Hoa.'
+    ],
+    facebookPostCopy:
+      '👑🌸 [BST ALYDA® ROYAL CROWN 7 MÓN] BỘ CHĂN GA GỐI LỤA TENCEL THÊU VƯƠNG MIỆN HOÀNG GIA & VIỀN SÓNG VÀNG KIM! ✨\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 3.200.000đ – 4.200.000đ / bộ 7 món\n' +
+      '🔥 GIÁ ƯU ĐÃI TẠI SHOWROOM TUYẾN HOA: Chỉ 2.150.000đ / trọn bộ 7 món (Cỡ 2m×2m2: 2.350.000đ)!\n' +
+      '--------------------------------------------\n' +
+      '🎨 03 MẪU MÀU SANG TRỌNG TRONG BÀI:\n' +
+      '   🌸 Mẫu 1: Hồng Phấn Pastel Thêu Vương Miện Hoàng Gia ngọt ngào\n' +
+      '   🌊 Mẫu 2: Xanh Đại Dương Đậm Thêu Vương Miện Chỉ Vàng quyền quý\n' +
+      '   ✨ Mẫu 3: Ghi Tím Than Thêu Viền Sóng & Đai Gối Ôm Thổ Cẩm Vàng Kim\n' +
+      '🎁 Đóng gói đủ 7 món (Có sẵn ruột chăn + Ga phủ + 5 Vỏ gối đồng bộ).\n' +
+      '📞 Gọi/Zalo đặt hàng ngay: 0344.727.528 (Tuyến Hoa)!',
+  },
+  {
+    id: 'bo-chan-ga-goi-lua-tencel-alyda-luxury-bao-gam-hoang-gia-cglal04',
+    code: 'CGL-AL-04',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Bộ Chăn Ga Gối Lụa Tencel Alyda® Luxury 7 Món – Mẫu Thêu Biểu Tượng Báo Gấm Hoàng Gia (Leopard Couture) (02 Màu: Trắng Kem Phối Ghi & Ghi Xám Khói)',
+    shortTitle: 'Bộ Lụa Tencel Alyda 7 Món Thêu Báo Gấm Luxury (Trắng Kem & Ghi Xám)',
+    priceDisplay: '2.150.000đ / bộ 7 món',
+    marketPriceRange: 'Giá thị trường: 3.200.000đ – 4.200.000đ / bộ 7 món',
+    marketPriceNote: 'Phiên bản giới hạn mang phong cách thời trang cao cấp Ý (Italian Haute Couture) của Alyda®: Gối ôm thêu nổi biểu tượng Báo Gấm Hoàng Gia kèm chữ ký Alyda, viền chăn phối họa tiết vân báo & sóng vàng kim.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Trọn Bộ 7 Món Lụa Tencel Alyda® Báo Gấm Luxury (1,6m×2,0m & 1,8m×2,0m)',
+        marketPrice: '3.200.000đ – 3.650.000đ / bộ',
+        storePrice: '2.150.000đ / bộ 7 món',
+        note: 'Chọn màu: Trắng Kem Sữa Phối Ghi (Ảnh 1) hoặc Ghi Xám Khói Phối Vàng (Ảnh 2)',
+      },
+      {
+        sizeOrOption: '2. Trọn Bộ 7 Món Lụa Tencel Alyda® Báo Gấm Luxury (Giường Đại 2,0m × 2,2m)',
+        marketPrice: '3.850.000đ – 4.200.000đ / bộ',
+        storePrice: '2.350.000đ / bộ 7 món',
+        note: 'Phong cách Penthouse & Biệt thự hiện đại, có sẵn ruột chăn đồng bộ',
+      },
+      {
+        sizeOrOption: '3. Mua Kèm Đệm Cao Su Hoặc Đệm Sông Hồng Thế Hệ 4 Tại Tuyến Hoa',
+        marketPrice: '4.600.000đ – 5.800.000đ',
+        storePrice: 'Giảm ngay 150.000đ vào tổng đơn',
+        note: 'Miễn phí xe tải Tuyến Hoa giao tận phòng ngủ',
+      },
+    ],
+    numericPrice: 2150000,
+    unitLabel: '1 bộ Full 7 món Lụa Tencel Alyda® Luxury (Có sẵn ruột chăn & đủ 2 màu)',
+    standardDimensions: 'Đủ cỡ 1,6m × 2,0m, 1,8m × 2,0m & 2,0m × 2,2m (Quy cách 7 món)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/1792915211698_4373635352308930219_4373635352308930219_ded577f4f7bab7dfecdc3b7f2ecce26b_756efc26.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792915211583_4373635352308930219_4373635352308930219_c93bd92548eea948f5817d2363fcc431_3d40a498.jpg',
+    ],
+    highlightTag: 'Alyda® Luxury 7 Món · Báo Gấm Haute Couture (2 Màu)',
+    summary:
+      'Đậm chất thời trang xa xỉ Châu Âu cho phòng ngủ Penthouse & Biệt thự hiện đại: Bộ đôi Lụa Tencel Alyda® 7 món thêu biểu tượng Báo Gấm Hoàng Gia (Leopard Couture) cùng chữ ký "Alyda" trên gối ôm, có đủ 2 phối màu Trắng Kem Sữa Phối Ghi (Ảnh 1) và Ghi Xám Khói Phối Vàng Kim (Ảnh 2).',
+    visualAnnotations: [
+      {
+        label: 'Ảnh 1 – Phối màu Trắng Kem Sữa & Ghi Bạc thanh lịch chuẩn Penthouse',
+        detail:
+          'Mặt chăn trắng kem sáng bừng phối mặt lật ghi xám và khung viền thêu vân báo gấm đan xen vân sóng vàng kim thời thượng.',
+      },
+      {
+        label: 'Ảnh 2 – Phối màu Ghi Xám Khói & Vàng Ánh Kim mạnh mẽ, quyền lực',
+        detail:
+          'Gối ôm thêu nổi hình Báo Gấm bằng chỉ vàng kim lấp lánh trên nền lụa ghi xám, mang lại vẻ đẹp cá tính độc bản.',
+      },
+      {
+        label: 'Quy cách đóng gói Full 07 Món cao cấp (Có sẵn ruột chăn êm ái)',
+        detail:
+          'Bao gồm: 01 Ga phủ phối viền + 01 Vỏ chăn có ruột + 04 Vỏ gối đầu viền chỉ vàng + 01 Vỏ gối ôm thêu Báo Gấm Alyda.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'CGL-AL-04 (Bộ Lụa Tencel Alyda® 7 Món Báo Gấm Leopard Couture)' },
+      { label: 'Bảng 02 màu có sẵn', value: '1. Trắng Kem Sữa Phối Ghi Bạc | 2. Ghi Xám Khói Phối Vàng Kim' },
+      { label: 'Giá tại Tuyến Hoa', value: '2.150.000đ / bộ 7 món (1m6 & 1m8) | 2.350.000đ (2m×2m2)' },
+      { label: 'Trọn bộ 07 món', value: '1 Ga phủ + 1 Vỏ chăn có ruột + 4 Vỏ gối đầu + 1 Vỏ gối ôm thêu Báo Gấm' },
+      { label: 'Phong cách thiết kế', value: 'Modern Luxury & Italian Couture – Chất lụa Tencel mát lạnh' },
+    ],
+    articleParagraphs: [
+      'Khác biệt hoàn toàn với các mẫu thêu hoa truyền thống, dòng Alyda® Leopard Couture (mã CGL-AL-04) được thiết kế dành riêng cho các căn hộ hiện đại và gia chủ yêu thích phong cách thời trang cao cấp. Điểm nhấn đắt giá nhất nằm ở chiếc gối ôm thêu nổi hình Báo Gấm kiêu hãnh cùng khung viền chăn ghép dải họa tiết nghệ thuật.',
+      'Sản phẩm có sẵn cả 2 tông màu Trắng Kem Phối Ghi và Ghi Xám Khói tại Showroom Tuyến Hoa với giá ưu đãi chỉ 2.150.000đ/bộ 7 món.'
+    ],
+    facebookPostCopy:
+      '🐆✨ [PHIÊN BẢN LUXURY HAUTE COUTURE] BỘ CHĂN GA GỐI LỤA TENCEL ALYDA® 7 MÓN THÊU BÁO GẤM HOÀNG GIA (2 MÀU TRẮNG KEM & GHI XÁM)! 🛌\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 3.200.000đ – 4.200.000đ / bộ 7 món\n' +
+      '🔥 GIÁ ƯU ĐÃI TẠI SHOWROOM TUYẾN HOA: Chỉ 2.150.000đ / trọn bộ 7 món (Cỡ 2m×2m2: 2.350.000đ)!\n' +
+      '--------------------------------------------\n' +
+      '🎨 02 PHỐI MÀU PENTHOUSE HIỆN ĐẠI:\n' +
+      '   🤍 Mẫu 1: Trắng Kem Sữa phối viền Ghi Bạc thanh lịch, sáng phòng\n' +
+      '   🩶 Mẫu 2: Ghi Xám Khói phối thêu Báo Gấm Vàng Kim sang trọng, cá tính\n' +
+      '🎁 Đóng gói đủ 7 món: 1 Ga phủ + 1 Chăn Lụa CÓ SẴN RUỘT + 4 Vỏ gối đầu + 1 Vỏ gối ôm thêu Báo Gấm Alyda.\n' +
+      '📞 Gọi/Zalo Anh Tuyến giao tận nhà: 0344.727.528!',
+  },
+  {
+    id: 'bo-chan-ga-goi-lua-tencel-alyda-theu-dan-buom-vuon-hoa-cglal05',
+    code: 'CGL-AL-05',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Bộ Chăn Ga Gối Lụa Tencel Alyda® 7 Món – BST Thêu Đàn Bướm Mùa Xuân, Hoa Mẫu Đơn Xanh & Hoa Nhí (05 Mẫu: Xanh Ngọc · Xanh Coban · Ghi Tím · Hồng Đào · Xanh Lam)',
+    shortTitle: 'Bộ Lụa Tencel Alyda 7 Món Thêu Đàn Bướm & Hoa Nghệ Thuật (5 Mẫu)',
+    priceDisplay: '2.150.000đ / bộ 7 món',
+    marketPriceRange: 'Giá thị trường: 3.200.000đ – 4.200.000đ / bộ 7 món',
+    marketPriceNote: 'Tuyển tập 05 mẫu thêu thiên nhiên nghệ thuật sống động nhất của Alyda® (Đàn Bướm Vũ Điệu Mùa Xuân, Hoa Mẫu Đơn Thanh Hoa, Vườn Hoa Love Is Promise & Hoa Nhí Lá Rơi): Mát lành, lãng mạn và tinh tế.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Trọn Bộ 7 Món Lụa Tencel Alyda® Thêu Hoa & Đàn Bướm (1,6m×2m & 1,8m×2m)',
+        marketPrice: '3.200.000đ – 3.650.000đ / bộ',
+        storePrice: '2.150.000đ / bộ 7 món',
+        note: 'Bấm chọn 1 trong 5 mẫu trên thanh ảnh thu nhỏ ngay dưới hình chính',
+      },
+      {
+        sizeOrOption: '2. Trọn Bộ 7 Món Lụa Tencel Alyda® Cỡ Đại 2,0m × 2,2m',
+        marketPrice: '3.850.000đ – 4.200.000đ / bộ',
+        storePrice: '2.350.000đ / bộ 7 món',
+        note: 'Đủ 7 món: 1 Ga phủ + 1 Chăn có sẵn ruột + 4 Vỏ gối đầu + 1 Vỏ gối ôm',
+      },
+      {
+        sizeOrOption: '3. Ưu Đãi Mua Từ 02 Bộ Alyda® 7 Món Bất Kỳ',
+        marketPrice: '6.400.000đ – 7.300.000đ / 2 bộ',
+        storePrice: '4.100.000đ / 2 bộ (Tiết kiệm 200.000đ)',
+        note: 'Miễn phí vận chuyển tận nhà & tặng túi đựng bảo quản',
+      },
+    ],
+    numericPrice: 2150000,
+    unitLabel: '1 bộ Full 7 món Lụa Tencel Alyda® (Có sẵn ruột chăn & đủ 5 mẫu)',
+    standardDimensions: 'Đủ cỡ 1,6m × 2,0m, 1,8m × 2,0m & 2,0m × 2,2m (Quy cách 7 món)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/1792915211832_4373635352308930219_4373635352308930219_c4966f3ae03156b04fa4394b17e74e2c_76003d64.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792915211778_4373635352308930219_4373635352308930219_7598a63eeea1f74b3bb881fbcca01067_0e9245a1.jpg',
+      '/assets/aistudio/1792915211473_4373635352308930219_4373635352308930219_48ced99a070fee3313ed92993558ea0a_7180765f.jpg',
+      '/assets/aistudio/1792915211870_4373635352308930219_4373635352308930219_f450e9ac2d42de96976826e7ba24ebb8_90820a26.jpg',
+      '/assets/aistudio/1792915211641_4373635352308930219_4373635352308930219_9ff3cff2fc2aec1560b697991e4dbdae_15077a40.jpg',
+    ],
+    highlightTag: 'Alyda® 7 Món · Thêu Đàn Bướm & Vườn Hoa (5 Mẫu)',
+    summary:
+      'Mang cả khu vườn mùa xuân mát lành vào phòng ngủ với 05 thiết kế thêu nổi 3D của Alyda®: (1) Xanh Ngọc Lục Bảo Thêu Đàn Bướm, (2) Xanh Coban Thêu Hoa Mẫu Đơn Thanh Hoa, (3) Ghi Tím Khói Thêu Vườn Hoa "Love is promise", (4) Hồng Đào San Hô Thêu Hoa Nhí Lá Rơi và (5) Xanh Lam Sapphire Thêu Hoa Nhí Lá Rơi.',
+    visualAnnotations: [
+      {
+        label: 'Ảnh 1 & 2 – Xanh Ngọc Thêu Đàn Bướm (Butterfly) & Xanh Coban Thêu Hoa Mẫu Đơn',
+        detail:
+          'Kỹ thuật thêu chuyển màu 3D làm từng cánh bướm và đóa hoa mẫu đơn xanh trắng nổi bật sống động trên nền lụa Tencel mát rượi.',
+      },
+      {
+        label: 'Ảnh 3 – Ghi Tím Khói Thêu Vườn Hoa Cẩm Tú ("Alyda – Love is promise")',
+        detail:
+          'Những nhành hoa cẩm tú cầu và bướm nhỏ vươn lên từ chân chăn kết hợp dòng chữ thêu tay lãng mạn trên cả 5 chiếc gối.',
+      },
+      {
+        label: 'Ảnh 4 & 5 – Bộ đôi Thêu Hoa Nhí & Lá Ngân Hạnh Rơi (Hồng Đào & Xanh Lam Sapphire)',
+        detail:
+          'Dải hoa nhí 5 cánh kết thành vòm ngang ngực chăn và điểm xuyết những chiếc lá rơi nhẹ nhàng khắp mặt chăn.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'CGL-AL-05 (Bộ Lụa Tencel Alyda® 7 Món Thêu Đàn Bướm & Vườn Hoa)' },
+      { label: 'Đủ 05 mẫu lựa chọn', value: '1. Xanh Ngọc Bướm | 2. Xanh Coban Hoa | 3. Ghi Tím Hoa | 4. Hồng Đào | 5. Xanh Sapphire' },
+      { label: 'Giá tại Tuyến Hoa', value: '2.150.000đ / bộ 7 món (1m6 & 1m8) | 2.350.000đ (2m×2m2)' },
+      { label: 'Quy cách 07 món', value: '1 Ga phủ + 1 Vỏ chăn có ruột + 2 Gối đầu có viền + 2 Gối đầu không viền + 1 Gối ôm' },
+      { label: 'Chất liệu vải', value: '100% Lụa Tencel cao cấp thoáng khí, thân thiện làn da nhạy cảm' },
+    ],
+    articleParagraphs: [
+      'Bộ sưu tập Lụa Tencel Alyda® 7 món chủ đề Thiên Nhiên & Mùa Xuân (mã CGL-AL-05) là lựa chọn tuyệt vời cho các gia đình yêu thích vẻ đẹp mềm mại, thơ mộng và tươi mát. Mỗi bộ sản phẩm là một bức tranh thêu nghệ thuật với hàng chục nghìn mũi chỉ thêu mật độ cao không xù, không cộm lưng.',
+      'Quý khách bấm vào từng ô ảnh từ 1 đến 5 ngay dưới ảnh chính để chọn mẫu ưng ý nhất và nhắn cho Showroom Tuyến Hoa qua Zalo 0344.727.528.'
+    ],
+    facebookPostCopy:
+      '🦋🌸 [TUYỆT TÁC THÊU 3D ALYDA® 7 MÓN] BST CHĂN GA GỐI LỤA TENCEL THÊU ĐÀN BƯỚM MÙA XUÂN & VƯỜN HOA NGHỆ THUẬT (ĐỦ 5 MẪU)! ✨\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 3.200.000đ – 4.200.000đ / bộ 7 món\n' +
+      '🔥 GIÁ ƯU ĐÃI TẠI SHOWROOM TUYẾN HOA: Chỉ 2.150.000đ / trọn bộ 7 món (Cỡ 2m×2m2: 2.350.000đ)!\n' +
+      '--------------------------------------------\n' +
+      '🎨 05 MẪU THÊU HOA & BƯỚM ĐẸP MÊ HỒN:\n' +
+      '   🦋 Mẫu 1: Xanh Ngọc Lục Bảo Thêu Đàn Bướm Vũ Điệu Mùa Xuân\n' +
+      '   💠 Mẫu 2: Xanh Coban Hoàng Gia Thêu Hoa Mẫu Đơn Thanh Hoa\n' +
+      '   💐 Mẫu 3: Ghi Tím Khói Thêu Vườn Hoa Cẩm Tú "Love is promise"\n' +
+      '   🍑 Mẫu 4: Hồng Đào San Hô Thêu Hoa Nhí & Lá Ngân Hạnh Rơi\n' +
+      '   💎 Mẫu 5: Xanh Lam Sapphire Thêu Hoa Nhí & Lá Ngân Hạnh Rơi\n' +
+      '🎁 Đủ 7 món: 1 Ga phủ + 1 Chăn Lụa CÓ SẴN RUỘT + 4 Vỏ gối đầu + 1 Vỏ gối ôm.\n' +
+      '📞 Gọi/Zalo chốt mẫu ngay: 0344.727.528 (Tuyến Hoa)!',
+  },
+  {
+    id: 'bo-chan-ga-goi-chan-bong-phoi-ren-cong-chua-han-quoc-tim-lavender-cglcc01',
+    code: 'CGL-CC-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Bộ Chăn Ga Gối Chần Bông Phối Ren Công Chúa Hàn Quốc Màu Tím Khoai Môn (Lavender Princess – Ga Phủ Viền Ren Hoa Trắng & Bèo Nhún Tiểu Thư)',
+    shortTitle: 'Bộ Chăn Ga Chần Bông Phối Ren Công Chúa Tím Lavender',
+    priceDisplay: '1.350.000đ / bộ',
+    marketPriceRange: 'Giá thị trường: 1.950.000đ – 2.650.000đ / bộ',
+    marketPriceNote: 'Mẫu chăn ga gối phong cách Tiểu Thư Hàn Quốc (Korean Princess) màu Tím Khoai Môn (Lavender) cực kỳ ngọt ngào: Mặt gối và chân ga chần quả trám nổi, chân váy ga phủ phối dải ren hoa trắng và bèo nhún 2 tầng.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Trọn Bộ Chăn Ga Gối Phối Ren Công Chúa Tím Lavender (Giường 1,6m×2m & 1,8m×2m)',
+        marketPrice: '1.950.000đ – 2.250.000đ / bộ',
+        storePrice: '1.350.000đ / bộ',
+        note: 'Gồm: 01 Ga phủ chần bông phối ren + 01 Chăn chần bèo nhún + 04 Vỏ gối viền bèo',
+      },
+      {
+        sizeOrOption: '2. Trọn Bộ Chăn Ga Gối Phối Ren Công Chúa Tím Lavender (Giường Đại 2,0m × 2,2m)',
+        marketPrice: '2.350.000đ – 2.650.000đ / bộ',
+        storePrice: '1.550.000đ / bộ',
+        note: 'Chất vải Cotton nhung gân mềm ấm, chần bông giữ phom phẳng phiu trên đệm',
+      },
+      {
+        sizeOrOption: '3. Combo Phòng Cưới / Phòng Tiểu Thư: Bộ Ren Công Chúa + Màn Khung Ròng Rọc',
+        marketPrice: '3.250.000đ – 3.700.000đ / combo',
+        storePrice: '2.250.000đ / combo (Tiết kiệm 100.000đ)',
+        note: 'Đồng bộ hoàn hảo với Màn Khung Tuyến Hoa màu Tím Lãng Mạn (MK-TH-02)',
+      },
+    ],
+    numericPrice: 1350000,
+    unitLabel: '1 bộ Chăn Ga Gối Chần Bông Phối Ren Công Chúa (Có sẵn ruột chăn chần)',
+    standardDimensions: 'Đủ cỡ giường 1,6m × 2,0m, 1,8m × 2,0m & 2,0m × 2,2m',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/1792915225334_4373635352308930219_4373635352308930219_b1cc4f9fe287531332cb288e86597c7e_3574b865.jpg',
+    highlightTag: 'Phong Cách Hàn Quốc · Ren Công Chúa Tím Lavender',
+    summary:
+      'Thiết kế ngọt ngào như phòng ngủ công chúa Hàn Quốc: Bộ chăn ga gối màu Tím Khoai Môn (Lavender Pastel) chần bông quả trám nổi dày dặn, viền bèo nhún tiểu thư quanh chăn và gối, đặc biệt phần chân ga phủ rủ 2 tầng điểm dải ren hoa trắng thêu nổi cực kỳ duyên dáng.',
+    visualAnnotations: [
+      {
+        label: 'Chân ga phủ rủ 2 tầng phối dải Ren Thêu Hoa Trắng & Bèo Nhún Sóng Lượn',
+        detail:
+          'Che kín hoàn toàn thành đệm và khung giường, tạo độ bồng bềnh lãng mạn chuẩn studio Hàn Quốc.',
+      },
+      {
+        label: 'Mặt gối và diềm ga chần bông họa tiết quả trám cổ điển dày dặn',
+        detail:
+          'Giữ bề mặt ga và gối luôn căng phồng, êm ái, không bị xô lệch khi nằm và giữ ấm tuyệt vời vào mùa thu đông.',
+      },
+      {
+        label: 'Gam màu Tím Khoai Môn (Lavender Pastel) dịu mắt, tôn sáng phòng ngủ',
+        detail:
+          'Kết hợp ăn ý tuyệt đối với Màn Khung Inox màu Tím Lãng Mạn (mã MK-TH-02) tại Showroom Tuyến Hoa.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'CGL-CC-01 (Bộ Chăn Ga Gối Chần Bông Phối Ren Công Chúa Tím Lavender)' },
+      { label: 'Giá tại Tuyến Hoa', value: '1.350.000đ / bộ (1m6 & 1m8) | 1.550.000đ / bộ (2m×2m2)' },
+      { label: 'Giá thị trường', value: '1.950.000đ – 2.650.000đ / bộ' },
+      { label: 'Thành phần bộ', value: '01 Ga phủ chần bông phối ren trắng + 01 Chăn chần bông viền bèo + 04 Vỏ gối chần bèo' },
+      { label: 'Phong cách', value: 'Korean Princess (Tiểu thư Hàn Quốc) – Dày dặn, êm ấm, không xù lông' },
+    ],
+    articleParagraphs: [
+      'Nếu các bộ Lụa Tencel Alyda® mang vẻ đẹp vương giả Châu Âu, thì Bộ Chăn Ga Gối Chần Bông Phối Ren Công Chúa màu Tím Khoai Môn (mã CGL-CC-01) lại chinh phục hoàn toàn các cô dâu trẻ và các bạn nữ yêu thích phong cách Hàn Quốc ngọt ngào, ấm áp.',
+      'Toàn bộ mặt gối và phần diềm ga được chần bông quả trám nổi kỹ lưỡng, kết hợp lớp ren thêu hoa trắng chạy quanh chân giường. Sản phẩm đang có sẵn tại Showroom Tuyến Hoa với giá chỉ 1.350.000đ/bộ.'
+    ],
+    facebookPostCopy:
+      '💜👰 [PHONG CÁCH CÔNG CHÚA HÀN QUỐC] BỘ CHĂN GA GỐI CHẦN BÔNG PHỐI REN HOA TRẮNG & BÈO NHÚN TIỂU THƯ MÀU TÍM KHOAI MÔN (LAVENDER)! ✨\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 1.950.000đ – 2.650.000đ / bộ\n' +
+      '🔥 GIÁ ƯU ĐÃI TẠI SHOWROOM TUYẾN HOA: Chỉ 1.350.000đ / bộ (Cỡ 2m×2m2: 1.550.000đ)!\n' +
+      '--------------------------------------------\n' +
+      '✅ Ga phủ chần bông quả trám nổi dày dặn, chân ga rủ 2 tầng phối ren hoa trắng cực xinh.\n' +
+      '✅ Chăn chần bông êm ấm kèm 04 vỏ gối viền bèo nhún tiểu thư đồng bộ.\n' +
+      '✅ Màu Tím Khoai Môn (Lavender Pastel) ngọt ngào, lãng mạn, lên đèn phòng ngủ đẹp như Hàn Quốc!\n' +
+      '📞 Gọi/Zalo Anh Tuyến đặt hàng giao ngay: 0344.727.528!',
+  },
+
+  // ===========================================================================
+  // 00-TOP. BỘ 06 BÀI ĐĂNG TỪ LÔ 18 ẢNH TRƯỚC:
+  //         CHĂN GA GỐI CƯỚI LỤA TENCEL ALYDA® LT 28 (ĐỎ & XANH THAN) & 17 MÃ SKY SILK
   // ===========================================================================
   {
     id: 'bo-chan-ga-goi-cuoi-lua-tencel-alyda-lt28-7mon-cgllt28',
     code: 'CGL-LT-28',
     category: 'man-khung-1tr',
     categoryName: 'Đệm · Chiếu · Màn Khung',
-    title: 'Bộ Chăn Ga Gối Cưới Lụa Tencel Hoàng Gia Alyda® LT 28 – Quy Cách Đóng Gói Full 7 Món Cao Cấp (Màu Đỏ Hỷ Sự Thêu Hoa Văn Cung Đình Ánh Kim)',
-    shortTitle: 'Bộ Chăn Ga Cưới Lụa Tencel Alyda LT 28 (7 Món)',
+    title: 'Bộ Chăn Ga Gối Cưới Lụa Tencel Hoàng Gia Alyda® LT 28 – Quy Cách Đóng Gói Full 7 Món Cao Cấp (Đủ 02 Màu: Đỏ Hỷ Sự & Xanh Than Ghi Chì Thêu Hoa Văn Cung Đình)',
+    shortTitle: 'Bộ Chăn Ga Cưới Lụa Tencel Alyda LT 28 (7 Món · Đỏ & Xanh Than)',
     priceDisplay: '2.150.000đ / bộ 7 món',
     marketPriceRange: 'Giá thị trường: 3.200.000đ – 4.200.000đ / bộ 7 món',
-    marketPriceNote: 'Siêu phẩm chăn ga gối cưới dòng Lụa Tencel cao cấp thương hiệu Alyda® (Mã LT 28 chính hãng có mã QR kiểm định): Đóng gói nguyên bộ 07 món đầy đủ cả ga phủ, vỏ chăn có sẵn ruột và 5 vỏ gối thêu nổi hoàng gia.',
+    marketPriceNote: 'Siêu phẩm chăn ga gối cưới dòng Lụa Tencel cao cấp thương hiệu Alyda® (Mã LT 28 chính hãng có mã QR kiểm định – Đủ 2 màu Đỏ Hỷ Sự & Xanh Than Ghi Chì): Đóng gói nguyên bộ 07 món đầy đủ cả ga phủ, vỏ chăn có sẵn ruột và 5 vỏ gối thêu nổi hoàng gia.',
     marketPriceTiers: [
       {
         sizeOrOption: '1. Trọn Bộ 7 Món Lụa Tencel Alyda® LT 28 Giường 1,6m × 2,0m & 1,8m × 2,0m',
         marketPrice: '3.200.000đ – 3.650.000đ / bộ',
         storePrice: '2.150.000đ / bộ 7 món',
-        note: 'Gồm: 1 Ga phủ + 1 Vỏ chăn có ruột + 2 Vỏ gối có viền + 2 Vỏ gối không viền + 1 Vỏ gối ôm',
+        note: 'Chọn màu Đỏ Hỷ Sự (Ảnh 1) hoặc Xanh Than Ghi Chì (Ảnh 2) – Đủ 7 món có ruột chăn',
       },
       {
         sizeOrOption: '2. Trọn Bộ 7 Món Lụa Tencel Alyda® LT 28 Giường Đại 2,0m × 2,2m',
@@ -461,11 +974,14 @@ export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
       },
     ],
     numericPrice: 2150000,
-    unitLabel: '1 bộ Full 7 món chính hãng Alyda® (Có sẵn ruột chăn & túi xách quà cưới)',
+    unitLabel: '1 bộ Full 7 món chính hãng Alyda® (Có sẵn ruột chăn · Đủ 2 màu Đỏ & Xanh Than)',
     standardDimensions: 'Đủ cỡ giường 1,6m × 2,0m, 1,8m × 2,0m & 2,0m × 2,2m (Quy cách chuẩn 7 món)',
     mediaType: 'image',
     imageUrl: '/assets/aistudio/1792915211423_4373635352308930219_4373635352308930219_72e61c228464506313c098328bfdea78_43281348.jpg',
-    highlightTag: 'Siêu Phẩm Phòng Cưới · Alyda® Lụa Tencel 7 Món',
+    secondaryImages: [
+      '/assets/aistudio/1792915211751_4373635352308930219_4373635352308930219_6920ebd645008b5baade37215ee7eea0_024ddbcb.jpg',
+    ],
+    highlightTag: 'Siêu Phẩm Phòng Cưới · Alyda® LT 28 (Đỏ & Xanh Than)',
     summary:
       'Bộ Chăn Ga Gối Cưới Lụa Tencel Alyda® Mã LT 28 sang trọng bậc nhất mùa cưới: Sắc đỏ Ruby vượng khí kết hợp mặt vải dệt vân Jacquard chìm mềm mượt như lụa tơ tằm, điểm xuyết khung thêu hoa văn Hoàng Gia ánh kim tinh xảo và quy cách đóng gói đủ 7 món (có sẵn ruột chăn).',
     visualAnnotations: [

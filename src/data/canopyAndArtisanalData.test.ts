@@ -42,11 +42,11 @@ test('Multi-set Màn khung order applies 50,000 VND/set discount and calculates 
   assert.equal(comboOrder.finalTotal, 3650000);
 });
 
-test('Deduplication removes all duplicate primary and secondary images across all 53 annotated posts', () => {
+test('Deduplication removes all duplicate primary and secondary images across all 59 annotated posts', () => {
   const dedupedPosts = getDeduplicatedProductPosts();
-  assert.equal(dedupedPosts.length, 53);
-  assert.equal(ANNOTATED_PRODUCT_POSTS.length, 53);
-  assert.equal(MARKET_PRICE_SUMMARY_TABLE.length, 21);
+  assert.equal(dedupedPosts.length, 59);
+  assert.equal(ANNOTATED_PRODUCT_POSTS.length, 59);
+  assert.equal(MARKET_PRICE_SUMMARY_TABLE.length, 22);
 
   // Verify no two posts share the exact same primary imageUrl
   const primaryImages = dedupedPosts.map((p) => p.imageUrl);
@@ -82,20 +82,55 @@ test('Deduplication removes all duplicate primary and secondary images across al
   }
 
   // Verify deduplication summary accounting
-  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 134);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 152);
   assert.equal(DEDUPLICATION_SUMMARY.totalRemovedDuplicates, 45);
-  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 89);
-  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 10);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 107);
+  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 11);
 });
 
 test('All annotated products have market price tiers, visual annotations, specs, and clear Facebook post copy', () => {
   const canopyAndBeddingItems = filterAnnotatedProducts('man-khung-1tr');
-  assert.equal(canopyAndBeddingItems.length, 26);
+  assert.equal(canopyAndBeddingItems.length, 32);
 
-  // Verify the 6 newest posts from the 18 uploaded Alyda LT 28 & Sky Silk Tencel bedding photos
+  // Verify the 6 newest posts from the 18 uploaded Alyda Royal Embroidery & Korean Princess Lavender bedding photos
+  const alydaPeony = getCanopyProductById('CGL-AL-01');
+  assert.ok(alydaPeony);
+  assert.equal(alydaPeony?.numericPrice, 2150000);
+  assert.equal(alydaPeony?.secondaryImages?.length, 2);
+
+  const alydaVersailles = getCanopyProductById('CGL-AL-02');
+  assert.ok(alydaVersailles);
+  assert.equal(alydaVersailles?.numericPrice, 2150000);
+  assert.equal(alydaVersailles?.secondaryImages?.length, 2);
+
+  const alydaCrown = getCanopyProductById('CGL-AL-03');
+  assert.ok(alydaCrown);
+  assert.equal(alydaCrown?.numericPrice, 2150000);
+  assert.equal(alydaCrown?.secondaryImages?.length, 2);
+
+  const alydaLeopard = getCanopyProductById('CGL-AL-04');
+  assert.ok(alydaLeopard);
+  assert.equal(alydaLeopard?.numericPrice, 2150000);
+  assert.equal(alydaLeopard?.secondaryImages?.length, 1);
+
+  const alydaGarden = getCanopyProductById('CGL-AL-05');
+  assert.ok(alydaGarden);
+  assert.equal(alydaGarden?.numericPrice, 2150000);
+  assert.equal(alydaGarden?.secondaryImages?.length, 4);
+
+  const princessLavender = getCanopyProductById('CGL-CC-01');
+  assert.ok(princessLavender);
+  assert.equal(princessLavender?.numericPrice, 1350000);
+  assert.equal(
+    princessLavender?.imageUrl,
+    '/assets/aistudio/1792915225334_4373635352308930219_4373635352308930219_b1cc4f9fe287531332cb288e86597c7e_3574b865.jpg'
+  );
+
+  // Verify the 6 previous posts from the 18 uploaded Alyda LT 28 & Sky Silk Tencel bedding photos
   const alydaLt28 = getCanopyProductById('CGL-LT-28');
   assert.ok(alydaLt28);
   assert.equal(alydaLt28?.numericPrice, 2150000);
+  assert.equal(alydaLt28?.secondaryImages?.length, 1);
   assert.equal(
     alydaLt28?.imageUrl,
     '/assets/aistudio/1792915211423_4373635352308930219_4373635352308930219_72e61c228464506313c098328bfdea78_43281348.jpg'
