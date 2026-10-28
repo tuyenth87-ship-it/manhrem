@@ -88,6 +88,7 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [activeArticleModal, setActiveArticleModal] = useState<AnnotatedProductPost | null>(null);
   const [activeGalleryImg, setActiveGalleryImg] = useState<string | null>(null);
+  const [cardPreviewImages, setCardPreviewImages] = useState<Record<string, string>>({});
 
   // Custom Photo Stamper state ("Chèn Chữ Tuyến Hoa Lên Ảnh")
   const [showPhotoStamper, setShowPhotoStamper] = useState<boolean>(false);
@@ -784,6 +785,8 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
           {filteredPosts.map((post, index) => {
             const isBakedBrandImage = BAKED_BRAND_CODES.has(post.code);
             const primaryHighlight = post.visualAnnotations[0]?.label;
+            const allCardImages = [post.imageUrl, ...(post.secondaryImages || [])];
+            const currentCardImg = cardPreviewImages[post.id] || post.imageUrl;
             return (
               <motion.article
                 layout
@@ -813,32 +816,24 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                       />
                     ) : (
                       <img
-                        src={post.imageUrl}
+                        src={currentCardImg}
                         alt={post.shortTitle}
                         referrerPolicy="no-referrer"
                         onClick={() => {
                           setActiveArticleModal(post);
-                          setActiveGalleryImg(post.imageUrl);
+                          setActiveGalleryImg(currentCardImg);
                         }}
                         className="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-700"
                       />
                     )}
 
-                    {/* Bright Frosted Brand Tag for Non-Baked Photos */}
+                    {/* Bright Frosted Brand Tag at Top-Left (leaves bottom corners unobstructed for SKY/LT28 code badges) */}
                     {!isBakedBrandImage && post.mediaType === 'image' && (
-                      <>
-                        <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md border border-[#C69C4E] px-3 py-1 rounded-xl pointer-events-none shadow-xs">
-                          <span className="text-xs font-extrabold text-[#1C1917] tracking-wide uppercase">
-                            TUYẾN HOA · {post.code}
-                          </span>
-                        </div>
-
-                        <div className="absolute bottom-3 right-3 bg-[#FCF6E8]/95 backdrop-blur-md border border-[#C69C4E] px-3 py-1 rounded-xl pointer-events-none shadow-xs">
-                          <span className="text-xs sm:text-sm font-extrabold text-[#7A4E0E] font-mono">
-                            {post.priceDisplay}
-                          </span>
-                        </div>
-                      </>
+                      <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md border border-[#C69C4E] px-3 py-1 rounded-xl pointer-events-none shadow-xs">
+                        <span className="text-xs font-extrabold text-[#1C1917] tracking-wide uppercase">
+                          TUYẾN HOA · {post.code}
+                        </span>
+                      </div>
                     )}
 
                     {post.mediaType === 'video' && (
@@ -850,13 +845,49 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                     )}
 
                     {post.secondaryImages && post.secondaryImages.length > 0 && (
-                      <div className="absolute bottom-3 left-3 pointer-events-none">
+                      <div className="absolute top-3 right-3 pointer-events-none">
                         <span className="px-2.5 py-1 rounded-xl bg-white/95 text-[#8A5A14] border border-[#C69C4E] text-xs font-extrabold shadow-xs">
-                          +{post.secondaryImages.length} ảnh góc khác
+                          Đủ {allCardImages.length} ảnh / mã màu
                         </span>
                       </div>
                     )}
                   </div>
+
+                  {/* Interactive Thumbnail Swatch Bar right below image when multiple angles/colors exist */}
+                  {allCardImages.length > 1 && (
+                    <div className="px-5 pt-3.5 flex items-center gap-2 overflow-x-auto no-scrollbar">
+                      <span className="text-xs font-extrabold text-[#8A5A14] shrink-0">
+                        Chọn mẫu ({allCardImages.length}):
+                      </span>
+                      {allCardImages.map((imgUrl, idx) => {
+                        const isSelected = currentCardImg === imgUrl;
+                        return (
+                          <button
+                            key={imgUrl}
+                            type="button"
+                            onClick={() =>
+                              setCardPreviewImages((prev) => ({
+                                ...prev,
+                                [post.id]: imgUrl,
+                              }))
+                            }
+                            className={`relative w-12 h-10 rounded-xl overflow-hidden border-2 transition-all shrink-0 cursor-pointer ${
+                              isSelected
+                                ? 'border-[#9A681C] ring-2 ring-[#C59B4D]/40 scale-105'
+                                : 'border-[#E2D4B7] opacity-80 hover:opacity-100'
+                            }`}
+                            title={`Xem mẫu ảnh số ${idx + 1}`}
+                          >
+                            <img
+                              src={imgUrl}
+                              alt={`${post.code} - mẫu ${idx + 1}`}
+                              className="w-full h-full object-cover"
+                            />
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
 
                   {/* Large, Crisp Editorial Card Body */}
                   <div className="p-5 sm:p-6 space-y-3.5">

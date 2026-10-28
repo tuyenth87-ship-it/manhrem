@@ -42,11 +42,11 @@ test('Multi-set Màn khung order applies 50,000 VND/set discount and calculates 
   assert.equal(comboOrder.finalTotal, 3650000);
 });
 
-test('Deduplication removes all duplicate primary and secondary images across all 47 annotated posts', () => {
+test('Deduplication removes all duplicate primary and secondary images across all 53 annotated posts', () => {
   const dedupedPosts = getDeduplicatedProductPosts();
-  assert.equal(dedupedPosts.length, 47);
-  assert.equal(ANNOTATED_PRODUCT_POSTS.length, 47);
-  assert.equal(MARKET_PRICE_SUMMARY_TABLE.length, 19);
+  assert.equal(dedupedPosts.length, 53);
+  assert.equal(ANNOTATED_PRODUCT_POSTS.length, 53);
+  assert.equal(MARKET_PRICE_SUMMARY_TABLE.length, 21);
 
   // Verify no two posts share the exact same primary imageUrl
   const primaryImages = dedupedPosts.map((p) => p.imageUrl);
@@ -82,17 +82,51 @@ test('Deduplication removes all duplicate primary and secondary images across al
   }
 
   // Verify deduplication summary accounting
-  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 116);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 134);
   assert.equal(DEDUPLICATION_SUMMARY.totalRemovedDuplicates, 45);
-  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 71);
-  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 9);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 89);
+  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 10);
 });
 
 test('All annotated products have market price tiers, visual annotations, specs, and clear Facebook post copy', () => {
   const canopyAndBeddingItems = filterAnnotatedProducts('man-khung-1tr');
-  assert.equal(canopyAndBeddingItems.length, 20);
+  assert.equal(canopyAndBeddingItems.length, 26);
 
-  // Verify the 5 newest internet-researched & downloaded mattress posts
+  // Verify the 6 newest posts from the 18 uploaded Alyda LT 28 & Sky Silk Tencel bedding photos
+  const alydaLt28 = getCanopyProductById('CGL-LT-28');
+  assert.ok(alydaLt28);
+  assert.equal(alydaLt28?.numericPrice, 2150000);
+  assert.equal(
+    alydaLt28?.imageUrl,
+    '/assets/aistudio/1792915211423_4373635352308930219_4373635352308930219_72e61c228464506313c098328bfdea78_43281348.jpg'
+  );
+
+  const skySilkRedPink = getCanopyProductById('CGL-SK-01');
+  assert.ok(skySilkRedPink);
+  assert.equal(skySilkRedPink?.numericPrice, 1150000);
+  assert.equal(skySilkRedPink?.secondaryImages?.length, 2);
+
+  const skySilkGoldWhite = getCanopyProductById('CGL-SK-02');
+  assert.ok(skySilkGoldWhite);
+  assert.equal(skySilkGoldWhite?.numericPrice, 1150000);
+  assert.equal(skySilkGoldWhite?.secondaryImages?.length, 2);
+
+  const skySilkGreenTeal = getCanopyProductById('CGL-SK-03');
+  assert.ok(skySilkGreenTeal);
+  assert.equal(skySilkGreenTeal?.numericPrice, 1150000);
+  assert.equal(skySilkGreenTeal?.secondaryImages?.length, 3);
+
+  const skySilkBlueIce = getCanopyProductById('CGL-SK-04');
+  assert.ok(skySilkBlueIce);
+  assert.equal(skySilkBlueIce?.numericPrice, 1150000);
+  assert.equal(skySilkBlueIce?.secondaryImages?.length, 3);
+
+  const skySilkGreySlate = getCanopyProductById('CGL-SK-05');
+  assert.ok(skySilkGreySlate);
+  assert.equal(skySilkGreySlate?.numericPrice, 1150000);
+  assert.equal(skySilkGreySlate?.secondaryImages?.length, 2);
+
+  // Verify the 5 internet-researched & downloaded mattress posts
   const demSongHongBackEssential = getCanopyProductById('DSH-BE-01');
   assert.ok(demSongHongBackEssential);
   assert.equal(demSongHongBackEssential?.numericPrice, 6750000);

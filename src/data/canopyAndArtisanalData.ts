@@ -64,10 +64,21 @@ export interface DeduplicatedImageGroup {
 }
 
 export const DEDUPLICATION_SUMMARY = {
-  totalUploaded: 116,
+  totalUploaded: 134,
   totalRemovedDuplicates: 45,
-  totalUniquePublished: 71,
+  totalUniquePublished: 89,
   groups: [
+    {
+      id: 'dup-lo-chan-ga-goi-lua-tencel-alyda-skysilk-18-anh',
+      groupTitle: 'Lô 18 Ảnh Mới Tải Lên: Bộ Chăn Ga Gối Cưới Lụa Tencel Alyda® LT 28 (7 Món) & Bộ Sưu Tập 17 Mã Màu Lụa Tencel Sky Silk',
+      keptImage: '1792915211423_4373635352308930219_4373635352308930219_72e61c228464506313c098328bfdea78_43281348.jpg',
+      removedCount: 0,
+      removedExamples: [
+        'Quy hoạch thông minh 18 ảnh vừa tải lên thành 06 bài đăng chuyên sâu theo Tông Màu Phong Thủy & Phòng Cưới (CGL-LT-28, CGL-SK-01, CGL-SK-02, CGL-SK-03, CGL-SK-04, CGL-SK-05)',
+        'Chú thích rõ 02 cặp mã màu chụp cùng 1 phòng mẫu (SKY338 ≈ SKY26 tông Xanh Ghi Băng & SKY362 ≈ SKY7 tông Xanh Cổ Vịt Lục Bảo) ngay trong bộ chọn màu để khách dễ đối chiếu mã số',
+      ],
+      reason: 'Giữ nguyên vẹn 100% cả 18 mã màu chăn ga gối Lụa Tencel (LT 28 & 17 mã SKY) nhưng gom gọn theo 6 bảng màu sang trọng để khách dễ chọn màu, không làm rối trang web.',
+    },
     {
       id: 'dup-lo-dem-moi-internet-2026',
       groupTitle: 'Bộ 09 Ảnh Mẫu Đệm Mới Tải Từ Internet: Sông Hồng Back Essential Gen 4, Kim Cương Happy Gold, Everon Artemis, Liên Á L\'A Dome & Hanvico Nano',
@@ -179,8 +190,24 @@ export const DEDUPLICATION_SUMMARY = {
 
 export const MARKET_PRICE_SUMMARY_TABLE: MarketPriceSummaryRow[] = [
   {
+    id: 'mp-chan-ga-goi-lua-tencel-alyda-lt28',
+    productGroup: '1. Bộ Chăn Ga Gối Cưới Lụa Tencel Alyda® LT 28 (7 Món)',
+    specification: '1 Ga phủ + 1 Vỏ chăn có ruột + 4 Vỏ gối đầu + 1 Vỏ gối ôm',
+    marketPrice: '3,20Tr – 4,20Tr / bộ',
+    storePrice: '2,15Tr – 2,35Tr / bộ',
+    warrantyAndService: 'Lụa Tencel thêu hoàng gia, tặng túi đựng & miễn phí giao',
+  },
+  {
+    id: 'mp-chan-ga-goi-lua-tencel-sky-silk',
+    productGroup: '2. Bộ Chăn Ga Gối Lụa Tencel Sky Silk 60s (Đủ 17 Mã Màu)',
+    specification: 'Trọn bộ 5 món Lụa Tencel thêu nổi Sky Silk (SKY1 – SKY362)',
+    marketPrice: '1,65Tr – 2,25Tr / bộ',
+    storePrice: '1,15Tr – 1,35Tr / bộ',
+    warrantyAndService: 'Mát lạnh tự nhiên, chống xù lông, đủ cỡ 1m6 / 1m8 / 2m2',
+  },
+  {
     id: 'mp-dem-song-hong-back-essential',
-    productGroup: '1. Đệm Sông Hồng Back Essential Thế Hệ 4 (Dày 17–32cm)',
+    productGroup: '3. Đệm Sông Hồng Back Essential Thế Hệ 4 (Dày 17–32cm)',
     specification: 'Bông tinh khiết kháng khuẩn + Memory Foam đàn hồi 98% (1m6 / 1m8)',
     marketPrice: '11,30Tr – 14,73Tr',
     storePrice: '6,75Tr – 8,85Tr',
@@ -399,6 +426,505 @@ export function calculateCanopyOrderTotal(input: CanopyPricingInput): CanopyPric
 }
 
 export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
+  // ===========================================================================
+  // 00-TOP. BỘ 06 BÀI ĐĂNG MỚI NHẤT TỪ 18 ẢNH VỪA TẢI LÊN:
+  //         CHĂN GA GỐI CƯỚI LỤA TENCEL ALYDA® LT 28 (7 MÓN) & 17 MÃ MÀU SKY SILK
+  // ===========================================================================
+  {
+    id: 'bo-chan-ga-goi-cuoi-lua-tencel-alyda-lt28-7mon-cgllt28',
+    code: 'CGL-LT-28',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Bộ Chăn Ga Gối Cưới Lụa Tencel Hoàng Gia Alyda® LT 28 – Quy Cách Đóng Gói Full 7 Món Cao Cấp (Màu Đỏ Hỷ Sự Thêu Hoa Văn Cung Đình Ánh Kim)',
+    shortTitle: 'Bộ Chăn Ga Cưới Lụa Tencel Alyda LT 28 (7 Món)',
+    priceDisplay: '2.150.000đ / bộ 7 món',
+    marketPriceRange: 'Giá thị trường: 3.200.000đ – 4.200.000đ / bộ 7 món',
+    marketPriceNote: 'Siêu phẩm chăn ga gối cưới dòng Lụa Tencel cao cấp thương hiệu Alyda® (Mã LT 28 chính hãng có mã QR kiểm định): Đóng gói nguyên bộ 07 món đầy đủ cả ga phủ, vỏ chăn có sẵn ruột và 5 vỏ gối thêu nổi hoàng gia.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Trọn Bộ 7 Món Lụa Tencel Alyda® LT 28 Giường 1,6m × 2,0m & 1,8m × 2,0m',
+        marketPrice: '3.200.000đ – 3.650.000đ / bộ',
+        storePrice: '2.150.000đ / bộ 7 món',
+        note: 'Gồm: 1 Ga phủ + 1 Vỏ chăn có ruột + 2 Vỏ gối có viền + 2 Vỏ gối không viền + 1 Vỏ gối ôm',
+      },
+      {
+        sizeOrOption: '2. Trọn Bộ 7 Món Lụa Tencel Alyda® LT 28 Giường Đại 2,0m × 2,2m',
+        marketPrice: '3.850.000đ – 4.200.000đ / bộ',
+        storePrice: '2.350.000đ / bộ 7 món',
+        note: 'Vải Lụa Tencel dệt vân chìm bóng mượt, thêu vi tính chỉ vàng kim sắc nét',
+      },
+      {
+        sizeOrOption: '3. Combo Phòng Cưới Trọn Gói: Bộ Lụa Tencel LT 28 (7 Món) + Màn Khung / Màn Hộp',
+        marketPrice: '4.600.000đ – 5.800.000đ / combo',
+        storePrice: '3.050.000đ – 3.400.000đ / combo',
+        note: 'Giảm ngay 100.000đ khi mua kèm Đệm hoặc Màn Khung tại Showroom Tuyến Hoa',
+      },
+    ],
+    numericPrice: 2150000,
+    unitLabel: '1 bộ Full 7 món chính hãng Alyda® (Có sẵn ruột chăn & túi xách quà cưới)',
+    standardDimensions: 'Đủ cỡ giường 1,6m × 2,0m, 1,8m × 2,0m & 2,0m × 2,2m (Quy cách chuẩn 7 món)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/1792915211423_4373635352308930219_4373635352308930219_72e61c228464506313c098328bfdea78_43281348.jpg',
+    highlightTag: 'Siêu Phẩm Phòng Cưới · Alyda® Lụa Tencel 7 Món',
+    summary:
+      'Bộ Chăn Ga Gối Cưới Lụa Tencel Alyda® Mã LT 28 sang trọng bậc nhất mùa cưới: Sắc đỏ Ruby vượng khí kết hợp mặt vải dệt vân Jacquard chìm mềm mượt như lụa tơ tằm, điểm xuyết khung thêu hoa văn Hoàng Gia ánh kim tinh xảo và quy cách đóng gói đủ 7 món (có sẵn ruột chăn).',
+    visualAnnotations: [
+      {
+        label: 'Quy cách đóng gói Full 07 Món chuẩn phòng cưới (In rõ trên Catalogue hãng)',
+        detail:
+          'Bao gồm: 01 Ga phủ rủ cạnh sang trọng + 01 Vỏ gối ôm thêu hoa văn + 02 Vỏ gối đầu có viền + 02 Vỏ gối đầu không viền + 01 Vỏ chăn có sẵn ruột êm nhẹ.',
+      },
+      {
+        label: 'Chất liệu Lụa Tencel sinh học dệt vân chìm bóng mượt, mát lạnh tự nhiên',
+        detail:
+          'Chiết xuất từ sợi gỗ sồi tự nhiên thoáng khí gấp 3 lần cotton thường, không tích điện mùa đông, không xù lông hay phai màu khi giặt máy.',
+      },
+      {
+        label: 'Nghệ thuật thêu nổi Hoàng Gia Châu Âu đối xứng trên chăn và 5 gối',
+        detail:
+          'Từng đường kim mũi chỉ ánh vàng kim và bạc đan xen sắc sảo, tôn lên vẻ đẹp quyền quý, viên mãn cho phòng tân hôn.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'CGL-LT-28 (Bộ Chăn Ga Gối Cưới Lụa Tencel Alyda® LT 28)' },
+      { label: 'Giá ưu đãi Tuyến Hoa', value: '2.150.000đ / bộ 7 món (1m6 & 1m8) | 2.350.000đ (2m×2m2)' },
+      { label: 'Giá thị trường', value: '3.200.000đ – 4.200.000đ / bộ 7 món' },
+      { label: 'Chi tiết 07 món', value: '1 Ga phủ + 1 Vỏ chăn có ruột + 2 Vỏ gối có viền + 2 Vỏ gối không viền + 1 Vỏ gối ôm' },
+      { label: 'Chất liệu & Bảo hành', value: '100% Lụa Tencel cao cấp dệt vân chìm – Cam kết không xù, không phai màu' },
+    ],
+    articleParagraphs: [
+      'Bộ Chăn Ga Gối Cưới Lụa Tencel Alyda® LT 28 vừa cập bến Showroom Tuyến Hoa là lựa chọn số 1 cho các cặp đôi chuẩn bị cưới hỏi hoặc biếu tặng tân gia cao cấp. Khác với các bộ chăn ga 4–5 món thông thường phải mua thêm ruột chăn và gối tựa, bộ LT 28 được đóng gói tiêu chuẩn 07 món đồng bộ từ ga phủ, chăn có sẵn ruột đến 4 vỏ gối đầu (2 có viền, 2 không viền) và 1 vỏ gối ôm.',
+      'Tại Tổng Kho Chăn Ga Gối Đệm Tuyến Hoa (Chợ Cháy, Ứng Hòa), quý khách được kiểm tra trực tiếp độ mướt mát của chất lụa Tencel chính hãng Alyda® với mức giá tận gốc chỉ 2.150.000đ/bộ 7 món (rẻ hơn thị trường trên 1.000.000đ/bộ).'
+    ],
+    facebookPostCopy:
+      '👑💒 [SIÊU PHẨM PHÒNG CƯỚI] BỘ CHĂN GA GỐI LỤA TENCEL HOÀNG GIA ALYDA® MÃ LT 28 – FULL BỘ 7 MÓN CÓ SẴN RUỘT CHĂN! ✨\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 3.200.000đ – 4.200.000đ / bộ 7 món\n' +
+      '🔥 GIÁ ƯU ĐÃI TẠI TỔNG KHO TUYẾN HOA:\n' +
+      '   👉 Cỡ giường 1m6 × 2m & 1m8 × 2m: Chỉ 2.150.000đ / trọn bộ 7 món\n' +
+      '   👉 Cỡ giường đại 2m0 × 2m2: Chỉ 2.350.000đ / trọn bộ 7 món\n' +
+      '--------------------------------------------\n' +
+      '🎁 QUY CÁCH ĐÓNG GÓI ĐỦ 07 MÓN CAO CẤP:\n' +
+      '   ✅ 01 Ga phủ chần sang trọng\n' +
+      '   ✅ 01 Vỏ chăn Lụa Tencel CÓ SẴN RUỘT êm nhẹ\n' +
+      '   ✅ 02 Vỏ gối đầu có viền thêu nổi Hoàng Gia\n' +
+      '   ✅ 02 Vỏ gối đầu không viền đồng bộ\n' +
+      '   ✅ 01 Vỏ gối ôm thêu hoa văn cung đình\n' +
+      '✨ Chất liệu Lụa Tencel dệt vân chìm mềm mướt như tơ, mát mùa hè – ấm mùa đông, cam kết không xù lông!\n' +
+      '🚛 Miễn phí giao hàng tận nhà – Gọi/Zalo Anh Tuyến: 0344.727.528!',
+  },
+  {
+    id: 'bo-chan-ga-goi-lua-tencel-sky-silk-do-cuoi-hong-pastel-cglsk01',
+    code: 'CGL-SK-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Bộ Chăn Ga Gối Lụa Tencel Sky Silk 60s Tông Đỏ Phòng Cưới & Hồng Phấn Pastel (Đủ 03 Mã Màu: SKY24 Đỏ Tươi · SKY1 Đỏ Đô · SKY14 Hồng Phấn)',
+    shortTitle: 'Bộ Chăn Ga Lụa Sky Silk Đỏ Cưới & Hồng (SKY24 · SKY1 · SKY14)',
+    priceDisplay: '1.150.000đ / bộ 5 món',
+    marketPriceRange: 'Giá thị trường: 1.650.000đ – 2.250.000đ / bộ',
+    marketPriceNote: 'Bộ sưu tập Lụa Tencel Sky Silk đơn sắc thêu chữ nghệ thuật dành riêng cho phòng tân hôn và phòng ngủ lãng mạn: Đầy đủ 3 gam màu Đỏ Tươi (SKY24), Đỏ Đô Rượu Vang (SKY1) và Hồng Phấn Pastel (SKY14).',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Bộ 5 Món Lụa Sky Silk (Ga + Vỏ Chăn + 2 Vỏ Gối Đầu + 1 Vỏ Gối Ôm) – 1m6 & 1m8',
+        marketPrice: '1.650.000đ – 1.850.000đ / bộ',
+        storePrice: '1.150.000đ / bộ 5 món',
+        note: 'Chọn mã màu: SKY24 (Đỏ Tươi), SKY1 (Đỏ Đô) hoặc SKY14 (Hồng Phấn)',
+      },
+      {
+        sizeOrOption: '2. Bộ 5 Món Lụa Sky Silk Cỡ Đại 2,0m × 2,2m (Hoặc Chần Bông Ruột Chăn Hè Thu)',
+        marketPrice: '1.950.000đ – 2.250.000đ / bộ',
+        storePrice: '1.350.000đ / bộ',
+        note: 'Miễn phí bo chun theo đúng độ dày đệm từ 9cm đến 30cm',
+      },
+      {
+        sizeOrOption: '3. Mua Từ 02 Bộ Sky Silk Bất Kỳ (Hoặc Mua Kèm Đệm Tại Tuyến Hoa)',
+        marketPrice: '3.300.000đ – 3.700.000đ / 2 bộ',
+        storePrice: '2.150.000đ / 2 bộ (Tiết kiệm 150.000đ)',
+        note: 'Tặng kèm túi giặt chuyên dụng bảo vệ sợi lụa Tencel',
+      },
+    ],
+    numericPrice: 1150000,
+    unitLabel: '1 bộ 5 món Lụa Tencel Sky Silk (Đủ 3 mã: SKY24, SKY1, SKY14)',
+    standardDimensions: 'Đủ cỡ 1,6m × 2,0m, 1,8m × 2,0m & 2,0m × 2,2m (Miễn phí bo chun theo cỡ đệm)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/1792915211191_4373635352308930219_4373635352308930219_89ee19d8559544880707e8019ec9c5d6_3e4457fc.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792915211216_4373635352308930219_4373635352308930219_937cb974dfdfec95a6dfdacbe4887284_d0d5f770.jpg',
+      '/assets/aistudio/1792915210976_4373635352308930219_4373635352308930219_230c053dddb35b8567efb4925e7f7e43_bcf990bc.jpg',
+    ],
+    highlightTag: 'Lụa Tencel Sky Silk · Mã SKY24 · SKY1 · SKY14',
+    summary:
+      'Bộ 03 mã màu Lụa Tencel Sky Silk bán chạy nhất cho phòng cưới & phòng ngủ vợ chồng trẻ: Mã SKY24 (Đỏ Tươi Hỷ Sự), Mã SKY1 (Đỏ Đô Rượu Vang quyền quý) và Mã SKY14 (Hồng Phấn Pastel ngọt ngào). Bề mặt lụa Tencel 60s bóng mịn, thêu nổi chữ "Sky Silk" thanh lịch trên cả chăn, gối đầu và gối ôm.',
+    visualAnnotations: [
+      {
+        label: 'Ảnh 1 – Mã SKY24: Sắc Đỏ Tươi Hỷ Sự rực rỡ cho đêm tân hôn viên mãn',
+        detail:
+          'Tông đỏ tươi chuẩn truyền thống Á Đông kết hợp chữ thêu Sky Silk trắng tinh khôi trên mặt chăn và gối ôm.',
+      },
+      {
+        label: 'Ảnh 2 – Mã SKY1: Sắc Đỏ Đô Rượu Vang trầm ấm, sang trọng chuẩn Châu Âu',
+        detail:
+          'Gam đỏ đậm chiều sâu, cực kỳ tôn da và giữ vẻ ấm cúng, quý phái dưới ánh đèn vàng phòng ngủ.',
+      },
+      {
+        label: 'Ảnh 3 – Mã SKY14: Sắc Hồng Phấn Pastel nhẹ nhàng, thư thái',
+        detail:
+          'Lựa chọn hoàn hảo để đổi gió cho phòng ngủ vợ chồng trẻ hoặc phòng bé gái với chất lụa mát mịn nâng niu làn da.',
+      },
+    ],
+    specs: [
+      { label: 'Mã bài & Mã màu', value: 'CGL-SK-01 | Gồm 03 mã màu: SKY24 (Đỏ Tươi), SKY1 (Đỏ Đô), SKY14 (Hồng Phấn)' },
+      { label: 'Giá tại Tuyến Hoa', value: '1.150.000đ / bộ 5 món (1m6 & 1m8) | 1.350.000đ (Cỡ đại 2m×2m2)' },
+      { label: 'Giá thị trường', value: '1.650.000đ – 2.250.000đ / bộ' },
+      { label: 'Quy cách 05 món', value: '01 Ga (phủ hoặc bo chun) + 01 Vỏ chăn lụa + 02 Vỏ gối nằm + 01 Vỏ gối ôm' },
+      { label: 'Chất liệu vải', value: 'Lụa Tencel Sky Silk 60s mềm mát, kháng khuẩn, không bám bụi' },
+    ],
+    articleParagraphs: [
+      'Dòng chăn ga gối Lụa Tencel Sky Silk nổi tiếng với thiết kế tối giản chuẩn khách sạn 5 sao: Không cần họa tiết rườm rà, chính độ bóng mượt tự nhiên của sợi lụa Tencel kết hợp logo "Sky Silk" thêu chỉ nổi tinh tế đã tạo nên sức hút sang trọng vượt thời gian.',
+      'Trong nhóm màu ấm cho phòng cưới, Showroom Tuyến Hoa có sẵn cả 3 mã: SKY24 (Đỏ tươi), SKY1 (Đỏ đô rượu vang) và SKY14 (Hồng phấn). Quý khách bấm vào từng ảnh nhỏ bên dưới để xem cận cảnh từng mã màu và đọc đúng mã số khi đặt hàng.'
+    ],
+    facebookPostCopy:
+      '🌹✨ [BST LỤA TENCEL SKY SILK] BỘ 3 MÃ MÀU ĐỎ CƯỚI & HỒNG PASTEL ĐẸP MÊ ĐẮM (MÃ SKY24 · SKY1 · SKY14) – MÁT LẠNH NHƯ LỤA TƠ TẰM! 🛌\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 1.650.000đ – 2.250.000đ / bộ\n' +
+      '🔥 GIÁ TẬN GỐC TẠI SHOWROOM TUYẾN HOA: Chỉ 1.150.000đ / bộ 5 món (Cỡ 2m×2m2: 1.350.000đ)!\n' +
+      '--------------------------------------------\n' +
+      '🎨 CHỌN NGAY 03 MÃ MÀU TRONG BÀI:\n' +
+      '   🔴 Mã SKY24: Đỏ Tươi Hỷ Sự rực rỡ phòng cưới\n' +
+      '   🍷 Mã SKY1: Đỏ Đô Rượu Vang trầm ấm, quý phái\n' +
+      '   🌸 Mã SKY14: Hồng Phấn Pastel ngọt ngào, trẻ trung\n' +
+      '✅ Trọn bộ 5 món: 01 Ga (miễn phí bo chun theo cỡ đệm) + 01 Chăn lụa + 02 Vỏ gối nằm + 01 Vỏ gối ôm thêu chữ Sky Silk.\n' +
+      '📞 Gọi/Zalo chốt mã màu ngay: 0344.727.528 (Tuyến Hoa)!',
+  },
+  {
+    id: 'bo-chan-ga-goi-lua-tencel-sky-silk-vang-kem-trang-su-cglsk02',
+    code: 'CGL-SK-02',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Bộ Chăn Ga Gối Lụa Tencel Sky Silk 60s Tông Vàng Hoàng Gia, Trắng Sứ Khách Sạn 5 Sao & Kem Muji (Mã SKY225 · SKY25 · SKY27)',
+    shortTitle: 'Bộ Chăn Ga Lụa Sky Silk Vàng · Trắng · Kem (SKY225 · SKY25 · SKY27)',
+    priceDisplay: '1.150.000đ / bộ 5 món',
+    marketPriceRange: 'Giá thị trường: 1.650.000đ – 2.250.000đ / bộ',
+    marketPriceNote: 'Bộ 3 gam màu Sáng Sang Trọng giúp phòng ngủ rộng rãi và bừng sáng như Resort 5 sao: Vàng Hoàng Gia (SKY225), Trắng Kem Sữa (SKY25) và Kem Cát Muji (SKY27).',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Bộ 5 Món Lụa Sky Silk (Mã SKY225 Vàng · SKY25 Trắng · SKY27 Kem) – 1m6 & 1m8',
+        marketPrice: '1.650.000đ – 1.850.000đ / bộ',
+        storePrice: '1.150.000đ / bộ 5 món',
+        note: 'Màu sáng sang trọng, hợp mệnh Kim – mệnh Thổ và nội thất gỗ hiện đại',
+      },
+      {
+        sizeOrOption: '2. Bộ 5 Món Lụa Sky Silk Cỡ Đại 2,0m × 2,2m',
+        marketPrice: '1.950.000đ – 2.250.000đ / bộ',
+        storePrice: '1.350.000đ / bộ',
+        note: 'Hỗ trợ may bo chun vừa khít mọi loại đệm cao su, đệm lò xo dày 10–32cm',
+      },
+      {
+        sizeOrOption: '3. Ưu Đãi Mua Combo 02 Bộ Sky Silk (Thay Đổi Giặt Giũ Hàng Tuần)',
+        marketPrice: '3.300.000đ – 3.700.000đ / 2 bộ',
+        storePrice: '2.150.000đ / 2 bộ',
+        note: 'Miễn phí vận chuyển tận nhà khu vực Ứng Hòa – Hà Nội',
+      },
+    ],
+    numericPrice: 1150000,
+    unitLabel: '1 bộ 5 món Lụa Tencel Sky Silk (Đủ 3 mã: SKY225, SKY25, SKY27)',
+    standardDimensions: 'Đủ cỡ 1,6m × 2,0m, 1,8m × 2,0m & 2,0m × 2,2m (Ga phủ hoặc bo chun)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/1792915211087_4373635352308930219_4373635352308930219_04634c9b4c9c90fdaf3bdb657c425647_2906e971.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792915211242_4373635352308930219_4373635352308930219_cdbc2ca46348ef830d619821cacb6431_2cabba17.jpg',
+      '/assets/aistudio/1792915211268_4373635352308930219_4373635352308930219_903485b44e9fa135a8195bf5ff38f066_3fd589a2.jpg',
+    ],
+    highlightTag: 'Tông Sáng Resort 5 Sao · SKY225 · SKY25 · SKY27',
+    summary:
+      'Dành cho gia chủ yêu thích không gian phòng ngủ sáng bừng, tinh khiết và đẳng cấp: Mã SKY225 (Vàng Hoàng Gia phú quý), Mã SKY25 (Trắng Kem Sữa thêu chỉ vàng chuẩn khách sạn 5 sao) và Mã SKY27 (Kem Cát Muji nhẹ nhàng, ấm áp).',
+    visualAnnotations: [
+      {
+        label: 'Ảnh 1 – Mã SKY225: Sắc Vàng Hoàng Gia (Golden Champagne) vượng tài lộc',
+        detail:
+          'Bề mặt lụa óng ả như tơ vàng, cực kỳ ăn nhập với giường bọc nệm nỉ, giường gỗ tự nhiên và ánh đèn chùm ấm.',
+      },
+      {
+        label: 'Ảnh 2 – Mã SKY25: Sắc Trắng Kem Sữa thêu logo Sky Silk chỉ vàng kim',
+        detail:
+          'Mang trọn trải nghiệm nghỉ dưỡng khách sạn 5 sao về phòng ngủ gia đình, sạch sẽ và thoáng đãng tuyệt đối.',
+      },
+      {
+        label: 'Ảnh 3 – Mã SKY27: Sắc Kem Cát (Sand Beige) phong cách Muji Nhật Bản',
+        detail:
+          'Tông màu trung tính dịu mắt, dễ phối với mọi màu rèm cửa và sơn tường, không lo lộ vết bẩn.',
+      },
+    ],
+    specs: [
+      { label: 'Mã bài & Mã màu', value: 'CGL-SK-02 | Gồm 03 mã màu: SKY225 (Vàng), SKY25 (Trắng Kem), SKY27 (Kem Be)' },
+      { label: 'Giá tại Tuyến Hoa', value: '1.150.000đ / bộ 5 món (1m6 & 1m8) | 1.350.000đ (2m×2m2)' },
+      { label: 'Giá thị trường', value: '1.650.000đ – 2.250.000đ / bộ' },
+      { label: 'Thành phần bộ', value: '01 Ga + 01 Chăn lụa + 02 Vỏ gối đầu + 01 Vỏ gối ôm đồng bộ' },
+      { label: 'Đặc tính nổi bật', value: 'Sợi Tencel tự nhiên mát mịn, thấm hút mồ hôi gấp 2 lần cotton' },
+    ],
+    articleParagraphs: [
+      'Theo xu hướng thiết kế nội thất phòng ngủ hiện đại và biệt thự tân cổ điển, các gam màu sáng như Vàng Champagne (SKY225), Trắng Kem Sữa (SKY25) và Kem Cát Muji (SKY27) luôn được ưu tiên hàng đầu vì tạo hiệu ứng thị giác mở rộng không gian và mang lại cảm giác thư thái ngay khi bước vào phòng.',
+      'Toàn bộ 3 mã màu SKY225, SKY25 và SKY27 đang có sẵn tại Showroom Tuyến Hoa với giá ưu đãi chỉ 1.150.000đ/bộ 5 món, miễn phí bo chun theo kích thước đệm thực tế của gia đình.'
+    ],
+    facebookPostCopy:
+      '✨🏨 [CHUẨN RESORT 5 SAO] BỘ CHĂN GA GỐI LỤA TENCEL SKY SILK TÔNG VÀNG HOÀNG GIA · TRẮNG SỨ & KEM MUJI (MÃ SKY225 · SKY25 · SKY27)! 🛌\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 1.650.000đ – 2.250.000đ / bộ\n' +
+      '🔥 GIÁ ƯU ĐÃI TẠI SHOWROOM TUYẾN HOA: Chỉ 1.150.000đ / bộ 5 món (Cỡ 2m×2m2: 1.350.000đ)!\n' +
+      '--------------------------------------------\n' +
+      '🎨 03 MÃ MÀU SÁNG SANG TRỌNG TRONG BÀI:\n' +
+      '   💛 Mã SKY225: Vàng Hoàng Gia (Golden Champagne) phú quý, vượng khí\n' +
+      '   🤍 Mã SKY25: Trắng Kem Sữa thêu chỉ vàng chuẩn Khách Sạn 5 Sao\n' +
+      '   🤎 Mã SKY27: Kem Cát Be phong cách Muji Nhật Bản thanh lịch\n' +
+      '✅ Chất lụa Tencel mềm mướt, mát rượi khi chạm lưng, giặt máy thoải mái không xù lông.\n' +
+      '📞 Gọi/Zalo Anh Tuyến đặt hàng giao ngay: 0344.727.528!',
+  },
+  {
+    id: 'bo-chan-ga-goi-lua-tencel-sky-silk-xanh-ngoc-xanh-com-cglsk03',
+    code: 'CGL-SK-03',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Bộ Chăn Ga Gối Lụa Tencel Sky Silk 60s Tông Xanh Ngọc Bích, Xanh Cốm & Xanh Cổ Vịt Lục Bảo (Mã SKY352 · SKY12 · SKY362 · SKY7)',
+    shortTitle: 'Bộ Chăn Ga Lụa Sky Silk Xanh Ngọc & Xanh Cốm (SKY352 · SKY12 · SKY362)',
+    priceDisplay: '1.150.000đ / bộ 5 món',
+    marketPriceRange: 'Giá thị trường: 1.650.000đ – 2.250.000đ / bộ',
+    marketPriceNote: 'Nhóm màu Xanh Thiên Nhiên (Mint – Jade – Emerald) làm dịu mắt tức thì trong mùa hè: Gồm SKY352 (Xanh Ngọc Mint), SKY12 (Xanh Cốm Trà Non) và cặp mã SKY362 / SKY7 (Xanh Cổ Vịt Lục Bảo).',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Bộ 5 Món Lụa Sky Silk (Mã SKY352 · SKY12 · SKY362 / SKY7) – 1m6 & 1m8',
+        marketPrice: '1.650.000đ – 1.850.000đ / bộ',
+        storePrice: '1.150.000đ / bộ 5 món',
+        note: 'Màu xanh mát lành, cực hợp mệnh Mộc – mệnh Hỏa – mệnh Thủy',
+      },
+      {
+        sizeOrOption: '2. Bộ 5 Món Lụa Sky Silk Cỡ Đại 2,0m × 2,2m',
+        marketPrice: '1.950.000đ – 2.250.000đ / bộ',
+        storePrice: '1.350.000đ / bộ',
+        note: 'Đường may viền gối bản rộng chuẩn khách sạn, khóa kéo chăn bền bỉ',
+      },
+      {
+        sizeOrOption: '3. Mua Từ 02 Bộ Sky Silk Trở Lên',
+        marketPrice: '3.300.000đ – 3.700.000đ / 2 bộ',
+        storePrice: '2.150.000đ / 2 bộ',
+        note: 'Miễn phí bo chun ga theo yêu cầu & giao tận phòng ngủ',
+      },
+    ],
+    numericPrice: 1150000,
+    unitLabel: '1 bộ 5 món Lụa Tencel Sky Silk (Đủ 4 mã: SKY352, SKY12, SKY362, SKY7)',
+    standardDimensions: 'Đủ cỡ 1,6m × 2,0m, 1,8m × 2,0m & 2,0m × 2,2m',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/1792915211165_4373635352308930219_4373635352308930219_79e8453be4ed01196756b172fb03eaec_44e9bd52.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792915211113_4373635352308930219_4373635352308930219_18656ab8f37e99d74e56ab19f48f4c07_5be1967c.jpg',
+      '/assets/aistudio/1792915211139_4373635352308930219_4373635352308930219_2001c9d89df8f4f1e251822c047364e5_c05643c5.jpg',
+      '/assets/aistudio/1792915211372_4373635352308930219_4373635352308930219_810a1836769f2bf469f1034cdce1e7e0_bddd1d35.jpg',
+    ],
+    highlightTag: 'Xanh Ngọc & Lục Bảo · SKY352 · SKY12 · SKY362',
+    summary:
+      'Tuyển tập 04 mã màu Xanh Ngọc & Xanh Lục Bảo thanh mát nhất của dòng Lụa Tencel Sky Silk: Mã SKY352 (Xanh Ngọc Bích Nhạt Mint Sage), Mã SKY12 (Xanh Cốm Trà Non tươi mới) và bộ đôi Mã SKY362 / SKY7 (Xanh Cổ Vịt Ngọc Lục Bảo chiều sâu).',
+    visualAnnotations: [
+      {
+        label: 'Ảnh 1 – Mã SKY352: Xanh Ngọc Bích Nhạt (Mint Celadon) dịu mát như sương sớm',
+        detail:
+          'Gam màu pastel thời thượng nhất năm, mang lại cảm giác hạ nhiệt 2–3 độ C ngay khi bước vào phòng ngủ.',
+      },
+      {
+        label: 'Ảnh 2 – Mã SKY12: Xanh Cốm Ngọc (Jade Green) tươi trẻ, tràn đầy sinh khí',
+        detail:
+          'Sắc xanh lá non thanh nhã kết hợp chữ thêu Sky Silk ánh bạc mềm mại, rất được lòng các gia đình trẻ.',
+      },
+      {
+        label: 'Ảnh 3 & 4 – Mã SKY362 & Mã SKY7: Xanh Cổ Vịt Ngọc Lục Bảo (Emerald Teal)',
+        detail:
+          'Hai mã số tương đương của cùng tông Xanh Lục Bảo đậm quyền quý (đồng bộ với rèm vải xanh cổ vịt tại Showroom Tuyến Hoa).',
+      },
+    ],
+    specs: [
+      { label: 'Mã bài & Mã màu', value: 'CGL-SK-03 | Gồm: SKY352 (Xanh Mint), SKY12 (Xanh Cốm), SKY362 & SKY7 (Xanh Cổ Vịt)' },
+      { label: 'Giá tại Tuyến Hoa', value: '1.150.000đ / bộ 5 món (1m6 & 1m8) | 1.350.000đ (2m×2m2)' },
+      { label: 'Giá thị trường', value: '1.650.000đ – 2.250.000đ / bộ' },
+      { label: 'Trọn bộ 05 món', value: '01 Ga + 01 Vỏ chăn lụa + 02 Vỏ gối đầu + 01 Vỏ gối ôm thêu Sky Silk' },
+      { label: 'Ưu điểm chất liệu', value: 'Lụa Tencel 60s điều hòa thân nhiệt, kháng khuẩn, thân thiện làn da nhạy cảm' },
+    ],
+    articleParagraphs: [
+      'Những gam màu xanh ngọc bích và xanh lục bảo của bộ sưu tập Lụa Tencel Sky Silk luôn nằm trong nhóm cháy hàng nhanh nhất mỗi dịp hè thu tại Showroom Tuyến Hoa. Đặc biệt, khách hàng đã lắp rèm vải xanh cổ vịt hoặc rèm cầu vồng xanh ngọc thường chọn ngay mã SKY362 (hoặc mã tương đương SKY7) và SKY352 để tạo nên tổng thể phòng ngủ đồng điệu 100%.',
+      'Bấm vào các ảnh phụ bên dưới để đối chiếu trực tiếp từng sắc độ xanh (SKY352, SKY12, SKY362, SKY7) trước khi đặt mua.'
+    ],
+    facebookPostCopy:
+      '🌿💎 [MÁT LẠNH NHƯ BĂNG] BỘ CHĂN GA GỐI LỤA TENCEL SKY SILK TÔNG XANH NGỌC BÍCH · XANH CỐM & XANH CỔ VỊT (MÃ SKY352 · SKY12 · SKY362 · SKY7)! ✨\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 1.650.000đ – 2.250.000đ / bộ\n' +
+      '🔥 GIÁ TẠI TỔNG KHO TUYẾN HOA: Chỉ 1.150.000đ / bộ 5 món (Cỡ 2m×2m2: 1.350.000đ)!\n' +
+      '--------------------------------------------\n' +
+      '🎨 ĐỦ 04 MÃ MÀU XANH PHONG THỦY ĐỂ LỰA CHỌN:\n' +
+      '   🍵 Mã SKY352: Xanh Ngọc Bích Nhạt (Mint Sage) dịu mát, thư giãn\n' +
+      '   🌱 Mã SKY12: Xanh Cốm Ngọc (Jade Green) tươi mới, trẻ trung\n' +
+      '   🦚 Mã SKY362 & SKY7: Xanh Cổ Vịt Ngọc Lục Bảo (Emerald Teal) sang trọng, sạch sẽ\n' +
+      '✅ Trọn bộ 5 món Lụa Tencel 60s bóng mượt, miễn phí bo chun theo đúng độ dày đệm!\n' +
+      '📞 Gọi/Zalo chốt mã màu ngay: 0344.727.528 (Tuyến Hoa)!',
+  },
+  {
+    id: 'bo-chan-ga-goi-lua-tencel-sky-silk-xanh-duong-bang-tuyet-cglsk04',
+    code: 'CGL-SK-04',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Bộ Chăn Ga Gối Lụa Tencel Sky Silk 60s Tông Xanh Lam Pastel, Xanh Đại Dương & Xanh Băng Tuyết (Mã SKY343 · SKY308 · SKY338 · SKY26)',
+    shortTitle: 'Bộ Chăn Ga Lụa Sky Silk Xanh Dương & Xanh Băng (SKY343 · SKY308 · SKY338)',
+    priceDisplay: '1.150.000đ / bộ 5 món',
+    marketPriceRange: 'Giá thị trường: 1.650.000đ – 2.250.000đ / bộ',
+    marketPriceNote: 'Bộ sưu tập tông Xanh Dương (Ocean & Ice Blue) giúp giấc ngủ sâu và êm dịu hơn: Gồm SKY343 (Xanh Lam Pastel), SKY308 (Xanh Coban Đại Dương) và cặp mã SKY338 / SKY26 (Xanh Ghi Băng Tuyết).',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Bộ 5 Món Lụa Sky Silk (Mã SKY343 · SKY308 · SKY338 / SKY26) – 1m6 & 1m8',
+        marketPrice: '1.650.000đ – 1.850.000đ / bộ',
+        storePrice: '1.150.000đ / bộ 5 món',
+        note: 'Tông màu làm dịu thần kinh, giúp dễ đi vào giấc ngủ sâu',
+      },
+      {
+        sizeOrOption: '2. Bộ 5 Món Lụa Sky Silk Cỡ Đại 2,0m × 2,2m',
+        marketPrice: '1.950.000đ – 2.250.000đ / bộ',
+        storePrice: '1.350.000đ / bộ',
+        note: 'Lụa Tencel thêu nổi chữ Sky Silk sắc nét trên cả chăn và gối',
+      },
+      {
+        sizeOrOption: '3. Ưu Đãi Mua Combo 02 Bộ Sky Silk Bất Kỳ',
+        marketPrice: '3.300.000đ – 3.700.000đ / 2 bộ',
+        storePrice: '2.150.000đ / 2 bộ',
+        note: 'Miễn phí giao hàng tận giường tại Ứng Hòa & Hà Nội',
+      },
+    ],
+    numericPrice: 1150000,
+    unitLabel: '1 bộ 5 món Lụa Tencel Sky Silk (Đủ 4 mã: SKY343, SKY308, SKY338, SKY26)',
+    standardDimensions: 'Đủ cỡ 1,6m × 2,0m, 1,8m × 2,0m & 2,0m × 2,2m',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/1792915211346_4373635352308930219_4373635352308930219_35c17f5e89823d1d8ffeae5e4f272b12_233b5411.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792915211320_4373635352308930219_4373635352308930219_44065cce3fbf14de9cf2d727d9537fa9_28379d5e.jpg',
+      '/assets/aistudio/1792915211397_4373635352308930219_4373635352308930219_b2fed4ab02f536dcc537698d21f4e6af_fde3fc32.jpg',
+      '/assets/aistudio/1792915211062_4373635352308930219_4373635352308930219_714d2bf69fc437cc1ebf50ebe5ee7cad_e319b6f9.jpg',
+    ],
+    highlightTag: 'Xanh Dương & Băng Tuyết · SKY343 · SKY308 · SKY338',
+    summary:
+      'Trọn bộ 04 mã màu Xanh Dương – Xanh Băng Tuyết thanh lịch của dòng Lụa Tencel Sky Silk: Mã SKY343 (Xanh Da Trời Pastel), Mã SKY308 (Xanh Coban Đại Dương đậm nét) và cặp mã SKY338 / SKY26 (Xanh Ghi Băng Bắc Âu hiện đại).',
+    visualAnnotations: [
+      {
+        label: 'Ảnh 1 – Mã SKY343: Xanh Lam Pastel (Sky Blue) trong trẻo, mát mắt',
+        detail:
+          'Gam màu đặc trưng của thương hiệu Sky Silk, mang lại vẻ trẻ trung, thoáng rộng cho phòng ngủ.',
+      },
+      {
+        label: 'Ảnh 2 – Mã SKY308: Xanh Coban Đại Dương (Ocean Cobalt) lịch lãm, cá tính',
+        detail:
+          'Sắc xanh biển sâu nổi bật với dòng chữ thêu Sky Silk trắng tinh khôi, giữ độ mới bền bỉ theo năm tháng.',
+      },
+      {
+        label: 'Ảnh 3 & 4 – Mã SKY338 & Mã SKY26: Xanh Ghi Băng Tuyết (Ice Grey Blue)',
+        detail:
+          'Sự pha trộn tinh tế giữa sắc xanh băng và ánh bạc sương mù (SKY26 là bản chụp sáng hơn của cùng mẫu phòng SKY338).',
+      },
+    ],
+    specs: [
+      { label: 'Mã bài & Mã màu', value: 'CGL-SK-04 | Gồm: SKY343 (Xanh Lam), SKY308 (Xanh Đại Dương), SKY338 & SKY26 (Xanh Băng)' },
+      { label: 'Giá tại Tuyến Hoa', value: '1.150.000đ / bộ 5 món (1m6 & 1m8) | 1.350.000đ (2m×2m2)' },
+      { label: 'Giá thị trường', value: '1.650.000đ – 2.250.000đ / bộ' },
+      { label: 'Quy cách bộ', value: '01 Ga + 01 Chăn lụa + 02 Vỏ gối nằm + 01 Vỏ gối ôm đồng màu' },
+      { label: 'Bảo hành chất lượng', value: 'Không bai dão, không xù lông, giặt máy êm ái' },
+    ],
+    articleParagraphs: [
+      'Các nghiên cứu về giấc ngủ chỉ ra rằng gam màu xanh dương là tông màu giúp nhịp tim thư giãn và đi vào giấc ngủ nhanh nhất. Tại Showroom Tuyến Hoa, bộ tứ mã màu SKY343, SKY308, SKY338 và SKY26 đáp ứng trọn vẹn mọi sở thích từ xanh da trời nhẹ nhàng đến xanh đại dương đậm đà.',
+      'Quý khách chỉ cần nhắn mã số trên góc ảnh (ví dụ: SKY343 hoặc SKY308) kèm kích thước đệm qua Zalo 0344.727.528, xưởng Tuyến Hoa sẽ bo chun chuẩn kích thước và giao tận nhà.'
+    ],
+    facebookPostCopy:
+      '🌊❄️ [MÁT MỊN TỪNG CHẠM] BỘ CHĂN GA GỐI LỤA TENCEL SKY SILK TÔNG XANH LAM · XANH ĐẠI DƯƠNG & XANH BĂNG TUYẾT (MÃ SKY343 · SKY308 · SKY338 · SKY26)! ✨\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 1.650.000đ – 2.250.000đ / bộ\n' +
+      '🔥 GIÁ ƯU ĐÃI TẠI SHOWROOM TUYẾN HOA: Chỉ 1.150.000đ / bộ 5 món (Cỡ 2m×2m2: 1.350.000đ)!\n' +
+      '--------------------------------------------\n' +
+      '🎨 04 MÃ MÀU XANH DƯƠNG ĐẲNG CẤP TRONG BÀI:\n' +
+      '   💎 Mã SKY343: Xanh Lam Pastel (Sky Blue) trong trẻo, mát mắt\n' +
+      '   🌊 Mã SKY308: Xanh Coban Đại Dương đậm nét, lịch lãm\n' +
+      '   ❄️ Mã SKY338 & SKY26: Xanh Ghi Băng Tuyết chuẩn phong cách Bắc Âu\n' +
+      '✅ Đủ 5 món đồng bộ: 1 Ga + 1 Chăn lụa + 2 Vỏ gối nằm + 1 Vỏ gối ôm thêu chữ Sky Silk.\n' +
+      '📞 Gọi/Zalo đặt hàng ngay: 0344.727.528 (Tuyến Hoa)!',
+  },
+  {
+    id: 'bo-chan-ga-goi-lua-tencel-sky-silk-ghi-xam-xanh-da-muji-cglsk05',
+    code: 'CGL-SK-05',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Bộ Chăn Ga Gối Lụa Tencel Sky Silk 60s Tông Ghi Xám Khói, Xám Chì Than & Xanh Đá Muji Hiện Đại (Mã SKY10 · SKY334 · SKY8)',
+    shortTitle: 'Bộ Chăn Ga Lụa Sky Silk Ghi Xám & Xanh Đá (SKY10 · SKY334 · SKY8)',
+    priceDisplay: '1.150.000đ / bộ 5 món',
+    marketPriceRange: 'Giá thị trường: 1.650.000đ – 2.250.000đ / bộ',
+    marketPriceNote: 'Bộ 3 gam màu Ghi Xám & Xanh Đá tối giản hiện đại (Luxury Minimalist) được các gia đình trẻ và căn hộ chung cư, biệt thự săn đón nhiều nhất: SKY10 (Ghi Xám Khói), SKY334 (Xám Chì Than) và SKY8 (Xanh Đá Muji).',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Bộ 5 Món Lụa Sky Silk (Mã SKY10 Ghi Xám · SKY334 Xám Chì · SKY8 Xanh Đá) – 1m6 & 1m8',
+        marketPrice: '1.650.000đ – 1.850.000đ / bộ',
+        storePrice: '1.150.000đ / bộ 5 món',
+        note: 'Màu trung tính sang trọng, sạch sẽ, không bao giờ lỗi mốt',
+      },
+      {
+        sizeOrOption: '2. Bộ 5 Món Lụa Sky Silk Cỡ Đại 2,0m × 2,2m',
+        marketPrice: '1.950.000đ – 2.250.000đ / bộ',
+        storePrice: '1.350.000đ / bộ',
+        note: 'Phối hoàn hảo với rèm cầu vồng ghi xám và đệm cao cấp tại Tuyến Hoa',
+      },
+      {
+        sizeOrOption: '3. Mua Combo 02 Bộ Sky Silk Hoặc Mua Kèm Đệm Mới',
+        marketPrice: '3.300.000đ – 3.700.000đ / 2 bộ',
+        storePrice: '2.150.000đ / 2 bộ',
+        note: 'Miễn phí bo chun theo cỡ đệm & giao tận giường',
+      },
+    ],
+    numericPrice: 1150000,
+    unitLabel: '1 bộ 5 món Lụa Tencel Sky Silk (Đủ 3 mã: SKY10, SKY334, SKY8)',
+    standardDimensions: 'Đủ cỡ 1,6m × 2,0m, 1,8m × 2,0m & 2,0m × 2,2m',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/1792915211011_4373635352308930219_4373635352308930219_d1e3997b7240d7fb7f5069950733f5cc_99031ef0.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792915211294_4373635352308930219_4373635352308930219_4dde5f640cbfc704aeeaecd7a0bd9224_276bd3a6.jpg',
+      '/assets/aistudio/1792915211036_4373635352308930219_4373635352308930219_a997e16bcd4b1084137a0e38f69d5377_08db1949.jpg',
+    ],
+    highlightTag: 'Tông Ghi Xám Hiện Đại · SKY10 · SKY334 · SKY8',
+    summary:
+      'Đỉnh cao phong cách Tối Giản Hiện Đại (Modern Luxury): Mã SKY10 (Ghi Xám Khói trung tính), Mã SKY334 (Xám Chì Than trầm lịch lãm) và Mã SKY8 (Xanh Đá Muji trẻ trung). Cực kỳ sạch sẽ, tôn nổi bật nội thất phòng ngủ và đồng bộ hoàn hảo với rèm cầu vồng ghi xám.',
+    visualAnnotations: [
+      {
+        label: 'Ảnh 1 – Mã SKY10: Ghi Xám Khói (Smoke Grey) chuẩn căn hộ Penthouse',
+        detail:
+          'Độ bóng nhẹ của lụa Tencel biến sắc ghi xám trở nên mềm mại, sang trọng như nhung lụa khách sạn 5 sao.',
+      },
+      {
+        label: 'Ảnh 2 – Mã SKY334: Xám Chì Than (Charcoal Slate) lịch lãm, siêu sạch',
+        detail:
+          'Gam màu trầm vững chãi, cực kỳ phù hợp cho gia đình có trẻ nhỏ hoặc yêu thích tông màu tối giản châu Âu.',
+      },
+      {
+        label: 'Ảnh 3 – Mã SKY8: Xanh Đá Muji (Slate Blue Grey) phối ga chần hoa văn nổi',
+        detail:
+          'Sự giao thoa giữa sắc ghi xám và ánh xanh đá Nhật Bản, mang lại không gian nghỉ ngơi yên tĩnh tuyệt đối.',
+      },
+    ],
+    specs: [
+      { label: 'Mã bài & Mã màu', value: 'CGL-SK-05 | Gồm 03 mã màu: SKY10 (Ghi Khói), SKY334 (Xám Chì), SKY8 (Xanh Đá)' },
+      { label: 'Giá tại Tuyến Hoa', value: '1.150.000đ / bộ 5 món (1m6 & 1m8) | 1.350.000đ (2m×2m2)' },
+      { label: 'Giá thị trường', value: '1.650.000đ – 2.250.000đ / bộ' },
+      { label: 'Trọn bộ 05 món', value: '01 Ga + 01 Chăn lụa + 02 Vỏ gối nằm + 01 Vỏ gối ôm thêu Sky Silk' },
+      { label: 'Dịch vụ đi kèm', value: 'Miễn phí bo chun theo cỡ đệm – Giao hàng tận nơi kiểm tra mới thanh toán' },
+    ],
+    articleParagraphs: [
+      'Nếu bạn đang tìm kiếm một bộ chăn ga gối vừa sang trọng như khách sạn, vừa sạch sẽ và dễ phối với rèm cầu vồng hoặc rèm vải màu ghi xám, thì bộ ba mã màu SKY10, SKY334 và SKY8 chính là lựa chọn hoàn hảo nhất.',
+      'Toàn bộ 18 mẫu Chăn Ga Gối Lụa Tencel Alyda® LT 28 và Sky Silk đều đang có sẵn tại Showroom 3 Tầng Tuyến Hoa (Chợ Cháy, Ứng Hòa) để quý khách đến sờ tận tay chất vải mát lạnh hoặc đặt giao tận giường ngay trong ngày.'
+    ],
+    facebookPostCopy:
+      '🖤✨ [SANG TRỌNG & SIÊU SẠCH] BỘ CHĂN GA GỐI LỤA TENCEL SKY SILK TÔNG GHI XÁM KHÓI · XÁM CHÌ & XANH ĐÁ MUJI (MÃ SKY10 · SKY334 · SKY8)! 🛌\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 1.650.000đ – 2.250.000đ / bộ\n' +
+      '🔥 GIÁ TẠI TỔNG KHO TUYẾN HOA: Chỉ 1.150.000đ / bộ 5 món (Cỡ 2m×2m2: 1.350.000đ)!\n' +
+      '--------------------------------------------\n' +
+      '🎨 03 MÃ MÀU GHI XÁM HIỆN ĐẠI TRONG BÀI:\n' +
+      '   🩶 Mã SKY10: Ghi Xám Khói (Smoke Grey) sang trọng chuẩn căn hộ hiện đại\n' +
+      '   🖤 Mã SKY334: Xám Chì Than (Charcoal Slate) trầm ấm, lịch lãm, siêu sạch\n' +
+      '   🪨 Mã SKY8: Xanh Đá Muji (Slate Blue Grey) tối giản kiểu Nhật\n' +
+      '✅ Trọn bộ 5 món Lụa Tencel 60s mát lạnh: 1 Ga (miễn phí bo chun) + 1 Chăn lụa + 2 Vỏ gối nằm + 1 Vỏ gối ôm.\n' +
+      '📞 Gọi/Zalo chốt mã màu ngay: 0344.727.528 (Tuyến Hoa)!',
+  },
+
   // ===========================================================================
   // 00-NEW. BỘ 05 BÀI ĐĂNG QUẢNG CÁO MẪU ĐỆM MỚI TẢI TỪ INTERNET (SÔNG HỒNG GEN 4,
   //         KIM CƯƠNG HAPPY GOLD, EVERON ARTEMIS/CERAMIC, LIÊN Á L'A DOME & HANVICO NANO)
@@ -4283,7 +4809,9 @@ export function generateFullCatalogFacebookPost(category: NewProductCategory = '
     `🌐 Website chính thức (Xem đủ ${ANNOTATED_PRODUCT_POSTS.length} mẫu & bảng giá): ${OFFICIAL_WEBSITE_URL}\n` +
     '==================================================\n' +
     '📋 BẢNG GIÁ NIÊM YẾT RÕ RÀNG (RẺ HƠN GIÁ THỊ TRƯỜNG 15% – 40%):\n' +
-    '1️⃣ CÁC MẪU ĐỆM MỚI NHẤT (SÔNG HỒNG GEN 4, KIM CƯƠNG HAPPY GOLD, EVERON ARTEMIS, LIÊN Á L\'A DOME, HANVICO NANO), MÀN HỘP & CHIẾU MÂY:\n' +
+    '1️⃣ BỘ CHĂN GA GỐI LỤA TENCEL ALYDA® LT 28 (7 MÓN), SKY SILK (17 MÃ MÀU) & CÁC MẪU ĐỆM MỚI NHẤT:\n' +
+    '   • Bộ Chăn Ga Gối Cưới Lụa Tencel Hoàng Gia Alyda® LT 28 (Full 7 món có sẵn ruột chăn): Cỡ 1m6 & 1m8 giá 2.150.000đ/bộ | Cỡ 2m×2m2 giá 2.350.000đ/bộ (Thị trường: 3,2Tr – 4,2Tr).\n' +
+    '   • Bộ Chăn Ga Gối Lụa Tencel Sky Silk 60s (Đủ 17 mã màu SKY1 – SKY362): Cỡ 1m6 & 1m8 giá 1.150.000đ/bộ 5 món | Cỡ 2m×2m2 giá 1.350.000đ/bộ.\n' +
     '   • Đệm Cao Cấp Sông Hồng Back Essential Thế Hệ 4 (Dày 17–32cm): Cỡ 1m6×2m chỉ từ 6.750.000đ | Cỡ 1m8×2m chỉ từ 6.950.000đ (Giá hãng: 11,3Tr – 14,7Tr).\n' +
     '   • Nệm Cao Su 100% Thiên Nhiên Kim Cương Happy Gold (BH 12 năm): Dày 5cm từ 4.950.000đ | Dày 10cm từ 7.650.000đ (Tặng bộ gối cao su non + ga gối).\n' +
     '   • Đệm Everon Hàn Quốc Chính Hãng: Dòng Ceramic hồng ngoại dày 9cm từ 3.850.000đ | Dòng Hoàng Gia Everon Artemis bông Đức dày 15–18cm từ 5.850.000đ.\n' +
