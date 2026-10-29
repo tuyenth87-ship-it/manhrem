@@ -279,12 +279,14 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
     img.src = imgSrc;
   };
 
-  const handleDownloadPostBrandedImage = (post: AnnotatedProductPost) => {
+  const handleDownloadPostBrandedImage = (post: AnnotatedProductPost, overrideImgUrl?: string) => {
     const isBaked = BAKED_BRAND_CODES.has(post.code);
+    const targetImg = overrideImgUrl || cardPreviewImages[post.id] || post.imageUrl;
+    const imgCaption = post.imageCaptions?.[targetImg];
     renderAndDownloadStampedPng(
-      post.imageUrl,
+      targetImg,
       'SHOWROOM & XƯỞNG TUYẾN HOA CHÍNH HÃNG',
-      `${post.shortTitle} (${post.code})`,
+      imgCaption ? `${post.shortTitle} – ${imgCaption.badge}` : `${post.shortTitle} (${post.code})`,
       `Giá Tuyến Hoa: ${post.priceDisplay} · ${post.standardDimensions}`,
       `Tuyen-Hoa-${post.code}.png`,
       isBaked
@@ -876,7 +878,9 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                                 ? 'border-[#9A681C] ring-2 ring-[#C59B4D]/40 scale-105'
                                 : 'border-[#E2D4B7] opacity-80 hover:opacity-100'
                             }`}
-                            title={`Xem mẫu ảnh số ${idx + 1}`}
+                            title={
+                              post.imageCaptions?.[imgUrl]?.badge || `Xem mẫu ảnh số ${idx + 1}`
+                            }
                           >
                             <img
                               src={imgUrl}
@@ -886,6 +890,22 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                           </button>
                         );
                       })}
+                    </div>
+                  )}
+
+                  {/* Per-Image Specific Annotation Box when imageCaptions is provided */}
+                  {post.imageCaptions?.[currentCardImg] && (
+                    <div
+                      data-testid={`image-caption-box-${post.code}`}
+                      className="mx-5 mt-3 p-3 rounded-2xl bg-[#FAF4E4] border border-[#D8BE8B] space-y-1"
+                    >
+                      <div className="text-xs sm:text-sm font-extrabold text-[#7A4E0E] flex items-center gap-1.5">
+                        <Sparkles className="w-3.5 h-3.5 shrink-0 text-[#8A5A14]" />
+                        <span>{post.imageCaptions[currentCardImg].badge}</span>
+                      </div>
+                      <p className="text-xs sm:text-sm text-[#1C1917] font-medium leading-relaxed">
+                        {post.imageCaptions[currentCardImg].caption}
+                      </p>
                     </div>
                   )}
 
@@ -965,9 +985,9 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                   {post.mediaType === 'image' && (
                     <button
                       type="button"
-                      onClick={() => handleDownloadPostBrandedImage(post)}
+                      onClick={() => handleDownloadPostBrandedImage(post, currentCardImg)}
                       className="py-2.5 px-2 rounded-xl bg-[#FAF6EE] hover:bg-[#F2E6CE] text-[#1C1917] font-bold text-xs sm:text-sm flex items-center justify-center gap-1 whitespace-nowrap cursor-pointer border border-[#DFCEAF] transition-colors"
-                      title="Tải ảnh đã chèn chữ Tuyến Hoa về máy"
+                      title="Tải ảnh đang chọn đã chèn chữ Tuyến Hoa về máy"
                     >
                       <Download className="w-4 h-4 text-[#8A5A14] shrink-0" />
                       <span>Tải Ảnh</span>
@@ -978,7 +998,7 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                     type="button"
                     onClick={() => {
                       setActiveArticleModal(post);
-                      setActiveGalleryImg(post.imageUrl);
+                      setActiveGalleryImg(currentCardImg);
                     }}
                     className="py-2.5 px-2 rounded-xl bg-[#FAF6EE] hover:bg-[#F2E6CE] text-[#1C1917] font-bold text-xs sm:text-sm flex items-center justify-center gap-1 whitespace-nowrap cursor-pointer border border-[#DFCEAF] transition-colors"
                     title="Xem chi tiết & bảng giá"
@@ -1209,6 +1229,30 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                 )}
               </div>
 
+              {activeArticleModal.imageCaptions?.[
+                activeGalleryImg || activeArticleModal.imageUrl
+              ] && (
+                <div className="p-4 rounded-2xl bg-[#FAF4E4] border border-[#D8BE8B] space-y-1">
+                  <div className="text-sm sm:text-base font-extrabold text-[#7A4E0E] flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-[#8A5A14] shrink-0" />
+                    <span>
+                      {
+                        activeArticleModal.imageCaptions[
+                          activeGalleryImg || activeArticleModal.imageUrl
+                        ].badge
+                      }
+                    </span>
+                  </div>
+                  <p className="text-sm sm:text-base text-[#1C1917] font-medium">
+                    {
+                      activeArticleModal.imageCaptions[
+                        activeGalleryImg || activeArticleModal.imageUrl
+                      ].caption
+                    }
+                  </p>
+                </div>
+              )}
+
               {activeArticleModal.secondaryImages && activeArticleModal.secondaryImages.length > 0 && (
                 <div className="space-y-2">
                   <div className="text-sm font-bold text-[#1C1917]">
@@ -1252,11 +1296,16 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                   {activeArticleModal.mediaType === 'image' && (
                     <button
                       type="button"
-                      onClick={() => handleDownloadPostBrandedImage(activeArticleModal)}
+                      onClick={() =>
+                        handleDownloadPostBrandedImage(
+                          activeArticleModal,
+                          activeGalleryImg || activeArticleModal.imageUrl
+                        )
+                      }
                       className="px-4 py-2.5 rounded-xl bg-white hover:bg-[#FAF2E1] text-[#1C1917] border border-[#C69C4E] text-xs sm:text-sm font-extrabold flex items-center gap-1.5 cursor-pointer"
                     >
                       <Download className="w-4 h-4 text-[#8A5A14]" />
-                      <span>Tải Ảnh Có Chữ Tuyến Hoa</span>
+                      <span>Tải Ảnh Đang Xem Có Chữ Tuyến Hoa</span>
                     </button>
                   )}
                   <button

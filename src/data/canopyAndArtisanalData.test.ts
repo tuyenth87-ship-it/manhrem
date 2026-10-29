@@ -42,11 +42,11 @@ test('Multi-set Màn khung order applies 50,000 VND/set discount and calculates 
   assert.equal(comboOrder.finalTotal, 3650000);
 });
 
-test('Deduplication removes all duplicate primary and secondary images across all 59 annotated posts', () => {
+test('Deduplication removes all duplicate primary and secondary images across all 60 annotated posts', () => {
   const dedupedPosts = getDeduplicatedProductPosts();
-  assert.equal(dedupedPosts.length, 59);
-  assert.equal(ANNOTATED_PRODUCT_POSTS.length, 59);
-  assert.equal(MARKET_PRICE_SUMMARY_TABLE.length, 22);
+  assert.equal(dedupedPosts.length, 60);
+  assert.equal(ANNOTATED_PRODUCT_POSTS.length, 60);
+  assert.equal(MARKET_PRICE_SUMMARY_TABLE.length, 23);
 
   // Verify no two posts share the exact same primary imageUrl
   const primaryImages = dedupedPosts.map((p) => p.imageUrl);
@@ -82,17 +82,17 @@ test('Deduplication removes all duplicate primary and secondary images across al
   }
 
   // Verify deduplication summary accounting
-  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 152);
-  assert.equal(DEDUPLICATION_SUMMARY.totalRemovedDuplicates, 45);
-  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 107);
-  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 11);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 170);
+  assert.equal(DEDUPLICATION_SUMMARY.totalRemovedDuplicates, 51);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 119);
+  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 12);
 });
 
 test('All annotated products have market price tiers, visual annotations, specs, and clear Facebook post copy', () => {
   const canopyAndBeddingItems = filterAnnotatedProducts('man-khung-1tr');
-  assert.equal(canopyAndBeddingItems.length, 32);
+  assert.equal(canopyAndBeddingItems.length, 33);
 
-  // Verify the 6 newest posts from the 18 uploaded Alyda Royal Embroidery & Korean Princess Lavender bedding photos
+  // Verify the 6 posts from the 18 uploaded Alyda Royal Embroidery & Korean Princess Lavender bedding photos
   const alydaPeony = getCanopyProductById('CGL-AL-01');
   assert.ok(alydaPeony);
   assert.equal(alydaPeony?.numericPrice, 2150000);
@@ -102,6 +102,7 @@ test('All annotated products have market price tiers, visual annotations, specs,
   assert.ok(alydaVersailles);
   assert.equal(alydaVersailles?.numericPrice, 2150000);
   assert.equal(alydaVersailles?.secondaryImages?.length, 2);
+  assert.equal(Object.keys(alydaVersailles?.imageCaptions || {}).length, 3);
 
   const alydaCrown = getCanopyProductById('CGL-AL-03');
   assert.ok(alydaCrown);
@@ -117,14 +118,23 @@ test('All annotated products have market price tiers, visual annotations, specs,
   assert.ok(alydaGarden);
   assert.equal(alydaGarden?.numericPrice, 2150000);
   assert.equal(alydaGarden?.secondaryImages?.length, 4);
+  assert.equal(Object.keys(alydaGarden?.imageCaptions || {}).length, 5);
 
   const princessLavender = getCanopyProductById('CGL-CC-01');
   assert.ok(princessLavender);
   assert.equal(princessLavender?.numericPrice, 1350000);
+  assert.equal(princessLavender?.secondaryImages?.length, 7);
+  assert.equal(Object.keys(princessLavender?.imageCaptions || {}).length, 8);
   assert.equal(
     princessLavender?.imageUrl,
     '/assets/aistudio/1792915225334_4373635352308930219_4373635352308930219_b1cc4f9fe287531332cb288e86597c7e_3574b865.jpg'
   );
+
+  const drorTencel = getCanopyProductById('CGL-DR-01');
+  assert.ok(drorTencel);
+  assert.equal(drorTencel?.numericPrice, 1450000);
+  assert.equal(drorTencel?.secondaryImages?.length, 3);
+  assert.equal(Object.keys(drorTencel?.imageCaptions || {}).length, 4);
 
   // Verify the 6 previous posts from the 18 uploaded Alyda LT 28 & Sky Silk Tencel bedding photos
   const alydaLt28 = getCanopyProductById('CGL-LT-28');
@@ -259,36 +269,47 @@ test('All annotated products have market price tiers, visual annotations, specs,
   assert.equal(videoVongXep?.mediaType, 'video');
   assert.equal(videoVongXep?.numericPrice, 550000);
 
-  // Verify the 6 mattress posts (16 photos)
+  // Verify the 2 newest bedding posts + 6 mattress posts are at the very top and have per-image captions
+  assert.deepEqual(
+    ANNOTATED_PRODUCT_POSTS.slice(0, 8).map((p) => p.code),
+    ['CGL-CC-01', 'CGL-DR-01', 'DLV-TH-01', 'DKC-TH-01', 'DVC-TH-01', 'DCR-TH-01', 'DGD-TH-01', 'KXD-TH-01']
+  );
+
   const demLongVu = getCanopyProductById('DLV-TH-01');
   assert.ok(demLongVu);
   assert.equal(demLongVu?.numericPrice, 1850000);
   assert.equal(demLongVu?.secondaryImages?.length, 3);
+  assert.equal(Object.keys(demLongVu?.imageCaptions || {}).length, 4);
 
   const demKimCuong = getCanopyProductById('DKC-TH-01');
   assert.ok(demKimCuong);
   assert.equal(demKimCuong?.numericPrice, 1850000);
   assert.equal(demKimCuong?.secondaryImages?.length, 2);
+  assert.equal(Object.keys(demKimCuong?.imageCaptions || {}).length, 3);
 
   const demVicuna = getCanopyProductById('DVC-TH-01');
   assert.ok(demVicuna);
   assert.equal(demVicuna?.numericPrice, 2150000);
   assert.equal(demVicuna?.secondaryImages?.length, 2);
+  assert.equal(Object.keys(demVicuna?.imageCaptions || {}).length, 3);
 
   const demCaro = getCanopyProductById('DCR-TH-01');
   assert.ok(demCaro);
   assert.equal(demCaro?.numericPrice, 1750000);
   assert.equal(demCaro?.secondaryImages?.length, 1);
+  assert.equal(Object.keys(demCaro?.imageCaptions || {}).length, 2);
 
   const demGamDo = getCanopyProductById('DGD-TH-01');
   assert.ok(demGamDo);
   assert.equal(demGamDo?.numericPrice, 1450000);
   assert.equal(demGamDo?.secondaryImages?.length, 1);
+  assert.equal(Object.keys(demGamDo?.imageCaptions || {}).length, 2);
 
   const khoPhoiDem = getCanopyProductById('KXD-TH-01');
   assert.ok(khoPhoiDem);
   assert.equal(khoPhoiDem?.numericPrice, 1350000);
   assert.equal(khoPhoiDem?.secondaryImages?.length, 1);
+  assert.equal(Object.keys(khoPhoiDem?.imageCaptions || {}).length, 2);
 
   const chieuMay = getCanopyProductById('CM-TH-01');
   assert.ok(chieuMay);
