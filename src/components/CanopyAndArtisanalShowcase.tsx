@@ -119,7 +119,7 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
   );
 
   const visiblePriceRows = useMemo(
-    () => (showAllPrices ? MARKET_PRICE_SUMMARY_TABLE : MARKET_PRICE_SUMMARY_TABLE.slice(0, 6)),
+    () => (showAllPrices ? MARKET_PRICE_SUMMARY_TABLE : MARKET_PRICE_SUMMARY_TABLE.slice(0, 4)),
     [showAllPrices]
   );
 
@@ -460,33 +460,25 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
           </div>
         </div>
 
-        {/* BRIGHT DEDUPLICATION REPORT BANNER */}
+        {/* CONCISE DEDUPLICATION REPORT BANNER */}
         <div
           data-testid="deduplication-report-banner"
-          className="bg-[#FCF8F0] text-[#1C1917] px-5 py-3 sm:px-7 border-b border-[#EAE0CE] flex flex-col sm:flex-row sm:items-center justify-between gap-2.5"
+          className="bg-[#FCF8F0] text-[#1C1917] px-5 py-2.5 sm:px-7 border-b border-[#EAE0CE] flex flex-col sm:flex-row sm:items-center justify-between gap-2"
         >
-          <div className="flex items-center gap-2 text-sm sm:text-base text-stone-800">
-            <Filter className="w-4 h-4 text-[#8A5A14] shrink-0" />
+          <div className="flex items-center gap-2 text-xs sm:text-sm text-stone-700 font-medium">
+            <Filter className="w-3.5 h-3.5 text-[#8A5A14] shrink-0" />
             <span>
-              <strong className="text-[#1C1917] font-extrabold">
-                Đã cắt & lọc bỏ {DEDUPLICATION_SUMMARY.totalRemovedDuplicates} video · ảnh trùng lặp
-              </strong>{' '}
-              · Giữ lại{' '}
-              <strong className="text-[#8A5A14] font-extrabold">
-                {DEDUPLICATION_SUMMARY.totalUniquePublished} tư liệu chuẩn
-              </strong>{' '}
-              trong <strong className="text-[#1C1917]">{DEDUPLICATED_POSTS.length} bài đăng</strong>.
+              Đã lọc <strong className="text-[#1C1917]">{DEDUPLICATION_SUMMARY.totalRemovedDuplicates} ảnh trùng</strong> · Hiển thị{' '}
+              <strong className="text-[#8A5A14]">{DEDUPLICATED_POSTS.length} bộ sưu tập</strong> ({DEDUPLICATION_SUMMARY.totalUniquePublished} ảnh &amp; video chuẩn)
             </span>
           </div>
           <button
             type="button"
             onClick={() => setShowDedupReport((prev) => !prev)}
             data-testid="toggle-dedup-details-btn"
-            className="px-3.5 py-1.5 rounded-xl bg-white hover:bg-[#FAF2E1] text-[#1C1917] font-bold text-xs sm:text-sm whitespace-nowrap cursor-pointer self-start sm:self-auto border border-[#D5C29F] transition-colors"
+            className="px-3 py-1 rounded-lg bg-white hover:bg-[#FAF2E1] text-[#1C1917] font-bold text-xs whitespace-nowrap cursor-pointer self-start sm:self-auto border border-[#D5C29F] transition-colors"
           >
-            {showDedupReport
-              ? 'Thu gọn'
-              : `Chi tiết ${DEDUPLICATION_SUMMARY.totalRemovedDuplicates} video & ảnh đã lọc`}
+            {showDedupReport ? 'Thu gọn' : 'Chi tiết lọc trùng'}
           </button>
         </div>
 
@@ -653,32 +645,30 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
           )}
         </AnimatePresence>
 
-        {/* Bright, Large-Print Price Summary Grid */}
+        {/* Airy, Concise Price Summary Grid */}
         <div className="p-5 sm:p-7 bg-[#FCFBF8] space-y-4">
-          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
             <AnimatePresence initial={false}>
               {visiblePriceRows.map((row) => (
                 <motion.div
                   key={row.id}
                   layout
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.96 }}
-                  transition={{ duration: 0.25 }}
-                  className="bg-white px-4 py-4 rounded-2xl border-2 border-[#EAE0CE] hover:border-[#C59B4D] transition-colors flex items-center justify-between gap-3 shadow-2xs"
+                  transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  className="bg-white px-4 py-3.5 rounded-2xl border border-[#EAE0CE] hover:border-[#C59B4D] transition-colors flex flex-col justify-between gap-2 shadow-2xs"
                 >
-                  <div className="min-w-0">
-                    <div className="font-extrabold text-[#1C1917] text-sm sm:text-base leading-snug">
-                      {row.productGroup}
-                    </div>
-                    <div className="text-xs sm:text-sm text-stone-500 mt-1 font-medium">
-                      Thị trường: <span className="line-through font-mono">{row.marketPrice}</span>
-                    </div>
+                  <div className="font-bold text-[#1C1917] text-sm sm:text-base leading-snug line-clamp-1">
+                    {row.productGroup.replace(/^\d+\.\s*/, '')}
                   </div>
-                  <div className="text-right shrink-0">
-                    <div className="text-sm sm:text-base font-mono font-extrabold text-[#7A4E0E] bg-[#FDF6E7] px-3 py-1.5 rounded-xl border border-[#D8B670] tabular-nums whitespace-nowrap">
+                  <div className="flex items-baseline justify-between gap-2 pt-1">
+                    <span className="text-sm sm:text-base font-mono font-extrabold text-[#7A4E0E] tabular-nums">
                       {row.storePrice}
-                    </div>
+                    </span>
+                    <span className="text-xs text-stone-400 line-through font-mono tabular-nums">
+                      {row.marketPrice}
+                    </span>
                   </div>
                 </motion.div>
               ))}
@@ -693,8 +683,8 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
             >
               <span>
                 {showAllPrices
-                  ? 'Thu gọn bảng giá nhanh'
-                  : `Xem đầy đủ ${MARKET_PRICE_SUMMARY_TABLE.length} hạng mục báo giá`}
+                  ? 'Thu gọn bảng giá'
+                  : `Xem đầy đủ ${MARKET_PRICE_SUMMARY_TABLE.length} hạng mục`}
               </span>
               {showAllPrices ? (
                 <ChevronUp className="w-4 h-4 text-[#8A5A14]" />
@@ -778,34 +768,33 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
         </div>
       </div>
 
-      {/* 3. BRIGHT LUXURY PRODUCT CARDS WITH LARGE CLEAR TYPOGRAPHY */}
+      {/* 3. AIRY, MINIMAL-TEXT LUXURY PRODUCT CARDS WITH SEAMLESS CROSSFADE */}
       <motion.div
         layout
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
       >
         <AnimatePresence mode="popLayout">
           {filteredPosts.map((post, index) => {
             const isBakedBrandImage = BAKED_BRAND_CODES.has(post.code);
-            const primaryHighlight = post.visualAnnotations[0]?.label;
             const allCardImages = [post.imageUrl, ...(post.secondaryImages || [])];
             const currentCardImg = cardPreviewImages[post.id] || post.imageUrl;
             return (
               <motion.article
                 layout
                 key={post.id}
-                initial={{ opacity: 0, y: 20, scale: 0.98 }}
+                initial={{ opacity: 0, y: 16, scale: 0.99 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
+                exit={{ opacity: 0, scale: 0.96 }}
                 transition={{
-                  duration: 0.35,
-                  delay: Math.min(index * 0.035, 0.25),
-                  ease: [0.22, 1, 0.36, 1],
+                  duration: 0.42,
+                  delay: Math.min(index * 0.03, 0.2),
+                  ease: [0.16, 1, 0.3, 1],
                 }}
                 data-testid={`annotated-post-card-${post.code}`}
-                className="luxury-card bg-white rounded-3xl border-2 border-[#E6DAC3] overflow-hidden flex flex-col justify-between"
+                className="luxury-card bg-white rounded-3xl border border-[#E6DAC3] overflow-hidden flex flex-col justify-between"
               >
                 <div>
-                  {/* Bright Media Frame */}
+                  {/* Bright Media Frame with Seamless Image Crossfade */}
                   <div className="relative aspect-4/3 bg-[#F6F1E6] overflow-hidden group border-b border-[#EAE0CE]">
                     {post.mediaType === 'video' && post.videoUrl ? (
                       <video
@@ -817,49 +806,56 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                         className="w-full h-full object-cover"
                       />
                     ) : (
-                      <img
-                        src={currentCardImg}
-                        alt={post.shortTitle}
-                        referrerPolicy="no-referrer"
-                        onClick={() => {
-                          setActiveArticleModal(post);
-                          setActiveGalleryImg(currentCardImg);
-                        }}
-                        className="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-700"
-                      />
+                      <AnimatePresence initial={false}>
+                        <motion.img
+                          key={currentCardImg}
+                          src={currentCardImg}
+                          alt={post.shortTitle}
+                          referrerPolicy="no-referrer"
+                          initial={{ opacity: 0, scale: 1.03 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
+                          onClick={() => {
+                            setActiveArticleModal(post);
+                            setActiveGalleryImg(currentCardImg);
+                          }}
+                          className="absolute inset-0 w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-700"
+                        />
+                      </AnimatePresence>
                     )}
 
-                    {/* Bright Frosted Brand Tag at Top-Left (leaves bottom corners unobstructed for SKY/LT28 code badges) */}
+                    {/* Minimal Top-Left Code Tag */}
                     {!isBakedBrandImage && post.mediaType === 'image' && (
-                      <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md border border-[#C69C4E] px-3 py-1 rounded-xl pointer-events-none shadow-xs">
+                      <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md border border-[#C69C4E] px-2.5 py-1 rounded-xl pointer-events-none shadow-2xs z-10">
                         <span className="text-xs font-extrabold text-[#1C1917] tracking-wide uppercase">
-                          TUYẾN HOA · {post.code}
+                          {post.code}
                         </span>
                       </div>
                     )}
 
                     {post.mediaType === 'video' && (
-                      <div className="absolute top-3 right-3 pointer-events-none">
-                        <span className="px-3 py-1 rounded-xl bg-white/95 text-[#1C1917] border border-[#C69C4E] text-xs font-extrabold shadow-xs">
-                          {post.code} · VIDEO THỰC TẾ
+                      <div className="absolute top-3 right-3 pointer-events-none z-10">
+                        <span className="px-2.5 py-1 rounded-xl bg-white/95 text-[#1C1917] border border-[#C69C4E] text-xs font-extrabold shadow-2xs">
+                          VIDEO
                         </span>
                       </div>
                     )}
 
                     {post.secondaryImages && post.secondaryImages.length > 0 && (
-                      <div className="absolute top-3 right-3 pointer-events-none">
-                        <span className="px-2.5 py-1 rounded-xl bg-white/95 text-[#8A5A14] border border-[#C69C4E] text-xs font-extrabold shadow-xs">
-                          Đủ {allCardImages.length} ảnh / mã màu
+                      <div className="absolute top-3 right-3 pointer-events-none z-10">
+                        <span className="px-2.5 py-1 rounded-xl bg-white/95 text-[#8A5A14] border border-[#C69C4E] text-xs font-extrabold shadow-2xs">
+                          {allCardImages.length} mẫu
                         </span>
                       </div>
                     )}
                   </div>
 
-                  {/* Interactive Thumbnail Swatch Bar right below image when multiple angles/colors exist */}
+                  {/* Interactive Thumbnail Swatch Bar */}
                   {allCardImages.length > 1 && (
                     <div className="px-5 pt-3.5 flex items-center gap-2 overflow-x-auto no-scrollbar">
-                      <span className="text-xs font-extrabold text-[#8A5A14] shrink-0">
-                        Chọn mẫu ({allCardImages.length}):
+                      <span className="text-xs font-bold text-[#8A5A14] shrink-0">
+                        Mẫu ({allCardImages.length}):
                       </span>
                       {allCardImages.map((imgUrl, idx) => {
                         const isSelected = currentCardImg === imgUrl;
@@ -873,10 +869,10 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                                 [post.id]: imgUrl,
                               }))
                             }
-                            className={`relative w-12 h-10 rounded-xl overflow-hidden border-2 transition-all shrink-0 cursor-pointer ${
+                            className={`relative w-12 h-10 rounded-xl overflow-hidden border-2 transition-all duration-300 shrink-0 cursor-pointer ${
                               isSelected
                                 ? 'border-[#9A681C] ring-2 ring-[#C59B4D]/40 scale-105'
-                                : 'border-[#E2D4B7] opacity-80 hover:opacity-100'
+                                : 'border-[#E2D4B7] opacity-75 hover:opacity-100'
                             }`}
                             title={
                               post.imageCaptions?.[imgUrl]?.badge || `Xem mẫu ảnh số ${idx + 1}`
@@ -893,62 +889,61 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                     </div>
                   )}
 
-                  {/* Per-Image Specific Annotation Box when imageCaptions is provided */}
+                  {/* Concise Animated Per-Image Caption Box */}
                   {post.imageCaptions?.[currentCardImg] && (
-                    <div
-                      data-testid={`image-caption-box-${post.code}`}
-                      className="mx-5 mt-3 p-3 rounded-2xl bg-[#FAF4E4] border border-[#D8BE8B] space-y-1"
-                    >
-                      <div className="text-xs sm:text-sm font-extrabold text-[#7A4E0E] flex items-center gap-1.5">
-                        <Sparkles className="w-3.5 h-3.5 shrink-0 text-[#8A5A14]" />
-                        <span>{post.imageCaptions[currentCardImg].badge}</span>
-                      </div>
-                      <p className="text-xs sm:text-sm text-[#1C1917] font-medium leading-relaxed">
-                        {post.imageCaptions[currentCardImg].caption}
-                      </p>
-                    </div>
+                    <AnimatePresence mode="wait" initial={false}>
+                      <motion.div
+                        key={currentCardImg}
+                        initial={{ opacity: 0, y: 4 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -4 }}
+                        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                        data-testid={`image-caption-box-${post.code}`}
+                        className="mx-5 mt-3 px-3.5 py-2.5 rounded-2xl bg-[#FAF4E4] border border-[#D8BE8B] space-y-0.5"
+                      >
+                        <div className="text-xs sm:text-sm font-extrabold text-[#7A4E0E] flex items-center gap-1.5 truncate">
+                          <Sparkles className="w-3.5 h-3.5 shrink-0 text-[#8A5A14]" />
+                          <span className="truncate">{post.imageCaptions[currentCardImg].badge}</span>
+                        </div>
+                        <p className="text-xs text-stone-700 font-medium leading-relaxed line-clamp-1">
+                          {post.imageCaptions[currentCardImg].caption}
+                        </p>
+                      </motion.div>
+                    </AnimatePresence>
                   )}
 
-                  {/* Large, Crisp Editorial Card Body */}
-                  <div className="p-5 sm:p-6 space-y-3.5">
+                  {/* Airy, Scannable Card Body (Minimal Text) */}
+                  <div className="p-5 sm:p-6 space-y-4">
                     <div>
-                      <div className="text-xs sm:text-sm font-extrabold uppercase tracking-wide text-[#8A5A14]">
+                      <div className="text-xs font-bold tracking-wide text-[#8A5A14] truncate">
                         {post.code} · {post.highlightTag}
                       </div>
-                      <h3 className={`font-display font-extrabold text-[#1C1917] leading-snug mt-1 ${cardTitleClass}`}>
+                      <h3
+                        onClick={() => {
+                          setActiveArticleModal(post);
+                          setActiveGalleryImg(currentCardImg);
+                        }}
+                        className={`font-display font-extrabold text-[#1C1917] leading-[1.38] mt-1.5 line-clamp-2 cursor-pointer hover:text-[#8A5A14] transition-colors ${cardTitleClass}`}
+                      >
                         {post.shortTitle}
                       </h3>
                     </div>
 
-                    {/* Bright Warm Cream Price Ledger Box */}
+                    {/* Clean Single-Row Price Box */}
                     <div className="bg-[#FDF8EE] border border-[#E2CFA8] rounded-2xl px-4 py-3 flex items-baseline justify-between gap-2">
-                      <div className="min-w-0">
-                        <div className="text-xl sm:text-2xl font-extrabold text-[#7A4E0E] font-mono tabular-nums whitespace-nowrap">
-                          {post.priceDisplay}
-                        </div>
-                        <div className="text-xs sm:text-sm text-stone-700 font-semibold mt-0.5">
-                          {post.standardDimensions}
-                        </div>
+                      <div className="text-xl sm:text-2xl font-extrabold text-[#7A4E0E] font-mono tabular-nums whitespace-nowrap">
+                        {post.priceDisplay}
                       </div>
-                      <div className="text-right text-xs sm:text-sm text-stone-500 shrink-0">
-                        <div className="text-[11px] font-semibold">Thị trường</div>
-                        <span className="line-through font-mono font-bold text-stone-400">
+                      <div className="text-right text-xs sm:text-sm text-stone-400 shrink-0">
+                        <span className="line-through font-mono font-semibold">
                           {post.marketPriceTiers[0]?.marketPrice || '1.300.000đ'}
                         </span>
                       </div>
                     </div>
-
-                    {/* Large, Easy-to-Read Highlight Point */}
-                    {primaryHighlight && (
-                      <div className="flex items-start gap-2.5 text-sm sm:text-base text-stone-800 font-medium">
-                        <CheckCircle2 className="w-4 h-4 text-[#8A5A14] shrink-0 mt-1" />
-                        <span>{primaryHighlight}</span>
-                      </div>
-                    )}
                   </div>
                 </div>
 
-                {/* Bright Luxury Action Bar */}
+                {/* Clean Action Bar */}
                 <div
                   className={`px-5 pb-5 sm:px-6 sm:pb-6 pt-3 grid gap-2 border-t border-[#EFE7D8] ${
                     post.mediaType === 'image' ? 'grid-cols-4' : 'grid-cols-3'

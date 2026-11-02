@@ -16,18 +16,18 @@ const HERO_GALLERY_SLIDES = [
     id: 'showroom-tuyen-hoa-stamped',
     tabTarget: 'man-khung-1tr',
     image: '/assets/aistudio/Showroom_Ch_n_Ga_G_i___m_Tuy_n_Hoa_0311597c.png',
-    badge: 'Showroom Chính Hãng Tuyến Hoa',
-    title: 'Showroom Chăn Ga Gối Đệm & Rèm Cửa Tuyến Hoa',
-    caption: 'Đại lý cấp 1 Đệm chính hãng, Màn Khung & Rèm Cửa may đo tại Chợ Cháy, Ứng Hòa.',
+    badge: 'Showroom Chính Hãng',
+    title: 'Showroom Chăn Ga Gối Đệm & Rèm Tuyến Hoa',
+    caption: 'Chợ Cháy, Ứng Hòa · Miễn phí mang mẫu & lắp đặt tận nhà.',
     priceHighlight: 'Showroom',
   },
   {
     id: 'dem-lo-xo-everhome',
     tabTarget: 'man-khung-1tr',
     image: '/assets/aistudio/dem_lo_xo_everhome_tuyen_hoa.png',
-    badge: '2.850.000đ / Tấm · Bảo Hành 10 Năm',
-    title: 'Đệm Lò Xo Túi Độc Lập & Gold 3 Viền Everhome',
-    caption: 'Nâng đỡ cột sống êm ái chuẩn khách sạn 5 sao, giao miễn phí tận giường.',
+    badge: '2.850.000đ · Bảo Hành 10 Năm',
+    title: 'Đệm Lò Xo Túi Độc Lập Everhome',
+    caption: 'Êm ái chuẩn khách sạn 5 sao, giao miễn phí tận giường.',
     priceHighlight: '2,85Tr',
   },
   {
@@ -35,17 +35,17 @@ const HERO_GALLERY_SLIDES = [
     tabTarget: 'man-khung-1tr',
     image: '/assets/aistudio/chieu_may_dieu_hoa_tuyen_hoa.png',
     badge: '450.000đ / Bộ · Tặng 2 Vỏ Gối',
-    title: 'Chiếu Mây Điều Hòa Lót Lưới 3D Thoáng Khí',
-    caption: 'Mặt mây tự nhiên mát dịu kết hợp đế lưới tổ ong 3D, đủ cỡ 1m6 · 1m8 · 2m2.',
-    priceHighlight: '450k/bộ',
+    title: 'Chiếu Mây Điều Hòa Lót Lưới 3D',
+    caption: 'Mây tự nhiên thoáng khí, đủ cỡ 1m6 · 1m8 · 2m2.',
+    priceHighlight: '450k',
   },
   {
     id: 'rem-to-ong-cua-vom',
     tabTarget: 'man-khung-1tr',
     image: '/assets/aistudio/vach_rem_to_ong_cua_vom_tuyen_hoa.png',
     badge: '650.000đ / m² · Ngăn Lạnh 98%',
-    title: 'Vách Rèm Tổ Ong Ngăn Lạnh & Cửa Vòm Biệt Thự',
-    caption: 'Lõi tráng bạc 2 lớp giữ nhiệt điều hòa tuyệt đối, xếp gọn sát tường 10cm.',
+    title: 'Vách Rèm Tổ Ong & Cửa Vòm',
+    caption: 'Tráng bạc 2 lớp giữ nhiệt điều hòa, xếp gọn sát tường.',
     priceHighlight: '650k/m²',
   },
   {
@@ -53,35 +53,35 @@ const HERO_GALLERY_SLIDES = [
     tabTarget: 'man-khung-1tr',
     image: '/assets/aistudio/IMG_4550_18a407c3.JPG',
     badge: '1.000.000đ / Bộ (1,8m × 2,0m)',
-    title: 'Màn Khung Inox Cao Cấp Rộng 1,8m × Dài 2,0m',
-    caption: 'Trọn gói khung Inox chịu lực + màn tuyn lạnh thêu hoa & công thợ lắp tận nơi.',
+    title: 'Màn Khung Inox Rộng 1,8m × Dài 2,0m',
+    caption: 'Trọn gói khung Inox + màn tuyn thêu hoa & công lắp.',
     priceHighlight: '1Tr/bộ',
   },
 ];
 
 const QUICK_PRICE_LEDGER = [
   {
-    label: 'Màn Khung Inox 1,8m × 2,0m',
+    label: 'Màn Khung 1,8m × 2,0m',
     price: '1.000.000đ / bộ',
-    sub: 'Trọn gói cả khung & công lắp',
+    sub: 'Cả khung & công lắp',
     tab: 'man-khung-1tr',
   },
   {
-    label: 'Rèm Vải Cản Nắng May Đo',
+    label: 'Rèm Vải Cản Nắng',
     price: '600.000đ / m',
-    sub: 'Đủ phụ kiện thanh treo & lắp',
+    sub: 'Đủ thanh treo & lắp',
     tab: 'fabric-600k',
   },
   {
-    label: 'Đệm Lò Xo Túi Everhome',
+    label: 'Đệm Lò Xo Everhome',
     price: '2.850.000đ / tấm',
-    sub: 'Chính hãng · Bảo hành 10 năm',
+    sub: 'Bảo hành 10 năm',
     tab: 'man-khung-1tr',
   },
   {
-    label: 'Bạt Xếp & Bạt Tự Cuốn',
+    label: 'Bạt Xếp & Tự Cuốn',
     price: '220k – 350k / m²',
-    sub: 'Đơn giá hoàn thiện cả lắp',
+    sub: 'Hoàn thiện cả lắp',
     tab: 'awning-350k',
   },
 ];
@@ -113,53 +113,51 @@ export const Hero: React.FC<HeroProps> = ({
 
   return (
     <section className="border-b border-[#E5DEC9] bg-gradient-to-b from-[#FFFFFF] via-[#FCFBF8] to-[#F6EFE2] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-11 lg:py-13">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-11 items-center">
-          {/* Left Column: Bright Luxury Brand Intro & Large Clear Price Ledger (7 cols) */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-9 sm:py-12 lg:py-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left Column: Airy Brand Intro & Clean Price Ledger (7 cols) */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7 space-y-6"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FAF2E1] border border-[#DBC498] text-[#6E4710] text-xs sm:text-sm font-extrabold tracking-wide uppercase">
+            <div className="flex items-center gap-2 text-[#8A5A14] text-sm sm:text-base font-bold tracking-wide">
               <MapPin className="w-4 h-4 text-[#8A5A14] shrink-0" />
               <span>Showroom Chính Hãng · Chợ Cháy, Ứng Hòa, Hà Nội</span>
             </div>
 
             <div className="space-y-3">
-              <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-display font-extrabold text-[#1C1917] leading-[1.18] tracking-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-display font-extrabold text-[#1C1917] leading-[1.24] tracking-tight">
                 Chăn Ga Gối Đệm &amp; Mành Rèm{' '}
                 <span className="text-[#8A5A14]">Tuyến Hoa</span>
               </h1>
 
-              <p className="text-base sm:text-lg lg:text-xl text-stone-700 font-medium leading-relaxed max-w-2xl">
-                Báo giá niêm yết minh bạch tại xưởng — Miễn phí mang mẫu, đo đạc và lắp đặt hoàn thiện tận nhà trong ngày.
+              <p className="text-base sm:text-lg lg:text-xl text-stone-700 font-medium leading-relaxed max-w-xl">
+                Giá gốc tại xưởng · Miễn phí mang mẫu, đo đạc và lắp đặt tận nhà.
               </p>
             </div>
 
-            {/* Bright Light-Mode 2x2 Price Ledger Cards with Full-Width Horizontal Lines */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            {/* Clean, Airy 2x2 Price Ledger Cards */}
+            <div className="grid grid-cols-2 gap-3.5 sm:gap-4">
               {QUICK_PRICE_LEDGER.map((item, idx) => (
                 <motion.button
                   key={item.label}
                   type="button"
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.1 + idx * 0.07 }}
+                  transition={{ duration: 0.45, delay: 0.08 + idx * 0.06, ease: [0.16, 1, 0.3, 1] }}
                   whileHover={{ y: -2 }}
                   onClick={() => onSelectMainTab && onSelectMainTab(item.tab)}
-                  className="p-4 sm:p-5 text-left bg-white hover:bg-[#FCF6E8] rounded-2xl border-2 border-[#E2D4B8] hover:border-[#C59B4D] shadow-[0_8px_24px_-10px_rgba(140,98,36,0.1)] transition-all cursor-pointer flex flex-col justify-between gap-2 group"
+                  className="p-4 sm:p-5 text-left bg-white hover:bg-[#FCF6E8] rounded-2xl border border-[#E2D4B8] hover:border-[#C59B4D] shadow-[0_8px_24px_-12px_rgba(140,98,36,0.1)] transition-all cursor-pointer flex flex-col justify-between gap-1.5 group"
                 >
-                  <div className="flex items-center justify-between gap-2 w-full">
-                    <span className="text-xs sm:text-sm uppercase tracking-wide font-extrabold text-[#8A5A14]">
-                      {item.label}
-                    </span>
-                  </div>
-                  <div className="text-xl sm:text-2xl font-mono font-extrabold text-[#7A4E0E] tabular-nums">
+                  <span className="text-xs sm:text-sm font-bold text-[#8A5A14] tracking-wide">
+                    {item.label}
+                  </span>
+                  <div className="text-lg sm:text-2xl font-mono font-extrabold text-[#7A4E0E] tabular-nums">
                     {item.price}
                   </div>
-                  <div className="text-xs sm:text-sm font-semibold text-stone-600">
+                  <div className="text-xs sm:text-sm font-medium text-stone-600">
                     {item.sub}
                   </div>
                 </motion.button>
@@ -175,7 +173,7 @@ export const Hero: React.FC<HeroProps> = ({
                 onClick={onExploreProducts}
                 className="min-h-[52px] px-7 py-3.5 bg-gradient-to-r from-[#F3E1BE] via-[#EBD19E] to-[#E3C183] hover:from-[#ECD5AA] hover:to-[#DC85] text-[#1C1917] border-2 border-[#C59B4D] rounded-2xl text-base sm:text-lg font-extrabold transition-all flex items-center gap-2.5 shadow-sm cursor-pointer"
               >
-                <span>Xem Bộ Sưu Tập &amp; Bảng Giá</span>
+                <span>Xem Bộ Sưu Tập</span>
                 <ArrowRight className="w-5 h-5 text-[#7A4E0E]" />
               </motion.button>
 
@@ -186,35 +184,35 @@ export const Hero: React.FC<HeroProps> = ({
                 className="min-h-[52px] px-6 py-3.5 bg-white hover:bg-[#FAF3E4] text-[#1C1917] border-2 border-[#D6C4A4] rounded-2xl text-base sm:text-lg font-extrabold transition-all flex items-center gap-2.5 shadow-2xs"
               >
                 <PhoneCall className="w-5 h-5 text-[#8A5A14]" />
-                <span>Gọi Ngay: {STORE_INFO.hotlineDisplay}</span>
+                <span>{STORE_INFO.hotlineDisplay}</span>
               </motion.a>
             </div>
           </motion.div>
 
-          {/* Right Column: Bright Light-Mode Gallery Showcase Card (5 cols) */}
+          {/* Right Column: Seamless Crossfade Gallery Card (5 cols) */}
           <motion.div
-            initial={{ opacity: 0, x: 24 }}
+            initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.08 }}
             className="lg:col-span-5"
           >
-            <div className="bg-white rounded-3xl border-2 border-[#E2D4B8] p-4 shadow-[0_18px_44px_-15px_rgba(140,98,36,0.14)] space-y-3.5">
+            <div className="bg-white rounded-3xl border border-[#E2D4B8] p-4 shadow-[0_18px_44px_-15px_rgba(140,98,36,0.12)] space-y-3.5">
               <div
                 onClick={() => onSelectMainTab && onSelectMainTab(currentSlide.tabTarget)}
                 className="rounded-2xl overflow-hidden border border-[#E6DAC3] bg-[#FAF6EE] cursor-pointer group"
               >
-                {/* Image Viewport */}
+                {/* Image Viewport with Seamless Crossfade */}
                 <div className="relative h-56 sm:h-64 overflow-hidden bg-[#F5EFE4]">
-                  <AnimatePresence mode="wait">
+                  <AnimatePresence initial={false}>
                     <motion.img
                       key={currentSlide.id}
                       src={currentSlide.image}
                       alt={currentSlide.title}
-                      initial={{ opacity: 0, scale: 1.07 }}
+                      initial={{ opacity: 0, scale: 1.04 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.97 }}
-                      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                      className="w-full h-full object-cover"
+                      exit={{ opacity: 0, scale: 0.98 }}
+                      transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
                   </AnimatePresence>
 
@@ -222,11 +220,11 @@ export const Hero: React.FC<HeroProps> = ({
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={`badge-${currentSlide.id}`}
-                      initial={{ opacity: 0, y: -10 }}
+                      initial={{ opacity: 0, y: -8 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -6 }}
-                      transition={{ duration: 0.35 }}
-                      className="absolute top-3 left-3 bg-white/95 backdrop-blur-md text-[#1C1917] border border-[#C69C4E] text-xs sm:text-sm font-extrabold px-3.5 py-1.5 rounded-xl flex items-center gap-1.5 shadow-sm"
+                      exit={{ opacity: 0, y: -4 }}
+                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                      className="absolute top-3 left-3 bg-white/95 backdrop-blur-md text-[#1C1917] border border-[#C69C4E] text-xs sm:text-sm font-extrabold px-3.5 py-1.5 rounded-xl flex items-center gap-1.5 shadow-xs z-10"
                     >
                       <ShieldCheck className="w-4 h-4 text-[#8A5A14] shrink-0" />
                       <span>{currentSlide.badge}</span>
@@ -234,7 +232,7 @@ export const Hero: React.FC<HeroProps> = ({
                   </AnimatePresence>
 
                   {/* Bright Prev / Next Scene Navigation Controls */}
-                  <div className="absolute top-3 right-3 flex items-center gap-1.5">
+                  <div className="absolute top-3 right-3 flex items-center gap-1.5 z-10">
                     <button
                       type="button"
                       aria-label="Ảnh trước"
@@ -259,24 +257,24 @@ export const Hero: React.FC<HeroProps> = ({
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
                     transition={{ duration: 5.5, ease: 'linear' }}
-                    className="absolute bottom-0 left-0 right-0 h-1.5 bg-[#C5943A] origin-left"
+                    className="absolute bottom-0 left-0 right-0 h-1.5 bg-[#C5943A] origin-left z-10"
                   />
                 </div>
 
-                {/* Bright Light-Colored Caption Box Below Photo for Maximum Readability */}
+                {/* Concise, Airy Caption Box Below Photo */}
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={`caption-${currentSlide.id}`}
-                    initial={{ opacity: 0, y: 8 }}
+                    initial={{ opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    transition={{ duration: 0.35 }}
+                    exit={{ opacity: 0, y: -4 }}
+                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                     className="p-4 bg-[#FCF9F2] border-t border-[#E6DAC3] space-y-1"
                   >
-                    <h3 className="text-base sm:text-lg font-extrabold font-display text-[#1C1917] leading-snug">
+                    <h3 className="text-base sm:text-lg font-extrabold font-display text-[#1C1917] leading-snug truncate">
                       {currentSlide.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-stone-700 font-medium leading-snug">
+                    <p className="text-sm text-stone-700 font-medium leading-relaxed truncate">
                       {currentSlide.caption}
                     </p>
                   </motion.div>
