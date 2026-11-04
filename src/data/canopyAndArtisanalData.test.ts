@@ -269,10 +269,10 @@ test('All annotated products have market price tiers, visual annotations, specs,
   assert.equal(videoVongXep?.mediaType, 'video');
   assert.equal(videoVongXep?.numericPrice, 550000);
 
-  // Verify the 2 newest bedding posts + 6 mattress posts are at the very top and have per-image captions
+  // Verify the 3 newly promoted Everhome & Showroom posts + 2 bedding posts + 3 mattress posts are at the very top
   assert.deepEqual(
     ANNOTATED_PRODUCT_POSTS.slice(0, 8).map((p) => p.code),
-    ['CGL-CC-01', 'CGL-DR-01', 'DLV-TH-01', 'DKC-TH-01', 'DVC-TH-01', 'DCR-TH-01', 'DGD-TH-01', 'KXD-TH-01']
+    ['DCS-EH-01', 'DLX-EH-01', 'SR-TH-02', 'CGL-CC-01', 'CGL-DR-01', 'DLV-TH-01', 'DKC-TH-01', 'DVC-TH-01']
   );
 
   const demLongVu = getCanopyProductById('DLV-TH-01');
@@ -320,11 +320,24 @@ test('All annotated products have market price tiers, visual annotations, specs,
   assert.ok(demLoXo);
   assert.equal(demLoXo?.numericPrice, 2850000);
   assert.equal(demLoXo?.imageUrl, '/assets/aistudio/dem_lo_xo_everhome_tuyen_hoa.png');
+  assert.equal(demLoXo?.secondaryImages?.length, 3);
+  assert.equal(Object.keys(demLoXo?.imageCaptions || {}).length, 4);
 
   const demCaoSu = getCanopyProductById('DCS-EH-01');
   assert.ok(demCaoSu);
   assert.equal(demCaoSu?.numericPrice, 4850000);
   assert.equal(demCaoSu?.imageUrl, '/assets/aistudio/dem_cao_su_everhome_tuyen_hoa.png');
+  assert.equal(demCaoSu?.secondaryImages?.length, 3);
+  assert.equal(Object.keys(demCaoSu?.imageCaptions || {}).length, 4);
+
+  const showroom2Tang = getCanopyProductById('SR-TH-02');
+  assert.ok(showroom2Tang);
+  assert.equal(
+    showroom2Tang?.imageUrl,
+    '/assets/aistudio/Gemini_Generated_Image_v2fukev2fukev2fu_6f3f19ae.png'
+  );
+  assert.equal(showroom2Tang?.secondaryImages?.length, 1);
+  assert.equal(Object.keys(showroom2Tang?.imageCaptions || {}).length, 2);
 
   const canopyItems = canopyAndBeddingItems.filter((item) => item.code.startsWith('MK-'));
   assert.equal(canopyItems.length, 4);

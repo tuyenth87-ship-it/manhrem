@@ -81,7 +81,7 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<NewProductCategory>('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [fontScale, setFontScale] = useState<FontScaleMode>('xlarge');
+  const [fontScale, setFontScale] = useState<FontScaleMode>('normal');
   const [showMasterPostBox, setShowMasterPostBox] = useState<boolean>(false);
   const [showDedupReport, setShowDedupReport] = useState<boolean>(false);
   const [showAllPrices, setShowAllPrices] = useState<boolean>(false);
@@ -150,17 +150,17 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
 
   const bodyTextClass =
     fontScale === 'xlarge'
-      ? 'text-lg sm:text-xl'
-      : fontScale === 'large'
       ? 'text-base sm:text-lg'
-      : 'text-sm sm:text-base';
+      : fontScale === 'large'
+      ? 'text-sm sm:text-base'
+      : 'text-xs sm:text-sm';
 
   const cardTitleClass =
     fontScale === 'xlarge'
-      ? 'text-xl sm:text-2xl'
-      : fontScale === 'large'
       ? 'text-lg sm:text-xl'
-      : 'text-base sm:text-lg';
+      : fontScale === 'large'
+      ? 'text-base sm:text-lg'
+      : 'text-[15px] sm:text-base';
 
   const handleCopyPost = (post: AnnotatedProductPost) => {
     const fullCopyText = post.facebookPostCopy.includes(OFFICIAL_WEBSITE_URL)
@@ -345,34 +345,34 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
       aria-label="Bảng Giá & Bài Đăng Sản Phẩm Chèn Chữ Tuyến Hoa"
       className="space-y-8 sm:space-y-10"
     >
-      {/* 1. BRIGHT WARM IVORY & CHAMPAGNE HEADER + LARGE MARKET PRICE LEDGER */}
+      {/* 1. QUIET-LUXURY HEADER + MARKET PRICE LEDGER */}
       <motion.div
-        initial={{ opacity: 0, y: 18 }}
+        initial={{ opacity: 0, y: 14 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45 }}
-        className="bg-white rounded-3xl border-2 border-[#E2D4B8] overflow-hidden shadow-[0_14px_38px_-14px_rgba(140,98,36,0.1)]"
+        transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+        className="bg-white rounded-2xl border border-[#EAE3D5] overflow-hidden shadow-[0_12px_36px_-16px_rgba(28,25,23,0.06)]"
       >
-        <div className="bg-gradient-to-r from-[#FAF3E4] via-[#FDFBF7] to-[#F5E8CE] text-[#1C1917] p-5 sm:p-7 flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-[#E2D4B8]">
+        <div className="bg-gradient-to-r from-[#FAF7F2] via-[#FFFFFF] to-[#F7F2E8] text-[#1C1917] p-5 sm:p-6 flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-[#EAE3D5]">
           <div className="space-y-1">
-            <div className="text-xs sm:text-sm uppercase tracking-[0.12em] font-extrabold text-[#8A5A14]">
+            <div className="text-[11px] sm:text-xs uppercase tracking-[0.16em] font-semibold text-[#8C6224]">
               BẢNG GIÁ NIÊM YẾT · CHÍNH HÃNG TUYẾN HOA
             </div>
-            <h2 className="text-2xl sm:text-3xl font-display font-extrabold text-[#1C1917] tracking-tight">
+            <h2 className="text-xl sm:text-2xl font-display font-semibold text-[#1C1917] tracking-tight">
               Danh Mục Sản Phẩm Độc Bản &amp; Báo Giá Nhanh
             </h2>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2.5 shrink-0">
-            {/* Bright Font Size Toggle */}
-            <div className="flex items-center bg-white p-1 rounded-xl border border-[#D8C5A3] shadow-2xs">
-              <Type className="w-4 h-4 text-[#8A5A14] mx-2" />
+          <div className="flex flex-wrap items-center gap-2 shrink-0">
+            {/* Font Size Toggle */}
+            <div className="flex items-center bg-[#FAF8F5] p-1 rounded-xl border border-[#E5DEC9]">
+              <Type className="w-3.5 h-3.5 text-[#8C6224] mx-2" />
               <button
                 type="button"
                 onClick={() => setFontScale('normal')}
-                className={`px-2.5 py-1.5 rounded-lg text-xs sm:text-sm font-bold transition-colors cursor-pointer ${
+                className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
                   fontScale === 'normal'
-                    ? 'bg-[#F3DFB8] text-[#1C1917] border border-[#C69C4E]'
-                    : 'text-stone-600 hover:text-[#1C1917]'
+                    ? 'bg-white text-[#1C1917] border border-[#D8C6A5] shadow-2xs'
+                    : 'text-stone-500 hover:text-[#1C1917]'
                 }`}
               >
                 Vừa
@@ -380,10 +380,10 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
               <button
                 type="button"
                 onClick={() => setFontScale('large')}
-                className={`px-2.5 py-1.5 rounded-lg text-xs sm:text-sm font-bold transition-colors cursor-pointer ${
+                className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
                   fontScale === 'large'
-                    ? 'bg-[#F3DFB8] text-[#1C1917] border border-[#C69C4E]'
-                    : 'text-stone-600 hover:text-[#1C1917]'
+                    ? 'bg-white text-[#1C1917] border border-[#D8C6A5] shadow-2xs'
+                    : 'text-stone-500 hover:text-[#1C1917]'
                 }`}
               >
                 Chữ To
@@ -391,10 +391,10 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
               <button
                 type="button"
                 onClick={() => setFontScale('xlarge')}
-                className={`px-2.5 py-1.5 rounded-lg text-xs sm:text-sm font-bold transition-colors cursor-pointer ${
+                className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
                   fontScale === 'xlarge'
-                    ? 'bg-[#F3DFB8] text-[#1C1917] border border-[#C69C4E]'
-                    : 'text-stone-600 hover:text-[#1C1917]'
+                    ? 'bg-white text-[#1C1917] border border-[#D8C6A5] shadow-2xs'
+                    : 'text-stone-500 hover:text-[#1C1917]'
                 }`}
               >
                 Rất To
@@ -405,9 +405,9 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
               type="button"
               onClick={() => setShowPhotoStamper((prev) => !prev)}
               data-testid="toggle-photo-stamper-btn"
-              className="px-4 py-2.5 rounded-xl bg-white hover:bg-[#FAF2E1] text-[#1C1917] border border-[#D5C29F] font-bold text-xs sm:text-sm flex items-center gap-1.5 transition-colors cursor-pointer shadow-2xs"
+              className="px-3.5 py-2 rounded-xl bg-white hover:bg-[#FAF6EE] text-[#1C1917] border border-[#E2D6C1] font-medium text-xs flex items-center gap-1.5 transition-colors cursor-pointer"
             >
-              <ImagePlus className="w-4 h-4 text-[#8A5A14]" />
+              <ImagePlus className="w-3.5 h-3.5 text-[#8C6224]" />
               <span>{showPhotoStamper ? 'Đóng Chèn Chữ' : 'Chèn Chữ Lên Ảnh'}</span>
             </button>
 
@@ -415,16 +415,16 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
               type="button"
               onClick={handleCopyMasterPost}
               data-testid="copy-master-post-btn"
-              className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#F4E3C1] to-[#EBD19E] hover:from-[#EDD8AE] hover:to-[#E2C285] text-[#1C1917] border border-[#C59B4D] font-extrabold text-xs sm:text-sm flex items-center gap-1.5 transition-colors cursor-pointer shadow-2xs"
+              className="btn-luxury-primary px-3.5 py-2 rounded-xl font-medium text-xs flex items-center gap-1.5 cursor-pointer"
             >
               {copiedId === 'master-post' ? (
                 <>
-                  <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                   <span>Đã Copy</span>
                 </>
               ) : (
                 <>
-                  <Copy className="w-4 h-4 text-[#7A4E0E]" />
+                  <Copy className="w-3.5 h-3.5 text-[#D8B779]" />
                   <span>Copy Bảng Giá</span>
                 </>
               )}
@@ -434,18 +434,18 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
               type="button"
               onClick={handleCopyWebsiteUrl}
               data-testid="copy-website-url-btn"
-              className="px-3.5 py-2.5 rounded-xl bg-white hover:bg-[#FAF2E1] text-[#8A5A14] border border-[#D5C29F] font-extrabold text-xs sm:text-sm flex items-center gap-1.5 transition-colors cursor-pointer shadow-2xs"
+              className="px-3 py-2 rounded-xl bg-white hover:bg-[#FAF6EE] text-[#8C6224] border border-[#E2D6C1] font-medium text-xs flex items-center gap-1.5 transition-colors cursor-pointer"
               title={OFFICIAL_WEBSITE_URL}
             >
               {copiedId === 'website-url' ? (
                 <>
-                  <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
                   <span>Đã Copy Link Web</span>
                 </>
               ) : (
                 <>
-                  <Copy className="w-4 h-4 text-[#8A5A14]" />
-                  <span>Copy Link: tuyenhoa-weld.vercel.app</span>
+                  <Copy className="w-3.5 h-3.5 text-[#8C6224]" />
+                  <span>tuyenhoa-weld.vercel.app</span>
                 </>
               )}
             </button>
@@ -453,7 +453,7 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
             <button
               type="button"
               onClick={() => setShowMasterPostBox((prev) => !prev)}
-              className="px-3.5 py-2.5 rounded-xl bg-white hover:bg-[#FAF2E1] text-[#1C1917] font-bold text-xs sm:text-sm cursor-pointer border border-[#D5C29F]"
+              className="px-3 py-2 rounded-xl bg-white hover:bg-[#FAF6EE] text-[#1C1917] font-medium text-xs cursor-pointer border border-[#E2D6C1]"
             >
               {showMasterPostBox ? 'Ẩn bài' : 'Bài tổng hợp'}
             </button>
@@ -717,9 +717,9 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
         </AnimatePresence>
       </motion.div>
 
-      {/* 2. BRIGHT CATEGORY & SEARCH BAR WITH LARGER TEXT */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3.5 bg-white p-4 rounded-2xl border-2 border-[#E2D4B8] shadow-2xs">
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
+      {/* 2. REFINED CATEGORY & SEARCH BAR */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-3.5 sm:p-4 rounded-2xl border border-[#EAE3D5] shadow-[0_6px_20px_-10px_rgba(28,25,23,0.04)]">
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
           {CATEGORY_TABS.map((tab) => {
             const isActive = selectedCategory === tab.id;
             return (
@@ -727,17 +727,17 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                 key={tab.id}
                 type="button"
                 onClick={() => setSelectedCategory(tab.id)}
-                className={`relative px-4 py-2.5 rounded-xl text-sm sm:text-base font-extrabold transition-all whitespace-nowrap shrink-0 cursor-pointer ${
+                className={`relative px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all whitespace-nowrap shrink-0 cursor-pointer ${
                   isActive
-                    ? 'text-[#1C1917]'
-                    : 'bg-[#FAF6EE] text-stone-700 hover:bg-[#F3E9D6] hover:text-[#1C1917]'
+                    ? 'text-[#FAF8F5]'
+                    : 'bg-[#FAF8F5] text-stone-600 hover:bg-[#F2ECE1] hover:text-[#1C1917]'
                 }`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="showcaseCategoryPill"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                    className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#F4E3C1] to-[#EBD19E] border border-[#C59B4D] shadow-2xs"
+                    className="absolute inset-0 rounded-xl bg-[#1C1917] shadow-2xs"
                   />
                 )}
                 <span className="relative z-10">{tab.label}</span>
@@ -746,21 +746,21 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
           })}
         </div>
 
-        <div className="relative w-full sm:w-72">
-          <Search className="w-4 h-4 text-[#8A5A14] absolute left-3.5 top-3.5" />
+        <div className="relative w-full sm:w-68">
+          <Search className="w-3.5 h-3.5 text-[#8C6224] absolute left-3.5 top-3" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Tìm đệm, chiếu mây, màn khung..."
             aria-label="Tìm kiếm sản phẩm"
-            className="w-full pl-10 pr-8 py-2.5 text-sm sm:text-base font-medium bg-[#FCFBF8] border border-[#D8C5A3] rounded-xl text-[#1C1917] placeholder:text-stone-500 focus:outline-hidden focus:border-[#8A5A14]"
+            className="w-full pl-9 pr-8 py-2 text-xs sm:text-sm font-normal bg-[#FAF8F5] border border-[#E5DEC9] rounded-xl text-[#1C1917] placeholder:text-stone-400 focus:outline-hidden focus:border-[#B5945B]"
           />
           {searchQuery && (
             <button
               type="button"
               onClick={() => setSearchQuery('')}
-              className="absolute right-2.5 top-2.5 text-stone-500 hover:text-[#1C1917]"
+              className="absolute right-2.5 top-2 text-stone-400 hover:text-[#1C1917]"
             >
               <X className="w-4 h-4" />
             </button>
@@ -768,10 +768,10 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
         </div>
       </div>
 
-      {/* 3. AIRY, MINIMAL-TEXT LUXURY PRODUCT CARDS WITH SEAMLESS CROSSFADE */}
+      {/* 3. QUIET-LUXURY PRODUCT CARDS WITH SEAMLESS CROSSFADE */}
       <motion.div
         layout
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7"
       >
         <AnimatePresence mode="popLayout">
           {filteredPosts.map((post, index) => {
@@ -782,20 +782,20 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
               <motion.article
                 layout
                 key={post.id}
-                initial={{ opacity: 0, y: 16, scale: 0.99 }}
+                initial={{ opacity: 0, y: 14, scale: 0.99 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
+                exit={{ opacity: 0, scale: 0.97 }}
                 transition={{
-                  duration: 0.42,
-                  delay: Math.min(index * 0.03, 0.2),
+                  duration: 0.4,
+                  delay: Math.min(index * 0.025, 0.18),
                   ease: [0.16, 1, 0.3, 1],
                 }}
                 data-testid={`annotated-post-card-${post.code}`}
-                className="luxury-card bg-white rounded-3xl border border-[#E6DAC3] overflow-hidden flex flex-col justify-between"
+                className="luxury-card bg-white overflow-hidden flex flex-col justify-between"
               >
                 <div>
-                  {/* Bright Media Frame with Seamless Image Crossfade */}
-                  <div className="relative aspect-4/3 bg-[#F6F1E6] overflow-hidden group border-b border-[#EAE0CE]">
+                  {/* Media Frame with Seamless Image Crossfade */}
+                  <div className="relative aspect-4/3 bg-[#F7F4ED] overflow-hidden group border-b border-[#EFE9DC]">
                     {post.mediaType === 'video' && post.videoUrl ? (
                       <video
                         src={post.videoUrl}
@@ -812,23 +812,23 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                           src={currentCardImg}
                           alt={post.shortTitle}
                           referrerPolicy="no-referrer"
-                          initial={{ opacity: 0, scale: 1.03 }}
+                          initial={{ opacity: 0, scale: 1.02 }}
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0 }}
-                          transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
+                          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                           onClick={() => {
                             setActiveArticleModal(post);
                             setActiveGalleryImg(currentCardImg);
                           }}
-                          className="absolute inset-0 w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-700"
+                          className="absolute inset-0 w-full h-full object-cover cursor-pointer group-hover:scale-104 transition-transform duration-700"
                         />
                       </AnimatePresence>
                     )}
 
                     {/* Minimal Top-Left Code Tag */}
                     {!isBakedBrandImage && post.mediaType === 'image' && (
-                      <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md border border-[#C69C4E] px-2.5 py-1 rounded-xl pointer-events-none shadow-2xs z-10">
-                        <span className="text-xs font-extrabold text-[#1C1917] tracking-wide uppercase">
+                      <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md border border-[#E2D5BE] px-2.5 py-0.5 rounded-lg pointer-events-none shadow-2xs z-10">
+                        <span className="text-[11px] font-semibold text-[#1C1917] tracking-wider uppercase">
                           {post.code}
                         </span>
                       </div>
@@ -836,7 +836,7 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
 
                     {post.mediaType === 'video' && (
                       <div className="absolute top-3 right-3 pointer-events-none z-10">
-                        <span className="px-2.5 py-1 rounded-xl bg-white/95 text-[#1C1917] border border-[#C69C4E] text-xs font-extrabold shadow-2xs">
+                        <span className="px-2.5 py-0.5 rounded-lg bg-white/95 text-[#1C1917] border border-[#E2D5BE] text-[11px] font-semibold shadow-2xs">
                           VIDEO
                         </span>
                       </div>
@@ -844,7 +844,7 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
 
                     {post.secondaryImages && post.secondaryImages.length > 0 && (
                       <div className="absolute top-3 right-3 pointer-events-none z-10">
-                        <span className="px-2.5 py-1 rounded-xl bg-white/95 text-[#8A5A14] border border-[#C69C4E] text-xs font-extrabold shadow-2xs">
+                        <span className="px-2.5 py-0.5 rounded-lg bg-white/95 text-[#8C6224] border border-[#E2D5BE] text-[11px] font-semibold shadow-2xs">
                           {allCardImages.length} mẫu
                         </span>
                       </div>
@@ -853,8 +853,8 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
 
                   {/* Interactive Thumbnail Swatch Bar */}
                   {allCardImages.length > 1 && (
-                    <div className="px-5 pt-3.5 flex items-center gap-2 overflow-x-auto no-scrollbar">
-                      <span className="text-xs font-bold text-[#8A5A14] shrink-0">
+                    <div className="px-4 sm:px-5 pt-3 flex items-center gap-2 overflow-x-auto no-scrollbar">
+                      <span className="text-[11px] font-medium text-stone-500 uppercase tracking-wider shrink-0">
                         Mẫu ({allCardImages.length}):
                       </span>
                       {allCardImages.map((imgUrl, idx) => {
@@ -869,10 +869,10 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                                 [post.id]: imgUrl,
                               }))
                             }
-                            className={`relative w-12 h-10 rounded-xl overflow-hidden border-2 transition-all duration-300 shrink-0 cursor-pointer ${
+                            className={`relative w-11 h-9 rounded-lg overflow-hidden border transition-all duration-300 shrink-0 cursor-pointer ${
                               isSelected
-                                ? 'border-[#9A681C] ring-2 ring-[#C59B4D]/40 scale-105'
-                                : 'border-[#E2D4B7] opacity-75 hover:opacity-100'
+                                ? 'border-[#8C6224] ring-2 ring-[#C5A059]/30 scale-105'
+                                : 'border-[#E5DEC9] opacity-70 hover:opacity-100'
                             }`}
                             title={
                               post.imageCaptions?.[imgUrl]?.badge || `Xem mẫu ảnh số ${idx + 1}`
@@ -894,28 +894,28 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                     <AnimatePresence mode="wait" initial={false}>
                       <motion.div
                         key={currentCardImg}
-                        initial={{ opacity: 0, y: 4 }}
+                        initial={{ opacity: 0, y: 3 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -4 }}
-                        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                        exit={{ opacity: 0, y: -3 }}
+                        transition={{ duration: 0.24, ease: [0.16, 1, 0.3, 1] }}
                         data-testid={`image-caption-box-${post.code}`}
-                        className="mx-5 mt-3 px-3.5 py-2.5 rounded-2xl bg-[#FAF4E4] border border-[#D8BE8B] space-y-0.5"
+                        className="mx-4 sm:mx-5 mt-2.5 px-3 py-2 rounded-xl bg-[#FCF9F4] border border-[#EAE0CE] space-y-0.5"
                       >
-                        <div className="text-xs sm:text-sm font-extrabold text-[#7A4E0E] flex items-center gap-1.5 truncate">
-                          <Sparkles className="w-3.5 h-3.5 shrink-0 text-[#8A5A14]" />
+                        <div className="text-xs font-semibold text-[#734F1A] flex items-center gap-1.5 truncate">
+                          <Sparkles className="w-3 h-3 shrink-0 text-[#8C6224]" />
                           <span className="truncate">{post.imageCaptions[currentCardImg].badge}</span>
                         </div>
-                        <p className="text-xs text-stone-700 font-medium leading-relaxed line-clamp-1">
+                        <p className="text-[11px] sm:text-xs text-stone-600 font-normal leading-relaxed line-clamp-1">
                           {post.imageCaptions[currentCardImg].caption}
                         </p>
                       </motion.div>
                     </AnimatePresence>
                   )}
 
-                  {/* Airy, Scannable Card Body (Minimal Text) */}
-                  <div className="p-5 sm:p-6 space-y-4">
+                  {/* Tailored, Scannable Card Body */}
+                  <div className="p-4 sm:p-5 space-y-3">
                     <div>
-                      <div className="text-xs font-bold tracking-wide text-[#8A5A14] truncate">
+                      <div className="text-[11px] uppercase tracking-[0.06em] font-semibold text-[#8C6224] truncate">
                         {post.code} · {post.highlightTag}
                       </div>
                       <h3
@@ -923,19 +923,19 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                           setActiveArticleModal(post);
                           setActiveGalleryImg(currentCardImg);
                         }}
-                        className={`font-display font-extrabold text-[#1C1917] leading-[1.38] mt-1.5 line-clamp-2 cursor-pointer hover:text-[#8A5A14] transition-colors ${cardTitleClass}`}
+                        className={`font-display font-semibold text-[#1C1917] leading-snug mt-1 line-clamp-2 cursor-pointer hover:text-[#8C6224] transition-colors ${cardTitleClass}`}
                       >
                         {post.shortTitle}
                       </h3>
                     </div>
 
                     {/* Clean Single-Row Price Box */}
-                    <div className="bg-[#FDF8EE] border border-[#E2CFA8] rounded-2xl px-4 py-3 flex items-baseline justify-between gap-2">
-                      <div className="text-xl sm:text-2xl font-extrabold text-[#7A4E0E] font-mono tabular-nums whitespace-nowrap">
+                    <div className="bg-[#FCF9F4] border border-[#EDE3D2] rounded-xl px-3.5 py-2.5 flex items-baseline justify-between gap-2">
+                      <div className="text-base sm:text-lg font-semibold text-[#734F1A] font-mono tabular-nums whitespace-nowrap">
                         {post.priceDisplay}
                       </div>
-                      <div className="text-right text-xs sm:text-sm text-stone-400 shrink-0">
-                        <span className="line-through font-mono font-semibold">
+                      <div className="text-right text-xs text-stone-400 shrink-0">
+                        <span className="line-through font-mono">
                           {post.marketPriceTiers[0]?.marketPrice || '1.300.000đ'}
                         </span>
                       </div>
@@ -943,35 +943,35 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                   </div>
                 </div>
 
-                {/* Clean Action Bar */}
+                {/* Refined Action Bar */}
                 <div
-                  className={`px-5 pb-5 sm:px-6 sm:pb-6 pt-3 grid gap-2 border-t border-[#EFE7D8] ${
+                  className={`px-4 pb-4 sm:px-5 sm:pb-5 pt-2.5 grid gap-1.5 border-t border-[#F2ECE1] ${
                     post.mediaType === 'image' ? 'grid-cols-4' : 'grid-cols-3'
                   }`}
                 >
                   <button
                     type="button"
                     onClick={() => handleAddPostProductToCart(post)}
-                    className="py-2.5 px-2 rounded-xl bg-gradient-to-r from-[#F4E3C1] to-[#EBD19E] hover:from-[#EDD8AE] hover:to-[#E2C285] text-[#1C1917] border border-[#C59B4D] font-extrabold text-xs sm:text-sm flex items-center justify-center gap-1 whitespace-nowrap cursor-pointer transition-colors"
+                    className="btn-luxury-primary py-2 px-2 rounded-xl font-medium text-xs flex items-center justify-center gap-1 whitespace-nowrap cursor-pointer"
                   >
-                    <ShoppingBag className="w-4 h-4 text-[#7A4E0E] shrink-0" />
+                    <ShoppingBag className="w-3.5 h-3.5 text-[#D8B779] shrink-0" />
                     <span>Đặt Mua</span>
                   </button>
 
                   <button
                     type="button"
                     onClick={() => handleCopyPost(post)}
-                    className="py-2.5 px-2 rounded-xl bg-[#FAF6EE] hover:bg-[#F2E6CE] text-[#1C1917] font-bold text-xs sm:text-sm flex items-center justify-center gap-1 whitespace-nowrap cursor-pointer border border-[#DFCEAF] transition-colors"
+                    className="py-2 px-2 rounded-xl bg-[#FAF8F5] hover:bg-[#F2ECE1] text-[#1C1917] font-medium text-xs flex items-center justify-center gap-1 whitespace-nowrap cursor-pointer border border-[#E5DEC9] transition-colors"
                     title="Copy bài đăng Facebook / Zalo"
                   >
                     {copiedId === post.id ? (
                       <>
-                        <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
                         <span>Đã Copy</span>
                       </>
                     ) : (
                       <>
-                        <Copy className="w-4 h-4 text-[#8A5A14] shrink-0" />
+                        <Copy className="w-3.5 h-3.5 text-[#8C6224] shrink-0" />
                         <span>Copy Bài</span>
                       </>
                     )}
@@ -981,10 +981,10 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                     <button
                       type="button"
                       onClick={() => handleDownloadPostBrandedImage(post, currentCardImg)}
-                      className="py-2.5 px-2 rounded-xl bg-[#FAF6EE] hover:bg-[#F2E6CE] text-[#1C1917] font-bold text-xs sm:text-sm flex items-center justify-center gap-1 whitespace-nowrap cursor-pointer border border-[#DFCEAF] transition-colors"
+                      className="py-2 px-2 rounded-xl bg-[#FAF8F5] hover:bg-[#F2ECE1] text-[#1C1917] font-medium text-xs flex items-center justify-center gap-1 whitespace-nowrap cursor-pointer border border-[#E5DEC9] transition-colors"
                       title="Tải ảnh đang chọn đã chèn chữ Tuyến Hoa về máy"
                     >
-                      <Download className="w-4 h-4 text-[#8A5A14] shrink-0" />
+                      <Download className="w-3.5 h-3.5 text-[#8C6224] shrink-0" />
                       <span>Tải Ảnh</span>
                     </button>
                   )}
@@ -995,10 +995,10 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                       setActiveArticleModal(post);
                       setActiveGalleryImg(currentCardImg);
                     }}
-                    className="py-2.5 px-2 rounded-xl bg-[#FAF6EE] hover:bg-[#F2E6CE] text-[#1C1917] font-bold text-xs sm:text-sm flex items-center justify-center gap-1 whitespace-nowrap cursor-pointer border border-[#DFCEAF] transition-colors"
+                    className="py-2 px-2 rounded-xl bg-[#FAF8F5] hover:bg-[#F2ECE1] text-[#1C1917] font-medium text-xs flex items-center justify-center gap-1 whitespace-nowrap cursor-pointer border border-[#E5DEC9] transition-colors"
                     title="Xem chi tiết & bảng giá"
                   >
-                    <FileText className="w-4 h-4 text-[#8A5A14] shrink-0" />
+                    <FileText className="w-3.5 h-3.5 text-[#8C6224] shrink-0" />
                     <span>Chi Tiết</span>
                   </button>
                 </div>

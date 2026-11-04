@@ -70,16 +70,16 @@ export const DEDUPLICATION_SUMMARY = {
   totalUniquePublished: 119,
   groups: [
     {
-      id: 'dup-lo-18-anh-ren-cong-chua-8-mau-dror-hoa-anh-dao-4-mau-2026',
-      groupTitle: 'Lô 18 Ảnh Mới Tải Lên: Bộ Chăn Ga Gối Chần Bông Phối Ren Công Chúa Hàn Quốc (Đủ 08 Màu), Bộ Lụa Tencel Thêu D – Dror Hoa Anh Đào (04 Màu) & Alyda® 7 Món',
-      keptImage: '1792915225334_4373635352308930219_4373635352308930219_b1cc4f9fe287531332cb288e86597c7e_3574b865.jpg',
+      id: 'dup-lo-12-anh-everhome-cao-su-lo-xo-showroom-2tang-2026',
+      groupTitle: 'Lô 12 Ảnh Vừa Tải Lên: Nệm Cao Su 100% Thiên Nhiên Everhome, Đệm Lò Xo Gold 3 Viền · Lò Xo Túi Cuộn & Showroom 2 Tầng',
+      keptImage: 'dem_cao_su_everhome_tuyen_hoa.png',
       removedCount: 6,
       removedExamples: [
-        'Loại bỏ 01 ảnh trùng màu Xanh Cốm Matcha (1792915225540 trùng với 1792915225384), giữ trọn 08 gam màu Pastel độc bản cho bài đăng Bộ Ren Công Chúa Hàn Quốc (CGL-CC-01)',
-        'Quy hoạch 04 ảnh Bộ Chăn Ga Gối Lụa Tencel Thêu Chữ "D – Dror" & Nhành Hoa Anh Đào (Xanh Rêu Ngọc Bích, Hồng Đất, Đỏ Ruby, Xám Ghi Chì) thành bài đăng mới CGL-DR-01 có thanh bấm chọn 4 màu trực quan',
-        'Lọc 05 ảnh Alyda® 7 Món (1792915211870, 1792915211778, 1792915211832, 1792915211896, 1792915211805) đã có trong 2 bài đăng CGL-AL-05 & CGL-AL-02 và bổ sung chú thích từng mẫu',
+        'Loại bỏ 02 bản sao trùng lặp 100% mã MD5 của ảnh Tòa nhà 2 tầng Showroom Tuyến Hoa (Gemini_Generated_Image_v2fukev2fukev2fu (1).png & (2).png), giữ 01 bản gốc sắc nét nhất cho bài đăng SR-TH-02',
+        'Chỉnh sáng, cân bằng trắng và quy hoạch 04 ảnh Nệm Cao Su 100% Thiên Nhiên Everhome (IMG_5405 banner cấu tạo 2 mặt lỗ, IMG_5412 phôi chân vuông, IMG_5410 & IMG_5411 lô phôi cao su tại kho) vào bài đăng DCS-EH-01',
+        'Chỉnh sáng và quy hoạch 05 ảnh Đệm Lò Xo Gold 3 Viền & Lò Xo Túi Cuộn Hút Chân Không Everhome (IMG_5413 Gold 3 Viền, IMG_5415 giường tân cổ điển, IMG_5406, IMG_5407 & IMG_5408 kho lò xo) vào bài đăng DLX-EH-01',
       ],
-      reason: 'Biên tập trọn vẹn 18 ảnh vừa gửi: loại bỏ ảnh trùng lặp, tạo bộ chọn 08 màu Ren Công Chúa Hàn Quốc (CGL-CC-01) và 04 màu Lụa Tencel Thêu D – Dror Hoa Anh Đào (CGL-DR-01) kèm kịch bản đăng Facebook/Zalo.',
+      reason: 'Biên tập trọn vẹn 12 ảnh vừa gửi: lọc bỏ các file trùng lặp, tách từng góc chụp thực tế kèm chú thích chi tiết và đưa 03 bài đăng Everhome & Showroom 2 Tầng lên đầu trang.',
     },
     {
       id: 'dup-lo-18-anh-alyda-theu-hoang-gia-ren-cong-chua-2026',
@@ -467,10 +467,304 @@ export function calculateCanopyOrderTotal(input: CanopyPricingInput): CanopyPric
 
 export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
   // ===========================================================================
-  // 00-NEWEST. BỘ ĐÔI BÀI ĐĂNG MỚI NHẤT VỪA BIÊN TẬP TỪ LÔ 18 ẢNH TẢI LÊN:
-  //            1. BỘ CHĂN GA GỐI CHẦN BÔNG PHỐI REN CÔNG CHÚA HÀN QUỐC (ĐỦ 08 MÀU PASTEL)
-  //            2. BỘ CHĂN GA GỐI LỤA TENCEL THÊU CHỮ "D – DROR" & HOA ANH ĐÀO (ĐỦ 04 MÀU)
+  // 00-TOP. BỘ 03 BÀI ĐĂNG MỚI NHẤT TỪ LÔ 12 ẢNH VỪA TẢI LÊN:
+  //         1. NỆM CAO SU 100% THIÊN NHIÊN EVERHOME (IMG_5405, IMG_5410, IMG_5411, IMG_5412)
+  //         2. ĐỆM LÒ XO GOLD 3 VIỀN & LÒ XO TÚI CUỘN EVERHOME (IMG_5413, IMG_5415, IMG_5406, IMG_5407, IMG_5408)
+  //         3. TOÀN CẢNH TÒA NHÀ 2 TẦNG SHOWROOM TUYẾN HOA (ĐÃ LỌC 2 ẢNH TRÙNG LẶP)
   // ===========================================================================
+  {
+    id: 'nem-cao-su-100-thien-nhien-everhome-dcs01',
+    code: 'DCS-EH-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Nệm Cao Su 100% Thiên Nhiên Everhome Kháng Khuẩn – Đàn Hồi Chuẩn Y Khoa, Chống Đau Lưng (Bảo Hành 10 Năm)',
+    shortTitle: 'Nệm Cao Su 100% Thiên Nhiên Everhome (Đủ 4 Góc Chụp)',
+    priceDisplay: '4.850.000đ / tấm',
+    marketPriceRange: 'Giá thị trường: 6.500.000đ – 7.800.000đ / tấm',
+    marketPriceNote: 'Nệm cao su thiên nhiên 100% nguyên khối đổ khuôn 2 mặt lỗ thoáng khí (mặt trên lỗ tròn nhỏ đối lưu khí, mặt dưới chân vuông lớn chịu lực). Tặng kèm bộ gối cao su non khi mua tại Showroom Tuyến Hoa.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Nệm Cao Su Thiên Nhiên Everhome 1,6m × 2,0m (Dày 5cm)',
+        marketPrice: '4.950.000đ / tấm',
+        storePrice: '3.650.000đ / tấm',
+        note: 'Êm ái, gọn nhẹ, bảo hành 10 năm',
+      },
+      {
+        sizeOrOption: '2. Nệm Cao Su Thiên Nhiên Everhome 1,6m × 2,0m (Dày 10cm chuẩn)',
+        marketPrice: '6.500.000đ / tấm',
+        storePrice: '4.850.000đ / tấm',
+        note: 'Bán chạy số 1 – Tặng kèm 2 gối cao su non',
+      },
+      {
+        sizeOrOption: '3. Nệm Cao Su Thiên Nhiên Everhome 1,8m × 2,0m (Dày 10cm chuẩn)',
+        marketPrice: '7.800.000đ / tấm',
+        storePrice: '5.450.000đ / tấm',
+        note: 'Nâng đỡ 5 vùng cơ thể, chống đau mỏi lưng',
+      },
+    ],
+    numericPrice: 4850000,
+    unitLabel: '1 tấm cao su thiên nhiên nguyên khối (Tặng kèm gối cao su)',
+    standardDimensions: 'Đủ cỡ 1,6m × 2,0m · 1,8m × 2,0m · Độ dày 5cm / 10cm / 15cm',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/dem_cao_su_everhome_tuyen_hoa.png',
+    secondaryImages: [
+      '/assets/aistudio/IMG_5412_everhome_cao_su_lo_vuong.jpg',
+      '/assets/aistudio/IMG_5410_everhome_cao_su_kho.jpg',
+      '/assets/aistudio/IMG_5405_everhome_cao_su_chan_vuong.jpg',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/dem_cao_su_everhome_tuyen_hoa.png': {
+        badge: 'Ảnh 1/4 · Bảng Báo Giá & Cấu Tạo Nệm Cao Su 100% Thiên Nhiên Everhome',
+        caption: 'Tổng hợp thông số kỹ thuật, logo dập nổi EVERHOME 100% Thiên Nhiên và bảng giá ưu đãi tại Tổng Kho Tuyến Hoa.',
+      },
+      '/assets/aistudio/IMG_5412_everhome_cao_su_lo_vuong.jpg': {
+        badge: 'Ảnh 2/4 · Thực Tế 3 Tấm Phôi Cao Su Nguyên Khối Tại Kho (IMG_5412)',
+        caption: 'Nhìn rõ cả mặt trên hàng nghìn lỗ thông hơi tròn nhỏ và mặt đáy cấu trúc chân vuông chịu lực vững chãi.',
+      },
+      '/assets/aistudio/IMG_5410_everhome_cao_su_kho.jpg': {
+        badge: 'Ảnh 3/4 · Cận Cảnh Bề Mặt Lỗ Thoáng Khí Tròn Nhỏ Bọc Nilon (IMG_5410)',
+        caption: 'Phôi cao su thiên nhiên màu trắng sữa tinh khiết, khử mùi tuyệt đối, bọc nilon chống bụi nguyên kiện tại xưởng.',
+      },
+      '/assets/aistudio/IMG_5405_everhome_cao_su_chan_vuong.jpg': {
+        badge: 'Ảnh 4/4 · Cận Cảnh Hệ Thống Chân Đế Lỗ Vuông Lớn Chịu Lực (IMG_5405)',
+        caption: 'Thiết kế chân đế ô vuông lớn tạo độ đàn hồi nâng đỡ 5 vùng cột sống, cam kết 15–20 năm không xẹp lún.',
+      },
+    },
+    highlightTag: '100% Cao Su Thiên Nhiên · BH 10 Năm',
+    summary:
+      'Nệm Cao Su 100% Thiên Nhiên Everhome nguyên khối tại kho Tuyến Hoa: Mặt trên hàng nghìn lỗ thông hơi tròn đối lưu khí, mặt dưới cấu trúc chân vuông vững chãi nâng đỡ cột sống hoàn hảo suốt 15–20 năm.',
+    visualAnnotations: [
+      {
+        label: '100% mủ cao su thiên nhiên nguyên khối không pha tạp',
+        detail: 'Độ đàn hồi tự nhiên bền bỉ 15–20 năm không xẹp lún, nâng đỡ trọn vẹn 5 vùng cơ thể từ đầu đến chân.',
+      },
+      {
+        label: 'Hệ thống lỗ thông hơi tròn mặt trên & chân vuông mặt dưới',
+        detail: 'Lưu thông không khí liên tục, chống hầm nóng lưng vào mùa hè và giữ ấm áp vào mùa đông.',
+      },
+      {
+        label: 'Giá gốc tại Tổng Kho Tuyến Hoa tiết kiệm gần 2 triệu/tấm',
+        detail: 'Cỡ 1,6m×2m×10cm chỉ 4.850.000đ; cỡ 1,8m×2m×10cm chỉ 5.450.000đ, tặng kèm bộ gối cao su êm ái.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'DCS-EH-01 (Nệm Cao Su 100% Thiên Nhiên Everhome)' },
+      { label: 'Chất liệu cốt lõi', value: '100% Cao su thiên nhiên nguyên khối kháng khuẩn khử mùi' },
+      { label: 'Giá cỡ 1,6m × 2,0m × 10cm', value: '4.850.000đ / tấm (Thị trường: 6.500.000đ/tấm)' },
+      { label: 'Giá cỡ 1,8m × 2,0m × 10cm', value: '5.450.000đ / tấm (Thị trường: 7.800.000đ/tấm)' },
+      { label: 'Quà tặng kèm', value: 'Tặng ngay 02 ruột gối cao su non + Miễn phí giao tận phòng' },
+      { label: 'Bảo hành chính hãng', value: '10 Năm không xẹp lún (Độ bền thực tế 15–20 năm)' },
+    ],
+    articleParagraphs: [
+      'Nệm Cao Su 100% Thiên Nhiên Everhome (Mã DCS-EH-01) được sản xuất từ nguồn mủ cao su tự nhiên tinh khiết qua dây chuyền xử lý kháng khuẩn và khử mùi hiện đại, mang lại giấc ngủ êm sâu và hỗ trợ trị liệu đau mỏi lưng hiệu quả cho người lớn tuổi cũng như người làm việc văn phòng.',
+      'Hình ảnh thực tế tại kho Tuyến Hoa (IMG_5405, IMG_5410, IMG_5411, IMG_5412) cho thấy rõ kết cấu khuôn đúc nguyên khối chuẩn mực: mặt trên bố trí hàng nghìn lỗ thông hơi nhỏ li ti giúp thoát nhiệt nhanh, mặt dưới là hệ thống ô chân vuông chịu lực vững chãi không bị biến dạng qua hàng chục năm sử dụng.',
+      'Nhờ nhập trực tiếp số lượng lớn từ nhà máy Everhome, Showroom Tuyến Hoa ưu đãi giá chỉ 4.850.000đ cho tấm 1,6m×2,0m dày 10cm và 5.450.000đ cho tấm 1,8m×2,0m dày 10cm (tiết kiệm từ 1,6 đến 2,3 triệu đồng so với giá thị trường).'
+    ],
+    facebookPostCopy:
+      '🌿 [KHO NỆM CAO SU TUYẾN HOA] NỆM CAO SU 100% THIÊN NHIÊN EVERHOME NGUYÊN KHỐI – BẢO HÀNH 10 NĂM!\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 6.500.000đ – 7.800.000đ / tấm\n' +
+      '🔥 GIÁ GỐC TẠI KHO TUYẾN HOA (TẶNG KÈM 2 GỐI CAO SU NON):\n' +
+      '   👉 Cỡ 1,6m × 2,0m (Dày 5cm): Chỉ 3.650.000đ / tấm\n' +
+      '   👉 Cỡ 1,6m × 2,0m (Dày 10cm): Chỉ 4.850.000đ / tấm\n' +
+      '   👉 Cỡ 1,8m × 2,0m (Dày 10cm): Chỉ 5.450.000đ / tấm\n' +
+      '--------------------------------------------\n' +
+      '✅ 100% Cao su thiên nhiên nguyên khối đàn hồi chuẩn y khoa, nâng đỡ cột sống chống đau lưng.\n' +
+      '✅ Hàng nghìn lỗ thoáng khí mặt trên & chân vuông mặt dưới thông thoáng 4 mùa.\n' +
+      '✅ Bảo hành chính hãng 10 năm – Độ bền 15 đến 20 năm!\n' +
+      '📞 Gọi/Zalo giao ngay tận nhà: 0344.727.528 (Showroom Tuyến Hoa – Ứng Hòa, Hà Nội)',
+  },
+  {
+    id: 'dem-lo-xo-tui-gold-3-vien-everhome-dlx01',
+    code: 'DLX-EH-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Đệm Lò Xo Túi Độc Lập & Đệm Lò Xo Gold 3 Viền Everhome Chính Hãng – Trưng Bày Tại Showroom & Tổng Kho Tuyến Hoa',
+    shortTitle: 'Đệm Lò Xo Túi & Gold 3 Viền Everhome (Đủ 4 Góc Chụp)',
+    priceDisplay: '2.850.000đ / tấm',
+    marketPriceRange: 'Giá thị trường: 3.800.000đ – 5.950.000đ / tấm',
+    marketPriceNote: 'Phân phối trực tiếp từ Tổng Kho Everhome Tuyến Hoa (có đủ bản nguyên tấm Gold 3 Viền hoàng gia và bản Lò Xo Túi hút chân không cuộn tròn tiện lợi). Tiết kiệm 25% – 30% so với giá niêm yết hãng.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Đệm Lò Xo Túi Độc Lập Everhome (Cỡ 1,6m × 2,0m × dày 23cm)',
+        marketPrice: '3.850.000đ / tấm',
+        storePrice: '2.850.000đ / tấm',
+        note: 'Có bản đóng cuộn hút chân không dễ chuyển lên tầng cao',
+      },
+      {
+        sizeOrOption: '2. Đệm Lò Xo Túi Độc Lập Everhome (Cỡ 1,8m × 2,0m × dày 23cm)',
+        marketPrice: '4.350.000đ / tấm',
+        storePrice: '3.250.000đ / tấm',
+        note: 'Chống rung động khi người nằm cạnh trở mình',
+      },
+      {
+        sizeOrOption: '3. Đệm Lò Xo Gold 3 Viền Hoàng Gia Everhome (1,8m × 2,0m × dày 27cm)',
+        marketPrice: '5.950.000đ / tấm',
+        storePrice: '4.450.000đ / tấm',
+        note: 'Tích hợp lớp Pillow Top êm ái chuẩn khách sạn 5 sao',
+      },
+    ],
+    numericPrice: 2850000,
+    unitLabel: '1 tấm chính hãng Everhome (Miễn phí xe bán tải giao tận giường)',
+    standardDimensions: 'Đủ cỡ 1,6m × 2,0m · 1,8m × 2,0m · 2,0m × 2,2m (Dày 23cm – 27cm)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/dem_lo_xo_everhome_tuyen_hoa.png',
+    secondaryImages: [
+      '/assets/aistudio/IMG_5415_dem_lo_xo_giuong_tan_co_dien.jpg',
+      '/assets/aistudio/IMG_5406_everhome_lo_xo_tui_cuon.jpg',
+      '/assets/aistudio/IMG_5407_tem_everhome_lo_xo_tui.jpg',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/dem_lo_xo_everhome_tuyen_hoa.png': {
+        badge: 'Ảnh 1/4 · Bảng Báo Giá Đệm Lò Xo Túi & Gold 3 Viền Everhome',
+        caption: 'Tổng hợp cả 2 phiên bản: Đệm Lò Xo Nguyên Tấm 3 Viền sang trọng và Đệm Lò Xo Túi cuộn hút chân không tiện lợi.',
+      },
+      '/assets/aistudio/IMG_5415_dem_lo_xo_giuong_tan_co_dien.jpg': {
+        badge: 'Ảnh 2/4 · Đệm Lò Xo Nguyên Tấm Trên Giường Tân Cổ Điển (IMG_5415)',
+        caption: 'Bề mặt chần gấm trắng họa tiết lục giác tổ ong êm ái, thành đệm bọc nỉ xám đậm chần múi dọc chuẩn khách sạn 5 sao.',
+      },
+      '/assets/aistudio/IMG_5406_everhome_lo_xo_tui_cuon.jpg': {
+        badge: 'Ảnh 3/4 · Lô Đệm Lò Xo Túi Độc Lập Cuộn Tròn Tại Nhà Máy (IMG_5406)',
+        caption: 'Công nghệ ép hút chân không cuộn gọn (Roll-pack) kèm túi bọc đầu đen chống sốc, dễ dàng mang qua cầu thang hẹp.',
+      },
+      '/assets/aistudio/IMG_5407_tem_everhome_lo_xo_tui.jpg': {
+        badge: 'Ảnh 4/4 · Cận Cảnh Tem Chính Hãng Everhome Lò Xo Túi (IMG_5407)',
+        caption: 'Tem cam chính hãng "everhome ĐỆM LÒ XO TÚI - Hạnh phúc bền lâu" có mã QR xác thực và sơ đồ cấu tạo lò xo túi.',
+      },
+    },
+    highlightTag: 'Chính Hãng Everhome · Đủ Bản Nguyên Tấm & Cuộn Gọn',
+    summary:
+      'Dòng Đệm Lò Xo Túi Độc Lập & Đệm Lò Xo Gold 3 Viền Everhome chính hãng trưng bày trên giường tân cổ điển tại Showroom Tuyến Hoa và sẵn hàng số lượng lớn tại kho (cả dạng nguyên tấm và dạng hút chân không cuộn gọn).',
+    visualAnnotations: [
+      {
+        label: 'Hệ lò xo túi độc lập & thiết kế Gold 3 viền sang trọng',
+        detail: 'Mỗi con lò xo thép cacbon được bọc trong túi vải riêng biệt giúp nâng đỡ cột sống êm ái, không gây tiếng kêu hay rung lắc.',
+      },
+      {
+        label: 'Đầy đủ bản nguyên tấm & bản hút chân không cuộn gọn',
+        detail: 'Dạng cuộn hút chân không chính hãng Everhome giúp vận chuyển qua cầu thang hẹp hoặc lên tầng cao cực kỳ dễ dàng.',
+      },
+      {
+        label: 'Chiết khấu trực tiếp 25% – 30% tại Tổng Kho Tuyến Hoa',
+        detail: 'Giá chỉ từ 2.850.000đ/tấm (1m6×2m) và 3.250.000đ/tấm (1m8×2m), bảo hành chính hãng 7 – 10 năm.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'DLX-EH-01 (Đệm Lò Xo Túi & Gold 3 Viền Everhome)' },
+      { label: 'Thương hiệu', value: 'Everhome Chính Hãng – Đại lý cấp 1 Tuyến Hoa (0344.727.528)' },
+      { label: 'Giá cỡ 1,6m × 2,0m', value: '2.850.000đ / tấm (Giá thị trường: 3.850.000đ)' },
+      { label: 'Giá cỡ 1,8m × 2,0m', value: '3.250.000đ / tấm | Bản Gold 3 Viền: 4.450.000đ / tấm' },
+      { label: 'Quy cách đóng gói', value: 'Nguyên tấm bọc nilon dày hoặc Hút chân không cuộn tròn' },
+      { label: 'Chế độ bảo hành', value: 'Bảo hành chính hãng Everhome 7 – 10 năm tận nhà' },
+    ],
+    articleParagraphs: [
+      'Đệm Lò Xo Túi Độc Lập và Đệm Lò Xo Gold 3 Viền Everhome (Mã DLX-EH-01) là dòng đệm cao cấp chuyên dụng cho phòng cưới, biệt thự và gia đình hiện đại đang được trưng bày trực tiếp tại Showroom Chăn Ga Gối Đệm Tuyến Hoa.',
+      'Nhờ hệ thống lò xo túi độc lập mật độ cao kết hợp lớp mút đàn hồi Pillow Top và vỏ gấm dệt Jacquard kháng khuẩn, đệm ôm sát đường cong cơ thể, giải phóng hoàn toàn áp lực vùng vai gáy và thắt lưng mà không hề gây rung động cho người nằm cạnh khi trở mình.',
+      'Tại Tổng Kho Tuyến Hoa, quý khách có thể chọn dòng nguyên tấm truyền thống (IMG_5413, IMG_5415, IMG_5408) hoặc dòng Đệm Lò Xo Túi Everhome ép hút chân không cuộn gọn thông minh (IMG_5406, IMG_5407) với mức giá tận gốc chỉ từ 2.850.000đ/tấm (cỡ 1,6m×2,0m) đến 3.250.000đ/tấm (cỡ 1,8m×2,0m).'
+    ],
+    facebookPostCopy:
+      '🛏️ [TỔNG KHO ĐỆM EVERHOME TUYẾN HOA] ĐỆM LÒ XO TÚI ĐỘC LẬP & ĐỆM LÒ XO GOLD 3 VIỀN CHÍNH HÃNG!\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 3.850.000đ – 5.950.000đ / tấm\n' +
+      '🔥 GIÁ TẠI SHOWROOM TUYẾN HOA (CHIẾT KHẤU NGAY 25% – 30%):\n' +
+      '   👉 Đệm Lò Xo Túi Everhome 1,6m × 2,0m: Chỉ 2.850.000đ / tấm\n' +
+      '   👉 Đệm Lò Xo Túi Everhome 1,8m × 2,0m: Chỉ 3.250.000đ / tấm\n' +
+      '   👉 Đệm Lò Xo Gold 3 Viền Hoàng Gia 1,8m × 2,0m: Chỉ 4.450.000đ / tấm\n' +
+      '--------------------------------------------\n' +
+      '📌 ƯU ĐIỂM VƯỢT TRỘI:\n' +
+      '✔️ Lò xo túi độc lập êm ái tuyệt đối, trở mình không rung lắc, nâng đỡ cột sống chuẩn y khoa.\n' +
+      '✔️ Có sẵn cả bản nguyên tấm và bản hút chân không cuộn gọn dễ dàng mang lên cầu thang tầng cao.\n' +
+      '✔️ Cam kết chính hãng Everhome 100% – Bảo hành 7 đến 10 năm!\n' +
+      '🚛 Miễn phí xe bán tải Ngọc Tuyến – Tuyến Hoa giao đệm tận giường ngủ!\n' +
+      '📞 Gọi/Zalo đặt ngay: 0344.727.528 (Showroom Tuyến Hoa – Ứng Hòa, Hà Nội)',
+  },
+  {
+    id: 'toan-canh-showroom-tuyen-hoa-2-tang-sr02',
+    code: 'SR-TH-02',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Showroom',
+    title: 'Toàn Cảnh Tòa Nhà 2 Tầng Showroom Tuyến Hoa: Chăn - Ga - Gối - Đệm - Phông - Rèm Mặt Đường Lớn',
+    shortTitle: 'Toàn Cảnh Showroom Tuyến Hoa 2 Tầng Mặt Đường Lớn',
+    priceDisplay: 'Màn 1Tr · Rèm 600k/m',
+    marketPriceRange: 'Đại lý cấp 1 – Cam kết giá tốt nhất khu vực',
+    marketPriceNote: 'Showroom 2 tầng quy mô lớn với 3 gian kính mặt tiền rộng rãi, vỉa hè đỗ xe ô tô thoải mái, luôn có sẵn hàng giao ngay trong ngày.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: 'Màn Khung Inox Cao Cấp (Rộng 1,8m × Dài 2,0m)',
+        marketPrice: '1.300.000đ / bộ',
+        storePrice: '1.000.000đ / bộ',
+        note: 'Đủ 4 màu: Xanh Dương, Tím Huế, Xanh Lam, Xanh Cốm',
+      },
+      {
+        sizeOrOption: 'Rèm Vải Gấm Cản Nắng 100% & Phông Rèm Sự Kiện',
+        marketPrice: '750.000đ / m ngang',
+        storePrice: '600.000đ / m ngang',
+        note: 'Bao gồm thanh suốt & công lắp đặt',
+      },
+      {
+        sizeOrOption: 'Trọn Bộ Chăn Ga Gối Đệm Phòng Cưới & Gia Đình',
+        marketPrice: '3.500.000đ – 6.500.000đ',
+        storePrice: '2.500.000đ – 4.800.000đ',
+        note: 'Chiết khấu trực tiếp 20% – 30% tại Showroom',
+      },
+    ],
+    numericPrice: 600000,
+    unitLabel: 'Showroom 2 tầng mặt đường lớn – Đỗ ô tô thoải mái',
+    standardDimensions: 'Mặt tiền 3 gian kính lớn · Chăn - Ga - Gối - Đệm - Phông - Rèm',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/Gemini_Generated_Image_v2fukev2fukev2fu_6f3f19ae.png',
+    secondaryImages: [
+      '/assets/aistudio/SR_TH_02_gian_kinh_tang_1.jpg',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/Gemini_Generated_Image_v2fukev2fukev2fu_6f3f19ae.png': {
+        badge: 'Góc 1/2 · Toàn Cảnh Mặt Tiền Tòa Nhà 2 Tầng Showroom Tuyến Hoa',
+        caption: 'Mặt tiền 3 gian kính lớn nằm ngay trục đường chính, vỉa hè rộng rãi đỗ ô tô tận cửa (Đã lọc 2 bản sao trùng lặp).',
+      },
+      '/assets/aistudio/SR_TH_02_gian_kinh_tang_1.jpg': {
+        badge: 'Góc 2/2 · Cận Cảnh 3 Gian Kính Trưng Bày Giường Đệm & Rèm Vải',
+        caption: 'Gian trái trưng bày giường chăn ga gối đệm mẫu; gian phải trưng bày hàng trăm dải phông rèm đủ sắc màu.',
+      },
+    },
+    highlightTag: 'Tòa Nhà 2 Tầng Mặt Đường Lớn (Đã Lọc 2 Ảnh Trùng)',
+    summary:
+      'Toàn cảnh mặt tiền tòa nhà 2 tầng bề thế của SHOWROOM TUYẾN HOA (CHĂN - GA - GỐI - ĐỆM - PHÔNG - RÈM): Tầng 1 thiết kế 3 gian kính lớn trưng bày giường mẫu và rèm vải đủ màu sắc, vỉa hè rộng rãi thuận tiện đỗ xe máy và ô tô.',
+    visualAnnotations: [
+      {
+        label: 'Mặt tiền 3 gian kính lớn trưng bày giường & rèm mẫu',
+        detail: 'Nhìn từ ngoài đường đã thấy rõ các bộ giường chăn ga gối đệm và hệ phông rèm đủ màu sắc rực rỡ.',
+      },
+      {
+        label: 'Vỉa hè lát gạch rộng thoáng – Đỗ ô tô tận cửa',
+        detail: 'Thuận tiện cho khách hàng đi xe máy hoặc ô tô gia đình ghé chọn mua đệm và rèm cửa trực tiếp.',
+      },
+      {
+        label: 'Đã loại bỏ 2 bản sao trùng lặp & 1 ảnh phố trống',
+        detail: 'Chỉ giữ lại duy nhất 01 bức ảnh chính thức sắc nét nhất của tòa nhà 2 tầng Showroom Tuyến Hoa.',
+      },
+    ],
+    specs: [
+      { label: 'Mã hình ảnh', value: 'SR-TH-02 (Toàn Cảnh Tòa Nhà 2 Tầng Showroom Tuyến Hoa)' },
+      { label: 'Biển hiệu chính', value: 'SHOWROOM TUYẾN HOA: CHĂN - GA - GỐI - ĐỆM - PHÔNG - RÈM' },
+      { label: 'Quy mô trưng bày', value: 'Tòa nhà 2 tầng mặt đường lớn – 3 gian cửa kính trưng bày mẫu thực tế' },
+      { label: 'Giờ mở cửa', value: '06:30 – 21:00 tất cả các ngày trong tuần' },
+      { label: 'Hotline / Zalo', value: '0344.727.528 (Anh Tuyến – Phục vụ tận nơi)' },
+    ],
+    articleParagraphs: [
+      'Tọa lạc ngay mặt đường lớn thuận tiện giao thông, tòa nhà 2 tầng Showroom Tuyến Hoa (Chăn - Ga - GỐI - Đệm - Phông - Rèm) nổi bật với thiết kế 3 gian kính mặt tiền rộng mở cùng bảng hiệu hoa sen hồng trang nhã.',
+      'Tại tầng 1, quý khách có thể dễ dàng quan sát và trải nghiệm trực tiếp các mẫu giường ngủ trưng bày trọn bộ Chăn Ga Gối Đệm bên trái, cùng hệ thống Phông Rèm hội trường, Rèm Vải gấm cản nắng, Rèm Cầu Vồng đa dạng sắc màu bên phải.',
+      'Với kho hàng lớn luôn có sẵn và đội xe bán tải giao lắp miễn phí tận nơi, Showroom Tuyến Hoa cam kết đáp ứng nhanh nhất mọi nhu cầu sắm sửa nội thất phòng ngủ và rèm cửa của bà con.'
+    ],
+    facebookPostCopy:
+      '🏢 [TOÀN CẢNH SHOWROOM 2 TẦNG] TUYẾN HOA: CHĂN - GA - GỐI - ĐỆM - PHÔNG - RÈM MẶT ĐƯỜNG LỚN!\n' +
+      '--------------------------------------------\n' +
+      '📍 Mặt tiền 3 gian kính rộng rãi, vỉa hè đỗ xe ô tô thoải mái – Kính mời bà con ghé xem mẫu trực tiếp!\n' +
+      '💰 BÁO GIÁ TẬN XƯỞNG NIÊM YẾT CÔNG KHAI:\n' +
+      '✅ Màn khung Inox cao cấp (Rộng 1,8m × Dài 2,0m): 1.000.000đ / 1 bộ cả lắp.\n' +
+      '✅ Rèm vải cản nắng 100%: 600.000đ / mét ngang hoàn thiện cả thanh treo & công lắp.\n' +
+      '✅ Đệm bông ép Hàn Quốc gấp 3 chính hãng: Từ 1.350.000đ – 2.450.000đ/tấm.\n' +
+      '✅ Bạt mái xếp lượn sóng: 350.000đ / 1 m² trọn gói.\n' +
+      '--------------------------------------------\n' +
+      '📞 Gọi/Zalo ngay: 0344.727.528 (Miễn phí mang mẫu & lắp đặt tận nhà)!',
+  },
   {
     id: 'bo-chan-ga-goi-chan-bong-phoi-ren-cong-chua-han-quoc-tim-lavender-cglcc01',
     code: 'CGL-CC-01',
@@ -3961,252 +4255,6 @@ export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
       '--------------------------------------------\n' +
       '🚛 Miễn phí mang mẫu, giao hàng và lắp đặt tận nhà!\n' +
       '📞 Gọi/Zalo ngay: 0344.727.528 (Showroom Tuyến Hoa – Ứng Hòa, Hà Nội)',
-  },
-  {
-    id: 'toan-canh-showroom-tuyen-hoa-2-tang-sr02',
-    code: 'SR-TH-02',
-    category: 'cong-trinh-video',
-    categoryName: 'Showroom & Công Trình Thực Tế',
-    title: 'Toàn Cảnh Tòa Nhà 2 Tầng Showroom Tuyến Hoa: Chăn - Ga - Gối - Đệm - Phông - Rèm Mặt Đường Lớn',
-    shortTitle: 'Toàn Cảnh Showroom Tuyến Hoa 2 Tầng Mặt Đường Lớn',
-    priceDisplay: 'Màn 1Tr · Rèm 600k/m',
-    marketPriceRange: 'Đại lý cấp 1 – Cam kết giá tốt nhất khu vực',
-    marketPriceNote: 'Showroom 2 tầng quy mô lớn với 3 gian kính mặt tiền rộng rãi, vỉa hè đỗ xe ô tô thoải mái, luôn có sẵn hàng giao ngay trong ngày.',
-    marketPriceTiers: [
-      {
-        sizeOrOption: 'Màn Khung Inox Cao Cấp (Rộng 1,8m × Dài 2,0m)',
-        marketPrice: '1.300.000đ / bộ',
-        storePrice: '1.000.000đ / bộ',
-        note: 'Đủ 4 màu: Xanh Dương, Tím Huế, Xanh Lam, Xanh Cốm',
-      },
-      {
-        sizeOrOption: 'Rèm Vải Gấm Cản Nắng 100% & Phông Rèm Sự Kiện',
-        marketPrice: '750.000đ / m ngang',
-        storePrice: '600.000đ / m ngang',
-        note: 'Bao gồm thanh suốt & công lắp đặt',
-      },
-      {
-        sizeOrOption: 'Trọn Bộ Chăn Ga Gối Đệm Phòng Cưới & Gia Đình',
-        marketPrice: '3.500.000đ – 6.500.000đ',
-        storePrice: '2.500.000đ – 4.800.000đ',
-        note: 'Chiết khấu trực tiếp 20% – 30% tại Showroom',
-      },
-    ],
-    numericPrice: 600000,
-    unitLabel: 'Showroom 2 tầng mặt đường lớn – Đỗ ô tô thoải mái',
-    standardDimensions: 'Mặt tiền 3 gian kính lớn · Chăn - Ga - Gối - Đệm - Phông - Rèm',
-    mediaType: 'image',
-    imageUrl: '/assets/aistudio/Gemini_Generated_Image_v2fukev2fukev2fu_6f3f19ae.png',
-    secondaryImages: [
-      '/assets/aistudio/Gemini_Generated_Image_v2fukev2fukev2fu_6f3f19ae.png',
-      '/assets/aistudio/Showroom_Ch_n_Ga_G_i___m_Tuy_n_Hoa_0311597c.png',
-    ],
-    highlightTag: 'Tòa Nhà 2 Tầng Mặt Đường Lớn (Đã Lọc 2 Ảnh Trùng)',
-    summary:
-      'Toàn cảnh mặt tiền tòa nhà 2 tầng bề thế của SHOWROOM TUYẾN HOA (CHĂN - GA - GỐI - ĐỆM - PHÔNG - RÈM): Tầng 1 thiết kế 3 gian kính lớn trưng bày giường mẫu và rèm vải đủ màu sắc, vỉa hè rộng rãi thuận tiện đỗ xe máy và ô tô.',
-    visualAnnotations: [
-      {
-        label: 'Mặt tiền 3 gian kính lớn trưng bày giường & rèm mẫu',
-        detail: 'Nhìn từ ngoài đường đã thấy rõ các bộ giường chăn ga gối đệm và hệ phông rèm đủ màu sắc rực rỡ.',
-      },
-      {
-        label: 'Vỉa hè lát gạch rộng thoáng – Đỗ ô tô tận cửa',
-        detail: 'Thuận tiện cho khách hàng đi xe máy hoặc ô tô gia đình ghé chọn mua đệm và rèm cửa trực tiếp.',
-      },
-      {
-        label: 'Đã loại bỏ 2 bản sao trùng lặp & 1 ảnh phố trống',
-        detail: 'Chỉ giữ lại duy nhất 01 bức ảnh chính thức sắc nét nhất của tòa nhà 2 tầng Showroom Tuyến Hoa.',
-      },
-    ],
-    specs: [
-      { label: 'Mã hình ảnh', value: 'SR-TH-02 (Toàn Cảnh Tòa Nhà 2 Tầng Showroom Tuyến Hoa)' },
-      { label: 'Biển hiệu chính', value: 'SHOWROOM TUYẾN HOA: CHĂN - GA - GỐI - ĐỆM - PHÔNG - RÈM' },
-      { label: 'Quy mô trưng bày', value: 'Tòa nhà 2 tầng mặt đường lớn – 3 gian cửa kính trưng bày mẫu thực tế' },
-      { label: 'Giờ mở cửa', value: '06:30 – 21:00 tất cả các ngày trong tuần' },
-      { label: 'Hotline / Zalo', value: '0344.727.528 (Anh Tuyến – Phục vụ tận nơi)' },
-    ],
-    articleParagraphs: [
-      'Tọa lạc ngay mặt đường lớn thuận tiện giao thông, tòa nhà 2 tầng Showroom Tuyến Hoa (Chăn - Ga - Gối - Đệm - Phông - Rèm) nổi bật với thiết kế 3 gian kính mặt tiền rộng mở cùng bảng hiệu hoa sen hồng trang nhã.',
-      'Tại tầng 1, quý khách có thể dễ dàng quan sát và trải nghiệm trực tiếp các mẫu giường ngủ trưng bày trọn bộ Chăn Ga Gối Đệm bên trái, cùng hệ thống Phông Rèm hội trường, Rèm Vải gấm cản nắng, Rèm Cầu Vồng đa dạng sắc màu bên phải.',
-      'Với kho hàng lớn luôn có sẵn và đội xe bán tải giao lắp miễn phí tận nơi, Showroom Tuyến Hoa cam kết đáp ứng nhanh nhất mọi nhu cầu sắm sửa nội thất phòng ngủ và rèm cửa của bà con.'
-    ],
-    facebookPostCopy:
-      '🏢 [TOÀN CẢNH SHOWROOM 2 TẦNG] TUYẾN HOA: CHĂN - GA - GỐI - ĐỆM - PHÔNG - RÈM MẶT ĐƯỜNG LỚN!\n' +
-      '--------------------------------------------\n' +
-      '📍 Mặt tiền 3 gian kính rộng rãi, vỉa hè đỗ xe ô tô thoải mái – Kính mời bà con ghé xem mẫu trực tiếp!\n' +
-      '💰 BÁO GIÁ TẬN XƯỞNG NIÊM YẾT CÔNG KHAI:\n' +
-      '✅ Màn khung Inox cao cấp (Rộng 1,8m × Dài 2,0m): 1.000.000đ / 1 bộ cả lắp.\n' +
-      '✅ Rèm vải cản nắng 100%: 600.000đ / mét ngang hoàn thiện cả thanh treo & công lắp.\n' +
-      '✅ Đệm bông ép Hàn Quốc gấp 3 chính hãng: Từ 1.350.000đ – 2.450.000đ/tấm.\n' +
-      '✅ Bạt mái xếp lượn sóng: 350.000đ / 1 m² trọn gói.\n' +
-      '--------------------------------------------\n' +
-      '📞 Gọi/Zalo ngay: 0344.727.528 (Miễn phí mang mẫu & lắp đặt tận nhà)!',
-  },
-  {
-    id: 'dem-lo-xo-tui-gold-3-vien-everhome-dlx01',
-    code: 'DLX-EH-01',
-    category: 'man-khung-1tr',
-    categoryName: 'Chăn Ga Gối Đệm & Màn Khung',
-    title: 'Đệm Lò Xo Túi Độc Lập & Đệm Lò Xo Gold 3 Viền Everhome Chính Hãng – Trưng Bày Tại Showroom & Tổng Kho Tuyến Hoa',
-    shortTitle: 'Đệm Lò Xo Túi & Gold 3 Viền Everhome',
-    priceDisplay: '2.850.000đ / tấm',
-    marketPriceRange: 'Giá thị trường: 3.800.000đ – 5.950.000đ / tấm',
-    marketPriceNote: 'Phân phối trực tiếp từ Tổng Kho Everhome Tuyến Hoa (có đủ bản nguyên tấm hoàng gia và bản hút chân không cuộn tròn tiện lợi). Tiết kiệm 25% – 30% so với giá niêm yết hãng.',
-    marketPriceTiers: [
-      {
-        sizeOrOption: '1. Đệm Lò Xo Túi Độc Lập Everhome (Cỡ 1,6m × 2,0m × dày 23cm)',
-        marketPrice: '3.850.000đ / tấm',
-        storePrice: '2.850.000đ / tấm',
-        note: 'Có bản đóng cuộn hút chân không dễ chuyển lên tầng cao',
-      },
-      {
-        sizeOrOption: '2. Đệm Lò Xo Túi Độc Lập Everhome (Cỡ 1,8m × 2,0m × dày 23cm)',
-        marketPrice: '4.350.000đ / tấm',
-        storePrice: '3.250.000đ / tấm',
-        note: 'Chống rung động khi người nằm cạnh trở mình',
-      },
-      {
-        sizeOrOption: '3. Đệm Lò Xo Gold 3 Viền Hoàng Gia Everhome (1,8m × 2,0m × dày 27cm)',
-        marketPrice: '5.950.000đ / tấm',
-        storePrice: '4.450.000đ / tấm',
-        note: 'Tích hợp lớp Pillow Top êm ái chuẩn khách sạn 5 sao',
-      },
-    ],
-    numericPrice: 2850000,
-    unitLabel: '1 tấm chính hãng Everhome (Miễn phí xe bán tải giao tận giường)',
-    standardDimensions: 'Đủ cỡ 1,6m × 2,0m · 1,8m × 2,0m · 2,0m × 2,2m (Dày 23cm – 27cm)',
-    mediaType: 'image',
-    imageUrl: '/assets/aistudio/dem_lo_xo_everhome_tuyen_hoa.png',
-    secondaryImages: [
-      '/assets/aistudio/dem_lo_xo_everhome_tuyen_hoa.png',
-      '/assets/aistudio/Showroom_Ch_n_Ga_G_i___m_Tuy_n_Hoa_0311597c.png',
-    ],
-    highlightTag: 'Chính Hãng Everhome · Đã Lọc Ảnh Trùng',
-    summary:
-      'Dòng Đệm Lò Xo Túi Độc Lập & Đệm Lò Xo Gold 3 Viền Everhome chính hãng trưng bày trên giường tân cổ điển tại Showroom Tuyến Hoa và sẵn hàng số lượng lớn tại kho (cả dạng nguyên tấm và dạng hút chân không cuộn gọn).',
-    visualAnnotations: [
-      {
-        label: 'Hệ lò xo túi độc lập & thiết kế Gold 3 viền sang trọng',
-        detail: 'Mỗi con lò xo thép cacbon được bọc trong túi vải riêng biệt giúp nâng đỡ cột sống êm ái, không gây tiếng kêu hay rung lắc.',
-      },
-      {
-        label: 'Đầy đủ bản nguyên tấm & bản hút chân không cuộn gọn',
-        detail: 'Dạng cuộn hút chân không chính hãng Everhome giúp vận chuyển qua cầu thang hẹp hoặc lên tầng cao cực kỳ dễ dàng.',
-      },
-      {
-        label: 'Chiết khấu trực tiếp 25% – 30% tại Tổng Kho Tuyến Hoa',
-        detail: 'Giá chỉ từ 2.850.000đ/tấm (1m6×2m) và 3.250.000đ/tấm (1m8×2m), bảo hành chính hãng 7 – 10 năm.',
-      },
-    ],
-    specs: [
-      { label: 'Mã sản phẩm', value: 'DLX-EH-01 (Đệm Lò Xo Túi & Gold 3 Viền Everhome)' },
-      { label: 'Thương hiệu', value: 'Everhome Chính Hãng – Đại lý cấp 1 Tuyến Hoa (0344.727.528)' },
-      { label: 'Giá cỡ 1,6m × 2,0m', value: '2.850.000đ / tấm (Giá thị trường: 3.850.000đ)' },
-      { label: 'Giá cỡ 1,8m × 2,0m', value: '3.250.000đ / tấm | Bản Gold 3 Viền: 4.450.000đ / tấm' },
-      { label: 'Quy cách đóng gói', value: 'Nguyên tấm bọc nilon dày hoặc Hút chân không cuộn tròn' },
-      { label: 'Chế độ bảo hành', value: 'Bảo hành chính hãng Everhome 7 – 10 năm tận nhà' },
-    ],
-    articleParagraphs: [
-      'Đệm Lò Xo Túi Độc Lập và Đệm Lò Xo Gold 3 Viền Everhome (Mã DLX-EH-01) là dòng đệm cao cấp chuyên dụng cho phòng cưới, biệt thự và gia đình hiện đại đang được trưng bày trực tiếp tại Showroom Chăn Ga Gối Đệm Tuyến Hoa.',
-      'Nhờ hệ thống lò xo túi độc lập mật độ cao kết hợp lớp mút đàn hồi Pillow Top và vỏ gấm dệt Jacquard kháng khuẩn, đệm ôm sát đường cong cơ thể, giải phóng hoàn toàn áp lực vùng vai gáy và thắt lưng mà không hề gây rung động cho người nằm cạnh khi trở mình.',
-      'Tại Tổng Kho Tuyến Hoa, quý khách có thể chọn dòng nguyên tấm truyền thống hoặc dòng Đệm Lò Xo Túi Everhome ép hút chân không cuộn gọn thông minh với mức giá tận gốc chỉ từ 2.850.000đ/tấm (cỡ 1,6m×2,0m) đến 3.250.000đ/tấm (cỡ 1,8m×2,0m), miễn phí 100% xe bán tải giao tận giường.'
-    ],
-    facebookPostCopy:
-      '🛏️ [TỔNG KHO ĐỆM EVERHOME TUYẾN HOA] ĐỆM LÒ XO TÚI ĐỘC LẬP & ĐỆM LÒ XO GOLD 3 VIỀN CHÍNH HÃNG!\n' +
-      '💰 GIÁ THỊ TRƯỜNG: 3.850.000đ – 5.950.000đ / tấm\n' +
-      '🔥 GIÁ TẠI SHOWROOM TUYẾN HOA (CHIẾT KHẤU NGAY 25% – 30%):\n' +
-      '   👉 Đệm Lò Xo Túi Everhome 1,6m × 2,0m: Chỉ 2.850.000đ / tấm\n' +
-      '   👉 Đệm Lò Xo Túi Everhome 1,8m × 2,0m: Chỉ 3.250.000đ / tấm\n' +
-      '   👉 Đệm Lò Xo Gold 3 Viền Hoàng Gia 1,8m × 2,0m: Chỉ 4.450.000đ / tấm\n' +
-      '--------------------------------------------\n' +
-      '📌 ƯU ĐIỂM VƯỢT TRỘI:\n' +
-      '✔️ Lò xo túi độc lập êm ái tuyệt đối, trở mình không rung lắc, nâng đỡ cột sống chuẩn y khoa.\n' +
-      '✔️ Có sẵn cả bản nguyên tấm và bản hút chân không cuộn gọn dễ dàng mang lên cầu thang tầng cao.\n' +
-      '✔️ Cam kết chính hãng Everhome 100% – Bảo hành 7 đến 10 năm!\n' +
-      '🚛 Miễn phí xe bán tải Ngọc Tuyến – Tuyến Hoa giao đệm tận giường ngủ!\n' +
-      '📞 Gọi/Zalo đặt ngay: 0344.727.528 (Showroom Tuyến Hoa – Ứng Hòa, Hà Nội)',
-  },
-  {
-    id: 'nem-cao-su-100-thien-nhien-everhome-dcs01',
-    code: 'DCS-EH-01',
-    category: 'man-khung-1tr',
-    categoryName: 'Chăn Ga Gối Đệm & Màn Khung',
-    title: 'Nệm Cao Su 100% Thiên Nhiên Everhome Kháng Khuẩn – Đàn Hồi Chuẩn Y Khoa, Chống Đau Lưng (Bảo Hành 10 Năm)',
-    shortTitle: 'Nệm Cao Su 100% Thiên Nhiên Everhome',
-    priceDisplay: '4.850.000đ / tấm',
-    marketPriceRange: 'Giá thị trường: 6.500.000đ – 7.800.000đ / tấm',
-    marketPriceNote: 'Nệm cao su thiên nhiên 100% nguyên khối đổ khuôn 2 mặt lỗ thoáng khí. Tặng kèm bộ gối cao su non khi mua tại Showroom Tuyến Hoa.',
-    marketPriceTiers: [
-      {
-        sizeOrOption: '1. Nệm Cao Su Thiên Nhiên Everhome 1,6m × 2,0m (Dày 5cm)',
-        marketPrice: '4.950.000đ / tấm',
-        storePrice: '3.650.000đ / tấm',
-        note: 'Êm ái, gọn nhẹ, bảo hành 10 năm',
-      },
-      {
-        sizeOrOption: '2. Nệm Cao Su Thiên Nhiên Everhome 1,6m × 2,0m (Dày 10cm chuẩn)',
-        marketPrice: '6.500.000đ / tấm',
-        storePrice: '4.850.000đ / tấm',
-        note: 'Bán chạy số 1 – Tặng kèm 2 gối cao su non',
-      },
-      {
-        sizeOrOption: '3. Nệm Cao Su Thiên Nhiên Everhome 1,8m × 2,0m (Dày 10cm chuẩn)',
-        marketPrice: '7.800.000đ / tấm',
-        storePrice: '5.450.000đ / tấm',
-        note: 'Nâng đỡ 5 vùng cơ thể, chống đau mỏi lưng',
-      },
-    ],
-    numericPrice: 4850000,
-    unitLabel: '1 tấm cao su thiên nhiên nguyên khối (Tặng kèm gối cao su)',
-    standardDimensions: 'Đủ cỡ 1,6m × 2,0m · 1,8m × 2,0m · Độ dày 5cm / 10cm / 15cm',
-    mediaType: 'image',
-    imageUrl: '/assets/aistudio/dem_cao_su_everhome_tuyen_hoa.png',
-    secondaryImages: [
-      '/assets/aistudio/dem_cao_su_everhome_tuyen_hoa.png',
-      '/assets/aistudio/IMG_4553_3bdc7af1.JPG',
-    ],
-    highlightTag: '100% Cao Su Thiên Nhiên · BH 10 Năm',
-    summary:
-      'Nệm Cao Su 100% Thiên Nhiên Everhome nguyên khối tại kho Tuyến Hoa: Mặt trên hàng nghìn lỗ thông hơi tròn đối lưu khí, mặt dưới cấu trúc chân vuông vững chãi nâng đỡ cột sống hoàn hảo suốt 15–20 năm.',
-    visualAnnotations: [
-      {
-        label: '100% mủ cao su thiên nhiên nguyên khối không pha tạp',
-        detail: 'Độ đàn hồi tự nhiên bền bỉ 15–20 năm không xẹp lún, nâng đỡ trọn vẹn 5 vùng cơ thể từ đầu đến chân.',
-      },
-      {
-        label: 'Hệ thống lỗ thông hơi tròn mặt trên & chân vuông mặt dưới',
-        detail: 'Lưu thông không khí liên tục, chống hầm nóng lưng vào mùa hè và giữ ấm áp vào mùa đông.',
-      },
-      {
-        label: 'Giá gốc tại Tổng Kho Tuyến Hoa tiết kiệm gần 2 triệu/tấm',
-        detail: 'Cỡ 1,6m×2m×10cm chỉ 4.850.000đ; cỡ 1,8m×2m×10cm chỉ 5.450.000đ, tặng kèm bộ gối cao su êm ái.',
-      },
-    ],
-    specs: [
-      { label: 'Mã sản phẩm', value: 'DCS-EH-01 (Nệm Cao Su 100% Thiên Nhiên Everhome)' },
-      { label: 'Chất liệu cốt lõi', value: '100% Cao su thiên nhiên nguyên khối kháng khuẩn khử mùi' },
-      { label: 'Giá cỡ 1,6m × 2,0m × 10cm', value: '4.850.000đ / tấm (Thị trường: 6.500.000đ/tấm)' },
-      { label: 'Giá cỡ 1,8m × 2,0m × 10cm', value: '5.450.000đ / tấm (Thị trường: 7.800.000đ/tấm)' },
-      { label: 'Quà tặng kèm', value: 'Tặng ngay 02 ruột gối cao su non + Miễn phí giao tận phòng' },
-      { label: 'Bảo hành chính hãng', value: '10 Năm không xẹp lún (Độ bền thực tế 15–20 năm)' },
-    ],
-    articleParagraphs: [
-      'Nệm Cao Su 100% Thiên Nhiên Everhome (Mã DCS-EH-01) được sản xuất từ nguồn mủ cao su tự nhiên tinh khiết qua dây chuyền xử lý kháng khuẩn và khử mùi hiện đại, mang lại giấc ngủ êm sâu và hỗ trợ trị liệu đau mỏi lưng hiệu quả cho người lớn tuổi cũng như người làm việc văn phòng.',
-      'Hình ảnh thực tế tại kho Tuyến Hoa cho thấy rõ kết cấu khuôn đúc nguyên khối chuẩn mực: mặt trên bố trí hàng nghìn lỗ thông hơi nhỏ li ti giúp thoát nhiệt nhanh, mặt dưới là hệ thống ô chân vuông chịu lực vững chãi không bị biến dạng qua hàng chục năm sử dụng.',
-      'Nhờ nhập trực tiếp số lượng lớn từ nhà máy Everhome, Showroom Tuyến Hoa ưu đãi giá chỉ 4.850.000đ cho tấm 1,6m×2,0m dày 10cm và 5.450.000đ cho tấm 1,8m×2,0m dày 10cm (tiết kiệm từ 1,6 đến 2,3 triệu đồng so với giá thị trường).'
-    ],
-    facebookPostCopy:
-      '🌿 [KHO NỆM CAO SU TUYẾN HOA] NỆM CAO SU 100% THIÊN NHIÊN EVERHOME NGUYÊN KHỐI – BẢO HÀNH 10 NĂM!\n' +
-      '💰 GIÁ THỊ TRƯỜNG: 6.500.000đ – 7.800.000đ / tấm\n' +
-      '🔥 GIÁ GỐC TẠI KHO TUYẾN HOA (TẶNG KÈM 2 GỐI CAO SU NON):\n' +
-      '   👉 Cỡ 1,6m × 2,0m (Dày 5cm): Chỉ 3.650.000đ / tấm\n' +
-      '   👉 Cỡ 1,6m × 2,0m (Dày 10cm): Chỉ 4.850.000đ / tấm\n' +
-      '   👉 Cỡ 1,8m × 2,0m (Dày 10cm): Chỉ 5.450.000đ / tấm\n' +
-      '--------------------------------------------\n' +
-      '✅ 100% Cao su thiên nhiên nguyên khối đàn hồi chuẩn y khoa, nâng đỡ cột sống chống đau lưng.\n' +
-      '✅ Hàng nghìn lỗ thoáng khí mặt trên & chân vuông mặt dưới thông thoáng 4 mùa.\n' +
-      '✅ Bảo hành chính hãng 10 năm – Độ bền 15 đến 20 năm!\n' +
-      '📞 Gọi/Zalo giao ngay tận nhà: 0344.727.528 (Showroom Tuyến Hoa – Ứng Hòa, Hà Nội)',
   },
   {
     id: 'vach-rem-to-ong-cua-vom-phong-khach-rto01',

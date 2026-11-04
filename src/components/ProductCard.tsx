@@ -49,20 +49,20 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       onClick={() => onOpenDetails(product)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="luxury-card group cursor-pointer bg-white rounded-3xl border-2 border-[#E6DAC3] flex flex-col justify-between overflow-hidden active:scale-[0.99]"
+      className="luxury-card group cursor-pointer bg-white flex flex-col justify-between overflow-hidden active:scale-[0.995]"
     >
-      {/* Large Bright Photo Frame */}
-      <div className="luxury-sheen-hover relative overflow-hidden bg-[#FAF6EE] border-b border-[#EAE0CE]">
+      {/* Photo Frame */}
+      <div className="luxury-sheen-hover relative overflow-hidden bg-[#F7F4ED] border-b border-[#EFE9DC]">
         <ProductIllustration
           product={product}
           size="md"
           showSecondary={isHovered && !!product.secondaryImage}
-          className="h-52 sm:h-64"
+          className="h-52 sm:h-60"
         />
 
-        {/* Bright Frosted Badge on Top Left */}
+        {/* Frosted Badge on Top Left */}
         {product.badge && (
-          <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md text-[#1C1917] border border-[#C69C4E] text-xs font-extrabold px-3 py-1 rounded-xl shadow-xs">
+          <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md text-[#1C1917] border border-[#E2D5BE] text-[11px] font-semibold tracking-wide px-2.5 py-1 rounded-lg shadow-2xs">
             <span>{product.badge}</span>
           </div>
         )}
@@ -75,30 +75,30 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               e.stopPropagation();
               onOpenDetails(product);
             }}
-            className="w-9 h-9 rounded-full bg-white/95 backdrop-blur-xs text-[#1C1917] hover:bg-[#F3DFB8] border border-[#D4B882] shadow-sm flex items-center justify-center transition-all"
+            className="w-8 h-8 rounded-full bg-white/95 backdrop-blur-xs text-[#1C1917] hover:bg-[#FAF5EB] border border-[#DFD2BA] shadow-xs flex items-center justify-center transition-all"
             title="Xem chi tiết"
           >
-            <Eye className="w-4 h-4" />
+            <Eye className="w-3.5 h-3.5" />
           </button>
         </div>
       </div>
 
-      {/* Spacious Card Body with Larger, Clearer Typography */}
-      <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-3.5">
+      {/* Tailored Card Body */}
+      <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-3">
         <div>
-          <div className="flex items-center justify-between text-xs sm:text-sm text-stone-600 font-bold">
-            <span className="uppercase tracking-wider font-extrabold text-[#8A5A14] truncate max-w-[160px]">
+          <div className="flex items-center justify-between text-xs text-stone-500">
+            <span className="uppercase tracking-[0.08em] font-semibold text-[#8C6224] truncate max-w-[160px]">
               {product.brand}
             </span>
-            <span className="flex items-center gap-1 text-[#8A5A14] shrink-0">
-              <Star className="w-4 h-4 fill-[#D4AF37] text-[#D4AF37]" />
-              <span className="font-mono font-extrabold text-[#1C1917] text-xs sm:text-sm">
+            <span className="flex items-center gap-1 text-[#8C6224] shrink-0">
+              <Star className="w-3.5 h-3.5 fill-[#C5A059] text-[#C5A059]" />
+              <span className="font-mono font-semibold text-[#1C1917] text-xs">
                 {product.rating}
               </span>
             </span>
           </div>
 
-          <h3 className="text-base sm:text-lg font-extrabold text-[#1C1917] mt-1.5 line-clamp-2 leading-snug group-hover:text-[#8A5A14] transition-colors font-display">
+          <h3 className="text-[15px] sm:text-base font-semibold text-[#1C1917] mt-1.5 line-clamp-2 leading-snug group-hover:text-[#8C6224] transition-colors font-display">
             {product.name}
           </h3>
         </div>
@@ -109,7 +109,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             <select
               value={selectedVariantIndex}
               onChange={(e) => setSelectedVariantIndex(Number(e.target.value))}
-              className="w-full text-xs sm:text-sm bg-[#FCF9F3] hover:bg-[#FAF2E1] border border-[#D8C5A3] rounded-xl px-3 py-2.5 text-[#1C1917] font-bold focus:outline-hidden focus:border-[#8A5A14] transition-colors cursor-pointer truncate"
+              className="w-full text-xs bg-[#FAF8F5] hover:bg-[#F4EFE6] border border-[#E5DEC9] rounded-xl px-3 py-2 text-[#1C1917] font-medium focus:outline-hidden focus:border-[#B5945B] transition-colors cursor-pointer truncate"
             >
               {product.variants.map((v, i) => (
                 <option key={v.id} value={i}>
@@ -120,15 +120,15 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           </div>
         )}
 
-        {/* Price & Bright Action Buttons */}
-        <div className="pt-3 border-t border-[#EFE7D8] flex flex-col gap-3">
-          <div className="flex items-baseline justify-between gap-1 bg-[#FDF8EE] px-3.5 py-2 rounded-xl border border-[#E2CFA8]">
-            <div className="text-lg sm:text-2xl font-extrabold text-[#7A4E0E] font-mono tabular-nums leading-none">
+        {/* Price & Action Buttons */}
+        <div className="pt-3 border-t border-[#F2ECE1] flex flex-col gap-2.5">
+          <div className="flex items-baseline justify-between gap-2 bg-[#FCF9F4] px-3.5 py-2 rounded-xl border border-[#EDE3D2]">
+            <div className="text-base sm:text-lg font-semibold text-[#734F1A] font-mono tabular-nums leading-none">
               {activeVariant.price.toLocaleString('vi-VN')}{' '}
-              <span className="text-sm font-sans font-extrabold text-[#8A5A14]">đ</span>
+              <span className="text-xs font-sans font-medium text-[#8C6224]">đ</span>
             </div>
             {activeVariant.originalPrice && (
-              <div className="text-xs sm:text-sm text-stone-400 line-through font-mono tabular-nums">
+              <div className="text-xs text-stone-400 line-through font-mono tabular-nums">
                 {activeVariant.originalPrice.toLocaleString('vi-VN')} đ
               </div>
             )}
@@ -138,20 +138,20 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             <button
               type="button"
               onClick={handleAddToCart}
-              className={`min-h-[44px] w-11 rounded-xl border text-xs font-bold transition-all flex items-center justify-center shrink-0 cursor-pointer ${
+              className={`min-h-[40px] w-10 rounded-xl border text-xs font-medium transition-all flex items-center justify-center shrink-0 cursor-pointer ${
                 isAdded
                   ? 'bg-emerald-700 border-emerald-700 text-white'
-                  : 'bg-[#FAF6EE] border-[#D8C5A3] hover:border-[#8A5A14] text-[#1C1917] hover:bg-[#F3E9D6]'
+                  : 'bg-[#FAF8F5] border-[#E4DAC7] hover:border-[#B5945B] text-[#1C1917] hover:bg-[#F3EDE2]'
               }`}
               title="Thêm vào giỏ hàng"
             >
-              {isAdded ? <Check className="w-4 h-4 text-white" /> : <ShoppingBag className="w-4 h-4 text-[#8A5A14]" />}
+              {isAdded ? <Check className="w-4 h-4 text-white" /> : <ShoppingBag className="w-4 h-4 text-[#8C6224]" />}
             </button>
 
             <button
               type="button"
               onClick={handleQuickBuy}
-              className="flex-1 min-h-[44px] px-3 py-2.5 bg-gradient-to-r from-[#F4E3C1] to-[#EBD19E] hover:from-[#EDD8AE] hover:to-[#E2C285] text-[#1C1917] border border-[#C59B4D] rounded-xl text-sm sm:text-base font-extrabold whitespace-nowrap transition-all text-center flex items-center justify-center gap-1.5 cursor-pointer"
+              className="btn-luxury-primary flex-1 min-h-[40px] px-3 py-2 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap text-center flex items-center justify-center gap-1.5 cursor-pointer"
             >
               <span>Đặt Mua Ngay</span>
             </button>

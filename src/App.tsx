@@ -288,23 +288,23 @@ export default function App() {
           )}
         </AnimatePresence>
 
-        {/* Bright Warm Champagne Announcement Bar */}
-        <div className="bg-gradient-to-r from-[#FAF2E1] via-[#FDFBF7] to-[#FAF2E1] text-[#1C1917] text-xs sm:text-sm py-2.5 px-4 border-b border-[#E2D4B8]">
+        {/* Refined Warm Alabaster Announcement Bar */}
+        <div className="bg-[#F6F2EA] text-[#1C1917] text-xs py-2 px-4 border-b border-[#E5DEC9]">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             <div className="flex items-center gap-2 truncate">
-              <span className="text-[#8A5A14] font-extrabold tracking-wide uppercase shrink-0">
+              <span className="text-[#8A6421] font-semibold tracking-wider uppercase shrink-0">
                 Showroom Tuyến Hoa:
               </span>
-              <span className="text-stone-800 font-semibold truncate">
+              <span className="text-stone-700 font-medium truncate">
                 Màn Khung 1.000.000đ/bộ · Rèm Vải 600k/m · Đệm Everhome 2,85Tr · Bạt Xếp 350k/m²
               </span>
             </div>
             <div className="flex items-center gap-4 shrink-0 pl-2">
               <a
                 href={`tel:${STORE_INFO.hotline}`}
-                className="hidden sm:flex items-center gap-1.5 text-[#7A4E0E] hover:text-[#1C1917] font-extrabold font-mono tabular-nums transition-colors text-xs sm:text-sm"
+                className="hidden sm:flex items-center gap-1.5 text-[#1C1917] hover:text-[#8A6421] font-semibold font-mono tabular-nums transition-colors text-xs"
               >
-                <PhoneCall className="w-3.5 h-3.5 text-[#8A5A14]" />
+                <PhoneCall className="w-3.5 h-3.5 text-[#8A6421]" />
                 <span>{STORE_INFO.hotlineDisplay}</span>
               </a>
             </div>
@@ -381,8 +381,8 @@ export default function App() {
           id="main-workspace"
           className="w-full min-w-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 space-y-8 sm:space-y-10"
         >
-          {/* Bright Light-Mode Navigation Bar with Champagne Gold Pill Transition */}
-          <div className="w-full min-w-0 bg-white p-2.5 rounded-2xl border-2 border-[#E2D4B8] shadow-2xs overflow-x-auto scrollbar-none touch-pan-x">
+          {/* Refined Navigation Bar with Architectural Pill Transition */}
+          <div className="w-full min-w-0 bg-white p-2 rounded-2xl border border-[#E5DEC9] shadow-2xs overflow-x-auto scrollbar-none touch-pan-x">
             <div className="flex items-center gap-1.5 min-w-max">
               {MAIN_NAV_ITEMS.map((item) => {
                 const Icon = item.icon;
@@ -392,9 +392,9 @@ export default function App() {
                     key={item.id}
                     type="button"
                     onClick={() => setActiveMainTab(item.id)}
-                    className={`relative flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm sm:text-base font-extrabold transition-colors whitespace-nowrap min-h-[44px] cursor-pointer ${
+                    className={`relative flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap min-h-[40px] cursor-pointer ${
                       isActive
-                        ? 'text-[#1C1917]'
+                        ? 'text-white'
                         : 'text-stone-700 hover:text-[#1C1917] hover:bg-[#FAF6EE]'
                     }`}
                   >
@@ -402,12 +402,12 @@ export default function App() {
                       <motion.div
                         layoutId="activeMainTabIndicator"
                         transition={{ type: 'spring', stiffness: 380, damping: 32 }}
-                        className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#F4E3C1] to-[#EBD19E] border border-[#C59B4D] shadow-2xs"
+                        className="absolute inset-0 rounded-xl bg-[#1C1917] border border-[#1C1917] shadow-2xs"
                       />
                     )}
                     <Icon
-                      className={`relative z-10 w-4 h-4 ${
-                        isActive ? 'text-[#7A4E0E]' : 'text-[#8A5A14]'
+                      className={`relative z-10 w-3.5 h-3.5 ${
+                        isActive ? 'text-[#E5C98B]' : 'text-[#8A6421]'
                       }`}
                     />
                     <span className="relative z-10">{item.label}</span>
@@ -431,11 +431,11 @@ export default function App() {
                   onShowToast={showToast}
                 />
 
-                {/* Bright Light-Mode Catalog Filter Bar */}
-                <div className="w-full min-w-0 bg-white p-4 sm:p-5 rounded-2xl border-2 border-[#E2D4B8] shadow-2xs space-y-3 overflow-hidden">
-                  <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3.5">
+                {/* Refined Catalog Filter Bar */}
+                <div className="w-full min-w-0 bg-white p-3.5 sm:p-4 rounded-2xl border border-[#E5DEC9] shadow-2xs space-y-3 overflow-hidden">
+                  <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
                     <div className="w-full lg:w-auto overflow-x-auto pb-1 lg:pb-0 scrollbar-none">
-                      <div className="flex items-center gap-2 min-w-max">
+                      <div className="flex items-center gap-1.5 min-w-max">
                         {CATEGORIES.map((cat) => (
                           <button
                             key={cat.id}
@@ -444,18 +444,18 @@ export default function App() {
                               setActiveCategory(cat.id);
                               setSelectedBrand('all');
                             }}
-                            className={`px-4 py-2.5 text-sm sm:text-base font-extrabold rounded-xl transition-all whitespace-nowrap shrink-0 flex items-center gap-2 min-h-[42px] cursor-pointer ${
+                            className={`px-3.5 py-2 text-xs sm:text-sm font-medium rounded-xl transition-all whitespace-nowrap shrink-0 flex items-center gap-2 min-h-[38px] cursor-pointer ${
                               activeCategory === cat.id
-                                ? 'bg-gradient-to-r from-[#F4E3C1] to-[#EBD19E] text-[#1C1917] border border-[#C59B4D] shadow-2xs'
-                                : 'bg-[#FAF6EE] text-stone-700 hover:text-[#1C1917] hover:bg-[#F3E9D6]'
+                                ? 'bg-[#1C1917] text-white border border-[#1C1917] shadow-2xs'
+                                : 'bg-[#FAF7F2] text-stone-700 border border-[#E5DEC9] hover:text-[#1C1917] hover:bg-[#F3ECE0]'
                             }`}
                           >
                             <span>{cat.label}</span>
                             <span
-                              className={`text-xs px-2 py-0.5 rounded-full font-mono font-extrabold ${
+                              className={`text-[11px] px-1.5 py-0.5 rounded-full font-mono font-semibold ${
                                 activeCategory === cat.id
-                                  ? 'bg-white text-[#7A4E0E] border border-[#C59B4D]'
-                                  : 'bg-[#EAE0CE] text-stone-700'
+                                  ? 'bg-[#8A6421] text-white'
+                                  : 'bg-[#EAE3D5] text-stone-700'
                               }`}
                             >
                               {cat.count}
@@ -465,21 +465,21 @@ export default function App() {
                       </div>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 lg:w-[460px]">
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 lg:w-[440px]">
                       <div className="relative flex-1">
-                        <Search className="w-4 h-4 text-[#8A5A14] absolute left-3.5 top-3.5" />
+                        <Search className="w-4 h-4 text-[#8A6421] absolute left-3.5 top-3" />
                         <input
                           type="text"
                           value={searchQuery}
                           onChange={(e) => setSearchQuery(e.target.value)}
                           placeholder="Tìm đệm, rèm, chiếu trúc..."
-                          className="w-full pl-10 pr-8 py-2.5 text-sm sm:text-base font-medium text-[#1C1917] placeholder:text-stone-500 bg-[#FCFBF8] rounded-xl border border-[#D8C5A3] focus:outline-hidden focus:border-[#8A5A14] min-h-[42px]"
+                          className="w-full pl-9 pr-8 py-2 text-xs sm:text-sm font-normal text-[#1C1917] placeholder:text-stone-400 bg-[#FCFBF8] rounded-xl border border-[#DFD6C3] focus:outline-hidden focus:border-[#8A6421] min-h-[38px]"
                         />
                         {searchQuery && (
                           <button
                             type="button"
                             onClick={() => setSearchQuery('')}
-                            className="absolute right-3 top-2.5 text-base text-stone-500 hover:text-[#1C1917] font-bold"
+                            className="absolute right-3 top-2 text-sm text-stone-500 hover:text-[#1C1917] font-semibold"
                           >
                             ×
                           </button>
@@ -489,9 +489,10 @@ export default function App() {
                       <select
                         value={selectedBrand}
                         onChange={(e) => setSelectedBrand(e.target.value)}
-                        className="text-sm sm:text-base bg-[#FCFBF8] border border-[#D8C5A3] rounded-xl px-3.5 py-2.5 text-[#1C1917] font-bold focus:outline-hidden focus:border-[#8A5A14] cursor-pointer min-h-[42px]"
+                        className="text-xs sm:text-sm bg-[#FCFBF8] border border-[#DFD6C3] rounded-xl px-3 py-2 text-[#1C1917] font-medium focus:outline-hidden focus:border-[#8A6421] cursor-pointer min-h-[38px]"
                       >
                         <option value="all">Tất cả thương hiệu</option>
+                        <option value="everhome">Đệm Everhome</option>
                         <option value="vikosan">Đệm Vikosan</option>
                         <option value="song-hong">Đệm Sông Hồng</option>
                         <option value="everon">Đệm Everon</option>
