@@ -65,13 +65,25 @@ export interface DeduplicatedImageGroup {
 }
 
 export const DEDUPLICATION_SUMMARY = {
-  totalUploaded: 170,
-  totalRemovedDuplicates: 51,
-  totalUniquePublished: 119,
+  totalUploaded: 188,
+  totalRemovedDuplicates: 56,
+  totalUniquePublished: 124,
   groups: [
     {
+      id: 'dup-lo-18-anh-chieu-may-nicolas-rem-cuon-showroom-2026',
+      groupTitle: 'Lô 18 Ảnh Vừa Tải Lên: Chiếu Mây Ngải Cứu Lót Lưới 3D NICOLAS Nature Home (16 Ảnh), Rèm Bạt Cuốn Lưới Hiên Nhà (IMG_5470) & Showroom Tuyến Hoa',
+      keptImage: 'chieu_may_dieu_hoa_tuyen_hoa.png',
+      removedCount: 5,
+      removedExamples: [
+        'Lọc bỏ 05 bức ảnh chụp lặp góc chéo của bộ Chiếu Mây Điều Hòa NICOLAS Nature Home trải trên giường da kem (IMG_5521, IMG_5524, IMG_5526, IMG_5528, IMG_5530 trùng bố cục với IMG_5523 & IMG_5529)',
+        'Quy hoạch các góc chụp đặc sắc nhất của Chiếu Mây NICOLAS Nature Home (IMG_5508, IMG_5509, IMG_5510, IMG_5511 phòng mẫu & rừng trúc; IMG_5519 túi xách xanh navy; IMG_5520, IMG_5522, IMG_5527, IMG_5531 cận cảnh lưới 3D & đai chun NICOLAS LUXURY) vào bài đăng đầu trang CM-TH-01',
+        'Quy hoạch ảnh thực tế Rèm Bạt Cuốn Lưới Đen Nâu Xuyên Sáng lắp dưới hiên mái ngói đỏ (IMG_5470.JPG) vào bài đăng BC-TH-01 và ảnh toàn cảnh mặt tiền Showroom Chăn Ga Gối Đệm Tuyến Hoa số 365 vào bài đăng SR-TH-01',
+      ],
+      reason: 'Từ 18 bức ảnh vừa tải lên, hệ thống đã lọc 5 góc chụp trùng lặp trên giường mẫu và biên tập thành 03 bài đăng chuyên nghiệp ngay đầu trang web kèm bảng giá chi tiết.',
+    },
+    {
       id: 'dup-lo-12-anh-everhome-cao-su-lo-xo-showroom-2tang-2026',
-      groupTitle: 'Lô 12 Ảnh Vừa Tải Lên: Nệm Cao Su 100% Thiên Nhiên Everhome, Đệm Lò Xo Gold 3 Viền · Lò Xo Túi Cuộn & Showroom 2 Tầng',
+      groupTitle: 'Lô 12 Ảnh Trước: Nệm Cao Su 100% Thiên Nhiên Everhome, Đệm Lò Xo Gold 3 Viền · Lò Xo Túi Cuộn & Showroom 2 Tầng',
       keptImage: 'dem_cao_su_everhome_tuyen_hoa.png',
       removedCount: 6,
       removedExamples: [
@@ -79,7 +91,7 @@ export const DEDUPLICATION_SUMMARY = {
         'Chỉnh sáng, cân bằng trắng và quy hoạch 04 ảnh Nệm Cao Su 100% Thiên Nhiên Everhome (IMG_5405 banner cấu tạo 2 mặt lỗ, IMG_5412 phôi chân vuông, IMG_5410 & IMG_5411 lô phôi cao su tại kho) vào bài đăng DCS-EH-01',
         'Chỉnh sáng và quy hoạch 05 ảnh Đệm Lò Xo Gold 3 Viền & Lò Xo Túi Cuộn Hút Chân Không Everhome (IMG_5413 Gold 3 Viền, IMG_5415 giường tân cổ điển, IMG_5406, IMG_5407 & IMG_5408 kho lò xo) vào bài đăng DLX-EH-01',
       ],
-      reason: 'Biên tập trọn vẹn 12 ảnh vừa gửi: lọc bỏ các file trùng lặp, tách từng góc chụp thực tế kèm chú thích chi tiết và đưa 03 bài đăng Everhome & Showroom 2 Tầng lên đầu trang.',
+      reason: 'Biên tập trọn vẹn 12 ảnh Everhome & Showroom 2 Tầng: lọc bỏ các file trùng lặp và tách từng góc chụp thực tế kèm chú thích chi tiết.',
     },
     {
       id: 'dup-lo-18-anh-alyda-theu-hoang-gia-ren-cong-chua-2026',
@@ -467,7 +479,317 @@ export function calculateCanopyOrderTotal(input: CanopyPricingInput): CanopyPric
 
 export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
   // ===========================================================================
-  // 00-TOP. BỘ 03 BÀI ĐĂNG MỚI NHẤT TỪ LÔ 12 ẢNH VỪA TẢI LÊN:
+  // 00-NEWEST. BỘ 03 BÀI ĐĂNG MỚI NHẤT TỪ LÔ 18 ẢNH VỪA TẢI LÊN:
+  //            1. CHIẾU MÂY ĐIỀU HÒA SỢI NGẢI CỨU LÓT LƯỚI 3D NICOLAS NATURE HOME (IMG_5508 -> IMG_5531)
+  //            2. RÈM BẠT CUỐN LƯỚI ĐEN GHI XUYÊN SÁNG CHE NẮNG MƯA HIÊN NHÀ (IMG_5470.JPG)
+  //            3. SHOWROOM CHĂN GA GỐI ĐỆM & RÈM CỬA TUYẾN HOA (Showroom Chăn Ga Gối Đệm Tuyến Hoa.png)
+  // ===========================================================================
+  {
+    id: 'chieu-may-dieu-hoa-tuyen-hoa-cm01',
+    code: 'CM-TH-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Chiếu Mây Điều Hòa Sợi Ngải Cứu Tự Nhiên Lót Lưới Tổ Ong 3D NICOLAS Nature Home – Tặng Kèm 2 Vỏ Gối & Túi Xách (Đủ 4 Góc Chụp)',
+    shortTitle: 'Chiếu Mây Điều Hòa Ngải Cứu NICOLAS Nature Home (4 Góc Chụp)',
+    priceDisplay: '450.000đ / bộ',
+    marketPriceRange: 'Giá thị trường: 650.000đ – 850.000đ / bộ',
+    marketPriceNote: 'Trọn bộ Chiếu Mây Điều Hòa Sợi Ngải Cứu NICOLAS Nature Home (Luxury) tại Showroom Tuyến Hoa gồm: 01 chiếu mây viền gấm thêu vàng kim + 02 vỏ gối mây đồng bộ + 01 túi xách khóa kéo xanh navy sang trọng.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Giường 1,6m × 2,0m (Chiếu mây NICOLAS + 2 vỏ gối + Túi xách)',
+        marketPrice: '650.000đ / bộ',
+        storePrice: '450.000đ / bộ',
+        note: 'Có đai chun NICOLAS LUXURY cài 4 góc đệm',
+      },
+      {
+        sizeOrOption: '2. Giường 1,8m × 2,0m (Kích thước chuẩn giường đôi phổ biến)',
+        marketPrice: '750.000đ / bộ',
+        storePrice: '490.000đ / bộ',
+        note: 'Bán chạy số 1 mùa hè – Thoáng mát lưng, không buốt lạnh',
+      },
+      {
+        sizeOrOption: '3. Giường đại 2,0m × 2,2m (Khổ rộng gia đình)',
+        marketPrice: '850.000đ / bộ',
+        storePrice: '550.000đ / bộ',
+        note: 'Miễn phí giao hàng tận nhà',
+      },
+    ],
+    numericPrice: 450000,
+    unitLabel: 'Trọn bộ: 1 Chiếu mây NICOLAS + 2 Vỏ gối mây + Túi xách xanh navy',
+    standardDimensions: 'Đủ cỡ 1,6m × 2,0m (450k) · 1,8m × 2,0m (490k) · 2,0m × 2,2m (550k)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/chieu_may_dieu_hoa_tuyen_hoa.png',
+    secondaryImages: [
+      '/assets/aistudio/IMG_5508_chieu_may_nicolas_mat_tren.jpg',
+      '/assets/aistudio/IMG_5519_chieu_may_nicolas_luoi_3d_tui_xanh.jpg',
+      '/assets/aistudio/IMG_5527_chieu_may_nicolas_dai_chun_luxury.jpg',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/chieu_may_dieu_hoa_tuyen_hoa.png': {
+        badge: 'Ảnh 1/4 · Bảng Giá & Cấu Tạo Chiếu Mây Ngải Cứu NICOLAS Nature Home',
+        caption: 'Tổng hợp 3 kích thước chuẩn (1m6×2m: 450k · 1m8×2m: 490k · 2m0×2m2: 550k) kèm 2 vỏ gối mây và túi đựng chính hãng tại Showroom Tuyến Hoa.',
+      },
+      '/assets/aistudio/IMG_5508_chieu_may_nicolas_mat_tren.jpg': {
+        badge: 'Ảnh 2/4 · Bề Mặt Sợi Mây Tự Nhiên & Ngải Cứu Thêu Logo NICOLAS (IMG_5508 – IMG_5511)',
+        caption: 'Mặt trên đan khít từ sợi mây tự nhiên kết hợp tinh chất ngải cứu kháng khuẩn màu nâu trà sang trọng, viền lụa gấm thêu nhành trúc & chữ NICOLAS Nature Home.',
+      },
+      '/assets/aistudio/IMG_5519_chieu_may_nicolas_luoi_3d_tui_xanh.jpg': {
+        badge: 'Ảnh 3/4 · Mặt Dưới Lót Lưới Tổ Ong 3D & Túi Đựng Xanh Navy (IMG_5519 – IMG_5523)',
+        caption: 'Lớp đệm lưới tổ ong 3D màu xanh ghi dày dặn đối lưu không khí 100%, đi kèm túi xách bảo quản màu xanh navy có quai xách tiện lợi.',
+      },
+      '/assets/aistudio/IMG_5527_chieu_may_nicolas_dai_chun_luxury.jpg': {
+        badge: 'Ảnh 4/4 · Cận Cảnh Sợi Đan Mịn & Đai Chun Định Vị NICOLAS LUXURY (IMG_5527 – IMG_5531)',
+        caption: 'Sợi mây đan chéo bóng mịn không dằm xước, mặt sau trang bị đai chun dệt chữ vàng "NICOLAS LUXURY" cố định chắc chắn vào 4 góc đệm.',
+      },
+    },
+    highlightTag: 'Mới Lên Sóng · Sợi Mây Ngải Cứu NICOLAS · 450k/Bộ',
+    summary:
+      'Chiếu Mây Điều Hòa Sợi Ngải Cứu Tự Nhiên NICOLAS Nature Home (Luxury) cấu tạo 2 lớp thông minh: Mặt trên đan sợi mây tự nhiên kết hợp ngải cứu thảo mộc kháng khuẩn mát dịu, bo viền gấm thêu nhành trúc vàng kim; mặt dưới lót lưới tổ ong 3D thoáng khí kèm đai chun NICOLAS LUXURY cài 4 góc đệm.',
+    visualAnnotations: [
+      {
+        label: 'Mặt trên sợi mây tự nhiên & thảo mộc ngải cứu (Natural Mugwort)',
+        detail: 'Sợi mây đan khít bóng mịn, không dằm xước, tỏa hương thảo mộc dịu nhẹ giúp an thần và mát lưng ngay khi nằm phòng điều hòa.',
+      },
+      {
+        label: 'Mặt dưới lót lưới tổ ong 3D thoáng khí + Đai chun NICOLAS LUXURY',
+        detail: 'Lớp đệm lưới 3D đàn hồi êm ái, thoát mồ hôi cực nhanh và có 4 đai chun dệt chữ vàng cố định chống xô lệch trên mọi dòng đệm.',
+      },
+      {
+        label: 'Trọn bộ kèm 2 vỏ gối mây đồng màu & túi xách xanh navy',
+        detail: 'Mua 1 được 3: Gồm 01 chiếu mây điều hòa NICOLAS Nature Home, 02 vỏ gối mây sang trọng và 01 túi khóa kéo có cửa sổ trong suốt.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'CM-TH-01 (Chiếu Mây Ngải Cứu NICOLAS Nature Home Luxury)' },
+      { label: 'Chất liệu cấu tạo', value: 'Mặt trên sợi mây & ngải cứu tự nhiên + Mặt dưới lưới tổ ong 3D' },
+      { label: 'Giá cỡ 1,6m × 2,0m', value: '450.000đ / bộ (Thị trường: 650.000đ/bộ)' },
+      { label: 'Giá cỡ 1,8m × 2,0m', value: '490.000đ / bộ (Thị trường: 750.000đ/bộ)' },
+      { label: 'Giá cỡ 2,0m × 2,2m', value: '550.000đ / bộ (Thị trường: 850.000đ/bộ)' },
+      { label: 'Phụ kiện đi kèm', value: 'Tặng kèm 02 vỏ gối mây đồng bộ + 01 túi xách xanh navy NICOLAS' },
+    ],
+    articleParagraphs: [
+      'Chiếu Mây Điều Hòa Sợi Ngải Cứu Tự Nhiên NICOLAS Nature Home (Mã CM-TH-01) vừa cập bến Showroom Tuyến Hoa (qua bộ 16 ảnh thực tế IMG_5508 đến IMG_5531) là dòng chiếu trải đệm cao cấp kết hợp giữa sợi mây tự nhiên tuyển chọn và tinh chất ngải cứu thảo mộc (Natural Mugwort), mang lại cảm giác mát dịu tự nhiên, không gây lạnh buốt lưng cho người lớn tuổi và trẻ nhỏ khi nằm điều hòa.',
+      'Mặt trên của chiếu được dệt chéo tỉ mỉ với độ bóng mịn cao, xung quanh bo viền vải gấm màu nâu trà thêu nổi logo vàng kim "NICOLAS Nature Home" cùng biểu tượng nhành trúc thanh lịch. Mặt dưới được ép lớp lưới tổ ong 3D thoáng khí màu xanh ghi dày dặn, kèm 4 dây đai chun bản rộng dệt chữ "NICOLAS LUXURY" giúp định vị phẳng phiu vào 4 góc đệm bông ép, đệm lò xo hay đệm cao su.',
+      'Tại Showroom Tuyến Hoa, mỗi bộ chiếu đều đi kèm sẵn 02 vỏ gối mây đồng bộ và túi xách khóa kéo màu xanh navy sang trọng với mức giá gốc tận kho: cỡ 1,6m×2,0m chỉ 450.000đ/bộ; cỡ 1,8m×2,0m chỉ 490.000đ/bộ; cỡ đại 2,0m×2,2m chỉ 550.000đ/bộ.'
+    ],
+    facebookPostCopy:
+      '🌿 [MỚI VỀ TẠI SHOWROOM TUYẾN HOA] CHIẾU MÂY ĐIỀU HÒA SỢI NGẢI CỨU TỰ NHIÊN NICOLAS NATURE HOME – LÓT LƯỚI 3D CAO CẤP!\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 650.000đ – 850.000đ / bộ\n' +
+      '🔥 GIÁ ƯU ĐÃI TẠI TUYẾN HOA (TRỌN BỘ CHIẾU + 2 VỎ GỐI MÂY + TÚI XÁCH XANH NAVY):\n' +
+      '   👉 Cỡ 1,6m × 2,0m: Chỉ 450.000đ / bộ\n' +
+      '   👉 Cỡ 1,8m × 2,0m: Chỉ 490.000đ / bộ\n' +
+      '   👉 Cỡ 2,0m × 2,2m: Chỉ 550.000đ / bộ\n' +
+      '--------------------------------------------\n' +
+      '📌 ƯU ĐIỂM VƯỢT TRỘI CỦA CHIẾU MÂY NICOLAS NATURE HOME:\n' +
+      '✔️ Mặt trên: Đan sợi mây tự nhiên kết hợp thảo mộc ngải cứu kháng khuẩn, nằm êm mát mịn, không lo dằm xước.\n' +
+      '✔️ Mặt dưới: Lớp lưới tổ ong 3D thông hơi 100%, chống hầm bí lưng, có đai chun NICOLAS LUXURY cài 4 góc đệm chắc chắn.\n' +
+      '✔️ Viền chiếu: Bo gấm thêu nhành trúc & logo vàng kim sang trọng, cuộn gọn trong túi xách cực kỳ tiện lợi.\n' +
+      '🚛 Giao hàng tận nơi – Kiểm tra hàng chuẩn đẹp mới thanh toán!\n' +
+      '📞 Gọi/Zalo đặt ngay: 0344.727.528 (Showroom Tuyến Hoa – Chợ Cháy, Ứng Hòa, Hà Nội)',
+  },
+  {
+    id: 'bat-tu-cuon-nang-mua-mai-hien-bc01',
+    code: 'BC-TH-01',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Showroom',
+    title: 'Rèm Bạt Cuốn Lưới Đen Ghi Xuyên Sáng Hiên Nhà Mái Ngói (IMG_5470) & Bạt Tự Cuốn Che Nắng Mưa Tuyến Hoa',
+    shortTitle: 'Rèm Bạt Cuốn Lưới Hiên Nhà & Bạt Tự Cuốn (3 Góc Chụp)',
+    priceDisplay: '220k – 280k / m²',
+    marketPriceRange: 'Giá thị trường: 300.000đ – 380.000đ / m²',
+    marketPriceNote: 'Xưởng Tuyến Hoa trực tiếp gia công và lắp đặt hoàn thiện tận nơi: Rèm bạt cuốn lưới đen nâu xuyên sáng cho hiên nhà mái ngói/biệt thự (IMG_5470.JPG), bạt tự cuốn lò xo kẻ sọc, hoa văn nâu đồng và mái hiên quay tay.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Bạt Tự Cuốn Lò Xo Kẻ Sọc Xanh Trắng / Vàng Xanh (Cả lắp)',
+        marketPrice: '300.000đ / m²',
+        storePrice: '220.000đ / m²',
+        note: 'Bạt nhựa PVC tráng nhựa 2 mặt chống mưa nắng 100%',
+      },
+      {
+        sizeOrOption: '2. Bạt Tự Cuốn Hoa Văn Nâu Đồng & Họa Tiết Lá Trúc (Cả lắp)',
+        marketPrice: '330.000đ / m²',
+        storePrice: '240.000đ / m²',
+        note: 'Mẫu sang trọng cho hiên nhà phố, trường học',
+      },
+      {
+        sizeOrOption: '3. Rèm Bạt Cuốn Lưới Đen Nâu Xuyên Sáng Hiên Nhà (Mẫu IMG_5470)',
+        marketPrice: '380.000đ / m²',
+        storePrice: '280.000đ / m²',
+        note: 'Cản nắng mưa 95%, thoáng gió, nhìn rõ không gian bên ngoài',
+      },
+      {
+        sizeOrOption: '4. Mái Hiên Di Động Tay Khuỷu Quay Tay Khổ Lớn',
+        marketPrice: '580.000đ / m ngang',
+        storePrice: '450.000đ / m ngang',
+        note: 'Khung càng nhôm đúc hợp kim dày + Bạt Hàn Quốc',
+      },
+    ],
+    numericPrice: 220000,
+    unitLabel: '1 m² hoàn thiện cả ống nhôm, thanh đáy & công lắp đặt',
+    standardDimensions: 'May đo chuẩn theo kích thước hiên nhà mái ngói, ban công, sân vườn',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/bat_tu_cuon_nang_mua_tuyen_hoa.png',
+    secondaryImages: [
+      '/assets/aistudio/IMG_5470_rem_bat_luoi_xuyen_sang_hien_nha.jpg',
+      '/assets/aistudio/BC_TH_01_bat_ke_soc_xanh_trang.jpg',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/bat_tu_cuon_nang_mua_tuyen_hoa.png': {
+        badge: 'Ảnh 1/3 · Bảng Báo Giá Rèm Bạt Cuốn Lưới & Bạt Tự Cuốn Tuyến Hoa',
+        caption: 'Tổng hợp đơn giá xuất xưởng bao lắp đặt hoàn thiện: Bạt kẻ sọc 220k/m² · Bạt hoa văn 240k/m² · Rèm bạt lưới xuyên sáng 280k/m².',
+      },
+      '/assets/aistudio/IMG_5470_rem_bat_luoi_xuyen_sang_hien_nha.jpg': {
+        badge: 'Ảnh 2/3 · Thực Tế Rèm Bạt Cuốn Lưới Đen Nâu Lắp Hiên Mái Ngói (IMG_5470)',
+        caption: 'Rèm bạt lưới Polyester phủ nhựa màu đen nâu lắp lọt khung hiên nhà mái ngói đỏ: Cản nắng gắt & mưa tạt nhưng vẫn giữ tầm nhìn thoáng đãng.',
+      },
+      '/assets/aistudio/BC_TH_01_bat_ke_soc_xanh_trang.jpg': {
+        badge: 'Ảnh 3/3 · Mẫu Bạt Tự Cuốn Lò Xo Kẻ Sọc Xanh Trắng Chống Mưa Nắng 100%',
+        caption: 'Bạt nhựa PVC 3 lớp tráng nhựa bóng 2 mặt chuyên dụng che nắng mưa tuyệt đối cho ban công, cửa hàng và trường học (220.000đ/m²).',
+      },
+    },
+    highlightTag: 'Mới Lên Sóng · Rèm Bạt Lưới Hiên Nhà IMG_5470',
+    summary:
+      'Công trình thực tế Rèm Bạt Cuốn Lưới Đen Nâu Xuyên Sáng lắp dưới hiên nhà mái ngói đỏ (IMG_5470.JPG) và các dòng Bạt Tự Cuốn Lò Xo che nắng mưa do Xưởng Tuyến Hoa trực tiếp gia công, lắp đặt trọn gói từ 220.000đ – 280.000đ/m².',
+    visualAnnotations: [
+      {
+        label: 'Mẫu thực tế IMG_5470: Rèm bạt cuốn lưới đen nâu xuyên sáng (280k/m²)',
+        detail: 'Lắp gọn dưới mái hiên ngói đỏ, có thanh đáy nhôm trắng nặng chống gió bay; bên trong nhìn ra thoáng mát nhưng bên ngoài không nhìn vào được.',
+      },
+      {
+        label: 'Mẫu bạt tự cuốn lò xo kẻ sọc xanh trắng cản mưa 100% (220k/m²)',
+        detail: 'Chuyên lắp cho mặt tiền cửa hàng, ban công nhà phố, hành lang trường học; chống thấm nước và tia UV tuyệt đối.',
+      },
+      {
+        label: 'Trục cuốn nhôm hợp kim Φ63 & Lò xo tự hãm Đài Loan bền bỉ',
+        detail: 'Kéo nhẹ xuống cài chốt là mặt bạt căng phẳng phiu, khi trời mát nhả chốt bạt tự động cuộn gọn lên sát dầm trên.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'BC-TH-01 (Rèm Bạt Cuốn Lưới Hiên Nhà & Bạt Tự Cuốn Tuyến Hoa)' },
+      { label: 'Giá rèm bạt lưới (IMG_5470)', value: '280.000đ / m² trọn gói cả lắp (Thị trường: 380.000đ/m²)' },
+      { label: 'Giá bạt tự cuốn kẻ sọc', value: '220.000đ / m² trọn gói cả lắp (Thị trường: 300.000đ/m²)' },
+      { label: 'Giá bạt hoa văn / lá trúc', value: '240.000đ / m² trọn gói cả lắp (Thị trường: 330.000đ/m²)' },
+      { label: 'Cơ cấu vận hành', value: 'Ống nhôm Φ63 + Thanh đáy chống gió + Lò xo tự cuốn hoặc Dây kéo' },
+    ],
+    articleParagraphs: [
+      'Bức ảnh thực tế IMG_5470.JPG vừa cập nhật ghi lại công trình Rèm Bạt Cuốn Lưới Đen Nâu Xuyên Sáng lắp đặt cho hiên nhà mái ngói đỏ có bệ gạch đỏ và chậu cây cảnh. Khác với bạt nhựa kín mít truyền thống, vải bạt lưới dệt sợi Polyester phủ nhựa PVC cao cấp giúp cản tới 90%–95% nắng gắt và mưa bụi tạt vào hiên nhà nhưng vẫn giữ cho không gian bên trong đón gió tự nhiên và nhìn xuyên ra sân vườn.',
+      'Bên cạnh dòng rèm bạt lưới hiện đại (đơn giá 280.000đ/m² hoàn thiện cả lắp đặt), Xưởng Bạt & Mành Rèm Tuyến Hoa còn cung cấp dòng Bạt Tự Cuốn Lò Xo PVC kẻ sọc xanh trắng chống mưa nắng 100% với giá chỉ 220.000đ/m² và dòng bạt in hoa văn nâu đồng / lá trúc với giá 240.000đ/m².',
+      'Toàn bộ hệ trục cuốn sử dụng ống nhôm định hình Φ63 chống võng kết hợp thanh đáy nhôm sơn tĩnh điện giữ mặt bạt luôn căng phẳng, thẩm mỹ và vận hành êm ái chỉ trong 3 giây.'
+    ],
+    facebookPostCopy:
+      '☀️🌧️ [CÔNG TRÌNH MỚI – XƯỞNG BẠT TUYẾN HOA] RÈM BẠT CUỐN LƯỚI XUYÊN SÁNG HIÊN NHÀ MÁI NGÓI & BẠT TỰ CUỐN CHE NẮNG MƯA!\n' +
+      '💰 BÁO GIÁ TẬN XƯỞNG BAO LẮP ĐẶT HOÀN THIỆN:\n' +
+      '🔹 1. Rèm bạt cuốn lưới đen nâu xuyên sáng hiện đại (Mẫu thực tế IMG_5470): Chỉ 280.000đ / m² (Thị trường: 380.000đ/m²).\n' +
+      '🔹 2. Bạt tự cuốn lò xo kẻ sọc xanh trắng / vàng xanh: Chỉ 220.000đ / m² (Thị trường: 300.000đ/m²).\n' +
+      '🔹 3. Bạt tự cuốn hoa văn nâu đồng & họa tiết lá trúc: Chỉ 240.000đ / m² (Thị trường: 330.000đ/m²).\n' +
+      '🔹 4. Mái hiên di động tay khuỷu quay tay: Chỉ 450.000đ / m ngang hoàn thiện.\n' +
+      '--------------------------------------------\n' +
+      '✅ Rèm bạt lưới vừa chắn nắng mưa 95% bảo vệ cửa gỗ, bàn trà hiên nhà, vừa thoáng gió và nhìn được cảnh sân vườn.\n' +
+      '✅ Hệ trục cuốn nhôm & thanh đáy căng phẳng đẹp mắt, kéo thả nhẹ nhàng trong 3 giây!\n' +
+      '🚛 Miễn phí mang mẫu, đo đạc & lắp đặt tận nhà tại Ứng Hòa và khu vực lân cận!\n' +
+      '📞 Gọi/Zalo ngay Xưởng Tuyến Hoa: 0344.727.528',
+  },
+  {
+    id: 'showroom-chan-ga-goi-dem-rem-tuyen-hoa-sr01',
+    code: 'SR-TH-01',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Showroom',
+    title: 'Showroom Chăn Ga Gối Đệm & Rèm Cửa Tuyến Hoa – Giấc Ngủ Ngon, Cuộc Sống Trọn Vẹn (Đủ 4 Góc Chụp)',
+    shortTitle: 'Showroom Chăn Ga Gối Đệm & Rèm Tuyến Hoa (4 Góc Chụp)',
+    priceDisplay: 'Đệm 1,35Tr · Rèm 600k',
+    marketPriceRange: 'Tiết kiệm 15% – 30% so với giá thị trường',
+    marketPriceNote: 'Trưng bày đầy đủ Chăn Ga êm ái, Gối thư giãn, Đệm chính hãng vững chãi và Rèm Cửa sang trọng tại Showroom Tuyến Hoa ("Giấc ngủ ngon - Cuộc sống trọn vẹn").',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Chăn Ga Gối Lụa Tencel & Đệm Bông Ép / Lò Xo Chính Hãng',
+        marketPrice: '1.650.000đ – 5.950.000đ',
+        storePrice: '1.350.000đ – 4.450.000đ',
+        note: 'Cam kết chính hãng 100%, bảo hành 5–10 năm',
+      },
+      {
+        sizeOrOption: '2. Chiếu Mây Điều Hòa Ngải Cứu NICOLAS & Màn Khung Inox (1,8m × 2,0m)',
+        marketPrice: '650.000đ – 1.300.000đ / bộ',
+        storePrice: '450.000đ – 1.000.000đ / bộ',
+        note: 'Giao tận nơi & bao lắp đặt hoàn thiện tận giường',
+      },
+      {
+        sizeOrOption: '3. Rèm Vải Cản Nắng – Rèm Gỗ – Rèm Trúc – Rèm Tổ Ong',
+        marketPrice: '750.000đ / m ngang',
+        storePrice: '600.000đ / m ngang',
+        note: 'Miễn phí mang mẫu, khảo sát & lắp đặt tận nhà',
+      },
+    ],
+    numericPrice: 1000000,
+    unitLabel: 'Trưng bày đầy đủ Chăn Ga Gối Đệm & Rèm Cửa chính hãng',
+    standardDimensions: 'Giấc ngủ ngon - Cuộc sống trọn vẹn (Kính chào Quý khách)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/Showroom_Ch_n_Ga_G_i___m_Tuy_n_Hoa_0311597c.png',
+    secondaryImages: [
+      '/assets/aistudio/SR_TH_01_khu_chan_ga_goi_dem_ben_trai.jpg',
+      '/assets/aistudio/SR_TH_01_khu_rem_vai_rem_go_ben_phai.jpg',
+      '/assets/aistudio/showroom_tuyen_hoa_stamped.png',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/Showroom_Ch_n_Ga_G_i___m_Tuy_n_Hoa_0311597c.png': {
+        badge: 'Ảnh 1/4 · Toàn Cảnh Mặt Tiền Showroom Chăn Ga Gối Đệm & Rèm Cửa Tuyến Hoa',
+        caption: 'Biển hiệu hoa sen hồng "Tuyến Hoa Chăn Ga Gối Đệm – Giấc ngủ ngon - Cuộc sống trọn vẹn" cùng không gian trưng bày sáng sang trọng.',
+      },
+      '/assets/aistudio/SR_TH_01_khu_chan_ga_goi_dem_ben_trai.jpg': {
+        badge: 'Ảnh 2/4 · Phân Khu Bên Trái: Kệ Gỗ Trưng Bày Chăn Ga – Gối – Đệm Chính Hãng',
+        caption: 'Hệ tủ kệ gỗ chiếu sáng LED ấm áp trưng bày hàng trăm bộ chăn ga lụa, gối nằm thư giãn và giường mẫu trải sẵn để quý khách thử trực tiếp.',
+      },
+      '/assets/aistudio/SR_TH_01_khu_rem_vai_rem_go_ben_phai.jpg': {
+        badge: 'Ảnh 3/4 · Phân Khu Bên Phải: Hệ Rèm Vải – Rèm Cửa – Rèm Gỗ – Rèm Trúc',
+        caption: 'Khu vực treo mẫu thực tế đa dạng sắc màu rèm vải cản nắng, rèm voan thêu, rèm gỗ tự nhiên và bộ giường mẫu hoa xanh thanh lịch.',
+      },
+      '/assets/aistudio/showroom_tuyen_hoa_stamped.png': {
+        badge: 'Ảnh 4/4 · Bảng Niêm Yết Giá Tận Xưởng & Hotline Tư Vấn Tuyến Hoa',
+        caption: 'Tổng hợp thông tin liên hệ và cam kết dịch vụ "Tư vấn nhiệt tình – Phục vụ chu đáo – Giá hợp lý" tại Showroom Tuyến Hoa (0344.727.528).',
+      },
+    },
+    highlightTag: 'Showroom Chính Hãng Tuyến Hoa',
+    summary:
+      'Không gian trưng bày hiện đại của Showroom Chăn Ga Gối Đệm & Rèm Cửa Tuyến Hoa ("Giấc ngủ ngon - Cuộc sống trọn vẹn"): Khu vực bên trái trưng bày kệ chăn ga, gối, đệm chính hãng; khu vực bên phải trưng bày hệ rèm vải, rèm cửa, rèm gỗ, rèm trúc sang trọng.',
+    visualAnnotations: [
+      {
+        label: 'Chăn Ga êm ái – Gối thư giãn – Đệm vững chãi',
+        detail: 'Trưng bày sẵn các bộ chăn ga gối lụa thêu, chiếu mây điều hòa và đệm chính hãng để quý khách trải nghiệm trực tiếp.',
+      },
+      {
+        label: 'Hệ Rèm Vải – Rèm Cửa – Rèm Gỗ – Rèm Trúc sang trọng',
+        detail: 'Hàng trăm mẫu vải cản nắng 100%, rèm cầu vồng, rèm gỗ tự nhiên treo mẫu thực tế dễ dàng chọn lựa.',
+      },
+      {
+        label: 'Thảm đỏ "Kính Chào Quý Khách" & Dịch vụ tận tâm',
+        detail: 'Không gian sáng đẹp, đón tiếp chu đáo, miễn phí mang mẫu, vận chuyển và lắp đặt tận phòng ngủ.',
+      },
+    ],
+    specs: [
+      { label: 'Mã hình ảnh', value: 'SR-TH-01 (Không Gian Showroom Chăn Ga Gối Đệm & Rèm Tuyến Hoa)' },
+      { label: 'Thông điệp thương hiệu', value: 'Tuyến Hoa – Chăn Ga Gối Đệm: Giấc ngủ ngon - Cuộc sống trọn vẹn' },
+      { label: 'Ngành hàng bên trái', value: 'Chăn ga êm ái thoáng mát | Gối thư giãn | Đệm êm ấm vững chãi' },
+      { label: 'Ngành hàng bên phải', value: 'Rèm vải | Rèm cửa | Rèm gỗ | Rèm trúc sang trọng thẩm mỹ' },
+      { label: 'Hotline / Zalo tư vấn', value: '0344.727.528 (Giao & lắp đặt miễn phí tận nhà)' },
+    ],
+    articleParagraphs: [
+      'Chào mừng Quý khách đến với Showroom Chăn Ga Gối Đệm & Rèm Cửa Tuyến Hoa – điểm đến tin cậy mang lại "Giấc ngủ ngon – Cuộc sống trọn vẹn" cho mọi gia đình.',
+      'Không gian bên trong Showroom được bố trí khoa học làm 2 phân khu chuyên biệt: Phía bên trái là hệ thống kệ gỗ âm đèn LED trưng bày hàng trăm mẫu Chăn Ga lụa thoáng mát, Gối nằm thư giãn tốt cho sức khỏe và Đệm chính hãng êm ấm vững chãi. Phía bên phải là khu trưng bày thực tế các mẫu Rèm Vải cản nắng, Rèm Gỗ, Rèm Trúc và Màn Khung cao cấp.',
+      'Quý khách ghé thăm Showroom sẽ được trực tiếp sờ tận tay chất vải, nằm thử độ êm của đệm và nhận mức giá gốc tận xưởng tiết kiệm 15% – 30% so với thị trường.'
+    ],
+    facebookPostCopy:
+      '🌸 [SHOWROOM CHÍNH HÃNG] CHĂN GA GỐI ĐỆM & RÈM CỬA TUYẾN HOA – GIẤC NGỦ NGON, CUỘC SỐNG TRỌN VẸN!\n' +
+      '--------------------------------------------\n' +
+      '✨ Kính mời Quý khách ghé thăm không gian trưng bày chính hãng của Showroom Tuyến Hoa:\n' +
+      '🛏️ CHĂN GA & CHIẾU MÂY NICOLAS: Êm ái – Thoáng mát, đủ mẫu phòng cưới & gia đình (Chiếu mây 3D chỉ từ 450.000đ/bộ).\n' +
+      '☁️ GỐI NẰM: Thư giãn cổ vai gáy – Tốt cho sức khỏe.\n' +
+      '🛡️ ĐỆM CHÍNH HÃNG: Êm ấm – Vững chãi, bảo hành 5–10 năm (Từ 1.350.000đ/tấm).\n' +
+      '🪟 RÈM CỬA – RÈM VẢI – RÈM GỖ – RÈM TRÚC: Sang trọng – Thẩm mỹ (Rèm vải cản nắng chỉ 600.000đ/m ngang cả lắp).\n' +
+      '👑 MÀN KHUNG INOX CAO CẤP (1,8m × 2,0m): Chỉ 1.000.000đ / 1 bộ bao lắp tận giường!\n' +
+      '--------------------------------------------\n' +
+      '🚛 Tư vấn nhiệt tình – Phục vụ chu đáo – Miễn phí mang mẫu và lắp đặt tận nhà!\n' +
+      '📞 Gọi/Zalo ngay: 0344.727.528 (Showroom Tuyến Hoa – Chợ Cháy, Ứng Hòa, Hà Nội)',
+  },
+  // ===========================================================================
+  // 00-TOP. BỘ 03 BÀI ĐĂNG LÔ 12 ẢNH EVERHOME & SHOWROOM 2 TẦNG:
   //         1. NỆM CAO SU 100% THIÊN NHIÊN EVERHOME (IMG_5405, IMG_5410, IMG_5411, IMG_5412)
   //         2. ĐỆM LÒ XO GOLD 3 VIỀN & LÒ XO TÚI CUỘN EVERHOME (IMG_5413, IMG_5415, IMG_5406, IMG_5407, IMG_5408)
   //         3. TOÀN CẢNH TÒA NHÀ 2 TẦNG SHOWROOM TUYẾN HOA (ĐÃ LỌC 2 ẢNH TRÙNG LẶP)
@@ -3920,180 +4242,8 @@ export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
   },
 
   // ===========================================================================
-  // 0B. SHOWROOM & SẢN PHẨM MỚI CHÈN CHỮ THƯƠNG HIỆU "TUYẾN HOA" TRÊN ẢNH
+  // 0B. XƯỞNG SẢN XUẤT & CÔNG TRÌNH VÁCH RÈM TỔ ONG TUYẾN HOA
   // ===========================================================================
-  {
-    id: 'chieu-may-dieu-hoa-tuyen-hoa-cm01',
-    code: 'CM-TH-01',
-    category: 'man-khung-1tr',
-    categoryName: 'Chăn Ga Gối Đệm & Màn Khung',
-    title: 'Chiếu Mây Điều Hòa Cao Cấp Tuyến Hoa – Lót Lưới Tổ Ong 3D & Sợi Ngải Cứu Tự Nhiên (Tặng Kèm 2 Vỏ Gối & Túi Đựng)',
-    shortTitle: 'Chiếu Mây Điều Hòa Cao Cấp Tuyến Hoa',
-    priceDisplay: '450.000đ / bộ',
-    marketPriceRange: 'Giá thị trường: 650.000đ – 850.000đ / bộ',
-    marketPriceNote: 'Trọn bộ chiếu mây điều hòa chính hãng Tuyến Hoa gồm: 01 chiếu mây viền gấm thêu + 02 vỏ gối mây đồng bộ + 01 túi xách đựng sang trọng.',
-    marketPriceTiers: [
-      {
-        sizeOrOption: 'Giường 1,6m × 2,0m (Chiếu mây + 2 vỏ gối + Túi xách)',
-        marketPrice: '650.000đ / bộ',
-        storePrice: '450.000đ / bộ',
-        note: 'Có chun cài 4 góc cố định vào đệm',
-      },
-      {
-        sizeOrOption: 'Giường 1,8m × 2,0m (Kích thước chuẩn giường đôi phổ biến)',
-        marketPrice: '750.000đ / bộ',
-        storePrice: '490.000đ / bộ',
-        note: 'Bán chạy số 1 mùa hè – Nằm êm mát lưng',
-      },
-      {
-        sizeOrOption: 'Giường đại 2,0m × 2,2m (Khổ rộng gia đình)',
-        marketPrice: '850.000đ / bộ',
-        storePrice: '550.000đ / bộ',
-        note: 'Miễn phí giao hàng tận nhà',
-      },
-    ],
-    numericPrice: 450000,
-    unitLabel: 'Trọn bộ: 1 Chiếu mây + 2 Vỏ gối mây + Túi xách Tuyến Hoa',
-    standardDimensions: 'Đủ cỡ 1,6m × 2,0m (450k) · 1,8m × 2,0m (490k) · 2,0m × 2,2m (550k)',
-    mediaType: 'image',
-    imageUrl: '/assets/aistudio/chieu_may_dieu_hoa_tuyen_hoa.png',
-    secondaryImages: [
-      '/assets/aistudio/chieu_may_dieu_hoa_tuyen_hoa.png',
-      '/assets/aistudio/showroom_tuyen_hoa_stamped.png',
-    ],
-    highlightTag: 'Ảnh Đã Chèn Chữ Tuyến Hoa',
-    summary:
-      'Chiếu Mây Điều Hòa Cao Cấp Tuyến Hoa cấu tạo 2 lớp thông minh: Mặt trên đan sợi mây tự nhiên kết hợp sợi ngải cứu kháng khuẩn mát lạnh, bo viền lụa gấm thêu hoa; mặt dưới lót lưới tổ ong 3D thông hơi chống bí lưng, gấp gọn tiện lợi.',
-    visualAnnotations: [
-      {
-        label: 'Mặt trên sợi mây tự nhiên & ngải cứu kháng khuẩn',
-        detail: 'Sợi mây đan khít bóng mịn, không dằm xước, hấp thụ nhiệt nhanh giúp mát lưng ngay khi đặt lưng nằm.',
-      },
-      {
-        label: 'Mặt dưới lót lưới tổ ong 3D thoáng khí + Chun 4 góc',
-        detail: 'Lớp đệm lưới 3D đàn hồi êm ái, thoát mồ hôi cực nhanh và có dây chun cài 4 góc chống xô lệch trên đệm.',
-      },
-      {
-        label: 'Trọn bộ kèm 2 vỏ gối mây & túi xách Tuyến Hoa',
-        detail: 'Mua 1 được 3: Gồm 1 chiếu mây điều hòa, 2 vỏ gối nằm đồng màu và túi khóa kéo bảo quản gọn gàng.',
-      },
-    ],
-    specs: [
-      { label: 'Mã sản phẩm', value: 'CM-TH-01 (Chiếu Mây Điều Hòa Tuyến Hoa Luxury)' },
-      { label: 'Thương hiệu trên ảnh', value: 'TUYẾN HOA Nature Home – ĐT/Zalo: 0344.727.528' },
-      { label: 'Giá cỡ 1,6m × 2,0m', value: '450.000đ / bộ (Thị trường: 650.000đ/bộ)' },
-      { label: 'Giá cỡ 1,8m × 2,0m', value: '490.000đ / bộ (Thị trường: 750.000đ/bộ)' },
-      { label: 'Giá cỡ 2,0m × 2,2m', value: '550.000đ / bộ (Thị trường: 850.000đ/bộ)' },
-      { label: 'Phụ kiện đi kèm', value: 'Tặng kèm 02 vỏ gối mây êm mát + 01 túi xách đựng chiếu' },
-    ],
-    articleParagraphs: [
-      'Chiếu Mây Điều Hòa Cao Cấp Tuyến Hoa (Mã CM-TH-01) là dòng chiếu trải đệm thế hệ mới được kết hợp giữa sợi mây tự nhiên tuyển chọn và tinh chất sợi ngải cứu thảo mộc, mang lại cảm giác mát dịu tự nhiên, không gây lạnh buốt lưng cho người già và trẻ nhỏ khi nằm phòng điều hòa.',
-      'Mặt trên của chiếu được dệt tỉ mỉ với độ bóng mịn cao, xung quanh bo viền gấm thêu hoa văn sang trọng. Mặt dưới được ép lớp lưới tổ ong 3D thoáng khí dày dặn có độ đàn hồi êm ái, kèm 4 dây chun định vị chắc chắn vào 4 góc đệm bông ép hoặc đệm lò xo.',
-      'Tại Showroom Tuyến Hoa, mỗi bộ chiếu đều kèm sẵn 02 vỏ gối mây đồng bộ và túi xách sang trọng với mức giá gốc tận kho: cỡ 1,6m×2,0m chỉ 450.000đ/bộ; cỡ 1,8m×2,0m chỉ 490.000đ/bộ; cỡ đại 2,0m×2,2m chỉ 550.000đ/bộ.'
-    ],
-    facebookPostCopy:
-      '🌿 [SIÊU PHẨM MÙA HÈ] CHIẾU MÂY ĐIỀU HÒA CAO CẤP TUYẾN HOA – LÓT LƯỚI 3D & NGẢI CỨU TỰ NHIÊN!\n' +
-      '💰 GIÁ THỊ TRƯỜNG: 650.000đ – 850.000đ / bộ\n' +
-      '🔥 GIÁ TẠI SHOWROOM TUYẾN HOA (TẶNG KÈM 2 VỎ GỐI MÂY + TÚI XÁCH):\n' +
-      '   👉 Cỡ 1,6m × 2,0m: Chỉ 450.000đ / bộ\n' +
-      '   👉 Cỡ 1,8m × 2,0m: Chỉ 490.000đ / bộ\n' +
-      '   👉 Cỡ 2,0m × 2,2m: Chỉ 550.000đ / bộ\n' +
-      '--------------------------------------------\n' +
-      '📌 ƯU ĐIỂM VƯỢT TRỘI CỦA CHIẾU MÂY TUYẾN HOA:\n' +
-      '✔️ Mặt trên: Đan sợi mây tự nhiên kết hợp sợi ngải cứu kháng khuẩn, nằm êm mát mịn, không lo dằm xước.\n' +
-      '✔️ Mặt dưới: Lớp lưới tổ ong 3D thông hơi 100%, chống hầm bí lưng, có chun cài 4 góc đệm chắc chắn.\n' +
-      '✔️ Viền chiếu: Bo gấm thêu hoa sang trọng, gấp gọn hoặc cuộn tròn vệ sinh cực dễ dàng.\n' +
-      '🚛 Giao hàng tận nơi – Kiểm tra hàng ưng ý mới thanh toán!\n' +
-      '📞 Gọi/Zalo đặt ngay: 0344.727.528 (Showroom Tuyến Hoa – Ứng Hòa, Hà Nội)',
-  },
-  {
-    id: 'bat-tu-cuon-nang-mua-mai-hien-bc01',
-    code: 'BC-TH-01',
-    category: 'cong-trinh-video',
-    categoryName: 'Showroom & Công Trình Thực Tế',
-    title: 'Bạt Tự Cuốn Che Nắng Mưa Ban Công, Hiên Nhà, Trường Học & Mái Hiên Di Động Tay Khuỷu Tuyến Hoa',
-    shortTitle: 'Bạt Tự Cuốn Che Nắng Mưa & Mái Hiên Tuyến Hoa',
-    priceDisplay: '220.000đ / m²',
-    marketPriceRange: 'Giá thị trường: 300.000đ – 380.000đ / m²',
-    marketPriceNote: 'Xưởng Tuyến Hoa trực tiếp cắt may ép bạt và lắp đặt hoàn thiện tận nơi: Bạt kẻ sọc, bạt hoa văn nâu đồng, bạt lá trúc, bạt lưới xuyên sáng và mái hiên quay tay.',
-    marketPriceTiers: [
-      {
-        sizeOrOption: '1. Bạt Tự Cuốn Lò Xo Kẻ Sọc Xanh Trắng / Vàng Xanh (Cả lắp)',
-        marketPrice: '300.000đ / m²',
-        storePrice: '220.000đ / m²',
-        note: 'Bạt nhựa PVC tráng nhựa 2 mặt chống mưa nắng 100%',
-      },
-      {
-        sizeOrOption: '2. Bạt Tự Cuốn Hoa Văn Nâu Đồng & Họa Tiết Lá Trúc (Cả lắp)',
-        marketPrice: '330.000đ / m²',
-        storePrice: '240.000đ / m²',
-        note: 'Mẫu mới sang trọng cho hiên nhà phố, biệt thự, trường học',
-      },
-      {
-        sizeOrOption: '3. Rèm Bạt Cuốn Lưới Đen Ghi Xuyên Sáng Ban Công Chung Cư',
-        marketPrice: '380.000đ / m²',
-        storePrice: '280.000đ / m²',
-        note: 'Cản nắng 90%, thoáng gió, nhìn được cảnh bên ngoài',
-      },
-      {
-        sizeOrOption: '4. Mái Hiên Di Động Tay Khuỷu Quay Tay Khổ Lớn',
-        marketPrice: '580.000đ / m ngang',
-        storePrice: '450.000đ / m ngang',
-        note: 'Khung càng nhôm đúc hợp kim dày + Bạt Hàn Quốc',
-      },
-    ],
-    numericPrice: 220000,
-    unitLabel: '1 m² hoàn thiện cả ống nhôm, lò xo tự cuốn & công lắp',
-    standardDimensions: 'May đo theo kích thước hiên nhà, ban công, hành lang trường học',
-    mediaType: 'image',
-    imageUrl: '/assets/aistudio/bat_tu_cuon_nang_mua_tuyen_hoa.png',
-    secondaryImages: [
-      '/assets/aistudio/bat_tu_cuon_nang_mua_tuyen_hoa.png',
-      '/assets/aistudio/xuong_san_xuat_rem_tuyen_hoa.png',
-    ],
-    highlightTag: 'Ảnh Đã Chèn Chữ Tuyến Hoa',
-    summary:
-      'Tổng hợp các mẫu Bạt Tự Cuốn Lò Xo & Mái Hiên Di Động Tay Khuỷu do Xưởng Tuyến Hoa trực tiếp sản xuất và thi công: Đầy đủ mẫu kẻ sọc xanh trắng truyền thống, mẫu hoa văn nâu đồng cổ điển, họa tiết lá trúc xanh mát và bạt lưới đen ghi hiện đại.',
-    visualAnnotations: [
-      {
-        label: 'Mẫu 01: Bạt kẻ sọc xanh trắng & mái hiên tay khuỷu (220k/m²)',
-        detail: 'Chuyên lắp cho mặt tiền cửa hàng, ban công nhà ống, hành lang trường học; cản nắng mưa tuyệt đối 100%.',
-      },
-      {
-        label: 'Mẫu 02: Rèm bạt cuốn lưới đen ghi xuyên sáng (280k/m²)',
-        detail: 'Lắp gọn cho ban công biệtự, chung cư, quán cafe: Chắn nắng gắt và mưa hắt nhưng vẫn đón gió thoáng mát.',
-      },
-      {
-        label: 'Mẫu 03: Bạt tự cuốn hoa văn nâu đồng & lá trúc (240k/m²)',
-        detail: 'Trục cuốn nhôm hợp kim lò xo tự hãm thông minh: Kéo nhẹ xuống móc neo là căng phẳng, thả neo tự cuộn gọn lên.',
-      },
-    ],
-    specs: [
-      { label: 'Mã sản phẩm', value: 'BC-TH-01 (Bạt Tự Cuốn & Mái Hiên Quay Tay Tuyến Hoa)' },
-      { label: 'Thương hiệu trên ảnh', value: 'XƯỞNG BẠT & MÀNH RÈM TUYẾN HOA – ĐT: 0344.727.528' },
-      { label: 'Giá bạt tự cuốn kẻ sọc', value: '220.000đ / m² trọn gói cả lắp (Thị trường: 300.000đ/m²)' },
-      { label: 'Giá bạt hoa văn / lá trúc', value: '240.000đ / m² trọn gói cả lắp (Thị trường: 330.000đ/m²)' },
-      { label: 'Giá bạt lưới xuyên sáng', value: '280.000đ / m² trọn gói cả lắp (Thị trường: 380.000đ/m²)' },
-      { label: 'Cơ cấu vận hành', value: 'Ống nhôm Φ63 + Lò xo tự cuốn Đài Loan hoặc Hộp số tay quay' },
-    ],
-    articleParagraphs: [
-      'Để bảo vệ cửa gỗ, ban công, hiên nhà và hành lang trường học khỏi nắng gắt hướng Tây cũng như mưa tạt gió lùa, Xưởng Bạt & Mành Rèm Tuyến Hoa mang đến giải pháp Bạt Tự Cuốn Lò Xo và Mái Hiên Di Động Tay Khuỷu với giá gốc trực tiếp tại xưởng chỉ từ 220.000đ/m² bao gồm cả công thợ lắp đặt.',
-      'Khách hàng có thể lựa chọn đa dạng chất liệu phù hợp từng không gian: (1) Bạt PVC kẻ sọc xanh trắng hoặc vàng xanh tráng nhựa 2 mặt chống thấm 100% giá 220.000đ/m²; (2) Bạt in hoa văn nâu đồng hoàng gia hoặc họa tiết lá trúc xanh mát giá 240.000đ/m²; (3) Bạt lưới đen ghi cao cấp cản 90% nắng nhưng vẫn giữ tầm nhìn thoáng đãng giá 280.000đ/m².',
-      'Toàn bộ hệ trục cuốn sử dụng ống nhôm định hình Φ63 chống võng, thanh đáy sắt kẽm luồn chân bạt chắc chắn và lò xo tự cuốn bền bỉ: chỉ mất 3 giây kéo dây thả xuống hoặc nhả dây để bạt tự động cuộn gọn lên sát trần.'
-    ],
-    facebookPostCopy:
-      '☀️🌧️ [XƯỞNG BẠT TUYẾN HOA] BẠT TỰ CUỐN CHE NẮNG MƯA BAN CÔNG, HIÊN NHÀ & MÁI HIÊN DI ĐỘNG!\n' +
-      '💰 BÁO GIÁ TẬN XƯỞNG BAO LẮP ĐẶT HOÀN THIỆN:\n' +
-      '🔹 1. Bạt tự cuốn lò xo kẻ sọc xanh trắng / vàng xanh: Chỉ 220.000đ / m² (Thị trường: 300.000đ/m²).\n' +
-      '🔹 2. Bạt tự cuốn hoa văn nâu đồng & họa tiết lá trúc: Chỉ 240.000đ / m² (Thị trường: 330.000đ/m²).\n' +
-      '🔹 3. Rèm bạt cuốn lưới đen ghi xuyên sáng hiện đại: Chỉ 280.000đ / m² (Thị trường: 380.000đ/m²).\n' +
-      '🔹 4. Mái hiên di động tay khuỷu quay tay: Chỉ 450.000đ / m ngang hoàn thiện.\n' +
-      '--------------------------------------------\n' +
-      '✅ Chắn nắng mưa 99%, bảo vệ cửa gỗ, máy giặt và ban công luôn khô ráo mát mẻ.\n' +
-      '✅ Lò xo tự cuốn thông minh: Kéo nhẹ là che, thả dây tự cuộn gọn trong 3 giây!\n' +
-      '🚛 Miễn phí đo đạc & lắp đặt tận nhà tại Ứng Hòa và khu vực lân cận!\n' +
-      '📞 Gọi/Zalo ngay Xưởng Tuyến Hoa: 0344.727.528',
-  },
   {
     id: 'xuong-san-xuat-rem-to-ong-cua-luoi-xsx01',
     code: 'XSX-TH-01',
@@ -4129,10 +4279,7 @@ export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
     standardDimensions: 'Cắt khung nhôm & gia công chuẩn từng milimet theo ô cửa thực tế',
     mediaType: 'image',
     imageUrl: '/assets/aistudio/xuong_san_xuat_rem_tuyen_hoa.png',
-    secondaryImages: [
-      '/assets/aistudio/xuong_san_xuat_rem_tuyen_hoa.png',
-      '/assets/aistudio/bat_tu_cuon_nang_mua_tuyen_hoa.png',
-    ],
+    secondaryImages: [],
     highlightTag: 'Ảnh Đã Chèn Chữ Tuyến Hoa',
     summary:
       'Dây chuyền cắt khung nhôm định hình, lắp ráp Vách Rèm Tổ Ong ngăn lạnh điều hòa, Cửa Lưới Chống Muỗi xếp xích và Bạt Cuốn trực tiếp tại Xưởng Tuyến Hoa – Đảm bảo chất lượng xuất xưởng bền bỉ và giá gốc tận gốc.',
@@ -4175,88 +4322,6 @@ export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
       '📞 Gọi/Zalo kỹ thuật đo đạc tận nhà miễn phí: 0344.727.528 (Tuyến Hoa)',
   },
   {
-    id: 'showroom-chan-ga-goi-dem-rem-tuyen-hoa-sr01',
-    code: 'SR-TH-01',
-    category: 'cong-trinh-video',
-    categoryName: 'Showroom & Công Trình Thực Tế',
-    title: 'Showroom Chăn Ga Gối Đệm & Rèm Cửa Tuyến Hoa – Giấc Ngủ Ngon, Cuộc Sống Trọn Vẹn',
-    shortTitle: 'Showroom Chăn Ga Gối Đệm & Rèm Tuyến Hoa',
-    priceDisplay: 'Đệm 1,35Tr · Rèm 600k',
-    marketPriceRange: 'Tiết kiệm 15% – 30% so với giá thị trường',
-    marketPriceNote: 'Trưng bày đầy đủ Chăn Ga êm ái, Gối thư giãn, Đệm bông ép vững chãi và Rèm Cửa sang trọng tại Showroom Tuyến Hoa.',
-    marketPriceTiers: [
-      {
-        sizeOrOption: '1. Chăn Ga Gối Lụa Cotton & Đệm Bông Ép Hàn Quốc Gấp 3',
-        marketPrice: '1.650.000đ – 3.450.000đ',
-        storePrice: '1.350.000đ – 2.450.000đ',
-        note: 'Chính hãng 100%, bảo hành 5 năm',
-      },
-      {
-        sizeOrOption: '2. Màn Khung Inox Cao Cấp Chuẩn Giường Đôi (1,8m × 2,0m)',
-        marketPrice: '1.300.000đ / bộ',
-        storePrice: '1.000.000đ / bộ',
-        note: 'Bao lắp đặt hoàn thiện tận giường',
-      },
-      {
-        sizeOrOption: '3. Rèm Vải Cản Nắng – Rèm Gỗ – Rèm Trúc – Rèm Cầu Vồng',
-        marketPrice: '750.000đ / m ngang',
-        storePrice: '600.000đ / m ngang',
-        note: 'Miễn phí mang mẫu & lắp đặt tận nhà',
-      },
-    ],
-    numericPrice: 1000000,
-    unitLabel: 'Trưng bày đầy đủ Chăn Ga Gối Đệm & Rèm Cửa chính hãng',
-    standardDimensions: 'Giấc ngủ ngon - Cuộc sống trọn vẹn (Kính chào Quý khách)',
-    mediaType: 'image',
-    imageUrl: '/assets/aistudio/showroom_tuyen_hoa_stamped.png',
-    secondaryImages: [
-      '/assets/aistudio/showroom_tuyen_hoa_stamped.png',
-      '/assets/aistudio/Showroom_Ch_n_Ga_G_i___m_Tuy_n_Hoa_0311597c.png',
-      '/assets/aistudio/Gemini_Generated_Image_v2fukev2fukev2fu_6f3f19ae.png',
-    ],
-    highlightTag: 'Showroom Chính Hãng Tuyến Hoa',
-    summary:
-      'Không gian trưng bày hiện đại của Showroom Chăn Ga Gối Đệm & Rèm Cửa Tuyến Hoa ("Giấc ngủ ngon - Cuộc sống trọn vẹn"): Khu vực bên trái trưng bày kệ chăn ga, gối, đệm bông ép cao cấp; khu vực bên phải trưng bày rèm vải, rèm gỗ, rèm trúc sang trọng.',
-    visualAnnotations: [
-      {
-        label: 'Chăn Ga êm ái – Gối thư giãn – Đệm vững chãi',
-        detail: 'Trưng bày sẵn các bộ chăn ga gối lụa thêu và đệm bông ép gấp 3 chính hãng để quý khách nằm thử trực tiếp.',
-      },
-      {
-        label: 'Hệ Rèm Vải – Rèm Cửa – Rèm Gỗ – Rèm Trúc sang trọng',
-        detail: 'Hàng trăm mẫu vải cản nắng 100%, rèm cầu vồng, rèm gỗ tự nhiên treo mẫu thực tế dễ dàng chọn lựa.',
-      },
-      {
-        label: 'Thảm đỏ "Kính Chào Quý Khách" & Dịch vụ tận tâm',
-        detail: 'Không gian sáng đẹp, đón tiếp chu đáo, miễn phí vận chuyển và lắp đặt tận phòng ngủ.',
-      },
-    ],
-    specs: [
-      { label: 'Mã hình ảnh', value: 'SR-TH-01 (Không Gian Showroom Tuyến Hoa)' },
-      { label: 'Thông điệp thương hiệu', value: 'Tuyến Hoa – Chăn Ga Gối Đệm: Giấc ngủ ngon - Cuộc sống trọn vẹn' },
-      { label: 'Ngành hàng bên trái', value: 'Chăn ga êm ái thoáng mát | Gối thư giãn | Đệm êm ấm vững chãi' },
-      { label: 'Ngành hàng bên phải', value: 'Rèm vải | Rèm cửa | Rèm gỗ | Rèm trúc sang trọng thẩm mỹ' },
-      { label: 'Hotline / Zalo tư vấn', value: '0344.727.528 (Giao & lắp đặt miễn phí tận nhà)' },
-    ],
-    articleParagraphs: [
-      'Chào mừng Quý khách đến với Showroom Chăn Ga Gối Đệm & Rèm Cửa Tuyến Hoa – điểm đến tin cậy mang lại "Giấc ngủ ngon – Cuộc sống trọn vẹn" cho mọi gia đình.',
-      'Không gian bên trong Showroom được bố trí khoa học làm 2 phân khu chuyên biệt: Phía bên trái là hệ thống kệ trưng bày hàng trăm mẫu Chăn Ga lụa cotton thoáng mát, Gối nằm thư giãn tốt cho sức khỏe và Đệm bông ép chính hãng êm ấm vững chãi. Phía bên phải là khu trưng bày thực tế các mẫu Rèm Vải cản nắng, Rèm Gỗ, Rèm Trúc và Màn Khung cao cấp.',
-      'Quý khách ghé thăm Showroom sẽ được trực tiếp sờ tận tay chất vải, nằm thử độ êm của đệm và nhận mức giá gốc tận xưởng tiết kiệm 15% – 30% so với thị trường.'
-    ],
-    facebookPostCopy:
-      '🌸 [GIỚI THIỆU SHOWROOM] CHĂN GA GỐI ĐỆM & RÈM CỬA TUYẾN HOA – GIẤC NGỦ NGON, CUỘC SỐNG TRỌN VẸN!\n' +
-      '--------------------------------------------\n' +
-      '✨ Kính mời Quý khách ghé thăm không gian trưng bày chính hãng của Showroom Tuyến Hoa:\n' +
-      '🛏️ CHĂN GA: Êm ái – Thoáng mát, đủ mẫu phòng cưới & gia đình.\n' +
-      '☁️ GỐI NẰM: Thư giãn cổ vai gáy – Tốt cho sức khỏe.\n' +
-      '🛡️ ĐỆM CHÍNH HÃNG: Êm ấm – Vững chãi, bảo hành 5–10 năm (Từ 1.350.000đ/tấm).\n' +
-      '🪟 RÈM CỬA – RÈM VẢI – RÈM GỖ – RÈM TRÚC: Sang trọng – Thẩm mỹ (Rèm vải cản nắng chỉ 600.000đ/m ngang cả lắp).\n' +
-      '👑 MÀN KHUNG INOX CAO CẤP (1,8m × 2,0m): Chỉ 1.000.000đ / 1 bộ bao lắp tận giường!\n' +
-      '--------------------------------------------\n' +
-      '🚛 Miễn phí mang mẫu, giao hàng và lắp đặt tận nhà!\n' +
-      '📞 Gọi/Zalo ngay: 0344.727.528 (Showroom Tuyến Hoa – Ứng Hòa, Hà Nội)',
-  },
-  {
     id: 'vach-rem-to-ong-cua-vom-phong-khach-rto01',
     code: 'RTO-TH-01',
     category: 'cong-trinh-video',
@@ -4291,9 +4356,7 @@ export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
     standardDimensions: 'Gia công theo kích thước cửa vòm cong, cửa thông phòng, vách ngăn điều hòa',
     mediaType: 'image',
     imageUrl: '/assets/aistudio/vach_rem_to_ong_cua_vom_tuyen_hoa.png',
-    secondaryImages: [
-      '/assets/aistudio/xuong_san_xuat_rem_tuyen_hoa.png',
-    ],
+    secondaryImages: [],
     highlightTag: 'Chuyên Cửa Vòm & Ngăn Lạnh Điều Hòa',
     summary:
       'Thi công thực tế Vách Rèm Tổ Ong ngăn lạnh điều hòa cho hệ cửa vòm tân cổ điển (kết hợp nan quạt xòe nửa vòm phía trên) và bộ đôi vách ngăn phòng khách lắp dưới ô kính vòm hiện đại.',
@@ -4450,9 +4513,7 @@ export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
     mediaType: 'image',
     imageUrl: '/assets/aistudio/quy_trinh_7_buoc_ngoc_tuyen.png',
     secondaryImages: [
-      '/assets/aistudio/quy_trinh_7_buoc_ngoc_tuyen.png',
       '/assets/aistudio/20261023_112551_27542eea.jpg',
-      '/assets/aistudio/showroom_tuyen_hoa_stamped.png',
     ],
     highlightTag: 'Quy Trình 7 Bước Chuẩn · Đại Lý Cấp 1',
     summary:

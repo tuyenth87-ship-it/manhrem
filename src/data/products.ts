@@ -128,7 +128,7 @@ export const PRODUCTS: Product[] = [
       '/assets/aistudio/_nh_ChatGPT_14_17_01_23_thg_10__2026_0ef46668.png',
       '/assets/aistudio/Gemini_Generated_Image_a02k7ha02k7ha02k_8ab38dbe.png',
     ],
-    iconType: 'bamboo',
+    iconType: 'mat',
     accentColor: '#92400E',
   },
   // --- BẠT MÁI XẾP LƯỢN SÓNG & BẠT TỰ ĐỘNG 350K/M2 ---

@@ -82,10 +82,10 @@ test('Deduplication removes all duplicate primary and secondary images across al
   }
 
   // Verify deduplication summary accounting
-  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 170);
-  assert.equal(DEDUPLICATION_SUMMARY.totalRemovedDuplicates, 51);
-  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 119);
-  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 12);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 188);
+  assert.equal(DEDUPLICATION_SUMMARY.totalRemovedDuplicates, 56);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 124);
+  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 13);
 });
 
 test('All annotated products have market price tiers, visual annotations, specs, and clear Facebook post copy', () => {
@@ -269,10 +269,10 @@ test('All annotated products have market price tiers, visual annotations, specs,
   assert.equal(videoVongXep?.mediaType, 'video');
   assert.equal(videoVongXep?.numericPrice, 550000);
 
-  // Verify the 3 newly promoted Everhome & Showroom posts + 2 bedding posts + 3 mattress posts are at the very top
+  // Verify the 3 newly promoted & enriched posts (Chiếu Mây NICOLAS CM-TH-01, Rèm Bạt Cuốn Lưới BC-TH-01, Showroom SR-TH-01) are at the very top
   assert.deepEqual(
     ANNOTATED_PRODUCT_POSTS.slice(0, 8).map((p) => p.code),
-    ['DCS-EH-01', 'DLX-EH-01', 'SR-TH-02', 'CGL-CC-01', 'CGL-DR-01', 'DLV-TH-01', 'DKC-TH-01', 'DVC-TH-01']
+    ['CM-TH-01', 'BC-TH-01', 'SR-TH-01', 'DCS-EH-01', 'DLX-EH-01', 'SR-TH-02', 'CGL-CC-01', 'CGL-DR-01']
   );
 
   const demLongVu = getCanopyProductById('DLV-TH-01');
@@ -315,6 +315,21 @@ test('All annotated products have market price tiers, visual annotations, specs,
   assert.ok(chieuMay);
   assert.equal(chieuMay?.numericPrice, 450000);
   assert.equal(chieuMay?.imageUrl, '/assets/aistudio/chieu_may_dieu_hoa_tuyen_hoa.png');
+  assert.equal(chieuMay?.secondaryImages?.length, 3);
+  assert.equal(Object.keys(chieuMay?.imageCaptions || {}).length, 4);
+
+  const batCuonLuoi = getCanopyProductById('BC-TH-01');
+  assert.ok(batCuonLuoi);
+  assert.equal(batCuonLuoi?.numericPrice, 220000);
+  assert.equal(batCuonLuoi?.imageUrl, '/assets/aistudio/bat_tu_cuon_nang_mua_tuyen_hoa.png');
+  assert.equal(batCuonLuoi?.secondaryImages?.length, 2);
+  assert.equal(Object.keys(batCuonLuoi?.imageCaptions || {}).length, 3);
+
+  const showroomMatTien = getCanopyProductById('SR-TH-01');
+  assert.ok(showroomMatTien);
+  assert.equal(showroomMatTien?.imageUrl, '/assets/aistudio/Showroom_Ch_n_Ga_G_i___m_Tuy_n_Hoa_0311597c.png');
+  assert.equal(showroomMatTien?.secondaryImages?.length, 3);
+  assert.equal(Object.keys(showroomMatTien?.imageCaptions || {}).length, 4);
 
   const demLoXo = getCanopyProductById('DLX-EH-01');
   assert.ok(demLoXo);
