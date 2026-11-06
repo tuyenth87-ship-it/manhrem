@@ -293,10 +293,10 @@ export default function App() {
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             <div className="flex items-center gap-2 truncate">
               <span className="text-[#8A6421] font-semibold tracking-wider uppercase shrink-0">
-                Showroom Tuyến Hoa:
+                Ngọc Tuyến – Tuyến Hoa:
               </span>
               <span className="text-stone-700 font-medium truncate">
-                Màn Khung 1.000.000đ/bộ · Rèm Vải 600k/m · Đệm Everhome 2,85Tr · Bạt Xếp 350k/m²
+                Mành Trúc Từ Đường &amp; Vách Chữ Thọ 240k–650k/m² · Đệm Lò Xo Vikosan 3,48Tr · Lụa Tencel 390k–2,15Tr · Màn Khung 1Tr/bộ
               </span>
             </div>
             <div className="flex items-center gap-4 shrink-0 pl-2">

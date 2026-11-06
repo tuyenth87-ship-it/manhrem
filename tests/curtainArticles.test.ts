@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { CURTAIN_ARTICLES } from '../src/data/curtainArticles.ts';
 import { BEAD_SHAPES, BEAD_ART_PATTERNS } from '../src/data/beadCurtains.ts';
+import { ANNOTATED_PRODUCT_POSTS } from '../src/data/canopyAndArtisanalData.ts';
 
 test('CURTAIN_ARTICLES contains all 7 key product & curtain categories with valid data', () => {
   assert.equal(CURTAIN_ARTICLES.length, 7);
@@ -25,7 +26,6 @@ test('CURTAIN_ARTICLES contains all 7 key product & curtain categories with vali
 });
 
 test('BEAD_SHAPES and BEAD_ART_PATTERNS meet user price and size specifications', () => {
-  // Test shapes: 5 shapes, standard price 1m x 2m = 600,000đ
   assert.ok(BEAD_SHAPES.length >= 5);
   BEAD_SHAPES.forEach(shape => {
     assert.equal(shape.standardPrice1mx2m, 600000, 'Standard 1mx2m bead curtain must be 600,000đ');
@@ -33,17 +33,27 @@ test('BEAD_SHAPES and BEAD_ART_PATTERNS meet user price and size specifications'
     assert.ok(shape.name.length > 0);
   });
 
-  // Test art patterns: 1.2m x 2m plastic art must be 1,300,000đ
   const plasticPatterns = BEAD_ART_PATTERNS.filter(p => p.theme === 'plastic-art');
   assert.ok(plasticPatterns.length >= 4);
   plasticPatterns.forEach(p => {
     assert.equal(p.standardPrice1m2x2m, 1300000, 'Pattern 1.2mx2m must be 1,300,000đ');
   });
 
-  // Test wood art: starting from 1,200,000đ
   const woodPatterns = BEAD_ART_PATTERNS.filter(p => p.theme === 'wood-fengshui');
   assert.ok(woodPatterns.length >= 3);
   woodPatterns.forEach(p => {
     assert.ok(p.standardPrice1mx2m >= 1200000, 'Wood bead curtain must start from 1,200,000đ');
   });
 });
+
+test('ANNOTATED_PRODUCT_POSTS features the new MT-NT-01, MT-NT-02, and DLX-VK-01 luxury posts at the top with full captions and prices', () => {
+  const topCodes = ANNOTATED_PRODUCT_POSTS.slice(0, 5).map(p => p.code);
+  assert.deepEqual(topCodes, ['MT-NT-01', 'MT-NT-02', 'DLX-VK-01', 'CGL-EU-01', 'CGL-DW-01']);
+
+  for (const post of ANNOTATED_PRODUCT_POSTS.slice(0, 5)) {
+    assert.ok(post.marketPriceTiers.length >= 3, `${post.code} must have at least 3 price tiers`);
+    assert.ok(post.secondaryImages && post.secondaryImages.length >= 2, `${post.code} must have secondary images`);
+    assert.ok(post.imageCaptions && Object.keys(post.imageCaptions).length >= 3, `${post.code} must have per-image captions`);
+  }
+});
+

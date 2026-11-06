@@ -38,11 +38,22 @@ interface CanopyAndArtisanalShowcaseProps {
 type FontScaleMode = 'normal' | 'large' | 'xlarge';
 
 const BAKED_BRAND_CODES = new Set([
+  'MT-NT-01',
+  'MT-NT-02',
+  'DLX-VK-01',
+  'CGL-EU-01',
+  'CGL-DW-01',
+  'CGL-LT-28',
+  'CGL-SK-01',
+  'CGL-CC-01',
+  'CGL-DR-01',
   'MT-TH-01',
   'KXD-TH-01',
   'DKC-TH-01',
   'DLV-TH-01',
   'DGD-TH-01',
+  'DVC-TH-01',
+  'DCR-TH-01',
   'SR-TH-02',
   'CM-TH-01',
   'DLX-EH-01',
@@ -935,16 +946,35 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
                       </h3>
                     </div>
 
-                    {/* Clean Single-Row Price Box */}
-                    <div className="bg-[#FCF9F4] border border-[#EDE3D2] rounded-xl px-3.5 py-2.5 flex items-baseline justify-between gap-2">
-                      <div className="text-base sm:text-lg font-semibold text-[#734F1A] font-mono tabular-nums whitespace-nowrap">
-                        {post.priceDisplay}
+                    {/* Clean Price Box + Scannable Size/Tier Breakdown */}
+                    <div className="bg-[#FCF9F4] border border-[#EDE3D2] rounded-xl px-3.5 py-2.5 space-y-2">
+                      <div className="flex items-baseline justify-between gap-2 overflow-hidden">
+                        <div className="text-base sm:text-lg font-semibold text-[#734F1A] font-mono tabular-nums whitespace-nowrap">
+                          {post.priceDisplay}
+                        </div>
+                        <div className="text-right text-xs text-stone-400 truncate">
+                          <span className="line-through font-mono">
+                            {(post.marketPriceTiers[0]?.marketPrice || '1.300.000đ').split('–')[0].trim()}
+                          </span>
+                        </div>
                       </div>
-                      <div className="text-right text-xs text-stone-400 shrink-0">
-                        <span className="line-through font-mono">
-                          {post.marketPriceTiers[0]?.marketPrice || '1.300.000đ'}
-                        </span>
-                      </div>
+                      {post.marketPriceTiers.length > 0 && (
+                        <div className="pt-1.5 border-t border-[#EFE6D6] space-y-1">
+                          {post.marketPriceTiers.slice(0, 2).map((tier, tIdx) => (
+                            <div
+                              key={tIdx}
+                              className="flex items-center justify-between gap-2 text-[11px] sm:text-xs"
+                            >
+                              <span className="text-stone-600 truncate">
+                                {tier.sizeOrOption.replace(/^\d+\.\s*/, '')}
+                              </span>
+                              <span className="font-mono font-semibold text-[#1C1917] tabular-nums shrink-0">
+                                {tier.storePrice}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

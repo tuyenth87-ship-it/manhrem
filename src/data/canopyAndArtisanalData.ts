@@ -65,13 +65,24 @@ export interface DeduplicatedImageGroup {
 }
 
 export const DEDUPLICATION_SUMMARY = {
-  totalUploaded: 368,
+  totalUploaded: 380,
   totalRemovedDuplicates: 65,
-  totalUniquePublished: 303,
+  totalUniquePublished: 315,
   groups: [
     {
+      id: 'dup-lo-12-anh-manh-truc-tu-duong-vach-chu-tho-phuc-duc-2026',
+      groupTitle: 'Lô 12 Ảnh Tuyệt Tác Mành Tre Trúc & Vách Bình Phong Chữ Thọ Ngọc Tuyến Mới Nhất: Công Trình Nhà Thờ Họ · Từ Đường 3 Gian · Đình Chùa · Biệt Thự Ven Hồ & Bộ Tranh Thư Pháp Phúc – Đức · Chùa Một Cột · Salon Tóc Thanh Vân',
+      keptImage: 'MT_NT_01_cong_trinh_nha_tho_tu_duong_ngoc_tuyen_hd.jpg',
+      removedCount: 0,
+      removedExamples: [
+        'Quy hoạch Bài Đăng Số 1 (Mã MT-NT-01 – 06 Ảnh Công Trình Kiến Trúc): Tổ hợp 6 công trình Ngọc Tuyến Mành Che Nắng (Đình Chùa, Từ Đường, Nhà Cổ), Công trình Từ Đường 3 Gian lắp bộ 3 bức Tùng – Đầm Sen Chữ Phúc (福) – Trúc, 02 mẫu Vách Bình Phong Khung Cột Trúc Cật Già chạm Chữ Thọ Tròn (đã xử lý làm sạch watermark đơn vị khác & đóng khung Ngọc Tuyến HD) và Hệ 6 khoang Mành Trúc Đỏ Cánh Gián che hành lang Biệt Thự Ven Hồ',
+        'Quy hoạch Bài Đăng Số 2 (Mã MT-NT-02 – 06 Ảnh Tuyệt Tác Mành Tranh Phong Thủy & Khắc Tên Riêng): Cặp mành trúc nâu đỏ vẽ Đầm Sen Hồng thư pháp Vàng Kim "PHÚC" & "ĐỨC", Mành tranh danh thắng "Chùa Một Cột – Liên Hoa Đài", Bộ đôi tranh mành treo tường đối xứng "Tùng Hạc – Trúc Hạc", Bộ ghép đôi đại cảnh "Tùng Trúc Hạc Hội Tụ", Bức "Trúc Lâm Sơn Thủy" và mẫu khắc tên thương hiệu riêng "Salon Tóc Thanh Vân"',
+      ],
+      reason: 'Đã biên tập nội dung phong cách sang trọng, cổ kính, đóng khung Typography HD kèm bảng giá niêm yết tại xưởng Ngọc Tuyến – Tuyến Hoa và đưa lên vị trí trang trọng nhất đầu website.',
+    },
+    {
       id: 'dup-lo-124-anh-bang-gia-vikosan-alyda-skysilk-tencel-eu-2026',
-      groupTitle: 'Lô 124 Ảnh Mới Nhất (Đã Viết Bài, Điền Bảng Giá Chi Tiết & Đóng Khung HD): Đệm Lò Xo Túi Vikosan 3 Sao · 5 Sao · VIP D\'luxe, Lụa Tencel Alyda® 7 Món, Sky Silk 60s, Ren Công Chúa, D-Dror, Dream World Thêu Trúc, Tencel EU & Kho Đệm',
+      groupTitle: 'Lô 124 Ảnh (Đã Viết Bài, Điền Bảng Giá Chi Tiết & Đóng Khung HD): Đệm Lò Xo Túi Vikosan 3 Sao · 5 Sao · VIP D\'luxe, Lụa Tencel Alyda® 7 Món, Sky Silk 60s, Ren Công Chúa, D-Dror, Dream World Thêu Trúc, Tencel EU & Kho Đệm',
       keptImage: 'DLX_VK_01_bang_gia_dem_lo_xo_vikosan_hd.jpg',
       removedCount: 7,
       removedExamples: [
@@ -274,8 +285,24 @@ export const DEDUPLICATION_SUMMARY = {
 
 export const MARKET_PRICE_SUMMARY_TABLE: MarketPriceSummaryRow[] = [
   {
+    id: 'mp-vach-binh-phong-manh-truc-tu-duong-ngoc-tuyen',
+    productGroup: '1. Vách Bình Phong Trúc Chữ Thọ & Mành Trúc Từ Đường · Biệt Thự',
+    specification: 'Mành trúc đỏ biệt thự (240k–280k) · Mành tranh Từ Đường 3 gian (280k–320k) · Vách trúc Chữ Thọ (450k–650k/m²)',
+    marketPrice: '360k – 850k / m²',
+    storePrice: '240k – 650k / m²',
+    warrantyAndService: 'Chế tác thủ công cột trúc cật già, khảo sát & lắp đặt tận nơi, BH 5 năm',
+  },
+  {
+    id: 'mp-manh-truc-thu-phap-phuc-duc-chua-mot-cot',
+    productGroup: '2. Mành Trúc Thư Pháp "Phúc – Đức" · Chùa Một Cột & Khắc Tên Riêng',
+    specification: 'Đầm Sen Phúc – Đức · Chùa Một Cột (280k/m²) · Cặp Tùng – Trúc Hạc (950k/cặp) · Vẽ tên Salon/Spa (300k/m²)',
+    marketPrice: '420k – 520k / m²',
+    storePrice: '280k – 320k / m²',
+    warrantyAndService: 'Vẽ tay sơn dầu đa lớp bền màu 10 năm, tặng kèm ròng rọc đồng & dây kéo',
+  },
+  {
     id: 'mp-dem-lo-xo-tui-vikosan-3sao-5sao-vip',
-    productGroup: '1. Đệm Lò Xo Túi Độc Lập Vikosan 3 Sao · 5 Sao · VIP D\'luxe',
+    productGroup: '3. Đệm Lò Xo Túi Độc Lập Vikosan 3 Sao · 5 Sao · VIP D\'luxe',
     specification: 'Standard 3*22 (Dày 22cm) · Standard 5*22 (Dày 22cm) · VIP*30 (Dày 30cm)',
     marketPrice: '4,98Tr – 12,90Tr',
     storePrice: '3,48Tr – 8,99Tr',
@@ -543,7 +570,256 @@ export function calculateCanopyOrderTotal(input: CanopyPricingInput): CanopyPric
 
 export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
   // ===========================================================================
-  // 00-PRICE-FILLED-2026. BỘ BÀI ĐĂNG MỚI NHẤT ĐÃ ĐIỀN ĐẦY ĐỦ BẢNG GIÁ THEO KÍCH THƯỚC:
+  // 00-HERITAGE-BAMBOO-2026. BỘ ĐÔI TUYỆT TÁC MÀNH TRE TRÚC & VÁCH BÌNH PHONG CHỮ THỌ NGỌC TUYẾN (12 ẢNH MỚI NHẤT):
+  //   1. MT-NT-01: CÔNG TRÌNH VÁCH BÌNH PHONG TRE TRÚC CHỮ THỌ & MÀNH TRÚC ĐẠI TỰ NHÀ THỜ HỌ · TỪ ĐƯỜNG 3 GIAN · ĐÌNH CHÙA & BIỆT THỰ VEN HỒ
+  //   2. MT-NT-02: BỘ SƯU TẬP MÀNH TRÚC THƯ PHÁP "PHÚC – ĐỨC" ĐẦM SEN, CHÙA MỘT CỘT, TÙNG TRÚC HẠC ĐỐI XỨNG & KHẮC TÊN THƯƠNG HIỆU RIÊNG (SALON TÓC THANH VÂN)
+  // ===========================================================================
+  {
+    id: 'cong-trinh-vach-binh-phong-truc-chu-tho-nha-tho-ho-tu-duong-ngoc-tuyen-mtnt01',
+    code: 'MT-NT-01',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Showroom & Công Trình',
+    title: 'Tuyệt Tác Vách Bình Phong Tre Trúc Chạm Chữ Thọ & Mành Trúc Đại Tự Nhà Thờ Họ · Từ Đường 3 Gian (Tùng – Liên Hoa Chữ Phúc – Trúc) · Đình Chùa & Biệt Thự Ven Hồ – Ngọc Tuyến',
+    shortTitle: 'Vách Bình Phong Trúc Chữ Thọ & Mành Trúc Từ Đường 3 Gian · Biệt Thự',
+    priceDisplay: '240.000đ – 650.000đ/m²',
+    marketPriceRange: 'Giá thị trường: 360.000đ – 850.000đ / m²',
+    marketPriceNote: 'Bộ sưu tập thực tế các công trình kiến trúc tâm linh & biệt thự cao cấp do Xưởng Mành Tre Trúc Ngọc Tuyến – Tuyến Hoa trực tiếp chế tác và thi công trọn gói: Bao gồm Hệ Vách Bình Phong & Cửa Bức Bàn Tre Trúc Chữ Thọ cho Nhà Thờ Họ – Đình Chùa, Bộ 3 bức Mành Trúc Đại Tự Từ Đường 3 Gian (Tùng Hạc – Đầm Sen Chữ Phúc 福 – Trúc Hạc) và Hệ 6 khoang Mành Trúc Đỏ Cánh Gián che nắng hành lang Biệt Thự Ven Hồ.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Mành Tre Trúc Đỏ Cánh Gián / Vàng Óng Che Nắng Hiên Nhà Gỗ & Hành Lang Biệt Thự Ven Hồ',
+        marketPrice: '360.000đ – 400.000đ / m²',
+        storePrice: '240.000đ – 280.000đ / m²',
+        note: 'Nan trúc cật già xử lý nhiệt, sơn phủ PU 2K chống nắng mưa hướng Tây, độ bền 8–10 năm',
+      },
+      {
+        sizeOrOption: '2. Bộ 3 Bức Mành Trúc Đại Tự Từ Đường 3 Gian (Gian Giữa Đầm Sen Chữ Phúc 福 · Hai Bên Tùng Hạc & Trúc Hạc)',
+        marketPrice: '450.000đ – 520.000đ / m²',
+        storePrice: '280.000đ – 320.000đ / m²',
+        note: 'Nghệ nhân vẽ tay 100% đồng bộ theo khẩu độ 3 gian hoặc 5 gian nhà thờ họ, kèm ròng rọc đồng',
+      },
+      {
+        sizeOrOption: '3. Hệ Vách Bình Phong & Cửa Bức Bàn Khung Cột Trúc Già Chạm Chữ Thọ Tròn Cổ Truyền (Đình Chùa · Từ Đường)',
+        marketPrice: '750.000đ – 850.000đ / m²',
+        storePrice: '450.000đ – 650.000đ / m²',
+        note: 'Chế tác thủ công từ thân trúc già tuyển chọn, ghép mộng chữ Vạn – chữ Thọ tròn chuẩn kiến trúc cổ',
+      },
+    ],
+    numericPrice: 280000,
+    unitLabel: '1m² Mành Tre Trúc / Vách Bình Phong Trúc Cổ Truyền Ngọc Tuyến (Bao khảo sát & lắp đặt)',
+    standardDimensions: 'Đo đạc & chế tác chuẩn theo từng khẩu độ gian thờ (3 gian, 5 gian) & hành lang biệt thự',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/MT_NT_01_cong_trinh_nha_tho_tu_duong_ngoc_tuyen_hd.jpg',
+    secondaryImages: [
+      '/assets/aistudio/Gemini_Generated_Image_n9eggn9eggn9eggn_98e44927.png',
+      '/assets/aistudio/842422492_122116310523452474_4393011875885865224_n_d64c0603.jpg',
+      '/assets/aistudio/840601115_122116310565452474_6288815935226940809_n_5ce6244b.jpg',
+      '/assets/aistudio/MT_NT_vach_truc_chu_tho_clean_hd.jpg',
+      '/assets/aistudio/854835437_122118513585452474_3885401186457056246_n_114d87d9.jpg',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/MT_NT_01_cong_trinh_nha_tho_tu_duong_ngoc_tuyen_hd.jpg': {
+        badge: 'Ảnh 1/6 · Bảng Giá & Tổng Hợp Công Trình Nhà Thờ Họ · Từ Đường · Biệt Thự Ngọc Tuyến',
+        caption: 'Thiết kế HD sang trọng tổng hợp 4 hạng mục tiêu biểu kèm bảng giá niêm yết tại Xưởng Tre Trúc Ngọc Tuyến (ĐT/Zalo: 0989.655.388 – 0344.727.528).',
+      },
+      '/assets/aistudio/Gemini_Generated_Image_n9eggn9eggn9eggn_98e44927.png': {
+        badge: 'Ảnh 2/6 · Hồ Sơ 06 Đại Công Trình "Ngọc Tuyến – Mành Che Nắng" Đình Chùa & Từ Đường',
+        caption: 'Toàn cảnh 6 công trình thực tế lắp đặt hệ Vách Bình Phong Cửa Bức Bàn Tre Trúc Chữ Thọ tại các ngôi Chùa cổ, Nhà Thờ Họ 5 gian và Từ Đường gia tộc.',
+      },
+      '/assets/aistudio/842422492_122116310523452474_4393011875885865224_n_d64c0603.jpg': {
+        badge: 'Ảnh 3/6 · Từ Đường 3 Gian Mái Ngói Đỏ: Bộ 3 Bức Tùng – Đầm Sen Chữ Phúc (福) – Trúc Hạc',
+        caption: 'Bố cục đăng đối hoàn mỹ cho Nhà Thờ Họ 3 gian: Gian chính giữa rực rỡ bức Đầm Sen Hồng nâng chữ Phúc (福) vàng kim, hai gian tả hữu là Tùng Hạc & Trúc Hạc.',
+      },
+      '/assets/aistudio/840601115_122116310565452474_6288815935226940809_n_5ce6244b.jpg': {
+        badge: 'Ảnh 4/6 · Vách Bình Phong Khung Cột Trúc Chạm Chữ Thọ Tròn Kết Hợp Mành Tranh Hai Bên',
+        caption: 'Sự giao hòa đẳng cấp giữa bộ Vách Bình Phong cột trúc cật già chạm chữ Thọ tròn ở gian trung tâm và đôi mành trúc vẽ tranh Tùng Hạc có dây kéo ở hai gian bên.',
+      },
+      '/assets/aistudio/MT_NT_vach_truc_chu_tho_clean_hd.jpg': {
+        badge: 'Ảnh 5/6 · Cận Cảnh Vách Bình Phong Tre Trúc Chạm Chữ Thọ & Hoa Văn Chữ Vạn Cổ Truyền',
+        caption: 'Từng thân trúc già thẳng tắp được xử lý chống mối mọt, soi rãnh và ghép mộng thủ công tạo hình chữ Thọ tròn ở tâm điểm cùng ô thoáng chữ Vạn tinh xảo.',
+      },
+      '/assets/aistudio/854835437_122118513585452474_3885401186457056246_n_114d87d9.jpg': {
+        badge: 'Ảnh 6/6 · Hệ 06 Khoang Mành Trúc Đỏ Cánh Gián Che Nắng Hành Lang Biệt Thự Ven Hồ',
+        caption: 'Lắp đặt đồng bộ 6 tấm mành trúc phủ sơn đỏ cánh gián dọc hành lang biệt thự ven hồ có lan can sắt mỹ thuật, vừa cản nắng gắt vừa tôn vẻ quý phái.',
+      },
+    },
+    highlightTag: 'Tuyệt Tác Kiến Trúc · Từ Đường · Đình Chùa & Biệt Thự',
+    summary:
+      'Bộ hồ sơ ảnh thực tế khẳng định vị thế dẫn đầu của Xưởng Mành Tre Trúc Ngọc Tuyến – Tuyến Hoa trong lĩnh vực chế tác Vách Bình Phong Tre Trúc Chữ Thọ và Mành Trúc Đại Tự cho Nhà Thờ Họ, Từ Đường 3 gian – 5 gian, Đình Chùa cổ tự và Biệt Thự sân vườn ven hồ.',
+    visualAnnotations: [
+      {
+        label: 'Bố cục Tam Đa "Tùng – Liên Hoa Chữ Phúc (福) – Trúc" cho Từ Đường 3 Gian (Ảnh 3)',
+        detail:
+          'Gian giữa treo bức đại tự Đầm Sen Hồng nâng chữ Phúc (福) tròn viền triện vàng kim tụ vượng khí; gian trái vẽ Tùng Hạc Diên Niên, gian phải vẽ Trúc Hạc Bình An tạo thế phong thủy vững chãi, tôn nghiêm.',
+      },
+      {
+        label: 'Nghệ thuật chế tác Vách Bình Phong & Cửa Bức Bàn Khung Cột Trúc Chữ Thọ (Ảnh 2, 4 & 5)',
+        detail:
+          'Sử dụng 100% thân trúc cật già đanh chắc làm khung cột chịu lực, kết hợp nan trúc vót mịn xếp dọc và phù điêu Chữ Thọ tròn – Chữ Vạn ở chính tâm, thay thế hoàn hảo cho cửa bức bàn gỗ với chi phí tiết kiệm một nửa.',
+      },
+      {
+        label: 'Hệ 6 khoang Mành Trúc Đỏ Cánh Gián cho Biệt Thự Ven Hồ & Hiên Nhà Cổ (Ảnh 6)',
+        detail:
+          'Phủ sơn PU 2K màu đỏ cánh gián sang trọng, chịu nắng mưa trực tiếp bên mặt hồ mà không cong vênh, giữ cho hành lang biệt thự luôn mát rượi và kín đáo.',
+      },
+    ],
+    specs: [
+      { label: 'Mã bộ sưu tập', value: 'MT-NT-01 (Công Trình Từ Đường · Đình Chùa · Biệt Thự Ngọc Tuyến – 06 Ảnh)' },
+      { label: 'Mành trúc đỏ biệt thự', value: '240.000đ – 280.000đ / m² (Giá TT: 360.000đ/m² · Bền 8–10 năm)' },
+      { label: 'Mành tranh Từ Đường 3 gian', value: '280.000đ – 320.000đ / m² (Bộ 3 bức Tùng – Sen Phúc – Trúc vẽ tay)' },
+      { label: 'Vách bình phong Chữ Thọ', value: '450.000đ – 650.000đ / m² (Chế tác thủ công cột trúc già theo kích thước gian)' },
+      { label: 'Khảo sát & Bảo hành', value: 'Miễn phí đo đạc & lắp đặt tận nơi · Bảo hành 5 năm (ĐT/Zalo: 0989.655.388)' },
+    ],
+    articleParagraphs: [
+      'Với những công trình tâm linh mang giá trị truyền đời như Nhà Thờ Họ, Từ Đường gia tộc, Đình Chùa hay các căn Biệt Thự nhà vườn truyền thống, việc lựa chọn hệ mành che nắng và vách bình phong không chỉ đòi hỏi độ bền vượt thời gian mà còn phải đạt chuẩn mực cao nhất về thẩm mỹ phong thủy Á Đông.',
+      'Tại Xưởng Mành Tre Trúc Ngọc Tuyến – Tuyến Hoa, mỗi công trình đều được đo đạc tỉ mỉ theo thước Lỗ Ban và khẩu độ từng gian cột. Từ bộ 3 bức mành tranh "Tùng – Liên Hoa Chữ Phúc (福) – Trúc" che hiên Từ Đường 3 gian, hệ Vách Bình Phong khung cột trúc chạm Chữ Thọ tròn uy nghiêm, cho tới dãy 6 khoang mành trúc đỏ cánh gián ven hồ – tất cả đều toát lên khí chất sang trọng, cổ kính và trường tồn.'
+    ],
+    facebookPostCopy:
+      '🏯🎋 [TUYỆT TÁC KIẾN TRÚC TÂM LINH & BIỆT THỰ] VÁCH BÌNH PHONG TRE TRÚC CHỮ THỌ & MÀNH TRÚC ĐẠI TỰ NHÀ THỜ HỌ – TỪ ĐƯỜNG 3 GIAN – ĐÌNH CHÙA | XƯỞNG NGỌC TUYẾN! 🐉✨\n' +
+      '--------------------------------------------\n' +
+      '🌟 Tự hào là đơn vị trực tiếp chế tác và thi công hàng trăm công trình Từ Đường, Nhà Thờ Họ, Đình Chùa và Biệt Thự Nhà Vườn trên toàn miền Bắc, Xưởng Mành Tre Trúc Ngọc Tuyến – Tuyến Hoa xin trân trọng giới thiệu các hạng mục cao cấp nhất:\n' +
+      '🙏 1. BỘ 3 BỨC MÀNH TRÚC ĐẠI TỰ TỪ ĐƯỜNG 3 GIAN (TÙNG – SEN PHÚC – TRÚC):\n' +
+      '   • Gian chính giữa: Đầm Sen Hồng nâng chữ PHÚC (福) tròn viền triện vàng kim rực rỡ\n' +
+      '   • Hai gian tả hữu: Tùng Hạc Diên Niên & Trúc Hạc Bình An đăng đối, tụ khí lành cho từ đường\n' +
+      '   👉 Đơn giá tại xưởng: Chỉ 280.000đ – 320.000đ / m² (Đã gồm con lăn ròng rọc & công lắp)\n' +
+      '🏛️ 2. HỆ VÁCH BÌNH PHONG & CỬA BỨC BÀN KHUNG CỘT TRÚC CHẠM CHỮ THỌ TRÒN:\n' +
+      '   • Chế tác thủ công 100% từ thân trúc cật già thẳng tắp, chạm chữ Thọ tròn & hoa văn chữ Vạn\n' +
+      '   • Lắp đặt uy nghiêm cho Chùa, Đền, Nhà Thờ Họ 3 gian – 5 gian cổ truyền\n' +
+      '   👉 Đơn giá chế tác theo gian: 450.000đ – 650.000đ / m² (Giá TT: 750k–850k/m²)\n' +
+      '🏡 3. MÀNH TRÚC ĐỎ CÁNH GIÁN CHE NẮNG HÀNH LANG BIỆT THỰ VEN HỒ & NHÀ GỖ:\n' +
+      '   • Sơn phủ PU 2K chống nắng mưa hướng Tây, bền màu 8–10 năm\n' +
+      '   👉 Đơn giá tại xưởng: Chỉ 240.000đ – 280.000đ / m²\n' +
+      '🚛 Khảo sát, đo đạc và lắp đặt hoàn thiện tận nơi – Bảo hành uy tín 5 năm!\n' +
+      '📞 Gọi/Zalo tư vấn & báo giá trực tiếp: 0989.655.388 – 0344.727.528 (Ngọc Tuyến – Tuyến Hoa)!',
+  },
+  {
+    id: 'bo-suu-tap-manh-truc-thu-phap-phuc-duc-chua-mot-cot-tung-truc-hac-mtnt02',
+    code: 'MT-NT-02',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Showroom & Công Trình',
+    title: 'Bộ Sưu Tập Mành Trúc Nghệ Thuật Vẽ Tay Cao Cấp: Cặp Đầm Sen Thư Pháp "Phúc – Đức" · Danh Thắng Chùa Một Cột · Bộ Đôi Tùng Trúc Hạc Đối Xứng & Khắc Tên Thương Hiệu Riêng (Salon Tóc Thanh Vân)',
+    shortTitle: 'Mành Trúc Thư Pháp Phúc – Đức · Chùa Một Cột & Khắc Tên Riêng',
+    priceDisplay: '280.000đ – 320.000đ/m²',
+    marketPriceRange: 'Giá thị trường: 420.000đ – 520.000đ / m²',
+    marketPriceNote: 'Tuyển tập 06 tác phẩm Mành Tre Trúc vẽ tay sơn dầu nghệ thuật vừa hoàn thiện tại Xưởng Ngọc Tuyến – Tuyến Hoa: Gồm cặp mành nâu trầm Đầm Sen Hồng thư pháp vàng kim "PHÚC" – "ĐỨC", bức danh thắng "Chùa Một Cột – Liên Hoa Đài", cặp tranh mành treo tường đối xứng "Tùng Hạc – Trúc Hạc", bộ ghép đôi đại cảnh "Tùng Trúc Hạc Hội Tụ", bức "Trúc Lâm Sơn Thủy" và mẫu thiết kế tên thương hiệu riêng "Salon Tóc Thanh Vân".',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Mành Trúc Đầm Sen Thư Pháp "PHÚC" · "ĐỨC", "Chùa Một Cột", "Tùng Trúc Hạc Hội Tụ" & "Trúc Lâm Sơn Thủy"',
+        marketPrice: '420.000đ – 450.000đ / m²',
+        storePrice: '280.000đ / m²',
+        note: 'Vẽ tay sơn dầu đa lớp trên nền trúc nâu cánh gián, kèm đầy đủ thanh treo & ròng rọc kéo',
+      },
+      {
+        sizeOrOption: '2. Bộ Đôi 02 Bức Tranh Mành Trúc Treo Tường Đối Xứng "Tùng Hạc Trường Xuân – Trúc Hạc Diên Niên"',
+        marketPrice: '1.450.000đ / cặp 2 bức',
+        storePrice: '950.000đ / cặp 2 bức',
+        note: 'Hoàn thiện nẹp gỗ hai đầu & dây đồng treo tường trang trí phòng khách, phòng thờ, phòng trà',
+      },
+      {
+        sizeOrOption: '3. Mành Trúc Vẽ Tranh Phong Thủy Kèm Khắc Tên Thương Hiệu / Biểu Tượng Riêng (Như Mẫu "Salon Tóc Thanh Vân")',
+        marketPrice: '480.000đ – 520.000đ / m²',
+        storePrice: '300.000đ – 320.000đ / m²',
+        note: 'Miễn phí thiết kế chữ thư pháp & biểu tượng ngành nghề (Salon tóc, Spa, Phòng trà, Nhà hàng)',
+      },
+    ],
+    numericPrice: 280000,
+    unitLabel: '1m² Mành Trúc Nghệ Thuật Vẽ Tay Sơn Dầu (Hoặc 950.000đ/cặp tranh đôi)',
+    standardDimensions: 'Đủ mọi kích thước cửa sổ, cửa chính, gian thờ (Rộng 1,0m – 4,0m × Cao theo yêu cầu)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/MT_NT_02_manh_truc_phuc_duc_chua_mot_cot_hd.jpg',
+    secondaryImages: [
+      '/assets/aistudio/870853899_122120622951452474_5205984175702478395_n_b6c310c0.jpg',
+      '/assets/aistudio/884248146_122120622945452474_6926611193855207442_n_a0bdc48f.jpg',
+      '/assets/aistudio/850377391_122117699481452474_5565931910353882378_n_c9a41c5a.jpg',
+      '/assets/aistudio/840419467_122116368951452474_7553969230243714643_n_d263ae98.jpg',
+      '/assets/aistudio/860180872_122119307565452474_8154266768295247578_n_913eab7e.jpg',
+      '/assets/aistudio/863444160_122119307577452474_9091571183187625771_n_3adffd96.jpg',
+      '/assets/aistudio/839936573_122116369563452474_6804773238405536847_n_4f5c9990.jpg',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/MT_NT_02_manh_truc_phuc_duc_chua_mot_cot_hd.jpg': {
+        badge: 'Ảnh 1/8 · Bảng Giá & Tổng Hợp 06 Tuyệt Tác Mành Trúc Thư Pháp Phúc – Đức · Chùa Một Cột',
+        caption: 'Banner HD tổng hợp trọn bộ 6 mẫu mành trúc vẽ tay sơn dầu mới nhất kèm bảng giá niêm yết tại Xưởng Ngọc Tuyến – Tuyến Hoa.',
+      },
+      '/assets/aistudio/870853899_122120622951452474_5205984175702478395_n_b6c310c0.jpg': {
+        badge: 'Ảnh 2/8 · Mành Trúc Nâu Trầm Vẽ Đầm Sen Hồng & Thư Pháp Vàng Kim Chữ "PHÚC"',
+        caption: 'Nét bút thư pháp chữ "Phúc" vàng rực bay bổng phía trên đầm sen hồng nở rộ và lá sen xanh mướt, mang lại phúc khí viên mãn cho gia đình.',
+      },
+      '/assets/aistudio/884248146_122120622945452474_6926611193855207442_n_a0bdc48f.jpg': {
+        badge: 'Ảnh 3/8 · Mành Trúc Nâu Trầm Vẽ Đầm Sen Hồng & Thư Pháp Vàng Kim Chữ "ĐỨC"',
+        caption: 'Tác phẩm "Đầm Sen Chữ Đức" kết hợp hoàn hảo cùng bức chữ Phúc tạo thành bộ đôi "Phúc – Đức" treo gian thờ gia tiên hoặc phòng khách lớn.',
+      },
+      '/assets/aistudio/850377391_122117699481452474_5565931910353882378_n_c9a41c5a.jpg': {
+        badge: 'Ảnh 4/8 · Mành Trúc Vẽ Danh Thắng "Chùa Một Cột – Liên Hoa Đài" Cổ Kính',
+        caption: 'Tái hiện sống động biểu tượng văn hóa ngàn năm Thăng Long – Hà Nội với mái chùa cong đỏ uy nghi trên trụ đá giữa hồ nước và hàng cau xanh.',
+      },
+      '/assets/aistudio/840419467_122116368951452474_7553969230243714643_n_d263ae98.jpg': {
+        badge: 'Ảnh 5/8 · Bộ Đôi 02 Bức Tranh Mành Trúc Treo Tường Đối Xứng "Trúc Hạc – Tùng Hạc"',
+        caption: 'Cặp tranh mành trúc treo đối xứng dưới ánh đèn vàng ấm áp: Bên trái là khóm trúc xanh & đôi hạc trắng, bên phải là tùng cổ thụ & mặt trời đỏ.',
+      },
+      '/assets/aistudio/860180872_122119307565452474_8154266768295247578_n_913eab7e.jpg': {
+        badge: 'Ảnh 6/8 · Bộ Ghép Đôi 02 Tấm Mành Khổ Lớn "Đại Cảnh Tùng Trúc Hạc Hội Tụ"',
+        caption: 'Hai tấm mành trúc khổ lớn ghép liền mạch tại xưởng tạo nên bức đại cảnh Tùng – Trúc – Hạc hùng vĩ dùng cho hiên nhà chính hoặc sảnh lớn.',
+      },
+      '/assets/aistudio/863444160_122119307577452474_9091571183187625771_n_3adffd96.jpg': {
+        badge: 'Ảnh 7/8 · Mành Trúc Vẽ Tranh "Trúc Lâm Sơn Thủy – Núi Non Trùng Điệp"',
+        caption: 'Khóm trúc quân tử xanh biếc vươn lên bên ghềnh đá và dãy núi non ẩn hiện trong mây trắng, mang lại cảm giác thư thái, tĩnh tại.',
+      },
+      '/assets/aistudio/839936573_122116369563452474_6804773238405536847_n_4f5c9990.jpg': {
+        badge: 'Ảnh 8/8 · Thiết Kế & Vẽ Tên Thương Hiệu Riêng: Mẫu "Salon Tóc Thanh Vân"',
+        caption: 'Bức mành trúc Trúc Hạc được nghệ nhân Ngọc Tuyến vẽ nổi tên thương hiệu "Salon Tóc Thanh Vân" và biểu tượng cây kéo vàng kim cực kỳ sang trọng.',
+      },
+    },
+    highlightTag: 'Vẽ Tay Sơn Dầu · Đầm Sen Phúc Đức & Khắc Tên Riêng',
+    summary:
+      'Mỗi tấm mành tre trúc tại Xưởng Ngọc Tuyến – Tuyến Hoa là một tác phẩm hội họa độc bản được người nghệ nhân vẽ tay trực tiếp bằng sơn dầu cao cấp lên nền nan trúc cật già: Từ cặp Đầm Sen thư pháp "Phúc – Đức", danh thắng "Chùa Một Cột", bộ đôi "Tùng Hạc – Trúc Hạc" cho đến dịch vụ khắc họa tên riêng cho Salon, Spa, Phòng Trà.',
+    visualAnnotations: [
+      {
+        label: 'Bộ đôi Mành Trúc Đầm Sen Thư Pháp Vàng Kim "PHÚC" & "ĐỨC" (Ảnh 2 & Ảnh 3)',
+        detail:
+          'Trên nền mành trúc màu nâu cánh gián trầm ấm, từng đóa sen hồng mãn khai và nụ sen chúm chím nâng đỡ chữ "Phúc" và chữ "Đức" viết theo lối thư pháp vàng rực, gửi gắm đạo lý uống nước nhớ nguồn.',
+      },
+      {
+        label: 'Tranh Mành Danh Thắng "Chùa Một Cột" & Đại Cảnh "Tùng Trúc Hạc" (Ảnh 4, 5, 6 & 7)',
+        detail:
+          'Đường cọ tỉ mỉ khắc họa mái đao cong vút của Chùa Một Cột cùng thế đứng hiên ngang của cây Tùng cổ thụ, khóm Trúc xanh và đàn Hạc tiên biểu trưng cho trường thọ, thanh cao.',
+      },
+      {
+        label: 'Chế tác Mành Trúc Biển Hiệu Độc Bản theo yêu cầu – Mẫu "Salon Tóc Thanh Vân" (Ảnh 8)',
+        detail:
+          'Khách hàng làm Salon Tóc, Spa dưỡng sinh, Quán Trà đạo, Nhà hàng được xưởng miễn phí thiết kế tên thương hiệu và biểu tượng riêng (như chiếc kéo vàng Salon Tóc Thanh Vân) hài hòa ngay trên bức tranh phong thủy.',
+      },
+    ],
+    specs: [
+      { label: 'Mã bộ sưu tập', value: 'MT-NT-02 (Mành Trúc Thư Pháp Phúc Đức · Chùa Một Cột · Tùng Trúc Hạc – 08 Ảnh)' },
+      { label: 'Đơn giá mành tranh', value: '280.000đ / m² (Đầm Sen Phúc – Đức, Chùa Một Cột, Tùng Trúc Hạc, Sơn Thủy)' },
+      { label: 'Cặp tranh đôi treo tường', value: '950.000đ / cặp 2 bức đối xứng (Tùng Hạc Trường Xuân – Trúc Hạc Diên Niên)' },
+      { label: 'Mành vẽ tên & logo riêng', value: '300.000đ – 320.000đ / m² (Miễn phí thiết kế tên cửa hàng, Salon, Spa)' },
+      { label: 'Chất liệu & Phụ kiện', value: 'Nan trúc cật già sơn PU + Sơn dầu vẽ tay bền màu 10 năm + Ròng rọc kéo' },
+    ],
+    articleParagraphs: [
+      'Không chỉ đơn thuần là tấm rèm che nắng cản gió, bộ sưu tập Mành Trúc Nghệ Thuật Vẽ Tay (Mã MT-NT-02) của Xưởng Ngọc Tuyến – Tuyến Hoa nâng tầm không gian sống thành một phòng thưởng lãm nghệ thuật Á Đông đích thực. Từng nan trúc cật già được xử lý nhẵn mịn, phủ nền nâu trầm cổ điển trước khi các họa sĩ lành nghề điểm tô từng cánh sen hồng, nét bút thư pháp "Phúc – Đức" hay mái chùa Một Cột.',
+      'Đặc biệt, Xưởng Ngọc Tuyến nhận chế tác mành trúc khắc tên thương hiệu và biểu tượng riêng theo yêu cầu – tiêu biểu như tác phẩm "Salon Tóc Thanh Vân" kết hợp khóm trúc xanh, cánh hạc trắng cùng hình ảnh cây kéo vàng nghệ thuật, tạo điểm nhấn sang trọng và thu hút tài lộc cho cửa tiệm.'
+    ],
+    facebookPostCopy:
+      '🪷🎋 [TUYỆT TÁC MÀNH TRÚC VẼ TAY NGHỆ THUẬT] ĐẦM SEN THƯ PHÁP "PHÚC – ĐỨC" · CHÙA MỘT CỘT · TÙNG TRÚC HẠC & VẼ TÊN THƯƠNG HIỆU RIÊNG! 🖌️✨\n' +
+      '--------------------------------------------\n' +
+      '🌟 Ngắm nhìn trọn bộ 06 tuyệt phẩm Mành Tre Trúc vẽ tay sơn dầu vừa xuất xưởng tại Xưởng Tre Trúc Ngọc Tuyến – Tuyến Hoa, từng đường nét đều sắc sảo và có hồn như một bức tranh lụa cổ:\n' +
+      '🪷 1. CẶP MÀNH ĐẦM SEN HỒNG THƯ PHÁP VÀNG KIM "PHÚC" – "ĐỨC":\n' +
+      '   • Treo phòng thờ gia tiên, từ đường hoặc phòng khách lớn giúp tụ phúc đức, che nắng chắn gió lùa cực tốt.\n' +
+      '🏯 2. MÀNH TRANH DANH THẮNG "CHÙA MỘT CỘT – LIÊN HOA ĐÀI":\n' +
+      '   • Biểu tượng văn hóa ngàn năm Thăng Long cổ kính, sang trọng và thanh tịnh.\n' +
+      '🦢 3. BỘ ĐÔI TRANH MÀNH ĐỐI XỨNG & ĐẠI CẢNH "TÙNG – TRÚC – HẠC HỘI TỤ":\n' +
+      '   • Có cả bản cặp 2 bức treo tường đối xứng (950.000đ/cặp) và bản ghép đôi khổ lớn che hiên nhà.\n' +
+      '✂️ 4. NHẬN VẼ TÊN THƯƠNG HIỆU & LOGO RIÊNG (NHƯ MẪU "SALON TÓC THANH VÂN"):\n' +
+      '   • Thiết kế riêng tên Salon Tóc, Spa, Phòng Trà, Nhà Hàng kết hợp tranh phong thủy chiêu tài lộc!\n' +
+      '💰 BẢNG GIÁ GỐC TẠI XƯỞNG NGỌC TUYẾN (Tặng kèm con lăn ròng rọc & dây kéo):\n' +
+      '   👉 Mành trúc vẽ tranh Phúc – Đức / Chùa Một Cột / Tùng Trúc Hạc: Chỉ 280.000đ / m² (Giá TT: 420k/m²)\n' +
+      '   👉 Cặp 2 bức tranh mành Tùng – Trúc Hạc treo tường: Chỉ 950.000đ / cặp\n' +
+      '   👉 Mành trúc vẽ tên thương hiệu & logo riêng: Chỉ 300.000đ – 320.000đ / m²\n' +
+      '📞 Gọi/Zalo đặt mành theo kích thước riêng: 0989.655.388 – 0344.727.528 (Ngọc Tuyến – Tuyến Hoa)!',
+  },
+  // ===========================================================================
+  // 00-PRICE-FILLED-2026. BỘ BÀI ĐĂNG ĐÃ ĐIỀN ĐẦY ĐỦ BẢNG GIÁ THEO KÍCH THƯỚC:
   //   1. DLX-VK-01: BẢNG GIÁ ĐỆM LÒ XO TÚI ĐỘC LẬP VIKOSAN STANDARD 3 SAO (3*22) · 5 SAO (5*22) & VIP D'LUXE (VIP*30)
   //   2. CGL-EU-01: SET GA GỐI LỤA TENCEL EU (EUMD05–18), CHẦN BÔNG TỔ ONG & BỘ ĐŨI XƯỚC 5 MÓN (390K – 950K)
   //   3. CGL-DW-01: BỘ CHĂN GA GỐI LỤA TENCEL DREAM WORLD THÊU NHÀNH TRÚC 6 MÀU (1.350.000Đ/BỘ)
@@ -924,7 +1200,7 @@ export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
     title: 'Bộ Sưu Tập 21 Mẫu Mành Tre Trúc Phòng Thờ Gia Tiên (Lưỡng Long Chầu Thọ · Chữ Hiếu · Vạn Cổ Anh Linh · Hoa Sen Vàng) & Mành Trúc Nghệ Thuật Phòng Trà – Phòng Khách (Liên Hoa Cửu Ngư · Tùng Hạc · Hoa Mẫu Đơn)',
     shortTitle: '21 Mẫu Mành Tre Trúc Phòng Thờ & Phòng Trà (260k–320k/m²)',
     priceDisplay: '260.000đ – 320.000đ/m²',
-    marketPriceRange: 'Giá thị trường: 380.0000đ – 520.000đ / m²',
+    marketPriceRange: 'Giá thị trường: 380.000đ – 520.000đ / m²',
     marketPriceNote: 'Đã chỉnh sửa hậu kỳ xóa sạch 100% chữ chìm watermark trên cả 21 mẫu Mành Tre Trúc vừa tải lên và đóng khung Typography HD Be Vietnam Pro sắc nét: Đầy đủ 07 mẫu Mành Tre Trúc Che Bàn Thờ Gia Tiên (Lưỡng Long Chầu Chữ Thọ, Vạn Cổ Anh Linh – Âm Siêu Dương Thái, Tổ Tiên Công Đức, Chữ Hiếu Hoa Sen Vàng, Bạch Liên Hoa) và 14 mẫu Mành Trúc Vẽ Tranh Thủy Mặc Phòng Trà – Phòng Khách – Biệt Thự (Liên Hoa Cửu Ngư, Tùng Hạc Diên Niên, Hoa Mẫu Đơn Phú Quý, Đèn Lồng Hoa Đào, Hoa Mai Đỏ, Sâm Ngọc Linh).',
     marketPriceTiers: [
       {
@@ -1492,23 +1768,27 @@ export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
     unitLabel: '1 tấm Đệm TH VICUNA Luxury Sleep 5 Sao',
     standardDimensions: 'Đủ cỡ: 1,6m × 2,0m | 1,8m × 2,0m | 2,0m × 2,2m (Độ dày 18cm – 20cm)',
     mediaType: 'image',
-    imageUrl:
-      '/assets/aistudio/1792918016629_4373635352308930219_4373635352308930219_d5df01664878568ea8e6066bf3bdb431_97fe4b70.jpg',
+    imageUrl: '/assets/aistudio/DVC_TH_01_th_vicuna_5sao_bang_gia_hd.jpg',
     secondaryImages: [
+      '/assets/aistudio/1792918016629_4373635352308930219_4373635352308930219_d5df01664878568ea8e6066bf3bdb431_97fe4b70.jpg',
       '/assets/aistudio/1792918016605_4373635352308930219_4373635352308930219_ff42bd0c92e3d13ea3f0b5801bac59b4_4b51f748.jpg',
       '/assets/aistudio/1792918016580_4373635352308930219_4373635352308930219_3fd82c5b2fa089ea2e68a07151974250_668f1bab.jpg',
     ],
     imageCaptions: {
+      '/assets/aistudio/DVC_TH_01_th_vicuna_5sao_bang_gia_hd.jpg': {
+        badge: 'Bảng Giá Điền Sẵn · Đệm TH VICUNA Luxury Sleep 5 Sao (2,15Tr – 2,65Tr)',
+        caption: 'Banner HD tổng hợp 3 góc chụp thực tế kèm bảng giá niêm yết theo kích thước 1m6×2m (2.150.000đ), 1m8×2m (2.350.000đ) và 2m0×2m2 (2.650.000đ).',
+      },
       '/assets/aistudio/1792918016629_4373635352308930219_4373635352308930219_d5df01664878568ea8e6066bf3bdb431_97fe4b70.jpg': {
-        badge: 'Ảnh 1/3 · Trọn Vẹn Dáng Đứng Đệm TH VICUNA Luxury Sleep 5 Sao',
+        badge: 'Ảnh 2/4 · Trọn Vẹn Dáng Đứng Đệm TH VICUNA Luxury Sleep 5 Sao',
         caption: 'Đã căn chỉnh khung 4:3 hiển thị trọn vẹn 4 góc bọc da thêu kim cương vàng, mặt chần múi lông vũ & tem bảng giá xanh lá.',
       },
       '/assets/aistudio/1792918016605_4373635352308930219_4373635352308930219_ff42bd0c92e3d13ea3f0b5801bac59b4_4b51f748.jpg': {
-        badge: 'Ảnh 2/3 · Cận Cảnh Tem Góc Vàng Kim "TH VICUNA – 100% Poly Ester"',
+        badge: 'Ảnh 3/4 · Cận Cảnh Tem Góc Vàng Kim "TH VICUNA – 100% Poly Ester"',
         caption: 'Các kiện đệm TH VICUNA đóng túi khóa kéo nguyên đai nguyên kiện, thành túi thêu logo Vương Miện & Kim Cương vàng kim.',
       },
       '/assets/aistudio/1792918016580_4373635352308930219_4373635352308930219_3fd82c5b2fa089ea2e68a07151974250_668f1bab.jpg': {
-        badge: 'Ảnh 3/3 · Tổng Kho Hàng Trăm Tấm Đệm TH VICUNA Sẵn Hàng Xuất Xưởng',
+        badge: 'Ảnh 4/4 · Tổng Kho Hàng Trăm Tấm Đệm TH VICUNA Sẵn Hàng Xuất Xưởng',
         caption: 'Sẵn kho đầy đủ các độ dày 14cm, 18cm, 20cm và kích thước 1m6, 1m8, 2m2 phục vụ đại lý và khách mua lẻ giá gốc.',
       },
     },
@@ -1590,18 +1870,22 @@ export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
     unitLabel: '1 tấm Đệm Gấp 2 Chần Múi Kẻ Caro dày 18cm',
     standardDimensions: '1,6m × 2,0m × 18cm | 1,8m × 2,0m × 18cm | 2,0m × 2,2m × 18cm',
     mediaType: 'image',
-    imageUrl:
-      '/assets/aistudio/1792918016653_4373635352308930219_4373635352308930219_4e5893d4d7b1a42ce14f5c79a80e3b74_5615ca60.jpg',
+    imageUrl: '/assets/aistudio/DCR_TH_01_dem_caro_18cm_bang_gia_hd.jpg',
     secondaryImages: [
+      '/assets/aistudio/1792918016653_4373635352308930219_4373635352308930219_4e5893d4d7b1a42ce14f5c79a80e3b74_5615ca60.jpg',
       '/assets/aistudio/1792918016678_4373635352308930219_4373635352308930219_e02b93233d85d3ba3faf920984a28150_e939a0e0.jpg',
     ],
     imageCaptions: {
+      '/assets/aistudio/DCR_TH_01_dem_caro_18cm_bang_gia_hd.jpg': {
+        badge: 'Bảng Giá Điền Sẵn · Đệm Gấp 2 Chần Múi Kẻ Caro Dày 18cm (1,75Tr – 2,25Tr)',
+        caption: 'Banner HD so sánh trực tiếp 2 phiên bản màu thành đệm (Xám Ghi Đậm & Kem Sáng) kèm bảng giá theo cỡ 1m6 (1.750.000đ), 1m8 (1.950.000đ) và 2m2 (2.250.000đ).',
+      },
       '/assets/aistudio/1792918016653_4373635352308930219_4373635352308930219_4e5893d4d7b1a42ce14f5c79a80e3b74_5615ca60.jpg': {
-        badge: 'Ảnh 1/2 · Phiên Bản Thành Vải Bố Màu Xám Ghi Đậm (Dày 18cm)',
+        badge: 'Ảnh 2/3 · Phiên Bản Thành Vải Bố Màu Xám Ghi Đậm (Dày 18cm)',
         caption: 'Mặt trên chần múi vuông kẻ Caro khỏe khoắn, thành đệm bọc vải bố màu Xám Ghi đậm sạch sẽ, đặt trên kiện phôi 18×2×18.',
       },
       '/assets/aistudio/1792918016678_4373635352308930219_4373635352308930219_e02b93233d85d3ba3faf920984a28150_e939a0e0.jpg': {
-        badge: 'Ảnh 2/2 · Phiên Bản Thành Vải Bố Màu Kem Sáng (Thông Số 18×2×18)',
+        badge: 'Ảnh 3/3 · Phiên Bản Thành Vải Bố Màu Kem Sáng (Thông Số 18×2×18)',
         caption: 'Cùng mặt chần múi vuông kẻ Caro nhưng phối thành vải bố màu Kem Sáng thanh lịch, có tem góc Kim Cương chính hãng.',
       },
     },
@@ -2532,8 +2816,9 @@ export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
     unitLabel: '1 bộ Chăn Ga Gối Chần Bông Phối Ren Công Chúa (Có sẵn ruột chăn chần · Đủ 8 màu)',
     standardDimensions: 'Đủ cỡ giường 1,6m × 2,0m, 1,8m × 2,0m & 2,0m × 2,2m (8 màu Pastel)',
     mediaType: 'image',
-    imageUrl: '/assets/aistudio/1792915225334_4373635352308930219_4373635352308930219_b1cc4f9fe287531332cb288e86597c7e_3574b865.jpg',
+    imageUrl: '/assets/aistudio/CGL_CC_01_ren_cong_chua_bang_gia_hd.jpg',
     secondaryImages: [
+      '/assets/aistudio/1792915225334_4373635352308930219_4373635352308930219_b1cc4f9fe287531332cb288e86597c7e_3574b865.jpg',
       '/assets/aistudio/1792915225360_4373635352308930219_4373635352308930219_e38fff738e62a19643254e199a9e5550.jpg',
       '/assets/aistudio/1792915225384_4373635352308930219_4373635352308930219_5dc45ce571529f90650ad1416fd99bc4.jpg',
       '/assets/aistudio/1792915225409_4373635352308930219_4373635352308930219_5b23f6c6a529f7a52a4e56fbaf9883e1.jpg',
@@ -2543,6 +2828,10 @@ export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
       '/assets/aistudio/1792915225513_4373635352308930219_4373635352308930219_8b6e1f9698779e80aff9b2765b034825.jpg',
     ],
     imageCaptions: {
+      '/assets/aistudio/CGL_CC_01_ren_cong_chua_bang_gia_hd.jpg': {
+        badge: 'Bảng Giá Điền Sẵn · Trọn Bộ 08 Màu Ren Công Chúa Hàn Quốc (1.350.000đ/bộ)',
+        caption: 'Banner HD quy tụ đủ 8 gam màu Pastel Ren Công Chúa Hàn Quốc kèm bảng giá niêm yết: 1.350.000đ/bộ (1m6 & 1m8) và 1.550.000đ/bộ (2m0×2m2).',
+      },
       '/assets/aistudio/1792915225334_4373635352308930219_4373635352308930219_b1cc4f9fe287531332cb288e86597c7e_3574b865.jpg': {
         badge: 'Màu 1/8 · Tím Khoai Môn Đậm (Deep Taro / Lavender)',
         caption: 'Gam màu Tím Khoai Môn lãng mạn, kết hợp dải ren hoa trắng nổi bật ở chân ga phủ chần bông quả trám.',
@@ -2658,13 +2947,18 @@ export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
     unitLabel: '1 bộ Chăn Ga Gối Lụa Tencel Chần Bông Thêu D – Dror (Đủ 4 màu)',
     standardDimensions: 'Đủ cỡ giường 1,6m × 2,0m, 1,8m × 2,0m & 2,0m × 2,2m (4 màu sang trọng)',
     mediaType: 'image',
-    imageUrl: '/assets/aistudio/1792915265308_4373635352308930219_4373635352308930219_b56e4b9672559f5c6e88ef6004c1b545.jpg',
+    imageUrl: '/assets/aistudio/CGL_DR_01_dror_hoa_anh_dao_bang_gia_hd.jpg',
     secondaryImages: [
+      '/assets/aistudio/1792915265308_4373635352308930219_4373635352308930219_b56e4b9672559f5c6e88ef6004c1b545.jpg',
       '/assets/aistudio/1792915265337_4373635352308930219_4373635352308930219_d8688e0d29240a931b6c455495632f75.jpg',
       '/assets/aistudio/1792915265363_4373635352308930219_4373635352308930219_78b0d21996bd9d26062f5d73560dcf8b.jpg',
       '/assets/aistudio/1792915265388_4373635352308930219_4373635352308930219_001d049ce5ae17faba67925ee554de97.jpg',
     ],
     imageCaptions: {
+      '/assets/aistudio/CGL_DR_01_dror_hoa_anh_dao_bang_gia_hd.jpg': {
+        badge: 'Bảng Giá Điền Sẵn · 04 Màu Lụa Tencel Thêu D – Dror & Hoa Anh Đào (1.450.000đ/bộ)',
+        caption: 'Banner HD tổng hợp đủ 4 gam màu (Xanh Rêu Ngọc Bích, Hồng Đất, Đỏ Ruby, Xám Ghi Chì) kèm bảng giá 1.450.000đ/bộ (1m6 & 1m8) và 1.650.000đ/bộ (2m0×2m2).',
+      },
       '/assets/aistudio/1792915265308_4373635352308930219_4373635352308930219_b56e4b9672559f5c6e88ef6004c1b545.jpg': {
         badge: 'Màu 1/4 · Xanh Rêu Ngọc Bích (Sage Jade Green Sang Trọng)',
         caption: 'Nền lụa Tencel Xanh Rêu Ngọc Bích mát rượi làm nổi bật họa tiết thêu nhành Hoa Anh Đào kem trắng & biểu tượng D – Dror.',
@@ -3218,10 +3512,25 @@ export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
     unitLabel: '1 bộ Full 7 món chính hãng Alyda® (Có sẵn ruột chăn · Đủ 2 màu Đỏ & Xanh Than)',
     standardDimensions: 'Đủ cỡ giường 1,6m × 2,0m, 1,8m × 2,0m & 2,0m × 2,2m (Quy cách chuẩn 7 món)',
     mediaType: 'image',
-    imageUrl: '/assets/aistudio/1792915211423_4373635352308930219_4373635352308930219_72e61c228464506313c098328bfdea78_43281348.jpg',
+    imageUrl: '/assets/aistudio/CGL_LT_28_alyda_7_mon_bang_gia_hd.jpg',
     secondaryImages: [
+      '/assets/aistudio/1792915211423_4373635352308930219_4373635352308930219_72e61c228464506313c098328bfdea78_43281348.jpg',
       '/assets/aistudio/1792915211751_4373635352308930219_4373635352308930219_6920ebd645008b5baade37215ee7eea0_024ddbcb.jpg',
     ],
+    imageCaptions: {
+      '/assets/aistudio/CGL_LT_28_alyda_7_mon_bang_gia_hd.jpg': {
+        badge: 'Bảng Giá Điền Sẵn · Bộ Chăn Ga Gối Cưới Lụa Tencel Alyda® 7 Món (2.150.000đ/bộ)',
+        caption: 'Banner HD tổng hợp 6 mã thêu Hoàng Gia tiêu biểu (LT 28, LT 26, LT 21, LT 19, LT 31, LT 35) kèm bảng giá trọn bộ 7 món có sẵn ruột chăn.',
+      },
+      '/assets/aistudio/1792915211423_4373635352308930219_4373635352308930219_72e61c228464506313c098328bfdea78_43281348.jpg': {
+        badge: 'Mẫu 1 · Bộ Lụa Tencel Alyda® LT 28 Đỏ Ruby Hoàng Gia (Full 7 Món)',
+        caption: 'Sắc đỏ Ruby vượng khí phòng tân hôn, thêu nổi hoa văn cung đình Châu Âu ánh kim trên chăn và 5 vỏ gối.',
+      },
+      '/assets/aistudio/1792915211751_4373635352308930219_4373635352308930219_6920ebd645008b5baade37215ee7eea0_024ddbcb.jpg': {
+        badge: 'Mẫu 2 · Bộ Lụa Tencel Alyda® LT 28 Xanh Than Quý Phái (Full 7 Món)',
+        caption: 'Phiên bản màu Xanh Than (Royal Navy) lịch lãm, làm nổi bật đường thêu chỉ vàng kim tinh xảo.',
+      },
+    },
     highlightTag: 'Siêu Phẩm Phòng Cưới · Alyda® LT 28 (Đỏ & Xanh Than)',
     summary:
       'Bộ Chăn Ga Gối Cưới Lụa Tencel Alyda® Mã LT 28 sang trọng bậc nhất mùa cưới: Sắc đỏ Ruby vượng khí kết hợp mặt vải dệt vân Jacquard chìm mềm mượt như lụa tơ tằm, điểm xuyết khung thêu hoa văn Hoàng Gia ánh kim tinh xảo và quy cách đóng gói đủ 7 món (có sẵn ruột chăn).',
@@ -3303,11 +3612,30 @@ export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
     unitLabel: '1 bộ 5 món Lụa Tencel Sky Silk (Đủ 3 mã: SKY24, SKY1, SKY14)',
     standardDimensions: 'Đủ cỡ 1,6m × 2,0m, 1,8m × 2,0m & 2,0m × 2,2m (Miễn phí bo chun theo cỡ đệm)',
     mediaType: 'image',
-    imageUrl: '/assets/aistudio/1792915211191_4373635352308930219_4373635352308930219_89ee19d8559544880707e8019ec9c5d6_3e4457fc.jpg',
+    imageUrl: '/assets/aistudio/CGL_SK_01_sky_silk_17_mau_bang_gia_hd.jpg',
     secondaryImages: [
+      '/assets/aistudio/1792915211191_4373635352308930219_4373635352308930219_89ee19d8559544880707e8019ec9c5d6_3e4457fc.jpg',
       '/assets/aistudio/1792915211216_4373635352308930219_4373635352308930219_937cb974dfdfec95a6dfdacbe4887284_d0d5f770.jpg',
       '/assets/aistudio/1792915210976_4373635352308930219_4373635352308930219_230c053dddb35b8567efb4925e7f7e43_bcf990bc.jpg',
     ],
+    imageCaptions: {
+      '/assets/aistudio/CGL_SK_01_sky_silk_17_mau_bang_gia_hd.jpg': {
+        badge: 'Bảng Giá Điền Sẵn · BST 17 Mã Màu Lụa Tencel Sky Silk 60s (1.150.000đ/bộ)',
+        caption: 'Banner HD tổng hợp các mã màu Sky Silk 60s bán chạy kèm bảng giá niêm yết: 1.150.000đ/bộ 5 món (1m6 & 1m8) và 1.350.000đ/bộ (2m0×2m2).',
+      },
+      '/assets/aistudio/1792915211191_4373635352308930219_4373635352308930219_89ee19d8559544880707e8019ec9c5d6_3e4457fc.jpg': {
+        badge: 'Mã SKY24 · Đỏ Tươi Hỷ Sự Rực Rỡ Phòng Tân Hôn',
+        caption: 'Sắc Đỏ Tươi truyền thống kết hợp chữ thêu nổi Sky Silk trắng tinh khôi trên mặt chăn và gối ôm.',
+      },
+      '/assets/aistudio/1792915211216_4373635352308930219_4373635352308930219_937cb974dfdfec95a6dfdacbe4887284_d0d5f770.jpg': {
+        badge: 'Mã SKY1 · Đỏ Đô Rượu Vang Trầm Ấm Quý Phái',
+        caption: 'Gam Đỏ Đô chiều sâu chuẩn Châu Âu, tôn da và cực kỳ sang trọng dưới ánh đèn vàng phòng ngủ.',
+      },
+      '/assets/aistudio/1792915210976_4373635352308930219_4373635352308930219_230c053dddb35b8567efb4925e7f7e43_bcf990bc.jpg': {
+        badge: 'Mã SKY14 · Hồng Phấn Pastel Ngọt Ngào Lãng Mạn',
+        caption: 'Sắc Hồng Phấn nhẹ nhàng, chất lụa Tencel 60s mát mịn nâng niu giấc ngủ suốt 4 mùa.',
+      },
+    },
     highlightTag: 'Lụa Tencel Sky Silk · Mã SKY24 · SKY1 · SKY14',
     summary:
       'Bộ 03 mã màu Lụa Tencel Sky Silk bán chạy nhất cho phòng cưới & phòng ngủ vợ chồng trẻ: Mã SKY24 (Đỏ Tươi Hỷ Sự), Mã SKY1 (Đỏ Đô Rượu Vang quyền quý) và Mã SKY14 (Hồng Phấn Pastel ngọt ngào). Bề mặt lụa Tencel 60s bóng mịn, thêu nổi chữ "Sky Silk" thanh lịch trên cả chăn, gối đầu và gối ôm.',
