@@ -82,10 +82,10 @@ test('Deduplication removes all duplicate primary and secondary images across al
   }
 
   // Verify deduplication summary accounting
-  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 206);
-  assert.equal(DEDUPLICATION_SUMMARY.totalRemovedDuplicates, 56);
-  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 142);
-  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 14);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 244);
+  assert.equal(DEDUPLICATION_SUMMARY.totalRemovedDuplicates, 58);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 178);
+  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 16);
 });
 
 test('All annotated products have market price tiers, visual annotations, specs, and clear Facebook post copy', () => {
@@ -201,12 +201,13 @@ test('All annotated products have market price tiers, visual annotations, specs,
   assert.equal(demHanvicoNano?.imageUrl, '/assets/aistudio/dem_hanvico_nano_khang_khuan_1.png');
   assert.equal(demHanvicoNano?.secondaryImages?.length, 1);
 
-  // Verify the 4 newest posts from the 2 videos & 6 photos (Mành trúc biệt thự & Màn hộp thông minh vân gỗ)
+  // Verify the upgraded MT-TH-01 post with 21 bamboo blind designs & 10 HD images
   const manhTrucBietThu = getCanopyProductById('MT-TH-01');
   assert.ok(manhTrucBietThu);
   assert.equal(manhTrucBietThu?.numericPrice, 260000);
-  assert.equal(manhTrucBietThu?.imageUrl, '/assets/aistudio/IMG_9290_f6c3666b.JPG');
-  assert.equal(manhTrucBietThu?.secondaryImages?.length, 1);
+  assert.equal(manhTrucBietThu?.imageUrl, '/assets/aistudio/MT_PT_01_manh_truc_phong_tho_hd.jpg');
+  assert.equal(manhTrucBietThu?.secondaryImages?.length, 9);
+  assert.equal(Object.keys(manhTrucBietThu?.imageCaptions || {}).length, 10);
 
   const videoBietThu = getCanopyProductById('VID-BT-01');
   assert.ok(videoBietThu);
@@ -269,23 +270,25 @@ test('All annotated products have market price tiers, visual annotations, specs,
   assert.equal(videoVongXep?.mediaType, 'video');
   assert.equal(videoVongXep?.numericPrice, 550000);
 
-  // Verify the 6 newly edited HD typography posts + 2 previous top posts are at the very top
+  // Verify the newly edited bamboo blind & warehouse mattress HD posts are at the very top
   assert.deepEqual(
     ANNOTATED_PRODUCT_POSTS.slice(0, 8).map((p) => p.code),
-    ['SR-TH-02', 'DLX-EH-01', 'DCS-EH-01', 'RTO-TH-01', 'RC-TH-01', 'BC-TH-01', 'CM-TH-01', 'SR-TH-01']
+    ['MT-TH-01', 'KXD-TH-01', 'DKC-TH-01', 'DLV-TH-01', 'DGD-TH-01', 'DVC-TH-01', 'DCR-TH-01', 'SR-TH-02']
   );
 
   const demLongVu = getCanopyProductById('DLV-TH-01');
   assert.ok(demLongVu);
   assert.equal(demLongVu?.numericPrice, 1850000);
-  assert.equal(demLongVu?.secondaryImages?.length, 3);
-  assert.equal(Object.keys(demLongVu?.imageCaptions || {}).length, 4);
+  assert.equal(demLongVu?.imageUrl, '/assets/aistudio/DLV_TH_01_dem_long_vu_mat_tran_hd.jpg');
+  assert.equal(demLongVu?.secondaryImages?.length, 4);
+  assert.equal(Object.keys(demLongVu?.imageCaptions || {}).length, 5);
 
   const demKimCuong = getCanopyProductById('DKC-TH-01');
   assert.ok(demKimCuong);
   assert.equal(demKimCuong?.numericPrice, 1850000);
-  assert.equal(demKimCuong?.secondaryImages?.length, 2);
-  assert.equal(Object.keys(demKimCuong?.imageCaptions || {}).length, 3);
+  assert.equal(demKimCuong?.imageUrl, '/assets/aistudio/DKC_TH_01_kim_cuong_mat_tran_hd.jpg');
+  assert.equal(demKimCuong?.secondaryImages?.length, 3);
+  assert.equal(Object.keys(demKimCuong?.imageCaptions || {}).length, 4);
 
   const demVicuna = getCanopyProductById('DVC-TH-01');
   assert.ok(demVicuna);
@@ -302,14 +305,16 @@ test('All annotated products have market price tiers, visual annotations, specs,
   const demGamDo = getCanopyProductById('DGD-TH-01');
   assert.ok(demGamDo);
   assert.equal(demGamDo?.numericPrice, 1450000);
-  assert.equal(demGamDo?.secondaryImages?.length, 1);
-  assert.equal(Object.keys(demGamDo?.imageCaptions || {}).length, 2);
+  assert.equal(demGamDo?.imageUrl, '/assets/aistudio/DGD_TH_01_dem_gam_do_la_phong_hd.jpg');
+  assert.equal(demGamDo?.secondaryImages?.length, 2);
+  assert.equal(Object.keys(demGamDo?.imageCaptions || {}).length, 3);
 
   const khoPhoiDem = getCanopyProductById('KXD-TH-01');
   assert.ok(khoPhoiDem);
   assert.equal(khoPhoiDem?.numericPrice, 1350000);
-  assert.equal(khoPhoiDem?.secondaryImages?.length, 1);
-  assert.equal(Object.keys(khoPhoiDem?.imageCaptions || {}).length, 2);
+  assert.equal(khoPhoiDem?.imageUrl, '/assets/aistudio/KXD_AM_01_cao_su_non_american_hd.jpg');
+  assert.equal(khoPhoiDem?.secondaryImages?.length, 2);
+  assert.equal(Object.keys(khoPhoiDem?.imageCaptions || {}).length, 3);
 
   const chieuMay = getCanopyProductById('CM-TH-01');
   assert.ok(chieuMay);

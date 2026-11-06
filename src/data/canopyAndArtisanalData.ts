@@ -65,10 +65,46 @@ export interface DeduplicatedImageGroup {
 }
 
 export const DEDUPLICATION_SUMMARY = {
-  totalUploaded: 206,
-  totalRemovedDuplicates: 56,
-  totalUniquePublished: 142,
+  totalUploaded: 368,
+  totalRemovedDuplicates: 65,
+  totalUniquePublished: 303,
   groups: [
+    {
+      id: 'dup-lo-124-anh-bang-gia-vikosan-alyda-skysilk-tencel-eu-2026',
+      groupTitle: 'Lô 124 Ảnh Mới Nhất (Đã Viết Bài, Điền Bảng Giá Chi Tiết & Đóng Khung HD): Đệm Lò Xo Túi Vikosan 3 Sao · 5 Sao · VIP D\'luxe, Lụa Tencel Alyda® 7 Món, Sky Silk 60s, Ren Công Chúa, D-Dror, Dream World Thêu Trúc, Tencel EU & Kho Đệm',
+      keptImage: 'DLX_VK_01_bang_gia_dem_lo_xo_vikosan_hd.jpg',
+      removedCount: 7,
+      removedExamples: [
+        'Điền đầy đủ bảng giá theo từng kích thước (1m2×1m9, 1m5×1m9, 1m6×2m, 1m8×2m, 2m0×2m2) cho Đệm Lò Xo Túi Độc Lập Vikosan Standard 3 Sao (3*22: 3,48Tr–5,38Tr), Standard 5 Sao (5*22: 4,33Tr–6,60Tr) và VIP 5 Sao D\'luxe (VIP*30 dày 30cm: 6,08Tr–8,99Tr)',
+        'Điền giá niêm yết & giá ưu đãi Tuyến Hoa cho trọn bộ Chăn Ga Gối Cưới Lụa Tencel Alyda® 7 Món (2.150.000đ/bộ), 17 mã Lụa Tencel Sky Silk 60s (1.150.000đ/bộ), 8 màu Ren Công Chúa Hàn Quốc (1.350.000đ/bộ), 4 màu Lụa Tencel D – Dror (1.450.000đ/bộ) và 6 màu Lụa Tencel Dream World Thêu Nhành Trúc (1.350.000đ/bộ)',
+        'Bổ sung bài đăng & bảng giá Set Ga Gối Lụa Tencel EU kèm túi khóa kéo (Mã EUMD05–18: 390.000đ/set), Set Ga Gối Chần Bông Tổ Ong (550.000đ/set) và Bộ Đũi Xước 5 Món Kèm Chăn Hè (950.000đ/bộ)',
+      ],
+      reason: 'Đã tổng hợp toàn bộ 124 bức ảnh sản phẩm, điền bảng giá chi tiết theo từng kích thước ngay trên ảnh bìa HD (phông chữ Be Vietnam Pro sắc nét) và trên từng thẻ bài đăng.',
+    },
+    {
+      id: 'dup-lo-21-anh-manh-tre-truc-phong-tho-phong-tra-2026',
+      groupTitle: 'Lô 21 Ảnh Mới Nhất Vừa Tải Lên (Đã Xóa Sạch Watermark & Chỉnh Sửa HD): Mành Tre Trúc Phòng Thờ Gia Tiên (Lưỡng Long Chầu Thọ, Chữ Hiếu, Vạn Cổ Anh Linh, Hoa Sen Vàng) & Mành Trúc Nghệ Thuật Phòng Trà – Phòng Khách (Liên Hoa Cửu Ngư, Tùng Hạc, Mẫu Đơn, Hoa Mai Đỏ)',
+      keptImage: 'MT_PT_01_manh_truc_phong_tho_hd.jpg',
+      removedCount: 0,
+      removedExamples: [
+        'Xóa sạch toàn bộ chữ chìm chéo ("Mành tre trúc Hồng Dương") và logo góc dưới bên phải trên cả 21 mẫu Mành Tre Trúc Phòng Thờ & Phòng Khách, tái tạo bộ ảnh Studio HD sắc nét mang thương hiệu Xưởng Mành Tre Trúc Tuyến Hoa – Ngọc Tuyến',
+        'Quy hoạch Nhóm Mành Tre Trúc Phòng Thờ Gia Tiên (07 mẫu): Bộ 3 tấm "Vạn Cổ Anh Linh – Âm Siêu Dương Thái" Hoa Sen Trắng, Bộ 3 tấm Bạch Liên Hoa, Mành nâu đỏ vẽ nhũ vàng "Lưỡng Long Chầu Chữ Thọ", Mành nâu cánh gián khắc Hoa Sen Vàng Kim, Mành nâu trầm vẽ Hoa Sen Vàng & Thư pháp chữ "HIẾU", Bộ 3 tấm vách ngăn "Tổ Tiên Công Đức – Chữ Hiếu" và Mành vàng óng Đầm Sen Hồng thơ thư pháp',
+        'Quy hoạch Nhóm Mành Tre Trúc Nghệ Thuật Phòng Trà & Phòng Khách (14 mẫu): Liên Hoa Cửu Ngư (Hoa Sen, Chim Bói Cá & Đàn Cá Koi), Hoa Mai Đỏ & Đôi Bướm, Đèn Lồng Đỏ Hoa Đào, Phố Cổ Giang Nam Hồ Sen, Thủy Mặc Sơn Thủy Tùng Hạc Diên Niên, Hoa Mẫu Đơn Hồng Phú Quý, Độc Liên Hồng, Song Hạc Đào Nguyên, Song Liên Cá Chép, Sơn Thủy "Bình An", Hồ Sen Núi Non Mặt Trời Đỏ, Thiết kế riêng "Cửa Hàng Sâm Ngọc Linh", Bộ 3 tấm Viền Triện Hoa Mai Trắng Dưới Trăng và Đầm Sen Hồng Chim Bói Cá',
+      ],
+      reason: 'Đã chỉnh sửa hậu kỳ xóa sạch watermark đơn vị khác, đóng khung Typography Be Vietnam Pro sắc nét và đăng trọn bộ 21 mẫu Mành Tre Trúc Phòng Thờ & Phòng Trà ngay vị trí số 1 đầu trang web.',
+    },
+    {
+      id: 'dup-lo-17-anh-kho-dem-cao-su-non-american-kim-cuong-good-luck-2026',
+      groupTitle: 'Lô 17 Ảnh Kho Xưởng Đệm: Tổng Kho Đệm Cao Su Non American & King Sleep (9 Ảnh) + Đệm Kim Cương Mặt Trần Good Luck, Kim Cương Plaza Airy, Chần Múi Lông Vũ & Gấm Đỏ (8 Ảnh)',
+      keptImage: 'KXD_AM_01_cao_su_non_american_hd.jpg',
+      removedCount: 2,
+      removedExamples: [
+        'Lọc bỏ 01 ảnh nháp bị vẽ vệt bút đỏ hình chữ V đè lên mặt đệm (1792918003065...jpg trùng 100% góc chụp với bản sạch 1792918003040...jpg xếp 4 tấm đệm mặt trần xám than bậc thang)',
+        'Lọc bỏ 01 ảnh chụp trùng góc lồng thang nâng hàng inox chứa 15 tấm đệm Cao Su Non American tại xưởng (1792915509224...jpg trùng góc với 1792915509174...jpg)',
+        'Đóng khung Typography HD Be Vietnam Pro sắc nét cho 04 bài đăng Đệm đầu trang: KXD-TH-01 (Tổng Kho Đệm Cao Su Non American & King Sleep), DKC-TH-01 (Đệm Kim Cương Mặt Trần Good Luck & Plaza Airy), DLV-TH-01 (Đệm Chần Múi Lông Vũ Dày 18–20cm) và DGD-TH-01 (Đệm Gấm Đỏ Phòng Cưới & Gấm Xám Lá Phong)',
+      ],
+      reason: 'Lọc bỏ 01 ảnh dính nét vẽ bút đỏ và 01 góc chụp trùng lồng thang nâng hàng, giữ lại 15 góc chụp sắc nét nhất.',
+    },
     {
       id: 'dup-lo-18-anh-typography-hd-ngoc-tuyen-everhome-rem-bat-2026',
       groupTitle: 'Lô 18 Ảnh Mới Tải Lên (Đã Chỉnh Sửa Phông Chữ Be Vietnam Pro Sắc Nét): Cửa Hàng Ngọc Tuyến, Đệm Lò Xo & Cao Su Everhome, Rèm Tổ Ong, Rèm Cuốn & Bạt Tự Cuốn',
@@ -238,16 +274,40 @@ export const DEDUPLICATION_SUMMARY = {
 
 export const MARKET_PRICE_SUMMARY_TABLE: MarketPriceSummaryRow[] = [
   {
+    id: 'mp-dem-lo-xo-tui-vikosan-3sao-5sao-vip',
+    productGroup: '1. Đệm Lò Xo Túi Độc Lập Vikosan 3 Sao · 5 Sao · VIP D\'luxe',
+    specification: 'Standard 3*22 (Dày 22cm) · Standard 5*22 (Dày 22cm) · VIP*30 (Dày 30cm)',
+    marketPrice: '4,98Tr – 12,90Tr',
+    storePrice: '3,48Tr – 8,99Tr',
+    warrantyAndService: 'Chiết khấu 30% từ bảng giá hãng Vikosan, bảo hành 7 năm',
+  },
+  {
     id: 'mp-chan-ga-goi-lua-tencel-alyda-lt28',
-    productGroup: '1. Bộ Chăn Ga Gối Cưới Lụa Tencel Alyda® 7 Món Thêu Hoàng Gia',
+    productGroup: '2. Bộ Chăn Ga Gối Cưới Lụa Tencel Alyda® 7 Món Thêu Hoàng Gia',
     specification: '1 Ga phủ + 1 Vỏ chăn có ruột + 4 Vỏ gối đầu + 1 Vỏ gối ôm (Đủ 18 mẫu thêu)',
     marketPrice: '3,20Tr – 4,20Tr / bộ',
     storePrice: '2,15Tr – 2,35Tr / bộ',
     warrantyAndService: 'Lụa Tencel thêu hoàng gia, tặng túi đựng & miễn phí giao',
   },
   {
+    id: 'mp-chan-ga-goi-lua-tencel-sky-silk',
+    productGroup: '3. Bộ Chăn Ga Gối Lụa Tencel Sky Silk 60s (Đủ 17 Mã Màu)',
+    specification: 'Trọn bộ 5 món Lụa Tencel thêu nổi Sky Silk (SKY1 – SKY362)',
+    marketPrice: '1,65Tr – 2,25Tr / bộ',
+    storePrice: '1,15Tr – 1,35Tr / bộ',
+    warrantyAndService: 'Mát lạnh tự nhiên, chống xù lông, đủ cỡ 1m6 / 1m8 / 2m2',
+  },
+  {
+    id: 'mp-set-ga-goi-tencel-eu-eumd-to-ong',
+    productGroup: '4. Set Ga Gối Lụa Tencel EU (EUMD) · Tổ Ong & Đũi Xước 5 Món',
+    specification: 'Set 3 món EUMD05–18 (390k) · Chần bông tổ ong (550k) · Đũi xước 5 món (950k)',
+    marketPrice: '580k – 1,45Tr / bộ',
+    storePrice: '390k – 950k / bộ',
+    warrantyAndService: 'Kèm túi khóa kéo TENCEL EU chính hãng, bo chun miễn phí',
+  },
+  {
     id: 'mp-chan-ga-goi-ren-cong-chua-han-quoc',
-    productGroup: '2. Bộ Chăn Ga Gối Chần Bông Phối Ren Công Chúa Hàn Quốc (Đủ 8 Màu)',
+    productGroup: '5. Bộ Chăn Ga Gối Chần Bông Phối Ren Công Chúa Hàn Quốc (Đủ 8 Màu)',
     specification: 'Ga phủ rủ ren hoa 2 tầng + Chăn chần + 4 Vỏ gối bèo nhún (Tím, Hồng, Xanh Cốm, Xám, Cam Đào...)',
     marketPrice: '1,95Tr – 2,65Tr / bộ',
     storePrice: '1,35Tr – 1,55Tr / bộ',
@@ -255,19 +315,11 @@ export const MARKET_PRICE_SUMMARY_TABLE: MarketPriceSummaryRow[] = [
   },
   {
     id: 'mp-chan-ga-goi-lua-tencel-dror-hoa-anh-dao',
-    productGroup: '2. Bộ Chăn Ga Gối Lụa Tencel Thêu Chữ D – Dror & Hoa Anh Đào (4 Màu)',
-    specification: 'Ga chần quả trám + Chăn chần lụa + Vỏ gối thêu chữ D & Hoa Anh Đào (Xanh Rêu, Hồng Đất, Đỏ, Xám)',
-    marketPrice: '2,25Tr – 2,95Tr / bộ',
-    storePrice: '1,45Tr – 1,65Tr / bộ',
-    warrantyAndService: 'Lụa Tencel 60s chần bông êm mát, thêu nổi chữ D sang trọng',
-  },
-  {
-    id: 'mp-chan-ga-goi-lua-tencel-sky-silk',
-    productGroup: '2. Bộ Chăn Ga Gối Lụa Tencel Sky Silk 60s (Đủ 17 Mã Màu)',
-    specification: 'Trọn bộ 5 món Lụa Tencel thêu nổi Sky Silk (SKY1 – SKY362)',
-    marketPrice: '1,65Tr – 2,25Tr / bộ',
-    storePrice: '1,15Tr – 1,35Tr / bộ',
-    warrantyAndService: 'Mát lạnh tự nhiên, chống xù lông, đủ cỡ 1m6 / 1m8 / 2m2',
+    productGroup: '6. Bộ Lụa Tencel Thêu Chữ D – Dror Hoa Anh Đào & Dream World Thêu Trúc',
+    specification: 'Ga chần quả trám + Chăn chần lụa + Vỏ gối thêu nổi (Xanh Rêu, Hồng Đất, Đỏ, Xám, Tím Than)',
+    marketPrice: '1,95Tr – 2,95Tr / bộ',
+    storePrice: '1,35Tr – 1,65Tr / bộ',
+    warrantyAndService: 'Lụa Tencel 60s chần bông êm mát, thêu nổi sắc nét',
   },
   {
     id: 'mp-dem-song-hong-back-essential',
@@ -490,6 +542,1112 @@ export function calculateCanopyOrderTotal(input: CanopyPricingInput): CanopyPric
 }
 
 export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
+  // ===========================================================================
+  // 00-PRICE-FILLED-2026. BỘ BÀI ĐĂNG MỚI NHẤT ĐÃ ĐIỀN ĐẦY ĐỦ BẢNG GIÁ THEO KÍCH THƯỚC:
+  //   1. DLX-VK-01: BẢNG GIÁ ĐỆM LÒ XO TÚI ĐỘC LẬP VIKOSAN STANDARD 3 SAO (3*22) · 5 SAO (5*22) & VIP D'LUXE (VIP*30)
+  //   2. CGL-EU-01: SET GA GỐI LỤA TENCEL EU (EUMD05–18), CHẦN BÔNG TỔ ONG & BỘ ĐŨI XƯỚC 5 MÓN (390K – 950K)
+  //   3. CGL-DW-01: BỘ CHĂN GA GỐI LỤA TENCEL DREAM WORLD THÊU NHÀNH TRÚC 6 MÀU (1.350.000Đ/BỘ)
+  // ===========================================================================
+  {
+    id: 'bang-gia-dem-lo-xo-tui-doc-lap-vikosan-3sao-5sao-vip-dluxe-dlxvk01',
+    code: 'DLX-VK-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Bảng Giá Đệm Lò Xo Túi Độc Lập Vikosan Chính Hãng (Bảo Hành 7 Năm): Dòng Standard 3 Sao (3*22 Dày 22cm) · Standard 5 Sao (5*22 Dày 22cm) & VIP 5 Sao D\'luxe (VIP*30 Dày 30cm)',
+    shortTitle: 'Bảng Giá Đệm Lò Xo Túi Vikosan 3 Sao · 5 Sao · VIP D\'luxe',
+    priceDisplay: '3.480.000đ – 8.990.000đ',
+    marketPriceRange: 'Giá niêm yết hãng Vikosan: 4.980.000đ – 12.900.000đ / tấm',
+    marketPriceNote: 'Đã điền đầy đủ bảng giá niêm yết nhà máy Vikosan và giá chiết khấu 30% tại Đại Lý Cấp 1 Tuyến Hoa cho cả 3 dòng Đệm Lò Xo Túi Độc Lập Vikosan (Standard 3*22 dày 22cm, Standard 5*22 dày 22cm, VIP***** D\'luxe dày 30cm) và Đệm Bông Ép Vikosan theo đúng 5 kích thước giường tiêu chuẩn.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: 'Vikosan Standard 3 Sao (3*22 · Dày 22cm): 1m6×2m: 4.450.000đ | 1m8×2m: 4.890.000đ',
+        marketPrice: '6.390.000đ – 6.990.000đ',
+        storePrice: '4.450.000đ – 4.890.000đ',
+        note: 'Cỡ 1m2×1m9: 3.480k (Hãng 4.980k) · 1m5×1m9: 4.050k · 2m0×2m2: 5.380k (Hãng 7.690k)',
+      },
+      {
+        sizeOrOption: 'Vikosan Standard 5 Sao (5*22 · Dày 22cm): 1m6×2m: 5.800.000đ | 1m8×2m: 6.150.000đ',
+        marketPrice: '8.290.000đ – 8.790.000đ',
+        storePrice: '5.800.000đ – 6.150.000đ',
+        note: 'Cỡ 1m2×1m9: 4.330k (Hãng 6.190k) · 1m5×1m9: 5.240k · 2m0×2m2: 6.600k (Hãng 9.450k)',
+      },
+      {
+        sizeOrOption: 'Vikosan VIP 5 Sao D\'luxe (VIP*30 · Dày 30cm): 1m6×2m: 6.660.000đ | 1m8×2m: 7.350.000đ',
+        marketPrice: '9.525.000đ – 10.500.000đ',
+        storePrice: '6.660.000đ – 7.350.000đ',
+        note: 'Cỡ 1m2×1m9: 6.080k · 1m5×1m9: 6.330k · 2m0×2m2: 8.990k (Giá hãng 12.900.000đ)',
+      },
+      {
+        sizeOrOption: 'Đệm Bông Ép Gấp 3 Vikosan Chính Hãng: 1m6×2m: 1.690.000đ | 1m8×2m: 1.890.000đ',
+        marketPrice: '2.450.000đ – 2.750.000đ',
+        storePrice: '1.690.000đ – 1.890.000đ',
+        note: 'Cỡ 1m2×1m9: 1.350k · 1m5×1m9: 1.550k · 2m0×2m2: 2.250k (Bảo hành 5 năm)',
+      },
+    ],
+    numericPrice: 4450000,
+    unitLabel: '1 tấm Đệm Lò Xo Túi Độc Lập Vikosan chính hãng (Chiết khấu 30% · Bảo hành 7 năm)',
+    standardDimensions: 'Đủ 5 cỡ: 120×190cm | 150×190cm | 160×200cm | 180×200cm | 200×220cm (Dày 22cm & 30cm)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/DLX_VK_01_bang_gia_dem_lo_xo_vikosan_hd.jpg',
+    secondaryImages: [
+      '/assets/aistudio/DLX_VK_02_vikosan_standard_3sao_5sao_hd.jpg',
+      '/assets/aistudio/DLX_VK_03_vikosan_vip_dluxe_30cm_hd.jpg',
+      '/assets/aistudio/IMG_5415_deebcd3c.JPG',
+      '/assets/aistudio/IMG_5416_0a1f5739.JPG',
+      '/assets/aistudio/IMG_5422_465eefd4.JPG',
+      '/assets/aistudio/IMG_5408_6fe9b9bd.JPG',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/DLX_VK_01_bang_gia_dem_lo_xo_vikosan_hd.jpg': {
+        badge: 'Ảnh 1/7 · Bảng Giá Tổng Hợp Đệm Lò Xo Túi Độc Lập Vikosan 3 Sao · 5 Sao · VIP D\'luxe',
+        caption: 'Điền sẵn giá chiết khấu 30% tại Tuyến Hoa: Standard 3 Sao (3,48Tr–4,89Tr), Standard 5 Sao (4,33Tr–6,15Tr) và VIP 5 Sao D\'luxe dày 30cm (6,33Tr–8,99Tr).',
+      },
+      '/assets/aistudio/DLX_VK_02_vikosan_standard_3sao_5sao_hd.jpg': {
+        badge: 'Ảnh 2/7 · Bảng Giá Chi Tiết Từng Cỡ: Vikosan Standard 3 Sao (3*22) & 5 Sao (5*22)',
+        caption: 'Đối chiếu trực tiếp Giá Hãng và Giá Tuyến Hoa cho 5 kích thước từ 120×190×22cm đến 200×220×22cm.',
+      },
+      '/assets/aistudio/DLX_VK_03_vikosan_vip_dluxe_30cm_hd.jpg': {
+        badge: 'Ảnh 3/7 · Bảng Giá Chi Tiết Vikosan VIP 5 Sao D\'luxe (Dày 30cm) & Đệm Bông Ép Vikosan',
+        caption: 'Bản thượng hạng 3 viền EuroTop dày 30cm (6.080.000đ – 8.990.000đ) và bảng giá Đệm Bông Ép Gấp 3 Vikosan (1.350.000đ – 2.250.000đ).',
+      },
+      '/assets/aistudio/IMG_5415_deebcd3c.JPG': {
+        badge: 'Ảnh 4/7 · Thực Tế Đệm Lò Xo Túi Độc Lập Standard 3 Sao (Dày 22cm)',
+        caption: 'Mặt đệm chần gấm trắng kháng khuẩn họa tiết lục giác, thành đệm bọc nỉ xám nâu chần múi dọc sang trọng.',
+      },
+      '/assets/aistudio/IMG_5416_0a1f5739.JPG': {
+        badge: 'Ảnh 5/7 · Thực Tế Đệm Lò Xo Túi Độc Lập Standard 5 Sao (Dày 22cm · Pillow Top)',
+        caption: 'Tích hợp lớp Pillow Top êm ái phía trên hệ lò xo túi độc lập mật độ cao, triệt tiêu hoàn toàn rung động khi người nằm cạnh xoay mình.',
+      },
+      '/assets/aistudio/IMG_5422_465eefd4.JPG': {
+        badge: 'Ảnh 6/7 · Thực Tế Đệm Lò Xo Túi VIP 5 Sao D\'luxe (VIP*30 Dày 30cm Thượng Hạng)',
+        caption: 'Thiết kế 3 viền hoàng gia bề thế dày 30cm kết hợp lớp EuroTop cao su và Foam đàn hồi kép chuẩn khách sạn 5 sao.',
+      },
+      '/assets/aistudio/IMG_5408_6fe9b9bd.JPG': {
+        badge: 'Ảnh 7/7 · Cận Cảnh Hệ Thống Lõi Lò Xo Túi Độc Lập & Kho Đệm Xuất Xưởng',
+        caption: 'Hàng nghìn con lò xo thép cacbon chống gỉ được bọc trong từng túi vải không dệt độc lập, bảo hành chính hãng 7 năm.',
+      },
+    },
+    highlightTag: 'Bảng Giá Điền Sẵn · Chiết Khấu 30% Vikosan',
+    summary:
+      'Bảng báo giá chính thức đã điền đầy đủ từng kích thước cho 3 dòng Đệm Lò Xo Túi Độc Lập Vikosan chính hãng (Bảo hành 7 năm): Standard 3 Sao (Mã 3*22 dày 22cm: từ 3.480.000đ), Standard 5 Sao (Mã 5*22 dày 22cm: từ 4.330.000đ) và VIP 5 Sao D\'luxe (Mã VIP*30 dày 30cm: từ 6.080.000đ) – Chiết khấu trực tiếp 30% tại Showroom Tuyến Hoa.',
+    visualAnnotations: [
+      {
+        label: '1. Bảng giá Vikosan Standard 3 Sao (Mã 3*22 – Dày 22cm – Bảo hành 7 năm)',
+        detail:
+          '120×190cm: 3.480.000đ (Giá hãng 4.980.000đ) | 150×190cm: 4.050.000đ (Hãng 5.790.000đ) | 160×200cm: 4.450.000đ (Hãng 6.390.000đ) | 180×200cm: 4.890.000đ (Hãng 6.990.000đ) | 200×220cm: 5.380.000đ (Hãng 7.690.000đ).',
+      },
+      {
+        label: '2. Bảng giá Vikosan Standard 5 Sao (Mã 5*22 – Dày 22cm – Bảo hành 7 năm)',
+        detail:
+          '120×190cm: 4.330.000đ (Giá hãng 6.190.000đ) | 150×190cm: 5.240.000đ (Hãng 7.490.000đ) | 160×200cm: 5.800.000đ (Hãng 8.290.000đ) | 180×200cm: 6.150.000đ (Hãng 8.790.000đ) | 200×220cm: 6.600.000đ (Hãng 9.450.000đ).',
+      },
+      {
+        label: '3. Bảng giá Vikosan VIP***** D\'luxe (Mã VIP*30 – Dày 30cm Thượng Hạng)',
+        detail:
+          '120×190cm: 6.080.000đ (Giá hãng 8.690.000đ) | 150×190cm: 6.330.000đ (Hãng 9.050.000đ) | 160×200cm: 6.660.000đ (Hãng 9.525.000đ) | 180×200cm: 7.350.000đ (Hãng 10.500.000đ) | 200×220cm: 8.990.000đ (Hãng 12.900.000đ).',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'DLX-VK-01 (Bảng Giá Đệm Lò Xo Túi Độc Lập Vikosan 3 Sao · 5 Sao · VIP D\'luxe)' },
+      { label: 'Giá Standard 3 Sao (22cm)', value: '1m2: 3,48Tr | 1m5: 4,05Tr | 1m6: 4,45Tr | 1m8: 4,89Tr | 2m2: 5,38Tr' },
+      { label: 'Giá Standard 5 Sao (22cm)', value: '1m2: 4,33Tr | 1m5: 5,24Tr | 1m6: 5,80Tr | 1m8: 6,15Tr | 2m2: 6,60Tr' },
+      { label: 'Giá VIP 5 Sao D\'luxe (30cm)', value: '1m2: 6,08Tr | 1m5: 6,33Tr | 1m6: 6,66Tr | 1m8: 7,35Tr | 2m2: 8,99Tr' },
+      { label: 'Bảo hành & Vận chuyển', value: 'Bảo hành chính hãng Vikosan 7 năm · Miễn phí giao tận giường' },
+    ],
+    articleParagraphs: [
+      'Đáp ứng nhu cầu tra cứu nhanh bảng giá chính xác theo từng kích thước giường của quý khách hàng, Đại Lý Cấp 1 Chăn Ga Gối Đệm Tuyến Hoa công bố bảng giá niêm yết nhà máy Vikosan đối chiếu trực tiếp với mức giá ưu đãi chiết khấu 30% tại kho cho cả 3 dòng Đệm Lò Xo Túi Độc Lập Vikosan (Bảo hành chính hãng 7 năm).',
+      'Toàn bộ các dòng Vikosan Standard 3 Sao (dày 22cm), Standard 5 Sao (dày 22cm) và VIP 5 Sao D\'luxe (dày 30cm) đều sử dụng hệ thống lò xo túi độc lập kháng khuẩn chống rung lắc, có thể đóng gói nguyên tấm hoặc hút chân không cuộn gọn tiện lợi để vận chuyển lên cầu thang tầng cao.'
+    ],
+    facebookPostCopy:
+      '🛏️👑 [BẢNG GIÁ NIÊM YẾT & CHIẾT KHẤU 30%] ĐỆM LÒ XO TÚI ĐỘC LẬP VIKOSAN CHÍNH HÃNG – BẢO HÀNH 7 NĂM! ✨\n' +
+      '--------------------------------------------\n' +
+      '🔥 Showroom Tuyến Hoa lên sóng bảng giá điền sẵn từng kích thước cho 3 dòng Đệm Lò Xo Túi Độc Lập Vikosan (Đã giảm trực tiếp 30% so với giá hãng):\n\n' +
+      '⭐ 1. DÒNG VIKOSAN STANDARD 3 SAO (Mã 3*22 – Dày 22cm):\n' +
+      '   • Cỡ 120 × 190cm: 3.480.000đ (Giá hãng: 4.980.000đ)\n' +
+      '   • Cỡ 150 × 190cm: 4.050.000đ (Giá hãng: 5.790.000đ)\n' +
+      '   • Cỡ 160 × 200cm: 4.450.000đ (Giá hãng: 6.390.000đ)\n' +
+      '   • Cỡ 180 × 200cm: 4.890.000đ (Giá hãng: 6.990.000đ)\n' +
+      '   • Cỡ 200 × 220cm: 5.380.000đ (Giá hãng: 7.690.000đ)\n\n' +
+      '⭐⭐ 2. DÒNG VIKOSAN STANDARD 5 SAO (Mã 5*22 – Dày 22cm):\n' +
+      '   • Cỡ 120 × 190cm: 4.330.000đ (Giá hãng: 6.190.000đ)\n' +
+      '   • Cỡ 150 × 190cm: 5.240.000đ (Giá hãng: 7.490.000đ)\n' +
+      '   • Cỡ 160 × 200cm: 5.800.000đ (Giá hãng: 8.290.000đ)\n' +
+      '   • Cỡ 180 × 200cm: 6.150.000đ (Giá hãng: 8.790.000đ)\n' +
+      '   • Cỡ 200 × 220cm: 6.600.000đ (Giá hãng: 9.450.000đ)\n\n' +
+      '👑 3. DÒNG VIKOSAN VIP 5 SAO D\'LUXE (Mã VIP*30 – Dày 30cm Thượng Hạng):\n' +
+      '   • Cỡ 120 × 190cm: 6.080.000đ (Giá hãng: 8.690.000đ)\n' +
+      '   • Cỡ 150 × 190cm: 6.330.000đ (Giá hãng: 9.050.000đ)\n' +
+      '   • Cỡ 160 × 200cm: 6.660.000đ (Giá hãng: 9.525.000đ)\n' +
+      '   • Cỡ 180 × 200cm: 7.350.000đ (Giá hãng: 10.500.000đ)\n' +
+      '   • Cỡ 200 × 220cm: 8.990.000đ (Giá hãng: 12.900.000đ)\n' +
+      '--------------------------------------------\n' +
+      '🚛 Miễn phí xe bán tải Tuyến Hoa giao đệm tận giường – Bảo hành chính hãng 7 năm!\n' +
+      '📞 Gọi/Zalo đặt hàng: 0344.727.528 (Showroom Tuyến Hoa – Chợ Cháy, Ứng Hòa, Hà Nội)',
+  },
+  {
+    id: 'set-ga-goi-lua-tencel-eu-eumd-chan-bong-to-ong-dui-xuoc-cgleu01',
+    code: 'CGL-EU-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Bộ Sưu Tập Lụa Tencel EU Chính Hãng: Set Ga Gối Tencel EU (Mã EUMD05 · 06 · 09 · 10 · 11 · 18 Kèm Túi Khóa Kéo), Set Ga Gối Chần Bông Tổ Ong 4 Màu & Bộ Đũi Xước 5 Món Kèm Chăn Hè',
+    shortTitle: 'Set Ga Gối Lụa Tencel EU (EUMD), Tổ Ong & Đũi Xước (390k–950k)',
+    priceDisplay: '390.000đ – 950.000đ / bộ',
+    marketPriceRange: 'Giá thị trường: 580.000đ – 1.450.000đ / bộ',
+    marketPriceNote: 'Đã điền giá chi tiết cho 03 dòng chăn ga gối tiện dụng bán chạy nhất tại Showroom Tuyến Hoa: (1) Set Ga Gối Lụa Tencel EU trơn thêu viền kèm túi khóa kéo TENCEL EU (Mã EUMD05, EUMD06, EUMD09, EUMD10, EUMD11, EUMD18) giá 390.000đ/set; (2) Set Ga Gối Chần Bông Mặt Tổ Ong 4 màu giá 550.000đ/set; (3) Bộ Tencel EU Đũi Xước 5 Món kèm chăn hè chần bông giá 950.000đ/bộ.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Set Ga Gối Lụa Tencel EU (Mã EUMD05 · 06 · 09 · 10 · 11 · 18): 1m6 & 1m8',
+        marketPrice: '580.000đ / set',
+        storePrice: '390.000đ / set (Cỡ 2m2: 450.000đ)',
+        note: 'Gồm 01 ga bo chun + 02 vỏ gối nằm đồng màu đính tag TENCEL EU kèm túi khóa kéo',
+      },
+      {
+        sizeOrOption: '2. Set Ga Gối Chần Bông Mặt Tổ Ong Tencel (Xanh Da Trời · Xanh Dương · Hồng · Xám)',
+        marketPrice: '790.000đ / set',
+        storePrice: '550.000đ / set (Cỡ 2m2: 620.000đ)',
+        note: 'Mặt ga và vỏ gối chần bông họa tiết tổ ong dày dặn, êm lưng, không xô lệch',
+      },
+      {
+        sizeOrOption: '3. Bộ Tencel EU Đũi Xước 5 Món Kèm Chăn Hè Chần Bông (Hồng · Xanh Rêu · Biển · Ghi)',
+        marketPrice: '1.350.000đ – 1.450.000đ / bộ',
+        storePrice: '950.000đ / bộ (Cỡ 2m2: 1.050.000đ)',
+        note: 'Trọn bộ 5 món: 01 Ga bo chun + 01 Chăn hè thu chần bông + 02 Vỏ gối đầu + 01 Vỏ gối ôm',
+      },
+    ],
+    numericPrice: 390000,
+    unitLabel: '1 set Ga Gối Lụa Tencel EU chính hãng kèm túi khóa kéo',
+    standardDimensions: 'Đủ cỡ đệm 1,6m × 2,0m | 1,8m × 2,0m | 2,0m × 2,2m (Chun bo cao cấp ôm đệm dày tới 25cm)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/CGL_EU_01_tencel_eu_eumd_bang_gia_hd.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792915211011_4373635352308930219_4373635352308930219_d1e3997b7240d7fb7f5069950733f5cc_99031ef0.jpg',
+      '/assets/aistudio/1792915211346_4373635352308930219_4373635352308930219_35c17f5e89823d1d8ffeae5e4f272b12_233b5411.jpg',
+      '/assets/aistudio/1792915211397_4373635352308930219_4373635352308930219_b2fed4ab02f536dcc537698d21f4e6af_fde3fc32.jpg',
+      '/assets/aistudio/1792915211242_4373635352308930219_4373635352308930219_cdbc2ca46348ef830d619821cacb6431_2cabba17.jpg',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/CGL_EU_01_tencel_eu_eumd_bang_gia_hd.jpg': {
+        badge: 'Ảnh 1/5 · Bảng Giá Điền Sẵn: Set Ga Gối Tencel EU (390k), Tổ Ong (550k) & Đũi Xước (950k)',
+        caption: 'Tổng hợp 3 phân khúc ga gối Tencel EU bán chạy nhất kèm đơn giá rõ ràng cho cỡ 1m6/1m8 và cỡ đại 2m2.',
+      },
+      '/assets/aistudio/1792915211011_4373635352308930219_4373635352308930219_d1e3997b7240d7fb7f5069950733f5cc_99031ef0.jpg': {
+        badge: 'Ảnh 2/5 · Tông Xanh Dương Mát Lạnh (EUMD05 / EUMD10 – Giá 390.000đ/set)',
+        caption: 'Chất lụa Tencel EU mềm mát như nước, bo chun chắc chắn ôm khít thành đệm không bị bung góc.',
+      },
+      '/assets/aistudio/1792915211346_4373635352308930219_4373635352308930219_35c17f5e89823d1d8ffeae5e4f272b12_233b5411.jpg': {
+        badge: 'Ảnh 3/5 · Tông Xanh Da Trời Băng (EUMD18 / Tổ Ong – Giá 390k – 550k/set)',
+        caption: 'Màu xanh băng dịu mắt giúp hạ nhiệt phòng ngủ mùa hè, giặt máy nhanh khô và không xù lông.',
+      },
+      '/assets/aistudio/1792915211397_4373635352308930219_4373635352308930219_b2fed4ab02f536dcc537698d21f4e6af_fde3fc32.jpg': {
+        badge: 'Ảnh 4/5 · Tông Xám Ghi Hiện Đại (EUMD09 / Bộ Đũi Xước 5 Món – Giá 390k – 950k)',
+        caption: 'Gam xám ghi sạch sang phù hợp mọi gia đình có trẻ nhỏ, có cả bản ga gối lẻ và bộ 5 món kèm chăn hè.',
+      },
+      '/assets/aistudio/1792915211242_4373635352308930219_4373635352308930219_cdbc2ca46348ef830d619821cacb6431_2cabba17.jpg': {
+        badge: 'Ảnh 5/5 · Tông Trắng Kem Khách Sạn 5 Sao (EUMD06 / EUMD11)',
+        caption: 'Đóng trong túi khóa kéo nhựa trong TENCEL EU chính hãng, thích hợp mua thay đổi hàng tuần hoặc làm quà tặng.',
+      },
+    },
+    highlightTag: 'Bảng Giá Điền Sẵn · Tencel EU 390k – 950k',
+    summary:
+      'Trọn bộ bảng giá điền sẵn cho dòng Ga Gối Lụa Tencel EU chính hãng (Mã EUMD05 · EUMD06 · EUMD09 · EUMD10 · EUMD11 · EUMD18 kèm túi khóa kéo giá chỉ 390.000đ/set), Set Ga Gối Chần Bông Mặt Tổ Ong 4 màu (550.000đ/set) và Bộ Tencel EU Đũi Xước 5 Món kèm chăn hè chần bông (950.000đ/bộ).',
+    visualAnnotations: [
+      {
+        label: '1. Set Ga Gối Lụa Tencel EU kèm túi khóa kéo (Mã EUMD05 · 06 · 09 · 10 · 11 · 18): 390.000đ/set',
+        detail:
+          'Bao gồm 01 ga bo chun theo kích thước đệm + 02 vỏ gối nằm viền khung đôi đính tag vải "TENCEL EU" chính hãng; cỡ đại 2m0×2m2 giá 450.000đ/set.',
+      },
+      {
+        label: '2. Set Ga Gối Chần Bông Mặt Tổ Ong Tencel (4 Màu: Xanh Da Trời, Xanh Dương, Hồng, Xám): 550.000đ/set',
+        detail:
+          'Toàn bộ bề mặt ga và đôi vỏ gối được chần bông gòn mỏng họa tiết lục giác tổ ong êm ái, giữ mặt ga luôn căng phẳng trên đệm; cỡ 2m0×2m2 giá 620.000đ/set.',
+      },
+      {
+        label: '3. Bộ Tencel EU Đũi Xước 5 Món Kèm Chăn Hè Chần Bông: 950.000đ/bộ',
+        detail:
+          'Trọn bộ 5 món đồng màu (Hồng Đậm, Xanh Rêu, Xanh Biển Đậm, Xám Ghi) gồm ga bo chun, chăn hè chần bông 2m×2m2, 2 vỏ gối nằm và 1 vỏ gối ôm; cỡ 2m2 giá 1.050.000đ/bộ.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'CGL-EU-01 (Set Ga Gối Tencel EU EUMD · Chần Bông Tổ Ong · Đũi Xước 5 Món)' },
+      { label: 'Giá Set Tencel EU (EUMD)', value: '390.000đ / set (1m6 & 1m8) | 450.000đ / set (Cỡ đại 2m0×2m2)' },
+      { label: 'Giá Set Chần Bông Tổ Ong', value: '550.000đ / set (1m6 & 1m8) | 620.000đ / set (Cỡ đại 2m0×2m2)' },
+      { label: 'Giá Bộ Đũi Xước 5 Món', value: '950.000đ / bộ 5 món có chăn hè (1m6 & 1m8) | 1.050.000đ (2m0×2m2)' },
+      { label: 'Ưu đãi vận chuyển', value: 'Mua từ 02 set trở lên được miễn phí giao hàng tận nhà' },
+    ],
+    articleParagraphs: [
+      'Bên cạnh các bộ chăn ga cưới 7 món cầu kỳ, nhu cầu mua các Set Ga Gối Lụa Tencel EU (gồm 1 ga bo chun + 2 vỏ gối nằm) để thay đổi giặt giũ thường xuyên trong mùa hè thu là vô cùng lớn. Showroom Tuyến Hoa nhập sẵn đầy đủ các mã màu EUMD05 (Xanh Dương), EUMD06 (Hồng Đất), EUMD09 (Xám Ghi), EUMD10 (Xanh Ngọc), EUMD11 (Kem Vàng) và EUMD18 (Xanh Băng) đóng trong túi khóa kéo TENCEL EU chính hãng với giá chỉ 390.000đ/set.',
+      'Nếu quý khách thích mặt ga dày dặn không xô lệch có thể chọn dòng Set Ga Gối Chần Bông Mặt Tổ Ong (550.000đ/set) hoặc chọn trọn bộ 5 món Tencel EU Đũi Xước kèm sẵn chăn hè chần bông (950.000đ/bộ).'
+    ],
+    facebookPostCopy:
+      '🌿✨ [BẢNG GIÁ ĐIỀN SẴN] SET GA GỐI LỤA TENCEL EU (EUMD), GA GỐI CHẦN BÔNG TỔ ONG & BỘ ĐŨI XƯỚC 5 MÓN – CHỈ TỪ 390K! 🛌\n' +
+      '--------------------------------------------\n' +
+      '🔥 Sắm ga gối thay đổi hàng tuần mát lịm lưng với bảng giá tận gốc tại Showroom Tuyến Hoa:\n\n' +
+      '1️⃣ SET GA GỐI LỤA TENCEL EU KÈM TÚI KHÓA KÉO (Mã EUMD05 · 06 · 09 · 10 · 11 · 18):\n' +
+      '   👉 Cỡ 1m6×2m & 1m8×2m: Chỉ 390.000đ / set (1 ga bo chun + 2 vỏ gối nằm)\n' +
+      '   👉 Cỡ đại 2m0×2m2: Chỉ 450.000đ / set\n\n' +
+      '2️⃣ SET GA GỐI CHẦN BÔNG MẶT TỔ ONG TENCEL (Xanh Da Trời · Xanh Dương · Hồng · Xám):\n' +
+      '   👉 Cỡ 1m6×2m & 1m8×2m: Chỉ 550.000đ / set (Mặt chần bông tổ ong êm phẳng)\n' +
+      '   👉 Cỡ đại 2m0×2m2: Chỉ 620.000đ / set\n\n' +
+      '3️⃣ BỘ TENCEL EU ĐŨI XƯỚC 5 MÓN KÈM CHĂN HÈ CHẦN BÔNG (Hồng · Xanh Rêu · Biển · Ghi):\n' +
+      '   👉 Cỡ 1m6×2m & 1m8×2m: Chỉ 950.000đ / bộ 5 món\n' +
+      '   👉 Cỡ đại 2m0×2m2: Chỉ 1.050.000đ / bộ 5 món\n' +
+      '--------------------------------------------\n' +
+      '🎁 Mua từ 02 set miễn phí giao hàng tận nơi – Kiểm tra chất lụa mát mịn mới thanh toán!\n' +
+      '📞 Gọi/Zalo chốt mã màu: 0344.727.528 (Showroom Tuyến Hoa)',
+  },
+  {
+    id: 'bo-chan-ga-goi-lua-tencel-dream-world-theu-nhanh-truc-6-mau-cgldw01',
+    code: 'CGL-DW-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Bộ Chăn Ga Gối Lụa Tencel Dream World Thêu Nhành Trúc Thanh Khiết & Khung Viền Đôi (Đủ 06 Màu: Xanh Rêu · Xanh Tím Than · Đỏ Đô · Xám Ghi · Xanh Biển · Hồng Đất)',
+    shortTitle: 'Bộ Chăn Ga Lụa Tencel Dream World Thêu Trúc (Đủ 6 Màu)',
+    priceDisplay: '1.350.000đ / bộ',
+    marketPriceRange: 'Giá thị trường: 1.950.000đ – 2.450.000đ / bộ',
+    marketPriceNote: 'Đã điền giá ưu đãi tại Showroom Tuyến Hoa (1.350.000đ/bộ cho giường 1m6 & 1m8; 1.490.000đ/bộ cho giường đại 2m0×2m2) cho dòng Chăn Ga Gối Lụa Tencel Dream World chần bông thêu nổi Nhành Trúc Thanh Khiết: Đủ 6 màu phong thủy.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Trọn Bộ Lụa Tencel Dream World Thêu Nhành Trúc (Giường 1,6m×2,0m & 1,8m×2,0m)',
+        marketPrice: '1.950.000đ – 2.150.000đ / bộ',
+        storePrice: '1.350.000đ / bộ',
+        note: 'Đủ 6 màu: Xanh Rêu · Xanh Tím Than · Đỏ Đô · Xám Ghi · Xanh Biển · Hồng Đất',
+      },
+      {
+        sizeOrOption: '2. Trọn Bộ Lụa Tencel Dream World Thêu Nhành Trúc (Giường Đại 2,0m × 2,2m)',
+        marketPrice: '2.250.000đ – 2.450.000đ / bộ',
+        storePrice: '1.490.000đ / bộ',
+        note: 'Gồm: 01 Ga chần bông (phủ hoặc bo chun) + 01 Chăn chần lụa Tencel + 02 Vỏ gối đầu + 01 Vỏ gối ôm',
+      },
+      {
+        sizeOrOption: '3. Mua Combo 02 Bộ Dream World Hoặc Mua Kèm Đệm Tại Tuyến Hoa',
+        marketPrice: '3.900.000đ / 2 bộ',
+        storePrice: '2.550.000đ / 2 bộ (Tiết kiệm 150.000đ)',
+        note: 'Tặng túi đựng cao cấp & miễn phí giao tận nhà khu vực Ứng Hòa – Hà Nội',
+      },
+    ],
+    numericPrice: 1350000,
+    unitLabel: '1 bộ Chăn Ga Gối Lụa Tencel Dream World Thêu Nhành Trúc (Đủ 6 màu)',
+    standardDimensions: 'Đủ cỡ giường 1,6m × 2,0m | 1,8m × 2,0m | 2,0m × 2,2m (6 màu phong thủy)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/CGL_DW_01_dream_world_theu_truc_bang_gia_hd.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792915265308_4373635352308930219_4373635352308930219_b56e4b9672559f5c6e88ef6004c1b545.jpg',
+      '/assets/aistudio/1792915265363_4373635352308930219_4373635352308930219_78b0d21996bd9d26062f5d73560dcf8b.jpg',
+      '/assets/aistudio/1792915265337_4373635352308930219_4373635352308930219_d8688e0d29240a931b6c455495632f75.jpg',
+      '/assets/aistudio/1792915265388_4373635352308930219_4373635352308930219_001d049ce5ae17faba67925ee554de97.jpg',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/CGL_DW_01_dream_world_theu_truc_bang_gia_hd.jpg': {
+        badge: 'Ảnh 1/5 · Bảng Giá Điền Sẵn Bộ Chăn Ga Gối Lụa Tencel Dream World Thêu Trúc (1.350.000đ)',
+        caption: 'Tổng hợp bảng giá 6 gam màu phong thủy thêu nhành trúc & khung viền đôi sang trọng tại Showroom Tuyến Hoa.',
+      },
+      '/assets/aistudio/1792915265308_4373635352308930219_4373635352308930219_b56e4b9672559f5c6e88ef6004c1b545.jpg': {
+        badge: 'Ảnh 2/5 · Tông Xanh Rêu Trúc Lâm & Xanh Tím Than (Giá 1.350.000đ/bộ)',
+        caption: 'Nền lụa Tencel xanh mát rượi kết hợp nhành lá thanh mảnh thêu chỉ tơ trắng bạc nổi bật.',
+      },
+      '/assets/aistudio/1792915265363_4373635352308930219_4373635352308930219_78b0d21996bd9d26062f5d73560dcf8b.jpg': {
+        badge: 'Ảnh 3/5 · Tông Đỏ Đô Hỷ Sự Phòng Cưới (Giá 1.350.000đ/bộ)',
+        caption: 'Gam đỏ đô trầm ấm sang trọng, thêu khung viền đôi và họa tiết lá trúc may mắn cho phòng tân hôn.',
+      },
+      '/assets/aistudio/1792915265337_4373635352308930219_4373635352308930219_d8688e0d29240a931b6c455495632f75.jpg': {
+        badge: 'Ảnh 4/5 · Tông Hồng Đất Pastel Thanh Lịch (Giá 1.350.000đ/bộ)',
+        caption: 'Sắc hồng đất dịu dàng, tôn sáng không gian nội thất gỗ và giường bọc nệm.',
+      },
+      '/assets/aistudio/1792915265388_4373635352308930219_4373635352308930219_001d049ce5ae17faba67925ee554de97.jpg': {
+        badge: 'Ảnh 5/5 · Tông Xám Ghi Chì Hiện Đại (Giá 1.350.000đ/bộ)',
+        caption: 'Chăn và diềm ga chần bông quả trám tỉ mỉ, sạch sẽ và bền màu vượt thời gian.',
+      },
+    },
+    highlightTag: 'Bảng Giá Điền Sẵn · Dream World Thêu Trúc (6 Màu)',
+    summary:
+      'Bộ Chăn Ga Gối Lụa Tencel Dream World thêu nổi Nhành Trúc Thanh Khiết và khung viền đôi trang nhã: Đầy đủ 06 màu sắc phong thủy (Xanh Rêu, Xanh Tím Than, Đỏ Đô, Xám Ghi, Xanh Biển, Hồng Đất) với giá niêm yết tại Showroom Tuyến Hoa chỉ 1.350.000đ/bộ (cỡ đại 2m0×2m2 giá 1.490.000đ/bộ).',
+    visualAnnotations: [
+      {
+        label: 'Họa tiết thêu Nhành Trúc Thanh Khiết & Logo "Dream World" sắc sảo',
+        detail:
+          'Biểu tượng trúc quân tử thanh cao mang lại cảm giác bình yên, thư thái và giấc ngủ sâu sau ngày dài làm việc.',
+      },
+      {
+        label: 'Bảng giá niêm yết rõ ràng theo kích thước giường',
+        detail:
+          'Giường 1,6m × 2,0m và 1,8m × 2,0m đồng giá 1.350.000đ/bộ; giường đại 2,0m × 2,2m giá 1.490.000đ/bộ (tiết kiệm 600.000đ so với giá thị trường).',
+      },
+      {
+        label: 'Đủ 06 gam màu dễ phối nội thất: Xanh Rêu · Tím Than · Đỏ Đô · Xám Ghi · Xanh Biển · Hồng Đất',
+        detail:
+          'Mặt lụa Tencel 60s chần bông êm mịn, không tích điện mùa đông và mát mẻ vào mùa hè.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'CGL-DW-01 (Bộ Chăn Ga Gối Lụa Tencel Dream World Thêu Nhành Trúc)' },
+      { label: 'Bảng 06 màu có sẵn', value: 'Xanh Rêu · Xanh Tím Than · Đỏ Đô · Xám Ghi · Xanh Biển · Hồng Đất' },
+      { label: 'Giá cỡ 1m6×2m & 1m8×2m', value: '1.350.000đ / bộ (Giá thị trường: 1.950.000đ / bộ)' },
+      { label: 'Giá cỡ đại 2m0×2m2', value: '1.490.000đ / bộ (Giá thị trường: 2.250.000đ / bộ)' },
+      { label: 'Bảo hành & Giao hàng', value: 'Cam kết không xù lông, không phai màu · Giao hàng tận nhà' },
+    ],
+    articleParagraphs: [
+      'Mẫu Chăn Ga Gối Lụa Tencel Dream World Thêu Nhành Trúc (Mã CGL-DW-01) chinh phục khách hàng nhờ phong cách thiết kế Á Đông thanh lịch: trên nền lụa Tencel bóng mượt là khung viền đôi thêu chỉ ánh kim cùng những nhành trúc vươn mình mềm mại.',
+      'Showroom Tuyến Hoa đã cập nhật đầy đủ bảng giá điền sẵn cho cả 6 tông màu (Xanh Rêu, Xanh Tím Than, Đỏ Đô, Xám Ghi, Xanh Biển, Hồng Đất): chỉ 1.350.000đ/bộ cho giường 1m6 & 1m8 và 1.490.000đ/bộ cho giường đại 2m0×2m2.'
+    ],
+    facebookPostCopy:
+      '🎋✨ [BẢNG GIÁ ĐIỀN SẴN] BỘ CHĂN GA GỐI LỤA TENCEL DREAM WORLD THÊU NHÀNH TRÚC THANH KHIẾT – ĐỦ 06 MÀU SANG TRỌNG! 🛌\n' +
+      '💰 GIÁ THỊ TRƯỜNG: 1.950.000đ – 2.450.000đ / bộ\n' +
+      '🔥 GIÁ ƯU ĐÃI TẠI SHOWROOM TUYẾN HOA:\n' +
+      '   👉 Cỡ giường 1,6m × 2,0m & 1,8m × 2,0m: Chỉ 1.350.000đ / bộ\n' +
+      '   👉 Cỡ giường đại 2,0m × 2,2m: Chỉ 1.490.000đ / bộ\n' +
+      '--------------------------------------------\n' +
+      '🎨 ĐỦ 06 GAM MÀU PHONG THỦY ĐẸP MÊ HỒN:\n' +
+      '   🌿 1. Xanh Rêu Trúc Lâm thanh mát\n' +
+      '   🌌 2. Xanh Tím Than Royal quyền quý\n' +
+      '   🍷 3. Đỏ Đô Hỷ Sự ấm áp phòng cưới\n' +
+      '   🩶 4. Xám Ghi Chì hiện đại, sạch sang\n' +
+      '   🌊 5. Xanh Biển Đại Dương dịu mắt\n' +
+      '   🌷 6. Hồng Đất Pastel ngọt ngào\n' +
+      '✅ Chất Lụa Tencel chần bông êm mịn, thêu nổi nhành trúc & logo Dream World sắc nét.\n' +
+      '📞 Gọi/Zalo chốt màu giao ngay: 0344.727.528 (Showroom Tuyến Hoa)!',
+  },
+  // ===========================================================================
+  // 00-ULTRA-TOP-2026. BỘ BÀI ĐĂNG MỚI NHẤT VỪA CHỈNH SỬA HD & LÊN BÀI:
+  //   1. MT-TH-01: BỘ SƯU TẬP 21 MẪU MÀNH TRE TRÚC PHÒNG THỜ GIA TIÊN & PHÒNG TRÀ NGHỆ THUẬT (ĐÃ XÓA SẠCH WATERMARK)
+  //   2. KXD-TH-01: TỔNG KHO ĐỆM CAO SU NON AMERICAN, KING SLEEP, CUỘN VẢI GẤM XÁM & PHÔI ĐỆM ÉP NHIỆT
+  //   3. DKC-TH-01: ĐỆM BÔNG TINH KHIẾT MẶT TRẦN KIM CƯƠNG (GOOD LUCK, LÁ TRÚC, TỔ ONG) & KIM CƯƠNG PLAZA AIRY
+  //   4. DLV-TH-01: ĐỆM CAO SU NON & BÔNG ÉP GẤP 2 CHẦN MÚI TỔ ONG THÊU LÔNG VŨ TRẮNG DÀY 18–20CM
+  //   5. DGD-TH-01: ĐỆM BÔNG ÉP GẤM ĐỎ HOÀNG GIA (PHÒNG CƯỚI) & GẤM XÁM LÁ PHONG ĐÓNG TÚI KIM CƯƠNG
+  //   6. DVC-TH-01: ĐỆM CAO CẤP TH VICUNA LUXURY SLEEP CHUẨN 5 SAO BỌC GÓC DA THÊU KIM CƯƠNG
+  //   7. DCR-TH-01: ĐỆM GẤP 2 CHẦN MÚI KẺ CARO THÀNH XÁM GHI & KEM SÁNG DÀY 18CM
+  // ===========================================================================
+  {
+    id: 'manh-truc-nghe-thuat-tranh-dong-que-biet-thu-3-tang-mt01',
+    code: 'MT-TH-01',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Showroom & Video',
+    title: 'Bộ Sưu Tập 21 Mẫu Mành Tre Trúc Phòng Thờ Gia Tiên (Lưỡng Long Chầu Thọ · Chữ Hiếu · Vạn Cổ Anh Linh · Hoa Sen Vàng) & Mành Trúc Nghệ Thuật Phòng Trà – Phòng Khách (Liên Hoa Cửu Ngư · Tùng Hạc · Hoa Mẫu Đơn)',
+    shortTitle: '21 Mẫu Mành Tre Trúc Phòng Thờ & Phòng Trà (260k–320k/m²)',
+    priceDisplay: '260.000đ – 320.000đ/m²',
+    marketPriceRange: 'Giá thị trường: 380.0000đ – 520.000đ / m²',
+    marketPriceNote: 'Đã chỉnh sửa hậu kỳ xóa sạch 100% chữ chìm watermark trên cả 21 mẫu Mành Tre Trúc vừa tải lên và đóng khung Typography HD Be Vietnam Pro sắc nét: Đầy đủ 07 mẫu Mành Tre Trúc Che Bàn Thờ Gia Tiên (Lưỡng Long Chầu Chữ Thọ, Vạn Cổ Anh Linh – Âm Siêu Dương Thái, Tổ Tiên Công Đức, Chữ Hiếu Hoa Sen Vàng, Bạch Liên Hoa) và 14 mẫu Mành Trúc Vẽ Tranh Thủy Mặc Phòng Trà – Phòng Khách – Biệt Thự (Liên Hoa Cửu Ngư, Tùng Hạc Diên Niên, Hoa Mẫu Đơn Phú Quý, Đèn Lồng Hoa Đào, Hoa Mai Đỏ, Sâm Ngọc Linh).',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Mành Tre Trúc Nghệ Thuật Phòng Trà & Phòng Khách (Liên Hoa Cửu Ngư, Hoa Mai Đỏ, Đèn Lồng, Mẫu Đơn, Sơn Thủy Tùng Hạc)',
+        marketPrice: '380.000đ – 420.000đ / m²',
+        storePrice: '260.000đ – 280.000đ / m²',
+        note: 'Nan trúc cật tự nhiên xử lý chống mối mọt, kèm con lăn ròng rọc dây kéo lụa êm nhẹ',
+      },
+      {
+        sizeOrOption: '2. Mành Tre Trúc Phong Thủy Phòng Thờ Gia Tiên (Lưỡng Long Chầu Thọ Nhũ Vàng, Chữ Hiếu Hoa Sen Vàng, Hoa Sen Khắc Nổi)',
+        marketPrice: '450.000đ – 480.000đ / m²',
+        storePrice: '300.000đ – 320.000đ / m²',
+        note: 'Tông nâu cánh gián / đỏ trầm trang nghiêm, cản gió lùa & ánh nắng chiếu trực diện bát hương',
+      },
+      {
+        sizeOrOption: '3. Bộ 3 Tấm Mành Trúc Vách Ngăn Gian Thờ Cổ Truyền ("Vạn Cổ Anh Linh – Âm Siêu Dương Thái", "Tổ Tiên Công Đức", Bạch Liên Hoa & Viền Triện)',
+        marketPrice: '480.000đ – 550.000đ / m²',
+        storePrice: '320.000đ – 360.000đ / m²',
+        note: 'Ghép 3 bức tranh liền mạch theo kích thước gian thờ gỗ, miễn phí đo đạc & lắp đặt tận nhà',
+      },
+    ],
+    numericPrice: 260000,
+    unitLabel: '1 m² hoàn thiện cả bộ dây kéo ròng rọc & công lắp đặt',
+    standardDimensions: 'Nhận đặt làm theo mọi kích thước cửa sổ, vách phòng trà & gian thờ (Rộng 0,8m – 4,5m × Cao 1,2m – 3,5m)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/MT_PT_01_manh_truc_phong_tho_hd.jpg',
+    secondaryImages: [
+      '/assets/aistudio/MT_TH_01_manh_truc_nghe_thuat_hd.jpg',
+      '/assets/aistudio/MT_PT_01_luong_long_chau_tho_hd.jpg',
+      '/assets/aistudio/MT_PT_01_van_co_anh_linh_sen_trang_hd.jpg',
+      '/assets/aistudio/MT_PT_01_chu_hieu_sen_vang_hd.jpg',
+      '/assets/aistudio/MT_TH_01_lien_hoa_cuu_ngu_hd.jpg',
+      '/assets/aistudio/MT_TH_01_son_thuy_tung_hac_binh_an_hd.jpg',
+      '/assets/aistudio/MT_TH_01_hoa_mau_don_den_long_hd.jpg',
+      '/assets/aistudio/IMG_9290_f6c3666b.JPG',
+      '/assets/aistudio/IMG_9291_36ef56a4.JPG',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/MT_PT_01_manh_truc_phong_tho_hd.jpg': {
+        badge: 'Ảnh 1/10 · Tổng Hợp Mành Tre Trúc Phòng Thờ Gia Tiên (Đã Xóa Sạch Watermark)',
+        caption: 'Bố cục Typography HD Be Vietnam Pro sắc nét: Quy tụ 07 mẫu Mành Tre Trúc Phòng Thờ (Lưỡng Long Chầu Thọ, Vạn Cổ Anh Linh – Âm Siêu Dương Thái, Tổ Tiên Công Đức & Hoa Sen Chữ Hiếu).',
+      },
+      '/assets/aistudio/MT_TH_01_manh_truc_nghe_thuat_hd.jpg': {
+        badge: 'Ảnh 2/10 · Tổng Hợp 14 Mẫu Mành Trúc Nghệ Thuật Phòng Trà & Phòng Khách',
+        caption: 'Bố cục Typography HD sắc nét: Các mẫu Liên Hoa Cửu Ngư (Hoa Sen & Cá Chép Koi), Sơn Thủy Tùng Hạc Bình An, Hoa Mẫu Đơn Phú Quý & Đèn Lồng Hoa Đào.',
+      },
+      '/assets/aistudio/MT_PT_01_luong_long_chau_tho_hd.jpg': {
+        badge: 'Ảnh 3/10 · Mành Trúc Nâu Đỏ Phòng Thờ Vẽ Nhũ Vàng "Lưỡng Long Chầu Chữ Thọ"',
+        caption: 'Đôi rồng vàng chầu chữ Thọ tròn và hoa sen vàng nổi bật trên nền trúc nâu đỏ, che phía trên án gian thờ gia tiên cực kỳ uy nghiêm, ấm cúng.',
+      },
+      '/assets/aistudio/MT_PT_01_van_co_anh_linh_sen_trang_hd.jpg': {
+        badge: 'Ảnh 4/10 · Bộ 3 Tấm Mành Trúc Vách Ngăn Gian Thờ "Vạn Cổ Anh Linh – Tổ Tiên Công Đức"',
+        caption: 'Thiết kế ghép 3 tấm mành trúc liền mạch vẽ Bạch Liên Hoa – Hồng Liên Hoa và thư pháp chữ Hán – Việt trang trọng, ánh nến xuyên qua khe trúc lung linh.',
+      },
+      '/assets/aistudio/MT_PT_01_chu_hieu_sen_vang_hd.jpg': {
+        badge: 'Ảnh 5/10 · Mành Trúc Nâu Cánh Gián Vẽ Hoa Sen Vàng Kim & Thư Pháp Chữ "HIẾU"',
+        caption: 'Mẫu mành trúc nâu trầm vẽ Hoa Sen Vàng Kim và bài thơ thư pháp chữ "Hiếu", đồng điệu hoàn hảo với bàn thờ gỗ gụ, gỗ hương và hoành phi câu đối.',
+      },
+      '/assets/aistudio/MT_TH_01_lien_hoa_cuu_ngu_hd.jpg': {
+        badge: 'Ảnh 6/10 · Mành Trúc Phòng Trà "Liên Hoa Cửu Ngư" (Đầm Sen, Chim Bói Cá & Cá Chép Koi)',
+        caption: 'Bức tranh đầm sen hồng nở rộ cùng đôi chim bói cá và đàn cá chép Koi bơi lội sống động, lọc nắng dịu nhẹ cho không gian thưởng trà, tiếp khách.',
+      },
+      '/assets/aistudio/MT_TH_01_son_thuy_tung_hac_binh_an_hd.jpg': {
+        badge: 'Ảnh 7/10 · Mành Trúc Thủy Mặc "Sơn Thủy Hữu Tình – Tùng Hạc Diên Niên & Hoa Mai Đỏ"',
+        caption: 'Sự kết hợp tinh tế giữa núi non mây phủ, cây tùng cổ thụ, đôi hạc trắng và cành mai đỏ mùa xuân bên bức thư pháp "Bình An".',
+      },
+      '/assets/aistudio/MT_TH_01_hoa_mau_don_den_long_hd.jpg': {
+        badge: 'Ảnh 8/10 · Mành Trúc "Hoa Mẫu Đơn Phú Quý & Đèn Lồng Đỏ Hoa Đào Cổ Phong"',
+        caption: 'Mẫu mành trúc đôi lắp khung cửa kính lớn phòng khách hiện đại: Bông mẫu đơn hồng rực rỡ kết hợp đèn lồng đỏ hoa đào mang vượng khí tài lộc.',
+      },
+      '/assets/aistudio/IMG_9290_f6c3666b.JPG': {
+        badge: 'Ảnh 9/10 · Công Trình Thực Tế Biệt Thự 3 Tầng: Mành Trúc Tranh Đồng Quê Khi Thả Kín',
+        caption: 'Hình ảnh lắp đặt thực tế tại Biệt Thự 3 Tầng: Tầng 1 vẽ tranh Đôi Hạc Lúa Vàng bảo vệ cửa gỗ lim đại sảnh, Tầng 2 vẽ tranh Mục Đồng Chăn Trâu.',
+      },
+      '/assets/aistudio/IMG_9291_36ef56a4.JPG': {
+        badge: 'Ảnh 10/10 · Công Trình Thực Tế Biệt Thự 3 Tầng: Kéo Lửng Mành Trúc Mở Lối Đi Đón Gió',
+        caption: 'Hệ ròng rọc trợ lực giúp gia chủ kéo lửng bức mành trúc sảnh chính nhẹ nhàng để mở lối đi thông thoáng mà vẫn che mát phần hiên trên.',
+      },
+    },
+    highlightTag: 'Mới Đăng · Đủ 21 Mẫu Mành Trúc Phòng Thờ & Phòng Trà',
+    summary:
+      'Trọn bộ 21 mẫu Mành Tre Trúc Nghệ Thuật & Phong Thủy Phòng Thờ vừa được chỉnh sửa xóa sạch watermark và đóng khung Typography HD sắc nét tại Xưởng Tuyến Hoa – Ngọc Tuyến: Bao gồm 07 mẫu Mành Trúc Che Bàn Thờ Gia Tiên (Lưỡng Long Chầu Thọ, Vạn Cổ Anh Linh – Âm Siêu Dương Thái, Tổ Tiên Công Đức, Chữ Hiếu Hoa Sen Vàng, Bạch Liên Hoa) và 14 mẫu Mành Trúc Phòng Trà – Phòng Khách – Cửa Hàng (Liên Hoa Cửu Ngư, Sơn Thủy Tùng Hạc, Hoa Mẫu Đơn, Đèn Lồng Hoa Đào, Hoa Mai Đỏ, Phố Cổ Giang Nam, Sâm Ngọc Linh).',
+    visualAnnotations: [
+      {
+        label: 'Nhóm 07 mẫu Mành Tre Trúc Phòng Thờ Gia Tiên (Lưỡng Long Chầu Thọ, Chữ Hiếu, Vạn Cổ Anh Linh, Hoa Sen)',
+        detail:
+          'Được xử lý trên nền nan trúc màu nâu cánh gián, nâu đỏ hoặc vàng óng cổ truyền; họa tiết vẽ nhũ vàng "Lưỡng Long Chầu Chữ Thọ", Hoa Sen Vàng Kim, Bạch Liên Hoa và thư pháp "Vạn Cổ Anh Linh – Âm Siêu Dương Thái", "Tổ Tiên Công Đức", "Chữ Hiếu" giúp che chắn gió lùa, cản ánh nắng chiếu thẳng vào bát hương và giữ sự tôn nghiêm ấm cúng cho gian thờ.',
+      },
+      {
+        label: 'Nhóm 14 mẫu Mành Tre Trúc Nghệ Thuật Phòng Trà, Phòng Khách & Showroom (Liên Hoa Cửu Ngư, Tùng Hạc, Mẫu Đơn)',
+        detail:
+          'Gồm các họa tiết phong thủy kinh điển: Đầm Sen Hồng – Chim Bói Cá – Đàn Cá Chép Koi (Liên Hoa Cửu Ngư), Sơn Thủy Tùng Hạc Diên Niên, Song Hạc Đào Nguyên, Hoa Mai Đỏ Đôi Bướm, Đèn Lồng Đỏ Hoa Đào, Phố Cổ Giang Nam, Hoa Mẫu Đơn Phú Quý, Bộ 3 tấm Viền Triện Hoa Mai Tròn và mẫu đặt vẽ riêng biển hiệu "Cửa Hàng Sâm Ngọc Linh".',
+      },
+      {
+        label: 'Đã chỉnh sửa xóa sạch 100% watermark & Nâng cấp chất lượng nan trúc cật già phủ PU 2K',
+        detail:
+          'Toàn bộ hình ảnh đã được làm sạch chữ chìm đè trên tranh, cân chỉnh ánh sáng sắc nét; sản phẩm thực tế tại Xưởng Tuyến Hoa đan bằng dây dù cường lực, phủ sơn bóng PU chống mối mọt và trang bị con lăn ròng rọc đồng kéo cực nhẹ tay.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'MT-TH-01 (Bộ Sưu Tập 21 Mẫu Mành Tre Trúc Phòng Thờ & Phòng Trà Nghệ Thuật)' },
+      { label: 'Đơn giá tại xưởng', value: '260.000đ – 280.000đ/m² (Mành phòng trà) | 300.000đ – 320.000đ/m² (Mành phòng thờ nhũ vàng)' },
+      { label: 'Chất liệu nan mành', value: '100% Trúc cật già tự nhiên xử lý chống mối mọt, cong vênh, đan dây dù chịu lực' },
+      { label: 'Danh mục 21 họa tiết', value: 'Lưỡng Long Chầu Thọ · Chữ Hiếu · Vạn Cổ Anh Linh · Liên Hoa Cửu Ngư · Tùng Hạc · Mẫu Đơn · Hoa Mai' },
+      { label: 'Bảo hành & Lắp đặt', value: 'Bảo hành 3–5 năm, miễn phí đo đạc & lắp đặt tận nơi (Hotline/Zalo: 0989.655.388 – 0344.727.528)' },
+    ],
+    articleParagraphs: [
+      'Trong kiến trúc nhà truyền thống Việt Nam cũng như các căn biệt thự, nhà phố, chung cư hiện đại, Mành Tre Trúc Nghệ Thuật đóng vai trò vô cùng đặc biệt: vừa là bức bình phong phong thủy che chắn nắng gắt, gió lùa và tụ khí lành cho không gian Phòng Thờ Gia Tiên, vừa là bức tranh thủy mặc mộc mạc làm bừng sáng góc Phòng Trà, Phòng Khách hay Phòng Đọc Sách.',
+      'Từ 21 mẫu thiết kế vừa tải lên, đội ngũ kỹ thuật của Xưởng Mành Tre Trúc Tuyến Hoa – Ngọc Tuyến đã xử lý hậu kỳ xóa sạch toàn bộ watermark cũ, phục chế độ nét cao và phân loại rõ ràng thành 02 dòng chủ đạo: Dòng Mành Trúc Phòng Thờ (Lưỡng Long Chầu Chữ Thọ nhũ vàng, Bộ 3 tấm Vạn Cổ Anh Linh – Âm Siêu Dương Thái, Tổ Tiên Công Đức, Chữ Hiếu Hoa Sen Vàng, Bạch Liên Hoa) và Dòng Mành Trúc Phòng Trà – Phòng Khách – Cửa Hàng (Liên Hoa Cửu Ngư, Sơn Thủy Tùng Hạc, Song Hạc Đào Nguyên, Hoa Mẫu Đơn Phú Quý, Đèn Lồng Hoa Đào, Hoa Mai Đỏ, Phố Cổ Giang Nam và nhận vẽ logo riêng như mẫu Cửa Hàng Sâm Ngọc Linh).'
+    ],
+    facebookPostCopy:
+      '🎋🪷 [TUYỆT PHẨM 21 MẪU MÀNH TRE TRÚC PHÒNG THỜ GIA TIÊN & PHÒNG TRÀ NGHỆ THUẬT – GIÁ GỐC TẠI XƯỞNG TUYẾN HOA!] 🐉✨\n' +
+      '--------------------------------------------\n' +
+      '🔥 Các bác đang tìm mẫu Mành Tre Trúc che Bàn Thờ Gia Tiên trang nghiêm hay lắp cửa sổ Phòng Trà, Phòng Khách, Nhà Thờ Họ đậm chất Á Đông thì ngắm ngay trọn bộ 21 mẫu đẹp nhất vừa lên kệ tại Xưởng Tuyến Hoa – Ngọc Tuyến nhé!\n' +
+      '🙏 1. NHÓM MÀNH TRÚC PHÒNG THỜ GIA TIÊN (Cản gió lùa, chắn nắng hắt bát hương, tụ vượng khí):\n' +
+      '   • Mẫu "Lưỡng Long Chầu Chữ Thọ" vẽ nhũ vàng trên nền trúc nâu đỏ uy nghiêm\n' +
+      '   • Bộ 3 tấm vách ngăn "Vạn Cổ Anh Linh – Âm Siêu Dương Thái" & "Tổ Tiên Công Đức – Chữ Hiếu"\n' +
+      '   • Mẫu Nâu Cánh Gián khắc Hoa Sen Vàng Kim, Chữ Hiếu Hoa Sen & Bạch Liên Hoa thanh khiết\n' +
+      '🍵 2. NHÓM MÀNH TRÚC VẼ TRANH PHÒNG TRÀ – PHÒNG KHÁCH – NHÀ HÀNG:\n' +
+      '   • Liên Hoa Cửu Ngư (Hoa Sen Hồng, Chim Bói Cá & Đàn Cá Chép Koi)\n' +
+      '   • Thủy Mặc Sơn Thủy Hữu Tình – Tùng Hạc Diên Niên – Song Hạc Đào Nguyên\n' +
+      '   • Hoa Mẫu Đơn Phú Quý, Đèn Lồng Đỏ Hoa Đào, Hoa Mai Đỏ Đôi Bướm, Phố Cổ Giang Nam\n' +
+      '   • Nhận vẽ tên riêng & thương hiệu theo yêu cầu (như mẫu Cửa Hàng Sâm Ngọc Linh)\n' +
+      '💰 BẢNG GIÁ TRỌN GÓI CẢ CON LĂN RÒNG RỌC & CÔNG LẮP ĐẶT:\n' +
+      '   👉 Mành trúc vẽ tranh Phòng Trà / Phòng Khách: Chỉ 260.000đ – 280.000đ / m² (Giá TT: 380k–420k/m²)\n' +
+      '   👉 Mành trúc Phòng Thờ vẽ nhũ vàng & Bộ 3 tấm: Chỉ 300.000đ – 320.000đ / m² (Giá TT: 450k–520k/m²)\n' +
+      '✅ Nan trúc cật già tự nhiên xử lý chống mối mọt, phủ bóng PU bền màu 10 năm!\n' +
+      '📞 Gọi/Zalo đặt lịch mang mẫu tận nhà đo đạc: 0989.655.388 – 0344.727.528 (Showroom Tuyến Hoa – Ngọc Tuyến)!',
+  },
+  {
+    id: 'tong-kho-xuong-phoi-dem-cao-su-tong-hop-tuyen-hoa-kxd01',
+    code: 'KXD-TH-01',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Showroom & Kho Xưởng',
+    title: 'Tổng Kho Xưởng Đệm Cao Su Non American, Đệm King Sleep & Phôi Cao Su Tổng Hợp Ép Nhiệt Tuyến Hoa (Bọc Góc Kim Cương Vàng · Uốn Gập Dẻo Dai · Sỉ & Lẻ Tận Gốc)',
+    shortTitle: 'Tổng Kho Đệm Cao Su Non American & King Sleep',
+    priceDisplay: '1.150.000đ – 1.750.000đ',
+    marketPriceRange: 'Giá thị trường: 1.750.000đ – 2.650.000đ / tấm',
+    marketPriceNote: 'Bộ sưu tập thực tế vừa chụp tại Tổng Kho Xưởng Đệm Tuyến Hoa: Gồm các kiện Đệm Cao Su Non American bọc góc đen in logo Kim Cương vàng "100% Poly Ester" có khóa kéo trắng, dòng đệm trắng KING SLEEP, màn kiểm chứng uốn gập đôi 5 tấm đệm dẻo dai trong lồng thang nâng hàng inox, 2 cuộn vải gấm xám dệt caro may vỏ đệm và lõi phôi cao su tổng hợp ép nhiệt 18×2×19cm.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Đệm Cao Su Non American Nguyên Tấm / Gấp 3 (Bọc Góc Kim Cương Vàng Có Khóa Kéo)',
+        marketPrice: '1.750.000đ – 2.250.000đ / tấm',
+        storePrice: '1.150.000đ – 1.550.000đ / tấm',
+        note: 'Uốn gập 180 độ dẻo dai không gãy lún – Êm lưng thoáng khí',
+      },
+      {
+        sizeOrOption: '2. Đệm KING SLEEP & Phôi Đệm Cao Su Tổng Hợp Ép Nhiệt Dày 18–19cm (1,8m × 2,0m)',
+        marketPrice: '2.450.000đ / tấm',
+        storePrice: '1.750.000đ / tấm',
+        note: 'Cốt đệm siêu đầm nặng, độ bền trên 10 năm không xẹp',
+      },
+      {
+        sizeOrOption: '3. Đặt Cắt Đệm Theo Kích Thước Lẻ (Sập Gụ, Phản Gỗ, Giường Tầng) & Giá Sỉ Đại Lý',
+        marketPrice: '1.950.000đ – 2.650.000đ / tấm',
+        storePrice: '1.350.000đ – 1.650.000đ / tấm',
+        note: 'May vỏ trực tiếp từ cuộn vải gấm xám caro tại xưởng',
+      },
+    ],
+    numericPrice: 1350000,
+    unitLabel: '1 tấm Đệm Cao Su Non American / King Sleep xuất xưởng',
+    standardDimensions: 'Đủ cỡ: 1,2m×1,9m | 1,6m×2,0m | 1,8m×2,0m | 2,0m×2,2m (Nhận cắt mọi cỡ lẻ)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/KXD_AM_01_cao_su_non_american_hd.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792918016702_4373635352308930219_4373635352308930219_4911d2249505ab896640c28518a2313f_4ecf452b.jpg',
+      '/assets/aistudio/1792918016727_4373635352308930219_4373635352308930219_7bf37d678a6e59c76c1278c6e258a872_b3bd3aac.jpg',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/KXD_AM_01_cao_su_non_american_hd.jpg': {
+        badge: 'Ảnh 1/3 · Banner HD Tổng Kho Đệm Cao Su Non American & King Sleep',
+        caption: 'Bố cục Typography HD Be Vietnam Pro sắc nét: Tổng kho Đệm Cao Su Non American bọc góc đen logo Kim Cương vàng, khóa kéo trắng, uốn gập đôi dẻo dai trong thang nâng hàng inox.',
+      },
+      '/assets/aistudio/1792918016702_4373635352308930219_4373635352308930219_4911d2249505ab896640c28518a2313f_4ecf452b.jpg': {
+        badge: 'Ảnh 2/3 · Cận Cảnh Lõi Phôi Cao Su Tổng Hợp Ép Nhiệt (18×2×19cm)',
+        caption: 'Công khai kết cấu lõi phôi đa sắc ép nhiệt đặc khít bên trong kết hợp mặt bông trắng chần múi và các kiện Cao Su Non American xếp tầng tại xưởng.',
+      },
+      '/assets/aistudio/1792918016727_4373635352308930219_4373635352308930219_7bf37d678a6e59c76c1278c6e258a872_b3bd3aac.jpg': {
+        badge: 'Ảnh 3/3 · Toàn Cảnh Tổng Kho Hàng Trăm Kiện Đệm Sẵn Sàng Xuất Xưởng',
+        caption: 'Hàng trăm tấm đệm Cao Su Non American, King Sleep, DER LAMOR và đệm gấp 2 bo viền xếp thành từng kiện lớn từ 15–20 tấm tại kho xưởng mái tôn rộng lớn.',
+      },
+    },
+    highlightTag: 'Mới Đăng · Kho Đệm Cao Su Non American & King Sleep',
+    summary:
+      'Trọn bộ phóng sự ảnh thực tế tại Tổng Kho Xưởng Đệm Tuyến Hoa: Từ chồng 11–20 tấm Đệm Cao Su Non American bọc góc đen in logo Kim Cương vàng có khóa kéo trắng, đệm trắng KING SLEEP, 2 cuộn vải gấm xám dệt caro may vỏ đệm, đến màn thử nghiệm uốn gập đôi 5 tấm đệm dẻo dai trong lồng thang nâng hàng inox.',
+    visualAnnotations: [
+      {
+        label: 'Đệm Cao Su Non American bọc góc đen logo Kim Cương vàng & khóa kéo trắng',
+        detail:
+          'Ruột đệm màu kem vàng dẻo dai, bọc 4 góc bằng vải đen viền xám in logo Kim Cương vàng "100% Poly Ester", trang bị khóa kéo trắng chạy dọc thành đệm giúp kiểm tra ruột đệm dễ dàng.',
+      },
+      {
+        label: 'Kiểm chứng độ dẻo dai: Uốn gập đôi 5 tấm đệm 180° trong lồng thang nâng hàng Inox',
+        detail:
+          'Các tấm đệm Cao Su Non American có thể uốn cong chữ U gập đôi hoàn toàn khi đưa vào lồng thang máy nâng hàng tại xưởng mà không hề bị gãy gập hay biến dạng phom đệm.',
+      },
+      {
+        label: 'Dòng đệm trắng KING SLEEP & 2 cuộn vải gấm xám Caro dệt nổi tại xưởng may',
+        detail:
+          'Bên cạnh các kiện Cao Su Non American là dòng đệm trắng KING SLEEP sang trọng và những cuộn vải gấm xám dệt họa tiết hình học caro – kẻ sọc dùng để may áo đệm trực tiếp tại xưởng.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'KXD-TH-01 (Tổng Kho Đệm Cao Su Non American · King Sleep · Phôi Ép Nhiệt)' },
+      { label: 'Thương hiệu & Dòng đệm', value: 'Cao Su Non American · King Sleep · Phôi Cao Su Tổng Hợp · DER LAMOR' },
+      { label: 'Đặc điểm nhận diện', value: 'Góc bọc đen logo Kim Cương vàng "100% Poly Ester", khóa kéo trắng, uốn gập 180°' },
+      { label: 'Giá xuất xưởng Tuyến Hoa', value: 'Chỉ từ 1.150.000đ – 1.750.000đ / tấm (Tiết kiệm 30%–35% so với giá thị trường)' },
+      { label: 'Dịch vụ đặc biệt', value: 'Nhận cắt đặt mọi kích thước lẻ & Giao sỉ/lẻ tận nhà bằng xe tải riêng' },
+    ],
+    articleParagraphs: [
+      'Bộ ảnh thực tế vừa ghi nhận tại Tổng Kho Xưởng Đệm Tuyến Hoa mang đến cái nhìn minh bạch 100% về quy mô sản xuất và lưu kho: Hàng trăm tấm Đệm Cao Su Non American và KING SLEEP được xếp ngay ngắn thành từng kiện cao từ 11 đến 20 tấm dưới mái xưởng rộng lớn, vận chuyển liên tục qua hệ thống lồng thang nâng hàng Inox chuyên dụng.',
+      'Điểm ăn tiền nhất của dòng Đệm Cao Su Non American chính là độ đàn hồi dẻo dai vượt trội (uốn gập đôi 5 tấm cùng lúc không gãy lún), 4 góc bọc vải đen in logo Kim Cương vàng "100% Poly Ester" kèm khóa kéo trắng bền bỉ, cùng nguồn vải gấm xám caro nguyên cuộn nhập trực tiếp tại xưởng.'
+    ],
+    facebookPostCopy:
+      '🏭 [MỤC SỞ THỊ TỔNG KHO XƯỞNG ĐỆM] ĐỆM CAO SU NON AMERICAN, KING SLEEP & PHÔI CAO SU TỔNG HỢP GIÁ TẬN GỐC! 🏭\n' +
+      '--------------------------------------------\n' +
+      '🔥 Quay chụp trực tiếp tại Tổng Kho Xưởng Đệm Tuyến Hoa: Hàng trăm tấm Đệm Cao Su Non American & KING SLEEP vừa ra lò, xếp kín lồng thang nâng hàng Inox chuẩn bị giao cho đại lý và bà con!\n' +
+      '✅ Đệm Cao Su Non American: Uốn gập đôi 180 độ dẻo dai không gãy lún, nằm êm lưng, nâng đỡ cột sống cực tốt.\n' +
+      '✅ Bọc góc đen in logo Kim Cương vàng "100% Poly Ester", có khóa kéo trắng kiểm tra ruột đệm thoải mái.\n' +
+      '✅ Vải gấm xám dệt họa tiết hình học Caro nguyên cuộn tại xưởng – Nhận đặt cắt đệm mọi kích thước giường đóng riêng, sập gụ!\n' +
+      '💰 GIÁ XUẤT XƯỞNG TRỰC TIẾP (Rẻ hơn thị trường 500k – 800k/tấm):\n' +
+      '   • Đệm Cao Su Non American: Chỉ từ 1.150.000đ – 1.550.000đ / tấm\n' +
+      '   • Đệm KING SLEEP & Phôi Cao Su Tổng Hợp dày 18–19cm: Chỉ 1.750.000đ / tấm\n' +
+      '🚛 Xe bán tải Tuyến Hoa giao tận giường miễn phí – Kiểm tra hàng ưng ý mới thanh toán!\n' +
+      '📞 Gọi/Zalo đặt đệm lẻ & sỉ: 0989.655.388 – 0344.727.528 (Showroom Tuyến Hoa)',
+  },
+  {
+    id: 'dem-bong-tinh-khiet-kim-cuong-mat-tran-dkc01',
+    code: 'DKC-TH-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Đệm Bông Tinh Khiết Mặt Trần Kim Cương (Mẫu Hoa Mai "GOOD LUCK" · Lá Trúc · Tổ Ong) & Kim Cương Plaza Hoàng Gia Airy Polyester (Bảo Hành 5 Năm)',
+    shortTitle: 'Đệm Kim Cương Mặt Trần Good Luck & Plaza Airy',
+    priceDisplay: '1.850.000đ / tấm',
+    marketPriceRange: 'Giá thị trường: 2.450.000đ – 3.100.000đ / tấm',
+    marketPriceNote: 'Trọn bộ Đệm Bông Tinh Khiết Mặt Trần thương hiệu Kim Cương (mẫu chần hoa 5 cánh chữ "GOOD LUCK", Lá Trúc, Tổ Ong góc bọc da đen-kem) & Kim Cương Plaza Hoàng Gia (Đệm Cao Su Non – Tổng Hợp – Bông Tinh Khiết Mặt Trần Airy Polyester Mattress) nguyên tem bảo hành 5 năm.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Giường 1,6m × 2,0m (Đệm Kim Cương Mặt Trần Mẫu Good Luck / Lá Trúc / Tổ Ong)',
+        marketPrice: '2.450.000đ / tấm',
+        storePrice: '1.850.000đ / tấm',
+        note: 'Góc bọc da đen-kem sang trọng, chần bông nổi êm lưng',
+      },
+      {
+        sizeOrOption: '2. Giường đôi 1,8m × 2,0m (Đệm Kim Cương Plaza Hoàng Gia Airy Polyester Mattress)',
+        marketPrice: '2.750.000đ / tấm',
+        storePrice: '2.050.000đ / tấm',
+        note: 'Kết hợp Cao Su Non Tổng Hợp & Bông Tinh Khiết Mặt Trần',
+      },
+      {
+        sizeOrOption: '3. Giường đại 2,0m × 2,2m (Bản Hoàng Gia Mặt Trần Cao Cấp Dày 14–18cm)',
+        marketPrice: '3.100.000đ / tấm',
+        storePrice: '2.350.000đ / tấm',
+        note: 'Bảo hành chính hãng 5 năm – Kèm bảng giá niêm yết nhà máy',
+      },
+    ],
+    numericPrice: 1850000,
+    unitLabel: '1 tấm Đệm Kim Cương Mặt Trần chính hãng (BH 5 năm)',
+    standardDimensions: 'Đủ kích thước: 1,5m×1,9m | 1,6m×2,0m | 1,8m×2,0m | 2,0m×2,2m (Độ dày 9cm / 14cm / 18cm)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/DKC_TH_01_kim_cuong_mat_tran_hd.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792918003089_4373635352308930219_4373635352308930219_a5ccc3d45dfc907903e18cbbbb8e9365_bf882307.jpg',
+      '/assets/aistudio/1792918003163_4373635352308930219_4373635352308930219_3f68d7dd8f736b30aab8ab95a3d71907_285e6b75.jpg',
+      '/assets/aistudio/1792918016556_4373635352308930219_4373635352308930219_e5e9f00e0ae5608b681c11af93f12660_7e65653b.jpg',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/DKC_TH_01_kim_cuong_mat_tran_hd.jpg': {
+        badge: 'Ảnh 1/4 · Banner HD Đệm Kim Cương Mặt Trần Good Luck & Kim Cương Plaza',
+        caption: 'Tổng hợp sắc nét dòng Đệm Bông Tinh Khiết Mặt Trần Kim Cương & Kim Cương Plaza Hoàng Gia Airy Polyester Mattress bảo hành 5 năm.',
+      },
+      '/assets/aistudio/1792918003089_4373635352308930219_4373635352308930219_a5ccc3d45dfc907903e18cbbbb8e9365_bf882307.jpg': {
+        badge: 'Ảnh 2/4 · Bộ 4 Tấm Đệm Mặt Trần Xám Ghi Xếp Chéo Kèm 4 Bộ Tem Nhãn Vàng Xanh',
+        caption: 'So sánh trực tiếp 4 họa tiết chần mặt trần (Lá Trúc, Hoa Mai Good Luck, Kẻ Caro, Tổ Ong) kèm 4 bộ tem nhãn vàng xanh Kim Cương & bảng giá nhà máy.',
+      },
+      '/assets/aistudio/1792918003163_4373635352308930219_4373635352308930219_3f68d7dd8f736b30aab8ab95a3d71907_285e6b75.jpg': {
+        badge: 'Ảnh 3/4 · Đệm Kim Cương Plaza Hoàng Gia Airy Polyester Chần Lông Vũ Trắng',
+        caption: '2 tấm đệm mặt trần xám ghi chần lông vũ trắng, tem xanh dương "Kim Cương Plaza – Đệm Cao Su Non Tổng Hợp & Bông Tinh Khiết Mặt Trần – Bảo hành 5 năm".',
+      },
+      '/assets/aistudio/1792918016556_4373635352308930219_4373635352308930219_e5e9f00e0ae5608b681c11af93f12660_7e65653b.jpg': {
+        badge: 'Ảnh 4/4 · Cận Cảnh Góc Bọc Da Đen-Kem, Tem Kim Cương & Bảng Giá Niêm Yết',
+        caption: 'Mỗi tấm đệm đều có 4 góc bọc da đen-kem chống trầy xước, tem xanh vàng "KIM CƯƠNG – ĐỆM BÔNG TINH KHIẾT" và bảng giá chính hãng.',
+      },
+    },
+    highlightTag: 'Mới Đăng · Kim Cương Good Luck & Plaza Airy',
+    summary:
+      'Bộ sưu tập Đệm Bông Tinh Khiết Mặt Trần Kim Cương & Kim Cương Plaza Hoàng Gia chính hãng tại kho Tuyến Hoa: Nổi bật với mẫu chần hoa 5 cánh chữ "GOOD LUCK", mẫu Lá Trúc, Tổ Ong và Lông Vũ Trắng trên nền gấm xám chì sạch sang, góc bọc da đen-kem và nguyên tem bảo hành 5 năm.',
+    visualAnnotations: [
+      {
+        label: 'Họa tiết chần bông hoa 5 cánh "GOOD LUCK", Lá Trúc & Tổ Ong trên nền xám chì',
+        detail:
+          'Bề mặt vải gấm xám than được chần nổi chữ "GOOD LUCK" cùng hoa mai 5 cánh, lá trúc hoặc tổ ong tinh xảo; hệ thống đã lọc bỏ bản ảnh nháp dính vệt bút đỏ để giữ bản chụp sắc nét nhất.',
+      },
+      {
+        label: 'Tem xanh dương "Kim Cương Plaza – Kim Cương Hoàng Gia – Airy Polyester Mattress"',
+        detail:
+          'Phiên bản kết hợp Đệm Cao Su Non – Tổng Hợp & Đệm Bông Tinh Khiết Mặt Trần thêu lông vũ trắng, bảo hành chính hãng 5 năm.',
+      },
+      {
+        label: '4 góc bọc da Đen – Kem sang trọng kèm bộ tem vàng xanh & bảng giá nhà máy',
+        detail:
+          'Gia cố 4 góc đệm bằng da công nghiệp 2 tông màu đen – kem vừa chống sờn góc khi vận chuyển vừa tôn lên vẻ lịch lãm cho phòng ngủ.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'DKC-TH-01 (Đệm Kim Cương Mặt Trần Good Luck & Kim Cương Plaza Airy)' },
+      { label: 'Thương hiệu', value: 'Đệm Kim Cương & Kim Cương Plaza Hoàng Gia Chính Hãng' },
+      { label: 'Họa tiết mặt trần', value: 'Hoa Mai "GOOD LUCK" · Lá Trúc · Tổ Ong · Lông Vũ Trắng (Màu Xám Chì / Xám Ghi)' },
+      { label: 'Giá tại Tuyến Hoa', value: '1.850.000đ (1m6×2m) | 2.050.000đ (1m8×2m) | 2.350.000đ (2m×2m2)' },
+      { label: 'Chế độ bảo hành', value: 'Bảo hành chính hãng 5 năm – Đổi mới nếu lỗi nhà sản xuất' },
+    ],
+    articleParagraphs: [
+      'Dòng Đệm Bông Tinh Khiết Mặt Trần Kim Cương & Kim Cương Plaza Hoàng Gia (Mã DKC-TH-01) vừa cập bến kho Tuyến Hoa với đầy đủ 4 họa tiết chần nổi được ưa chuộng nhất: mẫu hoa mai 5 cánh dập chữ "GOOD LUCK" may mắn, mẫu Lá Trúc thanh lịch, mẫu Tổ Ong hiện đại và mẫu thêu Lông Vũ Trắng.',
+      'Toàn bộ các tấm đệm đều được bọc góc da đen-kem chắc chắn, đính kèm bộ tem nhãn vàng xanh "KIM CƯƠNG – ĐỆM BÔNG TINH KHIẾT" hoặc tem xanh dương "Kim Cương Plaza – Airy Polyester Mattress" cùng bảng giá niêm yết và phiếu bảo hành 5 năm.'
+    ],
+    facebookPostCopy:
+      '💎 ĐỆM BÔNG TINH KHIẾT MẶT TRẦN KIM CƯƠNG "GOOD LUCK" & KIM CƯƠNG PLAZA HOÀNG GIA – BẢO HÀNH 5 NĂM! 💎\n' +
+      '--------------------------------------------\n' +
+      '📸 Ảnh chụp thực tế tại kho Tuyến Hoa: Đủ các mẫu chần nổi Hoa Mai "GOOD LUCK", Lá Trúc, Tổ Ong & Lông Vũ Trắng trên nền vải gấm xám chì siêu sạch và sang trọng!\n' +
+      '✅ Góc đệm bọc da Đen – Kem lịch lãm, nguyên bộ tem nhãn vàng xanh Kim Cương & bảng giá nhà máy.\n' +
+      '✅ Phiên bản Kim Cương Plaza Hoàng Gia (Airy Polyester Mattress): Kết hợp Cao Su Non Tổng Hợp & Bông Tinh Khiết Mặt Trần êm lưng, thoáng khí 4 mùa.\n' +
+      '💰 GIÁ ƯU ĐÃI TẠI SHOWROOM TUYẾN HOA:\n' +
+      '   • Cỡ 1,6m × 2,0m: 1.850.000đ / tấm (Giá TT: 2.450.000đ)\n' +
+      '   • Cỡ 1,8m × 2,0m: 2.050.000đ / tấm (Giá TT: 2.750.000đ)\n' +
+      '   • Cỡ 2,0m × 2,2m: 2.350.000đ / tấm (Giá TT: 3.100.000đ)\n' +
+      '🚛 Miễn phí giao đệm tận giường – Bảo hành chính hãng 5 năm!\n' +
+      '📞 Hotline/Zalo đặt hàng: 0989.655.388 – 0344.727.528 (Tuyến Hoa)',
+  },
+  {
+    id: 'dem-gap-2-chan-mui-long-vu-tuyen-hoa-dlv01',
+    code: 'DLV-TH-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Đệm Cao Su Non & Bông Ép Gấp 2 Chần Múi Tổ Ong Thêu Lông Vũ Trắng Thành Vải Bố Cao Cấp (Dày 18cm – 20cm) – Đủ 05 Góc Chụp Sắc Nét',
+    shortTitle: 'Đệm Gấp 2 Chần Múi Lông Vũ Dày 18–20cm',
+    priceDisplay: '1.850.000đ / tấm',
+    marketPriceRange: 'Giá thị trường: 2.500.000đ – 3.150.000đ / tấm',
+    marketPriceNote: 'Dòng đệm gấp 2 cao cấp tại Showroom Tuyến Hoa: Lõi cao su tổng hợp kết hợp bông ép kháng khuẩn dày 18–20cm, mặt trên chần múi tổ ong 3D thêu họa tiết Lông Vũ Trắng tinh khôi, thành đệm bọc vải bố Canvas sang trọng.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: 'Cỡ giường 1,6m × 2,0m × Dày 18cm (Gấp 2 chần múi tổ ong thêu lông vũ)',
+        marketPrice: '2.500.000đ / tấm',
+        storePrice: '1.850.000đ / tấm',
+        note: 'Tặng kèm bộ ga gối lụa Tencel đồng bộ',
+      },
+      {
+        sizeOrOption: 'Cỡ giường đôi 1,8m × 2,0m × Dày 18cm–20cm (Bán chạy số 1)',
+        marketPrice: '2.850.000đ / tấm',
+        storePrice: '2.050.000đ / tấm',
+        note: 'Nằm êm ái nâng đỡ cột sống – Không xẹp lún',
+      },
+      {
+        sizeOrOption: 'Cỡ đại 2,0m × 2,2m × Dày 20cm (Phòng ngủ Master / Phòng cưới)',
+        marketPrice: '3.150.000đ / tấm',
+        storePrice: '2.350.000đ / tấm',
+        note: 'Xe bán tải Tuyến Hoa giao tận giường miễn phí',
+      },
+    ],
+    numericPrice: 1850000,
+    unitLabel: '1 tấm đệm gấp 2 chần múi lông vũ (Bảo hành 5 năm)',
+    standardDimensions: 'Đủ cỡ: 1,6m × 2,0m | 1,8m × 2,0m | 2,0m × 2,2m (Độ dày 18cm – 20cm)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/DLV_TH_01_dem_long_vu_mat_tran_hd.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792918016457_4373635352308930219_4373635352308930219_ce5968c3bf0facffcac3c3337b6368f8_6a935b43.jpg',
+      '/assets/aistudio/1792918016482_4373635352308930219_4373635352308930219_4312b35fb8fb2294dae9814c0fd63b76_efca6d23.jpg',
+      '/assets/aistudio/1792918016506_4373635352308930219_4373635352308930219_64e0bdcea0b4a6a81dd49838bee4f92b_9aa612e6.jpg',
+      '/assets/aistudio/1792918016531_4373635352308930219_4373635352308930219_923776db7491fe49943cc0401d79b4a6_02f36a9c.jpg',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/DLV_TH_01_dem_long_vu_mat_tran_hd.jpg': {
+        badge: 'Ảnh 1/5 · Banner HD Đệm Gấp 2 Chần Múi Lông Vũ Thành Vải Bố Dày 18–20cm',
+        caption: 'Tổng hợp sắc nét dáng gập chữ A thành vải bố Canvas kem ghi và bề mặt chần múi tổ ong thêu lông vũ trắng tinh khôi.',
+      },
+      '/assets/aistudio/1792918016457_4373635352308930219_4373635352308930219_ce5968c3bf0facffcac3c3337b6368f8_6a935b43.jpg': {
+        badge: 'Ảnh 2/5 · Bề Mặt Đệm Chần Múi Tổ Ong Thêu Lông Vũ Trắng Dựng Ngang Tại Kho',
+        caption: 'Khi mở phẳng hai tấm liền mạch khít 100%, bề mặt vải gấm dệt kim xám bạc chần múi tổ ong thêu nổi họa tiết Lông Vũ trắng tinh xảo.',
+      },
+      '/assets/aistudio/1792918016482_4373635352308930219_4373635352308930219_4312b35fb8fb2294dae9814c0fd63b76_efca6d23.jpg': {
+        badge: 'Ảnh 3/5 · Dáng Gập Chữ A Thành Vải Bố Canvas Dày 18–20cm',
+        caption: 'Thành đệm bọc vải bố Canvas kem ghi đứng phom vuông vức như đệm khách sạn 5 sao, gập đôi linh hoạt dễ qua cầu thang.',
+      },
+      '/assets/aistudio/1792918016506_4373635352308930219_4373635352308930219_64e0bdcea0b4a6a81dd49838bee4f92b_9aa612e6.jpg': {
+        badge: 'Ảnh 4/5 · Cận Cảnh Bản Lề Gập Đôi & Viền Bo Xương Cá',
+        caption: 'Đường viền bo xương cá to bản khâu máy công nghiệp 2 kim ôm chặt cạnh đệm, chống sờn rách và chống xẹp góc suốt 10 năm.',
+      },
+      '/assets/aistudio/1792918016531_4373635352308930219_4373635352308930219_923776db7491fe49943cc0401d79b4a6_02f36a9c.jpg': {
+        badge: 'Ảnh 5/5 · Cận Cảnh Ô Múi Chần Nổi Đa Điểm Thoáng Khí',
+        caption: 'Các rãnh múi chần sâu tạo khe thoáng khí đối lưu, nâng đỡ êm ái vùng vai gáy và thắt lưng, không gây hầm bí mùa hè.',
+      },
+    },
+    highlightTag: 'Mới Đăng · Chần Múi Lông Vũ Dày 18–20cm',
+    summary:
+      'Bộ 5 góc chụp thực tế sắc nét của dòng Đệm Gấp 2 Chần Múi Tổ Ong Thêu Lông Vũ Trắng cao cấp tại xưởng Tuyến Hoa: Thiết kế gập đôi linh hoạt nhưng khi trải phẳng liền mạch như đệm lò xo nguyên tấm, thành đệm bọc vải bố màu kem ghi chống bám bẩn.',
+    visualAnnotations: [
+      {
+        label: 'Bề mặt chần múi tổ ong 3D thêu họa tiết Lông Vũ Trắng tinh khôi (Ảnh 2 & Ảnh 5)',
+        detail:
+          'Các ô múi chần sâu hình tổ ong tạo rãnh thoáng khí đối lưu, điểm xuyết họa tiết lông vũ trắng nổi bật trên nền gấm xám ghi sang trọng.',
+      },
+      {
+        label: 'Thành đệm cao 18cm–20cm bọc vải bố Canvas kèm viền bo xương cá (Ảnh 3 & Ảnh 4)',
+        detail:
+          'Thành đệm đứng phom vuông vức như đệm khách sạn 5 sao; đường bo viền to bản khâu máy công nghiệp 2 kim chống bung chỉ suốt 10 năm.',
+      },
+      {
+        label: 'Bản lề gập 2 thông minh – Dễ dàng vận chuyển qua cầu thang hẹp',
+        detail:
+          'Khắc phục hoàn toàn nhược điểm cồng kềnh của đệm lò xo nguyên tấm: có thể gập chữ A để vệ sinh hoặc dựng gọn sát tường khi chưa sử dụng.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'DLV-TH-01 (Đệm Gấp 2 Chần Múi Lông Vũ Tuyến Hoa – Bộ 5 Ảnh)' },
+      { label: 'Giá thị trường', value: '2.500.000đ – 3.150.000đ / tấm' },
+      { label: 'Giá tại Tuyến Hoa', value: '1.850.000đ (1m6×2m) | 2.050.000đ (1m8×2m) | 2.350.000đ (2m×2m2)' },
+      { label: 'Độ dày tiêu chuẩn', value: '18cm – 20cm (Phom đệm dày sang trọng chuẩn giường hiện đại)' },
+      { label: 'Bảo hành & Vận chuyển', value: 'Bảo hành 5 năm không xẹp lún · Giao tận giường miễn phí' },
+    ],
+    articleParagraphs: [
+      'Dòng Đệm Gấp 2 Chần Múi Lông Vũ (Mã DLV-TH-01) là lựa chọn hoàn hảo cho các gia đình yêu thích vẻ sang trọng, bề thế của đệm dày 18cm–20cm nhưng vẫn muốn sự gọn nhẹ, dễ di chuyển qua cầu thang của thiết kế gập đôi.',
+      'Toàn bộ 5 bức ảnh thực tế tại xưởng hiển thị trọn vẹn từng chi tiết: mặt trên là vải gấm dệt kim xám bạc chần múi tổ ong thêu họa tiết lông vũ trắng thanh thoát; phần thành xung quanh bọc vải bố Canvas màu ghi kem hiện đại, chống sờn rách và cực kỳ sạch sẽ.'
+    ],
+    facebookPostCopy:
+      '✨ [SIÊU PHẨM MỚI VỀ] ĐỆM GẤP 2 CHẦN MÚI TỔ ONG THÊU LÔNG VŨ TRẮNG DÀY 18–20CM – ĐẸP NHƯ ĐỆM KHÁCH SẠN 5 SAO! ✨\n' +
+      '--------------------------------------------\n' +
+      '🔥 Bác nào thích nằm đệm dày 18–20cm nhìn sang trọng như đệm lò xo nguyên tấm nhưng lại ngại bê vác qua cầu thang hẹp thì chốt ngay mẫu Đệm Gấp 2 Chần Múi Lông Vũ này tại Showroom Tuyến Hoa nhé!\n' +
+      '✅ Mặt trên: Vải gấm dệt kim chần múi tổ ong 3D thêu họa tiết Lông Vũ Trắng cực kỳ êm lưng, thoáng khí.\n' +
+      '✅ Thành đệm: Bọc vải bố Canvas màu kem ghi sang trọng, bo viền xương cá siêu bền, không lo xẹp góc.\n' +
+      '✅ Lõi đệm: Phôi cao su tổng hợp & bông ép nhiệt tỷ trọng cao – Nằm êm mà không bị võng lưng!\n' +
+      '💰 GIÁ TẠI KHO TUYẾN HOA (Rẻ hơn thị trường 650k – 800k/tấm):\n' +
+      '   • Cỡ 1,6m × 2,0m × 18cm: Chỉ 1.850.000đ (Giá TT: 2.500.000đ)\n' +
+      '   • Cỡ 1,8m × 2,0m × 18–20cm: Chỉ 2.050.000đ (Giá TT: 2.850.000đ)\n' +
+      '   • Cỡ 2,0m × 2,2m × 20cm: Chỉ 2.350.000đ (Giá TT: 3.150.000đ)\n' +
+      '🎁 Bảo hành chính hãng 5 năm – Miễn phí xe bán tải chở tận nhà!\n' +
+      '📞 Gọi/Zalo chốt đơn ngay: 0989.655.388 – 0344.727.528 (Showroom Tuyến Hoa)',
+  },
+  {
+    id: 'dem-bong-ep-gam-do-phong-cuoi-kim-cuong-dgd01',
+    code: 'DGD-TH-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Đệm Bông Ép Gấm Đỏ Hoàng Gia (Phòng Cưới) & Gấm Xám Lá Phong · Hoa Văn Cổ Điển Đóng Túi Kim Cương (Đủ 03 Góc Chụp)',
+    shortTitle: 'Đệm Gấm Đỏ Phòng Cưới & Gấm Xám Lá Phong',
+    priceDisplay: '1.450.000đ / tấm',
+    marketPriceRange: 'Giá thị trường: 1.850.000đ – 2.450.000đ / tấm',
+    marketPriceNote: 'Đệm bông ép gấp 3 & mặt trần vỏ Gấm Đỏ Hoàng Gia (chuyên dùng cho phòng cưới may mắn) và Gấm Xám Lá Phong / Xám Hoa Văn Cổ Điển sạch đẹp, đóng túi khóa kéo góc đen logo Kim Cương vàng chính hãng.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: 'Giường 1,6m × 2,0m × 9cm (Vỏ Gấm Đỏ Hoàng Gia / Gấm Xám Lá Phong)',
+        marketPrice: '1.850.000đ / tấm',
+        storePrice: '1.450.000đ / tấm',
+        note: 'Gấp 3 gọn nhẹ, vỏ gấm có khóa kéo tháo giặt dễ dàng',
+      },
+      {
+        sizeOrOption: 'Giường đôi 1,8m × 2,0m × 9cm (Chuẩn giường cưới truyền thống)',
+        marketPrice: '2.150.000đ / tấm',
+        storePrice: '1.650.000đ / tấm',
+        note: 'Mua kèm Màn khung 1Tr được giảm thêm 50.000đ',
+      },
+      {
+        sizeOrOption: 'Bản dày 14cm – 18cm (Cỡ 1,8m × 2,0m hoặc 2,0m × 2,2m Mặt Trần)',
+        marketPrice: '2.450.000đ / tấm',
+        storePrice: '1.950.000đ / tấm',
+        note: 'Bông ép cứng cáp phẳng lưng – Bảo hành 5 năm',
+      },
+    ],
+    numericPrice: 1450000,
+    unitLabel: '1 tấm Đệm Gấm Đỏ / Gấm Xám Lá Phong chính hãng',
+    standardDimensions: '1,5m×1,9m | 1,6m×2,0m | 1,8m×2,0m | 2,0m×2,2m (Độ dày 9cm / 14cm / 18cm)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/DGD_TH_01_dem_gam_do_la_phong_hd.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792918003114_4373635352308930219_4373635352308930219_183a5322d1c3677c81ea3c6eed04d596_c7602f66.jpg',
+      '/assets/aistudio/1792918003138_4373635352308930219_4373635352308930219_8dab47a7f373f06a9c0f8a93b6f426a3_9e0a77a6.jpg',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/DGD_TH_01_dem_gam_do_la_phong_hd.jpg': {
+        badge: 'Ảnh 1/3 · Banner HD Đệm Gấm Đỏ Hoàng Gia & Gấm Xám Lá Phong',
+        caption: 'Bố cục Typography HD Be Vietnam Pro sắc nét: Bộ sưu tập Đệm Gấm Đỏ Phòng Cưới và Gấm Xám Lá Phong đóng túi Kim Cương vàng.',
+      },
+      '/assets/aistudio/1792918003114_4373635352308930219_4373635352308930219_183a5322d1c3677c81ea3c6eed04d596_c7602f66.jpg': {
+        badge: 'Ảnh 2/3 · Bộ 3 Tấm Đệm Mặt Trần Dựng Đứng (2 Gấm Đỏ Hoàng Gia & 1 Gấm Xám Lá Phong)',
+        caption: 'Hai tấm Đệm Gấm Đỏ Hoàng Gia chần bông rực rỡ đặt hai bên tấm Đệm Gấm Xám Lá Phong ở giữa, bọc góc đen-vàng sang trọng.',
+      },
+      '/assets/aistudio/1792918003138_4373635352308930219_4373635352308930219_8dab47a7f373f06a9c0f8a93b6f426a3_9e0a77a6.jpg': {
+        badge: 'Ảnh 3/3 · Chồng 6 Kiện Đệm Gấp 3 Đóng Túi Khóa Kéo Góc Đen Logo Kim Cương Vàng',
+        caption: '6 kiện đệm gấp 3 đóng túi khóa kéo "100% Poly Ester": Gồm 2 kiện Gấm Đỏ, 2 kiện Gấm Lá Phong và 2 kiện Gấm Hoa Cổ Điển.',
+      },
+    },
+    highlightTag: 'Mới Đăng · Gấm Đỏ Phòng Cưới & Lá Phong',
+    summary:
+      'Trọn bộ hình ảnh thực tế lô Đệm Bông Ép Gấp 3 & Mặt Trần đóng túi Kim Cương tại kho Tuyến Hoa: Nổi bật với 2 tấm Gấm Đỏ Hoàng Gia dựng đứng hai bên tấm Gấm Xám Lá Phong cùng chồng 6 kiện đệm gấp 3 bọc túi khóa kéo góc đen in logo Kim Cương vàng.',
+    visualAnnotations: [
+      {
+        label: 'Bộ 3 tấm Đệm Mặt Trần dựng đứng: 2 Gấm Đỏ Hoàng Gia & 1 Gấm Xám Lá Phong (Ảnh 2)',
+        detail:
+          'Vải gấm đỏ dệt hoa văn nổi chần bông rực rỡ cho phòng tân hôn, đặt cạnh mẫu gấm xám dệt hình lá phong thanh lịch.',
+      },
+      {
+        label: 'Chồng 6 kiện Đệm Gấp 3 bọc túi khóa kéo góc đen logo Kim Cương vàng (Ảnh 3)',
+        detail:
+          'Mỗi túi đựng gồm 3 tấm gập gọn, góc túi bọc vải đen in logo Kim Cương vàng "100% Poly Ester", chia rõ 3 cặp hoa văn: Đỏ Hoàng Gia, Xám Lá Phong và Xám Hoa Cổ Điển.',
+      },
+      {
+        label: 'Cốt bông ép nhiệt phẳng lưng chuẩn y khoa – Bảo hành 5 năm',
+        detail:
+          'Độ phẳng tối ưu giúp nâng đỡ cột sống cho cả người lớn tuổi, trẻ nhỏ và các cặp đôi mới cưới.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'DGD-TH-01 (Đệm Bông Ép Gấm Đỏ & Gấm Xám Lá Phong – Bộ 3 Ảnh)' },
+      { label: 'Chất liệu vỏ', value: 'Vải Gấm Đỏ Hoàng Gia · Gấm Xám Lá Phong · Gấm Hoa Cổ Điển (Có khóa kéo)' },
+      { label: 'Giá thị trường', value: '1.850.000đ – 2.450.000đ / tấm' },
+      { label: 'Giá tại Tuyến Hoa', value: '1.450.000đ (1m6×2m) | 1.650.000đ (1m8×2m) | 1.950.000đ (Bản dày)' },
+      { label: 'Bảo hành', value: 'Bảo hành 5 năm – Miễn phí giao tận nhà' },
+    ],
+    articleParagraphs: [
+      'Vào mỗi mùa cưới hỏi và dịp cuối năm, dòng Đệm Bông Ép Vỏ Gấm Đỏ Hoàng Gia (Mã DGD-TH-01) tại Showroom Tuyến Hoa luôn được các bậc phụ huynh ưu tiên lựa chọn để sắm trọn bộ chăn ga gối đệm + màn khung cho phòng tân hôn.',
+      'Song song với màu đỏ truyền thống, kho Tuyến Hoa luôn sẵn các kiện đệm vỏ Gấm Xám Lá Phong và Gấm Hoa Cổ Điển đóng túi khóa kéo Kim Cương ép cứng phẳng lưng, giá chỉ từ 1.450.000đ/tấm.'
+    ],
+    facebookPostCopy:
+      '🌺 ĐỆM BÔNG ÉP GẤM ĐỎ PHÒNG CƯỚI & GẤM XÁM LÁ PHONG – BỀN ĐẸP, PHẲNG LƯNG, GIÁ TẬN GỐC! 🌺\n' +
+      '--------------------------------------------\n' +
+      '💍 Gia đình chuẩn bị sắm giường cưới hay thay đệm mới cho ông bà, bố mẹ thì tham khảo ngay lô Đệm Gấm Đỏ Hoàng Gia & Gấm Xám Lá Phong vừa về ngập kho Tuyến Hoa nhé!\n' +
+      '✅ Ruột bông ép nhiệt trắng tinh khiết, độ cứng tiêu chuẩn nâng đỡ cột sống, không lún võng.\n' +
+      '✅ Vỏ gấm dệt dày dặn (Đỏ Hoàng Gia, Xám Lá Phong, Xám Hoa Cổ Điển), đóng túi khóa kéo góc đen logo Kim Cương vàng.\n' +
+      '💰 GIÁ BÁN LẺ RẺ NHƯ GIÁ BUÔN:\n' +
+      '   • Cỡ 1,6m × 2,0m: Chỉ 1.450.000đ / tấm (Giá TT: 1.850.000đ)\n' +
+      '   • Cỡ 1,8m × 2,0m: Chỉ 1.650.000đ / tấm (Giá TT: 2.150.000đ)\n' +
+      '   • Bản dày 14cm–18cm: Chỉ 1.950.000đ / tấm (Giá TT: 2.450.000đ)\n' +
+      '🎁 Mua combo Đệm + Màn khung 1.000.000đ/bộ được giảm thêm ngay tiền mặt & bao lắp tận giường!\n' +
+      '📞 Gọi/Zalo: 0989.655.388 – 0344.727.528 (Showroom Tuyến Hoa)',
+  },
+  {
+    id: 'dem-th-vicuna-luxury-sleep-5-sao-dvc01',
+    code: 'DVC-TH-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Đệm Cao Cấp TH VICUNA Luxury Sleep Chuẩn 5 Sao – Bọc Góc Da Thêu Kim Cương Sang Trọng (Đủ 03 Ảnh Thực Tế)',
+    shortTitle: 'Đệm TH VICUNA Luxury Sleep 5 Sao',
+    priceDisplay: '2.150.000đ / tấm',
+    marketPriceRange: 'Giá thị trường: 2.850.000đ – 3.550.000đ / tấm',
+    marketPriceNote: 'Dòng đệm thương hiệu TH VICUNA Luxury Sleep 5 sao cao cấp nguyên đai nguyên kiện tại kho Tuyến Hoa: Góc đệm bọc da thêu nổi logo kim cương, mặt gấm chần múi lông vũ 3D siêu êm.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: 'Giường 1,6m × 2,0m (Đệm TH VICUNA Luxury Sleep 5 Sao)',
+        marketPrice: '2.850.000đ / tấm',
+        storePrice: '2.150.000đ / tấm',
+        note: 'Bọc góc da cao cấp chống trầy xước 4 góc đệm',
+      },
+      {
+        sizeOrOption: 'Giường đôi 1,8m × 2,0m (Kích thước chuẩn phòng cưới sang trọng)',
+        marketPrice: '3.150.000đ / tấm',
+        storePrice: '2.350.000đ / tấm',
+        note: 'Nằm êm tĩnh lặng, nâng đỡ cột sống chuẩn 5 sao',
+      },
+      {
+        sizeOrOption: 'Giường đại 2,0m × 2,2m (Bản Luxury dày dặn cho phòng lớn)',
+        marketPrice: '3.550.000đ / tấm',
+        storePrice: '2.650.000đ / tấm',
+        note: 'Tặng kèm ga chống thấm hoặc bộ vỏ gối cao cấp',
+      },
+    ],
+    numericPrice: 2150000,
+    unitLabel: '1 tấm Đệm TH VICUNA Luxury Sleep 5 Sao',
+    standardDimensions: 'Đủ cỡ: 1,6m × 2,0m | 1,8m × 2,0m | 2,0m × 2,2m (Độ dày 18cm – 20cm)',
+    mediaType: 'image',
+    imageUrl:
+      '/assets/aistudio/1792918016629_4373635352308930219_4373635352308930219_d5df01664878568ea8e6066bf3bdb431_97fe4b70.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792918016605_4373635352308930219_4373635352308930219_ff42bd0c92e3d13ea3f0b5801bac59b4_4b51f748.jpg',
+      '/assets/aistudio/1792918016580_4373635352308930219_4373635352308930219_3fd82c5b2fa089ea2e68a07151974250_668f1bab.jpg',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/1792918016629_4373635352308930219_4373635352308930219_d5df01664878568ea8e6066bf3bdb431_97fe4b70.jpg': {
+        badge: 'Ảnh 1/3 · Trọn Vẹn Dáng Đứng Đệm TH VICUNA Luxury Sleep 5 Sao',
+        caption: 'Đã căn chỉnh khung 4:3 hiển thị trọn vẹn 4 góc bọc da thêu kim cương vàng, mặt chần múi lông vũ & tem bảng giá xanh lá.',
+      },
+      '/assets/aistudio/1792918016605_4373635352308930219_4373635352308930219_ff42bd0c92e3d13ea3f0b5801bac59b4_4b51f748.jpg': {
+        badge: 'Ảnh 2/3 · Cận Cảnh Tem Góc Vàng Kim "TH VICUNA – 100% Poly Ester"',
+        caption: 'Các kiện đệm TH VICUNA đóng túi khóa kéo nguyên đai nguyên kiện, thành túi thêu logo Vương Miện & Kim Cương vàng kim.',
+      },
+      '/assets/aistudio/1792918016580_4373635352308930219_4373635352308930219_3fd82c5b2fa089ea2e68a07151974250_668f1bab.jpg': {
+        badge: 'Ảnh 3/3 · Tổng Kho Hàng Trăm Tấm Đệm TH VICUNA Sẵn Hàng Xuất Xưởng',
+        caption: 'Sẵn kho đầy đủ các độ dày 14cm, 18cm, 20cm và kích thước 1m6, 1m8, 2m2 phục vụ đại lý và khách mua lẻ giá gốc.',
+      },
+    },
+    highlightTag: 'Luxury Sleep 5 Sao · Bọc Góc Da Kim Cương',
+    summary:
+      'Bộ 3 ảnh chụp thực tế đã được chỉnh sáng và đóng khung chuẩn 4:3 cho dòng Đệm TH VICUNA Luxury Sleep 5 Sao tại kho Tuyến Hoa: Nổi bật với tem xanh – vàng kim 5 sao, 4 góc đệm gia cố ốp da thêu kim cương, mặt đệm gấm xám bạc chần bông siêu đàn hồi.',
+    visualAnnotations: [
+      {
+        label: 'Nhãn hiệu "TH VICUNA – Luxury Sleep" 5 Sao chính hãng (Ảnh 1)',
+        detail:
+          'Thiết kế tem nhãn sang trọng kèm bảng báo giá chính hãng, cam kết tiêu chuẩn chất lượng giấc ngủ khách sạn 5 sao.',
+      },
+      {
+        label: 'Ốp bảo vệ 4 góc đệm bằng da thêu kim cương tinh tế (Ảnh 1 & Ảnh 2)',
+        detail:
+          'Giúp 4 góc đệm luôn vuông vức, chống sờn rách khi di chuyển hoặc thay ga giường, tạo điểm nhấn đẳng cấp.',
+      },
+      {
+        label: 'Tổng kho số lượng lớn đủ kích thước tại Tuyến Hoa (Ảnh 3)',
+        detail:
+          'Nhập và phân phối trực tiếp tại tổng kho, giúp khách hàng mua lẻ tiết kiệm từ 700.000đ – 900.000đ mỗi tấm.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'DVC-TH-01 (Đệm TH VICUNA Luxury Sleep 5 Sao – Bộ 3 Ảnh)' },
+      { label: 'Giá thị trường', value: '2.850.000đ – 3.550.000đ / tấm' },
+      { label: 'Giá tại Tuyến Hoa', value: '2.150.000đ (1m6×2m) | 2.350.000đ (1m8×2m) | 2.650.000đ (2m×2m2)' },
+      { label: 'Thiết kế đặc biệt', value: 'Ốp da 4 góc thêu kim cương + Mặt chần bông Luxury êm sâu' },
+      { label: 'Bảo hành chính hãng', value: 'Bảo hành 7 năm – Miễn phí vận chuyển tận nhà' },
+    ],
+    articleParagraphs: [
+      'Đệm TH VICUNA Luxury Sleep (Mã DVC-TH-01) là dòng đệm phân khúc cao cấp được nhiều gia đình chọn mua cho phòng ngủ chính và phòng cưới nhờ ngoại hình sang trọng vượt trội: từ tem góc vàng kim, ốp da thêu kim cương ở 4 góc cho đến lớp vải gấm chần nổi họa tiết lông vũ.',
+      'Hàng luôn có sẵn số lượng lớn nguyên bọc nilon hút ẩm tại kho Tuyến Hoa để quý khách đến nằm thử trực tiếp và chọn kích thước chuẩn cho chiếc giường của gia đình.'
+    ],
+    facebookPostCopy:
+      '👑 ĐỆM TH VICUNA LUXURY SLEEP 5 SAO – SANG TRỌNG ĐẲNG CẤP CHO PHÒNG NGỦ HIỆN ĐẠI! 👑\n' +
+      '--------------------------------------------\n' +
+      '✨ Nhìn cận cảnh 4 góc đệm bọc da thêu kim cương và mặt gấm chần nổi của dòng Đệm TH VICUNA Luxury Sleep là thấy ngay độ xịn sò chuẩn khách sạn 5 sao!\n' +
+      '✅ Độ đàn hồi êm ái, nâng đỡ trọn vẹn đường cong cơ thể, xoay trở mình hoàn toàn êm ru không gây tiếng động.\n' +
+      '✅ Áo đệm vải gấm cao cấp thoáng khí 4 mùa, nguyên đai nguyên kiện từ nhà máy.\n' +
+      '💰 BẢNG GIÁ TẬN GỐC TẠI SHOWROOM TUYẾN HOA:\n' +
+      '   • Cỡ 1,6m × 2,0m: 2.150.000đ / tấm (Giá TT: 2.850.000đ)\n' +
+      '   • Cỡ 1,8m × 2,0m: 2.350.000đ / tấm (Giá TT: 3.150.000đ)\n' +
+      '   • Cỡ 2,0m × 2,2m: 2.650.000đ / tấm (Giá TT: 3.550.000đ)\n' +
+      '🚛 Giao đệm tận giường miễn phí – Kiểm tra đúng tem TH VICUNA 5 sao mới thanh toán!\n' +
+      '📞 Gọi/Zalo ngay: 0344.727.528 (Showroom Tuyến Hoa)',
+  },
+  {
+    id: 'dem-gap-2-chan-mui-ke-caro-xam-ghi-dcr01',
+    code: 'DCR-TH-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung',
+    title: 'Đệm Gấp 2 Chần Múi Kẻ Caro Thành Xám Ghi & Kem Sáng Cỡ Lớn (1,8m × 2,0m × Dày 18cm) – Đủ 02 Phiên Bản Màu Thành Đệm',
+    shortTitle: 'Đệm Gấp 2 Chần Múi Kẻ Caro Dày 18cm',
+    priceDisplay: '1.750.000đ / tấm',
+    marketPriceRange: 'Giá thị trường: 2.350.000đ – 2.850.000đ / tấm',
+    marketPriceNote: 'Mẫu đệm gấp 2 chần múi vuông kẻ Caro hiện đại, độ dày chuẩn 18cm (ghi rõ thông số 18×2×18 trên kiện phôi tại xưởng), có 2 tùy chọn thành đệm màu Xám Ghi đậm và Kem Sáng.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: 'Giường 1,6m × 2,0m × Dày 18cm (Múi kẻ Caro thành Xám / Kem)',
+        marketPrice: '2.350.000đ / tấm',
+        storePrice: '1.750.000đ / tấm',
+        note: 'Thiết kế múi vuông khỏe khoắn, sạch sẽ',
+      },
+      {
+        sizeOrOption: 'Giường đôi 1,8m × 2,0m × Dày 18cm (Thông số chuẩn 18×2×18)',
+        marketPrice: '2.600.000đ / tấm',
+        storePrice: '1.950.000đ / tấm',
+        note: 'Sẵn hàng tại kho cả bản thành Xám Đậm & Kem Sáng',
+      },
+      {
+        sizeOrOption: 'Giường đại 2,0m × 2,2m × Dày 18cm',
+        marketPrice: '2.850.000đ / tấm',
+        storePrice: '2.250.000đ / tấm',
+        note: 'Bảo hành 5 năm – Giao tận nơi miễn phí',
+      },
+    ],
+    numericPrice: 1750000,
+    unitLabel: '1 tấm Đệm Gấp 2 Chần Múi Kẻ Caro dày 18cm',
+    standardDimensions: '1,6m × 2,0m × 18cm | 1,8m × 2,0m × 18cm | 2,0m × 2,2m × 18cm',
+    mediaType: 'image',
+    imageUrl:
+      '/assets/aistudio/1792918016653_4373635352308930219_4373635352308930219_4e5893d4d7b1a42ce14f5c79a80e3b74_5615ca60.jpg',
+    secondaryImages: [
+      '/assets/aistudio/1792918016678_4373635352308930219_4373635352308930219_e02b93233d85d3ba3faf920984a28150_e939a0e0.jpg',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/1792918016653_4373635352308930219_4373635352308930219_4e5893d4d7b1a42ce14f5c79a80e3b74_5615ca60.jpg': {
+        badge: 'Ảnh 1/2 · Phiên Bản Thành Vải Bố Màu Xám Ghi Đậm (Dày 18cm)',
+        caption: 'Mặt trên chần múi vuông kẻ Caro khỏe khoắn, thành đệm bọc vải bố màu Xám Ghi đậm sạch sẽ, đặt trên kiện phôi 18×2×18.',
+      },
+      '/assets/aistudio/1792918016678_4373635352308930219_4373635352308930219_e02b93233d85d3ba3faf920984a28150_e939a0e0.jpg': {
+        badge: 'Ảnh 2/2 · Phiên Bản Thành Vải Bố Màu Kem Sáng (Thông Số 18×2×18)',
+        caption: 'Cùng mặt chần múi vuông kẻ Caro nhưng phối thành vải bố màu Kem Sáng thanh lịch, có tem góc Kim Cương chính hãng.',
+      },
+    },
+    highlightTag: 'Đủ 2 Màu Thành Đệm · Chần Múi Caro 18cm',
+    summary:
+      'Bộ đôi ảnh thực tế đã căn chỉnh khung 4:3 trọn vẹn dáng đứng chữ A của dòng Đệm Gấp 2 Chần Múi Kẻ Caro dày 18cm tại xưởng Tuyến Hoa: Khách hàng bấm chọn xem trực tiếp giữa bản thành vải bố màu Xám Đậm và màu Kem Sáng.',
+    visualAnnotations: [
+      {
+        label: 'Hệ thống ô chần múi vuông Caro phân bổ lực đồng đều',
+        detail:
+          'Các đường rãnh chần vuông vức giữ lớp bông và mút mặt trên cố định tuyệt đối, không bị xô lệch sau nhiều năm sử dụng.',
+      },
+      {
+        label: 'Hai phiên bản màu thành đệm: Xám Ghi Đậm (Ảnh 1) & Kem Sáng (Ảnh 2)',
+        detail:
+          'Thành đệm Xám Ghi cực kỳ sạch khi nhà có trẻ nhỏ; thành đệm Kem Sáng lại hợp với giường gỗ sồi hoặc phòng ngủ tông sáng.',
+      },
+      {
+        label: 'Độ dày thực tế 18cm (Thông số xưởng 18×2×18 ghi rõ dưới kiện đệm)',
+        detail:
+          'Đặt lên giường không cần dùng thêm chiếu hay topper phụ, độ cao vừa tầm ngồi lên xuống thoải mái.',
+      },
+    ],
+    specs: [
+      { label: 'Mã sản phẩm', value: 'DCR-TH-01 (Đệm Gấp 2 Chần Múi Kẻ Caro Dày 18cm – Bộ 2 Màu)' },
+      { label: 'Màu sắc thành đệm', value: 'Xám Ghi Đậm (Ảnh 1) & Kem Sáng (Ảnh 2)' },
+      { label: 'Giá thị trường', value: '2.350.000đ – 2.850.000đ / tấm' },
+      { label: 'Giá tại Tuyến Hoa', value: '1.750.000đ (1m6×2m) | 1.950.000đ (1m8×2m) | 2.250.000đ (2m×2m2)' },
+      { label: 'Bảo hành', value: 'Bảo hành 5 năm chính hãng tại Showroom Tuyến Hoa' },
+    ],
+    articleParagraphs: [
+      'Bên cạnh mẫu chần múi lông vũ, Xưởng & Showroom Tuyến Hoa còn sản xuất và phân phối dòng Đệm Gấp 2 Chần Múi Kẻ Caro (Mã DCR-TH-01) với thiết kế ô vuông khỏe khoắn, hiện đại, độ dày chuẩn 18cm.',
+      'Sản phẩm có sẵn cả hai tông màu thành đệm là Xám Ghi Đậm và Kem Sáng để quý khách dễ dàng bấm chọn đối chiếu ngay trên thẻ sản phẩm.'
+    ],
+    facebookPostCopy:
+      '🛋️ ĐỆM GẤP 2 CHẦN MÚI KẺ CARO DÀY 18CM – ĐỦ 2 MÀU THÀNH XÁM GHI & KEM SÁNG! 🛋️\n' +
+      '--------------------------------------------\n' +
+      '✅ Thiết kế mặt chần múi vuông kẻ Caro hiện đại, độ dày thực tế đủ 18cm cực kỳ tôn dáng giường.\n' +
+      '✅ Có sẵn 2 bản màu thành vải bố: Màu Xám Ghi sạch khỏe khoắn & Màu Kem Sáng sang trọng.\n' +
+      '💰 GIÁ XƯỞNG TUYẾN HOA:\n' +
+      '   • Cỡ 1,6m × 2,0m × 18cm: 1.750.000đ / tấm (Giá TT: 2.350.000đ)\n' +
+      '   • Cỡ 1,8m × 2,0m × 18cm: 1.950.000đ / tấm (Giá TT: 2.600.000đ)\n' +
+      '   • Cỡ 2,0m × 2,2m × 18cm: 2.250.000đ / tấm (Giá TT: 2.850.000đ)\n' +
+      '🚛 Giao miễn phí tận nhà – Bảo hành 5 năm không xẹp lún!\n' +
+      '📞 Gọi/Zalo đặt hàng: 0344.727.528 (Showroom Tuyến Hoa)',
+  },
   // ===========================================================================
   // 00-NEWEST. BỘ 03 BÀI ĐĂNG MỚI NHẤT TỪ LÔ 18 ẢNH VỪA TẢI LÊN:
   //            1. CHIẾU MÂY ĐIỀU HÒA SỢI NGẢI CỨU LÓT LƯỚI 3D NICOLAS NATURE HOME (IMG_5508 -> IMG_5531)
@@ -1567,586 +2725,6 @@ export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
       '   🩶 4. Màu Xám Ghi Chì (Charcoal Grey): Lịch lãm, hiện đại, siêu sạch\n' +
       '✅ Chất Lụa Tencel 60s mát lịm kết hợp ga phủ & chăn chần bông quả trám êm ái, thêu nổi chữ D – Dror & nhành Hoa Anh Đào sắc nét từng đường kim mũi chỉ.\n' +
       '📞 Gọi/Zalo Anh Tuyến đặt hàng giao tận nhà: 0344.727.528!',
-  },
-
-  // ===========================================================================
-  // 00-TOP. BỘ SƯU TẬP 16 ẢNH ĐỆM ĐÃ CHỈNH SÁNG RÕ KHUNG 4:3 STUDIO & GHI CHÚ THÍCH CHI TIẾT TỪNG ẢNH
-  //         (CHẦN MÚI LÔNG VŨ, KIM CƯƠNG MẶT TRẦN, TH VICUNA 5 SAO, CARO 18CM, GẤM ĐỎ & XƯỞNG PHÔI ĐỆM)
-  // ===========================================================================
-  {
-    id: 'dem-gap-2-chan-mui-long-vu-tuyen-hoa-dlv01',
-    code: 'DLV-TH-01',
-    category: 'man-khung-1tr',
-    categoryName: 'Đệm · Chiếu · Màn Khung',
-    title: 'Đệm Cao Su Non & Bông Ép Gấp 2 Chần Múi Lông Vũ Thành Vải Bố Cao Cấp (Dày 18cm – 20cm) – Đã Chỉnh Sáng Rõ 04 Góc Chụp',
-    shortTitle: 'Đệm Gấp 2 Chần Múi Lông Vũ Dày 18–20cm',
-    priceDisplay: '1.850.000đ / tấm',
-    marketPriceRange: 'Giá thị trường: 2.500.000đ – 3.150.000đ / tấm',
-    marketPriceNote: 'Dòng đệm gấp 2 cao cấp vừa về tại Showroom Tuyến Hoa (đủ 04 ảnh đã căn chỉnh khung 4:3 sắc nét): Lõi cao su tổng hợp kết hợp bông ép kháng khuẩn dày 18–20cm, mặt trên chần múi nổi 3D thêu họa tiết lông vũ & lá bạc, thành đệm bọc vải bố Canvas sang trọng.',
-    marketPriceTiers: [
-      {
-        sizeOrOption: 'Cỡ giường 1,6m × 2,0m × Dày 18cm (Gấp 2 chần múi nổi)',
-        marketPrice: '2.500.000đ / tấm',
-        storePrice: '1.850.000đ / tấm',
-        note: 'Tặng kèm bộ ga gối lụa Tencel đồng bộ',
-      },
-      {
-        sizeOrOption: 'Cỡ giường đôi 1,8m × 2,0m × Dày 18cm–20cm (Bán chạy số 1)',
-        marketPrice: '2.850.000đ / tấm',
-        storePrice: '2.050.000đ / tấm',
-        note: 'Nằm êm ái nâng đỡ cột sống – Không xẹp lún',
-      },
-      {
-        sizeOrOption: 'Cỡ đại 2,0m × 2,2m × Dày 20cm (Phòng ngủ Master / Phòng cưới)',
-        marketPrice: '3.150.000đ / tấm',
-        storePrice: '2.350.000đ / tấm',
-        note: 'Xe bán tải Tuyến Hoa giao tận giường miễn phí',
-      },
-    ],
-    numericPrice: 1850000,
-    unitLabel: '1 tấm đệm gấp 2 chần múi lông vũ (Bảo hành 5 năm)',
-    standardDimensions: 'Đủ cỡ: 1,6m × 2,0m | 1,8m × 2,0m | 2,0m × 2,2m (Độ dày 18cm – 20cm)',
-    mediaType: 'image',
-    imageUrl:
-      '/assets/aistudio/1792918016482_4373635352308930219_4373635352308930219_4312b35fb8fb2294dae9814c0fd63b76_efca6d23.jpg',
-    secondaryImages: [
-      '/assets/aistudio/1792918016457_4373635352308930219_4373635352308930219_ce5968c3bf0facffcac3c3337b6368f8_6a935b43.jpg',
-      '/assets/aistudio/1792918016506_4373635352308930219_4373635352308930219_64e0bdcea0b4a6a81dd49838bee4f92b_9aa612e6.jpg',
-      '/assets/aistudio/1792918016531_4373635352308930219_4373635352308930219_923776db7491fe49943cc0401d79b4a6_02f36a9c.jpg',
-    ],
-    imageCaptions: {
-      '/assets/aistudio/1792918016482_4373635352308930219_4373635352308930219_4312b35fb8fb2294dae9814c0fd63b76_efca6d23.jpg': {
-        badge: 'Ảnh 1/4 · Dáng Gập Chữ A Thành Vải Bố Dày 18–20cm',
-        caption: 'Thành đệm bọc vải bố Canvas kem ghi đứng phom vuông vức như đệm khách sạn 5 sao, gập đôi linh hoạt dễ qua cầu thang.',
-      },
-      '/assets/aistudio/1792918016457_4373635352308930219_4373635352308930219_ce5968c3bf0facffcac3c3337b6368f8_6a935b43.jpg': {
-        badge: 'Ảnh 2/4 · Bề Mặt Trải Phẳng Chần Múi 3D Thêu Lông Vũ',
-        caption: 'Khi mở phẳng hai tấm liền mạch khít 100%, bề mặt vải gấm dệt kim xám bạc thêu nổi họa tiết Lông Vũ & Lá Bạc tinh xảo.',
-      },
-      '/assets/aistudio/1792918016506_4373635352308930219_4373635352308930219_64e0bdcea0b4a6a81dd49838bee4f92b_9aa612e6.jpg': {
-        badge: 'Ảnh 3/4 · Cận Cảnh Bản Lề Gập Đôi & Viền Bo Xương Cá',
-        caption: 'Đường viền bo xương cá to bản khâu máy công nghiệp 2 kim ôm chặt cạnh đệm, chống sờn rách và chống xẹp góc suốt 10 năm.',
-      },
-      '/assets/aistudio/1792918016531_4373635352308930219_4373635352308930219_923776db7491fe49943cc0401d79b4a6_02f36a9c.jpg': {
-        badge: 'Ảnh 4/4 · Cận Cảnh Ô Múi Chần Nổi Đa Điểm Thoáng Khí',
-        caption: 'Các rãnh múi chần sâu tạo khe thoáng khí đối lưu, nâng đỡ êm ái vùng vai gáy và thắt lưng, không gây hầm bí mùa hè.',
-      },
-    },
-    highlightTag: 'Đã Chỉnh Sáng 4 Ảnh · Dày 18–20cm Chần Múi 3D',
-    summary:
-      'Bộ 4 góc chụp thực tế đã được chỉnh sáng và căn khung chuẩn Studio 4:3 cho dòng Đệm Gấp 2 Chần Múi Lông Vũ & Lá Bạc cao cấp tại xưởng Tuyến Hoa: Thiết kế gập đôi linh hoạt nhưng khi trải phẳng liền mạch như đệm lò xo nguyên tấm, bề mặt vải gấm dệt kim chần bông dày dặn, thành đệm bọc vải bố màu kem ghi chống bám bẩn.',
-    visualAnnotations: [
-      {
-        label: 'Bề mặt chần múi 3D thêu họa tiết Lông Vũ & Lá Bạc tinh xảo (Ảnh 2 & Ảnh 4)',
-        detail:
-          'Các ô múi chần sâu tạo rãnh thoáng khí đối lưu, nâng đỡ êm ái vùng vai gáy và thắt lưng, nằm mùa hè thoáng mát, mùa đông ấm áp.',
-      },
-      {
-        label: 'Thành đệm cao 18cm–20cm bọc vải bố Canvas kèm viền bo xương cá (Ảnh 1 & Ảnh 3)',
-        detail:
-          'Thành đệm đứng phom vuông vức như đệm khách sạn 5 sao; đường bo viền to bản khâu máy công nghiệp 2 kim chống bung chỉ suốt 10 năm.',
-      },
-      {
-        label: 'Bản lề gập 2 thông minh – Dễ dàng vận chuyển qua cầu thang hẹp',
-        detail:
-          'Khắc phục hoàn toàn nhược điểm cồng kềnh của đệm lò xo nguyên tấm: có thể gập chữ A để vệ sinh hoặc dựng gọn sát tường khi chưa sử dụng.',
-      },
-    ],
-    specs: [
-      { label: 'Mã sản phẩm', value: 'DLV-TH-01 (Đệm Gấp 2 Chần Múi Lông Vũ Tuyến Hoa – Bộ 4 Ảnh)' },
-      { label: 'Giá thị trường', value: '2.500.000đ – 3.150.000đ / tấm' },
-      { label: 'Giá tại Tuyến Hoa', value: '1.850.000đ (1m6×2m) | 2.050.000đ (1m8×2m) | 2.350.000đ (2m×2m2)' },
-      { label: 'Độ dày tiêu chuẩn', value: '18cm – 20cm (Phom đệm dày sang trọng chuẩn giường hiện đại)' },
-      { label: 'Bảo hành & Vận chuyển', value: 'Bảo hành 5 năm không xẹp lún · Giao tận giường miễn phí' },
-    ],
-    articleParagraphs: [
-      'Dòng Đệm Gấp 2 Chần Múi Lông Vũ (Mã DLV-TH-01) là lựa chọn hoàn hảo cho các gia đình yêu thích vẻ sang trọng, bề thế của đệm dày 18cm–20cm nhưng vẫn muốn sự gọn nhẹ, dễ di chuyển qua cầu thang của thiết kế gập đôi.',
-      'Toàn bộ 4 bức ảnh thực tế tại xưởng đã được cân chỉnh ánh sáng và khung hình hiển thị trọn vẹn từng chi tiết: mặt trên là vải gấm dệt kim xám bạc thêu họa tiết lông vũ thanh thoát, chần lớp mút êm ái; phần thành xung quanh bọc vải bố Canvas màu ghi kem hiện đại, chống sờn rách và cực kỳ sạch sẽ.'
-    ],
-    facebookPostCopy:
-      '✨ [SIÊU PHẨM MỚI VỀ] ĐỆM GẤP 2 CHẦN MÚI LÔNG VŨ THÀNH VẢI BỐ DÀY 18–20CM – ĐẸP NHƯ ĐỆM KHÁCH SẠN 5 SAO! ✨\n' +
-      '--------------------------------------------\n' +
-      '🔥 Bác nào thích nằm đệm dày 18–20cm nhìn sang trọng như đệm lò xo nguyên tấm nhưng lại ngại bê vác qua cầu thang hẹp thì chốt ngay mẫu Đệm Gấp 2 Chần Múi Lông Vũ này tại Showroom Tuyến Hoa nhé!\n' +
-      '✅ Mặt trên: Vải gấm dệt kim chần múi nổi 3D thêu họa tiết Lông Vũ & Lá Bạc cực kỳ êm lưng, thoáng khí.\n' +
-      '✅ Thành đệm: Bọc vải bố Canvas màu kem ghi sang trọng, bo viền xương cá siêu bền, không lo xẹp góc.\n' +
-      '✅ Lõi đệm: Phôi cao su tổng hợp & bông ép nhiệt tỷ trọng cao – Nằm êm mà không bị võng lưng!\n' +
-      '💰 GIÁ TẠI KHO TUYẾN HOA (Rẻ hơn thị trường 650k – 800k/tấm):\n' +
-      '   • Cỡ 1,6m × 2,0m × 18cm: Chỉ 1.850.000đ (Giá TT: 2.500.000đ)\n' +
-      '   • Cỡ 1,8m × 2,0m × 18–20cm: Chỉ 2.050.000đ (Giá TT: 2.850.000đ)\n' +
-      '   • Cỡ 2,0m × 2,2m × 20cm: Chỉ 2.350.000đ (Giá TT: 3.150.000đ)\n' +
-      '🎁 Bảo hành chính hãng 5 năm – Miễn phí xe bán tải chở tận nhà!\n' +
-      '📞 Gọi/Zalo chốt đơn ngay: 0344.727.528 (Showroom Tuyến Hoa – Chợ Cháy / Chợ Ngăm)',
-  },
-  {
-    id: 'dem-bong-tinh-khiet-kim-cuong-mat-tran-dkc01',
-    code: 'DKC-TH-01',
-    category: 'man-khung-1tr',
-    categoryName: 'Đệm · Chiếu · Màn Khung',
-    title: 'Đệm Bông Tinh Khiết Mặt Trần Kim Cương & Kim Cương Plaza Hoàng Gia Chính Hãng (Bảo Hành 5 Năm – Đủ 03 Góc Chụp Chi Tiết)',
-    shortTitle: 'Đệm Kim Cương Mặt Trần Chính Hãng',
-    priceDisplay: '1.850.000đ / tấm',
-    marketPriceRange: 'Giá thị trường: 2.450.000đ – 3.100.000đ / tấm',
-    marketPriceNote: 'Đệm Bông Tinh Khiết Mặt Trần thương hiệu Kim Cương & Kim Cương Plaza Hoàng Gia chính hãng 100%, nguyên tem phiếu bảo hành 5 năm và bảng giá niêm yết từ nhà máy.',
-    marketPriceTiers: [
-      {
-        sizeOrOption: 'Giường 1,6m × 2,0m (Đệm Kim Cương Bông Tinh Khiết Mặt Trần)',
-        marketPrice: '2.450.000đ / tấm',
-        storePrice: '1.850.000đ / tấm',
-        note: 'Bông Polyester kháng khuẩn ép nhiệt công nghệ Hàn Quốc',
-      },
-      {
-        sizeOrOption: 'Giường đôi 1,8m × 2,0m (Đệm Kim Cương / Kim Cương Plaza Mặt Trần)',
-        marketPrice: '2.750.000đ / tấm',
-        storePrice: '2.050.000đ / tấm',
-        note: 'Mặt trần bông êm ái, gập 3 gọn gàng có túi khóa kéo',
-      },
-      {
-        sizeOrOption: 'Giường đại 2,0m × 2,2m (Bản Hoàng Gia Mặt Trần Cao Cấp)',
-        marketPrice: '3.100.000đ / tấm',
-        storePrice: '2.350.000đ / tấm',
-        note: 'Bảo hành chính hãng 5 năm – Giao tận phòng ngủ',
-      },
-    ],
-    numericPrice: 1850000,
-    unitLabel: '1 tấm Đệm Kim Cương Mặt Trần chính hãng',
-    standardDimensions: 'Đủ kích thước: 1,5m×1,9m | 1,6m×2,0m | 1,8m×2,0m | 2,0m×2,2m (Độ dày 9cm / 14cm / 18cm)',
-    mediaType: 'image',
-    imageUrl:
-      '/assets/aistudio/1792918003089_4373635352308930219_4373635352308930219_a5ccc3d45dfc907903e18cbbbb8e9365_bf882307.jpg',
-    secondaryImages: [
-      '/assets/aistudio/1792918016556_4373635352308930219_4373635352308930219_e5e9f00e0ae5608b681c11af93f12660_7e65653b.jpg',
-      '/assets/aistudio/1792918003163_4373635352308930219_4373635352308930219_3f68d7dd8f736b30aab8ab95a3d71907_285e6b75.jpg',
-    ],
-    imageCaptions: {
-      '/assets/aistudio/1792918003089_4373635352308930219_4373635352308930219_a5ccc3d45dfc907903e18cbbbb8e9365_bf882307.jpg': {
-        badge: 'Ảnh 1/3 · Trọn Bộ 4 Tông Màu Đệm Kim Cương Bông Tinh Khiết Mặt Trần',
-        caption: 'So sánh trực tiếp 4 mẫu họa tiết mặt trần: Xám Lá Trúc, Ghi Kẻ Caro, Xám Tổ Ong & Đen Ánh Kim kèm tem vàng Kim Cương.',
-      },
-      '/assets/aistudio/1792918016556_4373635352308930219_4373635352308930219_e5e9f00e0ae5608b681c11af93f12660_7e65653b.jpg': {
-        badge: 'Ảnh 2/3 · Cận Cảnh Tem Kim Cương, Phiếu Bảo Hành & Bảng Giá Nhà Máy',
-        caption: 'Mỗi tấm đệm đều kèm Phiếu bảo hành chính hãng 5 năm, bảng giá niêm yết của nhà máy và 4 góc bọc da chống trầy xước.',
-      },
-      '/assets/aistudio/1792918003163_4373635352308930219_4373635352308930219_3f68d7dd8f736b30aab8ab95a3d71907_285e6b75.jpg': {
-        badge: 'Ảnh 3/3 · Đệm Kim Cương Plaza Hoàng Gia Airy Polyester Tại Cửa Hàng',
-        caption: 'Phiên bản Kim Cương Plaza Hoàng Gia kết hợp cao su non – tổng hợp & bông tinh khiết mặt trần thêu lông vũ sang trọng.',
-      },
-    },
-    highlightTag: 'Đã Chỉnh Sáng 3 Ảnh · Chính Hãng Kim Cương',
-    summary:
-      'Bộ 3 ảnh chụp thực tế đã được căn chỉnh khung chuẩn 4:3 (hiển thị trọn vẹn cả tấm đệm đứng & tem phiếu bảo hành) của lô Đệm Bông Tinh Khiết Mặt Trần Kim Cương & Kim Cương Plaza Hoàng Gia tại kho Tuyến Hoa.',
-    visualAnnotations: [
-      {
-        label: 'Tem chính hãng "Đệm Bông Tinh Khiết Mặt Trần KIM CƯƠNG" & Phiếu bảo hành 5 năm',
-        detail:
-          'Mỗi tấm đệm đều có tem xanh vàng in nổi thương hiệu Kim Cương / Kim Cương Plaza kèm bảng thông số chất liệu 100% Airy Polyester kháng khuẩn.',
-      },
-      {
-        label: 'Lớp áo gấm mặt trần (Quilted Top) êm ái hơn đệm bông ép thường',
-        detail:
-          'Bề mặt vải gấm dệt kim được chần thêm một lớp bông mịn tạo độ êm dịu ngay khi đặt lưng, không gây cứng rát lưng cho người lớn tuổi.',
-      },
-      {
-        label: '4 gam màu sang trọng: Xám Đá, Ghi Bạc, Kem Hoàng Gia & Xám Hình Học',
-        detail:
-          'Tông màu trung tính, sạch sẽ, dễ phối với mọi màu ga trải giường và nội thất phòng ngủ hiện đại.',
-      },
-    ],
-    specs: [
-      { label: 'Mã sản phẩm', value: 'DKC-TH-01 (Đệm Bông Tinh Khiết Mặt Trần Kim Cương – Bộ 3 Ảnh)' },
-      { label: 'Thương hiệu', value: 'Đệm Kim Cương & Kim Cương Plaza Hoàng Gia Chính Hãng' },
-      { label: 'Giá thị trường', value: '2.450.000đ – 3.100.000đ / tấm' },
-      { label: 'Giá tại Tuyến Hoa', value: '1.850.000đ (1m6×2m) | 2.050.000đ (1m8×2m) | 2.350.000đ (2m×2m2)' },
-      { label: 'Chế độ bảo hành', value: 'Bảo hành chính hãng 5 năm – Đổi mới nếu lỗi nhà sản xuất' },
-    ],
-    articleParagraphs: [
-      'Khác với các dòng đệm bông ép vỏ trơn thông thường, Đệm Bông Tinh Khiết Mặt Trần Kim Cương & Kim Cương Plaza (Mã DKC-TH-01) được nâng cấp lớp áo vải gấm chần bông (mặt trần) dày dặn, vừa giữ được độ phẳng chuẩn y khoa bảo vệ cột sống, vừa mang lại cảm giác êm ái ngay khi nằm.',
-      'Tại Showroom Tuyến Hoa, toàn bộ đệm Kim Cương đều nhập trực tiếp từ nhà máy với đầy đủ tem nhãn, phiếu bảo hành 5 năm và mức chiết khấu tận gốc giúp bà con tiết kiệm từ 600.000đ – 750.000đ mỗi tấm.'
-    ],
-    facebookPostCopy:
-      '💎 ĐỆM BÔNG TINH KHIẾT MẶT TRẦN KIM CƯƠNG & KIM CƯƠNG PLAZA CHÍNH HÃNG – BẢO HÀNH 5 NĂM! 💎\n' +
-      '--------------------------------------------\n' +
-      '📸 Hình ảnh chụp thật 100% tại kho Chăn Ga Gối Đệm Tuyến Hoa: Đủ 4 màu Gấm Xám Đá, Ghi Bạc, Kem Vân Mây & Họa Tiết Hình Học cực sang!\n' +
-      '✅ Lõi bông Polyester tinh khiết ép nhiệt công nghệ cao: Phẳng lưng, thoáng khí, không xẹp lún, cực tốt cho người đau mỏi lưng & trẻ nhỏ.\n' +
-      '✅ Bề mặt chần bông (Mặt Trần) êm ái, đường chỉ chần sắc nét, đóng túi khóa kéo nguyên đai nguyên kiện.\n' +
-      '💰 GIÁ ƯU ĐÃI TẠI SHOWROOM TUYẾN HOA:\n' +
-      '   • Cỡ 1,6m × 2,0m: 1.850.000đ / tấm (Giá TT: 2.450.000đ)\n' +
-      '   • Cỡ 1,8m × 2,0m: 2.050.000đ / tấm (Giá TT: 2.750.000đ)\n' +
-      '   • Cỡ 2,0m × 2,2m: 2.350.000đ / tấm (Giá TT: 3.100.000đ)\n' +
-      '🚛 Miễn phí giao đệm tận nhà khu vực Chợ Cháy, Chợ Ngăm, Ứng Hòa & lân cận!\n' +
-      '📞 Hotline/Zalo đặt hàng: 0344.727.528 (Tuyến Hoa)',
-  },
-  {
-    id: 'dem-th-vicuna-luxury-sleep-5-sao-dvc01',
-    code: 'DVC-TH-01',
-    category: 'man-khung-1tr',
-    categoryName: 'Đệm · Chiếu · Màn Khung',
-    title: 'Đệm Cao Cấp TH VICUNA Luxury Sleep Chuẩn 5 Sao – Bọc Góc Da Thêu Kim Cương Sang Trọng (Đủ 03 Ảnh Thực Tế)',
-    shortTitle: 'Đệm TH VICUNA Luxury Sleep 5 Sao',
-    priceDisplay: '2.150.000đ / tấm',
-    marketPriceRange: 'Giá thị trường: 2.850.000đ – 3.550.000đ / tấm',
-    marketPriceNote: 'Dòng đệm thương hiệu TH VICUNA Luxury Sleep 5 sao cao cấp nguyên đai nguyên kiện tại kho Tuyến Hoa: Góc đệm bọc da thêu nổi logo kim cương, mặt gấm chần múi lông vũ 3D siêu êm.',
-    marketPriceTiers: [
-      {
-        sizeOrOption: 'Giường 1,6m × 2,0m (Đệm TH VICUNA Luxury Sleep 5 Sao)',
-        marketPrice: '2.850.000đ / tấm',
-        storePrice: '2.150.000đ / tấm',
-        note: 'Bọc góc da cao cấp chống trầy xước 4 góc đệm',
-      },
-      {
-        sizeOrOption: 'Giường đôi 1,8m × 2,0m (Kích thước chuẩn phòng cưới sang trọng)',
-        marketPrice: '3.150.000đ / tấm',
-        storePrice: '2.350.000đ / tấm',
-        note: 'Nằm êm tĩnh lặng, nâng đỡ cột sống chuẩn 5 sao',
-      },
-      {
-        sizeOrOption: 'Giường đại 2,0m × 2,2m (Bản Luxury dày dặn cho phòng lớn)',
-        marketPrice: '3.550.000đ / tấm',
-        storePrice: '2.650.000đ / tấm',
-        note: 'Tặng kèm ga chống thấm hoặc bộ vỏ gối cao cấp',
-      },
-    ],
-    numericPrice: 2150000,
-    unitLabel: '1 tấm Đệm TH VICUNA Luxury Sleep 5 Sao',
-    standardDimensions: 'Đủ cỡ: 1,6m × 2,0m | 1,8m × 2,0m | 2,0m × 2,2m (Độ dày 18cm – 20cm)',
-    mediaType: 'image',
-    imageUrl:
-      '/assets/aistudio/1792918016629_4373635352308930219_4373635352308930219_d5df01664878568ea8e6066bf3bdb431_97fe4b70.jpg',
-    secondaryImages: [
-      '/assets/aistudio/1792918016605_4373635352308930219_4373635352308930219_ff42bd0c92e3d13ea3f0b5801bac59b4_4b51f748.jpg',
-      '/assets/aistudio/1792918016580_4373635352308930219_4373635352308930219_3fd82c5b2fa089ea2e68a07151974250_668f1bab.jpg',
-    ],
-    imageCaptions: {
-      '/assets/aistudio/1792918016629_4373635352308930219_4373635352308930219_d5df01664878568ea8e6066bf3bdb431_97fe4b70.jpg': {
-        badge: 'Ảnh 1/3 · Trọn Vẹn Dáng Đứng Đệm TH VICUNA Luxury Sleep 5 Sao',
-        caption: 'Đã căn chỉnh khung 4:3 hiển thị trọn vẹn 4 góc bọc da thêu kim cương vàng, mặt chần múi lông vũ & tem bảng giá xanh lá.',
-      },
-      '/assets/aistudio/1792918016605_4373635352308930219_4373635352308930219_ff42bd0c92e3d13ea3f0b5801bac59b4_4b51f748.jpg': {
-        badge: 'Ảnh 2/3 · Cận Cảnh Tem Góc Vàng Kim "TH VICUNA – 100% Poly Ester"',
-        caption: 'Các kiện đệm TH VICUNA đóng túi khóa kéo nguyên đai nguyên kiện, thành túi thêu logo Vương Miện & Kim Cương vàng kim.',
-      },
-      '/assets/aistudio/1792918016580_4373635352308930219_4373635352308930219_3fd82c5b2fa089ea2e68a07151974250_668f1bab.jpg': {
-        badge: 'Ảnh 3/3 · Tổng Kho Hàng Trăm Tấm Đệm TH VICUNA Sẵn Hàng Xuất Xưởng',
-        caption: 'Sẵn kho đầy đủ các độ dày 14cm, 18cm, 20cm và kích thước 1m6, 1m8, 2m2 phục vụ đại lý và khách mua lẻ giá gốc.',
-      },
-    },
-    highlightTag: 'Đã Chỉnh Sáng 3 Ảnh · Luxury Sleep 5 Sao',
-    summary:
-      'Bộ 3 ảnh chụp thực tế đã được chỉnh sáng và đóng khung chuẩn 4:3 cho dòng Đệm TH VICUNA Luxury Sleep 5 Sao tại kho Tuyến Hoa: Nổi bật với tem xanh – vàng kim 5 sao, 4 góc đệm gia cố ốp da thêu kim cương, mặt đệm gấm xám bạc chần bông siêu đàn hồi.',
-    visualAnnotations: [
-      {
-        label: 'Nhãn hiệu "TH VICUNA – Luxury Sleep" 5 Sao chính hãng (Ảnh 1)',
-        detail:
-          'Thiết kế tem nhãn sang trọng kèm bảng báo giá chính hãng, cam kết tiêu chuẩn chất lượng giấc ngủ khách sạn 5 sao.',
-      },
-      {
-        label: 'Ốp bảo vệ 4 góc đệm bằng da thêu kim cương tinh tế (Ảnh 1 & Ảnh 2)',
-        detail:
-          'Giúp 4 góc đệm luôn vuông vức, chống sờn rách khi di chuyển hoặc thay ga giường, tạo điểm nhấn đẳng cấp.',
-      },
-      {
-        label: 'Tổng kho số lượng lớn đủ kích thước tại Tuyến Hoa (Ảnh 3)',
-        detail:
-          'Nhập và phân phối trực tiếp tại tổng kho, giúp khách hàng mua lẻ tiết kiệm từ 700.000đ – 900.000đ mỗi tấm.',
-      },
-    ],
-    specs: [
-      { label: 'Mã sản phẩm', value: 'DVC-TH-01 (Đệm TH VICUNA Luxury Sleep 5 Sao – Bộ 3 Ảnh)' },
-      { label: 'Giá thị trường', value: '2.850.000đ – 3.550.000đ / tấm' },
-      { label: 'Giá tại Tuyến Hoa', value: '2.150.000đ (1m6×2m) | 2.350.000đ (1m8×2m) | 2.650.000đ (2m×2m2)' },
-      { label: 'Thiết kế đặc biệt', value: 'Ốp da 4 góc thêu kim cương + Mặt chần bông Luxury êm sâu' },
-      { label: 'Bảo hành chính hãng', value: 'Bảo hành 7 năm – Miễn phí vận chuyển tận nhà' },
-    ],
-    articleParagraphs: [
-      'Đệm TH VICUNA Luxury Sleep (Mã DVC-TH-01) là dòng đệm phân khúc cao cấp được nhiều gia đình chọn mua cho phòng ngủ chính và phòng cưới nhờ ngoại hình sang trọng vượt trội: từ tem góc vàng kim, ốp da thêu kim cương ở 4 góc cho đến lớp vải gấm chần nổi họa tiết lông vũ.',
-      'Hàng luôn có sẵn số lượng lớn nguyên bọc nilon hút ẩm tại kho Tuyến Hoa để quý khách đến nằm thử trực tiếp và chọn kích thước chuẩn cho chiếc giường của gia đình.'
-    ],
-    facebookPostCopy:
-      '👑 ĐỆM TH VICUNA LUXURY SLEEP 5 SAO – SANG TRỌNG ĐẲNG CẤP CHO PHÒNG NGỦ HIỆN ĐẠI! 👑\n' +
-      '--------------------------------------------\n' +
-      '✨ Nhìn cận cảnh 4 góc đệm bọc da thêu kim cương và mặt gấm chần nổi của dòng Đệm TH VICUNA Luxury Sleep là thấy ngay độ xịn sò chuẩn khách sạn 5 sao!\n' +
-      '✅ Độ đàn hồi êm ái, nâng đỡ trọn vẹn đường cong cơ thể, xoay trở mình hoàn toàn êm ru không gây tiếng động.\n' +
-      '✅ Áo đệm vải gấm cao cấp thoáng khí 4 mùa, nguyên đai nguyên kiện từ nhà máy.\n' +
-      '💰 BẢNG GIÁ TẬN GỐC TẠI SHOWROOM TUYẾN HOA:\n' +
-      '   • Cỡ 1,6m × 2,0m: 2.150.000đ / tấm (Giá TT: 2.850.000đ)\n' +
-      '   • Cỡ 1,8m × 2,0m: 2.350.000đ / tấm (Giá TT: 3.150.000đ)\n' +
-      '   • Cỡ 2,0m × 2,2m: 2.650.000đ / tấm (Giá TT: 3.550.000đ)\n' +
-      '🚛 Giao đệm tận giường miễn phí – Kiểm tra đúng tem TH VICUNA 5 sao mới thanh toán!\n' +
-      '📞 Gọi/Zalo ngay: 0344.727.528 (Showroom Tuyến Hoa)',
-  },
-  {
-    id: 'dem-gap-2-chan-mui-ke-caro-xam-ghi-dcr01',
-    code: 'DCR-TH-01',
-    category: 'man-khung-1tr',
-    categoryName: 'Đệm · Chiếu · Màn Khung',
-    title: 'Đệm Gấp 2 Chần Múi Kẻ Caro Thành Xám Ghi & Kem Sáng Cỡ Lớn (1,8m × 2,0m × Dày 18cm) – Đủ 02 Phiên Bản Màu Thành Đệm',
-    shortTitle: 'Đệm Gấp 2 Chần Múi Kẻ Caro Dày 18cm',
-    priceDisplay: '1.750.000đ / tấm',
-    marketPriceRange: 'Giá thị trường: 2.350.000đ – 2.850.000đ / tấm',
-    marketPriceNote: 'Mẫu đệm gấp 2 chần múi vuông kẻ Caro hiện đại, độ dày chuẩn 18cm (ghi rõ thông số 18×2×18 trên kiện phôi tại xưởng), có 2 tùy chọn thành đệm màu Xám Ghi đậm và Kem Sáng.',
-    marketPriceTiers: [
-      {
-        sizeOrOption: 'Giường 1,6m × 2,0m × Dày 18cm (Múi kẻ Caro thành Xám / Kem)',
-        marketPrice: '2.350.000đ / tấm',
-        storePrice: '1.750.000đ / tấm',
-        note: 'Thiết kế múi vuông khỏe khoắn, sạch sẽ',
-      },
-      {
-        sizeOrOption: 'Giường đôi 1,8m × 2,0m × Dày 18cm (Thông số chuẩn 18×2×18)',
-        marketPrice: '2.600.000đ / tấm',
-        storePrice: '1.950.000đ / tấm',
-        note: 'Sẵn hàng tại kho cả bản thành Xám Đậm & Kem Sáng',
-      },
-      {
-        sizeOrOption: 'Giường đại 2,0m × 2,2m × Dày 18cm',
-        marketPrice: '2.850.000đ / tấm',
-        storePrice: '2.250.000đ / tấm',
-        note: 'Bảo hành 5 năm – Giao tận nơi miễn phí',
-      },
-    ],
-    numericPrice: 1750000,
-    unitLabel: '1 tấm Đệm Gấp 2 Chần Múi Kẻ Caro dày 18cm',
-    standardDimensions: '1,6m × 2,0m × 18cm | 1,8m × 2,0m × 18cm | 2,0m × 2,2m × 18cm',
-    mediaType: 'image',
-    imageUrl:
-      '/assets/aistudio/1792918016653_4373635352308930219_4373635352308930219_4e5893d4d7b1a42ce14f5c79a80e3b74_5615ca60.jpg',
-    secondaryImages: [
-      '/assets/aistudio/1792918016678_4373635352308930219_4373635352308930219_e02b93233d85d3ba3faf920984a28150_e939a0e0.jpg',
-    ],
-    imageCaptions: {
-      '/assets/aistudio/1792918016653_4373635352308930219_4373635352308930219_4e5893d4d7b1a42ce14f5c79a80e3b74_5615ca60.jpg': {
-        badge: 'Ảnh 1/2 · Phiên Bản Thành Vải Bố Màu Xám Ghi Đậm (Dày 18cm)',
-        caption: 'Mặt trên chần múi vuông kẻ Caro khỏe khoắn, thành đệm bọc vải bố màu Xám Ghi đậm sạch sẽ, đặt trên kiện phôi 18×2×18.',
-      },
-      '/assets/aistudio/1792918016678_4373635352308930219_4373635352308930219_e02b93233d85d3ba3faf920984a28150_e939a0e0.jpg': {
-        badge: 'Ảnh 2/2 · Phiên Bản Thành Vải Bố Màu Kem Sáng (Thông Số 18×2×18)',
-        caption: 'Cùng mặt chần múi vuông kẻ Caro nhưng phối thành vải bố màu Kem Sáng thanh lịch, có tem góc Kim Cương chính hãng.',
-      },
-    },
-    highlightTag: 'Đã Chỉnh Sáng 2 Màu · Chần Múi Caro 18cm',
-    summary:
-      'Bộ đôi ảnh thực tế đã căn chỉnh khung 4:3 trọn vẹn dáng đứng chữ A của dòng Đệm Gấp 2 Chần Múi Kẻ Caro dày 18cm tại xưởng Tuyến Hoa: Khách hàng bấm chọn xem trực tiếp giữa bản thành vải bố màu Xám Đậm và màu Kem Sáng.',
-    visualAnnotations: [
-      {
-        label: 'Hệ thống ô chần múi vuông Caro phân bổ lực đồng đều',
-        detail:
-          'Các đường rãnh chần vuông vức giữ lớp bông và mút mặt trên cố định tuyệt đối, không bị xô lệch sau nhiều năm sử dụng.',
-      },
-      {
-        label: 'Hai phiên bản màu thành đệm: Xám Ghi Đậm (Ảnh 1) & Kem Sáng (Ảnh 2)',
-        detail:
-          'Thành đệm Xám Ghi cực kỳ sạch khi nhà có trẻ nhỏ; thành đệm Kem Sáng lại hợp với giường gỗ sồi hoặc phòng ngủ tông sáng.',
-      },
-      {
-        label: 'Độ dày thực tế 18cm (Thông số xưởng 18×2×18 ghi rõ dưới kiện đệm)',
-        detail:
-          'Đặt lên giường không cần dùng thêm chiếu hay topper phụ, độ cao vừa tầm ngồi lên xuống thoải mái.',
-      },
-    ],
-    specs: [
-      { label: 'Mã sản phẩm', value: 'DCR-TH-01 (Đệm Gấp 2 Chần Múi Kẻ Caro Dày 18cm – Bộ 2 Màu)' },
-      { label: 'Màu sắc thành đệm', value: 'Xám Ghi Đậm (Ảnh 1) & Kem Sáng (Ảnh 2)' },
-      { label: 'Giá thị trường', value: '2.350.000đ – 2.850.000đ / tấm' },
-      { label: 'Giá tại Tuyến Hoa', value: '1.750.000đ (1m6×2m) | 1.950.000đ (1m8×2m) | 2.250.000đ (2m×2m2)' },
-      { label: 'Bảo hành', value: 'Bảo hành 5 năm chính hãng tại Showroom Tuyến Hoa' },
-    ],
-    articleParagraphs: [
-      'Bên cạnh mẫu chần múi lông vũ, Xưởng & Showroom Tuyến Hoa còn sản xuất và phân phối dòng Đệm Gấp 2 Chần Múi Kẻ Caro (Mã DCR-TH-01) với thiết kế ô vuông khỏe khoắn, hiện đại, độ dày chuẩn 18cm.',
-      'Sản phẩm có sẵn cả hai tông màu thành đệm là Xám Ghi Đậm và Kem Sáng để quý khách dễ dàng bấm chọn đối chiếu ngay trên thẻ sản phẩm.'
-    ],
-    facebookPostCopy:
-      '🛋️ ĐỆM GẤP 2 CHẦN MÚI KẺ CARO DÀY 18CM – ĐỦ 2 MÀU THÀNH XÁM GHI & KEM SÁNG! 🛋️\n' +
-      '--------------------------------------------\n' +
-      '✅ Thiết kế mặt chần múi vuông kẻ Caro hiện đại, độ dày thực tế đủ 18cm cực kỳ tôn dáng giường.\n' +
-      '✅ Có sẵn 2 bản màu thành vải bố: Màu Xám Ghi sạch khỏe khoắn & Màu Kem Sáng sang trọng.\n' +
-      '💰 GIÁ XƯỞNG TUYẾN HOA:\n' +
-      '   • Cỡ 1,6m × 2,0m × 18cm: 1.750.000đ / tấm (Giá TT: 2.350.000đ)\n' +
-      '   • Cỡ 1,8m × 2,0m × 18cm: 1.950.000đ / tấm (Giá TT: 2.600.000đ)\n' +
-      '   • Cỡ 2,0m × 2,2m × 18cm: 2.250.000đ / tấm (Giá TT: 2.850.000đ)\n' +
-      '🚛 Giao miễn phí tận nhà – Bảo hành 5 năm không xẹp lún!\n' +
-      '📞 Gọi/Zalo đặt hàng: 0344.727.528 (Showroom Tuyến Hoa)',
-  },
-  {
-    id: 'dem-bong-ep-gam-do-phong-cuoi-kim-cuong-dgd01',
-    code: 'DGD-TH-01',
-    category: 'man-khung-1tr',
-    categoryName: 'Đệm · Chiếu · Màn Khung',
-    title: 'Đệm Bông Ép Gấm Đỏ Hoàng Gia (Phòng Cưới) & Gấm Xám Lá Phong Đóng Túi Kim Cương (Đủ 02 Góc Chụp)',
-    shortTitle: 'Đệm Gấm Đỏ Phòng Cưới & Gấm Xám Lá Phong',
-    priceDisplay: '1.450.000đ / tấm',
-    marketPriceRange: 'Giá thị trường: 1.850.000đ – 2.450.000đ / tấm',
-    marketPriceNote: 'Đệm bông ép gấp 3 truyền thống vỏ Gấm Đỏ Hoàng Gia (chuyên dùng cho phòng cưới may mắn) và Gấm Xám Lá Phong / Xám Hoa Văn Cổ Điển sạch đẹp, đóng túi khóa kéo chính hãng.',
-    marketPriceTiers: [
-      {
-        sizeOrOption: 'Giường 1,6m × 2,0m × 9cm (Vỏ Gấm Đỏ Hoàng Gia / Gấm Xám Lá Phong)',
-        marketPrice: '1.850.000đ / tấm',
-        storePrice: '1.450.000đ / tấm',
-        note: 'Gấp 3 gọn nhẹ, vỏ gấm có khóa kéo tháo giặt dễ dàng',
-      },
-      {
-        sizeOrOption: 'Giường đôi 1,8m × 2,0m × 9cm (Chuẩn giường cưới truyền thống)',
-        marketPrice: '2.150.000đ / tấm',
-        storePrice: '1.650.000đ / tấm',
-        note: 'Mua kèm Màn khung 1Tr được giảm thêm 50.000đ',
-      },
-      {
-        sizeOrOption: 'Bản dày 14cm – 18cm (Cỡ 1,8m × 2,0m hoặc 2,0m × 2,2m)',
-        marketPrice: '2.450.000đ / tấm',
-        storePrice: '1.950.000đ / tấm',
-        note: 'Bông ép cứng cáp phẳng lưng – Bảo hành 5 năm',
-      },
-    ],
-    numericPrice: 1450000,
-    unitLabel: '1 tấm Đệm Gấm Đỏ / Gấm Xám gấp 3 chính hãng',
-    standardDimensions: '1,5m×1,9m | 1,6m×2,0m | 1,8m×2,0m | 2,0m×2,2m (Độ dày 9cm / 14cm / 18cm)',
-    mediaType: 'image',
-    imageUrl:
-      '/assets/aistudio/1792918003114_4373635352308930219_4373635352308930219_183a5322d1c3677c81ea3c6eed04d596_c7602f66.jpg',
-    secondaryImages: [
-      '/assets/aistudio/1792918003138_4373635352308930219_4373635352308930219_8dab47a7f373f06a9c0f8a93b6f426a3_9e0a77a6.jpg',
-    ],
-    imageCaptions: {
-      '/assets/aistudio/1792918003114_4373635352308930219_4373635352308930219_183a5322d1c3677c81ea3c6eed04d596_c7602f66.jpg': {
-        badge: 'Ảnh 1/2 · Dáng Đứng Mặt Chần Đệm Gấm Đỏ Hoàng Gia & Gấm Xám Lá Phong',
-        caption: 'Bề mặt chần múi nổi sắc nét của mẫu Gấm Đỏ phòng cưới may mắn và mẫu Gấm Xám Lá Phong trang nhã, bọc góc da vàng kim.',
-      },
-      '/assets/aistudio/1792918003138_4373635352308930219_4373635352308930219_8dab47a7f373f06a9c0f8a93b6f426a3_9e0a77a6.jpg': {
-        badge: 'Ảnh 2/2 · Chồng 6 Kiện Đệm Gấp 3 Đóng Túi Khóa Kéo (3 Hoa Văn Chọn Lọc)',
-        caption: 'Đóng túi khóa kéo "100% Poly Ester" logo Kim Cương vàng: Gồm 2 tấm Gấm Đỏ, 2 tấm Gấm Lá Phong và 2 tấm Gấm Hoa Cổ Điển.',
-      },
-    },
-    highlightTag: 'Đã Chỉnh Sáng 2 Ảnh · Gấm Đỏ Phòng Cưới & Lá Phong',
-    summary:
-      'Hai bức ảnh thực tế đã được căn chỉnh khung chuẩn 4:3 cho lô Đệm Bông Ép Gấp 3 đóng túi Kim Cương tại kho Tuyến Hoa: Nổi bật với mẫu vỏ Gấm Đỏ thêu hoa văn Hoàng Gia rực rỡ cho mùa cưới hỏi và mẫu Gấm Xám Lá Phong / Hoa Cổ Điển nhã nhặn.',
-    visualAnnotations: [
-      {
-        label: 'Màu Gấm Đỏ Hoàng Gia may mắn cho phòng tân hôn (Ảnh 1 & Ảnh 2)',
-        detail:
-          'Vải gấm dệt kim tuyến nhẹ trên nền đỏ thẫm sang trọng, là mẫu đệm được các gia đình chọn mua nhiều nhất khi sắm sửa giường cưới cho con cháu.',
-      },
-      {
-        label: 'Màu Gấm Xám Lá Phong & Gấm Hoa Cổ Điển trang nhã',
-        detail:
-          'Họa tiết lá phong và hoa văn đối xứng trên nền xám sạch sẽ, hiện đại, phù hợp với mọi lứa tuổi.',
-      },
-      {
-        label: 'Đóng túi nhựa trong suốt có khóa kéo & tay xách chính hãng',
-        detail:
-          'Thuận tiện bảo quản chống bụi bẩn khi cất kho mùa hè, vỏ áo đệm có khóa kéo tháo rời để giặt máy.',
-      },
-    ],
-    specs: [
-      { label: 'Mã sản phẩm', value: 'DGD-TH-01 (Đệm Bông Ép Gấm Đỏ & Gấm Xám Lá Phong – Bộ 2 Ảnh)' },
-      { label: 'Chất liệu vỏ', value: 'Vải Gấm Đỏ Hoàng Gia / Gấm Xám Lá Phong bền màu, có khóa kéo' },
-      { label: 'Giá thị trường', value: '1.850.000đ – 2.450.000đ / tấm' },
-      { label: 'Giá tại Tuyến Hoa', value: '1.450.000đ (1m6×2m) | 1.650.000đ (1m8×2m) | 1.950.000đ (Bản dày)' },
-      { label: 'Bảo hành', value: 'Bảo hành 5 năm – Miễn phí giao tận nhà' },
-    ],
-    articleParagraphs: [
-      'Vào mỗi mùa cưới hỏi và dịp cuối năm, dòng Đệm Bông Ép Vỏ Gấm Đỏ Hoàng Gia (Mã DGD-TH-01) tại Showroom Tuyến Hoa luôn được các bậc phụ huynh ưu tiên lựa chọn để sắm trọn bộ chăn ga gối đệm + màn khung cho phòng tân hôn.',
-      'Song song với màu đỏ truyền thống, kho Tuyến Hoa luôn sẵn các kiện đệm vỏ Gấm Xám Lá Phong và Gấm Hoa Cổ Điển ép cứng phẳng lưng, giá chỉ từ 1.450.000đ/tấm.'
-    ],
-    facebookPostCopy:
-      '🌺 ĐỆM BÔNG ÉP GẤM ĐỎ PHÒNG CƯỚI & GẤM XÁM LÁ PHONG – BỀN ĐẸP, PHẲNG LƯNG, GIÁ TẬN GỐC! 🌺\n' +
-      '--------------------------------------------\n' +
-      '💍 Gia đình chuẩn bị sắm giường cưới hay thay đệm mới cho ông bà, bố mẹ thì tham khảo ngay lô Đệm Gấm Đỏ Hoàng Gia & Gấm Xám Lá Phong vừa về ngập kho Tuyến Hoa nhé!\n' +
-      '✅ Ruột bông ép nhiệt trắng tinh khiết, độ cứng tiêu chuẩn nâng đỡ cột sống, không lún võng.\n' +
-      '✅ Vỏ gấm dệt dày dặn, không xù lông, có khóa kéo tháo giặt cực tiện.\n' +
-      '💰 GIÁ BÁN LẺ RẺ NHƯ GIÁ BUÔN:\n' +
-      '   • Cỡ 1,6m × 2,0m: Chỉ 1.450.000đ / tấm (Giá TT: 1.850.000đ)\n' +
-      '   • Cỡ 1,8m × 2,0m: Chỉ 1.650.000đ / tấm (Giá TT: 2.150.000đ)\n' +
-      '   • Bản dày 14cm–18cm: Chỉ 1.950.000đ / tấm (Giá TT: 2.450.000đ)\n' +
-      '🎁 Mua combo Đệm + Màn khung 1.000.000đ/bộ được giảm thêm ngay tiền mặt & bao lắp tận giường!\n' +
-      '📞 Gọi/Zalo: 0344.727.528 (Showroom Tuyến Hoa)',
-  },
-  {
-    id: 'tong-kho-xuong-phoi-dem-cao-su-tong-hop-tuyen-hoa-kxd01',
-    code: 'KXD-TH-01',
-    category: 'cong-trinh-video',
-    categoryName: 'Rèm · Bạt · Showroom & Kho Xưởng',
-    title: 'Tổng Kho Xưởng Phôi Đệm Cao Su Tổng Hợp Ép Nhiệt & Đệm DER LAMOR Tuyến Hoa (Cắt Đặt Mọi Kích Thước – 02 Ảnh Xưởng)',
-    shortTitle: 'Xưởng Phôi Đệm Cao Su Tổng Hợp & Đệm Đặt Cỡ',
-    priceDisplay: '1.350.000đ / tấm',
-    marketPriceRange: 'Giá thị trường: 1.850.000đ – 2.650.000đ / tấm',
-    marketPriceNote: 'Hình ảnh trực tiếp đã chỉnh sáng rõ nét tại kho phôi lõi Đệm Cao Su Tổng Hợp Ép Nhiệt tỷ trọng cao (cỡ 18×2×19cm) và các lô đệm thành phẩm DER LAMOR / DIAMOND. Nhận đặt cắt đệm theo mọi kích thước giường gỗ tự đóng hoặc sập gụ.',
-    marketPriceTiers: [
-      {
-        sizeOrOption: 'Đệm bông ép / Cao su tổng hợp đặt theo kích thước sập gụ, phản gỗ',
-        marketPrice: '1.850.000đ / tấm',
-        storePrice: '1.350.000đ / tấm',
-        note: 'Cắt chuẩn từng cm theo yêu cầu của khách',
-      },
-      {
-        sizeOrOption: 'Phôi đệm Cao Su Tổng Hợp Ép Nhiệt mặt chần bông dày 18–19cm (1,8m×2,0m)',
-        marketPrice: '2.450.000đ / tấm',
-        storePrice: '1.750.000đ / tấm',
-        note: 'Cốt đệm siêu đầm nặng, độ bền trên 10 năm',
-      },
-      {
-        sizeOrOption: 'Cung cấp sỉ & lẻ cho Nhà nghỉ, Khách sạn, Homestay, Ký túc xá',
-        marketPrice: '2.650.000đ / tấm',
-        storePrice: '1.650.000đ / tấm',
-        note: 'Chiết khấu cao theo số lượng – Xuất xưởng trực tiếp',
-      },
-    ],
-    numericPrice: 1350000,
-    unitLabel: '1 tấm đệm xuất xưởng / Nhận đặt mọi kích thước lẻ',
-    standardDimensions: 'Sẵn phôi 1,6m×2m | 1,8m×2m×19cm | Nhận cắt đặt cỡ giường sập 1,2m / 1,4m / 2,2m',
-    mediaType: 'image',
-    imageUrl:
-      '/assets/aistudio/1792918016702_4373635352308930219_4373635352308930219_4911d2249505ab896640c28518a2313f_4ecf452b.jpg',
-    secondaryImages: [
-      '/assets/aistudio/1792918016727_4373635352308930219_4373635352308930219_7bf37d678a6e59c76c1278c6e258a872_b3bd3aac.jpg',
-    ],
-    imageCaptions: {
-      '/assets/aistudio/1792918016702_4373635352308930219_4373635352308930219_4911d2249505ab896640c28518a2313f_4ecf452b.jpg': {
-        badge: 'Ảnh 1/2 · Cận Cảnh Lõi Phôi Cao Su Tổng Hợp Ép Nhiệt (18×2×19cm)',
-        caption: 'Công khai kết cấu lõi phôi đa sắc ép nhiệt đặc khít bên trong kết hợp mặt bông trắng chần múi: siêu đầm nặng, không bao giờ xẹp lún.',
-      },
-      '/assets/aistudio/1792918016727_4373635352308930219_4373635352308930219_7bf37d678a6e59c76c1278c6e258a872_b3bd3aac.jpg': {
-        badge: 'Ảnh 2/2 · Khu Vực Hoàn Thiện Đệm Gấp 2, DER LAMOR & DIAMOND Tại Xưởng',
-        caption: 'Toàn cảnh phân khu đệm thành phẩm đã bọc áo gấm chần múi và đóng túi DER LAMOR / DIAMOND sẵn sàng giao tận nhà khách hàng.',
-      },
-    },
-    highlightTag: 'Đã Chỉnh Sáng 2 Ảnh · Giá Gốc Xưởng Phôi Đệm',
-    summary:
-      'Cận cảnh bên trong kho xưởng phôi lõi Đệm Cao Su Tổng Hợp Ép Nhiệt kết hợp mặt chần bông (ghi rõ thông số 18×2×19 trên kiện hàng) cùng hàng trăm tấm đệm thành phẩm DER LAMOR, DIAMOND và đệm gấp 2 bo viền sẵn sàng xuất kho.',
-    visualAnnotations: [
-      {
-        label: 'Lõi phôi Cao Su Tổng Hợp ép nhiệt tỷ trọng cao 18×2×19cm (Ảnh 1)',
-        detail:
-          'Nhìn trực diện phần lõi phôi đa sắc ép khối đặc khít phía dưới và lớp bông trắng chần múi phía trên: cầm cực kỳ đầm tay, chịu lực nén vượt trội, không bao giờ xẹp lún.',
-      },
-      {
-        label: 'Kho đệm thành phẩm DER LAMOR & Đệm Gấp 2 quy mô lớn (Ảnh 2)',
-        detail:
-          'Hàng trăm tấm đệm đủ độ dày từ 9cm, 14cm, 18cm đến 20cm xếp ngay ngắn tại kho, khách mua lẻ được hưởng ngay mức giá xuất xưởng.',
-      },
-      {
-        label: 'Nhận gia công cắt đệm theo kích thước giường cổ, sập gụ, giường tầng',
-        detail:
-          'Các gia đình có giường gỗ đóng riêng cỡ 1m55, 1m75, 1m95 hay sập gỗ 2m×2m4 đều có thể đặt xưởng Tuyến Hoa làm chuẩn khít 100%.',
-      },
-    ],
-    specs: [
-      { label: 'Mã sản phẩm', value: 'KXD-TH-01 (Tổng Kho Xưởng Phôi Đệm & Đệm Thành Phẩm Tuyến Hoa)' },
-      { label: 'Cấu tạo lõi phôi', value: 'Cao su tổng hợp ép nhiệt tỷ trọng cao + Lớp mặt bông trắng chần múi' },
-      { label: 'Giá thị trường', value: '1.850.000đ – 2.650.000đ / tấm' },
-      { label: 'Giá xuất xưởng Tuyến Hoa', value: 'Từ 1.350.000đ – 1.750.000đ / tấm (Tiết kiệm 30% so với qua trung gian)' },
-      { label: 'Dịch vụ đặc biệt', value: 'Nhận đặt cắt đệm mọi kích thước lẻ cho giường đóng riêng & sập gụ' },
-    ],
-    articleParagraphs: [
-      'Nhiều khách hàng thắc mắc vì sao đệm tại Showroom Tuyến Hoa vừa nặng đầm tay, nằm êm không xẹp mà giá lại rẻ hơn thị trường từ 500.000đ – 800.000đ/tấm. Câu trả lời nằm ngay ở 2 bức ảnh chụp trực tiếp kho phôi lõi đệm cao su tổng hợp và dây chuyền hoàn thiện áo đệm tại xưởng.',
-      'Chúng tôi công khai minh bạch phần lõi phôi bên trong (cao su tổng hợp ép nhiệt kết hợp mặt bông chần dày 18–19cm) để bà con tận mắt kiểm chứng chất lượng thực chất trước khi bọc áo gấm thành phẩm. Đặc biệt, xưởng nhận đặt làm mọi kích thước lẻ cho giường sập, giường tầng trẻ em trong thời gian nhanh nhất.'
-    ],
-    facebookPostCopy:
-      '🏭 [MỤC SỞ THỊ TỔNG KHO XƯỞNG ĐỆM] LÕI PHÔI CAO SU TỔNG HỢP ÉP NHIỆT DÀY 19CM & KHO ĐỆM DER LAMOR TUYẾN HOA! 🏭\n' +
-      '--------------------------------------------\n' +
-      '🔍 Quay chụp cận cảnh phần lõi phôi đệm bên trong chưa bọc vỏ để các bác thấy độ đặc khít, đầm nặng của dòng Đệm Cao Su Tổng Hợp kết hợp mặt bông chần tại Xưởng Tuyến Hoa!\n' +
-      '✅ Cốt đệm ép nhiệt tỷ trọng cao dày 18cm–19cm: Nằm êm ái, đàn hồi cực tốt, dùng 10 năm không lo võng lưng.\n' +
-      '✅ Kho sẵn hàng trăm tấm đệm thành phẩm DER LAMOR, Kim Cương, TH VICUNA, Đệm Gấp 2 Chần Múi đủ mọi kích thước.\n' +
-      '✅ ĐẶC BIỆT: Nhận đặt cắt đệm theo mọi kích thước lẻ cho sập gụ, phản gỗ, giường tầng, giường đóng riêng!\n' +
-      '💰 Giá xuất xưởng trực tiếp chỉ từ: 1.350.000đ – 1.750.000đ / tấm (Rẻ hơn thị trường 500k – 800k/tấm).\n' +
-      '📞 Gọi/Zalo đặt đệm lẻ & sỉ: 0344.727.528 (Xưởng & Showroom Tuyến Hoa)',
   },
 
   // ===========================================================================
@@ -3522,87 +4100,6 @@ export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
   // 00. BỘ 04 BÀI ĐĂNG MỚI NHẤT TỪ 02 VIDEO & 06 ẢNH VỪA TẢI LÊN:
   //     MÀNH TRÚC BIỆT THỰ 3 TẦNG, RÈM GỖ PHÒNG THỜ & MÀN HỘP THÔNG MINH VÂN GỖ
   // ===========================================================================
-  {
-    id: 'manh-truc-nghe-thuat-tranh-dong-que-biet-thu-3-tang-mt01',
-    code: 'MT-TH-01',
-    category: 'cong-trinh-video',
-    categoryName: 'Rèm · Bạt · Showroom & Video',
-    title: 'Mành Trúc · Mành Tre Nghệ Thuật Che Nắng Biệt Thự 3 Tầng Vẽ Tranh Đồng Quê Việt Nam (Đôi Hạc Lúa Vàng & Mục Đồng Chăn Trâu) – Cản Nắng Mưa 95%',
-    shortTitle: 'Mành Trúc Tranh Đồng Quê Biệt Thự (260.000đ/m²)',
-    priceDisplay: '260.000đ / m²',
-    marketPriceRange: 'Giá thị trường: 350.000đ – 450.000đ / m²',
-    marketPriceNote: 'Trọn bộ 02 góc chụp thực tế tại Biệt Thự 3 Tầng (IMG_9290 khi thả kín cả 2 tầng và IMG_9291 khi kéo lửng bộ mành sảnh chính mở lối đi): Mành trúc cật tre tự nhiên phủ sơn bóng PU chống mưa nắng, vẽ tranh phong cảnh làng quê Việt Nam sống động.',
-    marketPriceTiers: [
-      {
-        sizeOrOption: '1. Mành Trúc / Mành Tre Tự Nhiên Sơn PU Chống Nắng Mưa (Màu Vàng Óng / Nâu Cánh Gián)',
-        marketPrice: '320.000đ / m²',
-        storePrice: '220.000đ / m²',
-        note: 'Nan trúc cật già đan dây dù cường lực, kèm bộ ròng rọc kéo nhẹ tay',
-      },
-      {
-        sizeOrOption: '2. Mành Trúc Nghệ Thuật Vẽ Tranh Đồng Quê (Đôi Hạc Lúa Vàng / Mục Đồng Chăn Trâu / Tùng Hạc)',
-        marketPrice: '380.000đ / m²',
-        storePrice: '260.000đ / m²',
-        note: 'Sơn dầu nghệ thuật phủ bóng 2 lớp chống phai màu ngoài trời (Bao lắp đặt)',
-      },
-      {
-        sizeOrOption: '3. Mành Trúc Khổ Lớn Đại Sảnh & Ban Công Biệt Thự (Hệ Con Lăn Trợ Lực Cáp Thép)',
-        marketPrice: '450.000đ / m²',
-        storePrice: '310.000đ / m²',
-        note: 'Chống gió giật, bảo vệ cửa gỗ lim đại sảnh không bị cong vênh hay bạc màu',
-      },
-    ],
-    numericPrice: 260000,
-    unitLabel: '1 m² hoàn thiện cả bộ dây kéo ròng rọc & công lắp đặt',
-    standardDimensions: 'May đo theo sảnh chính & ban công (Rộng 2,0m – 4,0m × Cao 2,5m – 3,5m)',
-    mediaType: 'image',
-    imageUrl: '/assets/aistudio/IMG_9290_f6c3666b.JPG',
-    secondaryImages: [
-      '/assets/aistudio/IMG_9291_36ef56a4.JPG',
-    ],
-    highlightTag: 'Mành Trúc Tranh Đồng Quê · Bảo Vệ Cửa Gỗ Lim',
-    summary:
-      'Tuyệt phẩm bộ đôi Mành Trúc nghệ thuật lắp đặt tại mặt tiền Biệt Thự 3 Tầng: Tầng 1 là bức tranh "Đôi Hạc Trắng Bên Cánh Đồng Lúa Chín Vàng & Khóm Tre Xanh" che mát sảnh chính cửa gỗ lim; Tầng 2 giữa giàn hoa giấy rực rỡ là bức tranh "Mục Đồng Chăn Trâu Cày Ruộng" mang đậm hồn quê Việt Nam.',
-    visualAnnotations: [
-      {
-        label: 'Sảnh chính Tầng 1: Mành trúc vẽ tranh "Đôi Hạc Trắng & Cánh Đồng Lúa Chín Vàng"',
-        detail:
-          'Che nắng gắt trực diện và mưa hắt vào bộ cửa gỗ lim 4 cánh đại sảnh, đồng thời tạo bức tranh phong thủy Phú Quý – Trường Thọ sang trọng ngay lối bậc tam cấp đá hoa cương.',
-      },
-      {
-        label: 'Ban công Tầng 2: Mành trúc vẽ tranh "Mục Đồng Chăn Trâu Cày Ruộng & Lũy Tre Làng"',
-        detail:
-          'Kết hợp hài hòa giữa giàn hoa giấy đỏ – tím và hoa hoàng yến vàng rực, vừa cản nhiệt hướng Tây cho tầng 2 vừa giữ độ thoáng gió tự nhiên.',
-      },
-      {
-        label: 'Cơ cấu ròng rọc kéo lửng linh hoạt (Xem ảnh góc chụp số 2 – IMG_9291)',
-        detail:
-          'Gia chủ có thể thả kịch sàn khi nắng gắt hoặc kéo lửng 1/3 – 1/2 chiều cao mành để mở lối đi thông thoáng mà vẫn che mát phần hiên trên.',
-      },
-    ],
-    specs: [
-      { label: 'Mã sản phẩm', value: 'MT-TH-01 (Mành Trúc Nghệ Thuật Tranh Đồng Quê Biệt Thự)' },
-      { label: 'Đơn giá tại xưởng', value: '260.000đ / m² cả lắp đặt (Mành trúc trơn sơn PU: 220.000đ/m²)' },
-      { label: 'Chất liệu nan mành', value: '100% Trúc cật già tự nhiên xử lý chống mối mọt, đan dây dù chịu lực' },
-      { label: 'Công nghệ họa tiết', value: 'Tranh sơn dầu phong cảnh phủ bóng PU 2K chống nước mưa & tia UV' },
-      { label: 'Bảo hành & Lắp đặt', value: 'Bảo hành 3 năm, miễn phí đo đạc & lắp đặt bởi Xưởng Tuyến Hoa (0344.727.528)' },
-    ],
-    articleParagraphs: [
-      'Đối với các căn biệt thự tân cổ điển, nhà phố mái Nhật hoặc nhà thờ họ có hệ cửa gỗ tự nhiên ở mặt tiền, nắng gắt mùa hè và mưa tạt rất dễ làm cửa gỗ bị bạc màu, cong vênh hoặc nứt nẻ. Bộ đôi Mành Trúc Nghệ Thuật Tranh Đồng Quê (Mã MT-TH-01) do Xưởng Tuyến Hoa thi công vừa giải quyết triệt để bài toán che nắng mưa 95%, vừa biến mặt tiền ngôi nhà thành một tác phẩm hội họa truyền thống đầy cuốn hút.',
-      'Trong bộ 02 hình ảnh thực tế vừa ghi lại tại công trình, bạn có thể quan sát rõ hai trạng thái sử dụng: Khi thả toàn bộ cả 2 bức mành trúc ở Tầng 1 (Tranh Đôi Hạc Lúa Vàng) và Tầng 2 (Tranh Mục Đồng Chăn Trâu) để cản nắng giữa trưa; và khi kéo gọn bức mành tầng 2 cùng kéo lửng bức mành sảnh chính tầng 1 để đón gió mát chiều tà.'
-    ],
-    facebookPostCopy:
-      '🎋🦢 [SIÊU PHẨM MÀNH TRÚC TRANH ĐỒNG QUÊ] ĐIỂM NHẤN PHONG THỦY & BẢO VỆ CỬA GỖ BIỆT THỰ 3 TẦNG! 🌾🐂\n' +
-      '💰 GIÁ THỊ TRƯỜNG: 350.000đ – 450.000đ / m²\n' +
-      '🔥 GIÁ GỐC TẠI XƯỞNG TUYẾN HOA (BAO RÒNG RỌC & CÔNG LẮP ĐẶT TẬN NƠI):\n' +
-      '   👉 Mành trúc tự nhiên sơn PU chống nắng mưa: Chỉ 220.000đ / m²\n' +
-      '   👉 Mành trúc vẽ tranh nghệ thuật (Đôi Hạc Lúa Vàng, Mục Đồng Chăn Trâu, Tùng Hạc): Chỉ 260.000đ / m²\n' +
-      '--------------------------------------------\n' +
-      '✅ Nan trúc cật già tự nhiên xử lý chống mối mọt, phủ sơn bóng PU 2K không phai màu dưới nắng mưa.\n' +
-      '✅ Bảo vệ bộ cửa gỗ đại sảnh khỏi nắng gắt cong vênh, khe trúc đón gió trời mát rượi.\n' +
-      '✅ Dây kéo ròng rọc trợ lực nhẹ nhàng: Thả kín che nắng hoặc kéo lửng mở lối đi cực tiện lợi.\n' +
-      '📞 Gọi/Zalo Anh Tuyến khảo sát & lắp đặt ngay trong ngày: 0344.727.528!',
-  },
   {
     id: 'video-biet-thu-3-tang-manh-truc-rem-vai-2-lop-rem-go-vidbt01',
     code: 'VID-BT-01',

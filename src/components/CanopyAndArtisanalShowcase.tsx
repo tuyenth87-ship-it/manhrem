@@ -38,6 +38,11 @@ interface CanopyAndArtisanalShowcaseProps {
 type FontScaleMode = 'normal' | 'large' | 'xlarge';
 
 const BAKED_BRAND_CODES = new Set([
+  'MT-TH-01',
+  'KXD-TH-01',
+  'DKC-TH-01',
+  'DLV-TH-01',
+  'DGD-TH-01',
   'SR-TH-02',
   'CM-TH-01',
   'DLX-EH-01',
