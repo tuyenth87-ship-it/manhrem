@@ -38,6 +38,7 @@ interface CanopyAndArtisanalShowcaseProps {
 type FontScaleMode = 'normal' | 'large' | 'xlarge';
 
 const BAKED_BRAND_CODES = new Set([
+  'SR-TH-02',
   'CM-TH-01',
   'DLX-EH-01',
   'DCS-EH-01',
@@ -93,16 +94,16 @@ export const CanopyAndArtisanalShowcase: React.FC<CanopyAndArtisanalShowcaseProp
   // Custom Photo Stamper state ("Chèn Chữ Tuyến Hoa Lên Ảnh")
   const [showPhotoStamper, setShowPhotoStamper] = useState<boolean>(false);
   const [customStampImgUrl, setCustomStampImgUrl] = useState<string>(
-    '/assets/aistudio/IMG_4550_18a407c3.JPG'
+    '/assets/aistudio/IMG_5416_everhome_pillow_top_giuong_trang.jpg'
   );
   const [customBrandTitle, setCustomBrandTitle] = useState<string>(
-    'SHOWROOM CHĂN GA GỐI ĐỆM & RÈM CỬA TUYẾN HOA'
+    'CỬA HÀNG CHĂN GA GỐI ĐỆM NGỌC TUYẾN – TUYẾN HOA'
   );
   const [customProductLine, setCustomProductLine] = useState<string>(
-    'Màn Khung Inox Cao Cấp Rộng 1,8m × Dài 2,0m'
+    'Đệm Lò Xo Gold 3 Viền & Pillow Top Everhome Chính Hãng'
   );
   const [customPriceBadge, setCustomPriceBadge] = useState<string>(
-    'Trọn Gói: 1.000.000đ/bộ (Cả Lắp) · ĐT/Zalo: 0344.727.528'
+    'Chiết Khấu 25%–30% · Bảo Hành 10 Năm · ĐT/Zalo: 0344.727.528'
   );
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 

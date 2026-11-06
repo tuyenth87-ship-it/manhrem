@@ -82,10 +82,10 @@ test('Deduplication removes all duplicate primary and secondary images across al
   }
 
   // Verify deduplication summary accounting
-  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 188);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 206);
   assert.equal(DEDUPLICATION_SUMMARY.totalRemovedDuplicates, 56);
-  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 124);
-  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 13);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 142);
+  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 14);
 });
 
 test('All annotated products have market price tiers, visual annotations, specs, and clear Facebook post copy', () => {
@@ -269,10 +269,10 @@ test('All annotated products have market price tiers, visual annotations, specs,
   assert.equal(videoVongXep?.mediaType, 'video');
   assert.equal(videoVongXep?.numericPrice, 550000);
 
-  // Verify the 3 newly promoted & enriched posts (Chiếu Mây NICOLAS CM-TH-01, Rèm Bạt Cuốn Lưới BC-TH-01, Showroom SR-TH-01) are at the very top
+  // Verify the 6 newly edited HD typography posts + 2 previous top posts are at the very top
   assert.deepEqual(
     ANNOTATED_PRODUCT_POSTS.slice(0, 8).map((p) => p.code),
-    ['CM-TH-01', 'BC-TH-01', 'SR-TH-01', 'DCS-EH-01', 'DLX-EH-01', 'SR-TH-02', 'CGL-CC-01', 'CGL-DR-01']
+    ['SR-TH-02', 'DLX-EH-01', 'DCS-EH-01', 'RTO-TH-01', 'RC-TH-01', 'BC-TH-01', 'CM-TH-01', 'SR-TH-01']
   );
 
   const demLongVu = getCanopyProductById('DLV-TH-01');
@@ -321,9 +321,9 @@ test('All annotated products have market price tiers, visual annotations, specs,
   const batCuonLuoi = getCanopyProductById('BC-TH-01');
   assert.ok(batCuonLuoi);
   assert.equal(batCuonLuoi?.numericPrice, 220000);
-  assert.equal(batCuonLuoi?.imageUrl, '/assets/aistudio/bat_tu_cuon_nang_mua_tuyen_hoa.png');
-  assert.equal(batCuonLuoi?.secondaryImages?.length, 2);
-  assert.equal(Object.keys(batCuonLuoi?.imageCaptions || {}).length, 3);
+  assert.equal(batCuonLuoi?.imageUrl, '/assets/aistudio/BC_TH_01_bat_tu_cuon_hien_nha_typography_hd.jpg');
+  assert.equal(batCuonLuoi?.secondaryImages?.length, 4);
+  assert.equal(Object.keys(batCuonLuoi?.imageCaptions || {}).length, 5);
 
   const showroomMatTien = getCanopyProductById('SR-TH-01');
   assert.ok(showroomMatTien);
@@ -334,25 +334,25 @@ test('All annotated products have market price tiers, visual annotations, specs,
   const demLoXo = getCanopyProductById('DLX-EH-01');
   assert.ok(demLoXo);
   assert.equal(demLoXo?.numericPrice, 2850000);
-  assert.equal(demLoXo?.imageUrl, '/assets/aistudio/dem_lo_xo_everhome_tuyen_hoa.png');
-  assert.equal(demLoXo?.secondaryImages?.length, 3);
-  assert.equal(Object.keys(demLoXo?.imageCaptions || {}).length, 4);
+  assert.equal(demLoXo?.imageUrl, '/assets/aistudio/DLX_EH_01_dem_lo_xo_everhome_typography_hd.jpg');
+  assert.equal(demLoXo?.secondaryImages?.length, 7);
+  assert.equal(Object.keys(demLoXo?.imageCaptions || {}).length, 8);
 
   const demCaoSu = getCanopyProductById('DCS-EH-01');
   assert.ok(demCaoSu);
   assert.equal(demCaoSu?.numericPrice, 4850000);
-  assert.equal(demCaoSu?.imageUrl, '/assets/aistudio/dem_cao_su_everhome_tuyen_hoa.png');
-  assert.equal(demCaoSu?.secondaryImages?.length, 3);
-  assert.equal(Object.keys(demCaoSu?.imageCaptions || {}).length, 4);
+  assert.equal(demCaoSu?.imageUrl, '/assets/aistudio/DCS_EH_01_nem_cao_su_everhome_typography_hd.jpg');
+  assert.equal(demCaoSu?.secondaryImages?.length, 4);
+  assert.equal(Object.keys(demCaoSu?.imageCaptions || {}).length, 5);
 
   const showroom2Tang = getCanopyProductById('SR-TH-02');
   assert.ok(showroom2Tang);
   assert.equal(
     showroom2Tang?.imageUrl,
-    '/assets/aistudio/Gemini_Generated_Image_v2fukev2fukev2fu_6f3f19ae.png'
+    '/assets/aistudio/SR_NT_01_cua_hang_ngoc_tuyen_typography_hd.jpg'
   );
-  assert.equal(showroom2Tang?.secondaryImages?.length, 1);
-  assert.equal(Object.keys(showroom2Tang?.imageCaptions || {}).length, 2);
+  assert.equal(showroom2Tang?.secondaryImages?.length, 4);
+  assert.equal(Object.keys(showroom2Tang?.imageCaptions || {}).length, 5);
 
   const canopyItems = canopyAndBeddingItems.filter((item) => item.code.startsWith('MK-'));
   assert.equal(canopyItems.length, 4);
@@ -379,11 +379,15 @@ test('All annotated products have market price tiers, visual annotations, specs,
 
   const remToOngVom = getCanopyProductById('RTO-TH-01');
   assert.ok(remToOngVom);
-  assert.equal(remToOngVom?.imageUrl, '/assets/aistudio/vach_rem_to_ong_cua_vom_tuyen_hoa.png');
+  assert.equal(remToOngVom?.imageUrl, '/assets/aistudio/RTO_TH_01_vach_to_ong_cua_vom_typography_hd.jpg');
+  assert.equal(remToOngVom?.secondaryImages?.length, 2);
+  assert.equal(Object.keys(remToOngVom?.imageCaptions || {}).length, 3);
 
   const remCuonVP = getCanopyProductById('RC-TH-01');
   assert.ok(remCuonVP);
-  assert.equal(remCuonVP?.imageUrl, '/assets/aistudio/rem_cuon_van_phong_tuyen_hoa.png');
+  assert.equal(remCuonVP?.imageUrl, '/assets/aistudio/RC_TH_01_rem_cuon_van_phong_typography_hd.jpg');
+  assert.equal(remCuonVP?.secondaryImages?.length, 4);
+  assert.equal(Object.keys(remCuonVP?.imageCaptions || {}).length, 5);
 
   const quyTrinh7Buoc = getCanopyProductById('QT-NT-01');
   assert.ok(quyTrinh7Buoc);
