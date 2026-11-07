@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <base href="http://localhost:3000/" />
+  <title>Banner Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #111;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 20px;
+    }
+    .banner-canvas {
+      width: 1200px;
+      height: 900px;
+      background: #F6F0E4;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+    .header-bar {
+      height: 112px;
+      background: linear-gradient(90deg, #1E1610 0%, #2C2016 60%, #1E1610 100%);
+      border-bottom: 4px solid #C89B3C;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .header-kicker {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #E5C168;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .header-title {
+      font-size: 25px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      line-height: 1.18;
+    }
+    .header-sub {
+      font-size: 13.5px;
+      font-weight: 400;
+      color: #D6C7B2;
+    }
+    .header-badge {
+      background: linear-gradient(135deg, #6E1A1A 0%, #4A0E0E 100%);
+      border: 1.5px solid #E5C168;
+      border-radius: 12px;
+      padding: 10px 18px;
+      text-align: center;
+      min-width: 185px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+    }
+    .header-badge-code {
+      font-size: 12px;
+      font-weight: 700;
+      color: #F3D88C;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .header-badge-phone {
+      font-size: 19px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: 0.02em;
+    }
+    .grid-area {
+      flex: 1;
+      padding: 16px 22px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 14px;
+      background: #F5EFE2;
+    }
+    .grid-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid #C8B288;
+      background: #E8DFCE;
+      box-shadow: 0 4px 12px rgba(28, 22, 16, 0.12);
+    }
+    .grid-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .card-overlay {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 28px 12px 9px 12px;
+      background: linear-gradient(to top, rgba(20, 14, 10, 0.94) 0%, rgba(20, 14, 10, 0.72) 62%, rgba(20, 14, 10, 0) 100%);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.25;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    }
+    .card-price {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #F4D27A;
+      line-height: 1.25;
+    }
+    .footer-bar {
+      height: 118px;
+      background: linear-gradient(90deg, #1E1610 0%, #291E15 50%, #1E1610 100%);
+      border-top: 3px solid #C89B3C;
+      padding: 12px 24px;
+      display: grid;
+      grid-template-columns: 285px 1fr 1fr 1fr;
+      gap: 14px;
+      align-items: center;
+    }
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .footer-brand-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #F3D88C;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .footer-brand-sub {
+      font-size: 13px;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+    .footer-brand-hotline {
+      font-size: 13px;
+      font-weight: 700;
+      color: #5EEAD4;
+    }
+    .price-box {
+      border-radius: 10px;
+      padding: 9px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2px;
+      height: 92px;
+    }
+    .price-box-primary {
+      background: linear-gradient(135deg, #7C1D1D 0%, #521010 100%);
+      border: 1.5px solid #E5C168;
+    }
+    .price-box-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #8C734B;
+    }
+    .price-box-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #F3D88C;
+      text-transform: uppercase;
+      line-height: 1.25;
+    }
+    .price-box-val {
+      font-size: 20px;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+    .price-box-note {
+      font-size: 11.5px;
+      font-weight: 400;
+      color: #D6C7B2;
+    }
+
+    /* Square 800x800 retouch canvases */
+    .retouch-square {
+      width: 800px;
+      height: 800px;
+      position: relative;
+      overflow: hidden;
+      background: #F5EFE2;
+    }
+    .retouch-square img {
+      width: 800px;
+      height: 800px;
+      object-fit: cover;
+      display: block;
+    }
+    .y-badge {
+      position: absolute;
+      width: 148px;
+      height: 32px;
+      background: linear-gradient(135deg, #231810 0%, #3B281B 100%);
+      border: 1.5px solid #D4AF37;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #F6DC8B;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BANNER 1: MT-TC-01 (LIÊN HOA THỦY MẶC & CỬU NGƯ QUẦN HỘI) -->
+  <div id="banner-mt-tc-01" class="banner-canvas">
+    <div class="header-bar">
+      <div class="header-left">
+        <div class="header-kicker">XƯỞNG MÀNH TĂM TRE &amp; MÀNH TRÚC NGHỆ THUẬT NGỌC TUYẾN – TUYẾN HOA</div>
+        <div class="header-title">TUYỆT TÁC MÀNH TĂM TRE LIÊN HOA THỦY MẶC &amp; CỬU NGƯ QUẦN HỘI</div>
+        <div class="header-sub">Nan Tăm Tre Tự Nhiên Dệt Chỉ Cao Cấp · In/Vẽ Thủy Mặc Bền Màu 10 Năm · Phòng Trà · Phòng Thờ · Phòng Khách</div>
+      </div>
+      <div class="header-badge">
+        <div class="header-badge-code">MÃ BÀI: MT-TC-01</div>
+        <div class="header-badge-phone">0989.655.388</div>
+      </div>
+    </div>
+
+    <div class="grid-area">
+      <div class="grid-card">
+        <img src="/assets/aistudio/500742419_122100651926890917_2678072256097837987_n_3e96dbc4.jpg" style="object-position: center 20%;" />
+        <div class="card-overlay">
+          <div class="card-title">1. Liên Hoa Ngũ Ngư – Niên Niên Hữu Dư (Viền Triện)</div>
+          <div class="card-price">280.000đ/m² · 5 cá chép đỏ quây quần đầm sen phú quý</div>
+        </div>
+      </div>
+      <div class="grid-card">
+        <img src="/assets/aistudio/502480647_122100650648890917_7349929286919644883_n_76c7f959.jpg" />
+        <div class="card-overlay">
+          <div class="card-title">2. Bộ 3 Bức "Tây Hồ Liên Hoa &amp; Thơ Đường Thi"</div>
+          <div class="card-price">300.000đ/m² · Đầm sen hồng, chuồn chuồn &amp; chim én mùa xuân</div>
+        </div>
+      </div>
+      <div class="grid-card">
+        <img src="/assets/aistudio/500740964_122100651800890917_6445939849596325175_n_aef97f54.jpg" />
+        <div class="card-overlay">
+          <div class="card-title">3. Hà Đường Nguyệt Sắc – Đại Hồng Liên &amp; Chuồn Chuồn</div>
+          <div class="card-price">260.000đ/m² · Điểm nhấn tĩnh tại cho bàn trà &amp; phòng thiền</div>
+        </div>
+      </div>
+      <div class="grid-card">
+        <img src="/assets/aistudio/500763920_122100651068890917_3620382175483673444_n_c8f5b6f9.jpg" />
+        <div class="card-overlay">
+          <div class="card-title">4. Bộ Đôi "Thiền Ý Liên Hoa – Sen Hồng &amp; Đài Sen Cổ"</div>
+          <div class="card-price">280.000đ/m² · Bút pháp thủy mặc cổ điển thanh cao</div>
+        </div>
+      </div>
+      <div class="grid-card">
+        <img src="/assets/aistudio/501439073_122100651578890917_2395129595905034480_n_065c3a0c.jpg" />
+        <div class="card-overlay">
+          <div class="card-title">5. Thượng Thiện Nhược Thủy – Tam Liên &amp; Đôi Chim Én</div>
+          <div class="card-price">260.000đ/m² · Hoa sen tam sắc, đôi én &amp; đàn cá dưới nắng</div>
+        </div>
+      </div>
+      <div class="grid-card">
+        <img src="/assets/aistudio/500736970_122100651806890917_5635185355892112876_n_c18126cb.jpg" />
+        <div class="card-overlay">
+          <div class="card-title">6. Bảng 06 Mã Liên Hoa Thủy Mặc (Mã Y19 – Y24)</div>
+          <div class="card-price">260.000đ/m² · Đặt làm theo mọi kích thước cửa &amp; vách trà</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <div class="footer-brand">
+        <div class="footer-brand-title">BẢNG GIÁ TẠI XƯỞNG NGỌC TUYẾN</div>
+        <div class="footer-brand-sub">Tặng Kèm Thanh Treo &amp; Ròng Rọc Kéo</div>
+        <div class="footer-brand-hotline">ĐT / Zalo: 0989.655.388 – 0344.727.528</div>
+      </div>
+      <div class="price-box price-box-primary">
+        <div class="price-box-label">MÀNH TĂM TRE ĐƠN 1 BỨC (MÃ Y19–Y24)</div>
+        <div class="price-box-val">260.000đ – 280.000đ/m²</div>
+        <div class="price-box-note">Giá TT: 390.000đ/m² · Nan tăm tre mịn chống mốc</div>
+      </div>
+      <div class="price-box price-box-secondary">
+        <div class="price-box-label">MÀNH TĂM TRE GHÉP ĐÔI PHÒNG TRÀ</div>
+        <div class="price-box-val">280.000đ – 320.000đ/m²</div>
+        <div class="price-box-note">Giá TT: 450.000đ/m² · Khớp tranh liền mạch 2 tấm</div>
+      </div>
+      <div class="price-box price-box-secondary">
+        <div class="price-box-label">BỘ 3 BỨC ĐẠI CẢNH TÂY HỒ LIÊN HOA</div>
+        <div class="price-box-val">300.000đ – 350.000đ/m²</div>
+        <div class="price-box-note">Giá TT: 490.000đ/m² · Đo đạc &amp; lắp đặt tận nhà</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BANNER 2: MT-TC-02 (BỘ 3 TẤM ĐỐI XỨNG KHUNG TRIỆN NGUYỆT MÔN & TÙNG HẠC) -->
+  <div id="banner-mt-tc-02" class="banner-canvas">
+    <div class="header-bar">
+      <div class="header-left">
+        <div class="header-kicker">TUYỆT TÁC MÀNH TĂM TRE ĐẠI CẢNH PHÒNG KHÁCH · THƯ PHÒNG &amp; SẢNH BIỆT THỰ</div>
+        <div class="header-title">BỘ 3 BỨC ĐỐI XỨNG KHUNG TRIỆN NGUYỆT MÔN &amp; TÙNG HẠC NGHÊNH KHÁCH</div>
+        <div class="header-sub">Thiết Kế Khung Viền Triện Cổ Điển &amp; Nút Thắt Cát Tường · Cản Nắng Lọc Sáng Dịu · Bảo Hành 5 Năm</div>
+      </div>
+      <div class="header-badge">
+        <div class="header-badge-code">MÃ BÀI: MT-TC-02</div>
+        <div class="header-badge-phone">0344.727.528</div>
+      </div>
+    </div>
+
+    <div class="grid-area">
+      <div class="grid-card">
+        <img src="/assets/aistudio/500763669_122100650714890917_5640505122017559987_n_f0196d09.jpg" />
+        <div class="card-overlay">
+          <div class="card-title">1. Bộ 3 Bức "Thanh Tùng Nghênh Khách &amp; Song Hạc"</div>
+          <div class="card-price">320.000đ/m² · Thế tùng cổ thụ đón tài lộc &amp; trường thọ</div>
+        </div>
+      </div>
+      <div class="grid-card">
+        <img src="/assets/aistudio/500739569_122100659330890917_1694898813546800220_n_0efe9cb1.jpg" />
+        <div class="card-overlay">
+          <div class="card-title">2. Bộ 3 Bức Khung Triện "Chim Xanh Hoa Đào – Sơn Thủy – Trúc"</div>
+          <div class="card-price">320.000đ/m² · Bố cục tam liên nút thắt cát tường đăng đối</div>
+        </div>
+      </div>
+      <div class="grid-card">
+        <img src="/assets/aistudio/500740951_122100654650890917_65672671287950655_n_a36680ac.jpg" />
+        <div class="card-overlay">
+          <div class="card-title">3. Bộ 3 Bức "Chim Trĩ Đỏ &amp; Bạch Ngọc Lan Trên Núi Đá"</div>
+          <div class="card-price">320.000đ/m² · Phong thái vương giả cho phòng khách lớn</div>
+        </div>
+      </div>
+      <div class="grid-card">
+        <img src="/assets/aistudio/500736269_122100652184890917_8967685661222471956_n_a0751511.jpg" />
+        <div class="card-overlay">
+          <div class="card-title">4. Mành Khung Triện "Xuân Yến Đồ – Đôi Én &amp; Hoa Đào"</div>
+          <div class="card-price">280.000đ/m² · Viền triện 4 góc sang trọng, vượng khí mùa xuân</div>
+        </div>
+      </div>
+      <div class="grid-card">
+        <img src="/assets/aistudio/500768785_122100651674890917_5413807784532523595_n_b1101dcf.jpg" />
+        <div class="card-overlay">
+          <div class="card-title">5. Bộ Đôi Nguyệt Môn "Mộc Lan Dưới Trăng &amp; Chim Trường Thọ"</div>
+          <div class="card-price">300.000đ/m² · Khung tròn nguyệt môn ghép đôi hoàn mỹ</div>
+        </div>
+      </div>
+      <div class="grid-card">
+        <img src="/assets/aistudio/502460507_122100651380890917_8044915949983403893_n_e19a8429.jpg" />
+        <div class="card-overlay">
+          <div class="card-title">6. Bộ Đôi "Nguyệt Môn Bạch Mai &amp; Đường Triện Vân Mây"</div>
+          <div class="card-price">300.000đ/m² · Tuyệt đẹp khi treo vách sau sofa &amp; kệ tivi</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <div class="footer-brand">
+        <div class="footer-brand-title">BẢNG GIÁ TẠI XƯỞNG NGỌC TUYẾN</div>
+        <div class="footer-brand-sub">Miễn Phí Đo Đạc &amp; Tư Vấn Phong Thủy</div>
+        <div class="footer-brand-hotline">ĐT / Zalo: 0989.655.388 – 0344.727.528</div>
+      </div>
+      <div class="price-box price-box-primary">
+        <div class="price-box-label">MÀNH ĐƠN KHUNG TRIỆN NGUYỆT MÔN</div>
+        <div class="price-box-val">280.000đ / m²</div>
+        <div class="price-box-note">Giá TT: 420.000đ/m² · Đầy đủ phụ kiện con lăn</div>
+      </div>
+      <div class="price-box price-box-secondary">
+        <div class="price-box-label">BỘ ĐÔI MÀNH NGUYỆT MÔN GHÉP KHỚP</div>
+        <div class="price-box-val">300.000đ / m²</div>
+        <div class="price-box-note">Giá TT: 450.000đ/m² · Căn chỉnh hoa văn chính xác</div>
+      </div>
+      <div class="price-box price-box-secondary">
+        <div class="price-box-label">BỘ 3 BỨC ĐỐI XỨNG (1 CHÍNH + 2 PHỤ)</div>
+        <div class="price-box-val">320.000đ – 360.000đ/m²</div>
+        <div class="price-box-note">Giá TT: 520.000đ/m² · Chế tác theo kích thước cửa</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BANNER 3: MT-TC-03 (KHUNG CỬA CỔ HOA ĐIỂU · ĐÀO NGUYÊN & LỒNG CHIM QUÝ TỘC) -->
+  <div id="banner-mt-tc-03" class="banner-canvas">
+    <div class="header-bar">
+      <div class="header-left">
+        <div class="header-kicker">PHONG CÁCH TÂN CỔ ĐIỂN Á ĐÔNG · PHÒNG KHÁCH · BIỆT THỰ &amp; NHÀ HÀNG TRÀ ĐẠO</div>
+        <div class="header-title">MÀNH TĂM TRE KHUNG CỬA CỔ HOA ĐIỂU · ĐÀO NGUYÊN &amp; LỒNG CHIM QUÝ TỘC</div>
+        <div class="header-sub">Họa Tiết Song Cửa Bát Giác &amp; Bán Nguyệt Cổ Điển · Tạo Chiều Sâu Không Gian Sang Trọng</div>
+      </div>
+      <div class="header-badge">
+        <div class="header-badge-code">MÃ BÀI: MT-TC-03</div>
+        <div class="header-badge-phone">0989.655.388</div>
+      </div>
+    </div>
+
+    <div class="grid-area">
+      <div class="grid-card">
+        <img src="/assets/aistudio/500768768_122100651728890917_8427186635337617896_n_1b19b80b.jpg" />
+        <div class="card-overlay">
+          <div class="card-title">1. Song Hỷ Đào Hoa – Đôi Chim Ác Là Xanh &amp; Khung Bán Nguyệt</div>
+          <div class="card-price">300.000đ/m² · Biểu tượng hỷ sự, may mắn &amp; sum vầy</div>
+        </div>
+      </div>
+      <div class="grid-card">
+        <img src="/assets/aistudio/500737834_122100659534890917_4723543457688590189_n_e3e613f8.jpg" />
+        <div class="card-overlay">
+          <div class="card-title">2. Song Yến Đào Hoa – Khung Song Cửa Cổ &amp; Ấn Triện Tròn</div>
+          <div class="card-price">300.000đ/m² · Tuyệt phẩm trang trí bàn trà &amp; bonsai</div>
+        </div>
+      </div>
+      <div class="grid-card">
+        <img src="/assets/aistudio/500739763_122100650882890917_3729632059607191024_n_25084717.jpg" />
+        <div class="card-overlay">
+          <div class="card-title">3. Khung Bát Giác Băng Mai – Hoa Mộc Lan &amp; Lồng Chim Cổ</div>
+          <div class="card-price">300.000đ/m² · Sang trọng, thanh lịch sau sofa phòng khách</div>
+        </div>
+      </div>
+      <div class="grid-card">
+        <img src="/assets/aistudio/500739985_122100650528890917_234871176915682253_n_d0aa2bed.jpg" />
+        <div class="card-overlay">
+          <div class="card-title">4. Cửa Sổ Bát Giác Hoa Đào Hồng, Lồng Chim &amp; Chim Sẻ</div>
+          <div class="card-price">300.000đ/m² · Hiệu ứng mở rộng chiều sâu không gian 3D</div>
+        </div>
+      </div>
+      <div class="grid-card">
+        <img src="/assets/aistudio/500738305_122100650354890917_8237058888381360314_n_18f2db2e.jpg" style="object-position: center 65%;" />
+        <div class="card-overlay">
+          <div class="card-title">5. Mã C203: Khung Bán Nguyệt Đào Hoa &amp; Thủy Đình Giang Nam</div>
+          <div class="card-price">300.000đ/m² · Làm vách ngăn phòng khách &amp; phòng ăn</div>
+        </div>
+      </div>
+      <div class="grid-card">
+        <img src="/assets/aistudio/500741571_122100652178890917_6050608616275871117_n_1679b80f.jpg" />
+        <div class="card-overlay">
+          <div class="card-title">6. Thế Ngoại Đào Nguyên – Đôi Nhành Đào Xuân Đỏ Thắm</div>
+          <div class="card-price">280.000đ/m² · Tối giản, tinh tế theo phong cách Zen</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <div class="footer-brand">
+        <div class="footer-brand-title">BẢNG GIÁ TẠI XƯỞNG NGỌC TUYẾN</div>
+        <div class="footer-brand-sub">Nhận Đặt Kích Thước Lọt Lòng Cửa Sổ</div>
+        <div class="footer-brand-hotline">ĐT / Zalo: 0989.655.388 – 0344.727.528</div>
+      </div>
+      <div class="price-box price-box-primary">
+        <div class="price-box-label">MÀNH TĂM TRE ĐÀO NGUYÊN (2 TẤM)</div>
+        <div class="price-box-val">280.000đ / m²</div>
+        <div class="price-box-note">Giá TT: 420.000đ/m² · Cản nắng 80%, thoáng gió</div>
+      </div>
+      <div class="price-box price-box-secondary">
+        <div class="price-box-label">MÀNH KHUNG CỬA BÁT GIÁC / BÁN NGUYỆT</div>
+        <div class="price-box-val">300.000đ / m²</div>
+        <div class="price-box-note">Giá TT: 450.000đ/m² · Ghép đôi đối xứng 2 bên</div>
+      </div>
+      <div class="price-box price-box-secondary">
+        <div class="price-box-label">BỘ 3 BỨC HOA ĐIỂU LỒNG CHIM PHÒNG KHÁCH</div>
+        <div class="price-box-val">320.000đ / m²</div>
+        <div class="price-box-note">Giá TT: 480.000đ/m² · Bao lắp đặt hoàn thiện</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BANNER 4: MT-TC-04 (GIA HÒA VẠN SỰ HƯNG · PHÚ QUÝ BẠCH ĐẦU · TỬ KHÍ ĐÔNG LAI & TRÚC QUÂN TỬ) -->
+  <div id="banner-mt-tc-04" class="banner-canvas">
+    <div class="header-bar">
+      <div class="header-left">
+        <div class="header-kicker">TRANH MÀNH TĂM TRE THƯ PHÁP CÁT TƯỜNG · SƠN THỦY &amp; TĨNH VẬT BÌNH GỐM</div>
+        <div class="header-title">GIA HÒA VẠN SỰ HƯNG · PHÚ QUÝ BẠCH ĐẦU · TỬ KHÍ ĐÔNG LAI &amp; TRÚC XANH</div>
+        <div class="header-sub">Tuyệt Phẩm Phong Thủy Vượng Gia Đạo · Quà Biếu Tân Gia &amp; Trang Trí Thư Phòng Đẳng Cấp</div>
+      </div>
+      <div class="header-badge">
+        <div class="header-badge-code">MÃ BÀI: MT-TC-04</div>
+        <div class="header-badge-phone">0344.727.528</div>
+      </div>
+    </div>
+
+    <div class="grid-area">
+      <div class="grid-card">
+        <img src="/assets/aistudio/500735211_122100651218890917_4863974148799086607_n_1e3c454f.jpg" style="object-position: right center;" />
+        <div class="card-overlay">
+          <div class="card-title">1. Gia Hòa Vạn Sự Hưng – Hoa Mộc Lan &amp; Chòi Trà Sơn Thủy</div>
+          <div class="card-price">280.000đ/m² · Gia đạo thuận hòa, vạn sự hanh thông</div>
+        </div>
+      </div>
+      <div class="grid-card">
+        <img src="/assets/aistudio/500770872_122100651404890917_3451250273236718655_n_ba5f9648.jpg" style="object-position: right center;" />
+        <div class="card-overlay">
+          <div class="card-title">2. Tử Khí Đông Lai – Hoa Tử Đằng Tím &amp; Cầu Đá Giang Nam</div>
+          <div class="card-price">280.000đ/m² · Đón cát khí phương Đông, quý nhân phù trợ</div>
+        </div>
+      </div>
+      <div class="grid-card">
+        <img src="/assets/aistudio/500766734_122100651128890917_6452036645384295612_n_0ad0e7b1.jpg" />
+        <div class="card-overlay">
+          <div class="card-title">3. Phú Quý Bạch Đầu – Mẫu Đơn Hồng &amp; Đôi Chim Bạch Đầu</div>
+          <div class="card-price">280.000đ/m² · Vinh hoa phú quý, vợ chồng gắn kết răng long</div>
+        </div>
+      </div>
+      <div class="grid-card">
+        <img src="/assets/aistudio/500767828_122100650486890917_3877120712230743096_n_a35fe60e.jpg" />
+        <div class="card-overlay">
+          <div class="card-title">4. Bộ 3 Bức Bình Gốm Cổ: "Gia Hòa – Bình An – Phú Quý"</div>
+          <div class="card-price">320.000đ/m² · Tam bình gốm cắm Mai Vàng, Bạch Liên &amp; Đào</div>
+        </div>
+      </div>
+      <div class="grid-card">
+        <img src="/assets/aistudio/500736031_122100654782890917_6223110425038700525_n_75f56c95.jpg" />
+        <div class="card-overlay">
+          <div class="card-title">5. Bộ 3 Bức Đại Cảnh "Trúc Lâm Chim Sẻ &amp; Thuyền Câu"</div>
+          <div class="card-price">320.000đ/m² · Không gian trà đạo thư thái, tao nhã</div>
+        </div>
+      </div>
+      <div class="grid-card">
+        <img src="/assets/aistudio/500761507_122100650810890917_2106910062024523522_n_4df92d19.jpg" />
+        <div class="card-overlay">
+          <div class="card-title">6. Thanh Trúc Quân Tử – 3 Thân Trúc Xanh &amp; Thư Pháp</div>
+          <div class="card-price">260.000đ/m² · Khí chất ngay thẳng, bình an bốn mùa</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <div class="footer-brand">
+        <div class="footer-brand-title">BẢNG GIÁ TẠI XƯỞNG NGỌC TUYẾN</div>
+        <div class="footer-brand-sub">Giao Hàng Toàn Quốc · Lắp Đặt Tận Nơi</div>
+        <div class="footer-brand-hotline">ĐT / Zalo: 0989.655.388 – 0344.727.528</div>
+      </div>
+      <div class="price-box price-box-primary">
+        <div class="price-box-label">MÀNH TRÚC QUÂN TỬ / MẪU ĐƠN PHÚ QUÝ</div>
+        <div class="price-box-val">260.000đ – 280.000đ/m²</div>
+        <div class="price-box-note">Giá TT: 400.000đ/m² · Kèm thanh gỗ &amp; dây kéo đồng</div>
+      </div>
+      <div class="price-box price-box-secondary">
+        <div class="price-box-label">MÀNH THƯ PHÁP GIA HÒA / TỬ KHÍ ĐÔNG LAI</div>
+        <div class="price-box-val">280.000đ – 300.000đ/m²</div>
+        <div class="price-box-note">Giá TT: 440.000đ/m² · Bền màu, chống cong vênh</div>
+      </div>
+      <div class="price-box price-box-secondary">
+        <div class="price-box-label">BỘ 3 BỨC TAM BÌNH GỐM / SƠN THỦY GIANG NAM</div>
+        <div class="price-box-val">320.000đ – 350.000đ/m²</div>
+        <div class="price-box-note">Giá TT: 500.000đ/m² · Chế tác chuẩn theo khung cửa</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RETOUCH 1: 500736970 (6 MÃ Y19-Y24 VIETNAMESE LUXURY BADGES) -->
+  <div id="retouch-500736970" class="retouch-square" style="background:#FFFFFF;">
+    <img src="/assets/aistudio/500736970_122100651806890917_5635185355892112876_n_c18126cb.jpg" />
+    <div class="y-badge" style="left: 82px; top: 361px;">MÃ Y19 · ĐÀI SEN</div>
+    <div class="y-badge" style="left: 326px; top: 361px;">MÃ Y20 · HỒNG LIÊN</div>
+    <div class="y-badge" style="left: 583px; top: 361px;">MÃ Y21 · TAM LIÊN</div>
+    <div class="y-badge" style="left: 82px; top: 768px;">MÃ Y22 · BẠCH LIÊN</div>
+    <div class="y-badge" style="left: 326px; top: 768px;">MÃ Y23 · LIÊN DIỆP</div>
+    <div class="y-badge" style="left: 583px; top: 768px;">MÃ Y24 · SEN HỒNG</div>
+  </div>
+
+  <!-- RETOUCH 2: 500738305 (C203 TOP HEADER BAR) -->
+  <div id="retouch-500738305" class="retouch-square">
+    <img src="/assets/aistudio/500738305_122100650354890917_8237058888381360314_n_18f2db2e.jpg" />
+    <div style="position:absolute; top:0; left:0; right:0; height:47px; background:linear-gradient(90deg, #1E1610 0%, #2E2117 100%); border-bottom:2px solid #C89B3C; display:flex; align-items:center; justify-content:space-between; padding:0 18px;">
+      <span style="color:#F3D88C; font-size:13px; font-weight:700; letter-spacing:0.04em;">XƯỞNG MÀNH TĂM TRE NGỌC TUYẾN – TUYẾN HOA · MÃ C203</span>
+      <span style="color:#FFFFFF; font-size:13px; font-weight:700;">ĐT/Zalo: 0989.655.388 – 0344.727.528</span>
+    </div>
+  </div>
+
+  <!-- RETOUCH 3: 500761713 (BOTTOM RIGHT BLACK BOX COVER) -->
+  <div id="retouch-500761713" class="retouch-square">
+    <img src="/assets/aistudio/500761713_122100651074890917_8609774874102564285_n_e19483f4.jpg" />
+    <div style="position:absolute; right:0; top:666px; width:332px; height:74px; background:linear-gradient(135deg, #1E1610 0%, #342519 100%); border-left:3px solid #D4AF37; border-top:1.5px solid #D4AF37; border-bottom:1.5px solid #D4AF37; padding:10px 16px; display:flex; flex-direction:column; justify-content:center; gap:3px;">
+      <span style="color:#F3D88C; font-size:12px; font-weight:700; letter-spacing:0.05em;">MÃ HĐ-05 · BỘ 3 BỨC HOA ĐÀO &amp; LỒNG CHIM</span>
+      <span style="color:#FFFFFF; font-size:14px; font-weight:800;">Xưởng Ngọc Tuyến · 0344.727.528</span>
+    </div>
+  </div>
+
+  <!-- RETOUCH 4: 501392157 (TOP RIGHT ZHUYUNRENJIA WATERMARK COVER) -->
+  <div id="retouch-501392157" class="retouch-square">
+    <img src="/assets/aistudio/501392157_122100652028890917_6115461266292499836_n_99c1b655.jpg" />
+    <div style="position:absolute; right:12px; top:10px; width:228px; height:76px; background:linear-gradient(135deg, #241911 0%, #3A291C 100%); border:1.5px solid #D4AF37; border-radius:10px; padding:9px 14px; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:3px; box-shadow:0 4px 12px rgba(0,0,0,0.4);">
+      <span style="color:#F3D88C; font-size:11.5px; font-weight:700; letter-spacing:0.05em;">MÀNH TĂM TRE NGỌC TUYẾN</span>
+      <span style="color:#FFFFFF; font-size:14.5px; font-weight:800;">LIÊN HOA CỬU NGƯ</span>
+      <span style="color:#D6C7B2; font-size:11px; font-weight:600;">ĐT/Zalo: 0989.655.388</span>
+    </div>
+  </div>
+
+  <!-- RETOUCH 5: 500742419 (BOTTOM CENTER RED SEAL BADGE) -->
+  <div id="retouch-500742419" class="retouch-square">
+    <img src="/assets/aistudio/500742419_122100651926890917_2678072256097837987_n_3e96dbc4.jpg" />
+    <div style="position:absolute; left:245px; top:716px; width:300px; height:78px; background:linear-gradient(135deg, #7A1616 0%, #4E0C0C 100%); border:2px solid #E5C168; border-radius:40px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; box-shadow:0 4px 14px rgba(0,0,0,0.4);">
+      <span style="color:#F3D88C; font-size:11px; font-weight:700; letter-spacing:0.08em;">TUYỆT TÁC MÀNH TRÚC PHÒNG TRÀ</span>
+      <span style="color:#FFFFFF; font-size:16px; font-weight:800; letter-spacing:0.03em;">LIÊN HOA NGŨ NGƯ</span>
+      <span style="color:#F4D27A; font-size:11.5px; font-weight:600;">Niên Niên Hữu Dư · Phú Quý Cát Tường</span>
+    </div>
+  </div>
+
+  <!-- RETOUCH 6: 500742756 (BOTTOM CENTER BROWN BADGE) -->
+  <div id="retouch-500742756" class="retouch-square">
+    <img src="/assets/aistudio/500742756_122100651614890917_6342530107713701372_n_1104912c.jpg" />
+    <div style="position:absolute; left:220px; top:698px; width:370px; height:86px; background:linear-gradient(135deg, #2B1E14 0%, #443020 100%); border:2px solid #D4AF37; border-radius:14px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; box-shadow:0 4px 14px rgba(0,0,0,0.45);">
+      <span style="color:#F3D88C; font-size:11.5px; font-weight:700; letter-spacing:0.06em;">BỘ 3 BỨC MÀNH TĂM TRE ĐẠI CẢNH</span>
+      <span style="color:#FFFFFF; font-size:16px; font-weight:800;">BẠCH NGỌC LAN &amp; ĐÔI CHIM SẺ</span>
+      <span style="color:#D6C7B2; font-size:11.5px; font-weight:600;">Xưởng Ngọc Tuyến · ĐT: 0989.655.388 – 0344.727.528</span>
+    </div>
+  </div>
+
+</body>
+</html>
