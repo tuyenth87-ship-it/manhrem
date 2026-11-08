@@ -65,10 +65,32 @@ export interface DeduplicatedImageGroup {
 }
 
 export const DEDUPLICATION_SUMMARY = {
-  totalUploaded: 420,
+  totalUploaded: 446,
   totalRemovedDuplicates: 65,
-  totalUniquePublished: 355,
+  totalUniquePublished: 381,
   groups: [
+    {
+      id: 'dup-lo-giay-dan-tuong-ngoc-tuyen-2026',
+      groupTitle: 'Chuyên Đề & Bảng Giá Mới Nhất: Tổng Kho Giấy Dán Tường Hàn Quốc · Tranh Lụa Dán Tường 3D Phong Thủy Nguyên Khổ · Decal Vân Gỗ & Cót Tre Đan Cao Cấp Thương Hiệu Ngọc Tuyến (Mã Bài GDT-NT-01)',
+      keptImage: 'GDT_NT_01_giay_dan_tuong_ngoc_tuyen_bang_gia_hd.jpg',
+      removedCount: 0,
+      removedExamples: [
+        'Biên tập bài đăng chuyên sâu kèm ghi chú kỹ thuật & bảng giá niêm yết trọn gói (cả giấy + keo sữa Hàn Quốc + keo bột chống ẩm + công thợ dán hoàn thiện) cho Giấy Dán Tường Hàn Quốc Phòng Khách & Phòng Ngủ (65.000đ – 95.000đ/m², nguyên cuộn 16,5m² giá 850k – 1.250k)',
+        'Cập nhật bảng giá Tranh Dán Tường Lụa 3D / 5D Phong Thủy Nguyên Khổ In UV Phủ Bóng (180.000đ – 250.000đ/m²), Giấy Dán Tường Phòng Thờ Hoa Sen Vàng & Cót Tre Đan Tự Nhiên Ốp Tường Nhà Cổ – Từ Đường (85.000đ – 160.000đ/m²) và Decal Sẵn Keo Chống Ẩm (35.000đ/m²)',
+      ],
+      reason: 'Thiết kế Poster Bảng Giá HD (GDT-NT-01) phong cách sang trọng, điền rõ đơn giá theo m² và theo cuộn 16,5m² kèm ghi chú kỹ thuật thi công cho từng không gian phòng khách, phòng ngủ, phòng cưới và phòng thờ gia tiên.',
+    },
+    {
+      id: 'dup-lo-18-anh-dem-elan-vip-elannova-vimatt-see-2026',
+      groupTitle: 'Lô 18 Ảnh Đệm Chính Hãng ELAN (Since 1990) Vừa Tải Lên (IMG_9332 – IMG_9350): Đệm Lò Xo Túi Độc Lập ELAN VIP III · ELANNOVA · Lò Xo Túi Cuộn VIMATT 1 Mặt · Lò Xo Liên Kết (DEL-NT-01) & Đệm Nano Foam Massage · Bông Ép Gấp 2 Vỏ Chần SEE01 / SEE05 · Gấp 3 Vỏ Gấm (DEL-NT-02)',
+      keptImage: 'DEL_NT_01_dem_lo_xo_elan_vip_elannova_vimatt_hd.jpg',
+      removedCount: 0,
+      removedExamples: [
+        'Quy hoạch Bài Đăng DEL-NT-01 (11 Ảnh Thực Tế + 01 Poster Bảng Giá HD): Đệm Lò Xo Túi Độc Lập ELAN VIP III Pillow Top dày 28–30cm (IMG_9333, IMG_9341, IMG_9336), Đệm Lò Xo Túi Độc Lập ELANNOVA dày 25cm (IMG_9337, IMG_9335), Đệm Lò Xo Túi Cuộn VIMATT 1 Mặt dày 22–24cm (IMG_9349, IMG_9348, IMG_9350, IMG_9344, IMG_9345) và Đệm Lò Xo Liên Kết ELANNOVA dày 23cm (IMG_9339)',
+        'Quy hoạch Bài Đăng DEL-NT-02 (07 Ảnh Thực Tế + 01 Poster Bảng Giá HD): Đệm Nano Foam Massage ELAN Nguyên Tấm & Thực tế bàn giao trên giường da kem (IMG_9342, IMG_9343), Đệm Bông Ép Gấp 2 SEE Vỏ Chần Mã SEE05 & SEE01 kèm cận cảnh thành thổ cẩm viền bạc (IMG_9332, IMG_9334, IMG_9346) và Đệm Bông Ép Gấp 3 Vỏ Gấm ELAN màu Be Nâu & Xám Ghi (IMG_9338, IMG_9340)',
+      ],
+      reason: 'Phân loại chuẩn xác toàn bộ 18 bức ảnh chụp thực tế các dòng đệm thương hiệu ELAN (Since 1990), viết ghi chú cấu tạo lõi – bề mặt vải gấm cho từng ảnh và niêm yết bảng giá ưu đãi chiết khấu 30% tại Đại lý cấp 1 Ngọc Tuyến – Tuyến Hoa.',
+    },
     {
       id: 'dup-lo-12-anh-manh-tam-tre-tam-lien-long-chim-lien-hoa-2026',
       groupTitle: 'Lô 12 Ảnh Mới Nhất Vừa Tải Lên (Đã Viết Chú Thích Chi Tiết & Thiết Kế 02 Poster Bảng Giá HD): Bộ 3 Bức Đối Xứng Tam Liên Khung Triện · Cửa Sổ Bát Giác Lồng Chim (MT-TC-05) & Liên Hoa Ngũ Ngư · Sơn Thủy Giang Nam · Đào Nguyên · Trúc Quân Tử (MT-TC-06)',
@@ -309,8 +331,32 @@ export const DEDUPLICATION_SUMMARY = {
 
 export const MARKET_PRICE_SUMMARY_TABLE: MarketPriceSummaryRow[] = [
   {
+    id: 'mp-giay-dan-tuong-tranh-3d-ngoc-tuyen',
+    productGroup: '1. Giấy Dán Tường Hàn Quốc · Tranh Lụa 3D & Cót Tre Đan Ngọc Tuyến',
+    specification: 'Giấy Hàn Quốc (65k–95k/m² cả dán · Cuộn 16,5m²: 850k–1.250k) · Tranh lụa 3D (180k–250k/m²) · Cót tre & Phòng thờ (85k–160k/m²)',
+    marketPrice: '110k – 380k / m²',
+    storePrice: '65k – 250k / m²',
+    warrantyAndService: 'Trọn gói keo sữa + keo bột Hàn Quốc & công thợ dán, hơn 2.500 mẫu, BH 5 năm',
+  },
+  {
+    id: 'mp-dem-lo-xo-elan-vip-elannova-vimatt',
+    productGroup: '2. Đệm Lò Xo Túi ELAN VIP III · ELANNOVA & Lò Xo Túi Cuộn VIMATT 1 Mặt',
+    specification: 'ELAN VIP III Pillow Top 30cm (5,25Tr–7,85Tr) · Lò xo túi ELANNOVA & VIMATT (3,35Tr–5,85Tr) · Liên kết ELANNOVA (2,45Tr–3,95Tr)',
+    marketPrice: '3,50Tr – 11,20Tr',
+    storePrice: '2,45Tr – 7,85Tr',
+    warrantyAndService: 'Đại lý cấp 1 ELAN (Since 1990), giảm 30% tại kho, tặng ga gối, BH 7–10 năm',
+  },
+  {
+    id: 'mp-dem-nano-foam-bong-ep-see-elan',
+    productGroup: '3. Đệm Nano Foam Massage & Đệm Bông Ép Vỏ Chần SEE01 · SEE05 – ELAN',
+    specification: 'Nano Foam Massage (2,65Tr–3,95Tr) · Bông ép gấp 2 vỏ chần SEE01/SEE05 (1,95Tr–2,85Tr) · Gấp 3 vỏ gấm ELAN (1,45Tr–2,35Tr)',
+    marketPrice: '2,10Tr – 5,65Tr',
+    storePrice: '1,45Tr – 3,95Tr',
+    warrantyAndService: 'Phôi bông kháng khuẩn & Foam massage cột sống chính hãng ELAN, BH 5–7 năm',
+  },
+  {
     id: 'mp-manh-tam-tre-tan-co-dien-phong-tra-2026',
-    productGroup: '1. Mành Tăm Tre Nghệ Thuật Tân Cổ Điển Phòng Trà · Phòng Khách (28 Mẫu Mới)',
+    productGroup: '4. Mành Tăm Tre Nghệ Thuật Tân Cổ Điển Phòng Trà · Phòng Khách (28 Mẫu Mới)',
     specification: 'Tam Liên Khung Triện · Cửa Sổ Bát Giác Lồng Chim · Liên Hoa Ngũ Ngư · Gia Hòa Vạn Sự Hưng',
     marketPrice: '390k – 520k / m²',
     storePrice: '260k – 360k / m²',
@@ -601,6 +647,442 @@ export function calculateCanopyOrderTotal(input: CanopyPricingInput): CanopyPric
 }
 
 export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
+  // ===========================================================================
+  // 00-WALLPAPER-NGOC-TUYEN-2026. CHUYÊN ĐỀ & BẢNG GIÁ GIẤY DÁN TƯỜNG HÀN QUỐC · TRANH LỤA 3D · DECAL VÂN GỖ & CÓT TRE ĐAN NGỌC TUYẾN (MÃ GDT-NT-01)
+  // ===========================================================================
+  {
+    id: 'giay-dan-tuong-han-quoc-tranh-lua-3d-cot-tre-dan-ngoc-tuyen-gdtnt01',
+    code: 'GDT-NT-01',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Giấy Dán Tường · Showroom',
+    title: 'Bảng Giá Giấy Dán Tường Hàn Quốc · Tranh Lụa Dán Tường 3D Phong Thủy Nguyên Khổ · Decal Vân Gỗ & Cót Tre Đan Cao Cấp Thương Hiệu Ngọc Tuyến (Thi Công Trọn Gói Trong Ngày)',
+    shortTitle: 'Giấy Dán Tường Hàn Quốc · Tranh Lụa 3D & Cót Tre Đan Ngọc Tuyến (Bảng Giá Trọn Gói)',
+    priceDisplay: '65.000đ – 95.000đ/m² (Cả dán)',
+    marketPriceRange: 'Giá thị trường: 110.000đ – 380.000đ / m²',
+    marketPriceNote: 'Tổng Kho Giấy Dán Tường & Vật Liệu Trang Trí Tường Ngọc Tuyến – Tuyến Hoa niêm yết bảng giá thi công trọn gói (Đã bao gồm giấy chính hãng + Keo sữa Hàn Quốc + Keo bột chống ẩm + Công thợ kỹ thuật dán hoàn thiện và bảo hành bong tróc 5 năm). Mang hơn 2.500 mẫu Catalogue tận nhà tư vấn miễn phí.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Giấy Dán Tường Hàn Quốc Cao Cấp Phòng Khách & Phòng Ngủ (Vân Lụa, Vân Vải Đũi, Giả Xi Măng, Hoa Văn Tân Cổ Điển – Cuộn 16,5m² khổ 1,06m × 15,6m)',
+        marketPrice: '110.000đ – 145.000đ / m² (1,65Tr – 2,10Tr/cuộn)',
+        storePrice: '65.000đ – 95.000đ / m² (850k – 1.250k/cuộn cả dán)',
+        note: 'Bề mặt phủ Vinyl dập nổi chống thấm nước, lau chùi vết bẩn dễ dàng, độ bền 8–10 năm, thi công gọn sạch trong 2–4 giờ',
+      },
+      {
+        sizeOrOption: '2. Tranh Dán Tường Lụa 3D / 5D Phong Thủy Nguyên Khổ Không Mối Nối (Sơn Thủy Tùng Hạc · Cửu Ngư Quần Hội · Thuận Buồm Xuôi Gió · Mã Đáo Thành Công)',
+        marketPrice: '280.000đ – 380.000đ / m²',
+        storePrice: '180.000đ – 250.000đ / m²',
+        note: 'In UV hạt nổi 3D phủ bóng kim tuyến trên nền vải lụa nguyên khổ (rộng tới 3,2m không ghép mí), chống rách, bền màu 15 năm',
+      },
+      {
+        sizeOrOption: '3. Giấy Dán Tường Phòng Thờ Gia Tiên & Không Gian Tâm Linh (Vân Hoa Sen Vàng · Chữ Thọ Triện · Nền Gấm Đỏ Trầm · Giả Gạch Cổ)',
+        marketPrice: '130.000đ – 175.000đ / m²',
+        storePrice: '85.000đ – 115.000đ / m²',
+        note: 'Thiết kế chuyên biệt cho vách hậu bàn thờ gia tiên, từ đường họ tộc và phòng trà đạo, mang lại sinh khí ấm cúng trang nghiêm',
+      },
+      {
+        sizeOrOption: '4. Cót Tre Đan Tự Nhiên & Mành Cót Ép Ốp Tường – Ốp Trần (Nhà Gỗ Cổ Truyền · Từ Đường · Nhà Hàng Đồng Quê · Quán Trà Cổ Phong)',
+        marketPrice: '190.000đ – 260.000đ / m²',
+        storePrice: '120.000đ – 160.000đ / m²',
+        note: 'Cót tre cật già đan xương cá thủ công, xử lý hun khói chống mối mọt, thi công nẹp chỉ gỗ đồng bộ cực kỳ sang trọng',
+      },
+      {
+        sizeOrOption: '5. Giấy Dán Tường Nhật Bản & Vải Dán Tường Sợi Thủy Tinh Cao Cấp (Kháng Khuẩn · Chống Trầy Xước · Tiêu Âm Khách Sạn 5 Sao)',
+        marketPrice: '195.000đ – 280.000đ / m²',
+        storePrice: '135.000đ – 185.000đ / m²',
+        note: 'Cốt sợi vải dày gấp 3 lần giấy thông thường, chịu va đập mạnh, kháng ẩm tuyệt đối cho biệt thự và phòng ngủ Master',
+      },
+      {
+        sizeOrOption: '6. Decal Dán Tường Sẵn Keo Vân Gỗ · Vân Đá & Xốp Dán Tường 3D Chống Ẩm (Giải Pháp Cho Tường Cũ Bong Tróc, Ẩm Thấp)',
+        marketPrice: '55.000đ – 85.000đ / m²',
+        storePrice: '35.000đ – 55.000đ / m²',
+        note: 'Tích hợp sẵn keo siêu dính mặt sau hoặc thi công lót chống ẩm chuyên dụng, che phủ hoàn hảo tường vôi ve cũ lâu năm',
+      },
+    ],
+    numericPrice: 65000,
+    unitLabel: 'm² (Trọn gói cả giấy + keo Hàn Quốc + công thợ)',
+    standardDimensions: 'Cuộn Hàn Quốc chuẩn: Rộng 1,06m × Dài 15,6m (16,53m²/cuộn) · Tranh lụa 3D in theo kích thước bức tường thực tế',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/GDT_NT_01_giay_dan_tuong_ngoc_tuyen_bang_gia_hd.jpg',
+    secondaryImages: [
+      '/assets/aistudio/GDT_NT_phong_khach_han_quoc.jpg',
+      '/assets/aistudio/GDT_NT_tranh_lua_3d_son_thuy.jpg',
+      '/assets/aistudio/GDT_NT_phong_ngu_tan_co_dien.jpg',
+      '/assets/aistudio/GDT_NT_phong_tho_cot_tre.jpg',
+      '/assets/aistudio/GDT_NT_kho_mau_catalogue.jpg',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/GDT_NT_01_giay_dan_tuong_ngoc_tuyen_bang_gia_hd.jpg': {
+        badge: 'Poster Bảng Giá Niêm Yết HD (GDT-NT-01)',
+        caption: 'Bảng giá tổng hợp Giấy Dán Tường Hàn Quốc (65k–95k/m² cả dán · Cuộn 16,5m²: 850k–1.250k), Tranh Lụa 3D Phong Thủy Nguyên Khổ (180k–250k/m²), Giấy Phòng Thờ Hoa Sen Vàng & Cót Tre Đan Tự Nhiên (85k–160k/m²) tại Tổng Kho Ngọc Tuyến – Tuyến Hoa',
+      },
+      '/assets/aistudio/GDT_NT_phong_khach_han_quoc.jpg': {
+        badge: 'Mẫu 01 · Giấy Dán Tường Hàn Quốc Phòng Khách (65k–95k/m²)',
+        caption: 'Không gian phòng khách biệt thự thi công Giấy Dán Tường Hàn Quốc tông kem vàng vân lụa dệt nổi kết hợp khung phào chỉ gỗ óc chó – Tạo chiều sâu sang trọng, ấm áp và bắt sáng tự nhiên',
+      },
+      '/assets/aistudio/GDT_NT_tranh_lua_3d_son_thuy.jpg': {
+        badge: 'Mẫu 02 · Tranh Lụa 3D Sơn Thủy Tùng Hạc Nguyên Khổ (180k–250k/m²)',
+        caption: 'Tuyệt tác Tranh Dán Tường Lụa 3D Phong Thủy "Sơn Thủy Hữu Tình – Tùng Hạc Diên Niên & Đầm Sen Hồng" in UV phủ bóng trên nền vải lụa nguyên tấm không mối nối sau sofa phòng khách',
+      },
+      '/assets/aistudio/GDT_NT_phong_ngu_tan_co_dien.jpg': {
+        badge: 'Mẫu 03 · Giấy Dán Tường Phòng Ngủ Master Tân Cổ Điển (75k–110k/m²)',
+        caption: 'Giấy Dán Tường Hàn Quốc hoa văn Damask dập nổi ánh kim nhẹ nhàng cho vách đầu giường phòng ngủ Master & phòng cưới – Kháng khuẩn, không mùi, an toàn tuyệt đối cho giấc ngủ',
+      },
+      '/assets/aistudio/GDT_NT_phong_tho_cot_tre.jpg': {
+        badge: 'Mẫu 04 · Giấy Phòng Thờ Hoa Sen Vàng & Cót Tre Đan (85k–160k/m²)',
+        caption: 'Phối cảnh thi công Giấy Dán Tường Phòng Thờ chạm nổi Hoa Sen Vàng ở vách hậu bàn thờ gia tiên kết hợp Cót Tre Đan xương cá tự nhiên và nẹp gỗ chữ Vạn cho không gian thờ tự tôn nghiêm',
+      },
+      '/assets/aistudio/GDT_NT_kho_mau_catalogue.jpg': {
+        badge: 'Mẫu 05 · Hơn 2.500 Mẫu Catalogue Hàn Quốc · Nhật Bản · Decal Vân Gỗ',
+        caption: 'Bộ sưu tập quyển mẫu Catalogue Giấy Dán Tường Hàn Quốc, Vải dán tường Nhật Bản, Cót tre đan tự nhiên và Decal vân gỗ tại Cửa hàng Ngọc Tuyến – Hỗ trợ mang mẫu tận nhà chọn miễn phí',
+      },
+    },
+    highlightTag: 'GIẤY DÁN TƯỜNG & TRANH LỤA 3D NGỌC TUYẾN · 65K–95K/M² CẢ DÁN',
+    summary: 'Tổng kho phân phối và thi công trọn gói Giấy Dán Tường Hàn Quốc, Tranh Lụa Dán Tường 3D Phong Thủy nguyên khổ, Giấy dán tường phòng thờ Hoa Sen Vàng, Decal vân gỗ và Cót tre đan tự nhiên thương hiệu Ngọc Tuyến. Cam kết sử dụng keo sữa + keo bột Hàn Quốc chính hãng, thi công nhanh gọn trong ngày, bảo hành bong tróc 5 năm.',
+    visualAnnotations: [
+      {
+        label: '1. Cấu Tạo Giấy Dán Tường Hàn Quốc 3 Lớp Chống Ẩm Mốc',
+        detail: 'Lớp bề mặt phủ nhựa Vinyl dập nổi 3D chống thấm nước, chống bám bụi và dễ dàng lau sạch bằng khăn ẩm; lớp giữa là bột giấy nguyên sinh ép mật độ cao giữ form không co ngót; lớp đế giấy chuyên dụng thẩm thấu keo sữa Hàn Quốc giúp bám chặt vào tường sơn hoặc tường bả phẳng suốt 8–10 năm.',
+      },
+      {
+        label: '2. Tranh Dán Tường Vải Lụa 3D / 5D Nguyên Khổ Không Mối Nối',
+        detail: 'Khác biệt hoàn toàn với tranh giấy ghép nhiều mảnh dễ lộ vệt nối, Tranh Lụa 3D Ngọc Tuyến được in UV hạt nổi trực tiếp trên khổ vải lụa kim tuyến rộng tới 3,2m (dài bất kỳ), xé không rách, màu sắc Sơn Thủy – Tùng Hạc – Cửu Ngư – Hoa Mẫu Đơn sống động như tranh vẽ tay.',
+      },
+      {
+        label: '3. Giải Pháp Tôn Nghiêm Cho Phòng Thờ Gia Tiên & Nhà Gỗ Cổ Truyền',
+        detail: 'Dòng giấy dán tường chuyên dụng cho Phòng Thờ (họa tiết Hoa Sen Vàng, Chữ Thọ, Vân Gấm Đỏ Trầm) và Cót Tre Đan tự nhiên giúp biến bức tường sơn trắng đơn điệu thành không gian thờ tự trang nghiêm, ấm cúng, hợp phong thủy âm dương mà chi phí chỉ bằng 1/5 so với ốp gỗ tự nhiên.',
+      },
+      {
+        label: '4. Quy Trình Thi Công Keo Kép Hàn Quốc & Bảo Hành 5 Năm Tại Nhà',
+        detail: 'Đội thợ kỹ thuật lành nghề của Ngọc Tuyến xử lý vệ sinh bề mặt tường, pha kết hợp Keo Sữa (tăng độ bám dính mép) + Keo Bột Hàn Quốc (chống nấm mốc từ trong tường), cán phẳng tuyệt đối không bọt khí, dọn vệ sinh sạch sẽ ngay sau khi bàn giao.',
+      },
+    ],
+    specs: [
+      { label: 'Thương hiệu phân phối & thi công', value: 'Giấy Dán Tường & Nội Thất Ngọc Tuyến – Tuyến Hoa' },
+      { label: 'Quy cách cuộn Hàn Quốc chuẩn', value: 'Khổ rộng 1,06m × Dài 15,6m = 16,53m² / cuộn nguyên seal' },
+      { label: 'Đơn giá Giấy Hàn Quốc (Cả dán)', value: '65.000đ – 95.000đ / m² (850.000đ – 1.250.000đ / cuộn 16,5m²)' },
+      { label: 'Đơn giá Tranh Lụa 3D Nguyên Khổ', value: '180.000đ – 250.000đ / m² (In theo kích thước tường thực tế)' },
+      { label: 'Đơn giá Cót Tre & Giấy Phòng Thờ', value: '85.000đ – 160.000đ / m² · Decal sẵn keo: 35.000đ – 55.000đ / m²' },
+      { label: 'Keo thi công & Bảo hành', value: 'Keo sữa + Keo bột Hàn Quốc chống ẩm · Bảo hành 5 năm' },
+    ],
+    articleParagraphs: [
+      'Trong thiết kế nội thất hiện đại cũng như cải tạo nhà ở truyền thống, Giấy Dán Tường Hàn Quốc và Tranh Lụa Dán Tường 3D của thương hiệu Ngọc Tuyến đang là lựa chọn hàng đầu nhờ khả năng "lột xác" toàn bộ không gian phòng khách, phòng ngủ, phòng cưới và phòng thờ gia tiên chỉ trong vài giờ thi công mà không gây bụi bẩn hay mùi sơn độc hại.',
+      'Tại Tổng Kho Ngọc Tuyến – Tuyến Hoa, khách hàng được trực tiếp lựa chọn trên 2.500 mẫu Catalogue mới nhất: từ các tông màu trơn vân vải đũi, vân lụa ánh kim nhẹ nhàng phong cách Hàn Quốc, các mẫu hoa văn Damask tân cổ điển sang trọng cho phòng ngủ Master, cho tới các bức Tranh Lụa 3D Phong Thủy nguyên khổ (Sơn Thủy Tùng Hạc, Cửu Ngư Quần Hội, Thuận Buồm Xuôi Gió) và Cót Tre Đan tự nhiên chuyên dụng cho phòng thờ, từ đường.',
+      'Đặc biệt, Ngọc Tuyến niêm yết công khai đơn giá trọn gói từ 65.000đ – 95.000đ/m² (hoặc 850.000đ – 1.250.000đ/cuộn 16,5m² đã bao gồm keo sữa Hàn Quốc, keo bột chống ẩm và công thợ dán hoàn thiện). Kỹ thuật viên mang quyển mẫu tận nhà đo đạc, tư vấn phối màu theo mệnh gia chủ hoàn toàn miễn phí.',
+    ],
+    facebookPostCopy: `🏛️✨ TỔNG KHO GIẤY DÁN TƯỜNG HÀN QUỐC · TRANH LỤA 3D PHONG THỦY & CÓT TRE ĐAN NGỌC TUYẾN (MÃ: GDT-NT-01) ✨🏛️
+💎 Thay áo mới sang trọng cho Phòng Khách – Phòng Ngủ – Phòng Cưới – Phòng Thờ chỉ trong nửa ngày, không bụi bẩn, không mùi sơn!
+
+📌 GHI CHÚ & BẢNG GIÁ NIÊM YẾT TRỌN GÓI (CẢ GIẤY + KEO HÀN QUỐC + CÔNG THỢ DÁN):
+1️⃣ Giấy Dán Tường Hàn Quốc Cao Cấp (Vân lụa, vân vải, giả xi măng, hoa văn tân cổ điển):
+   👉 Giá trọn gói cả dán: 65.000đ – 95.000đ / m²
+   👉 Tính theo cuộn nguyên seal 16,5m² (1,06m × 15,6m): 850.000đ – 1.250.000đ / cuộn (Dán được khoảng 13–15m² tường thực tế sau trừ hao ghép hoa)
+2️⃣ Tranh Dán Tường Lụa 3D / 5D Phong Thủy Nguyên Khổ (Sơn Thủy Tùng Hạc, Cửu Ngư, Thuận Buồm, Hoa Mẫu Đơn):
+   👉 Giá hoàn thiện: 180.000đ – 250.000đ / m² (In UV phủ bóng trên vải lụa nguyên khổ không mối nối, xé không rách)
+3️⃣ Giấy Dán Tường Phòng Thờ Hoa Sen Vàng · Chữ Thọ & Cót Tre Đan Tự Nhiên:
+   👉 Giấy phòng thờ tâm linh: 85.000đ – 115.000đ / m²
+   👉 Cót tre cật già đan xương cá ốp tường – ốp trần nhà cổ, từ đường: 120.000đ – 160.000đ / m²
+4️⃣ Decal Dán Tường Sẵn Keo Vân Gỗ · Vân Đá & Xốp 3D Chống Ẩm:
+   👉 Giá chỉ từ: 35.000đ – 55.000đ / m² (Giải pháp tiết kiệm cho tường cũ bong tróc, ẩm mốc)
+
+✅ CAM KẾT VÀNG TỪ THƯƠNG HIỆU NGỌC TUYẾN – TUYẾN HOA:
+✔️ Sử dụng 100% Keo Sữa + Keo Bột Hàn Quốc chống nấm mốc, bo mép sắc nét.
+✔️ Mang hơn 2.500 mẫu Catalogue tận nhà cho quý khách ướm thử ánh sáng thực tế miễn phí.
+✔️ Bảo hành kỹ thuật bong tróc 05 năm – Độ bền thực tế 8 đến 12 năm.
+📞 ĐT / Zalo khảo sát & báo giá tận nơi: 0344.727.528 – 0989.655.388`,
+  },
+
+  // ===========================================================================
+  // 00-ELAN-MATTRESS-COLLECTION-2026. BỘ SƯU TẬP 18 ẢNH ĐỆM CHÍNH HÃNG ELAN (SINCE 1990) VỪA TẢI LÊN (MÃ DEL-NT-01 & DEL-NT-02)
+  // ===========================================================================
+  {
+    id: 'dem-lo-xo-tui-elan-vip-iii-elannova-vimatt-1-mat-chinh-hang-delnt01',
+    code: 'DEL-NT-01',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung Cao Cấp',
+    title: 'Bảng Giá Đệm Lò Xo Túi Độc Lập ELAN VIP III Pillow Top · ELANNOVA · Lò Xo Túi Cuộn VIMATT 1 Mặt & Lò Xo Liên Kết Chính Hãng ELAN (Since 1990) – Ngọc Tuyến · Tuyến Hoa',
+    shortTitle: 'Đệm Lò Xo Túi ELAN VIP III · ELANNOVA & Lò Xo Túi Cuộn VIMATT 1 Mặt (11 Ảnh Thực Tế)',
+    priceDisplay: '2.450.000đ – 7.850.000đ',
+    marketPriceRange: 'Giá niêm yết hãng ELAN: 3.500.000đ – 11.200.000đ',
+    marketPriceNote: 'Đại lý cấp 1 Chăn Ga Gối Đệm ELAN Chính Hãng (Since 1990 – "Hân hoan chào ngày mới") Ngọc Tuyến – Tuyến Hoa niêm yết bảng giá ưu đãi chiết khấu 30% trực tiếp tại kho cho 04 dòng Đệm Lò Xo chủ lực vừa cập nhật: ELAN VIP III Pillow Top, Lò Xo Túi ELANNOVA, Lò Xo Túi Cuộn VIMATT 1 Mặt và Lò Xo Liên Kết ELANNOVA.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Đệm Lò Xo Túi Độc Lập ELAN VIP III Pillow Top (Dày 28–30cm · Thành Nhung Đen Thêu Vàng Hoàng Gia): Cỡ 1m6×2m / 1m8×2m / 2m0×2m2',
+        marketPrice: '7.500.000đ – 11.200.000đ',
+        storePrice: '5.250.000đ / 5.950.000đ / 7.850.000đ',
+        note: 'Phiên bản Tổng Thống VIP III: Lò xo túi độc lập phân 5 vùng + Lớp Pillow Top Foam tỷ trọng cao chần múi sâu chuẩn khách sạn 5 sao, BH 10 năm',
+      },
+      {
+        sizeOrOption: '2. Đệm Lò Xo Túi Độc Lập ELANNOVA Chính Hãng (Dày 25cm · Vải Gấm Dệt Kim Đan Mạch): Cỡ 1m5×1m9 / 1m6×2m / 1m8×2m / 2m0×2m2',
+        marketPrice: '5.650.000đ – 8.350.000đ',
+        storePrice: '3.950.000đ / 4.250.000đ / 4.750.000đ / 5.850.000đ',
+        note: 'Hệ thống 800+ cuộn lò xo túi độc lập bọc vải không dệt triệt tiêu 100% rung động khi người nằm cạnh trở mình, BH 8 năm',
+      },
+      {
+        sizeOrOption: '3. Đệm Lò Xo Túi Cuộn VIMATT 1 Mặt – ELAN (Dày 22–24cm · Thành Xám Than Chần Ô Vuông): Cỡ 1m2×1m9 / 1m6×2m / 1m8×2m / 2m0×2m2',
+        marketPrice: '4.800.000đ – 7.100.000đ',
+        storePrice: '3.350.000đ / 3.850.000đ / 4.250.000đ / 4.950.000đ',
+        note: 'Thiết kế 1 mặt (Single-top) tích hợp lớp mút đàn hồi êm ái phía trên khung lò xo túi cuộn, không cần lật mặt đệm định kỳ, BH 8 năm',
+      },
+      {
+        sizeOrOption: '4. Đệm Lò Xo Liên Kết ELANNOVA Bền Bỉ (Dày 23cm · Thép Cacbon Tôi Cao Tần): Cỡ 1m2×1m9 / 1m5×1m9 / 1m6×2m / 1m8×2m / 2m0×2m2',
+        marketPrice: '3.500.000đ – 5.650.000đ',
+        storePrice: '2.450.000đ / 2.750.000đ / 2.950.000đ / 3.250.000đ / 3.950.000đ',
+        note: 'Khung lò xo cối Bonnell liên kết chịu lực cực cao, thoáng khí tối đa, phù hợp người thích nằm phẳng chắc chắn và nhà nghỉ, khách sạn, BH 7 năm',
+      },
+    ],
+    numericPrice: 3350000,
+    unitLabel: 'tấm (Đủ kích thước 1m2 · 1m5 · 1m6 · 1m8 · 2m2)',
+    standardDimensions: '1m2×1m9 · 1m5×1m9 · 1m6×2m0 · 1m8×2m0 · 2m0×2m2 (Nhận đặt kích thước lẻ theo lòng giường)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/DEL_NT_01_dem_lo_xo_elan_vip_elannova_vimatt_hd.jpg',
+    secondaryImages: [
+      '/assets/aistudio/IMG_9333_35b91f1d.JPG',
+      '/assets/aistudio/IMG_9341_94ed9ffe.JPG',
+      '/assets/aistudio/IMG_9336_3e3faa81.JPG',
+      '/assets/aistudio/IMG_9337_a3577cac.JPG',
+      '/assets/aistudio/IMG_9335_fcb5d1ee.JPG',
+      '/assets/aistudio/IMG_9349_7a180d24.JPG',
+      '/assets/aistudio/IMG_9348_d3687c83.JPG',
+      '/assets/aistudio/IMG_9350_64fc72cc.JPG',
+      '/assets/aistudio/IMG_9344_849c9829.JPG',
+      '/assets/aistudio/IMG_9345_afaa35f8.JPG',
+      '/assets/aistudio/IMG_9339_ec72708c.JPG',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/DEL_NT_01_dem_lo_xo_elan_vip_elannova_vimatt_hd.jpg': {
+        badge: 'Poster Bảng Giá Đệm Lò Xo ELAN (DEL-NT-01)',
+        caption: 'Bảng giá tổng hợp 04 dòng Đệm Lò Xo Chính Hãng ELAN (Since 1990): ELAN VIP III Pillow Top (5,25Tr–7,85Tr), Lò Xo Túi Độc Lập ELANNOVA (3,95Tr–5,85Tr), Lò Xo Túi Cuộn VIMATT 1 Mặt (3,35Tr–4,95Tr) và Lò Xo Liên Kết ELANNOVA (2,45Tr–3,95Tr)',
+      },
+      '/assets/aistudio/IMG_9333_35b91f1d.JPG': {
+        badge: 'Ảnh 01 · Đệm Lò Xo Túi Độc Lập ELAN VIP III (5,25Tr–7,85Tr)',
+        caption: 'Góc chụp tổng thể Đệm Lò Xo ELAN VIP III dày 28–30cm: Thiết kế Pillow Top 2 tầng sang trọng với thành đệm bọc nhung đen thêu logo vàng hoàng gia và mặt gấm xám bạc chần múi sâu',
+      },
+      '/assets/aistudio/IMG_9341_94ed9ffe.JPG': {
+        badge: 'Ảnh 02 · Phối Cảnh 3D Mặt Chần Sâu Đệm Lò Xo ELAN VIP III',
+        caption: 'Góc chụp 3D thể hiện rõ độ dày 30cm bề thế, hệ thống núm chần Pillow Top phân vùng nâng đỡ cột sống và đường bo viền kép chống xẹp lún mép giường của ELAN VIP III',
+      },
+      '/assets/aistudio/IMG_9336_3e3faa81.JPG': {
+        badge: 'Ảnh 03 · Cận Cảnh Vải Gấm Đan Mạch & Viền Kép ELAN VIP III',
+        caption: 'Zoom cận cảnh bề mặt vải gấm dệt kim nhập khẩu hoa văn lập thể kháng khuẩn và đường may viền chỉ đôi sắc sảo trên dòng Đệm Lò Xo ELAN VIP III',
+      },
+      '/assets/aistudio/IMG_9337_a3577cac.JPG': {
+        badge: 'Ảnh 04 · Đệm Lò Xo Túi Độc Lập ELANNOVA (3,95Tr–5,85Tr)',
+        caption: 'Đệm Lò Xo Túi Độc Lập ELANNOVA dày 25cm đặt thực tế trên giường bọc nỉ xám hiện đại – Các cuộn lò xo hoạt động độc lập giúp người nằm cạnh xoay trở không gây tiếng động',
+      },
+      '/assets/aistudio/IMG_9335_fcb5d1ee.JPG': {
+        badge: 'Ảnh 05 · Chi Tiết Mặt Vải & Tem Thêu Đệm Lò Xo Túi ELANNOVA',
+        caption: 'Đặc tả cấu trúc hoa văn vải gấm chần bông thoát ẩm và tem thêu chính hãng "CHĂN GA GỐI ĐỆM ELAN – SINCE 1990 – HÂN HOAN CHÀO NGÀY MỚI" bên thành đệm ELANNOVA',
+      },
+      '/assets/aistudio/IMG_9349_7a180d24.JPG': {
+        badge: 'Ảnh 06 · Đệm Lò Xo Túi Cuộn VIMATT 1 Mặt – ELAN (3,35Tr–4,95Tr)',
+        caption: 'Phối cảnh tổng thể Đệm Lò Xo Túi Cuộn VIMATT 1 Mặt thương hiệu ELAN (Dày 22–24cm) với thiết kế Single-Top tập trung lớp mút êm ái ở mặt trên, tiện lợi không cần lật đệm',
+      },
+      '/assets/aistudio/IMG_9348_d3687c83.JPG': {
+        badge: 'Ảnh 07 · Cận Cảnh Tem Chính Hãng ELAN Trên Thành Đệm VIMATT 1 Mặt',
+        caption: 'Cận cảnh thành đệm màu xám than chần ô vuông khỏe khoắn, chống bám bẩn cùng tem dệt vương miện cánh bướm ELAN Since 1990 trên dòng Lò Xo Túi Cuộn VIMATT 1 Mặt',
+      },
+      '/assets/aistudio/IMG_9350_64fc72cc.JPG': {
+        badge: 'Ảnh 08 · Góc Bo Viền Chịu Lực & Mặt Chần Kim Cương VIMATT 1 Mặt',
+        caption: 'Góc nhìn từ trên xuống cho thấy đường bo viền tròn đường kính lớn ôm sát khung giường và các rãnh chần hoa văn kim cương giúp lưu thông không khí dưới lưng người nằm',
+      },
+      '/assets/aistudio/IMG_9344_849c9829.JPG': {
+        badge: 'Ảnh 09 · Bề Mặt Vải Gấm Dệt Kim Đàn Hồi VIMATT 1 Mặt',
+        caption: 'Chi tiết bề mặt vải gấm dệt kim co giãn 4 chiều chần lớp mút Memory Foam dày dặn trên Đệm Lò Xo Túi Cuộn VIMATT 1 Mặt – Mát mẻ mùa hè, ấm áp mùa đông',
+      },
+      '/assets/aistudio/IMG_9345_afaa35f8.JPG': {
+        badge: 'Ảnh 10 · Cạnh Bên & Đường Viền Thành Đệm VIMATT 1 Mặt',
+        caption: 'Đường tiếp giáp phẳng phiu giữa thành đệm VIMATT 1 Mặt và đầu giường bọc vải nỉ, tôn lên vẻ đẹp tối giản chuẩn căn hộ chung cư và biệt thự hiện đại',
+      },
+      '/assets/aistudio/IMG_9339_ec72708c.JPG': {
+        badge: 'Ảnh 11 · Đệm Lò Xo Liên Kết ELANNOVA (2,45Tr–3,95Tr)',
+        caption: 'Đệm Lò Xo Liên Kết ELANNOVA dày 23cm với hệ thống khung lò xo thép cacbon tôi nhiệt cao tần liên kết vững chắc, độ nảy đồng đều, bền bỉ trên 15 năm sử dụng',
+      },
+    },
+    highlightTag: 'ĐỆM LÒ XO ELAN CHÍNH HÃNG (SINCE 1990) · GIẢM 30% TẠI KHO',
+    summary: 'Trọn bộ 11 ảnh chụp thực tế & bảng giá ưu đãi 04 dòng Đệm Lò Xo chính hãng thương hiệu ELAN (Since 1990) tại Đại lý cấp 1 Ngọc Tuyến – Tuyến Hoa: Đệm Lò Xo Túi Độc Lập ELAN VIP III Pillow Top (5,25Tr–7,85Tr), Đệm Lò Xo Túi Độc Lập ELANNOVA (3,95Tr–5,85Tr), Đệm Lò Xo Túi Cuộn VIMATT 1 Mặt (3,35Tr–4,95Tr) và Đệm Lò Xo Liên Kết ELANNOVA (2,45Tr–3,95Tr).',
+    visualAnnotations: [
+      {
+        label: '1. Đệm Lò Xo Túi Độc Lập ELAN VIP III (Dòng Cao Cấp Nhất – Pillow Top 30cm)',
+        detail: 'Trang bị lõi lò xo túi độc lập bằng thép cacbon nhập khẩu kết hợp lớp Pillow Top chần múi sâu phía trên và thành đệm bọc nhung đen thêu chỉ vàng sang trọng. Nâng đỡ trọn vẹn 5 vùng cơ thể (Đầu – Vai – Lưng – Hông – Chân), mang lại trải nghiệm êm ái như khách sạn 5 sao.',
+      },
+      {
+        label: '2. Đệm Lò Xo Túi Độc Lập ELANNOVA (Triệt Tiêu Rung Động & Tiếng Ồn)',
+        detail: 'Mỗi con lò xo được đặt trong một túi vải không dệt độc lập hoàn toàn, giúp hấp thụ chuyển động cục bộ. Khi người nằm cạnh xoay mình hoặc thức dậy ban đêm, mặt đệm bên cạnh hoàn toàn tĩnh lặng.',
+      },
+      {
+        label: '3. Đệm Lò Xo Túi Cuộn VIMATT 1 Mặt (Thiết Kế Single-Top Hiện Đại)',
+        detail: 'Ứng dụng công nghệ lò xo túi cuộn kết hợp thiết kế 1 mặt thông minh (toàn bộ lớp Foam đàn hồi cao cấp được tập trung ở mặt nằm phía trên, mặt đáy chống trượt cố định), giúp gia chủ không cần tốn sức lật mặt đệm định kỳ mà vẫn giữ độ êm tối đa.',
+      },
+      {
+        label: '4. Đệm Lò Xo Liên Kết ELANNOVA (Khung Thép Tôi Cao Tần Bền 15 Năm)',
+        detail: 'Sử dụng hệ khung lò xo cối Bonnell đan liên kết bằng thép hàm lượng cacbon cao, chịu tải trọng lớn không võng lún, cấu trúc rỗng bên trong giúp đối lưu không khí cực tốt cho khí hậu nóng ẩm miền Bắc.',
+      },
+    ],
+    specs: [
+      { label: 'Thương hiệu & Xuất xứ', value: 'ELAN Chính Hãng (Since 1990 – Công ty TNHH Chăn Ga Gối Đệm ELAN)' },
+      { label: 'Các dòng sản phẩm', value: 'ELAN VIP III (30cm) · Túi ELANNOVA (25cm) · Túi VIMATT 1 Mặt (23cm) · Liên Kết ELANNOVA (23cm)' },
+      { label: 'Cấu tạo lõi thép', value: 'Thép cacbon nhập khẩu chống gỉ sét, tôi nhiệt cao tần đàn hồi vĩnh cửu' },
+      { label: 'Chất liệu áo đệm', value: 'Vải gấm dệt kim Jacquard kháng khuẩn, chống côn trùng & nấm mốc' },
+      { label: 'Chế độ bảo hành', value: 'Bảo hành chính hãng 7 – 10 năm (1 đổi 1 nếu lõi lò xo xẹp lún)' },
+      { label: 'Ưu đãi tại Ngọc Tuyến', value: 'Chiết khấu 30% giá hãng + Tặng kèm bộ ga gối + Miễn phí giao tận giường' },
+    ],
+    articleParagraphs: [
+      'Với hơn 35 năm khẳng định vị thế trên thị trường nội thất phòng ngủ Việt Nam (Since 1990), thương hiệu Chăn Ga Gối Đệm ELAN ("Hân hoan chào ngày mới") nổi tiếng nhờ dây chuyền sản xuất lò xo thép cacbon chuẩn châu Âu và bề mặt vải gấm dệt kim kháng khuẩn bền đẹp theo năm tháng.',
+      'Tại Đại lý cấp 1 Ngọc Tuyến – Tuyến Hoa, toàn bộ 11 hình ảnh thực tế của 04 dòng đệm lò xo chủ lực (ELAN VIP III Pillow Top, Lò Xo Túi Độc Lập ELANNOVA, Lò Xo Túi Cuộn VIMATT 1 Mặt và Lò Xo Liên Kết ELANNOVA) đều được trưng bày sẵn tại showroom để quý khách trực tiếp nằm thử, cảm nhận độ êm và độ nâng đỡ cột sống trước khi chọn mua.',
+      'Nhờ nhập trực tiếp số lượng lớn từ nhà máy ELAN không qua trung gian, cửa hàng Ngọc Tuyến cam kết mức giá chiết khấu sâu tới 30% so với giá niêm yết hãng, tặng kèm bộ ga gối cao cấp và hỗ trợ vận chuyển, lắp đặt miễn phí tận giường cho mọi gia đình.',
+    ],
+    facebookPostCopy: `👑🛏️ BẢNG GIÁ ĐỆM LÒ XO CHÍNH HÃNG ELAN (SINCE 1990): ELAN VIP III · ELANNOVA & VIMATT 1 MẶT (MÃ: DEL-NT-01) 🛏️👑
+✨ Tổng kho Chăn Ga Gối Đệm Ngọc Tuyến – Tuyến Hoa cập nhật trọn bộ 11 ảnh chụp thực tế & bảng giá chiết khấu 30% các dòng Đệm Lò Xo cao cấp nhất của thương hiệu ELAN!
+
+📌 GHI CHÚ CHI TIẾT & BẢNG GIÁ ƯU ĐÃI TẠI KHO NGỌC TUYẾN:
+1️⃣ Đệm Lò Xo Túi Độc Lập ELAN VIP III (Pillow Top dày 28–30cm · Thành nhung đen thêu vàng hoàng gia):
+   👉 Cỡ 1m6×2m: 5.250.000đ | Cỡ 1m8×2m: 5.950.000đ | Cỡ 2m0×2m2: 7.850.000đ
+   ✔️ Lớp Pillow Top chần múi sâu siêu êm chuẩn khách sạn 5 sao – Bảo hành 10 năm.
+2️⃣ Đệm Lò Xo Túi Độc Lập ELANNOVA (Dày 25cm · Chống rung động tuyệt đối):
+   👉 Cỡ 1m5×1m9: 3.950.000đ | Cỡ 1m6×2m: 4.250.000đ | Cỡ 1m8×2m: 4.750.000đ | Cỡ 2m0×2m2: 5.850.000đ
+   ✔️ Các túi lò xo độc lập giúp người nằm cạnh trở mình êm ru không tiếng động – Bảo hành 8 năm.
+3️⃣ Đệm Lò Xo Túi Cuộn VIMATT 1 Mặt – ELAN (Dày 22–24cm · Thành xám than hiện đại):
+   👉 Cỡ 1m2×1m9: 3.350.000đ | Cỡ 1m6×2m: 3.850.000đ | Cỡ 1m8×2m: 4.250.000đ | Cỡ 2m0×2m2: 4.950.000đ
+   ✔️ Thiết kế 1 mặt tiện lợi tích hợp lớp Foam dày phía trên, không cần lật đệm – Bảo hành 8 năm.
+4️⃣ Đệm Lò Xo Liên Kết ELANNOVA (Dày 23cm · Khung thép tôi cao tần bền 15 năm):
+   👉 Cỡ 1m2×1m9: 2.450.000đ | Cỡ 1m6×2m: 2.950.000đ | Cỡ 1m8×2m: 3.250.000đ | Cỡ 2m0×2m2: 3.950.000đ
+
+🎁 CAM KẾT & QUÀ TẶNG ĐẶC BIỆT:
+✔️ Cam kết chính hãng ELAN 100% nguyên tem mác, phiếu bảo hành nhà máy.
+✔️ Tặng ngay 01 Bộ Ga Gối cùng kích thước + Miễn phí giao hàng tận giường!
+📞 ĐT / Zalo đặt hàng: 0989.655.388 – 0344.727.528`,
+  },
+  {
+    id: 'dem-nano-foam-massage-bong-ep-gap-2-vo-chan-see01-see05-elan-delnt02',
+    code: 'DEL-NT-02',
+    category: 'man-khung-1tr',
+    categoryName: 'Đệm · Chiếu · Màn Khung Cao Cấp',
+    title: 'Bảng Giá Đệm Nano Foam Massage Đa Điểm & Đệm Bông Ép Gấp 2 Vỏ Chần SEE01 · SEE05 · Gấp 3 Vỏ Gấm Chính Hãng ELAN (Since 1990) – Ngọc Tuyến · Tuyến Hoa',
+    shortTitle: 'Đệm Nano Foam Massage & Đệm Bông Ép Vỏ Chần SEE01 · SEE05 – ELAN (7 Ảnh Thực Tế)',
+    priceDisplay: '1.450.000đ – 3.950.000đ',
+    marketPriceRange: 'Giá niêm yết hãng ELAN: 2.100.000đ – 5.650.000đ',
+    marketPriceNote: 'Tổng hợp 07 ảnh chụp thực tế & bảng giá kho cho các dòng Đệm Phẳng Chống Đau Lưng thương hiệu ELAN (Since 1990): Đệm Nano Foam Massage Nguyên Tấm, Đệm Bông Ép Gấp 2 SEE Vỏ Chần (Mã SEE01 & SEE05) và Đệm Bông Ép Gấp 3 Vỏ Gấm Jacquard.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Đệm Nano Foam Massage ELAN Nguyên Tấm (Dày 15cm / 18cm / 20cm · Lõi Foam Massage Huyệt Đạo): Cỡ 1m6×2m / 1m8×2m / 2m0×2m2',
+        marketPrice: '3.850.000đ – 5.650.000đ',
+        storePrice: '2.650.000đ / 3.150.000đ / 3.950.000đ',
+        note: 'Cấu trúc núm gai massage đa điểm kích thích tuần hoàn máu, nâng đỡ đường cong sinh lý cột sống, cực kỳ êm ái và thoáng khí, BH 7 năm',
+      },
+      {
+        sizeOrOption: '2. Đệm Bông Ép Gấp 2 SEE Vỏ Chần Mã SEE05 (Dày 12cm / 15cm / 18cm · Vỏ Gấm Xám Chần Bông Bo Viền Gân): Cỡ 1m6×2m / 1m8×2m / 2m0×2m2',
+        marketPrice: '2.800.000đ – 4.100.000đ',
+        storePrice: '1.950.000đ / 2.350.000đ / 2.850.000đ',
+        note: 'Kết hợp hoàn hảo giữa lõi bông ép nhiệt cứng phẳng bảo vệ cột sống và lớp vỏ gấm chần bông múi nổi êm ái trên bề mặt, BH 5 năm',
+      },
+      {
+        sizeOrOption: '3. Đệm Bông Ép Gấp 2 SEE Vỏ Chần Mã SEE01 (Dày 12cm / 15cm / 18cm · Vải Dệt Chìm Chữ SEE & Thành Thổ Cẩm): Cỡ 1m6×2m / 1m8×2m / 2m0×2m2',
+        marketPrice: '2.800.000đ – 4.100.000đ',
+        storePrice: '1.950.000đ / 2.350.000đ / 2.850.000đ',
+        note: 'Thiết kế gấp 2 tấm bản lớn hạn chế tối đa khe ghép ở lưng, thành đệm dệt thổ cẩm bo viền bạc sang trọng, BH 5 năm',
+      },
+      {
+        sizeOrOption: '4. Đệm Bông Ép Gấp 3 Vỏ Gấm ELAN (Dày 9cm / 14cm / 18cm · Màu Be Nâu & Xám Ghi): Cỡ 1m2×1m9 / 1m5×1m9 / 1m6×2m / 1m8×2m / 2m0×2m2',
+        marketPrice: '2.100.000đ – 3.400.000đ',
+        storePrice: '1.450.000đ / 1.650.000đ / 1.750.000đ / 1.950.000đ / 2.350.000đ',
+        note: '100% bông Polyester tinh khiết ép nhiệt kháng khuẩn, gấp 3 gọn nhẹ dễ di chuyển và tháo vỏ giặt vệ sinh, BH 5 năm',
+      },
+    ],
+    numericPrice: 1950000,
+    unitLabel: 'tấm (Đủ kích thước 1m2 · 1m5 · 1m6 · 1m8 · 2m2)',
+    standardDimensions: '1m2×1m9 · 1m5×1m9 · 1m6×2m0 · 1m8×2m0 · 2m0×2m2 (Độ dày 9cm · 12cm · 15cm · 18cm · 20cm)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/DEL_NT_02_dem_nano_foam_bong_ep_see_elan_hd.jpg',
+    secondaryImages: [
+      '/assets/aistudio/IMG_9342_eab5c578.JPG',
+      '/assets/aistudio/IMG_9343_da454610.JPG',
+      '/assets/aistudio/IMG_9332_4bdf62c8.JPG',
+      '/assets/aistudio/IMG_9334_67a1ff08.JPG',
+      '/assets/aistudio/IMG_9346_3d36961c.JPG',
+      '/assets/aistudio/IMG_9338_7164f523.JPG',
+      '/assets/aistudio/IMG_9340_8a6dfc8b.JPG',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/DEL_NT_02_dem_nano_foam_bong_ep_see_elan_hd.jpg': {
+        badge: 'Poster Bảng Giá Nano Foam & Bông Ép ELAN (DEL-NT-02)',
+        caption: 'Bảng giá niêm yết tại kho Ngọc Tuyến cho 03 dòng đệm phẳng chống đau lưng chính hãng ELAN: Đệm Nano Foam Massage (2,65Tr–3,95Tr), Đệm Bông Ép Gấp 2 Vỏ Chần SEE01 / SEE05 (1,95Tr–2,85Tr) và Đệm Bông Ép Gấp 3 Vỏ Gấm ELAN (1,45Tr–2,35Tr)',
+      },
+      '/assets/aistudio/IMG_9342_eab5c578.JPG': {
+        badge: 'Ảnh 01 · Đệm Nano Foam Massage ELAN Nguyên Tấm (2,65Tr–3,95Tr)',
+        caption: 'Đệm Nano Foam Massage ELAN nguyên tấm với lõi PU Foam tỷ trọng cao tích hợp hàng ngàn núm massage giải tỏa áp lực vai gáy và thắt lưng',
+      },
+      '/assets/aistudio/IMG_9343_da454610.JPG': {
+        badge: 'Ảnh 02 · Thực Tế Bàn Giao Đệm Nano Foam Massage Trên Giường Da Kem',
+        caption: 'Hình ảnh thực tế lắp đặt Đệm Nano Foam Massage ELAN vừa khít lòng giường bọc da kem tân cổ điển của khách hàng – Phẳng phiu, sang trọng và nâng đỡ êm ái',
+      },
+      '/assets/aistudio/IMG_9332_4bdf62c8.JPG': {
+        badge: 'Ảnh 03 · Đệm Bông Ép Gấp 2 SEE Vỏ Chần Mã SEE05 (1,95Tr–2,85Tr)',
+        caption: 'Đệm Bông Ép Gấp 2 SEE Vỏ Chần Mã SEE05 (ELAN Since 1990): Thiết kế gấp 2 tấm phẳng phiu, bề mặt chần bông múi nổi có bo viền gân chịu lực như đệm lò xo cao cấp',
+      },
+      '/assets/aistudio/IMG_9334_67a1ff08.JPG': {
+        badge: 'Ảnh 04 · Đệm Bông Ép Gấp 2 SEE Vỏ Chần Mã SEE01 (Dệt Chìm Chữ SEE)',
+        caption: 'Phiên bản Đệm Bông Ép Gấp 2 SEE Vỏ Chần Mã SEE01 với họa tiết dệt chìm chữ SEE tinh xảo trên nền vải gấm xám bạc kháng khuẩn',
+      },
+      '/assets/aistudio/IMG_9346_3d36961c.JPG': {
+        badge: 'Ảnh 05 · Cận Cảnh Thành Đệm Dệt Thổ Cẩm & Viền Bạc Cao Cấp',
+        caption: 'Zoom cận cảnh khi gấp đôi đệm SEE: Thành đệm phối vải dệt hoa văn thổ cẩm sang trọng, đường bo viền bạc dày dặn giúp góc cạnh đệm không bao giờ bị xẹp méo',
+      },
+      '/assets/aistudio/IMG_9338_7164f523.JPG': {
+        badge: 'Ảnh 06 · Đệm Bông Ép Gấp 3 Vỏ Gấm ELAN Màu Be Nâu (1,45Tr–2,35Tr)',
+        caption: 'Đệm Bông Ép Gấp 3 Vỏ Gấm ELAN tông màu Be Nâu ấm áp – Lõi bông ép nhiệt phẳng cứng truyền thống rất tốt cho người cao tuổi và trẻ nhỏ đang phát triển xương',
+      },
+      '/assets/aistudio/IMG_9340_8a6dfc8b.JPG': {
+        badge: 'Ảnh 07 · Đệm Bông Ép Gấp 3 Vỏ Gấm ELAN Màu Xám Ghi',
+        caption: 'Đệm Bông Ép Gấp 3 Vỏ Gấm ELAN tông màu Xám Ghi sạch sẽ, hiện đại – Tích hợp khóa kéo chạy dọc 3 tấm giúp tháo rời vỏ gấm giặt máy dễ dàng',
+      },
+    },
+    highlightTag: 'ĐỆM NANO FOAM & BÔNG ÉP VỎ CHẦN ELAN · CHỐNG ĐAU LƯNG',
+    summary: 'Bộ sưu tập 07 ảnh thực tế & bảng giá ưu đãi các dòng Đệm Nano Foam Massage và Đệm Bông Ép Vỏ Chần SEE01 · SEE05 · Gấp 3 Vỏ Gấm chính hãng ELAN (Since 1990) tại Ngọc Tuyến – Tuyến Hoa. Giải pháp nâng đỡ phẳng chuẩn y khoa cho người đau lưng, thoát vị đĩa đệm và người lớn tuổi.',
+    visualAnnotations: [
+      {
+        label: '1. Lõi Nano Foam Massage Đa Điểm – Thư Giãn Cột Sống Suốt Đêm',
+        detail: 'Đệm Nano Foam Massage ELAN sử dụng khối Foam nguyên sinh đàn hồi cao được cắt CNC tạo hình các núm gai massage lượn sóng, giúp phân tán đều áp lực tại 7 điểm tiếp xúc và giữ thông thoáng lưng suốt 4 mùa.',
+      },
+      {
+        label: '2. Đệm Bông Ép Gấp 2 SEE Vỏ Chần (SEE01 & SEE05) – "2 Trong 1"',
+        detail: 'Khắc phục nhược điểm quá cứng của đệm bông ép thường, dòng SEE Vỏ Chần của ELAN có phần lõi bông ép nhiệt cứng phẳng nâng đỡ xương sống nhưng được bọc lớp áo gấm chần bông dày có bo viền gân xung quanh, tạo cảm giác êm dịu ngay khi đặt lưng xuống.',
+      },
+      {
+        label: '3. Đệm Bông Ép Gấp 3 Vỏ Gấm Jacquard Truyền Thống Bền Bỉ',
+        detail: 'Sử dụng 100% sợi bông Polyester tinh khiết nhập khẩu, ép cách nhiệt công nghệ cao không dùng hóa chất keo dính, không xẹp lún, gấp 3 gọn gàng tiết kiệm diện tích phòng ngủ.',
+      },
+    ],
+    specs: [
+      { label: 'Thương hiệu & Nhà sản xuất', value: 'ELAN Chính Hãng (Since 1990) – Phân phối bởi Ngọc Tuyến · Tuyến Hoa' },
+      { label: 'Các dòng sản phẩm', value: 'Nano Foam Massage Nguyên Tấm · Bông Ép Gấp 2 SEE01 / SEE05 · Bông Ép Gấp 3 Vỏ Gấm' },
+      { label: 'Độ dày tiêu chuẩn', value: '9cm · 12cm · 14cm · 15cm · 18cm · 20cm' },
+      { label: 'Chất liệu vỏ bọc', value: 'Vải gấm dệt kim chần bông (SEE01/SEE05) & Gấm Jacquard có khóa kéo' },
+      { label: 'Chế độ bảo hành', value: 'Bảo hành chính hãng 5 – 7 năm không xẹp lún' },
+      { label: 'Dịch vụ giao nhận', value: 'Miễn phí vận chuyển tận nhà · Kiểm tra tem mác chính hãng trước khi thanh toán' },
+    ],
+    articleParagraphs: [
+      'Đối với những khách hàng yêu thích bề mặt nằm phẳng phiu để bảo vệ cột sống, phòng ngừa đau mỏi thắt lưng nhưng vẫn mong muốn sự êm ái và thẩm mỹ sang trọng như đệm khách sạn, bộ đôi Đệm Nano Foam Massage và Đệm Bông Ép Gấp 2 SEE Vỏ Chần (Mã SEE01 & SEE05) của thương hiệu ELAN (Since 1990) chính là câu trả lời hoàn hảo.',
+      'Trong khi Đệm Nano Foam Massage ELAN chinh phục người nằm bằng hệ thống núm gai massage giải tỏa căng thẳng cơ bắp và độ ôm sát vừa vặn trên các mẫu giường da hiện đại, thì dòng Đệm Bông Ép Gấp 2 SEE01 / SEE05 lại ghi điểm tuyệt đối nhờ kết cấu gấp 2 bản rộng kết hợp lớp mặt chần bông múi nổi và thành đệm dệt thổ cẩm bo viền bạc.',
+      'Toàn bộ các dòng Đệm Nano Foam, Bông Ép Gấp 2 SEE và Bông Ép Gấp 3 Vỏ Gấm ELAN đều đang sẵn hàng đủ mọi kích thước (1m2, 1m5, 1m6, 1m8, 2m2) tại Tổng Kho Ngọc Tuyến – Tuyến Hoa với mức giá ưu đãi chỉ từ 1.450.000đ đến 3.950.000đ.',
+    ],
+    facebookPostCopy: `🌿🛏️ BẢNG GIÁ ĐỆM NANO FOAM MASSAGE & ĐỆM BÔNG ÉP VỎ CHẦN SEE01 · SEE05 – CHÍNH HÃNG ELAN (MÃ: DEL-NT-02) 🛏️🌿
+💎 Giải pháp vàng cho người thích nằm phẳng chống đau lưng, người cao tuổi & gia đình yêu thích vẻ đẹp hiện đại, gọn gàng!
+
+📌 GHI CHÚ & BẢNG GIÁ ƯU ĐÃI TẠI KHO NGỌC TUYẾN – TUYẾN HOA:
+1️⃣ Đệm Nano Foam Massage ELAN Nguyên Tấm (Dày 15cm / 18cm / 20cm):
+   👉 Cỡ 1m6×2m: 2.650.000đ | Cỡ 1m8×2m: 3.150.000đ | Cỡ 2m0×2m2: 3.950.000đ
+   ✔️ Lõi Foam núm gai massage đa điểm thư giãn huyệt đạo cột sống, nằm êm mát 4 mùa – Bảo hành 7 năm.
+2️⃣ Đệm Bông Ép Gấp 2 SEE Vỏ Chần Mã SEE05 & SEE01 (Dày 12cm / 15cm / 18cm):
+   👉 Cỡ 1m6×2m: 1.950.000đ | Cỡ 1m8×2m: 2.350.000đ | Cỡ 2m0×2m2: 2.850.000đ
+   ✔️ Lõi bông ép nhiệt phẳng cứng kết hợp vỏ gấm chần bông múi nổi & thành thổ cẩm bo viền bạc – Bảo hành 5 năm.
+3️⃣ Đệm Bông Ép Gấp 3 Vỏ Gấm ELAN (Màu Be Nâu & Xám Ghi – Dày 9cm / 14cm / 18cm):
+   👉 Cỡ 1m2×1m9: 1.450.000đ | Cỡ 1m6×2m: 1.750.000đ | Cỡ 1m8×2m: 1.950.000đ | Cỡ 2m0×2m2: 2.350.000đ
+   ✔️ Gấp 3 gọn nhẹ, có khóa kéo tháo vỏ giặt dễ dàng – Bảo hành 5 năm.
+
+🚚 MIỄN PHÍ GIAO HÀNG TẬN GIƯỜNG – CAM KẾT CHÍNH HÃNG ELAN 100%!
+📞 ĐT / Zalo tư vấn & đặt hàng: 0344.727.528 – 0989.655.388`,
+  },
+
   // ===========================================================================
   // 00-LATEST-12-BAMBOO-ARTWORKS-2026. BỘ SƯU TẬP 12 TUYỆT TÁC MÀNH TĂM TRE VỪA TẢI LÊN (ĐÃ VIẾT CHÚ THÍCH CHI TIẾT & ĐÓNG KHUNG HD MT-TC-05 & MT-TC-06)
   // ===========================================================================
@@ -7330,7 +7812,9 @@ export function generateFullCatalogFacebookPost(category: NewProductCategory = '
     `🌐 Website chính thức (Xem đủ ${ANNOTATED_PRODUCT_POSTS.length} mẫu & bảng giá): ${OFFICIAL_WEBSITE_URL}\n` +
     '==================================================\n' +
     '📋 BẢNG GIÁ NIÊM YẾT RÕ RÀNG (RẺ HƠN GIÁ THỊ TRƯỜNG 15% – 40%):\n' +
-    '1️⃣ BỘ CHĂN GA GỐI LỤA TENCEL ALYDA® LT 28 (7 MÓN), SKY SILK (17 MÃ MÀU) & CÁC MẪU ĐỆM MỚI NHẤT:\n' +
+    '1️⃣ BỘ CHĂN GA GỐI LỤA TENCEL ALYDA® LT 28 (7 MÓN), SKY SILK (17 MÃ MÀU) & CÁC MẪU ĐỆM ELAN MỚI NHẤT:\n' +
+    '   • Đệm Lò Xo Túi Độc Lập ELAN VIP III Pillow Top (Dày 30cm): 5.250.000đ – 7.850.000đ | Lò Xo Túi ELANNOVA & VIMATT 1 Mặt: 3.350.000đ – 5.850.000đ | Lò Xo Liên Kết ELANNOVA: 2.450.000đ – 3.950.000đ.\n' +
+    '   • Đệm Nano Foam Massage ELAN Nguyên Tấm: 2.650.000đ – 3.950.000đ | Đệm Bông Ép Gấp 2 SEE Vỏ Chần (SEE01 & SEE05): 1.950.000đ – 2.850.000đ | Bông Ép Gấp 3 Vỏ Gấm ELAN: 1.450.000đ – 2.350.000đ.\n' +
     '   • Bộ Chăn Ga Gối Cưới Lụa Tencel Hoàng Gia Alyda® LT 28 (Full 7 món có sẵn ruột chăn): Cỡ 1m6 & 1m8 giá 2.150.000đ/bộ | Cỡ 2m×2m2 giá 2.350.000đ/bộ (Thị trường: 3,2Tr – 4,2Tr).\n' +
     '   • Bộ Chăn Ga Gối Lụa Tencel Sky Silk 60s (Đủ 17 mã màu SKY1 – SKY362): Cỡ 1m6 & 1m8 giá 1.150.000đ/bộ 5 món | Cỡ 2m×2m2 giá 1.350.000đ/bộ.\n' +
     '   • Đệm Cao Cấp Sông Hồng Back Essential Thế Hệ 4 (Dày 17–32cm): Cỡ 1m6×2m chỉ từ 6.750.000đ | Cỡ 1m8×2m chỉ từ 6.950.000đ (Giá hãng: 11,3Tr – 14,7Tr).\n' +
@@ -7343,7 +7827,8 @@ export function generateFullCatalogFacebookPost(category: NewProductCategory = '
     '   • Đệm Gấp 2 Chần Múi Lông Vũ, Kim Cương Mặt Trần & TH VICUNA 5 Sao (Dày 18–20cm): Từ 1.750.000đ – 2.350.000đ.\n' +
     '   • Đệm Lò Xo Túi Độc Lập Everhome: Cỡ 1m6×2m giá 2.850.000đ | Cỡ 1m8×2m giá 3.250.000đ | Nệm Cao Su Everhome 10cm giá 4.850.000đ.\n' +
     '   • Chiếu mây điều hòa lót lưới 3D & ngải cứu (tặng 2 vỏ gối + túi xách): Cỡ 1m6×2m giá 450.000đ/bộ | Cỡ 1m8×2m giá 490.000đ/bộ | Cỡ 2m×2m2 giá 550.000đ/bộ.\n\n' +
-    '2️⃣ MÀNH TRÚC TRANH ĐỒNG QUÊ BIỆT THỰ, BẠT TỰ CUỐN CHE NẮNG MƯA, MÁI HIÊN & BẠT XẾP:\n' +
+    '2️⃣ GIẤY DÁN TƯỜNG HÀN QUỐC, TRANH LỤA 3D, CÓT TRE ĐAN, MÀNH TRÚC BIỆT THỰ & BẠT TỰ CUỐN:\n' +
+    '   • Giấy Dán Tường Hàn Quốc Ngọc Tuyến (Hơn 2.500 mẫu): 65.000đ – 95.000đ / m² cả dán (Cuộn 16,5m²: 850k – 1.250k trọn gói keo Hàn Quốc & công dán) | Tranh Lụa 3D Nguyên Khổ: 180.000đ – 250.000đ / m² | Giấy Phòng Thờ Hoa Sen Vàng & Cót Tre Đan: 85.000đ – 160.000đ / m².\n' +
     '   • Mành trúc tự nhiên sơn PU che nắng mưa: 220.000đ / 1 m² | Mành trúc vẽ tranh đồng quê (Đôi Hạc Lúa Vàng, Mục Đồng Chăn Trâu): 260.000đ / 1 m² cả lắp.\n' +
     '   • Bạt tự cuốn lò xo kẻ sọc xanh trắng / vàng xanh: 220.000đ / 1 m² cả lắp (Thị trường: 300.000đ/m²).\n' +
     '   • Bạt tự cuốn hoa văn nâu đồng & lá trúc: 240.000đ / 1 m² cả lắp | Bạt lưới đen xuyên sáng: 280.000đ / 1 m².\n' +
