@@ -46,14 +46,15 @@ test('BEAD_SHAPES and BEAD_ART_PATTERNS meet user price and size specifications'
   });
 });
 
-test('ANNOTATED_PRODUCT_POSTS features the new MT-NT-01, MT-NT-02, and DLX-VK-01 luxury posts at the top with full captions and prices', () => {
-  const topCodes = ANNOTATED_PRODUCT_POSTS.slice(0, 5).map(p => p.code);
-  assert.deepEqual(topCodes, ['MT-NT-01', 'MT-NT-02', 'DLX-VK-01', 'CGL-EU-01', 'CGL-DW-01']);
+test('ANNOTATED_PRODUCT_POSTS features the new MT-TC-01 to MT-TC-04 luxury bamboo blind posts at the top with all 28 images, captions, and prices', () => {
+  const topCodes = ANNOTATED_PRODUCT_POSTS.slice(0, 6).map(p => p.code);
+  assert.deepEqual(topCodes, ['MT-TC-01', 'MT-TC-02', 'MT-TC-03', 'MT-TC-04', 'MT-NT-01', 'MT-NT-02']);
 
-  for (const post of ANNOTATED_PRODUCT_POSTS.slice(0, 5)) {
+  for (const post of ANNOTATED_PRODUCT_POSTS.slice(0, 4)) {
     assert.ok(post.marketPriceTiers.length >= 3, `${post.code} must have at least 3 price tiers`);
-    assert.ok(post.secondaryImages && post.secondaryImages.length >= 2, `${post.code} must have secondary images`);
-    assert.ok(post.imageCaptions && Object.keys(post.imageCaptions).length >= 3, `${post.code} must have per-image captions`);
+    assert.equal(post.secondaryImages?.length, 7, `${post.code} must have all 7 secondary images`);
+    assert.equal(Object.keys(post.imageCaptions || {}).length, 8, `${post.code} must have captions for cover banner + 7 photos`);
   }
 });
+
 

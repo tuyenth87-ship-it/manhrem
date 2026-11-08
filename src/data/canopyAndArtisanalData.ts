@@ -65,10 +65,23 @@ export interface DeduplicatedImageGroup {
 }
 
 export const DEDUPLICATION_SUMMARY = {
-  totalUploaded: 380,
+  totalUploaded: 408,
   totalRemovedDuplicates: 65,
-  totalUniquePublished: 315,
+  totalUniquePublished: 343,
   groups: [
+    {
+      id: 'dup-lo-28-anh-manh-tam-tre-tan-co-dien-phong-tra-2026',
+      groupTitle: 'Lô 28 Ảnh Mới Nhất Vừa Tải Lên (Đã Thiết Kế 04 Banner Bảng Giá HD & Việt Hóa Nhãn Mã Mẫu): Bộ Sưu Tập Mành Tăm Tre Nghệ Thuật Tân Cổ Điển Phòng Trà · Phòng Khách · Thư Phòng (Liên Hoa Cửu Ngư, Khung Triện Nguyệt Môn, Hoa Điểu Đào Nguyên & Gia Hòa Vạn Sự Hưng)',
+      keptImage: 'MT_TC_01_manh_tam_tre_lien_hoa_cuu_ngu_hd.jpg',
+      removedCount: 0,
+      removedExamples: [
+        'Quy hoạch Bài Đăng Số 1 (Mã MT-TC-01 – 07 Ảnh + 01 Banner HD): Tuyệt tác Mành Tăm Tre Liên Hoa Thủy Mặc & Cửu Ngư Quần Hội (Thượng Thiện Nhược Thủy, Thiền Ý Liên Hoa, Liên Hoa Cửu Ngư, Bộ 3 bức Tây Hồ Liên Hoa, Liên Hoa Ngũ Ngư, Hà Đường Nguyệt Sắc & Bảng 06 mã Liên Hoa Y19–Y24)',
+        'Quy hoạch Bài Đăng Số 2 (Mã MT-TC-02 – 07 Ảnh + 01 Banner HD): Bộ Sưu Tập Mành Tăm Tre Khung Triện Nguyệt Môn & Bộ 3 Bức Đối Xứng Tùng Hạc Nghênh Khách (Xuân Yến Đồ, Mộc Lan Dưới Trăng, Nguyệt Môn Bạch Mai, Thanh Tùng Nghênh Khách, Tam Liên Chim Xanh Hoa Đào, Chim Trĩ Đỏ & Bạch Ngọc Lan)',
+        'Quy hoạch Bài Đăng Số 3 (Mã MT-TC-03 – 07 Ảnh + 01 Banner HD): Mành Tăm Tre Khung Cửa Cổ Hoa Điểu · Đào Nguyên & Lồng Chim Quý Tộc (Song Hỷ Đào Hoa, Song Yến Đào Hoa, Khung Bát Giác Băng Mai, Cửa Sổ Bát Giác Lồng Chim, Mã C203 Thủy Đình Giang Nam, Bộ 3 bức Hoa Đào Lồng Chim & Thế Ngoại Đào Nguyên)',
+        'Quy hoạch Bài Đăng Số 4 (Mã MT-TC-04 – 07 Ảnh + 01 Banner HD): Tranh Mành Tăm Tre Thư Pháp Cát Tường Gia Hòa Vạn Sự Hưng · Phú Quý Bạch Đầu · Tử Khí Đông Lai, Bộ 3 Bức Tam Bình Gốm Cổ (Gia Hòa – Bình An – Phú Quý) & Thanh Trúc Quân Tử',
+      ],
+      reason: 'Giữ nguyên vẹn 100% 28 mẫu Mành Tăm Tre Nghệ Thuật mới tải lên, xử lý làm sạch toàn bộ chữ/watermark cửa hàng nước ngoài trên 6 ảnh gốc, thiết kế 4 Poster Bảng Giá HD sắc nét và đăng tải thành 04 bộ sưu tập đầu tiên trên website.',
+    },
     {
       id: 'dup-lo-12-anh-manh-truc-tu-duong-vach-chu-tho-phuc-duc-2026',
       groupTitle: 'Lô 12 Ảnh Tuyệt Tác Mành Tre Trúc & Vách Bình Phong Chữ Thọ Ngọc Tuyến Mới Nhất: Công Trình Nhà Thờ Họ · Từ Đường 3 Gian · Đình Chùa · Biệt Thự Ven Hồ & Bộ Tranh Thư Pháp Phúc – Đức · Chùa Một Cột · Salon Tóc Thanh Vân',
@@ -285,8 +298,16 @@ export const DEDUPLICATION_SUMMARY = {
 
 export const MARKET_PRICE_SUMMARY_TABLE: MarketPriceSummaryRow[] = [
   {
+    id: 'mp-manh-tam-tre-tan-co-dien-phong-tra-2026',
+    productGroup: '1. Mành Tăm Tre Nghệ Thuật Tân Cổ Điển Phòng Trà · Phòng Khách (28 Mẫu Mới)',
+    specification: 'Liên Hoa Cửu Ngư · Khung Triện Nguyệt Môn · Hoa Điểu Đào Nguyên · Gia Hòa Vạn Sự Hưng',
+    marketPrice: '390k – 520k / m²',
+    storePrice: '260k – 360k / m²',
+    warrantyAndService: 'Nan tăm tre dệt chỉ mịn, in UV 2 mặt bền màu, tặng thanh treo & ròng rọc kéo, BH 5 năm',
+  },
+  {
     id: 'mp-vach-binh-phong-manh-truc-tu-duong-ngoc-tuyen',
-    productGroup: '1. Vách Bình Phong Trúc Chữ Thọ & Mành Trúc Từ Đường · Biệt Thự',
+    productGroup: '2. Vách Bình Phong Trúc Chữ Thọ & Mành Trúc Từ Đường · Biệt Thự',
     specification: 'Mành trúc đỏ biệt thự (240k–280k) · Mành tranh Từ Đường 3 gian (280k–320k) · Vách trúc Chữ Thọ (450k–650k/m²)',
     marketPrice: '360k – 850k / m²',
     storePrice: '240k – 650k / m²',
@@ -294,7 +315,7 @@ export const MARKET_PRICE_SUMMARY_TABLE: MarketPriceSummaryRow[] = [
   },
   {
     id: 'mp-manh-truc-thu-phap-phuc-duc-chua-mot-cot',
-    productGroup: '2. Mành Trúc Thư Pháp "Phúc – Đức" · Chùa Một Cột & Khắc Tên Riêng',
+    productGroup: '3. Mành Trúc Thư Pháp "Phúc – Đức" · Chùa Một Cột & Khắc Tên Riêng',
     specification: 'Đầm Sen Phúc – Đức · Chùa Một Cột (280k/m²) · Cặp Tùng – Trúc Hạc (950k/cặp) · Vẽ tên Salon/Spa (300k/m²)',
     marketPrice: '420k – 520k / m²',
     storePrice: '280k – 320k / m²',
@@ -302,7 +323,7 @@ export const MARKET_PRICE_SUMMARY_TABLE: MarketPriceSummaryRow[] = [
   },
   {
     id: 'mp-dem-lo-xo-tui-vikosan-3sao-5sao-vip',
-    productGroup: '3. Đệm Lò Xo Túi Độc Lập Vikosan 3 Sao · 5 Sao · VIP D\'luxe',
+    productGroup: '4. Đệm Lò Xo Túi Độc Lập Vikosan 3 Sao · 5 Sao · VIP D\'luxe',
     specification: 'Standard 3*22 (Dày 22cm) · Standard 5*22 (Dày 22cm) · VIP*30 (Dày 30cm)',
     marketPrice: '4,98Tr – 12,90Tr',
     storePrice: '3,48Tr – 8,99Tr',
@@ -570,7 +591,494 @@ export function calculateCanopyOrderTotal(input: CanopyPricingInput): CanopyPric
 
 export const ANNOTATED_PRODUCT_POSTS: AnnotatedProductPost[] = [
   // ===========================================================================
-  // 00-HERITAGE-BAMBOO-2026. BỘ ĐÔI TUYỆT TÁC MÀNH TRE TRÚC & VÁCH BÌNH PHONG CHỮ THỌ NGỌC TUYẾN (12 ẢNH MỚI NHẤT):
+  // 00-NEWEST-BAMBOO-TEA-ROOM-2026. BỘ SƯU TẬP 28 MẪU MÀNH TĂM TRE NGHỆ THUẬT TÂN CỔ ĐIỂN PHÒNG TRÀ · PHÒNG KHÁCH · THƯ PHÒNG (MT-TC-01 ĐẾN MT-TC-04)
+  // ===========================================================================
+  {
+    id: 'manh-tam-tre-lien-hoa-thuy-mac-cuu-ngu-quan-hoi-phong-tra-mttc01',
+    code: 'MT-TC-01',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Showroom & Công Trình',
+    title: 'Tuyệt Tác Mành Tăm Tre Liên Hoa Thủy Mặc & Cửu Ngư Quần Hội Phòng Trà · Phòng Thờ (Thượng Thiện Nhược Thủy · Thiền Ý Liên Hoa · Tây Hồ Liên Hoa · Liên Hoa Ngũ Ngư & Bảng 06 Mã Y19–Y24) – Ngọc Tuyến',
+    shortTitle: 'Mành Tăm Tre Liên Hoa Thủy Mặc & Cửu Ngư Quần Hội Phòng Trà (7 Mẫu)',
+    priceDisplay: '260.000đ – 340.000đ/m²',
+    marketPriceRange: 'Giá thị trường: 390.000đ – 490.000đ / m²',
+    marketPriceNote: 'Bộ sưu tập 07 mẫu Mành Tăm Tre Nghệ Thuật chủ đề Hoa Sen Thủy Mặc & Cá Chép Cửu Ngư cao cấp nhất tại Xưởng Ngọc Tuyến – Tuyến Hoa: Nan tăm tre tự nhiên dệt chỉ mịn đều tăm tắp, xử lý hấp sấy chống mối mọt và in tranh thủy mặc sắc nét bền màu trên 10 năm. Tặng kèm đầy đủ thanh treo gỗ, diềm che hộp đồng bộ và bộ ròng rọc dây kéo tự hãm.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Mành Tăm Tre Đơn 1 Bức Liên Hoa Thủy Mặc (Thượng Thiện Nhược Thủy · Hà Đường Nguyệt Sắc · Mã Y19–Y24)',
+        marketPrice: '390.000đ – 420.000đ / m²',
+        storePrice: '260.000đ – 280.000đ / m²',
+        note: 'Nan tăm tre bào mịn dệt chỉ cao cấp, tặng kèm thanh treo & con lăn dây rút tự hãm',
+      },
+      {
+        sizeOrOption: '2. Mành Tăm Tre Ghép Đôi & Khung Tròn Phòng Trà (Thiền Ý Liên Hoa 2 Tấm · Liên Hoa Cửu Ngư · Liên Hoa Ngũ Ngư)',
+        marketPrice: '440.000đ – 460.000đ / m²',
+        storePrice: '280.000đ – 320.000đ / m²',
+        note: 'Khớp nối hoa văn liền mạch giữa 2 bức mành, tạo vách ngăn trà đạo & phòng thờ thanh tịnh',
+      },
+      {
+        sizeOrOption: '3. Bộ 3 Bức Đại Cảnh "Tây Hồ Liên Hoa & Thơ Đường Thi" (Ghép Panorama 3 Tấm Khổ Lớn)',
+        marketPrice: '490.000đ – 520.000đ / m²',
+        storePrice: '300.000đ – 340.000đ / m²',
+        note: 'Chế tác chuẩn kích thước lọt lòng cửa sổ lớn hoặc vách kính phòng khách, bảo hành 5 năm',
+      },
+    ],
+    numericPrice: 260000,
+    unitLabel: '1m² Mành Tăm Tre Nghệ Thuật Liên Hoa Thủy Mặc (Đầy đủ phụ kiện thanh treo & dây kéo)',
+    standardDimensions: 'Nhận đặt cắt theo mọi kích thước cửa (Rộng 0,8m – 3,6m × Cao 1,2m – 3,0m)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/MT_TC_01_manh_tam_tre_lien_hoa_cuu_ngu_hd.jpg',
+    secondaryImages: [
+      '/assets/aistudio/501439073_122100651578890917_2395129595905034480_n_065c3a0c.jpg',
+      '/assets/aistudio/500763920_122100651068890917_3620382175483673444_n_c8f5b6f9.jpg',
+      '/assets/aistudio/501392157_122100652028890917_6115461266292499836_n_99c1b655.jpg',
+      '/assets/aistudio/502480647_122100650648890917_7349929286919644883_n_76c7f959.jpg',
+      '/assets/aistudio/500742419_122100651926890917_2678072256097837987_n_3e96dbc4.jpg',
+      '/assets/aistudio/500740964_122100651800890917_6445939849596325175_n_aef97f54.jpg',
+      '/assets/aistudio/500736970_122100651806890917_5635185355892112876_n_c18126cb.jpg',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/MT_TC_01_manh_tam_tre_lien_hoa_cuu_ngu_hd.jpg': {
+        badge: 'Ảnh 1/8 · Poster Bảng Giá HD: Bộ Sưu Tập Mành Tăm Tre Liên Hoa Thủy Mặc & Cửu Ngư Quần Hội',
+        caption: 'Thiết kế tổng hợp 6 mẫu Mành Tăm Tre Liên Hoa tiêu biểu kèm bảng giá niêm yết tại Xưởng Ngọc Tuyến – Tuyến Hoa (260.000đ – 340.000đ/m² · ĐT/Zalo: 0989.655.388 – 0344.727.528).',
+      },
+      '/assets/aistudio/501439073_122100651578890917_2395129595905034480_n_065c3a0c.jpg': {
+        badge: 'Ảnh 2/8 · Mẫu "Thượng Thiện Nhược Thủy" – Hoa Sen Tam Sắc, Đôi Chim Én & Đàn Cá Dưới Nắng',
+        caption: 'Bức mành tăm tre vàng ấm họa cảnh đầm sen tam sắc (Cam – Trắng – Đỏ), đôi chim én chao liệng dưới ánh mặt trời đỏ và đàn cá nhỏ tung tăng dưới làn nước tĩnh lặng.',
+      },
+      '/assets/aistudio/500763920_122100651068890917_3620382175483673444_n_c8f5b6f9.jpg': {
+        badge: 'Ảnh 3/8 · Bộ Đôi 2 Bức "Thiền Ý Liên Hoa" – Hoa Sen Hồng Nở Rộ & Đài Sen Thủy Mặc Bàn Trà',
+        caption: 'Bộ đôi mành tăm tre ghép khít sau bàn trà gỗ nguyên khối: Tấm trái là đóa hồng liên bung nở cạnh lá sen thủy mặc, tấm phải là đài sen vươn cao thanh khiết.',
+      },
+      '/assets/aistudio/501392157_122100652028890917_6115461266292499836_n_99c1b655.jpg': {
+        badge: 'Ảnh 4/8 · Mẫu "Hà Vận Cửu Ngư – Liên Hoa Cửu Ngư" Trong Khung Tròn Thủy Mặc',
+        caption: 'Bố cục vòng tròn viên mãn ở tâm bức mành với đóa sen hồng thanh tao và đàn 9 chú cá bơi lội nhịp nhàng, mang lại tài lộc và bình an cho không gian thưởng trà.',
+      },
+      '/assets/aistudio/502480647_122100650648890917_7349929286919644883_n_76c7f959.jpg': {
+        badge: 'Ảnh 5/8 · Bộ 3 Bức Đại Cảnh "Tây Hồ Liên Hoa & Thơ Đường Thi" (Sen Hồng, Chuồn Chuồn & Chim Én)',
+        caption: 'Bộ 3 tấm mành tăm tre màu vàng mật ong ghép thành bức tranh đầm sen Tây Hồ rực rỡ, điểm xuyết đôi chim én, chuồn chuồn đậu nụ sen và bài thơ Đường thi cổ điển.',
+      },
+      '/assets/aistudio/500742419_122100651926890917_2678072256097837987_n_3e96dbc4.jpg': {
+        badge: 'Ảnh 6/8 · Mẫu "Liên Hoa Ngũ Ngư – Niên Niên Hữu Dư" Viền Triện Cổ Điển Trên Diềm Mành',
+        caption: 'Phần diềm mành chạm đường triện cổ điển sang trọng, trung tâm là vòng tròn 5 chú cá chép đỏ quây quần bên hoa sen hồng và lá sen xanh ngọc.',
+      },
+      '/assets/aistudio/500740964_122100651800890917_6445939849596325175_n_aef97f54.jpg': {
+        badge: 'Ảnh 7/8 · Mẫu "Hà Đường Nguyệt Sắc" – Đại Hồng Liên & Chuồn Chuồn Đỏ Đậu Búp Sen',
+        caption: 'Đóa sen hồng lớn bung cánh mềm mại trên nền nan tăm tre mịn màng, phía dưới là búp sen non có chú chuồn chuồn đỏ đậu khẽ — tuyệt đẹp cho phòng ngủ và phòng thiền.',
+      },
+      '/assets/aistudio/500736970_122100651806890917_5635185355892112876_n_c18126cb.jpg': {
+        badge: 'Ảnh 8/8 · Bảng Tổng Hợp 06 Mã Mành Tăm Tre Liên Hoa Thủy Mặc (Mã Y19 – Y24)',
+        caption: 'Bảng chọn nhanh 6 mẫu Liên Hoa bán chạy nhất: Mã Y19 (Đài Sen), Mã Y20 (Hồng Liên), Mã Y21 (Tam Liên), Mã Y22 (Bạch Liên), Mã Y23 (Liên Diệp) và Mã Y24 (Sen Hồng).',
+      },
+    },
+    highlightTag: 'Mới Nhất · Mành Tăm Tre Liên Hoa & Cửu Ngư Phòng Trà',
+    summary:
+      'Bộ sưu tập 07 tuyệt tác Mành Tăm Tre Nghệ Thuật chủ đề Hoa Sen Thủy Mặc & Cửu Ngư Quần Hội dành riêng cho không gian Phòng Trà, Phòng Thờ Gia Tiên, Thư Phòng và Phòng Khách Á Đông. Chất liệu nan tăm tre tự nhiên dệt chỉ mịn màng giúp cản nắng 80%, lọc ánh sáng dịu nhẹ và giữ trọn sự thông thoáng.',
+    visualAnnotations: [
+      {
+        label: 'Chất liệu nan tăm tre tự nhiên bào mịn dệt chỉ bền bỉ 10 năm',
+        detail: 'Từng nan tăm trúc Bắc Bộ đường kính 1,2mm–1,5mm được chuốt tròn đều, xử lý hấp sấy chống cong vênh, chống ẩm mốc và dệt bằng sợi chỉ dù chịu lực cao.',
+      },
+      {
+        label: 'Họa tiết Liên Hoa & Cửu Ngư chuẩn phong thủy Tịnh Tâm – Chiêu Tài',
+        detail: 'Hoa sen tượng trưng cho sự thanh tịnh, thoát tục; kết hợp đàn cá chép (Ngũ Ngư / Cửu Ngư) và chim én báo hỷ mang lại vượng khí, dư dả quanh năm.',
+      },
+      {
+        label: 'Tích hợp đồng bộ diềm mành phẳng & ròng rọc dây kéo tự hãm nhẹ nhàng',
+        detail: 'Mỗi bức mành đều có phần diềm che hộp thanh treo phía trên đồng màu nan trúc, dây rút tích hợp khóa bi tự hãm giúp kéo thả ở mọi độ cao mong muốn.',
+      },
+    ],
+    specs: [
+      { label: 'Mã bộ sưu tập', value: 'MT-TC-01 (07 mẫu Liên Hoa Thủy Mặc & Cửu Ngư + Mã Y19–Y24)' },
+      { label: 'Chất liệu nan mành', value: 'Nan tăm tre / tăm trúc tự nhiên chuốt mịn, xử lý chống mối mọt' },
+      { label: 'Công nghệ tạo hình', value: 'In tranh UV đa lớp thấm sâu vào thớ tre, không bong tróc, bền màu >10 năm' },
+      { label: 'Khả năng cản sáng', value: 'Cản nắng 80%–85%, lọc ánh sáng vàng ấm dịu mắt, đón gió tự nhiên' },
+      { label: 'Đơn giá tại xưởng', value: '260.000đ – 340.000đ/m² (Đã bao gồm thanh treo & bộ dây kéo tự hãm)' },
+      { label: 'Liên hệ đặt hàng', value: 'Xưởng Ngọc Tuyến – Tuyến Hoa · ĐT/Zalo: 0989.655.388 – 0344.727.528' },
+    ],
+    articleParagraphs: [
+      'Trong nghệ thuật bài trí không gian Trà Đạo, Phòng Thờ và Phòng Khách phong cách Á Đông đương đại, Mành Tăm Tre Liên Hoa Thủy Mặc (Mã MT-TC-01) luôn là lựa chọn hàng đầu nhờ vẻ đẹp mộc mạc, thanh khiết nhưng vô cùng sang trọng. Khi ánh nắng chiếu qua từng khe nan tăm tre mảnh mai, bức tranh Hoa Sen và Đàn Cá Chép hiện lên sống động như một bức họa lụa cổ điển.',
+      'Xưởng Mành Tre Trúc Ngọc Tuyến – Tuyến Hoa tuyển chọn trọn bộ 07 thiết kế Liên Hoa đặc sắc nhất: từ bức đơn "Thượng Thiện Nhược Thủy", "Hà Đường Nguyệt Sắc", "Liên Hoa Cửu Ngư" cho tới bộ đôi "Thiền Ý Liên Hoa", bộ 3 tấm đại cảnh "Tây Hồ Liên Hoa" và bảng 6 mã Y19–Y24 để quý khách dễ dàng đặt làm chuẩn theo kích thước từng ô cửa.',
+    ],
+    facebookPostCopy: `🪷 TUYỆT TÁC MÀNH TĂM TRE LIÊN HOA THỦY MẶC & CỬU NGƯ QUẦN HỘI – ĐIỂM NHẤN TỊNH TÂM CHO PHÒNG TRÀ, PHÒNG THỜ & PHÒNG KHÁCH!
+🔥 Giá tại Xưởng Ngọc Tuyến – Tuyến Hoa chỉ từ: 260.000đ – 340.000đ/m² (Giá thị trường: 390k – 490k/m²)
+✨ Trọn bộ 07 mẫu Mành Tăm Tre Liên Hoa mới nhất:
+1️⃣ Mẫu "Thượng Thiện Nhược Thủy": Hoa sen tam sắc, đôi chim én & đàn cá dưới nắng mai – 260.000đ/m²
+2️⃣ Bộ Đôi "Thiền Ý Liên Hoa": Đóa hồng liên bung nở & đài sen thủy mặc sau bàn trà – 280.000đ/m²
+3️⃣ Mẫu "Liên Hoa Cửu Ngư" (Khung tròn): Sen hồng & 9 chú cá bơi lội viên mãn – 280.000đ/m²
+4️⃣ Bộ 3 Bức Đại Cảnh "Tây Hồ Liên Hoa & Thơ Đường Thi": Ghép 3 tấm panorama sang trọng – 300.000đ/m²
+5️⃣ Mẫu "Liên Hoa Ngũ Ngư" (Diềm triện cổ điển): 5 cá chép đỏ quây quần đầm sen – 280.000đ/m²
+6️⃣ Mẫu "Hà Đường Nguyệt Sắc" & Bảng 06 mã Liên Hoa (Y19 – Y24) nhận cắt theo mọi kích thước cửa!
+✅ Đầy đủ phụ kiện thanh treo gỗ, diềm che đồng bộ & con lăn dây kéo tự hãm – Bảo hành 5 năm.
+📍 Showroom & Xưởng: Chợ Cháy, Ứng Hòa, Hà Nội
+📞 Hotline / Zalo tư vấn & đặt kích thước: 0989.655.388 – 0344.727.528`,
+  },
+  {
+    id: 'manh-tam-tre-khung-trien-nguyet-mon-tung-hac-doi-xung-mttc02',
+    code: 'MT-TC-02',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Showroom & Công Trình',
+    title: 'Bộ Sưu Tập Mành Tăm Tre Khung Triện Nguyệt Môn & Bộ 3 Bức Đối Xứng Tùng Hạc Nghênh Khách · Xuân Yến Đồ · Mộc Lan Dưới Trăng & Chim Trĩ Bạch Ngọc Lan – Ngọc Tuyến',
+    shortTitle: 'Mành Tăm Tre Khung Triện Nguyệt Môn & Bộ 3 Bức Tùng Hạc Đối Xứng (7 Mẫu)',
+    priceDisplay: '280.000đ – 360.000đ/m²',
+    marketPriceRange: 'Giá thị trường: 420.000đ – 520.000đ / m²',
+    marketPriceNote: 'Bộ sưu tập 07 mẫu Mành Tăm Tre Khung Triện Cổ Điển & Bộ 3 Bức Đối Xứng (Tam Liên) dành cho cửa chính phòng khách, vách sau sofa, kệ tivi và sảnh biệt thự: Họa tiết đường triện góc chữ Vạn – chữ Thọ kết hợp khung tròn Nguyệt Môn tạo sự đăng đối chuẩn mực theo kiến trúc Tân Cổ Điển Á Đông.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Mành Tăm Tre Đơn Khung Triện 4 Góc "Xuân Yến Đồ – Đôi Chim Én & Hoa Đào Xuân"',
+        marketPrice: '420.000đ / m²',
+        storePrice: '280.000đ / m²',
+        note: 'Khung viền triện vuông 4 góc kết hợp tranh tròn đôi chim én đậu cành đào hồng',
+      },
+      {
+        sizeOrOption: '2. Bộ Đôi 2 Tấm Ghép Khớp Vòng Tròn Nguyệt Môn ("Mộc Lan Dưới Trăng" & "Nguyệt Môn Bạch Mai Vân Mây")',
+        marketPrice: '450.000đ / m²',
+        storePrice: '300.000đ / m²',
+        note: '2 tấm mành ghép khít tạo thành khung cửa sổ tròn Nguyệt Môn ở chính giữa vách trà / kệ tivi',
+      },
+      {
+        sizeOrOption: '3. Bộ 3 Bức Đại Cảnh Đối Xứng Tam Liên ("Thanh Tùng Nghênh Khách", "Chim Xanh Hoa Đào", "Chim Trĩ Đỏ" & "Bạch Ngọc Lan")',
+        marketPrice: '480.000đ – 520.000đ / m²',
+        storePrice: '320.000đ – 360.000đ / m²',
+        note: 'Bộ 3 tấm (1 tấm chính giữa + 2 tấm đối xứng hai bên) chế tác chuẩn theo khẩu độ vách kính lớn',
+      },
+    ],
+    numericPrice: 280000,
+    unitLabel: '1m² Mành Tăm Tre Khung Triện Nguyệt Môn & Tam Liên Đối Xứng (Trọn gói phụ kiện)',
+    standardDimensions: 'Đặt làm theo kích thước thực tế (Mành đơn, Bộ đôi 2 tấm hoặc Bộ 3 tấm đối xứng)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/MT_TC_02_manh_tam_tre_khung_trien_tung_hac_hd.jpg',
+    secondaryImages: [
+      '/assets/aistudio/500736269_122100652184890917_8967685661222471956_n_a0751511.jpg',
+      '/assets/aistudio/500768785_122100651674890917_5413807784532523595_n_b1101dcf.jpg',
+      '/assets/aistudio/502460507_122100651380890917_8044915949983403893_n_e19a8429.jpg',
+      '/assets/aistudio/500763669_122100650714890917_5640505122017559987_n_f0196d09.jpg',
+      '/assets/aistudio/500739569_122100659330890917_1694898813546800220_n_0efe9cb1.jpg',
+      '/assets/aistudio/500740951_122100654650890917_65672671287950655_n_a36680ac.jpg',
+      '/assets/aistudio/500742756_122100651614890917_6342530107713701372_n_1104912c.jpg',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/MT_TC_02_manh_tam_tre_khung_trien_tung_hac_hd.jpg': {
+        badge: 'Ảnh 1/8 · Poster Bảng Giá HD: Bộ Sưu Tập Mành Tăm Tre Khung Triện Nguyệt Môn & Tùng Hạc Đối Xứng',
+        caption: 'Tổng hợp 6 mẫu Mành Tăm Tre Khung Triện & Bộ 3 Bức Đối Xứng kèm bảng giá niêm yết tại Xưởng Ngọc Tuyến – Tuyến Hoa (280.000đ – 360.000đ/m²).',
+      },
+      '/assets/aistudio/500736269_122100652184890917_8967685661222471956_n_a0751511.jpg': {
+        badge: 'Ảnh 2/8 · Mẫu "Xuân Yến Đồ" – Đôi Chim Én Đậu Cành Đào Trong Khung Triện Cổ Điển',
+        caption: 'Bức mành đơn nổi bật với đường diềm triện nâu trầm đóng khung 4 góc, trung tâm là vòng tròn đôi chim én mùa xuân đậu trên cành đào hồng rực rỡ.',
+      },
+      '/assets/aistudio/500768785_122100651674890917_5413807784532523595_n_b1101dcf.jpg': {
+        badge: 'Ảnh 3/8 · Bộ Đôi 2 Tấm Ghép Khớp Khung Tròn "Mộc Lan Dưới Trăng & Đôi Chim Trường Thọ"',
+        caption: 'Thiết kế 2 bức mành ghép khít tạo thành khung cửa Nguyệt Môn tròn trịa, bên trong là cành bạch ngọc lan bung nở dưới ánh trăng rằm và đôi chim thiên đường.',
+      },
+      '/assets/aistudio/502460507_122100651380890917_8044915949983403893_n_e19a8429.jpg': {
+        badge: 'Ảnh 4/8 · Bộ Đôi 2 Tấm "Nguyệt Môn Bạch Mai & Đường Triện Vân Mây" Phía Sau Kệ Tivi',
+        caption: 'Các đường triện uốn lượn như mây lành kết nối 2 tấm mành với ô cửa tròn chạm song gỗ cổ điển và nhành mai trắng tinh khôi — cực kỳ sang trọng cho phòng khách.',
+      },
+      '/assets/aistudio/500763669_122100650714890917_5640505122017559987_n_f0196d09.jpg': {
+        badge: 'Ảnh 5/8 · Bộ 3 Bức Đối Xứng "Thanh Tùng Nghênh Khách & Song Hạc Trường Xuân"',
+        caption: 'Bức giữa là đại cảnh Tùng cổ thụ vươn mình trên đỉnh núi mây mù cùng đôi hạc trắng bay lượn; hai bức bên là đường triện nút thắt cát tường đối xứng trang nghiêm.',
+      },
+      '/assets/aistudio/500739569_122100659330890917_1694898813546800220_n_0efe9cb1.jpg': {
+        badge: 'Ảnh 6/8 · Bộ 3 Bức Tam Liên "Chim Xanh Hoa Đào – Sơn Thủy Giang Nam – Trúc Quân Tử"',
+        caption: 'Sự kết hợp hoàn hảo của 3 chủ đề phong thủy trên 3 tấm mành độc lập có viền triện đồng bộ: Tấm trái Hoa Đào, tấm giữa Sơn Thủy và tấm phải Trúc Xanh.',
+      },
+      '/assets/aistudio/500740951_122100654650890917_65672671287950655_n_a36680ac.jpg': {
+        badge: 'Ảnh 7/8 · Bộ 3 Bức Đại Cảnh "Chim Trĩ Đỏ & Hoa Bạch Ngọc Lan Trên Ghềnh Đá"',
+        caption: 'Bức tranh hoa điểu công bút sắc nét trải rộng trên tấm mành trung tâm với đôi chim trĩ đỏ vương giả bên khóm hoa trà và ngọc lan trắng, hai bên là viền triện cổ điển.',
+      },
+      '/assets/aistudio/500742756_122100651614890917_6342530107713701372_n_1104912c.jpg': {
+        badge: 'Ảnh 8/8 · Bộ 3 Bức Đại Cảnh "Bạch Ngọc Lan & Đôi Chim Sẻ" Viền Triện Nút Thắt Cát Tường',
+        caption: 'Tông màu kem ngà nhã nhặn kết hợp cành hoa ngọc lan trắng vươn từ tấm phải sang tấm giữa, tạo không gian phòng trà và phòng khách thanh lịch, rộng mở.',
+      },
+    },
+    highlightTag: 'Khung Triện Cổ Điển · Bộ Đôi Nguyệt Môn & Bộ 3 Tấm Đối Xứng',
+    summary:
+      'Dòng Mành Tăm Tre Khung Triện Nguyệt Môn & Bộ 3 Bức Đối Xứng (Mã MT-TC-02) được thiết kế chuyên biệt cho những ô cửa rộng, vách kính lớn, vách ngăn phòng khách – phòng thờ hoặc làm phông nền sau bộ bàn ghế trường kỷ, sofa gỗ và bàn trà.',
+    visualAnnotations: [
+      {
+        label: 'Đường viền khung triện cổ điển & nút thắt cát tường định hình không gian',
+        detail: 'Hoa văn đường triện vuông vức ở các góc giúp bức mành trông như một khung tranh gỗ chạm trổ tinh xảo, tôn lên vẻ bề thế cho phòng khách và từ đường.',
+      },
+      {
+        label: 'Kỹ thuật chia tranh ghép đôi (2 tấm) và ghép tam liên (3 tấm) chuẩn xác từng milimet',
+        detail: 'Xưởng Ngọc Tuyến căn chỉnh tỷ lệ in tranh chuẩn xác theo kích thước từng tấm mành để khi thả xuống, vòng tròn Nguyệt Môn và cành cây khớp nối hoàn hảo.',
+      },
+      {
+        label: 'Linh hoạt kéo thả từng tấm độc lập theo hướng nắng và lối đi',
+        detail: 'Với bộ 2 tấm hoặc 3 tấm, gia chủ có thể thả tấm giữa làm tranh trang trí và kéo cao tấm bên để đi lại thuận tiện mà vẫn giữ trọn bố cục đối xứng.',
+      },
+    ],
+    specs: [
+      { label: 'Mã bộ sưu tập', value: 'MT-TC-02 (07 mẫu Khung Triện Nguyệt Môn & Bộ 3 Bức Đối Xứng)' },
+      { label: 'Cấu hình bộ mành', value: 'Mành đơn 1 tấm · Bộ đôi 2 tấm ghép khớp · Bộ 3 tấm đối xứng (1 chính + 2 phụ)' },
+      { label: 'Chất liệu nan mành', value: 'Nan tăm tre tự nhiên dệt chỉ mịn, phủ lớp bảo vệ chống ẩm mốc & tia UV' },
+      { label: 'Đơn giá tại xưởng', value: '280.000đ – 360.000đ/m² (Đã gồm thanh treo, diềm che & bộ dây rút tự hãm)' },
+      { label: 'Chế độ bảo hành', value: 'Bảo hành 5 năm độ bền nan tre và bộ phụ kiện ròng rọc kéo' },
+      { label: 'Liên hệ đặt hàng', value: 'Xưởng Ngọc Tuyến – Tuyến Hoa · ĐT/Zalo: 0989.655.388 – 0344.727.528' },
+    ],
+    articleParagraphs: [
+      'Đối với các không gian phòng khách rộng, sảnh biệt thự hoặc phòng trà có vách kính lớn, việc treo một tấm mành quá khổ thường nặng nề khi kéo. Giải pháp Bộ Đôi Nguyệt Môn (2 tấm) và Bộ 3 Bức Đối Xứng Khung Triện (3 tấm) của Xưởng Ngọc Tuyến vừa giúp việc kéo thả nhẹ nhàng, vừa tạo nên hiệu ứng thị giác cân xứng, uy nghi như những bức bình phong cung đình.',
+      'Từ họa tiết "Thanh Tùng Nghênh Khách" mang ý nghĩa trường thọ, hiếu khách cho tới "Xuân Yến Đồ", "Mộc Lan Dưới Trăng" và "Chim Trĩ Bạch Ngọc Lan", mỗi bộ mành đều được chế tác riêng theo số đo từng ô cửa của gia chủ.',
+    ],
+    facebookPostCopy: `🏯 BỘ SƯU TẬP MÀNH TĂM TRE KHUNG TRIỆN NGUYỆT MÔN & BỘ 3 BỨC ĐỐI XỨNG TÙNG HẠC NGHÊNH KHÁCH – ĐẲNG CẤP PHÒNG KHÁCH & PHÒNG TRÀ!
+🔥 Giá tại Xưởng Ngọc Tuyến – Tuyến Hoa chỉ từ: 280.000đ – 360.000đ/m² (Giá thị trường: 420k – 520k/m²)
+✨ Tuyển tập 07 mẫu Mành Tăm Tre Khung Triện & Tam Liên mới nhất:
+1️⃣ Mẫu đơn Khung Triện "Xuân Yến Đồ – Đôi Chim Én & Hoa Đào": 280.000đ/m²
+2️⃣ Bộ Đôi Nguyệt Môn "Mộc Lan Dưới Trăng & Chim Trường Thọ" (2 tấm ghép tròn): 300.000đ/m²
+3️⃣ Bộ Đôi "Nguyệt Môn Bạch Mai & Đường Triện Vân Mây" (Treo sau kệ tivi / sofa): 300.000đ/m²
+4️⃣ Bộ 3 Bức Đối Xứng "Thanh Tùng Nghênh Khách & Song Hạc": 320.000đ/m²
+5️⃣ Bộ 3 Bức Tam Liên "Chim Xanh Hoa Đào – Sơn Thủy – Trúc Quân Tử": 320.000đ/m²
+6️⃣ Bộ 3 Bức Đại Cảnh "Chim Trĩ Đỏ & Bạch Ngọc Lan Trên Ghềnh Đá": 320.000đ/m²
+7️⃣ Bộ 3 Bức "Bạch Ngọc Lan & Đôi Chim Sẻ" viền triện nút thắt cát tường: 320.000đ/m²
+✅ Nhận đặt làm theo mọi kích thước cửa – Tặng kèm thanh treo & ròng rọc kéo tự hãm – Bảo hành 5 năm!
+📍 Showroom & Xưởng: Chợ Cháy, Ứng Hòa, Hà Nội
+📞 Hotline / Zalo tư vấn & báo giá: 0989.655.388 – 0344.727.528`,
+  },
+  {
+    id: 'manh-tam-tre-khung-cua-co-hoa-dieu-dao-nguyen-long-chim-mttc03',
+    code: 'MT-TC-03',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Showroom & Công Trình',
+    title: 'Mành Tăm Tre Khung Cửa Cổ Hoa Điểu · Đào Nguyên & Lồng Chim Quý Tộc (Song Hỷ Đào Hoa · Khung Bát Giác Băng Mai · Cửa Sổ Lồng Chim · Thủy Đình C203 & Thế Ngoại Đào Nguyên) – Ngọc Tuyến',
+    shortTitle: 'Mành Tăm Tre Khung Cửa Cổ Hoa Điểu · Đào Nguyên & Lồng Chim (7 Mẫu)',
+    priceDisplay: '280.000đ – 320.000đ/m²',
+    marketPriceRange: 'Giá thị trường: 420.000đ – 480.000đ / m²',
+    marketPriceNote: 'Bộ sưu tập 07 mẫu Mành Tăm Tre Nghệ Thuật lấy cảm hứng từ những khung cửa sổ Bát Giác và Bán Nguyệt của dinh thự cổ phương Đông: Kết hợp hình ảnh Hoa Đào, Hoa Mộc Lan, Đôi Chim Ác Là Báo Hỷ và Lồng Chim Quý Tộc tạo hiệu ứng chiều sâu 3D mở rộng không gian.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Bộ Đôi Mành Tăm Tre "Thế Ngoại Đào Nguyên – Đôi Nhành Đào Xuân Đỏ Thắm"',
+        marketPrice: '420.000đ / m²',
+        storePrice: '280.000đ / m²',
+        note: 'Phong cách Zen tối giản với 2 nhành đào đỏ vươn nhẹ từ hai bên mép mành vào trung tâm',
+      },
+      {
+        sizeOrOption: '2. Bộ Đôi Mành Khung Cửa Cổ Bán Nguyệt & Bát Giác ("Song Hỷ Đào Hoa", "Song Yến Đào Hoa", "Băng Mai Lồng Chim" & "Mã C203")',
+        marketPrice: '450.000đ / m²',
+        storePrice: '300.000đ / m²',
+        note: 'Hiệu ứng khung cửa cổ 3D đối xứng hai bên, tạo chiều sâu thoáng đãng cho phòng khách & bàn trà',
+      },
+      {
+        sizeOrOption: '3. Bộ 3 Bức "Hoa Đào Hồng & Lồng Chim Quý Tộc" (Mã HĐ-05 – Ghép 3 Tấm Phòng Khách / Phòng Ăn)',
+        marketPrice: '480.000đ / m²',
+        storePrice: '320.000đ / m²',
+        note: 'Bố cục 3 tấm mành liên hoàn tạo vách ngăn sang trọng giữa phòng khách và bàn ăn',
+      },
+    ],
+    numericPrice: 280000,
+    unitLabel: '1m² Mành Tăm Tre Khung Cửa Cổ Hoa Điểu & Đào Nguyên (Đầy đủ thanh treo & dây kéo)',
+    standardDimensions: 'Đặt cắt may theo kích thước thực tế từng ô cửa sổ, vách trà & vách ngăn phòng',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/MT_TC_03_manh_tam_tre_hoa_dieu_dao_nguyen_hd.jpg',
+    secondaryImages: [
+      '/assets/aistudio/500768768_122100651728890917_8427186635337617896_n_1b19b80b.jpg',
+      '/assets/aistudio/500737834_122100659534890917_4723543457688590189_n_e3e613f8.jpg',
+      '/assets/aistudio/500739763_122100650882890917_3729632059607191024_n_25084717.jpg',
+      '/assets/aistudio/500739985_122100650528890917_234871176915682253_n_d0aa2bed.jpg',
+      '/assets/aistudio/500738305_122100650354890917_8237058888381360314_n_18f2db2e.jpg',
+      '/assets/aistudio/500761713_122100651074890917_8609774874102564285_n_e19483f4.jpg',
+      '/assets/aistudio/500741571_122100652178890917_6050608616275871117_n_1679b80f.jpg',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/MT_TC_03_manh_tam_tre_hoa_dieu_dao_nguyen_hd.jpg': {
+        badge: 'Ảnh 1/8 · Poster Bảng Giá HD: Mành Tăm Tre Khung Cửa Cổ Hoa Điểu · Đào Nguyên & Lồng Chim Quý Tộc',
+        caption: 'Thiết kế tổng hợp 6 mẫu Mành Tăm Tre Hoa Điểu Đào Nguyên kèm bảng giá niêm yết tại Xưởng Ngọc Tuyến – Tuyến Hoa (280.000đ – 320.000đ/m²).',
+      },
+      '/assets/aistudio/500768768_122100651728890917_8427186635337617896_n_1b19b80b.jpg': {
+        badge: 'Ảnh 2/8 · Bộ Đôi "Song Hỷ Đào Hoa" – Đôi Chim Ác Là Xanh, Khung Bán Nguyệt & Núi Non Thủy Mặc',
+        caption: 'Hai nửa khung cửa bán nguyệt chạm triện đối xứng hai bên, ở giữa là cành đào xuân bung nở cùng đôi chim ác là xanh báo tin vui (Song Hỷ Lâm Môn) trên nền núi non mờ sương.',
+      },
+      '/assets/aistudio/500737834_122100659534890917_4723543457688590189_n_e3e613f8.jpg': {
+        badge: 'Ảnh 3/8 · Bộ Đôi "Song Yến Đào Hoa" – Khung Song Cửa Cổ & Ấn Triện Tròn Đỏ',
+        caption: 'Họa tiết khung cửa gỗ nan dọc cổ điển mở ra cành đào phai dịu dàng và đôi chim én bay lượn, cực kỳ ăn nhập khi phối cùng bàn trà gỗ và chậu tùng bonsai.',
+      },
+      '/assets/aistudio/500739763_122100650882890917_3729632059607191024_n_25084717.jpg': {
+        badge: 'Ảnh 4/8 · Bộ Đôi "Khung Bát Giác Băng Mai – Hoa Mộc Lan Hồng & Lồng Chim Cổ"',
+        caption: 'Khung cửa sổ bát giác họa tiết băng mai (Ice-crack lattice) kết hợp nhành hoa mộc lan hồng tím và chiếc lồng chim treo thanh nhã phía sau sofa phòng khách.',
+      },
+      '/assets/aistudio/500739985_122100650528890917_234871176915682253_n_d0aa2bed.jpg': {
+        badge: 'Ảnh 5/8 · Bộ Đôi "Cửa Sổ Bát Giác Hoa Đào Hồng, Lồng Chim & Đàn Chim Sẻ"',
+        caption: 'Tạo cảm giác như đang nhìn qua khung cửa sổ dinh thự cổ ra khu vườn mùa xuân tràn ngập hoa đào hồng và tiếng chim hót ríu rít.',
+      },
+      '/assets/aistudio/500738305_122100650354890917_8237058888381360314_n_18f2db2e.jpg': {
+        badge: 'Ảnh 6/8 · Mã C203: Khung Bán Nguyệt Đào Hoa, Đôi Chim Ác Là & Thủy Đình Giang Nam',
+        caption: 'Phiên bản Mã C203 tích hợp thêm cảnh thủy đình bên bờ sông và con thuyền nhỏ phía chân mành, rất được ưa chuộng làm rèm ngăn phòng khách và phòng ăn.',
+      },
+      '/assets/aistudio/500761713_122100651074890917_8609774874102564285_n_e19483f4.jpg': {
+        badge: 'Ảnh 7/8 · Mã HĐ-05: Bộ 3 Bức "Hoa Đào Xuân & Lồng Chim Quý Tộc" Ngăn Không Gian Mở',
+        caption: 'Bộ 3 tấm mành tăm tre treo liên tiếp tạo vách ngăn ước lệ giữa khu vực bàn ăn và phòng khách, vừa giữ sự riêng tư vừa thông thoáng gió trời.',
+      },
+      '/assets/aistudio/500741571_122100652178890917_6050608616275871117_n_1679b80f.jpg': {
+        badge: 'Ảnh 8/8 · Bộ Đôi "Thế Ngoại Đào Nguyên" – Đôi Nhành Đào Đỏ Thắm Phong Cách Tối Giản',
+        caption: 'Dành cho gia chủ yêu thích sự tinh giản (Minimalist Zen): Nền nan tăm tre vàng mộc chiếm chủ đạo, điểm xuyết hai nhành đào đỏ vươn nhẹ từ hai cạnh bên.',
+      },
+    },
+    highlightTag: 'Khung Cửa Cổ 3D · Hoa Điểu Đào Nguyên & Lồng Chim Quý Tộc',
+    summary:
+      'Bộ sưu tập Mành Tăm Tre Khung Cửa Cổ Hoa Điểu & Đào Nguyên (Mã MT-TC-03) mang đến nghệ thuật "Tá Cảnh" (mượn cảnh mở rộng không gian) đặc trưng của kiến trúc Á Đông: Biến những bức tường đặc hoặc ô cửa kính đơn điệu thành khung cửa sổ cổ điển nhìn ra vườn đào mùa xuân.',
+    visualAnnotations: [
+      {
+        label: 'Nghệ thuật "Tá Cảnh" tạo chiều sâu 3D cho phòng khách & phòng trà nhỏ',
+        detail: 'Nhờ hình ảnh khung cửa bán nguyệt và bát giác ở hai bên mép mành, không gian căn phòng như được nới rộng thêm, tạo cảm giác thoáng đãng và thư thái.',
+      },
+      {
+        label: 'Biểu tượng "Hỷ Tước Đăng Mai / Đào" mang tin vui và vượng khí',
+        detail: 'Đôi chim ác là xanh (Hỷ Tước) và chim én đậu trên cành đào hồng tượng trưng cho niềm vui sum họp, gia đình hạnh phúc và tài lộc gõ cửa.',
+      },
+      {
+        label: 'Phù hợp hoàn hảo làm rèm cửa sổ lẫn vách ngăn ước lệ không gian mở',
+        detail: 'Có thể lắp lọt lòng khung cửa sổ kính hoặc treo thả từ trần xuống làm vách ngăn mềm giữa phòng khách, phòng ăn và góc thưởng trà.',
+      },
+    ],
+    specs: [
+      { label: 'Mã bộ sưu tập', value: 'MT-TC-03 (07 mẫu Khung Cửa Cổ Hoa Điểu, Đào Nguyên & Mã C203 / HĐ-05)' },
+      { label: 'Chất liệu nan mành', value: 'Nan tăm tre tự nhiên dệt chỉ mịn, thơm mùi tre trúc mộc mạc' },
+      { label: 'Đơn giá tại xưởng', value: '280.000đ – 320.000đ/m² (Trọn gói phụ kiện thanh treo & ròng rọc kéo)' },
+      { label: 'Kích thước đặt làm', value: 'Gia công chuẩn theo số đo từng ô cửa (Nhận làm bộ đôi 2 tấm & bộ 3 tấm)' },
+      { label: 'Bảo hành chính hãng', value: 'Bảo hành 5 năm tại Xưởng Mành Tre Trúc Ngọc Tuyến – Tuyến Hoa' },
+      { label: 'Liên hệ đặt hàng', value: 'ĐT/Zalo: 0989.655.388 – 0344.727.528 (Chợ Cháy, Ứng Hòa, Hà Nội)' },
+    ],
+    articleParagraphs: [
+      'Lấy cảm hứng từ những ô cửa sổ hoa văn Băng Mai và Bán Nguyệt trong các phủ đệ, trà thất cổ truyền, bộ sưu tập Mành Tăm Tre Hoa Điểu Đào Nguyên (Mã MT-TC-03) là sự giao thoa tuyệt vời giữa hội họa công bút và chất liệu tăm tre truyền thống.',
+      'Dù treo sau sofa phòng khách, làm phông nền bàn trà hay làm vách ngăn giữa phòng khách và bếp ăn, 07 mẫu mành Hoa Điểu Đào Nguyên đều mang lại hơi thở mùa xuân tươi mới, thanh lịch và sang trọng.',
+    ],
+    facebookPostCopy: `🌸 MÀNH TĂM TRE KHUNG CỬA CỔ HOA ĐIỂU · ĐÀO NGUYÊN & LỒNG CHIM QUÝ TỘC – MỞ RỘNG CHIỀU SÂU KHÔNG GIAN PHÒNG KHÁCH & PHÒNG TRÀ!
+🔥 Giá tại Xưởng Ngọc Tuyến – Tuyến Hoa chỉ từ: 280.000đ – 320.000đ/m² (Giá thị trường: 420k – 480k/m²)
+✨ Trọn bộ 07 mẫu Hoa Điểu Đào Nguyên đẹp mê hồn:
+1️⃣ Bộ Đôi "Song Hỷ Đào Hoa": Đôi chim ác là xanh báo hỷ, khung bán nguyệt & núi non thủy mặc – 300.000đ/m²
+2️⃣ Bộ Đôi "Song Yến Đào Hoa": Khung song cửa cổ, cành đào phai & đôi chim én – 300.000đ/m²
+3️⃣ Bộ Đôi "Khung Bát Giác Băng Mai": Hoa mộc lan hồng tím & lồng chim cổ – 300.000đ/m²
+4️⃣ Bộ Đôi "Cửa Sổ Bát Giác Hoa Đào Hồng, Lồng Chim & Chim Sẻ" – 300.000đ/m²
+5️⃣ Mẫu Mã C203 "Khung Bán Nguyệt Đào Hoa & Thủy Đình Giang Nam" – 300.000đ/m²
+6️⃣ Bộ 3 Bức Mã HĐ-05 "Hoa Đào Xuân & Lồng Chim Quý Tộc" (Vách ngăn phòng ăn / phòng khách) – 320.000đ/m²
+7️⃣ Bộ Đôi "Thế Ngoại Đào Nguyên" (Đôi nhành đào đỏ phong cách Zen tối giản) – 280.000đ/m²
+✅ Tặng kèm đầy đủ thanh treo gỗ, diềm che & dây rút tự hãm – Giao hàng toàn quốc, lắp đặt tận nhà!
+📍 Showroom & Xưởng: Chợ Cháy, Ứng Hòa, Hà Nội
+📞 Hotline / Zalo đặt hàng: 0989.655.388 – 0344.727.528`,
+  },
+  {
+    id: 'manh-tam-tre-gia-hoa-van-su-hung-phu-quy-bach-dau-tu-khi-dong-lai-mttc04',
+    code: 'MT-TC-04',
+    category: 'cong-trinh-video',
+    categoryName: 'Rèm · Bạt · Showroom & Công Trình',
+    title: 'Tranh Mành Tăm Tre Thư Pháp Cát Tường: Gia Hòa Vạn Sự Hưng · Phú Quý Bạch Đầu · Tử Khí Đông Lai · Bộ 3 Bức Tam Bình Gốm Cổ & Thanh Trúc Quân Tử – Ngọc Tuyến',
+    shortTitle: 'Mành Tăm Tre Gia Hòa Vạn Sự Hưng · Phú Quý Bạch Đầu & Tử Khí Đông Lai (7 Mẫu)',
+    priceDisplay: '260.000đ – 340.000đ/m²',
+    marketPriceRange: 'Giá thị trường: 400.000đ – 500.000đ / m²',
+    marketPriceNote: 'Bộ sưu tập 07 mẫu Tranh Mành Tăm Tre Thư Pháp Cát Tường, Sơn Thủy Giang Nam, Tĩnh Vật Bình Gốm Cổ và Trúc Xanh Quân Tử: Mang thông điệp chúc phúc sâu sắc ("Gia Hòa Vạn Sự Hưng", "Phú Quý Bạch Đầu", "Tử Khí Đông Lai", "Gia Hòa – Bình An – Phú Quý") rất thích hợp treo tại Thư Phòng, Phòng Khách, Phòng Trà hoặc làm quà biếu Tân Gia cao cấp.',
+    marketPriceTiers: [
+      {
+        sizeOrOption: '1. Mành Tăm Tre Đơn "Thanh Trúc Quân Tử" & "Phú Quý Bạch Đầu – Hoa Mẫu Đơn Hồng"',
+        marketPrice: '400.000đ – 420.000đ / m²',
+        storePrice: '260.000đ – 280.000đ / m²',
+        note: 'Bức mành đơn treo cửa sổ thư phòng, phòng làm việc hoặc lối đi phòng trà',
+      },
+      {
+        sizeOrOption: '2. Mành Tăm Tre Thư Pháp Sơn Thủy ("Gia Hòa Vạn Sự Hưng – Hoa Mộc Lan" & "Tử Khí Đông Lai – Hoa Tử Đằng")',
+        marketPrice: '440.000đ / m²',
+        storePrice: '280.000đ – 300.000đ / m²',
+        note: 'Kết hợp thư pháp danh ngôn trên diềm mành cùng cảnh núi non, cầu đá, thuyền câu hữu tình',
+      },
+      {
+        sizeOrOption: '3. Bộ 3 Bức Tam Bình Gốm Cổ ("Gia Hòa – Bình An – Phú Quý"), "Trúc Lâm Chim Sẻ" & "Sơn Thủy Giang Nam"',
+        marketPrice: '480.000đ – 500.000đ / m²',
+        storePrice: '320.000đ – 340.000đ / m²',
+        note: 'Bộ 3 tấm ghép liên hoàn cho vách trà đạo, phòng khách hoặc phòng đọc sách lớn',
+      },
+    ],
+    numericPrice: 260000,
+    unitLabel: '1m² Tranh Mành Tăm Tre Thư Pháp Cát Tường & Sơn Thủy (Đầy đủ phụ kiện)',
+    standardDimensions: 'Đặt làm theo kích thước yêu cầu (Mành đơn 1 tấm hoặc Bộ 3 tấm ghép liên hoàn)',
+    mediaType: 'image',
+    imageUrl: '/assets/aistudio/MT_TC_04_manh_tam_tre_gia_hoa_phu_quy_hd.jpg',
+    secondaryImages: [
+      '/assets/aistudio/500735211_122100651218890917_4863974148799086607_n_1e3c454f.jpg',
+      '/assets/aistudio/500770872_122100651404890917_3451250273236718655_n_ba5f9648.jpg',
+      '/assets/aistudio/500766734_122100651128890917_6452036645384295612_n_0ad0e7b1.jpg',
+      '/assets/aistudio/500767828_122100650486890917_3877120712230743096_n_a35fe60e.jpg',
+      '/assets/aistudio/500736031_122100654782890917_6223110425038700525_n_75f56c95.jpg',
+      '/assets/aistudio/500741325_122100651254890917_9134618704346618147_n_9bb8c8f2.jpg',
+      '/assets/aistudio/500761507_122100650810890917_2106910062024523522_n_4df92d19.jpg',
+    ],
+    imageCaptions: {
+      '/assets/aistudio/MT_TC_04_manh_tam_tre_gia_hoa_phu_quy_hd.jpg': {
+        badge: 'Ảnh 1/8 · Poster Bảng Giá HD: Tranh Mành Tăm Tre Gia Hòa Vạn Sự Hưng · Phú Quý Bạch Đầu & Tử Khí Đông Lai',
+        caption: 'Tổng hợp 6 mẫu Tranh Mành Tăm Tre Thư Pháp Cát Tường & Tĩnh Vật Bình Gốm kèm bảng giá tại Xưởng Ngọc Tuyến – Tuyến Hoa (260.000đ – 340.000đ/m²).',
+      },
+      '/assets/aistudio/500735211_122100651218890917_4863974148799086607_n_1e3c454f.jpg': {
+        badge: 'Ảnh 2/8 · Mẫu "Gia Hòa Vạn Sự Hưng" (家和萬事興) – Hoa Mộc Lan Hồng & Chòi Trà Sơn Thủy',
+        caption: 'Diềm mành đề 5 chữ thư pháp "Gia Hòa Vạn Sự Hưng" (Gia đình hòa thuận muôn việc đều hưng thịnh), bên dưới là cành mộc lan, mẫu đơn và chòi nghỉ bên sườn núi.',
+      },
+      '/assets/aistudio/500770872_122100651404890917_3451250273236718655_n_ba5f9648.jpg': {
+        badge: 'Ảnh 3/8 · Mẫu "Tử Khí Đông Lai" (紫氣東來) – Hoa Tử Đằng Tím Rủ, Cầu Đá & Thuyền Gỗ Giang Nam',
+        caption: 'Giàn hoa Tử Đằng tím biếc buông rủ từ diềm mành xuống khung cảnh cầu đá vòm cổ kính và con thuyền gỗ neo đậu mặt hồ phẳng lặng — thu hút cát khí và quý nhân.',
+      },
+      '/assets/aistudio/500766734_122100651128890917_6452036645384295612_n_0ad0e7b1.jpg': {
+        badge: 'Ảnh 4/8 · Mẫu "Phú Quý Bạch Đầu" (富貴白頭) – Hoa Mẫu Đơn Hồng Phấn, Đôi Bướm & Chim Bạch Đầu Ông',
+        caption: 'Đóa Mẫu Đơn hồng phấn (Bách Hoa Vương) nở rộ cùng đôi bướm lượn và cặp chim Bạch Đầu Ông đậu cành dưới, biểu trưng cho giàu sang phú quý và hạnh phúc bạc đầu.',
+      },
+      '/assets/aistudio/500767828_122100650486890917_3877120712230743096_n_a35fe60e.jpg': {
+        badge: 'Ảnh 5/8 · Bộ 3 Bức Tĩnh Vật Bình Gốm Cổ: "Gia Hòa (Mai Vàng) – Bình An (Bạch Liên) – Phú Quý (Hoa Đào)"',
+        caption: 'Bộ 3 tấm mành tăm tre tông kem sáng hiện đại họa hình 3 chiếc bình gốm cổ đặt trên kệ triện, mỗi bức mang một lời chúc cát tường: Gia Hòa – Bình An – Phú Quý.',
+      },
+      '/assets/aistudio/500736031_122100654782890917_6223110425038700525_n_75f56c95.jpg': {
+        badge: 'Ảnh 6/8 · Bộ 3 Bức Đại Cảnh "Trúc Lâm Chim Sẻ & Thuyền Câu Tĩnh Lặng"',
+        caption: 'Nhành trúc xanh mảnh mai vươn từ hai bên vào trung tâm cùng đàn chim sẻ và chiếc thuyền câu nhỏ phía xa, tạo cảm giác thư thái tuyệt đối cho phòng trà.',
+      },
+      '/assets/aistudio/500741325_122100651254890917_9134618704346618147_n_9bb8c8f2.jpg': {
+        badge: 'Ảnh 7/8 · Bộ 3 Bức Thủy Mặc "Sơn Thủy Giang Nam, Cầu Đá Vòm & Khóm Trúc Xanh"',
+        caption: 'Bức tranh sơn thủy hữu tình trải rộng trên 3 tấm mành với ngọn núi xa mờ sương, cầu đá cổ, chiếc thuyền độc mộc và khóm trúc xanh bên hiên nhà.',
+      },
+      '/assets/aistudio/500761507_122100650810890917_2106910062024523522_n_4df92d19.jpg': {
+        badge: 'Ảnh 8/8 · Mẫu "Thanh Trúc Quân Tử" (竹) – Ba Thân Trúc Xanh Thẳng Tắp & Thơ Thư Pháp',
+        caption: 'Ba thân trúc xanh vươn thẳng đốt nào ra đốt nấy kèm chữ "Trúc" (竹) thư pháp sắc nét — biểu tượng của người quân tử kiên cường, ngay thẳng và tiết tháo.',
+      },
+    },
+    highlightTag: 'Thư Pháp Cát Tường · Gia Hòa · Phú Quý & Trúc Quân Tử',
+    summary:
+      'Bộ sưu tập Tranh Mành Tăm Tre Thư Pháp Cát Tường & Tĩnh Vật Phong Thủy (Mã MT-TC-04) hội tụ 07 tác phẩm giàu giá trị nhân văn và triết lý phương Đông: Vừa là rèm che nắng cản sáng tinh tế, vừa là bức tranh thư họa truyền tải lời chúc Gia Hòa, Bình An, Phú Quý và Khí Chất Quân Tử.',
+    visualAnnotations: [
+      {
+        label: 'Thông điệp phong thủy "Gia Hòa Vạn Sự Hưng – Phú Quý Bạch Đầu – Tử Khí Đông Lai"',
+        detail: 'Mỗi bức mành đều mang một chủ đề cát tường rõ rệt, giúp gia tăng sinh khí cho phòng khách, phòng làm việc và gắn kết tình cảm gia đình.',
+      },
+      {
+        label: 'Đa dạng phong cách từ Cổ Điển Sơn Thủy đến Hiện Đại Tối Giản (Bộ 3 Bình Gốm)',
+        detail: 'Khách hàng có thể chọn bức sơn thủy truyền thống cho nhà gỗ/phòng trà cổ, hoặc bộ 3 bức Bình Gốm nền kem sáng cho căn hộ chung cư, biệt thự hiện đại.',
+      },
+      {
+        label: 'Món quà biếu Tân Gia, Khai Trương & Mừng Thọ độc đáo, ý nghĩa',
+        detail: 'Với độ bền trên 10 năm và ý nghĩa chúc phúc trang trọng, đây là món quà tặng nội thất vô cùng tinh tế dành tặng người thân, đối tác.',
+      },
+    ],
+    specs: [
+      { label: 'Mã bộ sưu tập', value: 'MT-TC-04 (07 mẫu Thư Pháp Gia Hòa, Phú Quý, Tử Khí Đông Lai & Trúc Xanh)' },
+      { label: 'Chất liệu nan mành', value: 'Nan tăm tre / tăm trúc tự nhiên dệt chỉ mịn, chống cong vênh & ẩm mốc' },
+      { label: 'Đơn giá tại xưởng', value: '260.000đ – 340.000đ/m² (Đã bao gồm thanh treo gỗ, diềm che & dây rút)' },
+      { label: 'Ứng dụng không gian', value: 'Phòng trà, Thư phòng, Phòng khách, Phòng làm việc, Bàn thờ & Quà tân gia' },
+      { label: 'Chế độ bảo hành', value: 'Bảo hành 5 năm chính hãng tại Xưởng Ngọc Tuyến – Tuyến Hoa' },
+      { label: 'Liên hệ đặt hàng', value: 'ĐT/Zalo: 0989.655.388 – 0344.727.528 (Chợ Cháy, Ứng Hòa, Hà Nội)' },
+    ],
+    articleParagraphs: [
+      'Người xưa có câu "Gia hòa vạn sự hưng" — gia đình êm ấm thuận hòa thì muôn việc ắt thành công. Khi đưa những câu chúc thư pháp cổ điển kết hợp cùng hình tượng Hoa Mẫu Đơn, Hoa Tử Đằng, Bình Gốm Cổ và Trúc Xanh lên nền Mành Tăm Tre tự nhiên, Xưởng Ngọc Tuyến đã tạo nên những tác phẩm nội thất vừa che nắng dịu mát, vừa nuôi dưỡng tâm hồn tĩnh tại.',
+      'Tất cả 07 mẫu trong bộ sưu tập MT-TC-04 đều được Xưởng Ngọc Tuyến – Tuyến Hoa nhận đặt gia công theo kích thước riêng của từng gia đình, giao hàng toàn quốc và hỗ trợ lắp đặt tận nơi.',
+    ],
+    facebookPostCopy: `🎋 TRANH MÀNH TĂM TRE THƯ PHÁP CÁT TƯỜNG: GIA HÒA VẠN SỰ HƯNG · PHÚ QUÝ BẠCH ĐẦU · TỬ KHÍ ĐÔNG LAI & TRÚC QUÂN TỬ!
+🔥 Giá tại Xưởng Ngọc Tuyến – Tuyến Hoa chỉ từ: 260.000đ – 340.000đ/m² (Giá thị trường: 400k – 500k/m²)
+✨ Trọn bộ 07 tuyệt phẩm Mành Tăm Tre Phong Thủy & Thư Phòng:
+1️⃣ Mẫu "Gia Hòa Vạn Sự Hưng" (Hoa Mộc Lan hồng & Chòi trà sơn thủy): 280.000đ/m²
+2️⃣ Mẫu "Tử Khí Đông Lai" (Hoa Tử Đằng tím rủ, Cầu đá & Thuyền gỗ Giang Nam): 280.000đ/m²
+3️⃣ Mẫu "Phú Quý Bạch Đầu" (Hoa Mẫu Đơn hồng phấn & Đôi chim Bạch Đầu): 280.000đ/m²
+4️⃣ Bộ 3 Bức Tĩnh Vật Bình Gốm Cổ "Gia Hòa – Bình An – Phú Quý": 320.000đ/m²
+5️⃣ Bộ 3 Bức Đại Cảnh "Trúc Lâm Chim Sẻ & Thuyền Câu Tĩnh Lặng": 320.000đ/m²
+6️⃣ Bộ 3 Bức Thủy Mặc "Sơn Thủy Giang Nam, Cầu Đá Vòm & Khóm Trúc": 320.000đ/m²
+7️⃣ Mẫu đơn "Thanh Trúc Quân Tử" (3 thân trúc xanh & thơ thư pháp): 260.000đ/m²
+✅ Nan tăm tre tự nhiên mịn đẹp – Tặng kèm thanh treo & ròng rọc dây kéo tự hãm – Bảo hành 5 năm!
+📍 Showroom & Xưởng: Chợ Cháy, Ứng Hòa, Hà Nội
+📞 Hotline / Zalo tư vấn & đặt hàng: 0989.655.388 – 0344.727.528`,
+  },
+
+  // ===========================================================================
+  // 00-HERITAGE-BAMBOO-2026. BỘ ĐÔI TUYỆT TÁC MÀNH TRE TRÚC & VÁCH BÌNH PHONG CHỮ THỌ NGỌC TUYẾN (12 ẢNH):
   //   1. MT-NT-01: CÔNG TRÌNH VÁCH BÌNH PHONG TRE TRÚC CHỮ THỌ & MÀNH TRÚC ĐẠI TỰ NHÀ THỜ HỌ · TỪ ĐƯỜNG 3 GIAN · ĐÌNH CHÙA & BIỆT THỰ VEN HỒ
   //   2. MT-NT-02: BỘ SƯU TẬP MÀNH TRÚC THƯ PHÁP "PHÚC – ĐỨC" ĐẦM SEN, CHÙA MỘT CỘT, TÙNG TRÚC HẠC ĐỐI XỨNG & KHẮC TÊN THƯƠNG HIỆU RIÊNG (SALON TÓC THANH VÂN)
   // ===========================================================================

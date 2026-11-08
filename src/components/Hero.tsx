@@ -13,6 +13,42 @@ interface HeroProps {
 
 const HERO_GALLERY_SLIDES = [
   {
+    id: 'manh-tam-tre-lien-hoa-cuu-ngu-hd',
+    tabTarget: 'catalog',
+    image: '/assets/aistudio/MT_TC_01_manh_tam_tre_lien_hoa_cuu_ngu_hd.jpg',
+    badge: '260.000đ – 340.000đ/m² · Mành Tăm Tre Liên Hoa & Cửu Ngư',
+    title: 'Tuyệt Tác Mành Tăm Tre Liên Hoa Thủy Mặc & Cửu Ngư Phòng Trà',
+    caption: 'Thượng Thiện Nhược Thủy · Thiền Ý Liên Hoa · Tây Hồ Liên Hoa · Đủ 6 Mã Y19–Y24.',
+    priceHighlight: 'Từ 260k/m²',
+  },
+  {
+    id: 'manh-tam-tre-khung-trien-tung-hac-hd',
+    tabTarget: 'catalog',
+    image: '/assets/aistudio/MT_TC_02_manh_tam_tre_khung_trien_tung_hac_hd.jpg',
+    badge: '280.000đ – 360.000đ/m² · Bộ Đôi Nguyệt Môn & Bộ 3 Tấm Đối Xứng',
+    title: 'Mành Tăm Tre Khung Triện Nguyệt Môn & Tùng Hạc Nghênh Khách',
+    caption: 'Xuân Yến Đồ · Mộc Lan Dưới Trăng · Thanh Tùng Nghênh Khách · Chim Trĩ Ngọc Lan.',
+    priceHighlight: '280k–360k',
+  },
+  {
+    id: 'manh-tam-tre-hoa-dieu-dao-nguyen-hd',
+    tabTarget: 'catalog',
+    image: '/assets/aistudio/MT_TC_03_manh_tam_tre_hoa_dieu_dao_nguyen_hd.jpg',
+    badge: '280.000đ – 320.000đ/m² · Khung Cửa Cổ Bát Giác & Bán Nguyệt',
+    title: 'Mành Tăm Tre Khung Cửa Cổ Hoa Điểu · Đào Nguyên & Lồng Chim',
+    caption: 'Song Hỷ Đào Hoa · Khung Bát Giác Băng Mai · Thủy Đình C203 · Thế Ngoại Đào Nguyên.',
+    priceHighlight: '280k–320k',
+  },
+  {
+    id: 'manh-tam-tre-gia-hoa-phu-quy-hd',
+    tabTarget: 'catalog',
+    image: '/assets/aistudio/MT_TC_04_manh_tam_tre_gia_hoa_phu_quy_hd.jpg',
+    badge: '260.000đ – 340.000đ/m² · Thư Pháp Cát Tường & Tam Bình Gốm',
+    title: 'Tranh Mành Tăm Tre Gia Hòa Vạn Sự Hưng · Phú Quý Bạch Đầu',
+    caption: 'Tử Khí Đông Lai · Mẫu Đơn Phú Quý · Bộ 3 Bình Gốm Gia Hòa Bình An · Trúc Quân Tử.',
+    priceHighlight: 'Từ 260k/m²',
+  },
+  {
     id: 'cong-trinh-nha-tho-tu-duong-ngoc-tuyen-hd',
     tabTarget: 'catalog',
     image: '/assets/aistudio/MT_NT_01_cong_trinh_nha_tho_tu_duong_ngoc_tuyen_hd.jpg',
@@ -21,46 +57,16 @@ const HERO_GALLERY_SLIDES = [
     caption: 'Bộ 3 bức Tùng – Đầm Sen Chữ Phúc (福) – Trúc · Vách Chữ Thọ Đình Chùa · Biệt Thự Ven Hồ.',
     priceHighlight: 'Từ 240k/m²',
   },
-  {
-    id: 'manh-truc-phuc-duc-chua-mot-cot-hd',
-    tabTarget: 'catalog',
-    image: '/assets/aistudio/MT_NT_02_manh_truc_phuc_duc_chua_mot_cot_hd.jpg',
-    badge: '280.000đ – 320.000đ/m² · Vẽ Tay Sơn Dầu Nghệ Nhân',
-    title: 'Mành Trúc Thư Pháp "Phúc – Đức" · Chùa Một Cột & Khắc Tên Riêng',
-    caption: 'Đầm Sen Phúc – Đức · Chùa Một Cột · Cặp Tùng Trúc Hạc Đối Xứng · Salon Tóc Thanh Vân.',
-    priceHighlight: '280k/m²',
-  },
-  {
-    id: 'bang-gia-dem-lo-xo-vikosan-hd',
-    tabTarget: 'catalog',
-    image: '/assets/aistudio/DLX_VK_01_bang_gia_dem_lo_xo_vikosan_hd.jpg',
-    badge: '3.480.000đ – 8.990.000đ · Chiết Khấu 30% Bảng Giá Hãng',
-    title: 'Bảng Giá Đệm Lò Xo Túi Độc Lập Vikosan 3 Sao · 5 Sao · VIP D\'luxe',
-    caption: 'Đã điền đủ giá 5 kích thước: Standard 3*22 (22cm) · Standard 5*22 (22cm) · VIP*30 (30cm).',
-    priceHighlight: 'Từ 3,48Tr',
-  },
-  {
-    id: 'chan-ga-lua-tencel-alyda-7-mon-hd',
-    tabTarget: 'catalog',
-    image: '/assets/aistudio/CGL_LT_28_alyda_7_mon_bang_gia_hd.jpg',
-    badge: '2.150.000đ / Bộ 7 Món · Có Sẵn Ruột Chăn',
-    title: 'Bộ Chăn Ga Gối Cưới Lụa Tencel Hoàng Gia Alyda® Full 7 Món',
-    caption: 'Thêu hoa văn cung đình Châu Âu ánh kim trên nền Lụa Tencel dệt vân chìm bóng mượt.',
-    priceHighlight: '2,15Tr/bộ',
-  },
-  {
-    id: 'chan-ga-lua-tencel-sky-silk-hd',
-    tabTarget: 'catalog',
-    image: '/assets/aistudio/CGL_SK_01_sky_silk_17_mau_bang_gia_hd.jpg',
-    badge: '1.150.000đ / Bộ 5 Món · Đủ 17 Mã Màu Sky Silk 60s',
-    title: 'Bộ Sưu Tập 17 Mã Màu Chăn Ga Gối Lụa Tencel Sky Silk 60s',
-    caption: 'Mát lạnh như lụa tơ tằm, thêu nổi chữ Sky Silk tinh tế · Set Tencel EU chỉ từ 390.000đ.',
-    priceHighlight: '1,15Tr/bộ',
-  },
 ];
 
 
 const QUICK_PRICE_LEDGER = [
+  {
+    label: 'Mành Tăm Tre Phòng Trà (28 Mẫu)',
+    price: '260k – 360k / m²',
+    sub: 'Liên Hoa · Khung Triện · Gia Hòa',
+    tab: 'catalog',
+  },
   {
     label: 'Vách Trúc Chữ Thọ & Từ Đường',
     price: '240k – 650k / m²',
@@ -78,12 +84,6 @@ const QUICK_PRICE_LEDGER = [
     price: '390k – 2,15Tr',
     sub: 'Tencel EU · Sky Silk · Alyda 7 Món',
     tab: 'catalog',
-  },
-  {
-    label: 'Màn Khung 1,8m × 2,0m',
-    price: '1.000.000đ / bộ',
-    sub: 'Trọn gói cả khung & lắp',
-    tab: 'man-khung-1tr',
   },
 ];
 
