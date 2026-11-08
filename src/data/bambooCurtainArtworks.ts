@@ -24,15 +24,269 @@ export interface BambooArtwork {
 }
 
 export const BAMBOO_CATEGORIES: { id: BambooCategory; label: string; count: number }[] = [
-  { id: 'all', label: 'Tất Cả 38 Mẫu Mới', count: 38 },
+  { id: 'all', label: 'Tất Cả 50 Mẫu Mới', count: 50 },
+  { id: 'tranh-tra-that', label: 'Trà Thất & Cổ Phong (22)', count: 22 },
+  { id: 'tranh-phong-thuy', label: 'Tranh Phong Thủy & Tài Lộc (10)', count: 10 },
   { id: 'tranh-tho-phat', label: 'Tranh Thờ & Phật Giáo (7)', count: 7 },
-  { id: 'tranh-phong-thuy', label: 'Tranh Phong Thủy & Tài Lộc (8)', count: 8 },
-  { id: 'tranh-tra-that', label: 'Trà Thất & Cổ Phong (12)', count: 12 },
   { id: 'cong-trinh', label: 'Công Trình Thực Tế (7)', count: 7 },
   { id: 'xuong-san-xuat', label: 'Xưởng & Chi Tiết Nan (4)', count: 4 },
 ];
 
 export const BAMBOO_ARTWORKS: BambooArtwork[] = [
+  // --- NHÓM 0: 12 TUYỆT TÁC MÀNH TĂM TRE TÂN CỔ ĐIỂN MỚI TẢI LÊN (MT-TC-05 & MT-TC-06) ---
+  {
+    id: 'mttc05-01-tam-lien-chim-xanh-hoa-dao',
+    code: 'MTTC-05A',
+    title: 'Bộ 3 Bức Tam Liên Khung Triện "Chim Xanh Hoa Đào – Sơn Thủy Giang Nam – Trúc Quân Tử"',
+    category: 'tranh-tra-that',
+    categoryLabel: 'Trà Thất & Cổ Phong',
+    image: '/assets/aistudio/500739569_122100659330890917_1694898813546800220_n_0efe9cb1.jpg',
+    aspect: 'landscape',
+    priceEstimate: '320.000 đ / m² (Trọn bộ phụ kiện)',
+    standardSize: 'Bộ 3 tấm đối xứng (1 tấm chính giữa + 2 tấm biên theo ô cửa)',
+    material: 'Nan tăm tre Bắc Bộ bào mịn 1,2mm dệt chỉ dù + In UV 2 mặt bền màu',
+    meaning: 'Thế "Tam Tài" đăng đối viên mãn: Chim xanh báo tin vui mùa xuân, non nước hữu tình và khóm trúc quân tử thanh cao.',
+    suitableRooms: ['Phòng khách sau sofa', 'Phòng trà đạo', 'Vách kính biệt thự'],
+    specs: [
+      'Viền triện góc chữ Vạn kết hợp nút thắt cát tường cổ điển đồng bộ cả 3 tấm',
+      'Tấm giữa khung quạt tròn Chim Xanh đậu cành Đào Xuân, hai bên là Sơn Thủy & Trúc',
+      'Lọc 80%–85% nắng gắt thành ánh sáng vàng ấm áp, giữ luồng gió đối lưu mát mẻ',
+      'Tặng kèm thanh treo gỗ, diềm che đồng bộ và con lăn dây kéo tự hãm'
+    ],
+    featured: true
+  },
+  {
+    id: 'mttc05-02-tam-lien-thanh-tung-nghenh-khach',
+    code: 'MTTC-05B',
+    title: 'Bộ 3 Bức Đối Xứng "Thanh Tùng Nghênh Khách & Song Hạc Trường Xuân"',
+    category: 'tranh-phong-thuy',
+    categoryLabel: 'Tranh Phong Thủy & Tài Lộc',
+    image: '/assets/aistudio/500763669_122100650714890917_5640505122017559987_n_f0196d09.jpg',
+    aspect: 'landscape',
+    priceEstimate: '320.000 đ / m² (Trọn bộ phụ kiện)',
+    standardSize: 'Bộ 3 tấm Tam Liên theo kích thước vách kính / cửa sổ lớn',
+    material: 'Mành tăm tre tự nhiên dệt chỉ mịn vẽ đại cảnh Tùng Hạc & Thư pháp',
+    meaning: 'Nghênh đón quý nhân và tài lộc vào nhà; cây Tùng cổ thụ và đôi Hạc trắng biểu trưng cho trường thọ, bách niên giai lão.',
+    suitableRooms: ['Phòng khách chính', 'Sảnh biệt thự', 'Từ đường & Nhà gỗ'],
+    specs: [
+      'Tấm chính giữa họa đại cảnh Tùng cổ thụ vươn mình trên đỉnh núi mây mù',
+      'Hai tấm phụ hai bên là khung tròn Tùng Sơn đối xứng kèm nút thắt cát tường',
+      'Bốn chữ thư pháp "Thanh Tùng Nghênh Khách" thể hiện lòng hiếu khách trọng nghĩa',
+      'Bảo hành 5 năm độ bền nan tre và cơ cấu ròng rọc khóa bi tại Xưởng Ngọc Tuyến'
+    ],
+    featured: true
+  },
+  {
+    id: 'mttc05-03-tam-lien-chim-tri-bach-ngoc-lan',
+    code: 'MTTC-05C',
+    title: 'Bộ 3 Bức Đại Cảnh Công Bút "Chim Trĩ Đỏ & Hoa Bạch Ngọc Lan Trên Ghềnh Đá"',
+    category: 'tranh-phong-thuy',
+    categoryLabel: 'Tranh Phong Thủy & Tài Lộc',
+    image: '/assets/aistudio/500740951_122100654650890917_65672671287950655_n_a36680ac.jpg',
+    aspect: 'landscape',
+    priceEstimate: '320.000 đ – 340.000 đ / m²',
+    standardSize: 'Bộ 3 tấm ghép liên hoàn (Rộng 1,8m – 3,2m x Cao 1,5m – 2,5m)',
+    material: 'Nan tăm trúc chuốt mịn in hội họa công bút cung đình sắc nét',
+    meaning: 'Chim trĩ đỏ và hoa Bạch Ngọc Lan tượng trưng cho tước lộc vinh hoa, gia môn phú quý và khí chất vương giả.',
+    suitableRooms: ['Phòng khách sang trọng', 'Phòng làm việc lãnh đạo', 'Phòng trà VIP'],
+    specs: [
+      'Họa tiết chim trĩ đỏ sải cánh giữa vòng tròn trung tâm nối liền sang hai bức phụ',
+      'Đôi chim trường thọ đậu trên ghềnh đá cổ thưởng hoa Bạch Ngọc Lan & hoa Trà Hồng',
+      'Xử lý hấp sấy chống mối mọt, chống cong vênh dưới nắng hướng Tây',
+      'Đo đạc và chế tác chuẩn xác theo kích thước cửa thực tế của gia chủ'
+    ],
+    featured: true
+  },
+  {
+    id: 'mttc05-04-bat-giac-bang-mai-moc-lan-long-chim',
+    code: 'MTTC-05D',
+    title: 'Bộ Đôi "Khung Cửa Bát Giác Băng Mai – Hoa Mộc Lan Hồng & Lồng Chim Cổ"',
+    category: 'tranh-tra-that',
+    categoryLabel: 'Trà Thất & Cổ Phong',
+    image: '/assets/aistudio/500739763_122100650882890917_3729632059607191024_n_25084717.jpg',
+    aspect: 'square',
+    priceEstimate: '300.000 đ / m²',
+    standardSize: 'Bộ đôi 2 tấm đối xứng (Mỗi tấm rộng 0,8m – 1,4m x Cao 1,5m – 2,2m)',
+    material: 'Nan tăm tre tự nhiên mịn màng in hiệu ứng cửa sổ 3D',
+    meaning: 'Nghệ thuật "Tá Cảnh" mở rộng không gian, mang hơi thở mùa xuân thanh nhã và an nhiên vào bàn trà, phòng khách.',
+    suitableRooms: ['Phòng trà đạo', 'Phòng khách chung cư', 'Cửa sổ bàn làm việc'],
+    specs: [
+      'Hai nửa khung cửa sổ bát giác chạm hoa văn băng mai đặt đối xứng ở hai mép mành',
+      'Cành hoa mộc lan hồng phấn vươn ra đón đôi bướm xuân và lồng chim cổ điển',
+      'Tạo chiều sâu 3D giúp căn phòng nhỏ trở nên thoáng rộng và sang trọng hơn',
+      'Đi kèm bộ dây rút tự hãm kéo thả êm nhẹ từng tấm độc lập'
+    ],
+    featured: true
+  },
+  {
+    id: 'mttc05-05-bat-giac-hoa-dao-long-chim-se',
+    code: 'MTTC-05E',
+    title: 'Bộ Đôi "Cửa Sổ Bát Giác Hoa Đào Hồng, Lồng Chim Quý Tộc & Đàn Chim Sẻ"',
+    category: 'tranh-tra-that',
+    categoryLabel: 'Trà Thất & Cổ Phong',
+    image: '/assets/aistudio/500739985_122100650528890917_234871176915682253_n_d0aa2bed.jpg',
+    aspect: 'square',
+    priceEstimate: '300.000 đ / m²',
+    standardSize: 'Bộ đôi 2 tấm ghép khít hoặc lắp 2 ô cửa sổ liền kề',
+    material: 'Mành tăm tre vàng mộc tự nhiên dệt chỉ dù cao cấp',
+    meaning: 'Hoa đào hồng báo hỷ sự, đàn chim sẻ ríu rít bên lồng chim quý tộc tượng trưng cho gia đình sum vầy, ấm êm.',
+    suitableRooms: ['Sau sofa phòng khách', 'Bàn trà gia đình', 'Phòng ngủ Master'],
+    specs: [
+      'Thiết kế 2 bức mành ghép đôi tạo hiệu ứng mở hai ô cửa sổ gỗ lim nhìn ra vườn đào',
+      'Gam màu hồng đào dịu ngọt trên nền nan tre vàng ấm áp không kén nội thất',
+      'Cản nắng 85% chống tia UV bảo vệ đồ gỗ và sofa da trong phòng',
+      'Miễn phí tư vấn kích thước chuẩn Thước Lỗ Ban phong thủy'
+    ],
+    featured: true
+  },
+  {
+    id: 'mttc05-06-ban-nguyet-hoa-dao-long-chim-hd05',
+    code: 'HĐ-05',
+    title: 'Bộ 3 Bức Mã HĐ-05 "Khung Bán Nguyệt Hoa Đào Xuân & Lồng Chim Quý Tộc"',
+    category: 'tranh-tra-that',
+    categoryLabel: 'Trà Thất & Cổ Phong',
+    image: '/assets/aistudio/500761713_122100651074890917_8609774874102564285_n_e19483f4.jpg',
+    aspect: 'landscape',
+    priceEstimate: '320.000 đ / m²',
+    standardSize: 'Bộ 3 tấm ghép vách ngăn hoặc che cửa kính lớn',
+    material: 'Nan tăm tre tự nhiên dệt chỉ mịn + Thanh treo gỗ đồng màu',
+    meaning: 'Vách ngăn ước lệ tinh tế phân tách phòng khách và phòng ăn mà không làm bí bách luồng khí phong thủy.',
+    suitableRooms: ['Vách ngăn phòng khách – phòng ăn', 'Nhà hàng Á Đông', 'Phòng trà lớn'],
+    specs: [
+      'Hai bên là nửa khung cửa tròn chạm triện cổ điển tạo bố cục vòm nguyệt môn',
+      'Cành đào hồng vươn dài qua 3 tấm mành treo chiếc lồng chim thanh nhã',
+      'Khi cần không gian mở có thể kéo cuộn gọn gàng lên sát trần chỉ trong 5 giây',
+      'Sản xuất trực tiếp tại Xưởng Ngọc Tuyến – Tuyến Hoa (ĐT: 0344.727.528)'
+    ],
+    featured: true
+  },
+  {
+    id: 'mttc06-01-lien-hoa-ngu-ngu-diem-trien',
+    code: 'MTTC-06A',
+    title: 'Bộ Đôi "Liên Hoa Ngũ Ngư – Niên Niên Hữu Dư" Viền Diềm Triện Cổ Điển',
+    category: 'tranh-tra-that',
+    categoryLabel: 'Trà Thất & Cổ Phong',
+    image: '/assets/aistudio/500742419_122100651926890917_2678072256097837987_n_3e96dbc4.jpg',
+    aspect: 'square',
+    priceEstimate: '280.000 đ / m²',
+    standardSize: 'Bộ đôi 2 tấm ghép liền mạch (Rộng 1,2m – 2,4m x Cao 1,4m – 2,2m)',
+    material: 'Nan tăm tre chuốt mịn in tranh thủy mặc Liên Hoa Ngũ Ngư',
+    meaning: 'Ngũ Ngư Quần Liên (5 chú cá chép đỏ quây quần bên hoa sen) mang ý nghĩa ngũ phúc lâm môn, tài lộc dư dả quanh năm.',
+    suitableRooms: ['Phòng trà đạo', 'Phòng thờ gia tiên', 'Phòng khách Á Đông'],
+    specs: [
+      'Phần diềm mành phía trên chạm đường triện cổ điển cực kỳ trang nhã',
+      'Tâm bức mành là vòng tròn 5 chú cá chép đỏ bơi quanh đóa sen hồng nở rộ',
+      'Hai bức ghép khít chính xác từng đường nét cánh sen và gợn nước',
+      'Tặng kèm đầy đủ thanh treo, diềm hộp và bộ dây kéo tự hãm'
+    ],
+    featured: true
+  },
+  {
+    id: 'mttc06-02-ha-duong-nguyet-sac-dai-hong-lien',
+    code: 'MTTC-06B',
+    title: 'Mành Tăm Tre "Hà Đường Nguyệt Sắc" – Đại Hồng Liên & Chuồn Chuồn Đỏ',
+    category: 'tranh-tra-that',
+    categoryLabel: 'Trà Thất & Cổ Phong',
+    image: '/assets/aistudio/500740964_122100651800890917_6445939849596325175_n_aef97f54.jpg',
+    aspect: 'portrait',
+    priceEstimate: '260.000 đ / m²',
+    standardSize: 'Mành đơn 1 tấm (Rộng 0,8m – 1,6m x Cao 1,4m – 2,2m)',
+    material: 'Nan tăm tre tự nhiên dệt chỉ mịn họa hoa sen hồng thủy mặc',
+    meaning: 'Tâm thanh tịnh như đóa sen hồng vươn lên giữa mặt hồ phẳng lặng, mang lại giấc ngủ an lành và sự thư thái.',
+    suitableRooms: ['Cửa sổ phòng ngủ', 'Phòng thiền', 'Phòng thờ Phật', 'Thư phòng'],
+    specs: [
+      'Đóa Đại Hồng Liên bung cánh mềm mại trên nền nan tăm tre vàng kem dịu mắt',
+      'Điểm xuyết lá sen thủy mặc và chú chuồn chuồn đỏ đậu khẽ trên búp sen non',
+      'Che nắng dịu nhẹ cho cửa sổ đầu giường mà vẫn giữ phòng ngủ thoáng khí',
+      'Dễ dàng vệ sinh lau bụi bằng khăn khô hoặc chổi lông gà'
+    ],
+    featured: true
+  },
+  {
+    id: 'mttc06-03-son-thuy-thuyen-cau-hoa-dao-dam-sen',
+    code: 'MTTC-06C',
+    title: 'Bộ 3 Bức Thủy Mặc Đại Cảnh "Hoa Đào Xuân – Sơn Thủy Thuyền Câu – Đầm Sen Hồng"',
+    category: 'tranh-tra-that',
+    categoryLabel: 'Trà Thất & Cổ Phong',
+    image: '/assets/aistudio/500741325_122100651254890917_9134618704346618147_n_9bb8c8f2.jpg',
+    aspect: 'landscape',
+    priceEstimate: '320.000 đ / m²',
+    standardSize: 'Bộ 3 tấm ghép panorama cho cửa sổ rộng hoặc vách trà thất',
+    material: 'Mành tăm tre cao cấp in tranh thủy mặc sơn thủy Giang Nam',
+    meaning: 'Sơn quản nhân đinh, Thủy quản tài lộc: Núi non vững chãi và dòng nước êm đềm đem lại bình an, thịnh vượng.',
+    suitableRooms: ['Phòng trà lớn', 'Phòng khách kệ Tivi', 'Biệt thự nhà vườn'],
+    specs: [
+      'Bức họa trải dài qua 3 tấm mành: Đào xuân bên trái, núi mờ thuyền câu ở giữa, đầm sen bên phải',
+      'Tạo cảm giác không gian mở rộng mênh mông như đang ngắm cảnh bên bờ hồ Giang Nam',
+      'Mỗi tấm có dây rút riêng giúp tùy chỉnh ánh sáng từng khoang cửa linh hoạt',
+      'Bảo hành 5 năm chính hãng tại Xưởng Mành Tre Trúc Ngọc Tuyến'
+    ],
+    featured: true
+  },
+  {
+    id: 'mttc06-04-bach-ngoc-lan-khung-tron-nui-mo',
+    code: 'MTTC-06D',
+    title: 'Bộ 3 Bức Khung Tròn Bán Nguyệt "Bạch Ngọc Lan, Đôi Chim Sẻ & Núi Non Mờ Sương"',
+    category: 'tranh-tra-that',
+    categoryLabel: 'Trà Thất & Cổ Phong',
+    image: '/assets/aistudio/500742756_122100651614890917_6342530107713701372_n_1104912c.jpg',
+    aspect: 'landscape',
+    priceEstimate: '320.000 đ / m²',
+    standardSize: 'Bộ 3 tấm đối xứng (Rộng 1,8m – 3,0m x Cao 1,5m – 2,2m)',
+    material: 'Nan tăm tre kem ngà tự nhiên dệt chỉ mịn',
+    meaning: 'Hoa Bạch Ngọc Lan biểu trưng cho phẩm hạnh cao quý, tinh khôi; đôi chim sẻ mang sinh khí vui tươi cho tổ ấm.',
+    suitableRooms: ['Phòng khách hiện đại', 'Phòng đọc sách', 'Cửa sổ phòng ăn'],
+    specs: [
+      'Hai nửa ô cửa tròn chạm song gỗ cổ điển ở hai biên tạo khung cảnh chiều sâu',
+      'Cành hoa Bạch Ngọc Lan trắng tinh khôi vươn dài trên nền núi non mờ sương',
+      'Tông màu kem ngà nhã nhặn cực kỳ hợp với nội thất gỗ sồi và tường trắng',
+      'Đầy đủ phụ kiện bát treo tường / treo trần lắp đặt chỉ trong 10 phút'
+    ],
+    featured: true
+  },
+  {
+    id: 'mttc06-05-the-ngoai-dao-nguyen-zen',
+    code: 'MTTC-06E',
+    title: 'Bộ Đôi "Thế Ngoại Đào Nguyên" – Đôi Nhành Đào Xuân Phong Cách Tối Giản (Zen)',
+    category: 'tranh-tra-that',
+    categoryLabel: 'Trà Thất & Cổ Phong',
+    image: '/assets/aistudio/500741571_122100652178890917_6050608616275871117_n_1679b80f.jpg',
+    aspect: 'square',
+    priceEstimate: '280.000 đ / m²',
+    standardSize: 'Bộ đôi 2 tấm (Mỗi tấm rộng 0,8m – 1,2m x Cao 1,4m – 2,0m)',
+    material: 'Nan tăm tre vàng mộc tự nhiên dệt chỉ dù',
+    meaning: 'Mỹ học Thiền (Zen) đề cao khoảng thở tĩnh lặng, giúp gia chủ buông bỏ mệt mỏi mỗi khi ngồi bên bàn trà.',
+    suitableRooms: ['Bàn trà bệt Tatami', 'Góc thiền tại gia', 'Spa & Trà quán'],
+    specs: [
+      'Giữ trọn 80% diện tích nền nan tăm tre vàng mộc tự nhiên làm khoảng trắng nghệ thuật',
+      'Điểm xuyết hai nhành đào đỏ thắm vươn nhẹ từ hai cạnh mành vào trung tâm',
+      'Phù hợp hoàn hảo với nội thất gỗ mộc, phong cách Nhật Bản (Wabi-Sabi / Zen)',
+      'Cơ cấu con lăn khóa dây đồng thau bền bỉ'
+    ],
+    featured: true
+  },
+  {
+    id: 'mttc06-06-thanh-truc-quan-tu-thu-phap',
+    code: 'MTTC-06F',
+    title: 'Mành Tăm Tre "Thanh Trúc Quân Tử (竹)" – Ba Thân Trúc Xanh & Thơ Thư Pháp',
+    category: 'tranh-tra-that',
+    categoryLabel: 'Trà Thất & Cổ Phong',
+    image: '/assets/aistudio/500761507_122100650810890917_2106910062024523522_n_4df92d19.jpg',
+    aspect: 'portrait',
+    priceEstimate: '260.000 đ / m²',
+    standardSize: 'Mành đơn 1 tấm hoặc ghép nhiều tấm theo ô cửa sổ',
+    material: 'Nan tăm tre tự nhiên in tranh Trúc Xanh & Thư pháp sắc nét',
+    meaning: 'Trúc là biểu tượng của bậc chính nhân quân tử: Ruột rỗng tâm ngay, đốt thẳng kiên cường, bốn mùa xanh tốt bình an.',
+    suitableRooms: ['Thư phòng', 'Phòng làm việc', 'Cửa sổ hành lang', 'Phòng trà'],
+    specs: [
+      'Ba thân trúc xanh vươn thẳng mạnh mẽ từng đốt rõ ràng bên khóm lá trúc non',
+      'Nổi bật đại tự "Trúc" (竹) cùng hai câu thơ thư pháp và ấn triện đỏ trang trọng',
+      'Mang lại cảm giác thanh mát, hạ nhiệt độ phòng từ 3–5 độ C trong mùa hè',
+      'Giá tại xưởng Ngọc Tuyến – Tuyến Hoa chỉ 260.000đ/m² trọn gói phụ kiện'
+    ],
+    featured: true
+  },
+
   // --- NHÓM 1: CÔNG TRÌNH THỰC TẾ & XƯỞNG SẢN XUẤT ---
   {
     id: 'bamboo-motor-auto',

@@ -119,20 +119,20 @@ ${item.specs.map((s) => `• ${s}`).join('\n')}
         <div className="text-center max-w-4xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100/90 text-amber-900 border border-amber-300 shadow-xs mb-3 text-sm font-semibold">
             <Sparkles className="w-4 h4 text-amber-600 animate-pulse" />
-            <span>Kho Lưu Trữ 38 Bức Ảnh Mới • Mành Tre Trúc & Tranh Vẽ TMHC Tuyến Hoa</span>
+            <span>Kho Lưu Trữ 50 Bức Ảnh Mới • Mành Tre Trúc & Tranh Vẽ TMHC · MTTC Tuyến Hoa</span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-stone-900 tracking-tight">
             Tuyển Tập Mành Tre Nghệ Thuật & Công Trình Thực Tế
           </h1>
           <p className="mt-3 text-stone-600 text-base sm:text-lg leading-relaxed">
-            Khám phá 38 tác phẩm mành tăm tre vẽ sơn dầu phong thủy, tranh bàn thờ gia tiên, tranh thiền trà thất cùng các công trình từ đường, nhà cổ 5 gian do chính nghệ nhân xưởng Tuyến Hoa thi công.
+            Khám phá 50 tác phẩm mành tăm tre Tam Liên Khung Triện, Cửa Sổ Bát Giác Lồng Chim, Liên Hoa Ngũ Ngư, tranh bàn thờ gia tiên cùng các công trình từ đường, nhà cổ 5 gian do chính nghệ nhân xưởng Tuyến Hoa – Ngọc Tuyến thi công.
           </p>
 
           {/* Quick Stats Badges */}
           <div className="mt-6 flex flex-wrap justify-center items-center gap-3 sm:gap-4 text-xs sm:text-sm">
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-stone-200 text-stone-700 shadow-xs font-medium">
               <Award className="w-4 h-4 text-amber-600" />
-              <strong>38</strong> Ảnh công trình & mẫu mã
+              <strong>50</strong> Ảnh công trình & mẫu mã
             </span>
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-stone-200 text-stone-700 shadow-xs font-medium">
               <Flame className="w-4 h-4 text-rose-600" />

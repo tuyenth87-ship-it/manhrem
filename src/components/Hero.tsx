@@ -13,6 +13,24 @@ interface HeroProps {
 
 const HERO_GALLERY_SLIDES = [
   {
+    id: 'manh-tam-tre-tam-lien-khung-trien-long-chim-hd',
+    tabTarget: 'catalog',
+    image: '/assets/aistudio/MT_TC_05_tam_lien_khung_trien_long_chim_hd.jpg',
+    badge: '300.000đ – 340.000đ/m² · Bộ 3 Bức Tam Liên Khung Triện & Cửa Sổ Bát Giác',
+    title: 'Bộ Sưu Tập Mành Tăm Tre Bộ 3 Bức Tam Liên Khung Triện & Lồng Chim',
+    caption: 'Chim Xanh Hoa Đào · Thanh Tùng Nghênh Khách · Chim Trĩ Ngọc Lan · Cửa Sổ Bát Giác Lồng Chim.',
+    priceHighlight: '300k–340k',
+  },
+  {
+    id: 'manh-tam-tre-lien-hoa-ngu-ngu-son-thuy-truc-hd',
+    tabTarget: 'catalog',
+    image: '/assets/aistudio/MT_TC_06_lien_hoa_ngu_ngu_son_thuy_truc_hd.jpg',
+    badge: '260.000đ – 320.000đ/m² · Liên Hoa Ngũ Ngư · Sơn Thủy & Trúc Quân Tử',
+    title: 'Tuyệt Tác Mành Tăm Tre Liên Hoa Ngũ Ngư · Sơn Thủy Giang Nam & Trúc',
+    caption: 'Liên Hoa Ngũ Ngư Diềm Triện · Hà Đường Nguyệt Sắc · Sơn Thủy Thuyền Câu · Thanh Trúc Quân Tử.',
+    priceHighlight: '260k–320k',
+  },
+  {
     id: 'manh-tam-tre-lien-hoa-cuu-ngu-hd',
     tabTarget: 'catalog',
     image: '/assets/aistudio/MT_TC_01_manh_tam_tre_lien_hoa_cuu_ngu_hd.jpg',
@@ -29,15 +47,6 @@ const HERO_GALLERY_SLIDES = [
     title: 'Mành Tăm Tre Khung Triện Nguyệt Môn & Tùng Hạc Nghênh Khách',
     caption: 'Xuân Yến Đồ · Mộc Lan Dưới Trăng · Thanh Tùng Nghênh Khách · Chim Trĩ Ngọc Lan.',
     priceHighlight: '280k–360k',
-  },
-  {
-    id: 'manh-tam-tre-hoa-dieu-dao-nguyen-hd',
-    tabTarget: 'catalog',
-    image: '/assets/aistudio/MT_TC_03_manh_tam_tre_hoa_dieu_dao_nguyen_hd.jpg',
-    badge: '280.000đ – 320.000đ/m² · Khung Cửa Cổ Bát Giác & Bán Nguyệt',
-    title: 'Mành Tăm Tre Khung Cửa Cổ Hoa Điểu · Đào Nguyên & Lồng Chim',
-    caption: 'Song Hỷ Đào Hoa · Khung Bát Giác Băng Mai · Thủy Đình C203 · Thế Ngoại Đào Nguyên.',
-    priceHighlight: '280k–320k',
   },
   {
     id: 'manh-tam-tre-gia-hoa-phu-quy-hd',

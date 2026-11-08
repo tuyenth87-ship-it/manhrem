@@ -42,11 +42,11 @@ test('Multi-set Màn khung order applies 50,000 VND/set discount and calculates 
   assert.equal(comboOrder.finalTotal, 3650000);
 });
 
-test('Deduplication removes all duplicate primary and secondary images across all 60 annotated posts', () => {
+test('Deduplication removes all duplicate primary and secondary images across all 71 annotated posts', () => {
   const dedupedPosts = getDeduplicatedProductPosts();
-  assert.equal(dedupedPosts.length, 60);
-  assert.equal(ANNOTATED_PRODUCT_POSTS.length, 60);
-  assert.equal(MARKET_PRICE_SUMMARY_TABLE.length, 23);
+  assert.equal(dedupedPosts.length, 71);
+  assert.equal(ANNOTATED_PRODUCT_POSTS.length, 71);
+  assert.equal(MARKET_PRICE_SUMMARY_TABLE.length, 28);
 
   // Verify no two posts share the exact same primary imageUrl
   const primaryImages = dedupedPosts.map((p) => p.imageUrl);
@@ -82,15 +82,30 @@ test('Deduplication removes all duplicate primary and secondary images across al
   }
 
   // Verify deduplication summary accounting
-  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 244);
-  assert.equal(DEDUPLICATION_SUMMARY.totalRemovedDuplicates, 58);
-  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 178);
-  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 16);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 420);
+  assert.equal(DEDUPLICATION_SUMMARY.totalRemovedDuplicates, 65);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 355);
+  assert.equal(DEDUPLICATION_SUMMARY.groups.length, 20);
 });
 
 test('All annotated products have market price tiers, visual annotations, specs, and clear Facebook post copy', () => {
   const canopyAndBeddingItems = filterAnnotatedProducts('man-khung-1tr');
-  assert.equal(canopyAndBeddingItems.length, 33);
+  assert.equal(canopyAndBeddingItems.length, 36);
+
+  // Verify the 2 newest bamboo roll-up blind posts (MT-TC-05 & MT-TC-06) covering all 12 uploaded photos
+  const mtTc05 = getCanopyProductById('MT-TC-05');
+  assert.ok(mtTc05);
+  assert.equal(mtTc05?.numericPrice, 300000);
+  assert.equal(mtTc05?.imageUrl, '/assets/aistudio/MT_TC_05_tam_lien_khung_trien_long_chim_hd.jpg');
+  assert.equal(mtTc05?.secondaryImages?.length, 6);
+  assert.equal(Object.keys(mtTc05?.imageCaptions || {}).length, 7);
+
+  const mtTc06 = getCanopyProductById('MT-TC-06');
+  assert.ok(mtTc06);
+  assert.equal(mtTc06?.numericPrice, 260000);
+  assert.equal(mtTc06?.imageUrl, '/assets/aistudio/MT_TC_06_lien_hoa_ngu_ngu_son_thuy_truc_hd.jpg');
+  assert.equal(mtTc06?.secondaryImages?.length, 6);
+  assert.equal(Object.keys(mtTc06?.imageCaptions || {}).length, 7);
 
   // Verify the 6 posts from the 18 uploaded Alyda Royal Embroidery & Korean Princess Lavender bedding photos
   const alydaPeony = getCanopyProductById('CGL-AL-01');
@@ -123,33 +138,32 @@ test('All annotated products have market price tiers, visual annotations, specs,
   const princessLavender = getCanopyProductById('CGL-CC-01');
   assert.ok(princessLavender);
   assert.equal(princessLavender?.numericPrice, 1350000);
-  assert.equal(princessLavender?.secondaryImages?.length, 7);
-  assert.equal(Object.keys(princessLavender?.imageCaptions || {}).length, 8);
+  assert.equal(princessLavender?.secondaryImages?.length, 8);
+  assert.equal(Object.keys(princessLavender?.imageCaptions || {}).length, 9);
   assert.equal(
     princessLavender?.imageUrl,
-    '/assets/aistudio/1792915225334_4373635352308930219_4373635352308930219_b1cc4f9fe287531332cb288e86597c7e_3574b865.jpg'
+    '/assets/aistudio/CGL_CC_01_ren_cong_chua_bang_gia_hd.jpg'
   );
 
   const drorTencel = getCanopyProductById('CGL-DR-01');
   assert.ok(drorTencel);
   assert.equal(drorTencel?.numericPrice, 1450000);
-  assert.equal(drorTencel?.secondaryImages?.length, 3);
-  assert.equal(Object.keys(drorTencel?.imageCaptions || {}).length, 4);
+  assert.equal(Object.keys(drorTencel?.imageCaptions || {}).length, 5);
 
   // Verify the 6 previous posts from the 18 uploaded Alyda LT 28 & Sky Silk Tencel bedding photos
   const alydaLt28 = getCanopyProductById('CGL-LT-28');
   assert.ok(alydaLt28);
   assert.equal(alydaLt28?.numericPrice, 2150000);
-  assert.equal(alydaLt28?.secondaryImages?.length, 1);
+  assert.equal(alydaLt28?.secondaryImages?.length, 2);
   assert.equal(
     alydaLt28?.imageUrl,
-    '/assets/aistudio/1792915211423_4373635352308930219_4373635352308930219_72e61c228464506313c098328bfdea78_43281348.jpg'
+    '/assets/aistudio/CGL_LT_28_alyda_7_mon_bang_gia_hd.jpg'
   );
 
   const skySilkRedPink = getCanopyProductById('CGL-SK-01');
   assert.ok(skySilkRedPink);
   assert.equal(skySilkRedPink?.numericPrice, 1150000);
-  assert.equal(skySilkRedPink?.secondaryImages?.length, 2);
+  assert.equal(skySilkRedPink?.secondaryImages?.length, 3);
 
   const skySilkGoldWhite = getCanopyProductById('CGL-SK-02');
   assert.ok(skySilkGoldWhite);
@@ -270,10 +284,10 @@ test('All annotated products have market price tiers, visual annotations, specs,
   assert.equal(videoVongXep?.mediaType, 'video');
   assert.equal(videoVongXep?.numericPrice, 550000);
 
-  // Verify the newly edited bamboo blind & warehouse mattress HD posts are at the very top
+  // Verify the newly edited bamboo blind posts are at the very top
   assert.deepEqual(
     ANNOTATED_PRODUCT_POSTS.slice(0, 8).map((p) => p.code),
-    ['MT-TH-01', 'KXD-TH-01', 'DKC-TH-01', 'DLV-TH-01', 'DGD-TH-01', 'DVC-TH-01', 'DCR-TH-01', 'SR-TH-02']
+    ['MT-TC-05', 'MT-TC-06', 'MT-TC-01', 'MT-TC-02', 'MT-TC-03', 'MT-TC-04', 'MT-NT-01', 'MT-NT-02']
   );
 
   const demLongVu = getCanopyProductById('DLV-TH-01');
@@ -377,7 +391,7 @@ test('All annotated products have market price tiers, visual annotations, specs,
   }
 
   const projectItems = filterAnnotatedProducts('cong-trinh-video');
-  assert.equal(projectItems.length, 23);
+  assert.equal(projectItems.length, 31);
   for (const item of projectItems) {
     assert.ok(item.marketPriceTiers.length >= 3);
   }
