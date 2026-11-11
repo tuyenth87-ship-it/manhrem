@@ -38,6 +38,9 @@ interface CanopyAndArtisanalShowcaseProps {
 type FontScaleMode = 'normal' | 'large' | 'xlarge';
 
 const BAKED_BRAND_CODES = new Set([
+  'DEL-NT-01',
+  'DEL-NT-02',
+  'GDT-NT-01',
   'MT-TC-05',
   'MT-TC-06',
   'MT-TC-01',

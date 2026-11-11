@@ -18,56 +18,56 @@ interface MattressBrandComparison {
 
 const MATTRESS_COMPARISONS: MattressBrandComparison[] = [
   {
+    brand: 'ELAN (Since 1990)',
+    badge: 'Mới cập nhật · Giảm 30%',
+    coreMaterial: 'Lò xo túi độc lập ELAN VIP III Pillow Top 30cm · Lò xo túi ELANNOVA & VIMATT 1 Mặt · Nano Foam Massage & Bông ép vỏ chần SEE01/SEE05',
+    firmnessScore: 'Đa dạng: Êm 5 sao & Phẳng (9.5/10)',
+    orthopedicRating: 'Phân vùng nâng đỡ 5 điểm cơ thể, núm gai massage huyệt đạo chống đau mỏi thắt lưng',
+    breathability: 'Vải gấm dệt kim Jacquard kháng khuẩn & thành thổ cẩm bo viền gân thoáng khí 4 mùa',
+    warranty: '5 – 10 Năm chính hãng ELAN',
+    durability: '15 - 20 năm sử dụng',
+    priceRange: '1.450.000 đ – 7.850.000 đ',
+    bestFor: 'Phòng ngủ Master, phòng cưới sang trọng (ELAN VIP III / ELANNOVA) & người đau lưng thích nằm phẳng êm (Nano Foam / SEE Vỏ Chần)',
+    image: '/assets/aistudio/IMG_9328_elan_vip_iii_phong_ngu_hd.jpg',
+  },
+  {
     brand: 'Vikosan',
     badge: 'Bán chạy nhất Chợ Cháy',
-    coreMaterial: '100% Bông xơ polyester tinh khiết ép cách nhiệt công nghệ Hàn Quốc, không keo dán',
+    coreMaterial: 'Lò xo túi độc lập Standard 3 Sao · 5 Sao · VIP D\'luxe 30cm & Bông xơ polyester ép cách nhiệt Hàn Quốc',
     firmnessScore: 'Phẳng vững chắc (9/10)',
     orthopedicRating: 'Tối ưu cho người già, người thoái hóa cột sống, trẻ em tuổi phát triển',
-    breathability: 'Khá tốt, vỏ gấm Valize thoáng khí',
-    warranty: '5 Năm chính hãng',
-    durability: '8 - 10 năm không xẹp lún',
-    priceRange: '1.350.000 đ – 3.150.000 đ',
-    bestFor: 'Khách hàng tìm đệm bền bỉ, tiết kiệm chi phí, thích nằm đệm thẳng lưng không lún',
-    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800&auto=format&fit=crop',
+    breathability: 'Khá tốt, vỏ gấm Valize & gấm dệt kim thoáng khí',
+    warranty: '5 – 7 Năm chính hãng',
+    durability: '10 - 15 năm không xẹp lún',
+    priceRange: '1.350.000 đ – 8.990.000 đ',
+    bestFor: 'Khách hàng tìm đệm lò xo túi cao cấp hoặc đệm bông ép bền bỉ, tiết kiệm chi phí',
+    image: '/assets/aistudio/DLX_VK_01_bang_gia_dem_lo_xo_vikosan_hd.jpg',
   },
   {
     brand: 'Sông Hồng',
     badge: 'Thương hiệu quốc dân',
-    coreMaterial: 'Bông tinh khiết kháng khuẩn dập lượn sóng + Lớp foam đàn hồi nâng đỡ đa vùng',
-    firmnessScore: 'Vừa êm vừa phẳng (8/10)',
+    coreMaterial: 'Bông tinh khiết kháng khuẩn dập lượn sóng + Lớp Memory Foam đàn hồi nâng đỡ đa vùng (Back Essential Gen 4)',
+    firmnessScore: 'Vừa êm vừa phẳng (8.5/10)',
     orthopedicRating: 'Nâng đỡ 5 vùng cơ thể, giải phóng áp lực thắt lưng & bả vai',
     breathability: 'Rất thoáng mát, công nghệ dập sóng thoát ẩm vượt trội',
     warranty: '5 Năm chính hãng (tem SMS cào)',
     durability: '10 - 12 năm',
-    priceRange: '2.380.000 đ – 5.450.000 đ',
+    priceRange: '2.380.000 đ – 8.850.000 đ',
     bestFor: 'Gia đình chuộng đệm có độ nảy êm nhẹ, an toàn tuyệt đối cho da nhạy cảm và trẻ sơ sinh',
-    image: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=800&auto=format&fit=crop',
+    image: '/assets/aistudio/dem_song_hong_back_essential_1.png',
   },
   {
-    brand: 'Everon',
+    brand: 'Everon & Everhome',
     badge: 'Đẳng cấp Hàn Quốc',
-    coreMaterial: 'Sợi bông xơ Wonwan Hàn Quốc tráng lớp Ceramic phát tia hồng ngoại hoặc than hoạt tính',
+    coreMaterial: 'Cao su 100% thiên nhiên Everhome, Lò xo Gold 3 Viền & Bông Ceramic phát tia hồng ngoại Everon Artemis',
     firmnessScore: 'Đàn hồi vững chãi (8.5/10)',
-    orthopedicRating: 'Thúc đẩy tuần hoàn máu khi ngủ, giảm tê bì chân tay',
-    breathability: 'Tuyệt vời, khử mùi ẩm mốc mùa nồm nhờ than hoạt tính',
-    warranty: '5 Năm chính hãng Everon',
-    durability: '12 - 15 năm',
-    priceRange: '3.390.000 đ – 4.950.000 đ',
+    orthopedicRating: 'Thúc đẩy tuần hoàn máu khi ngủ, giảm tê bì chân tay, nâng đỡ cột sống chuẩn y khoa',
+    breathability: 'Tuyệt vời, khử mùi ẩm mốc mùa nồm nhờ than hoạt tính & cấu trúc lỗ thoáng',
+    warranty: '5 – 10 Năm chính hãng',
+    durability: '12 - 20 năm',
+    priceRange: '2.850.000 đ – 6.450.000 đ',
     bestFor: 'Phòng tân hôn cưới hỏi, gia đình thích hàng thương hiệu Hàn Quốc cao cấp, bền đẹp',
-    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800&auto=format&fit=crop',
-  },
-  {
-    brand: 'Kymdan',
-    badge: 'Cao su 100% Thượng hạng',
-    coreMaterial: '100% Mủ cao su thiên nhiên nguyên chất, cấu trúc bọt khí hở hàng triệu lỗ thông hơi',
-    firmnessScore: 'Êm ái nâng đỡ sinh học (7.5/10)',
-    orthopedicRating: 'Chuẩn y khoa quốc tế, duy trì 3 đường cong sinh lý cột sống tự nhiên',
-    breathability: 'Mát rượi quanh năm, không bí lưng ngay cả giữa mùa hè',
-    warranty: '15 Năm chính hãng (kèm sổ bảo hành seri)',
-    durability: '25 - 30 năm sử dụng',
-    priceRange: '15.600.000 đ – 34.200.000 đ',
-    bestFor: 'Phân khúc cao cấp, biệt thự, người có tiền sử thoát vị đĩa đệm, giá trị sử dụng trọn đời',
-    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=800&auto=format&fit=crop',
+    image: '/assets/aistudio/DLX_EH_01_dem_lo_xo_everhome_typography_hd.jpg',
   },
 ];
 
@@ -86,7 +86,7 @@ export const MattressComparison: React.FC<MattressComparisonProps> = ({ onSelect
             <span>Cẩm Nang Tư Vấn Đệm Chuyên Sâu</span>
           </div>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-stone-900 mt-1">
-            So Sánh 4 Thương Hiệu Đệm Lớn: Vikosan · Sông Hồng · Everon · Kymdan
+            So Sánh Thương Hiệu Đệm Lớn: ELAN (Since 1990) · Vikosan · Sông Hồng · Everon
           </h2>
           <p className="text-xs sm:text-sm text-stone-600 mt-1 max-w-3xl">
             Bảng tra cứu đặc tính kỹ thuật, độ êm/cứng, thời hạn bảo hành và tầm giá thực tế để giúp quý khách lựa chọn chiếc đệm phù hợp nhất với thể trạng và ngân sách gia đình.

@@ -82,9 +82,9 @@ test('Deduplication removes all duplicate primary and secondary images across al
   }
 
   // Verify deduplication summary accounting
-  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 446);
-  assert.equal(DEDUPLICATION_SUMMARY.totalRemovedDuplicates, 65);
-  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 381);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUploaded, 448);
+  assert.equal(DEDUPLICATION_SUMMARY.totalRemovedDuplicates, 66);
+  assert.equal(DEDUPLICATION_SUMMARY.totalUniquePublished, 382);
   assert.equal(DEDUPLICATION_SUMMARY.groups.length, 22);
 });
 
@@ -92,20 +92,16 @@ test('All annotated products have market price tiers, visual annotations, specs,
   const canopyAndBeddingItems = filterAnnotatedProducts('man-khung-1tr');
   assert.equal(canopyAndBeddingItems.length, 38);
 
-  // Verify the newest Wallpaper & 3D Silk Mural post (GDT-NT-01) and 2 ELAN Mattress posts (DEL-NT-01 & DEL-NT-02)
-  const gdtNt01 = getCanopyProductById('GDT-NT-01');
-  assert.ok(gdtNt01);
-  assert.equal(gdtNt01?.numericPrice, 65000);
-  assert.equal(gdtNt01?.imageUrl, '/assets/aistudio/GDT_NT_01_giay_dan_tuong_ngoc_tuyen_bang_gia_hd.jpg');
-  assert.equal(gdtNt01?.secondaryImages?.length, 5);
-  assert.equal(Object.keys(gdtNt01?.imageCaptions || {}).length, 6);
-
+  // Verify the 2 ELAN Mattress posts (DEL-NT-01 & DEL-NT-02) and Wallpaper & 3D Silk Mural post (GDT-NT-01)
   const delNt01 = getCanopyProductById('DEL-NT-01');
   assert.ok(delNt01);
   assert.equal(delNt01?.numericPrice, 3350000);
   assert.equal(delNt01?.imageUrl, '/assets/aistudio/DEL_NT_01_dem_lo_xo_elan_vip_elannova_vimatt_hd.jpg');
-  assert.equal(delNt01?.secondaryImages?.length, 11);
-  assert.equal(Object.keys(delNt01?.imageCaptions || {}).length, 12);
+  assert.equal(delNt01?.secondaryImages?.length, 12);
+  assert.ok(delNt01?.secondaryImages?.includes('/assets/aistudio/IMG_9328_elan_vip_iii_phong_ngu_hd.jpg'));
+  assert.ok(delNt01?.secondaryImages?.includes('/assets/aistudio/IMG_9330_elannova_lien_ket_phong_ngu_hd.jpg'));
+  assert.ok(!delNt01?.secondaryImages?.includes('/assets/aistudio/IMG_9341_94ed9ffe.JPG'));
+  assert.equal(Object.keys(delNt01?.imageCaptions || {}).length, 13);
 
   const delNt02 = getCanopyProductById('DEL-NT-02');
   assert.ok(delNt02);
@@ -113,6 +109,13 @@ test('All annotated products have market price tiers, visual annotations, specs,
   assert.equal(delNt02?.imageUrl, '/assets/aistudio/DEL_NT_02_dem_nano_foam_bong_ep_see_elan_hd.jpg');
   assert.equal(delNt02?.secondaryImages?.length, 7);
   assert.equal(Object.keys(delNt02?.imageCaptions || {}).length, 8);
+
+  const gdtNt01 = getCanopyProductById('GDT-NT-01');
+  assert.ok(gdtNt01);
+  assert.equal(gdtNt01?.numericPrice, 65000);
+  assert.equal(gdtNt01?.imageUrl, '/assets/aistudio/GDT_NT_01_giay_dan_tuong_ngoc_tuyen_bang_gia_hd.jpg');
+  assert.equal(gdtNt01?.secondaryImages?.length, 5);
+  assert.equal(Object.keys(gdtNt01?.imageCaptions || {}).length, 6);
 
   // Verify the 2 newest bamboo roll-up blind posts (MT-TC-05 & MT-TC-06) covering all 12 uploaded photos
   const mtTc05 = getCanopyProductById('MT-TC-05');
@@ -306,13 +309,13 @@ test('All annotated products have market price tiers, visual annotations, specs,
   assert.equal(videoVongXep?.mediaType, 'video');
   assert.equal(videoVongXep?.numericPrice, 550000);
 
-  // Verify the newly added Wallpaper & ELAN Mattress posts + bamboo blind posts are at the very top
+  // Verify the newly added ELAN Mattress posts + Wallpaper + bamboo blind posts are at the very top
   assert.deepEqual(
     ANNOTATED_PRODUCT_POSTS.slice(0, 11).map((p) => p.code),
     [
-      'GDT-NT-01',
       'DEL-NT-01',
       'DEL-NT-02',
+      'GDT-NT-01',
       'MT-TC-05',
       'MT-TC-06',
       'MT-TC-01',

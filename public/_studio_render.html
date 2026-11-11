@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Studio Render</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background: #111;
+      color: #fff;
+    }
+    .card-800 {
+      position: relative;
+      width: 800px;
+      height: 800px;
+      overflow: hidden;
+      background: #f5f0e6;
+    }
+    .card-800 img.bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    /* Bottom Luxury Studio Pill */
+    .studio-pill-bottom {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, rgba(28, 22, 16, 0.94), rgba(46, 34, 22, 0.94));
+      border: 1.5px solid #D4AF37;
+      border-radius: 14px;
+      padding: 9px 22px;
+      text-align: center;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.45);
+      min-width: 470px;
+      max-width: 740px;
+      z-index: 10;
+    }
+    .studio-pill-bottom .kicker {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #F3D27A;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .studio-pill-bottom .main-title {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: 0.01em;
+      line-height: 1.25;
+    }
+    .studio-pill-bottom .sub-meta {
+      font-size: 12px;
+      font-weight: 600;
+      color: #E7D5B4;
+      margin-top: 2px;
+    }
+    /* Top Right Price Tag */
+    .price-tag-top {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: linear-gradient(135deg, rgba(122, 28, 24, 0.95), rgba(88, 18, 15, 0.95));
+      border: 1.5px solid #F3D27A;
+      border-radius: 11px;
+      padding: 6px 14px;
+      text-align: right;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+      z-index: 10;
+    }
+    .price-tag-top .code {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #FCE29C;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .price-tag-top .price {
+      font-size: 15px;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+
+    /* Specific Wall/Scroll Overlays for the 6 images with foreign labels */
+    /* 1. 500735211: cover left wall x:0..21.4%, y:0..68% */
+    .patch-500735211 {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 171px;
+      height: 530px;
+      background: #F2F1F6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 12px;
+      z-index: 5;
+    }
+    .scroll-plaque-vn {
+      border: 2px solid #8C5A2B;
+      background: #FAF6EE;
+      border-radius: 10px;
+      padding: 16px 10px;
+      width: 126px;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(45,30,15,0.12);
+    }
+    .scroll-plaque-vn .seal {
+      display: inline-block;
+      background: #9E2A2B;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      letter-spacing: 0.06em;
+    }
+    .scroll-plaque-vn .v-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #2B1D0E;
+      line-height: 1.45;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .scroll-plaque-vn .v-sub {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid #D5C3A5;
+      font-size: 11px;
+      font-weight: 700;
+      color: #7A4B1E;
+      line-height: 1.35;
+    }
+
+    /* 2. 500763920: cover inner white scroll left: 22px, top: 172px, width: 73px, height: 190px */
+    .patch-scroll-500763920 {
+      position: absolute;
+      left: 22px;
+      top: 172px;
+      width: 73px;
+      height: 190px;
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 4px;
+      text-align: center;
+      z-index: 5;
+    }
+    /* 3. 501392157: cover inner white scroll left: 26px, top: 220px, width: 72px, height: 192px */
+    .patch-scroll-501392157 {
+      position: absolute;
+      left: 26px;
+      top: 220px;
+      width: 72px;
+      height: 192px;
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 4px;
+      text-align: center;
+      z-index: 5;
+    }
+    /* 4. 500741571: cover inner white scroll left: 20px, top: 170px, width: 77px, height: 194px */
+    .patch-scroll-500741571 {
+      position: absolute;
+      left: 20px;
+      top: 170px;
+      width: 77px;
+      height: 194px;
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 4px;
+      text-align: center;
+      z-index: 5;
+    }
+    .scroll-inner-text {
+      font-size: 14px;
+      font-weight: 800;
+      color: #3B2816;
+      line-height: 1.42;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .scroll-inner-code {
+      margin-top: 6px;
+      background: #8C2D19;
+      color: #FFF;
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+
+    /* 5. 500740964: cover right wall text left: 688px, top: 268px, width: 96px, height: 245px */
+    .patch-wall-500740964 {
+      position: absolute;
+      left: 686px;
+      top: 262px;
+      width: 100px;
+      height: 252px;
+      background: linear-gradient(180deg, rgba(42,33,26,0.96), rgba(28,22,17,0.96));
+      border: 1.5px solid #D4AF37;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 8px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+      z-index: 5;
+    }
+
+    /* 6. 500770872: cover left lattice red bracket left: 68px, top: 204px, width: 96px, height: 300px */
+    .patch-wall-500770872 {
+      position: absolute;
+      left: 66px;
+      top: 202px;
+      width: 98px;
+      height: 302px;
+      background: linear-gradient(180deg, rgba(44,32,21,0.97), rgba(28,20,13,0.97));
+      border: 2px solid #D4AF37;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 8px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+      z-index: 5;
+    }
+
+    /* Poster 1200x900 6-grid layout */
+    .poster-1200 {
+      width: 1200px;
+      height: 900px;
+      background: #F7F2E7;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .poster-header {
+      height: 112px;
+      background: linear-gradient(90deg, #1E1610 0%, #2C2016 60%, #1E1610 100%);
+      border-bottom: 4px solid #C89D42;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .poster-header .kicker {
+      color: #E5BA63;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+    .poster-header .title {
+      color: #FFFFFF;
+      font-size: 25px;
+      font-weight: 800;
+      line-height: 1.18;
+      text-transform: uppercase;
+    }
+    .poster-header .sub {
+      color: #D7CBB8;
+      font-size: 13px;
+      font-weight: 500;
+      margin-top: 4px;
+    }
+    .poster-header .hotline-box {
+      background: linear-gradient(135deg, #6E1414, #4A0D0D);
+      border: 1.5px solid #E5BA63;
+      border-radius: 14px;
+      padding: 10px 20px;
+      text-align: center;
+      min-width: 215px;
+      flex-shrink: 0;
+    }
+    .poster-header .hotline-box .code {
+      color: #F7D788;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .poster-header .hotline-box .phone {
+      color: #FFFFFF;
+      font-size: 21px;
+      font-weight: 800;
+      margin-top: 2px;
+    }
+    .poster-grid {
+      flex: 1;
+      padding: 18px 22px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .poster-tile {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1.5px solid #D3C4A8;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .poster-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .poster-tile .tile-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 28px 12px 10px;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(20,15,10,0.86) 42%, rgba(15,11,8,0.96) 100%);
+      color: #fff;
+    }
+    .poster-tile .tile-caption .t-name {
+      font-size: 13.5px;
+      font-weight: 800;
+      line-height: 1.25;
+      color: #FFFFFF;
+    }
+    .poster-tile .tile-caption .t-price {
+      font-size: 12px;
+      font-weight: 700;
+      color: #F5CF76;
+      margin-top: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div id="mount"></div>
+</body>
+</html>
